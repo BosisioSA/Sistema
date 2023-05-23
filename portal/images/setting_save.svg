@@ -1,0 +1,9 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 365" width='19' height='19'>
+    <defs>
+        <style>.cls-1{fill:#0080BF;}.cls-2{fill:#fff;}</style>
+    </defs>
+    <title>save</title>
+    <path class="cls-1" d="M327,365H30A30.06,30.06,0,0,1,0,335V30A30.06,30.06,0,0,1,30,0H243c17.17,0.62,37.35-.19,50.17,11.34C323.28,38.42,323.28,38.42,346,63.08c10.28,11.15,10.24,30,11,48.92V335A30.06,30.06,0,0,1,327,365Z"/>
+    <rect class="cls-2" x="75" y="21" width="192" height="114" rx="20.18" ry="20.18"/>
+    <rect class="cls-1" x="208.25" y="34" width="37.75" height="87" rx="12" ry="12"/>
+</svg>

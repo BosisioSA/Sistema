@@ -1,0 +1,16 @@
+/*
+ * jQuery UI Menubar @VERSION
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ */
+.ui-menubar { list-style: none; margin: 0; padding-left: 100; }
+
+.ui-menubar-item { float: left; font-size:0.6em; }
+
+.ui-menubar .ui-button { float: left; font-weight: normal; border-top-width: 0 !important; border-bottom-width: 0 !important; margin: 0; outline: none;  z-index:10000; )
+}
+.ui-menubar .ui-menubar-link { margin-top:2px; border-right: 1px dashed transparent; border-left: 1px dashed transparent;  border-left: solid #999999 1px; }
+
+.ui-menubar .ui-menu { width: 200px;  position: absolute; z-index: 10000; font-weight: normal;   }

@@ -1,0 +1,1199 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Cilindros Porta Clichê - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script type='text/javascript' src='./Charts/Chart.min.js'></script>
+        <script type='text/javascript' src='./Charts/utils.js'></script>
+       <style>
+		#canvas-holder {
+			width: 100%;
+			margin-top: 50px;
+			text-align: center;
+		}
+		#chartjs-tooltip {
+			opacity: 1;
+			position: absolute;
+			background: rgba(0, 0, 0, .7);
+			color: white;
+			border-radius: 3px;
+			-webkit-transition: all .1s ease;
+			transition: all .1s ease;
+			pointer-events: none;
+			-webkit-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+		}
+
+		.chartjs-tooltip-key {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin-right: 10px;
+		}
+	</style>
+
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+         	   <ul class="active components mb-5">
+           
+          <li  style="list-style-type: none">
+               <a href="cadastros_clientes.html"><img src="./Icons/clientes.png" width="30px" style="margin-right: 10px">Clientes</a>
+              </li>
+          <li>
+              <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/fornecedores.png" width="30px" style="margin-right: 10px">Fornecedores</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+               <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_flexo.html"><img src="./Icons/flexo.png" width="20px" style="margin-right: 10px">Flexo</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_roto.html"><img src="./Icons/roto.png" width="20px" style="margin-right: 10px">Roto</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_anilox.html"><img src="./Icons/anilox.png" width="20px" style="margin-right: 10px">Anilox</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindro Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_prepress.html"><img src="./Icons/prepress.png" width="20px" style="margin-right: 10px">Prepress</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_materiaprima.html"><img src="./Icons/material.png" width="20px" style="margin-right: 10px">Matéria Prima</a>
+          </li>
+          </ul>
+          
+          <li class="active">
+              <a  href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/tecnicos.png" width="30px" style="margin-right: 10px">Cadastros Técnicos</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu3">
+              
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_unidades.html"><img src="./Icons/unidades.png" width="20px" style="margin-right: 10px">Unidades</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_tipotrabalho.html"><img src="./Icons/tipo_trabalho.png" width="20px" style="margin-right: 10px">Tipo de Trabalho</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_finalidade.html"><img src="./Icons/finalidade.png" width="20px" style="margin-right: 10px">Finalidade</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_substratos.html"><img src="./Icons/substratos.png" width="20px" style="margin-right: 10px">Substratos</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_duplaface.html"><img src="./Icons/dupla_face.png" width="20px" style="margin-right: 10px">Dupla Face</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_estruturas.html"><img src="./Icons/estruturas.png" width="20px" style="margin-right: 10px">Estruturas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_tintas.html"><img src="./Icons/tintas.png" width="20px" style="margin-right: 10px">Tintas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_situacaoanilox.html"><img src="./Icons/situacao_anilox.png" width="20px" style="margin-right: 10px">Situação de Anilox</a>
+          </li>
+          <li   class="active" style="list-style-type: none">
+               <a href="cadastros_tecnicos_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindros Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_lavagemanilox.html"><img src="./Icons/lavagem_anilox.png" width="20px" style="margin-right: 10px">Anilox (tipo de lavagem)</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_segmentos.html"><img src="./Icons/segmentos.png" width="20px" style="margin-right: 10px">Segmentos</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_maquinas.html"><img src="./Icons/impressoras.png" width="20px" style="margin-right: 10px">Máquinas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_testform.html"><img src="./Icons/testform.png" width="20px" style="margin-right: 10px">Test Form</a>
+          </li>
+          </ul>
+          
+              
+                <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/sequencia.png" width="30px" style="margin-right: 10px">Sequência Padrão</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li class="active" style="list-style-type: none">
+               <a href="receita_tintas.html"><img src="./Icons/contagotas.png" width="20px" style="margin-right: 10px">Criar Sequência</a>
+              </li>
+              <li  style="list-style-type: none">
+               <a href="lista_receitas.html"><img src="./Icons/listasequencia.png" width="20px" style="margin-right: 10px">Lista Sequências</a>
+              </li>
+              <li style="list-style-type: none">
+               <a href="cadastros_tintas.html"><img src="./Icons/novasequencia.png" width="20px" style="margin-right: 10px">Lista de Cores</a>
+              </li>
+              </ul>
+          </li>
+              </ul>
+          
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item">
+                      <a class="nav-link" href="cadastros_clientes.html">Cadastros</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="solicitacao_desenho.html">Tickets</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div>
+      
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+       
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_tipo_trabalho" style="display:none"></div>
+            <div id="id_finalidade" style="display:none"></div>
+            <div id="id_substrato" style="display:none"></div>
+             <div id="id_detalhe" style="display:none"></div>
+             <div id="id_situacaoanilox" style="display:none"></div>
+             <div id="id_portacliche" style="display:none"></div>
+             <div id="qual_cilindro" style="display:none"></div>
+             <div id="id_lavagemanilox" style="display:none"></div>
+             
+             <div id="id_segmento" style="display:none"></div>
+             <div id="id_planta" style="display:none"></div>
+             <div id="id_dupla" style="display:none"></div>
+             <div id="id_maquina" style="display:none"></div>
+             <div id="id_tinta" style="display:none"></div>
+             <div id="id_estrutura" style="display:none"></div>
+            <div id="id_familia" style="display:none"></div>
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+            
+    
+       
+          
+         <h5 id="a_div_portacliche"><i id="portaclicheArrow" class="fas fa-plus-square" onclick="mostraPortacliche()" style="margin-right: 5px; cursor:pointer;"></i>Cilindro Porta Clichê</h5>
+                <p><i>Cadastro das peças, tamanhos e distorções dos porta-clichês</i></p>
+                
+                 <div id="info_portacliche" class="form-group" style="display: none">
+                
+               
+                
+                   
+                  
+                  
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="nomenclatura_portacliche">Nomenclatura</label>
+                  <input type="text" class="form-control" onchange="busca_portacliche()" id="nomenclatura_portacliche" onkeyup="this.value=this.value.toUpperCase()" name="nomenclatura_portacliche">
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="passo_portacliche">Passo do Cilindro</label>
+                  <input type="number" class="form-control"  id="passo_portacliche" name="passo_portacliche" step="0.01">
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="perimetro_portacliche">Perímetro Real</label>
+                  <input type="number" class="form-control" id="perimetro_portacliche"  name="perimetro_portacliche" min="0" step="0.001" >
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="distorcido_portacliche">Perímetro Distorcido</label>
+                  <input type="number" class="form-control"  id="distorcido_portacliche" name="distorcido_portacliche" step="0.01">
+                 </div>
+                <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="diametro_portacliche">Diâmetro</label>
+                  <input type="text" class="form-control" id="diametro_portacliche"  name="diametro_portacliche">
+                 </div>
+               
+                 
+               
+                  
+                 
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="fornecedor_portacliche">Fornecedor</label>
+                  <select class="form-control"  id="fornecedor_portacliche" name="fornecedor_portacliche">
+                      <option value="undefined">Selecionar..</option>
+                      </select>
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="numero_portacliche">Número PC</label>
+                  <input type="text" class="form-control" onkeypress="return onlyNumberKey(event)" id="numero_portacliche" name="numero_portacliche">
+                 </div>
+                  <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="lote_portacliche">Lote</label>
+                  <input type="text" class="form-control" id="lote_portacliche" name="lote_portacliche">
+                 </div>
+                   <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="sleeve_portacliche">Sleeve</label>
+                  <input type="text" class="form-control" id="sleeve_portacliche" name="sleeve_portacliche">
+                 </div>
+                  
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                 <label for="espessuradupla_portacliche">Espessura Dupla Face</label>
+                  <select class="form-control"  id="espessuradupla_portacliche" name="espessuradupla_portacliche">
+                      <option value="undefined">Selecionar...</option>
+                      <option value="0.50">0.50</option>
+                      <option value="0.38">0.38</option>
+                      </select>
+                 </div>
+               <div  class="form-group col-md-2" style="display:inline-block; vertical-align: top;">
+                <label for="status_portacliche">Status PC</label>
+                  <select class="form-control"  id="status_portacliche" name="status_portacliche">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Liberado</option>
+                      <option>Com Avaria</option>
+                      <option>Inativo</option>
+                      </select>
+            </div>
+            <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="totalpecas_portacliche">Qt.Peças</label>
+                  <input type="text" class="form-control"  id="totalpecas_portacliche" name="totalpecas_portacliche" value="0" readonly>
+                 </div>
+            <div  class="form-group col-md-6" style="display:inline-block; vertical-align: top;">
+                <label for="observacoes_portacliche">Observações</label>
+                  <textarea class="form-control"  id="observacoes_portacliche" name="observacoes_portacliche"></textarea>
+               
+            </div>
+    
+                 
+                <div  class="form-group col-md-4" style="display:none">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_portacliche">Unidade</label>
+                  <select class="form-control"  id="planta_portacliche" name="planta_portacliche">
+                    </select>
+                 </div><span><img id="img-planta_portacliche" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_portacliche_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_portacliche" name="as_planta_portacliche">
+                  <span class="error" id="error_planta_portacliche" style="color: red"></span>
+                 </div>
+                </div>
+                 
+                 
+                <br>
+                 <div  class="form-group col-md-11" style="display:inline-block; margin-top: 10px;">
+                  <button class="btn btn-primary" onclick="salvar_portacliche()" style="cursor: pointer">Salvar Cilindro</button>
+                 <button class="btn btn-secondary" onclick="cancelar_portacliche()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                
+                 
+             </div>
+         
+         
+            <div class="form-group col-md-5"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_portacliche" class="table custom-table"  style="display: inline-block; min-width: auto">
+          <thead>
+            <tr>
+             
+             
+               <th class="th-sm" style="width:50px; text-align: center;">QT. PEÇAS<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:100px; text-align: center;">NOMENCLATURA<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+                <th class="th-sm" style="width:100px; text-align: center;">DIÂMETRO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:100px;text-align: center;">PASSO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+            <div id="div_tabela_detalhes_pc" class="form-group col-md-6"  style="display:none;">
+            <div  class="form-group" style="display: inline-block;"><h6 id="titulo_detalhe_pc"></h6></div><div  class="form-group col-md-1" style="display: inline-block;"><img src="./Icons/close.png" width="20px" style="cursor: pointer;" onclick="fecha_pc()"></div>
+            <table id="tabela_detalheportacliche" class="table custom-table" style="display: inline-block; min-width: auto; width: 100%">
+          <thead>
+            <tr>
+             
+              <th class="th-sm" style="width:50px;text-align: center;">NUMERO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+             
+               <th class="th-sm" style="width:50px;text-align: center;">PERIMETRO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:50px;text-align: center;">DISTORCIDO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:50px;text-align: center;">VISUALIZAR<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+               <th class="th-sm" style="width:50px;text-align: center;">UPLOAD<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:50px;text-align: center;">EDITAR<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:50px;text-align: center;">APAGAR<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        
+        <hr>
+      
+       <h5 id="a_div_report"><i id="reportArrow" class="fas fa-chevron-right" onclick="mostraReport()" style="margin-right: 5px; cursor:pointer;"></i>Lista Cilindros</h5>
+       
+       
+                 <div id="info_report" class="form-group" style="display: none">
+        <div style="width: 68%; display: inline-block; vertical-align: top;">
+             
+            <table id="tabela_pc" class="table custom-table" style="display: inline-block; min-width:auto;">
+          <thead>
+            <tr>
+             
+              <th class="col" style="width:20%;text-align: center; vertical-align: top;">NOMENCLATURA<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input  class="form-group" id="input_nomenclatura" type="text" onkeyup="filtro_nomenclatura()"></span>
+              </th>
+               <th class="col" style="width:20%;text-align: center;vertical-align: top;">NUMERO<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_numero" type="text" onkeyup="filtro_nomenclatura()"></span>
+              </th>
+                <th class="col" style="width:30%;text-align: center;vertical-align: top;">DUPLA FACE<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_duplaface" type="text" onkeyup="filtro_nomenclatura()"></span>
+              </th>
+              
+              <th class="col" style="width:30%;text-align: center;vertical-align: top;">STATUS<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_status" type="text" onkeyup="filtro_nomenclatura()"></span>
+              </th>
+            
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>   
+                
+        </div>
+         <div style="width: 29%; display: inline-block; margin-left: 2%; vertical-align: top;">
+        <div id="canvas-holder" style="width:100%;">
+		<canvas id="chart-area"></canvas>
+		<div id="chartjs-tooltip">
+			<table></table>
+		</div>
+	    </div> 
+            
+            
+        </div>
+        
+        </div>
+      
+        
+        
+        
+        
+       
+            
+             
+          
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       </div>
+  	 <script src="js/popper.js"></script>
+  <script src="js/main.js"></script>
+  		
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+var usuario = api.auth.get_current_user()
+
+if (usuario.username != "admin"){
+    if (usuario.scope_name[0].indexOf("_") != -1){
+        var scopo =  usuario.scope_name[0]
+        var scopo_array = scopo.split("_")
+        var planta = (scopo_array[scopo_array.length-1]).toUpperCase()
+         document.getElementById("as_planta_portacliche").value = planta
+    } 
+}
+
+
+  	</script>
+  	
+  	<script>
+  	
+  // preenche selects
+  
+ 
+  
+    
+    
+    selectTipo15 = document.getElementById('fornecedor_portacliche');
+  
+  
+    var tiposTipo15 = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","portacliche"]).results
+    for (var i = 0; i<tiposTipo15.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo15[i].nome;
+        opt.innerHTML = tiposTipo15[i].nome;
+        selectTipo15.appendChild(opt);
+    }
+    
+   
+    
+    </script>
+  	
+
+
+
+
+ 
+    
+    
+    <script>
+      function filtro_nomenclatura() {
+      var input, input2, input3, input4, filter, table, tr, td, td2, td3,td4, i, txtValue;
+      input = document.getElementById("input_nomenclatura");
+      input2 = document.getElementById("input_numero");
+      input3 = document.getElementById("input_duplaface");
+      input4 = document.getElementById("input_status");
+      filter = input.value.toUpperCase();
+      filter2 = input2.value.toUpperCase();
+      filter3 = input3.value.toUpperCase();
+      filter4 = input4.value.toUpperCase();
+      table = document.getElementById("tabela_pc");
+      tr = table.getElementsByTagName("tr");
+      
+      var string_busca = ""
+      if (filter != ""){
+          string_busca = string_busca+"txtValue.toUpperCase().indexOf(filter) > -1"
+      } 
+      
+      if (filter2 != ""){
+          if (string_busca.length > 0){
+              string_busca = string_busca+" || "
+          }
+          string_busca = string_busca+"txtValue2.toUpperCase().indexOf(filter2) > -1"
+      }
+      
+      if (filter3 != ""){
+          if (string_busca.length > 0){
+              string_busca = string_busca+" || "
+          }
+          string_busca = string_busca+"txtValue3.toUpperCase().indexOf(filter3) > -1"
+      }
+      if (filter4 != ""){
+          if (string_busca.length > 0){
+              string_busca = string_busca+" || "
+          }
+          string_busca = string_busca+"txtValue4.toUpperCase().indexOf(filter4) > -1"
+      }
+      console.log(string_busca)
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        td2 = tr[i].getElementsByTagName("td")[1];
+        td3 = tr[i].getElementsByTagName("td")[2];
+        td4 = tr[i].getElementsByTagName("td")[3];
+       
+        if (td || td2 || td3 || td4) {
+          txtValue = td.textContent || td.innerText
+          txtValue2 = td2.textContent || td2.innerText
+          txtValue3 = td3.textContent || td3.innerText
+          txtValue4 = td4.textContent || td4.innerText
+          
+          
+          if (string_busca) {
+            console.log("achei!!")     
+            tr[i].style.display = "";
+          } else {
+              console.log("Não achei!")
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    
+    function filtro_duplaface() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("input_duplaface");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_pc");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    
+    function filtro_numero() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("input_numero");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_pc");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    
+    function filtro_status() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("input_status");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_pc");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[3];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+    
+    </script>
+
+<script>
+
+    
+        function mostraPortacliche(){
+         
+        var div_cliente = document.getElementById("info_portacliche")
+        var icone = document.getElementById("portaclicheArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            
+            } else {
+                document.getElementById("id_portacliche").innerText = ""
+                document.getElementById("passo_portacliche").value="";
+                           document.getElementById("nomenclatura_portacliche").value= "";
+                            document.getElementById("perimetro_portacliche").value= "";
+                            document.getElementById("distorcido_portacliche").value= "";
+                            document.getElementById("diametro_portacliche").value="";
+                            document.getElementById("fornecedor_portacliche").value="undefined";
+                            document.getElementById("numero_portacliche").value="";
+                            document.getElementById("lote_portacliche").value = "";
+                            document.getElementById("sleeve_portacliche").value = "";
+                            document.getElementById("totalpecas_portacliche").value="0";
+                            document.getElementById("id_portacliche").innerText="";
+                            document.getElementById("espessuradupla_portacliche").value="undefined";
+                            document.getElementById("status_portacliche").value="undefined";
+                            document.getElementById("observacoes_portacliche").value="";
+                            document.getElementById("qual_cilindro").innerText="";
+                div_cliente.style.display = "none";
+            }
+     
+      }
+      
+      function mostraReport(){
+         
+        var div_cliente = document.getElementById("info_report")
+        var icone = document.getElementById("reportArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            preenche_lista()
+            } else {
+                 todos = []
+                
+                div_cliente.style.display = "none";
+                
+            }
+            
+     
+      }
+      
+  </script>
+  
+
+
+
+
+<script>
+    function salvar_portacliche(){
+        var existe_id = document.getElementById("id_portacliche").innerText
+        var existe_array = existe_id.split("_")
+        var numero_cilindro = parseInt(existe_array[1])
+        console.log("NUMERO DO CLINDRO ====>"+numero_cilindro)
+        console.log(existe_id)
+        var data ={}
+        
+        if (existe_id == ""){
+        data["nomenclatura"] = document.getElementById("nomenclatura_portacliche").value
+        data["distorcido"] = document.getElementById("distorcido_portacliche").value
+        data["numero"] = document.getElementById("numero_portacliche").value
+        data["fornecedor"] = document.getElementById("fornecedor_portacliche").value
+        data["lote"] = document.getElementById("lote_portacliche").value
+        data["sleeve"] = document.getElementById("sleeve_portacliche").value
+        data["perimetro"] = document.getElementById("perimetro_portacliche").value
+        data["passo"] = document.getElementById("passo_portacliche").value
+        data["diametro"] = document.getElementById("diametro_portacliche").value
+        data["usuario"] = usuario
+        data["espessuradupla"] = document.getElementById("espessuradupla_portacliche").value
+        data["status"] = document.getElementById("status_portacliche").value
+        data["observacoes"] = document.getElementById("observacoes_portacliche").value
+        data["planta"] = [planta]
+        var cria = api.hub.start_from_whitepaper_with_files_and_variables("[CADASTRO TECNICOS]","portacliche_Criar",[],data)
+        console.log(cria)
+            
+            
+            
+        } else {
+        data["_id"] = existe_id.substring(existe_id.lastIndexOf("_")+1,existe_id.length)
+        
+        for (i=0;i<os_porta.length;i++){
+          if (os_porta[i]._id == data._id){
+              os_porta[i].cilindros[numero_cilindro]["perimetro"] = document.getElementById("perimetro_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["distorcido"] = document.getElementById("distorcido_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["numero"] = document.getElementById("numero_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["fornecedor"] = document.getElementById("fornecedor_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["lote"] = document.getElementById("lote_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["sleeve"] = document.getElementById("sleeve_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["diametro"] = document.getElementById("diametro_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["espessuradupla"] = document.getElementById("espessuradupla_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["status"] = document.getElementById("status_portacliche").value
+              os_porta[i].cilindros[numero_cilindro]["observacoes"] = document.getElementById("observacoes_portacliche").value
+             var indice = i 
+              
+          }  
+        }
+        var cria = api.hub.start_from_whitepaper_with_files_and_variables("[CADASTRO TECNICOS]","portacliche_Alterar",[],{"id":data._id,"thecils":os_porta[indice].cilindros,"passo":document.getElementById("passo_portacliche").value})
+      
+        }
+        
+        
+       
+       
+       
+       setTimeout(function(){document.getElementById("nomenclatura_portacliche").value="";
+       
+                            document.getElementById("passo_portacliche").value="";
+                            document.getElementById("perimetro_portacliche").value= "";
+                            document.getElementById("distorcido_portacliche").value= "";
+                            document.getElementById("diametro_portacliche").value="";
+                            document.getElementById("fornecedor_portacliche").value="undefined";
+                            document.getElementById("numero_portacliche").value="";
+                            document.getElementById("lote_portacliche").value = "";
+                            document.getElementById("sleeve_portacliche").value = "";
+                            document.getElementById("totalpecas_portacliche").value="0";
+                            document.getElementById("id_portacliche").innerText="";
+                            document.getElementById("espessuradupla_portacliche").value="undefined";
+                            document.getElementById("status_portacliche").value="undefined";
+                            document.getElementById("observacoes_portacliche").value="";
+                            document.getElementById("qual_cilindro").innerText="";
+                            document.getElementById("passo_portacliche").readOnly = false;
+                            document.getElementById("distorcido_portacliche").readOnly = false;
+                            document.getElementById("perimetro_portacliche").readOnly = false;
+                          
+                            
+                           // document.getElementById("as_planta_portacliche").value="";
+                           // document.getElementById("as_planta_portacliche").value="";
+                            preenche_portacliche()
+           
+       },1000)
+                            
+        
+       
+       }
+    
+    
+    let os_porta
+     function preenche_portacliche(){
+        os_porta = api.custom_objects.list_with_options("BR-VALFI_portacliche").results
+     document.getElementById("div_tabela_detalhes_pc").style ="display: none;"
+       
+        clearTable(document.getElementById("tabela_portacliche"))
+        clearTable(document.getElementById("tabela_detalheportacliche"))
+          
+          
+         var table = document.getElementById("tabela_portacliche")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_porta.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            
+             
+            var quantas =  os_porta[i].cilindros.length
+           
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer; text-align: center;" onclick="preencheDetalhesPC('+i+')">'+quantas+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer; text-align: center;" onclick="preencheDetalhesPC('+i+')">'+os_porta[i].nomenclatura+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer; text-align: center;" onclick="preencheDetalhesPC('+i+')">'+os_porta[i].diametro+'</div>'
+            cell4.innerHTML = '<div style="font-size:1em; cursor: pointer; text-align: center;" onclick="preencheDetalhesPC('+i+')">'+os_porta[i].passo+'</div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    var div_cliente = document.getElementById("info_portacliche")
+   if (div_cliente.style.display == "inline-block"){
+       mostraPortacliche()
+   }
+}
+ 
+ 
+
+ var thedoors = []
+ function preencheDetalhesPC(numero){
+      thedoors = []
+     var baseID = os_porta[parseInt(numero)]._id
+       for (i=0;i<os_porta[parseInt(numero)].cilindros.length;i++){
+           thedoors.push(os_porta[parseInt(numero)].cilindros[i])
+       }
+    preencheDetalhesPC2(os_porta[parseInt(numero)].nomenclatura,baseID) 
+ }
+    
+    function preencheDetalhesPC2(nomecilindro,baseID){
+        document.getElementById("div_tabela_detalhes_pc").style ="display: inline-block; vertical-align: 100%;"
+        document.getElementById("titulo_detalhe_pc").innerText = "Lista de Cilindros da Nomenclatura "+nomecilindro
+        clearTable(document.getElementById("tabela_detalheportacliche"))
+        var table = document.getElementById("tabela_detalheportacliche")
+        var qtasrow = table.rows.length
+        
+        for (i=0;i<thedoors.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            
+            
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer; text-align: center;">'+thedoors[i].numero+'</div>'
+           
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer; text-align: center;">'+thedoors[i].perimetro+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer; text-align: center;">'+thedoors[i].distorcido+'</div>'
+          
+            if (thedoors[i].relatorios === undefined){
+            cell4.innerHTML = '<div></div>'
+            } else {
+             var last_report = thedoors[i].relatorios.length
+             cell4.innerHTML = '<div><a href="'+thedoors[i].relatorios[last_report-1].view_url+'" target="_Blank"><img src="Icons/view.png" height="20px"  style="cursor: pointer;"></a></div>'  
+            }
+            cell5.innerHTML = '<div><a href="uploadPDF_Cilindro.html?ordem='+i+'_'+baseID+'" target="_Blank"><img src="Icons/upload.png" height="20px"  style="cursor: pointer;"></a></div>'
+            cell6.innerHTML = '<div><img id="editpc_'+i+'_'+baseID+'" src="Icons/edit.png" height="20px" onclick="editar_portacliche()" style="cursor: pointer;"></div>'
+            cell7.innerHTML = '<div><img id="deletepc_'+i+'_'+baseID+'" src="Icons/delete.png" height="20px" onclick="apagar_portacliche()" style="cursor: pointer;"></div>'
+           
+           
+            qtasrow = qtasrow +1
+            
+            
+            
+        
+    }
+    }
+    
+     function apagar_portacliche(){
+    if (confirm("Deseja mesmo apagar esse porta clichê?") === true){     
+    var linha = event.srcElement.id
+    var linha_array = linha.split("_")
+     var numerocilindro = parseInt(linha_array[1])
+     console.log("NUMEERO DO CILINDRO  ---->"+numerocilindro)
+    var ID = linha_array[2]
+     
+      console.log("TINHAM ---> "+thedoors.length)
+      var tira = thedoors.splice(numerocilindro,1)
+      console.log("SOBRARAM ---> "+thedoors.length)
+    if (thedoors.length > 0){
+        console.log(" O ID "+ID)
+        
+    var altera = api.custom_objects.set_keys("BR-VALFI_portacliche",ID,{"cilindros":thedoors})
+    console.log("ALTEREI "+altera)
+    } else {
+        api.custom_objects.delete("BR-VALFI_portacliche",ID)
+    }
+   clearTable(document.getElementById("tabela_detalheportacliche"))
+   document.getElementById("div_tabela_detalhes_pc").style.display = "none"
+   preenche_portacliche()    
+    }
+     }
+    
+     function editar_portacliche(){
+     var linha = event.srcElement.id
+     console.log(linha)
+     var linha_array = linha.split("_")
+     var numeroporta = parseInt(linha_array[1])
+     console.log("NUMERO CILINDRO ---> "+numeroporta)
+     
+     var nomethecilinder = ""
+     var diametercilinder = ""
+     var passo = ""
+     var passo_distorcido = ""
+     
+     for (i=0;i<os_porta.length;i++){
+         if (linha_array[2] == os_porta[i]._id){
+            nomethecilinder = os_porta[i].nomenclatura
+            diametercilinder = os_porta[i].diametro
+            passo = os_porta[i].passo
+         }
+     }
+     
+     document.getElementById("id_portacliche").innerText = linha
+    
+    document.getElementById("info_portacliche").style = "display: inline-block; width: 100%;"
+    document.getElementById("nomenclatura_portacliche").value = nomethecilinder
+    document.getElementById("distorcido_portacliche").value = thedoors[numeroporta].distorcido
+    document.getElementById("passo_portacliche").value = passo
+    document.getElementById("numero_portacliche").value = thedoors[numeroporta].numero
+    document.getElementById("diametro_portacliche").value = diametercilinder
+    document.getElementById("perimetro_portacliche").value = thedoors[numeroporta].perimetro
+    document.getElementById("lote_portacliche").value = thedoors[numeroporta].lote
+    document.getElementById("sleeve_portacliche").value = thedoors[numeroporta].sleeve
+    document.getElementById("espessuradupla_portacliche").value = thedoors[numeroporta].espessuradupla
+    document.getElementById("observacoes_portacliche").value = thedoors[numeroporta].observacoes
+    document.getElementById("fornecedor_portacliche").value = thedoors[numeroporta].fornecedor
+    document.getElementById("status_portacliche").value = thedoors[numeroporta].status
+    document.getElementById("as_planta_portacliche").value = thedoors[numeroporta].plantas
+    
+     document.getElementById("totalpecas_portacliche").value = thedoors.length
+     var perimetro = parseFloat(thedoors[numeroporta].perimetro.replace(",","."))
+    
+    
+    
+    }
+    
+    function cancelar_portacliche(){
+     document.getElementById("nomenclatura_portacliche").value = ""
+     document.getElementById("distorcido_portacliche").value = ""
+    document.getElementById("numero_portacliche").value = ""
+    document.getElementById("perimetro_portacliche").value = ""
+    document.getElementById("lote_portacliche").value = ""
+    document.getElementById("sleeve_portacliche").value = ""
+    document.getElementById("passo_portacliche").value = ""
+    document.getElementById("fornecedor_portacliche").value = "undefined"
+     document.getElementById("totalpecas_portacliche").value = "0"
+     document.getElementById("diametro_portacliche").value = "0"
+       document.getElementById("observacoes_portacliche").value = ""
+    
+   document.getElementById("div_tabela_detalhes_pc").style.display = "none"
+   clearTable(document.getElementById("tabela_detalheportacliche"))
+     setTimeout(function(){mostraPortacliche()},1000)
+     
+    }
+    
+     function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+    
+    function calcula_diametro(){
+        var perimetro = parseFloat(document.getElementById("perimetro_portacliche").value.replace(",","."))
+        
+        document.getElementById("diametro_portacliche").value = (perimetro/Math.PI).toFixed(3)
+        console.log(perimetro)
+        
+    }
+    
+    function busca_portacliche(){
+       var qtepecas = api.custom_objects.list("BR-VALFI_portacliche",["nomenclatura","equal to",document.getElementById("nomenclatura_portacliche").value]).results
+        document.getElementById("totalpecas_portacliche").value = qtepecas.length+1
+        document.getElementById("passo_portacliche").value = qtepecas[0].passo
+        document.getElementById("passo_portacliche").readOnly = true;
+        document.getElementById("perimetro_portacliche").value = qtepecas[0].cilindros[0].perimetro
+        document.getElementById("perimetro_portacliche").readOnly = true;
+        document.getElementById("distorcido_portacliche").value = qtepecas[0].cilindros[0].distorcido
+        document.getElementById("distorcido_portacliche").readOnly = true;
+        document.getElementById("diametro_portacliche").value = qtepecas[0].diametro
+        if (qtepecas.length+1 == 2){
+        document.getElementById("numero_portacliche").value = parseInt(qtepecas[0].cilindros[qtepecas[0].cilindros.length-1].numero)+1
+        }
+    }
+    
+    function fecha_pc(){
+       clearTable(document.getElementById("tabela_detalheportacliche"))
+       document.getElementById("div_tabela_detalhes_pc").style ="display:none;"
+       
+         
+    }
+    
+    preenche_portacliche()
+</script>
+<script>
+var todos = []
+
+var esta_liberado = 0
+var esta_avaria = 0
+var esta_inativo = 0
+    function preenche_lista(){
+        
+        os_porta = api.custom_objects.list_with_options("BR-VALFI_portacliche",[],["nomenclatura","ascending"]).results
+       
+        clearTable(document.getElementById("tabela_pc"))
+          
+        var table = document.getElementById("tabela_pc")
+        var qtasrow = table.rows.length
+    
+        for (i=0;i<os_porta.length;i++){
+            var cilindros_lista = os_porta[i].cilindros
+            for (j=0;j<cilindros_lista.length;j++){
+                
+                    cilindros_lista[j]["nomenclatura"] = os_porta[i].nomenclatura
+                    todos.push(cilindros_lista[j])
+                
+            }
+        }
+         
+         
+        
+        
+        todos.sort(function(a, b) {
+           return a.nomenclatura -  b.nomenclatura;
+        })
+         var table = document.getElementById("tabela_pc")
+        var qtasrow = table.rows.length
+      console.log(todos.length)
+            
+            for (i=0;i<todos.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            
+            var color_texto = "#212529"
+            if (todos[i].status == "Liberado"){
+                color_texto = "green"
+                esta_liberado = esta_liberado + 1
+            }
+            if (todos[i].status == "Com Avaria"){
+                color_texto = "orange"
+                esta_avaria = esta_avaria + 1
+            }
+            if (todos[i].status == "Inativo"){
+                color_texto = "red"
+                esta_inativo = esta_inativo + 1
+            }
+            
+            var cor_dupla = "blue"
+            if (todos[i].espessuradupla == "0.38"){
+                cor_dupla = "black"
+            }
+            
+            cell1.innerHTML = '<div style="font-size:1em; text-align: center; color:'+color_texto+';" >'+todos[i].nomenclatura+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; text-align: center; color:'+color_texto+';" >'+todos[i].numero+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; text-align: center; color:'+cor_dupla+';" >'+todos[i].espessuradupla+'</div>'
+            cell4.innerHTML = '<div style="font-size:1em; text-align: center; color:'+color_texto+';" >'+todos[i].status+'</div>'
+           
+           qtasrow = qtasrow +1
+      
+      
+      
+        
+    }
+     var infograf = [esta_liberado,esta_avaria,esta_inativo]
+
+    	var config = {
+			type: 'pie',
+			data: {
+				datasets: [{
+					data: infograf,
+					backgroundColor: [
+						window.chartColors.green,
+						window.chartColors.orange,
+						window.chartColors.red,
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+					'Liberado',
+					'Com Avaria',
+					'Inativo',
+				]
+			},
+			options: {
+				responsive: true,
+				title: "Estado dos Cilindros"
+			}
+		};
+		
+		
+			var ctx = document.getElementById('chart-area').getContext('2d');
+			window.myPie = new Chart(ctx, config);
+	
+   
+   }
+</script>
+<script>
+
+
+</script>
+
+    </body>
+
+</html>

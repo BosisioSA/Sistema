@@ -1,0 +1,66 @@
+.nixps-asset-AssetPreview {
+    
+}
+
+.nixps-asset-AssetPreview.CloudflowStyle_assetview {
+    z-index: 1000;
+    background: #fff;
+
+    position: fixed;
+    top: 126px;
+    right: 0;
+    left: 50%;
+    bottom: 0;
+}
+
+.nixps-asset-AssetPreview .assetpreview_topbar {
+    height: 23px;
+}
+.nixps-asset-AssetPreview .assetpreview_image {
+    height: 75%;
+    height: calc( 100% - 23px - 45px);
+    width: 100%;
+}
+
+.nixps-asset-AssetPreview.CloudflowStyle_assetview .assetpreview_topbar {
+    background: #fff;
+}
+
+.nixps-asset-AssetPreview .assetpreview_topbar .assetpreview_closebutton {
+    cursor: pointer;
+    float: right;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.nixps-asset-AssetPreview .assetpreview_title, 
+.nixps-asset-AssetPreview .assetpreview_image {
+    text-align: center;
+}
+
+.nixps-asset-AssetPreview .assetpreview_image > div {
+    height: 100%;
+    width: 100%;
+}
+
+.nixps-asset-AssetPreview .assetpreview_image > div > img {
+    max-width: 100%;
+    max-width: calc( 100% - 40px);
+    max-height: 100%;
+}
+.nixps-asset-AssetPreview .assetpreview_image.assetpreview_folder_image img {
+    width: 200px;
+}
+.nixps-asset-AssetPreview .assetpreview_title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+.nixps-asset-AssetPreview.CloudflowStyle_assetview .assetpreview_title {
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    padding: 7px 15px;
+    font-size: 1.7em;
+}

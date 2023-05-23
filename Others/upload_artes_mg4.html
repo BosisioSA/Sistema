@@ -1,0 +1,469 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Upload Artes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+         <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload.js'></script>
+      
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload-controller.js'></script>
+       
+       
+    <script>
+		var trans = {'nixps-cloudflow-upload.button_text_browse': "Selecionar Arquivo..."};
+		$.i18n.setDictionary(trans);
+		
+
+	        var ts ='';
+		var lSession=api_sync.auth.create_session('admin','Oicu812!');
+
+	        function getUrlVars() {
+    		  var vars = {};
+		  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        	    vars[key] = value;
+    		  });
+		  return vars;
+		}
+
+		function init() {
+	          var upload = getUrlVars()['upload'];
+		  if (upload=='done') $('#info_ticket').html('Upload realizado com sucesso! fazer outro upload?');
+		  $('#uploadstamp').val(ts);
+
+		  api_sync.m_session=lSession;
+		 // var lData=api_sync.file.create_folder('cloudflow://PP_FILE_STORE/','entrada');
+
+		  $( "#logout" ).on( "click", function () {
+        	$.cookie('user_id','', { expires: -1, path: '/' });
+        	$.cookie('user_hash','', { expires: -1, path: '/' });
+        	$.cookie('expiration_date','', { expires: -1, path: '/' });
+        	$.cookie('customer_id','', { expires: -1, path: '/' });
+        	$.cookie('customer_name', '', { expires: -1 , path: '/' });
+       		$.cookie('username', '', { expires: -1 , path: '/' });
+        	$.cookie('scope', '', { expires: -1 , path: '/' });
+        	window.location = '.';
+    	  });
+		}
+
+		// this handler is executed when we click on the button
+		$(document).ready(function() {
+			var g_files = [];
+			 function checkRequiredFields() {
+                    var l_result = true;
+                    var l_fields = ['sku', 'articleid'];
+
+                    for(var i in l_fields) {
+                        var l_name = l_fields[i];
+                        var l_inputfield = $('[customer='+l_name+']');
+                        var l_value = l_inputfield.val();
+                    }
+
+					if (g_files.length == 0)
+					{
+						$('.xeikon_file_uploader').addClass('fillin');
+					}
+					else
+					{
+						$('.xeikon_file_uploader').removeClass('fillin');
+					}
+                    return l_result;
+                }
+
+			var lSession=api_sync.auth.create_session('admin','Oicu812!');
+			$.cookie('session',lSession.session,{ expires:2, path:'/'});
+
+			var l_div=$(".xeikon_file_uploader");
+		        ts = ''+parseInt(new Date().getTime()/1000);
+			var l_uploader=upload.setup_ui(
+				l_div,
+				{
+					url:'/?url='+encodeURIComponent("cloudflow://PP_FILE_STORE/"),
+					multiple:false,
+					only_upload:true,
+					got_files_cb: function(p_file, p_url) { g_files.push(p_url); },
+					//*  Only PDF files:
+ 				    check_file_cb: function (p_filename, p_size, p_type)
+    					{
+							var ok = (p_filename.length > 4);
+						if (!ok || (p_filename.toLowerCase().substr(p_filename.length - 4) != '.zip'))
+					 {
+					 l_uploader.add_failed_entry(p_filename, 'Somente é possível fazer upload de arquivos no formato .zip');
+					 return false;
+					}
+					return true;
+					}
+				});
+			$('#registerButton').on('click',function ()
+			{
+				// log into the system, and use it to set the cookie
+				var lSession=api_sync.auth.create_session('admin','Oicu812!');
+
+				api_sync.m_session=lSession;
+
+				gInput="register";
+
+				var lData=api_sync.ui.convert_form_to_json($('#formularioUser'));
+
+				lData.references={
+					files: g_files
+					//folder_name: gfoldername
+				};
+
+                var l_values = {
+                 customer:'', articleid:''
+                 };
+                    $('#formularioUser').find('input').each(function (p_index, p_child)
+                   {
+					l_values[$(p_child).attr('name')] = $(p_child).val();
+                    });
+                    $('#formularioUser').find('textarea').each(function (p_index, p_child)
+                    {
+					l_values[$(p_child).attr('name')] = $(p_child).val();
+                    });
+
+                var dados = {}
+                dados["usuario"] = usuario
+                dados["upload"] = new Date
+                dados["criar_pasta"] = document.getElementById("criar_pasta").checked
+                dados["nome_pasta"] = document.getElementById("outra_unidade").value
+
+				// submit the data to Cloudflow
+		    var lResult=api_sync.hub.start_from_whitepaper_with_files_and_variables("BR-VALFI_upload","upload", g_files , dados);
+		    console.log(lResult);
+	            // Go to Done page
+	//	var l_customername = $('#sku').val();
+//		var l_articleid = $('#linhaProduto').val();
+
+		var l_url = '/portal.cgi/PP_FILE_STORE/Sistema/upload_artes_mg4.html';
+    console.log(l_url)
+                //window.location.href = l_url;
+		window.location.href = '?upload=done';
+		console.log(lResult);
+			});
+			});
+     </script>
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+             <ul class="active components mb-5">
+                  <li  style="color: #004b93; list-style-type: none">Tickets
+                  <ul>
+                       <li  class="active" style="list-style-type: none">
+                     <a href="upload_artes_mg4.html"><i class="fas fa-crosshairs" style="margin-right: 5px"></i>Upload Artes</a>
+                    </li>
+                 <li  style="list-style-type: none">
+                     <a href="download_artes_mg4.html"><i class="fas fa-th-list" style="margin-right: 5px"></i>Download Artes</a>
+                    </li>
+                     
+                    </ul>
+                </ul>
+             
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item">
+                      <a class="nav-link" href="cadastros_clientes.html">Cadastros</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="solicitacao_desenho.html">Tickets</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+      
+          
+        <h2 style="display:inline-block;">Upload Artes MG4</h2>
+        <br>
+        <hr>
+        <h6 style="display: inline-block;">Selecionar a pasta do cliente.</h6><br>
+        <br>
+        <div  class="form-group col-md-4" style="display:inline-block; vertical-align: top;">
+                <label for="outra_unidade">Pasta Cliente</label>
+                   <input type="text" class="form-control" onfocusout="verifica_cliente()" id="outra_unidade"  name="outra_unidade" list="pastas">
+                   <datalist id="pastas"></datalist>
+                   <span class="error" id="erro_cliente" style="color: red"></span>
+        </div>
+        <div id="mostrar_cria_pasta" class="form-group col-md-4" style="display:none;">
+                   <input type="checkbox" class="form-group"  id="criar_pasta" onchange="nova_pasta()" name="criar_pasta">
+                   <label for="criar_pasta">Criar Pasta?</label>
+                
+                  
+        </div>
+        
+        <br>
+         
+                 
+                 
+               
+                 
+                   
+                  <div id="info_ticket" style="color: green"></div>
+                   
+                    <div id="mostrar_upload" class="form-group col-md-11" style="display: none">
+                    <div class="xeikon_file_uploader" style="position: relative; width:100%; height:200px; border-width:1px; border-radius:5px; border-style:solid; border-color:#e5e5e5;">
+                    </div>
+                    <button class="btn btn-primary registerButton clearfix" id='registerButton' >Fazer o Upload</button>
+                </div>
+                
+              
+                
+                 
+                 
+       
+            
+             
+            
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+               
+              
+        
+        
+       
+  	</div>
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	    var usuario = api.auth.get_current_user()
+  	    
+  	    document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname
+  	 //   document.getElementById("data_entrega").value = "02:00"
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+// preenche dados se existe ordem
+
+
+
+
+// preenche datalist
+var pastas = api.folder.list_with_options(["path.0","equal to","MG4","and","depth","equal to",1],[],["name"]).results
+
+ var options=''; // variable to store the options
+        for(var i = 0; i < pastas.length; i++){
+            
+        options += '<option value="'+pastas[i].name+'" />';
+
+        }
+         document.getElementById('pastas').innerHTML = options;
+    
+ 
+    
+   
+    
+    // preenche Datalist
+    
+    
+           
+ 
+var hoje = new Date()
+
+  	</script>
+ <script>
+     function verifica_cliente(){
+         var existe = false
+         var escolhido = document.getElementById("outra_unidade").value
+         
+         for (i=0;i<pastas.length;i++){
+             if (pastas[i].name == escolhido){
+                 existe = true
+             }
+         }
+         
+         if (existe === true){
+             document.getElementById("mostrar_upload").style="display: inline-block;"
+             document.getElementById("erro_cliente").innerText = ""
+             document.getElementById("mostrar_cria_pasta").style = "display: none;"
+         } else {
+            document.getElementById("mostrar_upload").style="display: none;" 
+            document.getElementById("erro_cliente").innerText = "Pasta não existe no sistema"
+            document.getElementById("mostrar_cria_pasta").style = "display: inline-block;"
+         }
+     }
+     
+     function nova_pasta(){
+         if (document.getElementById("criar_pasta").checked === true){
+          document.getElementById("mostrar_upload").style="display: inline-block;vertical-align: top;"   
+         } else {
+          document.getElementById("mostrar_upload").style="display: none;"    
+         }
+     }
+ </script>
+  
+  	
+  
+
+
+
+
+
+
+    </body>
+
+</html>

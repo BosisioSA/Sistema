@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Lista Uploads - Finepack</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload-controller.js'></script>
+        <script src="js/popper.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+          function logout() {
+               $.cookie('user_id', '', { expires: -1, path: '/' });
+               $.cookie('user_hash', '', { expires: -1, path: '/' });
+               $.cookie('expiration_date', '', { expires: -1, path: '/' });
+               $.cookie('customer_id', '', { expires: -1, path: '/' });
+               $.cookie('customer_name', '', { expires: -1, path: '/' });
+               $.cookie('username', '', { expires: -1, path: '/' });
+               $.cookie('scope', '', { expires: -1, path: '/' });
+               var lSession = api_sync.auth.create_session('', ''); // fecha sessao do CloudFlow
+               var l_url = '/portal.cgi/PP_FILE_STORE/Public/Login/login.html'
+               window.location.href = l_url;
+               //window.location.href = '?upload=done';
+          }
+             
+           
+       </script>
+
+
+    </head>
+
+
+    <body onload="preencheLista()">
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/finepack.png" style="width: 70%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Vinculo
+                  <ul>
+                  <li style="list-style-type: none">
+                     <a href="Upload_Interno.html"><i class="fas fa-file-upload" style="margin-right: 5px"></i>Novo Upload</a>
+                    </li>
+                    <li class="active" style="list-style-type: none">
+                      <a href="uploads.html"><i class="fas fa-satellite-dish" style="margin-right: 5px"></i>Uploads</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="artes.html"><i class="fas fa-paint-brush" style="margin-right: 5px"></i>Artes</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="vinculos.html"><i class="fas fa-link" style="margin-right: 5px"></i>Vinculos</a>
+                    </li>
+                    </ul>
+                    </li>
+                    
+                    <li style="color: #004b93;list-style-type: none">OP
+                    <ul>
+                    <li style="list-style-type: none">
+                      <a href="skus.html"><i class="fas fa-search" style="margin-right: 5px"></i>Busca SKUs</a>
+                    </li>
+                    <li style="list-style-type: none">
+                    <a href="OP_Abertas.html"><i class="fas fa-tools" style="margin-right: 5px"></i>OPs Abertas</a>
+                  </li>
+                  </ul>
+                  </li>
+                  <li style="color: #004b93;list-style-type: none">Clientes
+                    <ul>
+                    <li style="list-style-type: none">
+                      <a href="fluxos.html"><i class="fas fa-thumbs-up" style="margin-right: 5px"></i>Cadastro Fluxos Aprovação</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="clientes.html"><i class="fas fa-user-friends" style="margin-right: 5px"></i>Cadastro Clientes</a>
+                    </li>
+                    </ul>
+                    </li>
+          <!--<li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Paginas Administrativas</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="artes.html">Artes</a>
+                </li>
+              </ul>
+            </li>-->
+          </ul>
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+             <div class="col-md-5" id="bemvindo"></div>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2 style="display: inline-block;">Artes Upload</h2><img src="./assets/img/reload.png" onClick="window.location.reload();" width="20px" style="display: inline-block;margin-left: 20px;margin-bottom: 11px;">
+        <section class="form-group col-md-10" style="display: inline-block;"></section><a href="Upload_Interno.html" class="btn-primary" style="padding: 5px;">Novo Upload</a>
+        <div class="form-group col-md-4" style="display:inline-block;">
+          <label for="desc">Buscar Descrição</label>
+          <input type="text" onkeyup="filtro()" class="form-control" id="desc" name="desc">
+          </div>
+
+        <div id="acaoUpload"></div>
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th class="th-sm" style="width:5%">Preview
+        </th>
+        <th class="th-sm" style="width:10%">Data Rec.
+        </th>
+        <th class="th-sm" style="width:20%">Cliente
+        </th>
+        <th class="th-sm" style="width:10%">Descrição
+        </th>
+        <th class="th-sm" style="width:8%">Status
+        </th>
+        <th class="th-sm" style="width:5%">Preflight
+        </th>
+        <th class="th-sm" style="width:5%">Editar
+        </th>
+        <th class="th-sm" style="width:5%">Novo
+        </th>
+        <th class="th-sm" style="width:5%">Deletar
+      </th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+        </div>
+  		</div>
+
+      <script>
+        function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+      </script>
+
+      <script>
+         function preencheLista(){
+        clearTable(document.getElementById("dtBasicExample"));
+      var tabela = document.getElementById("dtBasicExample");
+      var qtasrow = tabela.rows.length;
+      var a_lista = api.custom_objects.list_with_options("Finepack_DummyUpload",["approval","not equal to","approved","and","approval","not equal to","desvinculado"]).results
+      for (i=0;i<a_lista.length;i++){
+          
+         
+          
+        var row =  tabela.insertRow(qtasrow);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+
+
+        var codigoCliente = a_lista[i].Codigo_Cliente+" - "+a_lista[i].Cliente
+
+        var icone = "./Icons/preflight_ok.png"
+
+        if (a_lista[i].erros_preflight.erros > 0){
+          icone = "./Icons/preflight_erro.png"
+        } else {
+          if (a_lista[i].erros_preflight.avisos > 0){
+            icone = "./Icons/preflight_warning.png"
+          }
+        }
+
+        var status = "./Icons/aguardando_aprovacao.png"
+
+        if (a_lista[i].approval == "rejected"){
+          status = "./Icons/aguardando_novo_arquivo.png"
+        }
+
+        cell1.innerHTML = '<div style="margin: auto;cursor: pointer; margin: 15px 0;"><a href="'+a_lista[i].proofscope+'" target="_blank"><img src="http://189.112.135.139:9090'+a_lista[i].preview+'" height="100px" width:"100px"></a></div>';
+        cell2.innerHTML = '<div style="vertical-align: middle;">'+a_lista[i].data_upload+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle;">'+codigoCliente+'</div>';
+        cell4.innerHTML = '<div style="vertical-align: middle;">'+a_lista[i].Produto+'</div>';
+        cell6.innerHTML = '<div style="vertical-align: middle;"><img src="'+icone+'" width="50px"></div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;"><img src="'+status+'" width="80px"></div>';
+        cell7.innerHTML = '<div><a href="http://189.112.135.139:9090/portal.cgi/PP_FILE_STORE/Sistema/detalheUpload.html?ordem='+a_lista[i]._id+'" style="cursor: pointer; margin: 15px 0;" target="_blank"><img src="./Icons/Edit.png" width="50px"></a></div>';
+        cell8.innerHTML = '<div><a href="http://189.112.135.139:9090/portal.cgi/PP_FILE_STORE/Sistema/novo_Upload.html?ordem='+a_lista[i]._id+'" style="cursor: pointer; margin: 15px 0;" target="_blank"><img src="./Icons/novo_arquivo.png" width="50px"></a></div>';
+        cell9.innerHTML = '<div style="cursor: pointer; margin: 15px 0;"><img onclick="reply_click()" id="apagaUpload_'+a_lista[i]._id+'" src="./Icons/delete.png" width="50px"></div>';
+                 
+        qtasrow = qtasrow+1
+      }
+         }
+
+
+      </script>
+      <script>
+      function iniciaAprova(element){
+        console.log("teste")
+      var linha = ""
+      function getID(element){
+        //linha = element.parentNode.parentNode.rowIndex
+        alert(element.parentNode.parentNode.rowIndex)
+      }
+
+    }
+      </script>
+      <script>
+      //    function abrirOS(){
+    // var parameter1 = a_lista[i].Order.ID; // some thing like this you can set value for 1st Param.
+    //console.log("Executando o script para OS "+parameter1)
+    //window.location.href="/portal.cgi/PP_FILE_STORE/Sistema/DetalheOS.html/"+parameter1;
+
+//}
+      </script>
+    <script>
+    var usuario = api.auth.get_current_user()
+    var texto = "Bem vindo, "+usuario.fullname
+    document.getElementById("bemvindo").innerText = texto
+</script>
+<script>
+function reply_click()
+{
+  
+    var linha = event.srcElement.id
+    //console.log(linha)
+    var linha_2 = linha.split("_")
+    console.log("A Linha 2 "+linha_2[1])
+    //console.log(linha_2[1])
+    var qualUpload = api.custom_objects.list_with_options("Finepack_DummyUpload",["_id","equal to",linha_2[1]]).results[0]
+console.log("Nome da Pasta "+qualUpload.fileInfo)
+   var nome = (qualUpload.fileInfo.folder_path).replace("/conferencia", '')
+   var nomeOK = decodeURI(nome)
+   api.file.delete_folder(nomeOK)   
+   api.custom_objects.delete("Finepack_DummyUpload",linha_2[1])
+
+   $('#acaoUpload').text('O upload esta sendo eliminado da base de dados e os arquivos sendo apagados da pasta')
+    setTimeout(() => { $('#acaoUpload').text();preencheLista() }, 1000);
+
+}
+</script>
+<script>
+  function filtro() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("desc");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script> </body>
+
+</html>

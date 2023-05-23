@@ -1,0 +1,878 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Novo Pedido de Vendas</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+         <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload.js'></script>
+      
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload-controller.js'></script>
+         <script>
+            var queryString = window.location.search;
+            //console.log(queryString);
+            //var ordem2 = queryString.substring(7)
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+            console.log(ordem)
+        </script>
+         <script>
+		var trans = {'nixps-cloudflow-upload.button_text_browse': "Selecionar Arquivo..."};
+		$.i18n.setDictionary(trans);
+		
+
+	        var ts ='';
+		var lSession=api_sync.auth.create_session('admin','Oicu812!');
+
+	        function getUrlVars() {
+    		  var vars = {};
+		  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        	    vars[key] = value;
+    		  });
+		  return vars;
+		}
+
+		function init() {
+	          var upload = getUrlVars()['upload'];
+		  if (upload=='done') $('#message').html('File uploaded! Deliver a new file...');
+		  $('#uploadstamp').val(ts);
+
+		  api_sync.m_session=lSession;
+		  var lData=api_sync.file.create_folder('cloudflow://PP_FILE_STORE/','entrada');
+
+		  $( "#logout" ).on( "click", function () {
+        	$.cookie('user_id','', { expires: -1, path: '/' });
+        	$.cookie('user_hash','', { expires: -1, path: '/' });
+        	$.cookie('expiration_date','', { expires: -1, path: '/' });
+        	$.cookie('customer_id','', { expires: -1, path: '/' });
+        	$.cookie('customer_name', '', { expires: -1 , path: '/' });
+       		$.cookie('username', '', { expires: -1 , path: '/' });
+        	$.cookie('scope', '', { expires: -1 , path: '/' });
+        	window.location = '.';
+    	  });
+		}
+
+		// this handler is executed when we click on the button
+		$(document).ready(function() {
+			var g_files = [];
+			 function checkRequiredFields() {
+                    var l_result = true;
+                    var l_fields = ['sku', 'articleid'];
+
+                    for(var i in l_fields) {
+                        var l_name = l_fields[i];
+                        var l_inputfield = $('[customer='+l_name+']');
+                        var l_value = l_inputfield.val();
+                    }
+
+					if (g_files.length == 0)
+					{
+						$('.xeikon_file_uploader').addClass('fillin');
+					}
+					else
+					{
+						$('.xeikon_file_uploader').removeClass('fillin');
+					}
+                    return l_result;
+                }
+
+		//	var lSession=api_sync.auth.create_session('admin','paime2022);
+	//		$.cookie('session',lSession.session,{ expires:2, path:'/'});
+        	var l_div=$(".xeikon_file_uploader");
+		        ts = ''+parseInt(new Date().getTime()/1000);
+			var l_uploader=upload.setup_ui(
+				l_div,
+				{
+					url:'/?url='+encodeURIComponent("cloudflow://PP_FILE_STORE/entrada/"),
+					multiple:true,
+					only_upload:true,
+					got_files_cb: function(p_file, p_url) { g_files.push(p_url); },
+					//*  Only PDF files:
+ 				    check_file_cb: function (p_filename, p_size, p_type)
+    					{
+							var ok = (p_filename.length > 4);
+						if (!ok || data_pagina.tipo_anexo == "undefined")
+					 {
+					 l_uploader.add_failed_entry(p_filename, 'Por favor, selecionar o tipo de anexo!');
+					 return false;
+					}
+					return true;
+					}
+				});
+			$('#registerButton').on('click',function ()
+			{
+				// log into the system, and use it to set the cookie
+				var lSession=api_sync.auth.create_session('admin','paime2022');
+
+				api_sync.m_session=lSession;
+
+				gInput="register";
+
+				var lData={}
+
+				lData.references={
+					files: g_files
+					//folder_name: gfoldername
+				};
+				
+				var info_step4 = {}
+
+                info_step4["codigos_barra"] = os_codigos_barra
+                info_step4["usuario"] = usuario
+                if (data_pagina.info_step4 != undefined){
+                info_step4["anexos_tecnicos"] = data_pagina.info_step4.anexos_tecnicos
+                }
+                info_step4["tarefas"] = as_tarefas
+                data_pagina["info_step4"] = info_step4
+
+
+				// submit the data to Cloudflow
+		    var lResult=api_sync.hub.start_from_whitepaper_with_files_and_variables("CADOP_v2","interno", g_files , data_pagina);
+		    console.log(lResult);
+		    console.log(lResult.workable_id);
+		    var teste =lResult.workable_id
+	            // Go to Done page
+	
+		var l_url = '/portal.cgi/PP_FILE_STORE/Sistema/wizard_roto_step3.html';
+   // console.log(l_url)
+                //window.location.href = l_url;
+		setTimeout(function(){window.location.href = '?ordem='+teste}, 2000);
+		;
+	//	console.log(lResult);
+			});
+			});
+     </script>
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./assets/img/rotocrom.jpg" style="width: 70%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Pedidos
+                  <ul>
+                  <li class="active" style="list-style-type: none">
+                     <a href="wizard_pedido.html?ordem="><i class="fas fa-cart-plus" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                    <li    style="list-style-type: none">
+                     <a href="lista_pedidos.html"><i class="fas fa-tags" style="margin-right: 5px"></i>Meus Pedidos</a>
+                    </li>
+                   
+                    </ul>
+                    </li>
+                    
+                  
+                    </ul>
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+        
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <!--<li class="nav-item">
+                      <a class="nav-link" href="solicitacaoArtes.html">Nova Solicitação</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="DashBoard_aprovacoes.html">Dashboard</a>
+                  </li>-->
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+       <h3 id="titulo" style="display:inline-block;"></h3>
+        <h5 id="subtitulo" style="display:inline-block;"></h5>
+       
+       
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+       
+       
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_cliente" style="display:none"></div>
+            
+        <h6>Códigos de Barra</h6>
+        <br>
+        <div class="form-group col-md-6" style="display:inline-block;">
+         <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="tipo_codigo">Tipo</label>
+                <select  class="form-control" id="tipo_codigo"  name="tipo_codigo">
+                    <option value="undefined">Selecionar...</option>
+                    <option>EAN-13</option>
+                    <option>QR-Code</option>
+                    <option>UPC-A</option>
+                    <option>UPC-E</option>
+                    </select>
+                    <span class="error"><p id="error_tipo_codigo_barra" style="color:red"></p></span>
+            </div>
+            <div class="form-group col-md-7" style="display:inline-block; vertical-align: top;">
+                <label for="valor_codigo">Código</label>
+                <input type="text"  class="form-control" id="valor_codigo"  name="valor_codigo">
+                <span class="error"><p id="error_numero_codigo_barra" style="color:red"></p></span>
+            </div>
+            <div class="form-group col-md-11" style="display:inline-block;">
+                <button class="btn btn-secondary" onclick="adiciona_codigo_barras()" style="cursor: pointer">Adicionar Código</button>
+                </div>
+                </div>
+                <div class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+                    
+                <table id="tabelaCodigosBarra" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 20%">Tipo
+                    </th>
+                    <th style="width: 70%">Código
+                    </th>
+                     <th style="width: 10%">Apagar
+                    </th>
+                    
+                    
+                    
+                  </tr></tbody>
+                </table>   
+                    </div>
+        
+        <hr>
+       
+      
+       <h5>Anexos Técnicos</h5>
+       <br>
+       <div class="form-group col-md-4" style="display:inline-block;">
+            <label for="tipo_anexo">Selecione o Tipo de Anexo</label>
+            <select type="text" class="form-control" id="tipo_anexo" onchange="muda_tipo_anexo()" name="tipo_anexo" >
+                <option value="undefined">Selecionar...</option>
+                <option value="arte">Arquivos de Arte</option>
+                <option value="planta">Planta Técnica</option>
+                </select>
+            </div>
+        <div class="form-group col-md-11">
+        <div class="xeikon_file_uploader" style="position: relative; width:100%; height:200px; border-width:1px; border-radius:5px; border-style:solid; border-color:#e5e5e5;">
+        </div>
+        <button class="button registerButton clearfix" id='registerButton' >Anexar Documentos</button>
+    </div>
+       <br>
+       <br>
+       <br>
+       <div id="mostra_tabela_documentos" class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+        <table id="tabelaDocumentos" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 20%">Data Envio
+                    </th>
+                    <th style="width: 15%">Enviado por
+                    </th>
+                    <th style="width: 40%">Nome Arquivo
+                    </th>
+                     <th style="width: 15%">Tipo
+                    </th>
+                     <th style="width: 17%">Baixar
+                    </th>
+                    
+                    
+                  </tr></tbody>
+                </table>   
+            
+            
+        </div>
+        <hr>
+       <h5>Tarefas</h5>
+       <br>
+       <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+           <div class="form-group col-md-4" style="display:inline-block; vertical-align: top;">
+                <label for="tarefa_departamento">Departamento</label>
+                <select  class="form-control" id="tarefa_departamento"  name="tarefa_departamento">
+                    <option>Selecionar</option>
+                    <option>Inspeção</option>
+                    <option>Galvano</option>
+                    <option>Prepress</option>
+                    <option>Gravação</option>
+                    <option>Faturamento</option>
+                    <option>Despacho</option>
+                    </select>
+            </div>
+            <div class="form-group col-md-7" style="display:inline-block; vertical-align: top;">
+                <label for="tarefa_descricao">Descrição</label>
+                <textarea  class="form-control" id="tarefa_descricao"  name="tarefa_descricao" cols="1" rows="5">
+                    </textarea>
+            </div>
+            <button class="btn btn-secondary" onclick="adiciona_tarefa()" style="cursor: pointer">Adicionar Tarefa</button>
+           
+           </div>
+           
+           <div  class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+        <table id="tabelaTarefas" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 20%">Criada em
+                    </th>
+                    <th style="width: 15%">Criada por
+                    </th>
+                    <th style="width: 20%">Departamento
+                    </th>
+                     <th style="width: 40%">Descrição
+                    </th>
+                     <th style="width: 5%">Apagar
+                    </th>
+                    
+                    
+                  </tr></tbody>
+                </table>   
+          
+            
+        </div>
+        <hr>
+       
+                <br>
+                  <section class="form-group col-md-8" style="display: inline-block;"></section>
+            <div  class="form-group col-md-1" style="display:inline-block; vertical-align: top;">
+                <button id="salva_cliente" class="btn btn-primary" onclick="grava_pedido2()" style="cursor: pointer; display: inline-block;">Anterior</button>
+                 </div> 
+                 <div  class="form-group col-md-2" style="display:inline-block; vertical-align: top;">
+                 <button id="salva_cliente" class="btn btn-primary" onclick="grava_pedido()" style="cursor: pointer;display: inline-block;">Gravar Pedido</button>
+                 </div>
+                 <div id="info_update" style="color: green"></div>
+                 
+              
+            </div>
+        
+       
+  	
+  		
+  	<script>
+  	// funcoes auxiliares
+  	
+    function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}	
+  	
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function padWithZero(num, targetLength) {
+  return String(num).padStart(targetLength, '0')
+}
+  	 </script>
+      <script>
+      
+      
+      // preenche dados da pagina
+      
+       
+         var variaveis = api.workable.get_merged_variables(ordem)
+  	   if (variaveis.variables.data != undefined){
+  	   var data_pagina = variaveis.variables.data.value
+  	   } else {
+  	   var  data_pagina_origem = variaveis.variables
+  	   var data_pagina = {}
+  	   for (var key in data_pagina_origem){
+  	       console.log(key)
+  	       console.log(data_pagina_origem[key])
+  	     data_pagina[key]= data_pagina_origem[key].value
+  	   }
+  	   }
+  	   
+  	   console.log(data_pagina)
+  	   
+  	   document.getElementById("titulo").innerText = "Pedido de Rotogravura"
+  	   document.getElementById("subtitulo").innerHTML = " do serviço <strong> "+data_pagina.info_step1.servico+" </strong>, para o cliente <strong> "+data_pagina.info_step1.nome_cliente.FANTASIA+"</strong>" 
+     
+      
+      
+      
+      
+      var usuario = api.auth.get_current_user()
+      var nome_user = "Bem vindo, "+usuario.fullname
+      document.getElementById("bemvindo").innerText = nome_user
+      </script>
+      
+      
+     
+      
+ 
+  <script>
+      // funcoes de codigo de barras
+      if (data_pagina.info_step4 === undefined){
+      var os_codigos_barra = []
+      } else {
+          var os_codigos_barra = data_pagina.info_step4.codigos_barra
+      }
+      
+      function adiciona_codigo_barras(){
+          var tipo_de_codigo = document.getElementById("tipo_codigo").value
+          var o_codigo = document.getElementById("valor_codigo").value
+          var existe = false
+          
+          if (tipo_de_codigo == "undefined"){
+              document.getElementById("error_tipo_codigo_barra").innerText = "Selecione o tipo de código"
+          } else {
+             document.getElementById("error_tipo_codigo_barra").innerText = "" 
+          }
+          if (o_codigo == ""){
+              document.getElementById("error_numero_codigo_barra").innerText = "Não é possível incluir um código em branco"
+          } else {
+              document.getElementById("error_numero_codigo_barra").innerText = ""
+          }
+          
+          if (tipo_de_codigo != "undefined" && o_codigo != ""){
+              var existe = false
+              for (i=0;i<os_codigos_barra.length;i++){
+                  if (os_codigos_barra[i].tipo == tipo_de_codigo && os_codigos_barra[i].valor == o_codigo){
+                      existe = true
+                      var indice = i
+                  }
+              }
+              
+              console.log
+              if (existe === false){
+                  var info_codigo = {}
+                  info_codigo["tipo"] = tipo_de_codigo
+                  info_codigo["valor"] = o_codigo
+                  os_codigos_barra.push(info_codigo)
+              } 
+              
+          }
+         preencheCodigosBarra() 
+      }
+      
+      function preencheCodigosBarra(){
+          var table = document.getElementById("tabelaCodigosBarra")
+        clearTable(table)
+        var qtasrow = table.rows.length
+      
+       
+        
+            
+        for (i=0;i<os_codigos_barra.length;i++){
+           
+            // preenche as cores da fotocelula
+            
+          
+            
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            
+          
+            
+            cell1.innerHTML = '<div style="font-size: 1em; display: inline-block;"> '+os_codigos_barra[i].tipo+'</div>'
+            cell2.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_codigos_barra[i].valor+'</div>'
+            cell3.innerHTML = '<div style="font-size: 1em; display: inline-block; cursor: pointer;" ><img id="'+os_codigos_barra[i].tipo+'_'+os_codigos_barra[i].valor+'" src="./Icons/delete.png" width="50px" onclick="apagar_codigoBarra()"></div>'
+         
+            qtasrow = qtasrow +1
+         
+        }    
+          
+      }
+      
+      function apagar_codigoBarra(){
+           var linha = event.srcElement.id
+           var linha_array = linha.split("_")
+           console.log(linha_array[0])
+           console.log(linha_array[1])
+           for (i=0;i<os_codigos_barra.length;i++){
+               if (os_codigos_barra[i].tipo == linha_array[0] && os_codigos_barra[i].valor == linha_array[1]){
+                   var tira = os_codigos_barra.splice(i,1)
+               }
+           }
+           preencheCodigosBarra()
+      }
+      
+  </script>
+  <script>
+      function muda_tipo_anexo(){
+          
+          if (document.getElementById("tipo_anexo").value != "undefined"){
+              data_pagina["tipo_anexo"] = document.getElementById("tipo_anexo").value
+          }
+      }
+  </script>
+  <script>
+  
+   if (data_pagina.info_step4 === undefined){
+       var as_tarefas = []
+      } else {
+          var as_tarefas = data_pagina.info_step4.tarefas
+      }
+      
+ 
+      function adiciona_tarefa(){
+          var tarefa = {}
+          tarefa["para_quem"] = document.getElementById("tarefa_departamento").value
+          tarefa["de_quem"] = usuario
+          tarefa["o_que"] = document.getElementById("tarefa_descricao").value.trim()
+          
+          if (data_pagina.info_step4 === undefined){
+          var info_step4 = {}
+          info_step4["codigos_barra"] = os_codigos_barra
+          info_step4["anexos_tecnicos"] = []
+          } else {
+            var info_step4 = data_pagina.info_step4
+          }
+          info_step4["tarefas"] = as_tarefas
+            data_pagina["info_step4"] = info_step4
+          
+          
+          var cria_ID = api.hub.start_from_whitepaper_with_files_and_variables("CADOP_v2","tarefa_ID",[] , {"data_pagina":data_pagina,"usuario":usuario,"tarefa":tarefa});
+          var workable_cri = cria_ID.workable_id
+          console.log(workable_cri)
+      
+      
+       var workableConsoleLog = function ()  {
+             console.log("Estou executando!")
+         var o_estado = api.workable.get_merged_variables(workable_cri)
+         console.log(o_estado)
+        if (o_estado.variables.id_tarefa != undefined){
+          console.log("encontrei!")
+    //        a_tarefa = o_estado.variables.tarefa
+  	   as_tarefas = o_estado.variables.info_step4.value.tarefas
+  	   data_pagina.info_step4.tarefas = o_estado.variables.info_step4.value.tarefas
+  	   //         console.log(as_tarefas)
+  	 //           data_pagina.info_step4.tarefas = as_tarefas
+             myStopFunction();
+          }
+    
+        else {
+        console.log("esperando")
+            }
+        }
+         
+    
+     var workflowTimeout = setInterval(workableConsoleLog, 1000);
+		function myStopFunction() {
+	document.getElementById("tarefa_descricao").value = ""	    
+     clearInterval(workflowTimeout);
+     preencheTabelaTarefas()
+    }
+
+   
+     }
+     
+     function preencheTabelaTarefas(){
+         console.log(as_tarefas)
+          var table = document.getElementById("tabelaTarefas")
+        clearTable(table)
+        var qtasrow = table.rows.length
+      
+        for (i=0;i<as_tarefas.length;i++){
+           
+            // preenche as cores da fotocelula
+            
+          
+            
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+             var cell4 = row.insertCell(3);
+              var cell5 = row.insertCell(4);
+            
+          var data_de_criacao = new Date(as_tarefas[i].criacao)
+          var data_criacao_ok = dateFormat(data_de_criacao,"dd/mm/yyyy - hh:mm tt")
+            
+            cell1.innerHTML = '<div style="font-size: 1em; display: inline-block;"> '+data_criacao_ok+'</div>'
+            cell2.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+as_tarefas[i].de_quem.fullname+'</div>'
+            cell3.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+as_tarefas[i].para_quem+'</div>'
+            cell4.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+as_tarefas[i].o_que+'</div>'
+            cell5.innerHTML = '<div style="font-size: 1em; display: inline-block; cursor: pointer;" ><img id="'+as_tarefas[i].id+'" src="./Icons/delete.png" width="50px" onclick="apagar_tarefa()"></div>'
+         
+            qtasrow = qtasrow +1
+         
+        }    
+    
+
+         
+      preencheCodigosBarra()   
+         
+     }
+    
+          
+          
+         
+          
+          
+      
+      
+      function verifica_variaveis_tarefa(work,task){
+          console.log("vou executar")
+          console.log(work)
+          console.log(task)
+           var variaveis2 = api.workable.get_merged_variables(work)
+           console.log(variaveis2)
+  	    
+      }
+      
+  </script>
+  
+  <script>
+       function grava_pedido2(){
+          
+        
+        
+              var info_step4 = {}
+              if (data_pagina.info_step4 != undefined){
+              if (data_pagina.info_step4.anexos_tecnicos != undefined){
+            info_step4["anexos_tecnicos"] = data_pagina.info_step4.anexos_tecnicos
+              } else {
+                 info_step4["anexos_tecnicos"] = [] 
+              }
+              } else {
+                info_step4["anexos_tecnicos"] = []  
+              }
+            info_step4["tarefas"] = as_tarefas
+            info_step4["codigos_barra"] = os_codigos_barra
+            data_pagina["info_step4"] = info_step4
+            
+        var inicia_wizard = api_sync.hub.start_from_whitepaper_with_files_and_variables("CADOP_v2","wizard_passo_1", [] ,{"data":data_pagina,"usuario":usuario});
+       
+       
+        var workable_id = inicia_wizard.workable_id
+        var workableConsoleLog = function ()  // a cada 30s roda isso e atualiza a variavel form...
+          {
+            var variaveis = api.workable.get_merged_variables(workable_id)
+           if (variaveis.variables.state.value == "finalizado"){
+                console.log("Achei! "+workable_id)
+                
+                  myStopFunction(workable_id);
+              }
+        }
+	   var workflowTimeout = setInterval(workableConsoleLog, 500);
+        function myStopFunction(theID) {
+                    clearInterval(workflowTimeout);
+                    window.open("wizard_roto_step2.html?ordem="+theID,"_self")
+                    }
+
+            
+          
+          
+      }
+      
+      function grava_pedido(){
+          if (data_pagina.info_step1.nome_cliente.IDENTIF != undefined){
+             if (data_pagina.info_step1.nome_cliente.IDENTIF != ""){
+                var busca_ultimo = api.custom_objects.list_with_options("pedidos_list",["codigo_pedido","contains",data_pagina.info_step1.nome_cliente.IDENTIF]).results
+                if (busca_ultimo.length > 0){
+                    var o_ultimo = busca_ultimo[busca_ultimo.length-1].codigo_pedido
+                    var o_tam = data_pagina.info_step1.nome_cliente.IDENTIF.length
+                    var proximo_numero = parseInt(o_ultimo.substring(o_tam,o_ultimo.length))+1
+                    
+                    console.log (proximo_numero)
+                } else {
+                    var proximo_numero = 1
+                   
+                }
+             } 
+          }
+          
+          if (data_pagina.info_step1.nome_cliente.IDENTIF != undefined){
+             if (data_pagina.info_step1.nome_cliente.IDENTIF != ""){
+          var codigo_cliente = data_pagina.info_step1.nome_cliente.IDENTIF
+             } else {
+                  var codigo_cliente = "XXX"
+             }
+           } else {
+                var codigo_cliente = "XXX"
+           }
+         
+          var numero_pedido = padWithZero(proximo_numero,5)
+          var data_pedido = {}
+          var agora = new Date()
+          var string_agora = dateFormat(agora,"yyyymmdd")
+          var cliente = {}
+          
+          
+          data_pedido["info_geral"] = data_pagina.info_step1
+          data_pedido["tipo_pedido"] = "Rotogravura"
+          data_pedido["codigo_pedido"] = "ROT/"+string_agora+"/"+codigo_cliente+numero_pedido
+          var info_puxada = {}
+          info_puxada["valor"] = data_pagina.info_step3.valor_puxada
+          info_puxada["qual_cilindro"] = data_pagina.info_step3.qual_cilindro
+          data_pedido["puxada"] = info_puxada 
+          data_pedido["separacoes"] = data_pagina.info_step2.cilindros
+          delete data_pagina.info_step2.cilindros
+          data_pedido["info_embalagem"] = data_pagina.info_step2
+          delete data_pagina.info_step3.valor_puxada
+          delete data_pagina.info_step3.qual_cilindro
+          data_pedido["fotoc_tarja"] = data_pagina.info_step3
+          if (data_pagina.info_step4 === undefined){
+            data_pedido["anexos_tecnicos"] = []
+          data_pedido["codigos_barra"] = os_codigos_barra
+          data_pedido["tarefas"] = as_tarefas  
+          } else {
+          data_pedido["anexos_tecnicos"] = data_pagina.info_step4.anexos_tecnicos
+          data_pedido["codigos_barra"] = data_pagina.info_step4.codigos_barra
+          data_pedido["tarefas"] = data_pagina.info_step4.tarefas
+          }
+          
+              
+         api.custom_objects.create("pedidos_list",{"codigo_pedido": codigo_cliente+numero_pedido})
+         var cria_pedido_novo = api.custom_objects.create("BR-ROTOC_pedidos",data_pedido)
+         var scopes_add = []
+         scopes_add.push("623c62698d6367650e2ca763")
+         scopes_add.push("623c6263d50fc201f72d1393")
+         scopes_add.push("623c627c0ef2d674016efa93")
+         scopes_add.push("623c62861291f858cb771b93")
+         if (usuario.fullname != "Administrator"){
+            scopes_add.push(usuario.scope)
+             api.custom_objects.set_scope("BR-ROTOC_pedidos",cria_pedido_novo._id,scopes_add)
+         }
+         // console.log(data_pedido)
+          
+          setTimeout(function(){window.open("lista_pedidos.html",self)}, 2000);
+          
+          
+      }
+  </script>
+
+<script>
+    function preencheTabelaAnexos(){
+        
+        if (data_pagina.info_step4 != undefined ){
+        if (data_pagina.info_step4.anexos_tecnicos != undefined){
+            
+        
+          var table = document.getElementById("tabelaDocumentos")
+        clearTable(table)
+        var qtasrow = table.rows.length
+      
+       
+            
+        for (i=0;i<data_pagina.info_step4.anexos_tecnicos.length;i++){
+           
+            // preenche as cores da fotocelula
+            
+          
+            
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+             var cell4 = row.insertCell(3);
+              var cell5 = row.insertCell(4);
+              
+              var data_envio = new Date(data_pagina.info_step4.anexos_tecnicos[i].data_upload)
+              
+              var data_envio_ok = dateFormat(data_envio,"dd/mm/yyyy - hh:mm tt")
+            if (data_pagina.info_step4.anexos_tecnicos[i].tipo_arquivo == "arte"){
+               var tipo_de_anexo = "Arquivos Arte" 
+            } else {
+               var tipo_de_anexo = "N/A" 
+            }
+          
+            
+            cell1.innerHTML = '<div style="font-size: 1em; display: inline-block;"> '+data_envio_ok+'</div>'
+            cell2.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+data_pagina.info_step4.anexos_tecnicos[i].usuario.fullname+'</div>'
+            cell3.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+data_pagina.info_step4.anexos_tecnicos[i].arquivo+'</div>'
+            cell4.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+tipo_de_anexo+'</div>'
+            cell5.innerHTML = '<div style="font-size: 1em; display: inline-block;" ><a href="http://187.62.215.93:9090/'+data_pagina.info_step4.anexos_tecnicos[i].download_link+'">Baixar Arquivo</a></div>'
+           
+            qtasrow = qtasrow +1
+         
+        }
+        }
+        
+        } 
+        
+        preencheTabelaTarefas()
+    }
+    
+    preencheTabelaAnexos()
+</script>
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

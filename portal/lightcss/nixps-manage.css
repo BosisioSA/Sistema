@@ -1,0 +1,258 @@
+/*********************************************************************/
+/* NiXPS MetaData CSS                                                */
+/*                                                                   */
+/* Copyright 2012, NiXPS (www.nixps.com)                             */
+/*********************************************************************/
+
+/*********************************************************************/
+/*  MANAGE BASE                                                      */
+/*********************************************************************/
+
+a.right-button
+{
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+table.manage-table a.attribute.add
+{
+	display: none;
+}
+
+table.manage-table a.attribute
+{
+    float: left;
+	display: block;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 2px 5px 2px 5px;
+}
+
+table.manage-table a
+{
+    float: right;
+    display: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+table.manage-table td
+{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+table.manage-table input
+{
+    width: 90%;
+}
+
+table.manage-table tr:nth-child(2n+3),
+table#templates-table.manage-table tr:nth-child(4n+2),
+table#users-table.manage-table tr:nth-child(4n+2) 
+{
+    background-color: #F2F7FA;
+}
+
+
+/*********************************************************************/
+/*  MANAGE TABLE                                                     */
+/*********************************************************************/
+
+table.manage-table
+{
+    width: 100%;
+}
+
+table.manage-table td.header
+{
+    color: #6B7D89;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table.manage-table td.middle
+{
+
+}
+
+table.manage-table td.double-gradient
+{
+    /*background: -moz-linear-gradient(left,  rgba(0,128,191,0) 0%, rgba(255,255,255,0.1) 50%, rgba(0,128,191,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,128,191,0)), color-stop(50%,rgba(0,128,191,0.1)), color-stop(100%,rgba(0,128,191,0)));
+    background: -webkit-linear-gradient(left,  rgba(0,128,191,0) 0%,rgba(0,128,191,0.1) 50%,rgba(0,128,191,0) 100%);
+    background: -o-linear-gradient(left,  rgba(0,128,191,0) 0%,rgba(0,128,191,0.1) 50%,rgba(0,128,191,0) 100%);
+    background: -ms-linear-gradient(left,  rgba(0,128,191,0) 0%,rgba(0,128,191,0.1) 50%,rgba(0,128,191,0) 100%);
+    background: linear-gradient(to right,  rgba(0,128,191,0) 0%,rgba(0,128,191,0.1) 50%,rgba(0,128,191,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000080BF', endColorstr='#1a0080BF',GradientType=1 );*/
+    height: 26px;
+}
+
+table.manage-table td.left-gradient
+{
+    /*background: -moz-linear-gradient(left,  rgba(0,128,191,0) 0%, rgba(0,128,191,0.1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,128,191,0)), color-stop(100%,rgba(0,128,191,0.1)));
+    background: -webkit-linear-gradient(left,  rgba(0,128,191,0) 0%,rgba(0,128,191,0.1) 100%);
+    background: -o-linear-gradient(left,  rgba(0,128,191,0) 0%,rgba(0,128,191,0.1) 100%);
+    background: -ms-linear-gradient(left,  rgba(0,128,191,0) 0%,rgba(0,128,191,0.1) 100%);
+    background: linear-gradient(to right,  rgba(0,128,191,0) 0%,rgba(0,128,191,0.1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1affffff',GradientType=1 );
+    height: 26px;*/
+}
+
+table.manage-table td.right-gradient
+{
+    /*background: -moz-linear-gradient(left,  rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.1)), color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(left,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(left,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#00ffffff',GradientType=1 ); */
+    height: 26px;
+}
+table#templates-table.manage-table tr.selected,
+table#users-table.manage-table tr.selected,
+table.manage-table tr.selected
+{
+    color: #fff;
+    background-color: #0080BF; 
+    filter: none;
+}
+table.manage-table tr.selected a.attribute
+{
+    color: #fff;
+    border: 1px solid #FFF;
+}
+
+/*********************************************************************/
+/*  POPOUT                                                           */
+/*********************************************************************/
+
+table.manage-table tr.popout-row td
+{
+    border-left: 1px rgba(255, 255, 255, 0.2) solid;
+    border-right: 1px rgba(255, 255, 255, 0.2) solid;
+}
+
+table.manage-table tr.selected + tr.popout-row td {
+    background-color: #0080BF;
+}
+
+table.manage-table div.popout-arrow
+{
+    position: relative;
+    display: none;
+    padding: 8px;
+    overflow: auto;
+}
+
+table.manage-table div.popout-arrow input
+{
+    width: auto;
+}
+
+table.manage-table div.popout-arrow input[type=checkbox]
+{
+    margin-right: 3px;
+}
+
+table.manage-table img.popout-arrow-image
+{
+    position: absolute;
+    top: -10px;
+    left: 3px;
+    z-index: 10000;
+}
+
+table.manage-table div.permissions
+{
+    float: left;
+    color: #454F56;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+table.manage-table tr.selected + tr.popout-row div.permissions
+{
+    color: #FFF;
+}
+
+table.manage-table div.permissions h4
+{
+    color: #777;
+/*     margin-bottom: 10px; */
+    font-size: medium;
+}
+
+table.manage-table div.richtext
+{
+    min-height: 200px;
+    right: 0px;
+    left: 0px;
+    position: relative;
+    outline: inherit;
+    background-color: #fff;
+    color: #000;
+}
+
+div.nicEdit-panel
+{
+    color: #000;
+}
+
+div.nicEdit-pane
+{
+    color: #000;
+}
+
+textarea.full_width
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: vertical; 
+    height: 300px;
+    margin: 0px;
+    width: 100%;
+/*     float: left; */
+}
+
+/*********************************************************************/
+/*  MANAGE PANE                                                      */
+/*********************************************************************/
+
+div.manage-pane
+{
+	position: absolute;
+	top: 140px;
+	left: 15px;
+	bottom: 15px;
+	right: 15px;
+	display: none;
+}
+
+div.manage-tabs
+{
+	position: absolute;
+	font-size: 13px;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+}
+
+a.attribute .span_delete:hover {
+    color: #77d239
+}
+
+a.attribute .span_delete {
+    font-weight: bold;
+    display: none;
+    color: #539a23;
+    line-height: 10px;
+    margin-left: 5px;
+    margin-right: -2px;
+}
+

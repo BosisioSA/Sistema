@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'helvetica_neuebold';
+    src: url('fonts/helvetica-neue-bold-webfont.eot');
+    src: url('fonts/helvetica-neue-bold-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helvetica-neue-bold-webfont.woff') format('woff'),
+url('fonts/helvetica-neue-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helvetica_neuelight';
+    src: url('fonts/helvetica-neue-light-webfont.eot');
+    src: url('fonts/helvetica-neue-light-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helvetica-neue-light-webfont.woff') format('woff'),
+url('fonts/helvetica-neue-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'helvetica_neuethin';
+    src: url('fonts/helvetica-neue-thin-webfont.eot');
+    src: url('fonts/helvetica-neue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helvetica-neue-thin-webfont.woff') format('woff'),
+url('fonts/helvetica-neue-thin-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#header2 {
+  min-height: 70px;
+}
+
+.container2 {
+  width: 80%;
+  margin: auto;
+}
+
+.row2 {
+  background-color: #DDD;
+
+}
+
+.column3{
+  width: 100%;
+  margin: 0% 2% 0% 2%;
+
+}
+
+.h2style2 {
+  display: block;
+}
+
+#registerForm2 {
+  margin: 0% 2% 0% 2%;
+}

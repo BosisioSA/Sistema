@@ -1,0 +1,82 @@
+/* The bar at the bottom of the component that contains the browse button.
+ */
+.upload .upload_div {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 40px;
+    padding: 4px;
+}
+
+/* The scroll view with the files.
+ */
+.upload .filescroll {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 40px;
+    top: 0px;
+    overflow-y: scroll;
+}
+
+.upload .filescroll .filelist {
+    left:0px;right:0px;
+    top: 0px;bottom:0px;
+}
+
+/* The individual rows in the files table.
+ * It has the extra style "odd" or "even".
+ */
+.upload .filelist .filerow
+{
+    left:0px;right:0px;
+    height: 28px;
+    overflow: hidden;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+}
+
+/* The filename part in the filerow.
+ */
+.upload .filelist .filename {
+    float: left;
+    display: block;
+    left: 10px;
+    right: 120px;
+    padding-top: 2px;
+    overflow: hidden;
+}
+
+/* Right text column, is put just before the progress bar (if that is visible).
+ */
+.upload .filelist .rightcolumn {
+    padding-top: 2px;
+    text-align: right;
+}
+
+/* The progress bar. Only visible while the file is being uploaded.
+ */
+.upload .filelist .progressbar {
+    float: right;
+    display: block;
+    width: 100px;
+    right: 10px;
+    margin-top: 5px;
+    margin-left: 4px;
+    margin-right: 0px;
+    height: 8px;
+    padding: 0px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* The filled part of the progress bar.
+ */
+.upload .filelist .progress {
+    display: block;
+    margin: 0px;
+    height: 8px;
+    overflow: hidden;
+}

@@ -1,0 +1,62 @@
+/* 
+    Created on : Apr 18, 2018, 5:54:16 PM
+    Author     : guillaume
+*/
+.nixps-config-SettingPart {
+
+}
+
+.nixps-config-SettingPart .settingspart_header {
+    background: #fff;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.nixps-config-SettingPart .settingspart_content {
+    
+}
+
+.nixps-config-SettingPart .nixps-cloudflow-FormRenderer .formGroup {
+    padding-left: 0;
+    padding-right: 0;
+}
+.nixps-config-SettingPart .layoutRow.row  {
+    margin-bottom: 7px;
+}
+.nixps-config-SettingPart .layoutRow.row .layoutComponent [data-key] > label {
+    display: inline-block;
+    font-weight: normal;
+    margin-top: 0px;
+    padding-left: 5px;
+    padding-right: 19px;
+    text-align: left;
+    text-transform: uppercase;
+    vertical-align: sub;
+    width: 34%;
+}
+.nixps-config-SettingPart .layoutRow.row .layoutComponent {
+    display: inline-block;
+}
+.nixps-config-SettingPart .layoutRow.row .layoutComponent .fieldElement > .componentContainer {
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+}
+.nixps-config-SettingPart .layoutComponent.col-md-1 {
+    padding-left: 0px;
+    padding-right: 0px;
+    vertical-align: middle;
+    width: 4%;
+}
+.nixps-config-SettingPart .layoutComponent.col-md-11 {
+    padding-left: 0px;
+    padding-right: 0px;
+    vertical-align: middle;
+    width: 96%;
+}
+.nixps-config-SettingPart .layoutComponent[data-id^="workersvg"] > .nixps-cloudflow-Image {
+    padding-left: 0px;
+}
+.nixps-config-SettingPart .layoutComponent.col-md-1[data-id=workersvg_move_on_top] {
+    vertical-align: top;
+}

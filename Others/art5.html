@@ -1,0 +1,950 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Checklist Arte</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+      
+       <script>
+            var queryString = window.location.search;
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+        </script>
+    
+    
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+               <ul class="active components mb-5">
+                <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/analisepacotegrafico.png" width="30px" style="margin-right: 10px">An. Pacote Gráfico</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li style="list-style-type: none">
+               <img src="./Icons/responsavel.png" width="20px" style="margin-right: 10px;"><span id="user_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/inicio.png" width="20px" style="margin-right: 10px"><span id="inicio_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/final.png" width="20px" style="margin-right: 10px"><span id="final_pacote" style="color: black;"></span>
+          </li>
+          
+          
+          </ul>
+         </li>
+            
+            
+       </ul>
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 70%;">
+        <h2 style="display:block;">Checklist Arte</h2>
+        </div>
+       
+    
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 25%;">
+            <h6 id="tempo_para_entrega">Tempo para entrega: 00:00hs</h6>
+        </div>
+        <hr>
+     <!-- informacaoes do ticket -->
+     <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+        <p style="margin-top: -9px;"><strong>Informações do Ticket</strong></p>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="numero_ticket">Ticket Numero</label>
+            <input type="text" class="form-control"  id="numero_ticket" name="numero_ticket" readonly>
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="item_ticket">Item</label>
+            <input type="text" class="form-control"  id="item_ticket" name="item_ticket" readonly>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 15%; margin-right: 2%">
+          <label for="cliente_ticket">Cliente</label>
+            <input type="text" class="form-control"   id="cliente_ticket" name="cliente_ticket" readonly>
+        </div> 
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 34%; margin-right: 2%">
+          <label for="descricao_ticket">Descrição</label>
+            <input type="text" class="form-control"   id="descricao_ticket" name="descricao_ticket" readonly>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 2%; margin-right: 2%">
+             <label for="Imp">Imp</label>
+            <img src="./Icons/maq_roto.png" style="width: 100%" id="img_imp">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 8%; margin-right: 2%">
+          <label for="criacao_ticket">Criado em</label>
+            <input type="text" class="form-control"   id="criacao_ticket" name="criacao_ticket" readonly>
+        </div> 
+        
+      </div>  
+   <br>
+     <h6 style="display:block;">Retoque de Imagem - Verificações</h6>
+     <hr>
+  
+  
+   <!-- informacaoes do  Primer e Verniz -->
+     <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 96%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 20px;">
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 25%; margin-right: 1%">
+        <label>Resolução de imagem 300dpi</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions3"    id="inlineRadio5" value="Sim">
+        <label class="form-check-label" for="inlineRadio5">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions3"  id="inlineRadio6" value="Não">
+        <label class="form-check-label" for="inlineRadio6">N/A</label>
+    </div>
+       </div>
+       
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 25%;">
+        <label>Lado de Impressão</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 24%;">
+        <label>PSD conforme Procedimento</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 24%;">
+        <label>Existe Referencia de Cores</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+     <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Retocou imagens conforme referência (caso haja)</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Retocou com o perfil correto</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Verificou se há sujeira na máscada da imagem</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+       
+      </div>  
+  
+  
+   <h6 style="display:block;">Preparação - Verificações</h6>
+     <hr>
+  
+  
+   <!-- informacaoes do  Primer e Verniz -->
+     <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 96%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px;">
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Utilizou Imagem Atual Retocada</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions3"    id="inlineRadio5" value="Sim">
+        <label class="form-check-label" for="inlineRadio5">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions3"  id="inlineRadio6" value="Não">
+        <label class="form-check-label" for="inlineRadio6">N/A</label>
+    </div>
+       </div>
+       
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Aplicou código de barras?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Conferiu o número do código de barras?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Aplicou logo TECNOVAL (quando solicitado)</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+     <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Verificou passo e largura?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>O passo é compensado?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Aplicou trapping e recuos?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Verificou fotocelula(s)?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Deixou os Layers conforme padrão?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Conferiu número e sequência de cores?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Deixou o arquivo com a sequência de cores correta?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Conferiu o Page Boxes (TRIM/MEDIA/ BLEED/CROP)?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Aplicou etiqueta de aprovação?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;">
+        <label>Verificou dados na etiqueta?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()"  id="inlineRadio7" value="Sim">
+        <label class="form-check-label" for="inlineRadio7">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions4" onchange="tem_verniz()" id="inlineRadio8" value="Não">
+        <label class="form-check-label" for="inlineRadio8">N/A</label>
+    </div>
+       </div>
+       
+       
+      </div>  
+  
+   
+   
+   
+    <div class="form-group" style="display:inline-block; vertical-align: top;  width: 16%; margin-top: 10px;">
+              
+    <button class="btn btn-secondary" onclick="verifica_campos('rascunho')">Salvar Rascunho</button><br>
+    </div>
+    <div class="form-group" style="display:inline-block; vertical-align: top;  width: 16%; margin-top: 10px;">
+   
+     <button class="btn btn-primary" onclick="verifica_campos('enviar')">Finalizar Tarefa</button><br>
+   
+   </div>
+    <div id="info_ticket"></div>
+                
+                
+              
+                
+                 
+                 
+       
+            
+    
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	    var usuario = api.auth.get_current_user()
+  	    
+  	    document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname
+  	 //   document.getElementById("data_entrega").value = "02:00"
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function padWithZero(num, targetLength) {
+  return String(num).padStart(targetLength, '0')
+}
+
+// preenche dados se existe ordem
+
+if (usuario.scope_name != undefined){
+    var nome_scope = usuario.scope_name[0].split("_")
+   
+}
+
+
+
+
+
+
+
+// preenche Selects
+
+selectTipo2 = document.getElementById('substrato_impressao');
+selectLam1 = document.getElementById('laminacao_1');
+selectLam2 = document.getElementById('laminacao_2');
+selectLam3 = document.getElementById('laminacao_3');
+    var tiposTipo2 = api.custom_objects.list_with_options("BR-VALFI_substratos").results
+    var nomes_estrutura = []
+    
+    for (i=0;i<tiposTipo2.length;i++){
+        nomes_estrutura.push(tiposTipo2[i].tipo)
+    }
+    var nomes_limpos = nomes_estrutura.filter(onlyUnique)
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectTipo2.appendChild(opt);
+    }
+    
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectLam1.appendChild(opt);
+    }
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectLam2.appendChild(opt);
+    }
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectLam3.appendChild(opt);
+    }
+   
+  
+var hoje = new Date()
+
+// preenche dados
+
+
+ var busca_ticket = api.custom_objects.list_with_options("BR-TECNO_Tickets",["_id","equal to",ordem]).results[0]
+      
+      document.getElementById("numero_ticket").value = busca_ticket.numero_ticket
+      document.getElementById("cliente_ticket").value = busca_ticket.cliente
+      document.getElementById("descricao_ticket").value = busca_ticket.descricao
+      document.getElementById("item_ticket").value = busca_ticket.item
+      
+       var icone_imp = "./Icons/maq_flexo.png"
+        if (busca_ticket.processo.valor == "Rotogravura"){
+                icone_imp = "./Icons/maq_roto.png"
+            }
+            
+      document.getElementById("img_imp").src = icone_imp
+      
+      var dataentrada = new Date(busca_ticket.entrada_em)
+      var datacalculo = new Date(busca_ticket.entrada_em)
+      if (dataentrada.getDay() === 5){
+          var final = dataentrada.setDate(dataentrada.getDate()+3)
+      } else {
+          var final = dataentrada.setDate(dataentrada.getDate()+1)
+      }
+      console.log(final)
+      var agora = new Date()
+      var horas_diferenca = final-agora
+      console.log("HORAS DIFERENCA")
+      console.log(horas_diferenca)
+      document.getElementById("criacao_ticket").value = dateFormat(datacalculo,"dd/mm/yyyy")
+      var calcula_horas = parseInt(horas_diferenca/3600000)
+      var calcula_minutos = (horas_diferenca/3600000)%1
+      var minutos = parseInt(calcula_minutos*60)
+      if (calcula_horas < 4){
+       document.getElementById("tempo_para_entrega").style = "color:brown"   
+      }
+      if (calcula_horas < 2){
+       document.getElementById("tempo_para_entrega").style = "color: orange"   
+      }
+      if (calcula_horas < 0){
+       document.getElementById("tempo_para_entrega").style = "color: red"   
+      }
+      if (calcula_horas < 10){
+          calcula_horas = "0"+calcula_horas
+      }
+      if (minutos < 10){
+          minutos = "0"+minutos
+      }
+      document.getElementById("tempo_para_entrega").innerText = "Tempo para Entrega: "+calcula_horas+":"+minutos+"hs"
+     
+   
+
+  	</script>
+ 
+  	<script>
+  	function verifica_campos(que_fazer){
+  	    
+  
+  	
+    var valido = true
+    
+    var data = {}
+    
+    var recebido = {}
+    var campos_pacote = {}
+    campos_pacote["inlineRadio1"] = document.getElementById("inlineRadio1").checked
+    campos_pacote["inlineRadio2"] = document.getElementById("inlineRadio2").checked
+    recebido["campos"] = campos_pacote
+    if (campos_pacote["inlineRadio1"] === true){
+        recebido["valor"] = document.getElementById("inlineRadio1").value
+    } else {
+       recebido["valor"] = document.getElementById("inlineRadio2").value
+    }
+    data["pacote_recebido"] = recebido
+    
+    
+    var formato = {}
+    var campos_formato = {}
+    campos_formato["inlineRadio3"] = document.getElementById("inlineRadio3").checked
+    campos_formato["inlineRadio4"] = document.getElementById("inlineRadio4").checked
+    formato["campos"] = campos_formato
+    if (campos_formato["inlineRadio3"] === true){
+        formato["valor"] = document.getElementById("inlineRadio3").value
+    } else {
+       formato["valor"] = document.getElementById("inlineRadio4").value
+    }
+    data["formato_psdai"] = formato
+    
+    
+    var vetor = {}
+    var campos_vetor = {}
+    campos_vetor["inlineRadio5"] = document.getElementById("inlineRadio5").checked
+    campos_vetor["inlineRadio6"] = document.getElementById("inlineRadio6").checked
+    vetor["campos"] = campos_vetor
+    if (campos_vetor["inlineRadio5"] === true){
+        vetor["valor"] = document.getElementById("inlineRadio5").value
+    } else {
+       vetor["valor"] = document.getElementById("inlineRadio6").value
+    }
+    data["vetor_curvas"] = vetor
+    
+    var primeiro = {}
+    var campos_primeiro = {}
+    campos_primeiro["inlineRadio7"] = document.getElementById("inlineRadio7").checked
+    campos_primeiro["inlineRadio8"] = document.getElementById("inlineRadio8").checked
+    primeiro["campos"] = campos_primeiro
+    if (campos_primeiro["inlineRadio7"] === true){
+        primeiro["valor"] = document.getElementById("inlineRadio7").value
+    } else {
+       primeiro["valor"] = document.getElementById("inlineRadio8").value
+    }
+    data["primeiro_fornecimento"] = primeiro
+    
+    var padrao= {}
+    var campos_padrao = {}
+    campos_padrao["inlineRadio9"] = document.getElementById("inlineRadio9").checked
+    campos_padrao["inlineRadio8"] = document.getElementById("inlineRadio10").checked
+    padrao["campos"] = campos_padrao
+    if (campos_padrao["inlineRadio9"] === true){
+        padrao["valor"] = document.getElementById("inlineRadio9").value
+    } else {
+       padrao["valor"] = document.getElementById("inlineRadio10").value
+    }
+    data["padrao_impresso"] = padrao
+    
+    
+    var amostra= {}
+    var campos_amostra = {}
+    campos_amostra["inlineRadio11"] = document.getElementById("inlineRadio11").checked
+    campos_amostra["inlineRadio12"] = document.getElementById("inlineRadio12").checked
+    amostra["campos"] = campos_amostra
+    if (campos_amostra["inlineRadio11"] === true){
+        amostra["valor"] = document.getElementById("inlineRadio11").value
+    } else {
+       amostra["valor"] = document.getElementById("inlineRadio12").value
+    }
+    data["amostra_impressa"] = amostra
+   
+    var analise= {}
+    var campos_analise = {}
+    campos_analise["inlineRadio13"] = document.getElementById("inlineRadio13").checked
+    campos_analise["inlineRadio14"] = document.getElementById("inlineRadio14").checked
+    analise["campos"] = campos_analise
+    if (campos_analise["inlineRadio11"] === true){
+        analise["valor"] = document.getElementById("inlineRadio13").value
+    } else {
+       analise["valor"] = document.getElementById("inlineRadio14").value
+    }
+    data["analise_critica"] = analise
+    
+    data["observacoes"] = document.getElementById("observacoes").value
+    
+    data["criado_por"] = usuario.fullname
+    data["criado_em"] = new Date()
+    // atualiza datas
+   var nextstage = busca_ticket.proxima_etapa
+    
+    
+  var temposdeexecucao = busca_ticket.tempos_processo
+    
+    
+   
+    
+    
+    
+    
+    if (que_fazer == "enviar"){
+    
+    for (i=0;i<nextstage.length;i++){
+        if (nextstage[i].forms == "ART1"){
+            var tira = nextstage.splice(i,1)
+        }
+    }
+    
+    
+    
+    
+    salva_ticket2(data,ordem,temposdeexecucao,nextstage)
+    } else {
+    
+    for (i=0;i<nextstage.length;i++){
+        if (nextstage[i].forms == "ART1"){
+            nextstage[i]["pending"] = true
+        }
+    }
+    
+     salva_ticket(data,ordem,nextstage)
+    }
+   
+  	}
+  	</script>
+  	
+   <script>
+     //  function salva_ticket(dados,id,temposexecucao,proximaetapa){
+          
+            
+       function salva_ticket(dados,id,nextstage){
+          
+        
+        
+            
+           api.custom_objects.set_keys("BR-TECNO_Tickets",id,{"art1":dados,"proxima_etapa":nextstage})
+            document.getElementById("info_ticket").innerText = "Ticket atualizado com sucesso!"
+           setTimeout(function(){window.open("prepress_dash_sp1.html","_self")}, 3000);
+       }
+       
+       function salva_ticket2(dados,id,ostempos,proxima_etapa){
+          
+             for (i=0;i<ostempos.length;i++){
+        if (ostempos[i].formulario == "ART1"){
+            var tempos_atuais = ostempos[i].tempos
+            tempos_atuais[tempos_atuais.length-1]["final"] = new Date()
+            ostempos[i].tempos = tempos_atuais
+            
+        } 
+    }
+    
+            
+           api.custom_objects.set_keys("BR-TECNO_Tickets",id,{"art2":dados,"proxima_etapa":proxima_etapa,"tempos_processo":ostempos})
+            document.getElementById("info_ticket").innerText = "Ticket atualizado com sucesso!"
+           setTimeout(function(){window.open("prepress_dash_sp1.html","_self")}, 3000);
+       }
+       
+      
+   </script>
+
+<script>
+    function muda_campos_tipo_impressao(){
+        if (document.getElementById("tipo_impressao").value == "Rotogravura"){
+            document.getElementById("div_info_cilindro_roto").style.display = "inline-block"
+             document.getElementById("div_info_cilindro_flexo").style.display = "none"
+             document.getElementById("div_artes_roto").style.display = "inline-block"
+              document.getElementById("div_artes_flexo").style.display = "none"
+        } else {
+            document.getElementById("div_info_cilindro_flexo").style.display = "inline-block"
+             document.getElementById("div_info_cilindro_roto").style.display = "none" 
+              document.getElementById("div_artes_flexo").style.display = "inline-block"
+              document.getElementById("div_artes_roto").style.display = "none"
+        }
+        
+    }
+</script>
+
+<script>
+    function mostra_obs(){
+         var linha = event.srcElement.name
+         console.log(linha)
+         var div_mostrar = linha+"_obs"
+         var qual_alterar = document.getElementsByName(linha)
+         if (qual_alterar[0].checked === true){
+             document.getElementById(div_mostrar).style.display = "none"
+         } else if (qual_alterar[1].checked === true) {
+             document.getElementById(div_mostrar).style.display = "inline-block"
+         }
+    }
+    
+    function tinta_especial(){
+        if (document.getElementById("tinta_especial").checked === true){
+            document.getElementById("mostra_tinta_especial").style.display = "inline-block"
+        } else {
+            document.getElementById("mostra_tinta_especial").style.display = "none"
+        }
+    }
+</script>
+<script>
+var cores_trabalho = []
+    function adiciona_cor(){
+      var linha = event.srcElement.id
+      var linha_array = linha.split("_")
+         var table = document.getElementById("tabela_cores")
+        var qtasrow = table.rows.length
+      var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+             if (busca_ticket.processo.valor == "Flexografia"){
+            var cell4 = row.insertCell(3);
+             }
+            
+        var numero_linha = parseInt(linha_array[1])+1
+          cell1.innerHTML = '<div><input type="text" class="form-control" id="nomecor_'+numero_linha+'" list="ascores_'+numero_linha+'"><datalist id="ascores_'+numero_linha+'"></datalist></div>'
+           if (busca_ticket.processo.valor == "Flexografia"){
+          cell2.innerHTML = '<div><input type="text" class="form-control" id="anilox_'+numero_linha+'"></div>'
+           cell3.innerHTML = '<div><img id="remove_'+numero_linha+'" src="./Icons/delete.png" width="30px" onclick="apaga_cor()" style="cursor: pointer"></div>'
+           cell4.innerHTML = '<div><img id="add_'+numero_linha+'" src="./Icons/icone_mais.png" width="30px" onclick="adiciona_cor()" style="cursor: pointer"></div>'
+           } else {
+             cell2.innerHTML = '<div><img id="remove_'+numero_linha+'" src="./Icons/delete.png" width="30px" onclick="apaga_cor()" style="cursor: pointer"></div>'
+           cell3.innerHTML = '<div><img id="add_'+numero_linha+'" src="./Icons/icone_mais.png" width="30px" onclick="adiciona_cor()" style="cursor: pointer"></div>'
+               
+               
+           }
+         var div_cores =  "ascores_"+numero_linha
+         var options=''; // variable to store the options
+        for(var i = 0; i < as_tintas.length; i++){
+            
+        options += '<option value="'+as_tintas[i].nome+'" />';
+
+        }
+         document.getElementById(div_cores).innerHTML = options;
+       
+    }
+    
+    
+    function apaga_cor()
+</script>
+ <script>
+    $("tbody").sortable({
+    items: "> tr:not(:first)",
+    appendTo: "parent",
+    helper: "clone"
+});
+
+$("#tabs ul li a").droppable({
+    hoverClass: "drophover",
+    tolerance: "pointer",
+    drop: function(e, ui) {
+        var tabdiv = $(this).attr("href");
+        $(tabdiv + " table tr:last").after("<tr>" + ui.draggable.html() + "</tr>");
+        ui.draggable.remove();
+    }
+});
+
+
+        </script>
+        <script>
+            var as_tintas = api.custom_objects.list("PantoneColor").results
+        
+        
+         var options=''; // variable to store the options
+        for(var i = 0; i < as_tintas.length; i++){
+            
+        options += '<option value="'+as_tintas[i].nome+'" />';
+
+        }
+         document.getElementById('ascores_0').innerHTML = options;
+         
+         if (busca_ticket.processo.valor != "Flexografia"){
+             var tabela = document.getElementById("tabela_cores")
+             var linha_tabela = tabela.rows
+             for (i=0;i<linha_tabela.length;i++){
+                 linha_tabela[i].children[1].style.display = "none"
+             }
+            
+         }
+        </script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+	<script src="/okilms/3rdParty/jquery-1.7.2.js"></script>
+	<script src="/okilms/3rdParty/underscore.js"></script>
+	<script src="/panzer/js/panzer.js"></script>
+	<script src="/portal/panzer/js/patchplanner-panzer.js"></script>
+
+	<script src="/portal/js/nixps-cloudflow_path.js"></script>
+	<script src="/portal/js/nixps-layout_document.js"></script>
+	<script src="/portal/panzer/js/patchplanner-panzer-session.js"></script>
+
+	<!-- Setup the unit test -->
+	<script src="/okilms/tests/3rdParty/mocha.js"></script>
+    <script src="/okilms/tests/3rdParty/should.js"></script>
+	<link type="text/css" href="/okilms/tests/css/mocha.css" rel="stylesheet" />
+    <script>mocha.setup('bdd')</script>
+
+	<script type="text/javascript">
+		$(function() {
+			describe("patchplanner session", function() {
+				describe('construction', function() {
+					it("should throw when gVariables or gJacketID are missing", function() {
+						(function() {
+							new panzer.patchplanner.session();
+						}).should.throw();
+
+						(function() {
+							gVariables = {};
+							gJacketID = "";
+
+							new panzer.patchplanner.session();
+
+							delete window.gVariables;
+							delete window.gJacketID;
+						});
+					});
+
+					it("should construct when gVariables and gJacketID are well formed", function() {
+						gVariables = {};
+						gJacketID = "een id";
+
+						(function() {
+							new panzer.patchplanner.session();
+						}).should.not.throw();
+
+						delete window.gVariables;
+						delete window.gJacketID;
+					});
+				});
+
+				describe('functions', function() {
+					// before(function() {
+					// 	window.gVariables = {};
+					// 	window.gJacketID = "een id";
+					// });
+
+					// after(function() {
+					// 	delete window.gVariables;
+					// 	delete window.gJacketID;
+					// });
+
+					describe('set_project_name', function() {
+						var l_session;
+
+						beforeEach(function() {
+							window.gVariables = {};
+							window.gJacketID = "een id";
+							l_session = new panzer.patchplanner.session();
+						});
+
+						afterEach(function() {
+							delete window.gVariables;
+							delete window.gJacketID;
+						});
+
+						it('should not accept invalid parameters', function() {
+							(function() {
+								l_session.set_project_name(null);
+							}).should.throw();
+
+							(function() {
+								l_session.set_project_name('');
+							}).should.throw();
+
+							(function() {
+								l_session.set_project_name(5);
+							}).should.throw();;
+						});
+
+						it('should accept ')
+					});
+
+					describe('getProjectName', function() {
+
+					});
+
+					describe('get_project_id', function() {
+
+					});
+
+					describe('has_project', function() {						
+
+					});
+
+					describe('get_layout_document', function() {
+
+					});
+
+					describe('set_layout_document', function() {
+
+					});
+				});
+			});
+
+			mocha.run();
+		});
+	</script>
+</head>
+<body>
+	<div id="mocha"></div>
+</body>
+</html>

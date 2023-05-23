@@ -1,0 +1,1721 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Novo Pedido de Vendas</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script>
+          function pesquisacep(valor,campo) {
+console.log(campo)
+console.log(valor)
+  //Nova variável "cep" somente com dígitos.
+  var cep = valor.replace(/\D/g, '');
+
+  //Verifica se campo cep possui valor informado.
+  if (cep != "") {
+
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
+
+      //Valida o formato do CEP.
+      if(validacep.test(cep)) {
+
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="Buscando...";
+          document.getElementById('bairro').value="Buscando...";
+          document.getElementById('cidade').value="Buscando...";
+          document.getElementById('uf').value="Buscando...";
+      
+        var url_busca = "https://viacep.com.br/ws/"+cep+"/json/?"
+        var busca_o_cep = api_sync.hub.start_from_whitepaper_with_files_and_variables("BUSCA_CEP","busca_cep", [] ,{"url":url_busca});
+       
+       
+        var workable_id = busca_o_cep.workable_id
+        var workableConsoleLog = function ()  // a cada 30s roda isso e atualiza a variavel form...
+          {
+            var variaveis = api.workable.get_merged_variables(workable_id)
+           if (variaveis.variables.state.value == "buscando"){
+      
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="Buscando...";
+          document.getElementById('bairro').value="Buscando...";
+          document.getElementById('cidade').value="Buscando...";
+          document.getElementById('uf').value="Buscando...";
+        
+               
+           } else {
+              
+          document.getElementById('rua').value=variaveis.variables.resultado.value.logradouro
+          document.getElementById('bairro').value=variaveis.variables.resultado.value.bairro
+          document.getElementById('cidade').value=variaveis.variables.resultado.value.localidade
+          document.getElementById('uf').value=variaveis.variables.resultado.value.uf 
+           
+                  myStopFunction();
+              }
+        }
+	   var workflowTimeout = setInterval(workableConsoleLog, 500);
+        function myStopFunction() {
+                    clearInterval(workflowTimeout);
+                    }
+        
+       
+        
+          
+        }
+  }
+      }
+    
+     </script>
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./assets/img/rotocrom.jpg" style="width: 70%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Pedidos de Vendas
+                  <ul>
+                  <li class="active" style="list-style-type: none">
+                     <a href="controle_entrada_NF.html"><i class="fas fa-receipt" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                 <li style="list-style-type: none">
+                     <a href="controle_saída_NF.html"><i class="fas fa-truck" style="margin-right: 5px"></i>Lista Pedidos</a>
+                    </li>
+            
+                    
+                    </ul>
+                    </li>
+                    
+                  
+                    </ul>
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <!--<li class="nav-item">
+                      <a class="nav-link" href="solicitacaoArtes.html">Nova Solicitação</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="DashBoard_aprovacoes.html">Dashboard</a>
+                  </li>-->
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2 style="display:inline-block;">Novo Pedido de Vendas</h2>
+        <!--<div class="form-group col-md-2" style="display:inline-block;">
+          <label for="data-inicio">A partir de</label>
+          <input type="date"  onchange="preencheLista()" class="form-control" id="data-inicio" name="data-inicio">
+        </div>
+        <div class="form-group col-md-2" style="display:inline-block;">
+          <label for="data-final">Ate</label>
+          <input type="date"  onchange="preencheLista()" class="form-control" id="data-final" name="data-final">
+        </div>-->
+        
+        <br>
+       
+        <br>
+        <br>
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+        <hr>
+       
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_cliente" style="display:none"></div>
+            <section class="form-group col-md-7" style="display:inline-block;"></section>
+            
+            <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="data-inicio">Data Entrada</label>
+                <input type="date" class="form-control" id="data-inicio"  name="data-inicio" readonly>
+            </div>
+            <br>
+            <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="data-solicita">Data Solicitação</label>
+                <input type="date" class="form-control" id="data-solicita"  name="data-solicita">
+            </div>
+            <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="especifica_servico">Especificação do Serviço</label>
+                <select  class="form-control" id="especifica_servico"  name="especifica_servico">
+                    <option value="undefined">Selecionar...</option>
+                    </select>
+            </div>
+            <hr>
+            <h5>Informações do Cliente</h5>
+                <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="busca_cliente">Nome do Cliente</label>
+                  <input type="text" class="form-control" style="display: inline-block; width: 80%; margin-right: 5px" id="busca_cliente"  onchange="verifica_cliente()" name="busca_cliente" list="os_clientes">
+                  <span style="display: none;" onclick="cria_cliente()" id="imagem_adiciona_cliente">
+                 <img src="./Icons/icone_mais.png" width="30px">
+                </span>
+                  <datalist id="os_clientes"></datalist>
+                  <span class="error"><p id="error_busca_cliente" style="color:orange"></p></span>
+                  </div>
+                
+                <div class="form-group col-md-4" style="display:inline-block; vertical-align: top;">
+                <label for="sub_cliente">Sub Cliente</label>
+                  <input type="text" class="form-control" id="sub_cliente"   name="sub_cliente">
+                  </div>
+                 <div class="form-group col-md-8" style="display:inline-block;">
+                <label for="servico">Serviço</label>
+                  <input type="text" class="form-control" id="servico" name="servico">
+                  </div>
+                 
+            <hr>
+            <h5>Especificações Técnicas</h5>
+             <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="especifica_produto">Produto</label>
+                <input type="text"  class="form-control" id="especifica_produto" onchange="verifica_produto()"  name="especifica_produto" list="os_produtos">
+                    <datalist id="os_produtos"></datalist>
+                     <span class="error"><p id="error_produto" style="color:orange"></p></span>
+            </div>
+            <div class="form-group col-md-5" style="display:inline-block;">
+                <label for="especifica_material">Material</label>
+                <input type="text"  class="form-control" id="especifica_material" onchange="verifica_material()" name="especifica_material" list="os_materiais">
+                 <datalist id="os_materiais"></datalist>
+                     <span class="error"><p id="error_materiais" style="color:orange"></p></span>  
+            </div>
+            <br>
+            <div class="form-group col-md-3" style="display:inline-block; vertical-align: top; border-right: 1px solid lightgray">
+            <h6>Informação Material</h6>
+            <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="largura">Largura</label>
+                  <input type="number" class="form-control" id="largura" name="largura">
+                  </div>
+            
+            <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="especifica_ladoImpressao">Lado Impressão</label>
+                <select  class="form-control" id="especifica_ladoImpressao"  name="especifica_ladoImpressao">
+                    <option value="undefined">Selecionar...</option>
+                    <option value="Por Dentro">Por Dentro</option>
+                    <option value="Por Fora">Por Fora</option>
+                    </select>
+            </div>
+            </div>
+            <div class="form-group col-md-3" style="display:inline-block; vertical-align: top; border-right: 1px solid lightgray">
+              <h6>Informação Cilindro</h6>  
+        <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="perimetro_cilindro">Perímetro</label>
+                  <input type="number" class="form-control" id="perimetro_cilindro" name="perimetro_cilindro">
+                  </div>
+                   <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="corpo_cilindro">Corpo</label>
+                  <input type="number" class="form-control" id="corpo_cilindro" name="corpo_cilindro">
+                  </div>
+        
+            </div>
+            <div class="form-group col-md-4" style="display:inline-block; vertical-align: top;">
+              <h6>Informação Repetição</h6>  
+        <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="faixas">Faixas</label>
+                  <input type="number" class="form-control" id="faixas" name="faixas">
+                  </div>
+                   <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="medida_faixa">Medida Faixa</label>
+                  <input type="number" class="form-control" id="medida_faixa" name="medida_faixa">
+                  </div>
+                  <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                   <label for="largura_total">Total</label>
+                  <input type="text" class="form-control" id="largura_total" name="largura_total" readonly>
+                  </div>
+            </div>
+                <hr>
+       <h4>Cilindros</h4>
+        <br>
+        <span style="display: inline-block; cursor: pointer;" onclick="adiciona_tinta()">
+                 <img src="./Icons/icone_mais.png" width="30px">
+                </span>
+        <div class="form-group" style="display:inline-block; width: 15%">
+            <label for="cor">Cor</label>
+            <input type="text" class="form-control" id="cor" name="cor" list="as_cores">
+            <datalist id="as_cores"></datalist>
+        </div>
+        <div class="form-group" style="display:inline-block; width: 8%">
+            <label for="numero">Número</label>
+            <input type="text" class="form-control" id="numero" name="numero" onchange="preencheDadosCilindro()" list="codigos_cilindro">
+            <datalist id="codigos_cilindro"></datalist>
+        </div>
+        <div class="form-group" style="display:inline-block; width: 8%">
+            <label for="lineatura">Lineatura</label>
+            <input type="number" class="form-control" id="lineatura" name="lineatura">
+        </div>
+        <div class="form-group" style="display:inline-block; width: 8%">
+            <label for="angulo">Ângulo</label>
+            <input type="number" class="form-control" id="angulo" name="angulo">
+        </div>
+        <div class="form-group" style="display:inline-block; width: 8%">
+            <label for="corpo">Corpo</label>
+            <input type="number" class="form-control" id="corpo" name="corpo">
+        </div>
+        <div class="form-group" style="display:inline-block; width: 8%">
+            <label for="perimetro">Perímetro</label>
+            <input type="number" class="form-control" id="perimetro" name="perimetro">
+        </div>
+        <div class="form-group" style="display:inline-block; width: 10%">
+            <label for="profundidade">Profundidade</label>
+            <input type="number" class="form-control" id="profundidade" name="profundidade">
+        </div>
+        <div class="form-group" style="display:inline-block; width: 12%">
+            <label for="gravacao">Gravação</label>
+            <select  class="form-control" id="gravacao" name="gravacao">
+                <option>Selecionar...</option>
+                <option>Eletrônico</option>
+                <option>Laser</option>
+                <option>Mecânica</option>
+                </select>
+        </div>
+        <div class="form-group" style="display:inline-block; width: 15%">
+            <label for="tipo">Tipo</label>
+            <select  class="form-control" id="tipo" name="tipo">
+                <option>Selecionar...</option>
+                <option value="CIC">Cilindro de Cobre</option>
+                <option value="CIF">Cilindro de Ferro</option>
+                <option value="CIM">Cilindro Mandril</option>
+                <option value="CIB">Cilindro de Borracha</option>
+                <option value="CAB">Camisa de Borracha</option>
+                <option value="CAN">Camisa de Niquel</option>
+                </select>
+        </div>
+        <div id="mostra_tabela_cilindros" class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+        <table id="tabelaCilindros" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 18%">Cor
+                    </th>
+                    <th style="width: 8%">Numero
+                    </th>
+                    <th style="width: 9%">Lineatura
+                    </th>
+                     <th style="width: 8%">Ângulo
+                    </th>
+                     <th style="width: 9%">Corpo
+                    </th>
+                     <th style="width: 10%">Perímetro
+                    </th>
+                    <th style="width: 10%">Profundidade
+                    </th>
+                    <th style="width: 8%">Gravação
+                    </th>
+                    <th style="width: 10%">Tipo
+                    </th>
+                    <th style="width: 5%">Editar
+                    </th>
+                    <th style="width: 5%">Apagar
+                    </th>
+                    
+                  </tr></tbody>
+                </table>   
+            
+            
+        </div>
+        
+            
+            
+            
+               
+                <br>
+                <hr>
+       <div class="form-group col-md-6" style="display:inline-block; vertical-align: top;">
+            <h6>Fotocélula</h6>
+            <div class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+                <label for="largura_fotocelula">Largura</label>
+                  <input type="number" class="form-control" id="largura_fotocelula" name="largura_fotocelula">
+                  </div>
+                  <div class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+                <label for="altura_fotocelula">Altura</label>
+                  <input type="number" class="form-control" id="altura_fotocelula" name="altura_fotocelula">
+                  </div>
+            <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="qtde_fotocelula">Passo</label>
+                <br>
+                  <input type="number" class="form-control" style="width: 40%; display: inline-block; margin-right: 5px;" id="qtde_fotocelula" name="qtde_fotocelula"> x <input type="number" class="form-control"  style="width: 40%; display: inline-block; margin-left: 5px;" id="passo_fotocelula" name="passo_fotocelula">
+            </div>
+            
+            <div class="form-group col-md-6" style="display:inline-block;">
+                <label for="especifica_ladoImpressao">Lado Impressão</label>
+                <select  class="form-control" id="especifica_ladoImpressao"  name="especifica_ladoImpressao">
+                    <option value="undefined">Selecionar...</option>
+                    <option value="Por Dentro">Por Dentro</option>
+                    <option value="Por Fora">Por Fora</option>
+                    </select>
+            </div>
+            <br>
+            
+            
+            
+            
+            
+            </div>
+            
+            <div class="form-group col-md-5" style="display:inline-block; vertical-align: top; border-left: 1px solid lightgray">
+                <h6>Posição da Fotocélula</h6>
+                <div class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+                <label for="usar_print">Conforme Print</label>
+                  <input type="checkbox" class="form-group" onclick="mostra_fotocelulas()" id="usar_print" name="usar_print">
+                  </div>
+                <div id="mostra_fotocelula1" style ="width: 100%">
+                    <div style="height: 50px; margin-left: 50px; display: inline-block;">
+                        
+                    
+                        <div style="width: 20px;display: inline-block; cursor: pointer">
+                            <span id="90ES" onclick="adiciona_fotocelula()" style="margin-top:5px;height:50px;width:20px;background-color:lightgray;display:inline-block">
+                            </span>
+                        </div>
+                        <div style="width: 40px;display: inline-block;">
+                        </div>
+                        <div style="width: 20px;display: inline-block; ; cursor: pointer">
+                            <span id="90CS" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:50px;width:20px;background-color:lightgray;display:inline-block">
+                            </span>
+                        </div>
+                        <div style="width: 40px;display: inline-block;">
+                        </div>
+                         <div style="width: 20px;display: inline-block; ; cursor: pointer">
+                            <span id="90DS" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:50px;width:20px;background-color:lightgray;display:inline-block">
+                            </span>
+                        </div>
+                        <div style="width: 50px;display: inline-block;">
+                        </div>
+                </div>
+            </div>
+            <div id="mostra_fotocelula2" style="width: 100%">
+            <div style ="width: 50px; height: 200px; display: inline-block;">
+                <div style="width: 50px;display: inline-block; ; cursor: pointer">
+                            <span id="0ES" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:20px;width:50px;background-color:lightgray;display:inline-block">
+                            </span>
+                </div>
+                <div style="height 70px:width: 50px;display: inline-block;">
+                    <span  style="margin-top:5px;height:50px;width:50px;background-color:#FAFAFA;display:inline-block">
+                            </span>
+                        </div>
+               <div style="width: 50px;display: inline-block; ; cursor: pointer">
+                            <span id="0EC" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:20px;width:50px;background-color:lightgray;display:inline-block">
+                            </span>
+                </div>
+                <div style="height 70px:width: 50px;display: inline-block;">
+                    <span  style="margin-top:5px;height:50px;width:50px;background-color:#FAFAFA;display:inline-block">
+                            </span>
+                        </div>
+                <div style="width: 50px;display: inline-block;; cursor: pointer">
+                            <span id="0EI" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:20px;width:50px;background-color:lightgray;display:inline-block">
+                            </span>
+                </div>
+            </div>
+            <div style ="width: 160px; height: 220px; display: inline-block; vertical-align: top;">
+                <img src="./Icons/A.png" width="100%">
+                </div>
+            <div style ="width: 50px; height: 200px; display: inline-block;">
+                <div style="width: 50px;display: inline-block;; cursor: pointer">
+                            <span id="0DS" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:20px;width:50px;background-color:lightgray;display:inline-block">
+                            </span>
+                </div>
+                <div style="height 70px:width: 50px;display: inline-block;">
+                    <span  style="margin-top:5px;height:50px;width:50px;background-color:#FAFAFA;display:inline-block">
+                            </span>
+                        </div>
+               <div style="width: 50px;display: inline-block;; cursor: pointer">
+                            <span id="0DC" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:20px;width:50px;background-color:lightgray;display:inline-block">
+                            </span>
+                </div>
+                <div style="height 70px:width: 50px;display: inline-block;">
+                    <span  style="margin-top:5px;height:50px;width:50px;background-color:#FAFAFA;display:inline-block">
+                            </span>
+                        </div>
+                <div style="width: 50px;display: inline-block;; cursor: pointer">
+                            <span id="0DI" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:20px;width:50px;background-color:lightgray;display:inline-block">
+                            </span>
+                </div>
+            </div>
+            </div>
+            <div id="mostra_fotocelula3" style="width: 100%">
+                    <div style="height: 50px; margin-left: 50px; display: inline-block;">
+                        
+                    
+                        <div style="width: 20px;display: inline-block;; cursor: pointer">
+                            <span id="90EI" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:50px;width:20px;background-color:lightgray;display:inline-block">
+                            </span>
+                        </div>
+                        <div style="width: 40px;display: inline-block;">
+                        </div>
+                        <div style="width: 20px;display: inline-block;; cursor: pointer">
+                            <span id="90CI" onclick="adiciona_fotocelula()"  style="margin-top:5px;height:50px;width:20px;background-color:lightgray;display:inline-block">
+                            </span>
+                        </div>
+                        <div style="width: 40px;display: inline-block;">
+                        </div>
+                         <div style="width: 20px;display: inline-block;; cursor: pointer">
+                            <span id="90DI" onclick="adiciona_fotocelula()" q style="margin-top:5px;height:50px;width:20px;background-color:lightgray;display:inline-block">
+                            </span>
+                        </div>
+                        <div style="width: 50px;display: inline-block;">
+                        </div>
+                </div>
+            </div>
+            </div>
+            
+             <div class="form-group col-md-11" style="display:inline-block;">
+            <h6>Cores Fotocélula</h6>
+            <br>
+            <div id="mostra_cor_fotocelula_1" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_1" for="a_cor_fotocelula_1"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_1" name="a_cor_fotocelula_1"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_1" name="a_pct_fotocelula_1">
+                  <label  for="a_pct_fotocelula_1">%</label>
+                  
+            </div>
+            <div id="mostra_cor_fotocelula_2" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_2" for="a_cor_fotocelula_2"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_2" name="a_cor_2_fotocelula"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_2" name="a_pct_fotocelula_2">
+                  <label  for="a_pct_fotocelula_2">%</label>
+            </div>
+            <div id="mostra_cor_fotocelula_3" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_3" for="a_cor_fotocelula_3"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_3" name="a_cor_3_fotocelula"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_3" name="a_pct_fotocelula_3">
+                  <label  for="a_pct_fotocelula_3">%</label>
+            </div>
+            <div id="mostra_cor_fotocelula_4" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_4" for="a_cor_fotocelula_4"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_4" name="a_cor_4_fotocelula"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_4" name="a_pct_fotocelula_4">
+                  <label  for="a_pct_fotocelula_4">%</label>
+            </div>
+            <div id="mostra_cor_fotocelula_5" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_5" for="a_cor_fotocelula_5"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_5" name="a_cor_5_fotocelula"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_5" name="a_pct_fotocelula_5">
+                  <label  for="a_pct_fotocelula_5">%</label>
+            </div>
+            <div id="mostra_cor_fotocelula_6" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_6" for="a_cor_fotocelula_6"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_6" name="a_cor_6_fotocelula"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_6" name="a_pct_fotocelula_6">
+                  <label  for="a_pct_fotocelula_6">%</label>
+            </div>
+            <div id="mostra_cor_fotocelula_7" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_7" for="a_cor_fotocelula_7"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_7" name="a_cor_7_fotocelula"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_7" name="a_pct_fotocelula_7">
+                  <label  for="a_pct_fotocelula_7">%</label>
+            </div>
+            <div id="mostra_cor_fotocelula_8" class="form-group col-md-3" style="display:none;">
+                  <label id="label_cor_fotocelula_8" for="a_cor_fotocelula_8"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_8" name="a_cor_fotocelula_8"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_8" name="a_pct_fotocelula_8">
+                  <label  for="a_pct_fotocelula_8">%</label>
+            </div>
+            <div id="mostra_cor_fotocelula_9" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_9" for="a_cor_fotocelula_9"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_9" name="a_cor_fotocelula_9"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_9" name="a_pct_fotocelula_9">
+                  <label  for="a_pct_fotocelula_9">%</label>
+            </div>
+            <div id="mostra_cor_fotocelula_10" class="form-group" style="display:none;">
+                  <label id="label_cor_fotocelula_10" for="a_cor_fotocelula_10"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_fotocelula()" id="a_cor_fotocelula_10" name="a_cor_fotocelula_10"><input type="number" class="form-group" style="width: 10%; display: none; margin-right: 5px;"  onchange="adiciona_pct_fotocelula()"   id="a_pct_fotocelula_10" name="a_pct_fotocelula_10">
+                  <label  for="a_pct_fotocelula_10">%</label>
+            </div>
+            
+        <hr>
+        </div>
+        <div class="form-group col-md-11" style="display:inline-block;">
+            <h6>Tarja</h6>
+            <br>
+             <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="local_tarja">Local da tarja</label>
+                <input type="text"  class="form-control" id="local_tarja"  name="local_tarja" list="os_locais">
+                    <datalist id="os_locais"></datalist>
+            </div>
+            <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="medida_tarja">Medida (mm)</label>
+                <input type="number"  class="form-control" id="medida_tarja"  name="medida_tarja"  value="0">
+            </div>
+            <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="tipo_registro">Tipo de Registro</label>
+                <input type="text"  class="form-control" id="tipo_registro"  name="tipo_registro" list="os_registros">
+                    <datalist id="os_registros"></datalist>
+            </div>
+            <div class="form-group col-md-2" style="display:inline-block;">
+                
+                <input type="checkbox"  class="form-group" id="logotipo"  name="logotipo">
+                   <label for="logotipo">Logotipo</label>
+            </div>
+            <br>
+             <h6>Cores Tarja</h6>
+             <br>
+             <div id="mostra_cor_tarja_1" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_1" for="a_cor_tarja_1"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_1" name="a_cor_tarja_1">
+            </div>
+            <div id="mostra_cor_tarja_2" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_2" for="a_cor_tarja_2"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_2" name="a_cor_tarja_2">
+            </div>
+            <div id="mostra_cor_tarja_3" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_3" for="a_cor_tarja_3"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_3" name="a_cor_tarja_3">
+            </div>
+            <div id="mostra_cor_tarja_4" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_4" for="a_cor_tarja_4"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_4" name="a_cor_tarja_4">
+            </div>
+            <div id="mostra_cor_tarja_5" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_5" for="a_cor_tarja_5"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_5" name="a_cor_tarja_5">
+            </div>
+            <div id="mostra_cor_tarja_6" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_6" for="a_cor_tarja_6"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_6" name="a_cor_tarja_6">
+            </div>
+            <div id="mostra_cor_tarja_7" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_7" for="a_cor_tarja_7"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_7" name="a_cor_tarja_7">
+            </div>
+            <div id="mostra_cor_tarja_8" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_8" for="a_cor_tarja_8"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_8" name="a_cor_tarja_8">
+            </div>
+            <div id="mostra_cor_tarja_9" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_9" for="a_cor_tarja_9"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_9" name="a_cor_tarja_9">
+            </div>
+            <div id="mostra_cor_tarja_10" class="form-group" style="display:none;">
+                  <label id="label_cor_tarja_10" for="a_cor_tarja_10"></label>
+                  <input type="checkbox" class="form-group" style="width: 5%; display: inline-block; margin-right: 5px;" onclick="adiciona_cor_tarja()" id="a_cor_tarja_10" name="a_cor_tarja_10">
+            </div>
+           
+            <hr>
+            <h6>Puxada</h6>
+            <br>
+            <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="valor_puxada">Puxada (mm)</label>
+                <input type="number"  class="form-control" id="valor_puxada"  name="valor_puxada" step="0.01"  value="0.00">
+            </div>
+       <hr>
+        <h6>Códigos de Barra</h6>
+        <br>
+        <div class="form-group col-md-6" style="display:inline-block;">
+         <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="tipo_codigo">Tipo</label>
+                <select  class="form-control" id="tipo_codigo"  name="tipo_codigo">
+                    <option value="undefined">Selecionar...</option>
+                    <option>EAN-13</option>
+                    <option>QR-Code</option>
+                    <option>UPC-A</option>
+                    <option>UPC-E</option>
+                    </select>
+                    <span class="error"><p id="error_tipo_codigo_barra" style="color:red"></p></span>
+            </div>
+            <div class="form-group col-md-7" style="display:inline-block; vertical-align: top;">
+                <label for="valor_codigo">Código</label>
+                <input type="text"  class="form-control" id="valor_codigo"  name="valor_codigo">
+                <span class="error"><p id="error_numero_codigo_barra" style="color:red"></p></span>
+            </div>
+            <div class="form-group col-md-11" style="display:inline-block;">
+                <button class="btn btn-secondary" onclick="adiciona_codigo_barras()" style="cursor: pointer">Adicionar Código</button>
+                </div>
+                </div>
+                <div class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+                    
+                <table id="tabelaCodigosBarra" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 20%">Tipo
+                    </th>
+                    <th style="width: 70%">Código
+                    </th>
+                     <th style="width: 10%">Apagar
+                    </th>
+                    
+                    
+                    
+                  </tr></tbody>
+                </table>   
+                    </div>
+        
+        <hr>
+       
+       <h5>Aprovação da Arte</h5>
+       <br>
+       <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="fluxo_aprovacao">Fluxo de Aprovação</label>
+                <select  class="form-control" id="fluxo_aprovacao"  name="fluxo_aprovacao">
+                    <option>Novo</option>
+                    <option disabled="disabled">---------</option>
+                    </select>
+            </div>
+        <div class="form-group col-md-2" style="display:inline-block;">
+               
+                <input type="checkbox" onchange="criar_novo_fluxo()" class="form-group" id="salvar_fluxo"  name="salvar_fluxo">
+                 <label for="salvar_fluxo">Salvar Fluxo?</label>
+            </div>
+        <div id="mostra_nome_fluxo" class="form-group col-md-5" style="display:none;">
+                <label for="nome_novo_fluxo">Nome do Fluxo</label>
+                <input type="text" class="form-control" id="nome_novo_fluxo"  name="nome_novo_fluxo">
+            </div>
+            <br>
+            <h6>Enviar para Aprovação</h6>
+            <br>
+            <div id="info_aprovador" style="display:none"></div>
+            <div class="form-group col-md-2" style="display:inline-block;">
+               
+                <input type="checkbox" onchange="que_envia_aprovacao()" class="form-group" id="PDF"  name="PDF">
+                 <label for="PDF">PDF</label>
+            </div>
+            <div class="form-group col-md-2" style="display:inline-block;">
+               
+                <input type="checkbox" onchange="que_envia_aprovacao()" class="form-group" id="JPG"  name="JPG">
+                 <label for="JPG">JPG</label>
+            </div>
+            <div class="form-group col-md-2" style="display:inline-block;">
+               
+                <input type="checkbox" onchange="que_envia_aprovacao()" class="form-group" id="Prova Digital"  name="Prova Digital">
+                 <label for="Prova Digital">Prova Digital</label>
+            </div>
+            <div class="form-group col-md-2" style="display:inline-block;">
+               
+                <input type="checkbox" onchange="que_envia_aprovacao()" class="form-group" id="Prova Cilindro"  name="Prova Cilindro">
+                 <label for="Prova Cilindro">Prova Cilindro</label>
+            </div>
+            <br>
+              <div  class="form-group col-md-6" style="display:inline-block; vertical-align: top;">
+                 <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="nome_aprovador">Nome Aprovador</label>
+                <input type="text"  class="form-control" id="nome_aprovador"  name="nome_aprovador">
+                 <span class="error"><p id="error_nome_aprovador" style="color:red"></p></span>
+            </div> 
+            <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="email_aprovador">e-mail</label>
+                <input type="text"  class="form-control" id="email_aprovador" onkeyup='this.value = this.value.toLowerCase()'  name="email_aprovador">
+                 <span class="error"><p id="error_email_aprovador" style="color:red"></p></span>
+            </div> 
+            <button id="botao_incluir_aprovador" class="btn btn-secondary" onclick="adiciona_aprovadores()">Incluir Aprovador</button>
+                  
+                  </div>
+                  <div  class="form-group col-md-5" style="display:inline-block; vertical-align: top">
+                       <table id="tabelaAprovadores" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 30%">Nome
+                    </th>
+                    <th style="width: 50%">e-mail
+                    </th>
+                    <th style="width: 10%">Editar
+                    </th>
+                     <th style="width: 10%">Apagar
+                    </th>
+                    
+                    
+                    
+                  </tr></tbody>
+                </table>   
+                       
+                       </div>
+        
+            
+       
+       
+       
+       
+       <hr>
+       <h5>Anexos Técnicos</h5>
+       <br>
+       <a class="btn btn-secondary" href="#" target="_Blank">Anexar Documentos</a>
+       <br>
+       <br>
+       <br>
+       <div id="mostra_tabela_documentos" class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+        <table id="tabelaDocumentos" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 15%">Data Envio
+                    </th>
+                    <th style="width: 20%">Enviado por
+                    </th>
+                    <th style="width: 15%">Tipo
+                    </th>
+                     <th style="width: 40%">Nome Arquivo
+                    </th>
+                     <th style="width: 5%">Visualizar
+                    </th>
+                     <th style="width: 5%">Baixar
+                    </th>
+                    
+                    
+                  </tr></tbody>
+                </table>   
+            
+            
+        </div>
+        <hr>
+       <h5>Tarefas</h5>
+       <br>
+       <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+           <div class="form-group col-md-4" style="display:inline-block; vertical-align: top;">
+                <label for="tarefa_departamento">Departamento</label>
+                <select  class="form-control" id="tarefa_departamento"  name="tarefa_departamento">
+                    <option>Selecionar</option>
+                    <option>Inspeção</option>
+                    <option>Galvano</option>
+                    <option>Prepress</option>
+                    <option>Gravação</option>
+                    <option>Faturamento</option>
+                    <option>Despacho</option>
+                    </select>
+            </div>
+            <div class="form-group col-md-7" style="display:inline-block; vertical-align: top;">
+                <label for="tarefa_descricao">Descrição</label>
+                <textarea  class="form-control" id="tarefa_descricao"  name="tarefa_descricao" cols="1" rows="5">
+                    </textarea>
+            </div>
+            <button class="btn btn-secondary" onclick="adiciona_tarefa()" style="cursor: pointer">Adicionar Tarefa</button>
+           
+           </div>
+           
+           <div  class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+        <table id="tabelaTarefas" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 10%">Tarefa #
+                    </th>
+                    <th style="width: 15%">Criada em
+                    </th>
+                    <th style="width: 20%">Criada por
+                    </th>
+                    <th style="width: 10%">Departamento
+                    </th>
+                     <th style="width: 40%">Descrição
+                    </th>
+                     <th style="width: 5%">Apagar
+                    </th>
+                    
+                    
+                  </tr></tbody>
+                </table>   
+          
+            
+        </div>
+        <hr>
+       
+                <br>
+                <section class="form-group col-md-9" style="display: inline-block;"></section>
+                <div  class="form-group col-md-2" style="display:inline-block; vertical-align: top;">
+                <button id="salva_cliente" class="btn btn-primary" onclick="grava_pedido()" style="cursor: pointer">Salvar Pedido</button>
+                </div>
+                 <div id="info_update" style="color: green"></div>
+                 
+              
+            </div>
+        
+       
+  	
+  		
+  	<script>
+  	// funcoes auxiliares
+  	
+    function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}	
+  	
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+  	    //preenche select do cliente
+  	    
+  	     var listaCodigo2 = api.custom_objects.list_with_options("BR-ROTOC_customers",[],[],["FANTASIA"]).results;
+          var options=''; // variable to store the options
+          for(var i = 0; i < listaCodigo2.length; i++){
+              
+          options += '<option value="'+listaCodigo2[i].FANTASIA+'" />';
+  
+          }
+           document.getElementById('os_clientes').innerHTML = options;
+  	   
+  	   
+  	   
+    var tiposTipo2 = api.custom_objects.list_with_options("BR-ROTOC_tiposGravacao",[],[],["tipo"]).results
+    var nomes_grupo2 = new Array()
+    
+//    for (i=0;i<tiposTipo2.length;i++){
+  //      nomes_grupo2.push(tiposTipo2[i].tipo)
+//    }
+    
+ //   var nomes_limpos2 = nomes_grupo2.filter(onlyUnique)
+  //  for (var i = 0; i<nomes_limpos2.length; i++){
+    //    if (nomes_limpos2[i] != "CILINDRO DE MANDRIL"){
+    //    var opt = document.createElement('option');
+    //    opt.value = nomes_limpos2[i];
+    //    opt.innerHTML = nomes_limpos2[i];
+    //    selectTipo2.appendChild(opt);
+    //    }
+//    }
+  	   
+  	   // preenche opções de local
+  	   
+  	    var listalocais = api.custom_objects.list_with_options("TBLLOCAIS",[],[],["DESCRICAO"]).results;
+          var options_locais=''; // variable to store the options
+          for(var i = 0; i < listalocais.length; i++){
+              
+          options_locais += '<option value="'+listalocais[i].DESCRICAO+'" />';
+  
+          }
+           document.getElementById('os_locais').innerHTML = options_locais;
+           
+            var listaregistro = api.custom_objects.list_with_options("TBLREGISTRO",[],[],["DESCRICAO"]).results;
+          var options_registro=''; // variable to store the options
+          for(var i = 0; i < listaregistro.length; i++){
+              
+          options_registro += '<option value="'+listaregistro[i].DESCRICAO+'" />';
+  
+          }
+           document.getElementById('os_registros').innerHTML = options_registro;
+  	   
+  	</script>
+  	<script>
+  	    function mostra_fotocelulas(){
+  	        if (document.getElementById("usar_print").checked === true){
+  	            document.getElementById("mostra_fotocelula1").style = "display:none"
+  	            document.getElementById("mostra_fotocelula2").style = "display:none"
+  	            document.getElementById("mostra_fotocelula3").style = "display:none"
+  	        } else {
+  	             document.getElementById("mostra_fotocelula1").style = "display:inline-block;"
+  	            document.getElementById("mostra_fotocelula2").style = "display:inline-block;"
+  	             document.getElementById("mostra_fotocelula3").style = "display:inline-block;"
+  	        }
+  	        
+  	    }
+  	    
+  	    var fotocelulas = []
+  	    
+  	    function adiciona_fotocelula(){
+  	         var linha = event.srcElement.id
+  	         console.log(linha)
+  	        var existe = false
+  	        for (i=0;i<fotocelulas.length;i++){
+  	            if (fotocelulas[i] == linha){
+  	                existe = true
+  	            }
+  	        }
+  	        
+  	        console.log(existe)
+  	        if (existe === false){
+  	            var objeto = document.getElementById(linha)
+                 objeto.style.background = "black"
+                 fotocelulas.push(linha)
+  	        } else {
+  	            for (i=0;i<fotocelulas.length;i++){
+  	                if (fotocelulas[i] == linha){
+  	                    var tira = fotocelulas.splice(i,1)
+  	                    var objeto = document.getElementById(linha)
+                 objeto.style.background = "lightgray"
+  	                    
+  	                }
+  	            }
+  	        }
+  	        
+  	        
+  	        
+  	    }
+  	    
+  	    
+  	    function adiciona_cor_fotocelula(){
+  	        
+  	        var linha = event.srcElement.id
+  	        var mostra_cor = linha.replace("cor","pct")
+  	         var label_cor = linha.replace("a","label")
+  	         console.log(linha)
+  	         
+  	         document.getElementById(mostra_cor).style = "display: inline-block;"
+  	         var existe = false
+  	         for (i=0;i<os_cilindros.length;i++){
+  	             if (os_cilindros[i].cor == document.getElementById(label_cor).innerText){
+  	                 if (document.getElementById(linha).checked === true){
+  	                  os_cilindros[i].fotocelula = true  
+  	                  os_cilindros[i].pct_fotocelula = document.getElementById(mostra_cor).value
+  	                 } else {
+  	                  os_cilindros[i].fotocelula = false
+  	                  os_cilindros[i].pct_fotocelula = 0
+  	                 }
+  	                 
+  	             }
+  	         }
+  	         
+  	             
+  	         preencheCoresFotocelula()
+  	        
+  	    }
+  	    
+  	    
+  	    
+  	    
+  	    
+  	    function adiciona_pct_fotocelula(){
+  	       var linha = event.srcElement.id
+  	        var thelabel = linha.replace("a_pct","label_cor")
+  	        console.log(thelabel)
+  	        console.log(document.getElementById(thelabel).innerText)
+  	        for (i=0;i<cores_fotocelula.length;i++){
+  	            if (cores_fotocelula[i].cor == document.getElementById(thelabel).innerText){
+  	                cores_fotocelula[i].pct = parseFloat(document.getElementById(linha).value)
+  	            }
+  	        }
+  	          
+  	    }
+  	    
+  	    
+  	    function adiciona_cor_tarja(){
+  	        
+  	        var linha = event.srcElement.id
+  	         var label_cor = linha.replace("a","label")
+  	         
+  	         console.log(linha)
+  	         for (i=0;i<os_cilindros.length;i++){
+  	             if (os_cilindros[i].cor == document.getElementById(label_cor).innerText){
+  	                 if (document.getElementById(linha).checked === true){
+  	                 os_cilindros[i].tarja = true
+  	                 } else {
+  	                    os_cilindros[i].tarja = false  
+  	                 }
+  	             }
+  	         }
+  	      preencheCoresFotocelula()  
+  	    }
+  	    
+  	    
+  	    
+  	</script>
+  	<script>
+  	    function selecionar_cliente(){
+  	        var sel_codigo = document.getElementById("codigo_cliente").value
+  	            
+  	            if (sel_codigo == "undefined"){
+  	                document.getElementById("mostra_cliente").style = "display: none"
+  	            }
+  	            if (sel_codigo == "new"){
+  	                document.getElementById("mostra_cliente").style = "display: inline-block"
+  	            } else {
+  	                document.getElementById("mostra_cliente").style = "display: none"
+  	            }
+  	               
+  	           
+  	        }
+  	        
+  	        function seleciona_cilindro(){
+  	            var qual_cilindro = document.getElementById("tipo_produto").value
+  	            
+  	            if(qual_cilindro != "undefined"){
+  	                
+  	                $('#tipo_gravacao option:not(:first)').remove();
+
+  	                document.getElementById("mostra_tipo_gravacao").style = "display: inline-block;"
+  	                var busca_cilindros = api.custom_objects.list_with_options("BR-ROTOC_tiposGravacao",["tipo","equal to",qual_cilindro]).results
+  	                
+  	                 selectTipoGravacao = document.getElementById('tipo_gravacao');
+                 
+                     var nomes_gravacao = new Array()
+    
+                    for (i=0;i<busca_cilindros.length;i++){
+                        nomes_gravacao.push(busca_cilindros[i].subtipo)
+                    }
+    
+                    for (var i = 0; i<nomes_gravacao.length; i++){
+                        var opt = document.createElement('option');
+                        opt.value = nomes_gravacao[i];
+                        opt.innerHTML = nomes_gravacao[i];
+                        selectTipoGravacao.appendChild(opt);
+                    }
+                  	                
+  	            } else {
+  	               document.getElementById("mostra_tipo_gravacao").style = "display: none;" 
+  	            }
+  	            
+  	            
+  	        }
+  	    
+  	</script>
+  	<script>
+  	    
+  	        
+  	    
+  	</script>
+  		  
+  		  
+  
+
+      <script>
+      
+      
+      var usuario = api.auth.get_current_user()
+      var nome_user = "Bem vindo, "+usuario.fullname
+      document.getElementById("bemvindo").innerText = nome_user
+      </script>
+      <script>
+      //Preenche lista de Drafts
+
+        var hoje = new Date()
+        var ano = hoje.getFullYear()
+        var mes = hoje.getMonth()+1
+        var dia = hoje.getDate()
+        //document.getElementById("data-final").value = ano+"-"+mes+"-"+dia
+       // hoje.setDate(hoje.getDate()-30)
+        var ano2 = hoje.getFullYear()
+        var mes2 = hoje.getMonth()+1
+        var dia2 = hoje.getDate()
+        if (mes2 < 10){
+            mes2 = "0"+mes2
+        }
+        if (dia2 < 10){
+            dia2 = "0"+dia2
+        }
+        console.log(ano2+"-"+mes2+"-"+dia2)
+        document.getElementById("data-inicio").value = ano2+"-"+mes2+"-"+dia2
+
+    </script>
+      
+    <script>
+    
+    var tintas = api.custom_objects.list_with_options("PantoneColor",[],[],["nome"]).results;
+        var options2=''; // variable to store the options
+        for(var i = 0; i < tintas.length; i++){
+            
+        options2 += '<option value="'+tintas[i].nome+'" />';
+
+        }
+         document.getElementById('as_cores').innerHTML = options2;
+         
+         
+    var produtos = api.custom_objects.list_with_options("TBLPRODUTO",[],[],["DESCRICAO"]).results;
+        var options3=''; // variable to store the options
+        for(var i = 0; i < produtos.length; i++){
+            
+        options3 += '<option value="'+produtos[i].DESCRICAO+'" />';
+
+        }
+         document.getElementById('os_produtos').innerHTML = options3;
+         
+         
+     var materiais = api.custom_objects.list_with_options("TBLMATERIAIS",[],[],["DESCRICAO"]).results;
+        var options4=''; // variable to store the options
+        for(var i = 0; i < materiais.length; i++){
+            
+        options4 += '<option value="'+materiais[i].DESCRICAO+'" />';
+
+        }
+         document.getElementById('os_materiais').innerHTML = options4;
+    
+    var os_cilindros = []
+    
+    
+    function preencheCoresFotocelula(){
+            for (i=0;i<10;i++){
+            
+            
+            var numero = i+1
+            var mostrar = "mostra_cor_fotocelula_"+numero
+            var mostrar2 = "mostra_cor_tarja_"+numero
+            
+            var olabel = "label_cor_fotocelula_"+numero
+            var olabel2 = "label_cor_tarja_"+numero
+            
+            var ovalor = "a_pct_fotocelula_"+numero
+            var ocheck = "a_cor_fotocelula_"+numero
+            var ocheck2 = "a_cor_tarja_"+numero
+            console.log(mostrar)
+            console.log(olabel)
+            console.log(ocheck)
+            console.log(ovalor)
+            if (i<os_cilindros.length){
+            document.getElementById(mostrar).style = "display: inline-block; width: 33%"
+            document.getElementById(mostrar2).style = "display: inline-block; width: 25%"
+            document.getElementById(olabel).innerText = os_cilindros[i].cor
+            document.getElementById(olabel2).innerText = os_cilindros[i].cor
+            document.getElementById(ocheck).checked = os_cilindros[i].fotocelula
+            document.getElementById(ocheck2).checked = os_cilindros[i].tarja
+            document.getElementById(ovalor).value = os_cilindros[i].pct_fotocelula
+            if (os_cilindros[i].fotocelula == false){
+                document.getElementById(ovalor).style = "display: none;"
+            }
+                
+            } else {
+            document.getElementById(mostrar).style = "display: none;"
+            document.getElementById(mostrar2).style = "display: none;"
+            document.getElementById(olabel).innerText = ""
+            document.getElementById(olabel2).innerText = ""
+            document.getElementById(ocheck).checked = false
+            document.getElementById(ocheck2).checked = false
+            document.getElementById(ovalor).value = 0
+            document.getElementById(ovalor).style = "display: none."
+            
+             }
+             
+            
+             }
+            
+        
+        
+    } 
+        
+    
+    
+    
+        function adiciona_tinta(){
+            var busca_tinta = api.custom_objects.list_with_options("PantoneColor",["nome","equal to",document.getElementById("cor").value]).results
+            if (busca_tinta.length == 0){
+                var acor_hex = "#EEEEEE"
+            } else {
+                var acor_hex = busca_tinta[0].cor
+            }
+            var data = {}
+            data["numero"] = document.getElementById("numero").value
+            data["cor"] = document.getElementById("cor").value
+            data["hex"] = acor_hex
+            data["lineatura"] = document.getElementById("lineatura").value
+            data["angulo"] = document.getElementById("angulo").value
+            data["corpo"] = document.getElementById("corpo").value
+            data["perimetro"] = document.getElementById("perimetro").value
+            data["profundidade"] = document.getElementById("profundidade").value
+            data["gravacao"] = document.getElementById("gravacao").value
+            data["tipo"] = document.getElementById("tipo").value
+            data["fotocelula"] = false
+            data["pct_fotocelula"] = 100
+            data["tarja"] = false
+            
+            if (data["gravacao"] == "Selecionar..."){
+                
+            } else {
+                var existe = false
+                
+                for (i=0;i<os_cilindros.length;i++){
+                    console.log("Compararand")
+                    console.log(data["cor"])
+                    console.log("com")
+                    console.log(os_cilindros[i].cor)
+                    if (data["cor"] == os_cilindros[i].cor){
+                        console.log()
+                        existe = true
+                        var indice = i
+                    }
+                }
+                console.log("Existe "+existe)
+                if (existe === false){
+                os_cilindros.push(data)
+                }
+                else {
+                    os_cilindros[indice].numero = document.getElementById("numero").value
+                    os_cilindros[indice].lineatura = document.getElementById("lineatura").value
+                    os_cilindros[indice].angulo = document.getElementById("angulo").value
+                    os_cilindros[indice].corpo = document.getElementById("corpo").value
+                    os_cilindros[indice].perimetro = document.getElementById("perimetro").value
+                    os_cilindros[indice].gravacao = document.getElementById("gravacao").value
+                    os_cilindros[indice].tipo = document.getElementById("tipo").value
+                }
+            }
+            
+            
+            
+               var chaves = Object.keys(data)
+               
+               for (k=0;k<chaves.length;k++){
+                   if (chaves[k] == "hex"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "fotocelula"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "pct_fotocelula"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "tarja"){
+                       var tira = chaves.splice(k,1)
+                   }
+               }
+               console.log(chaves.toString())
+               for (j=0;j<chaves.length;j++){
+                   
+                       if (chaves[j] != "gravacao" || chaves[j] != "tipo"){
+                   document.getElementById(chaves[j]).style = "border-color:#ced4da ; background-color: white;"
+              document.getElementById(chaves[j]).value = ""
+                       }
+                      else {
+                           document.getElementById(chaves[j]).style = "border-color:#ced4da ; background-color: white;"
+              document.getElementById(chaves[j]).value = "Selecionar..." 
+                       }
+                   }
+               
+              
+              
+           
+            preencheTabelaCilindros()
+            
+            
+        }
+        
+         function preencheTabelaCilindros(){
+         
+         var table = document.getElementById("tabelaCilindros")
+        clearTable(table)
+        var qtasrow = table.rows.length
+      
+       
+        
+            
+        for (i=0;i<os_cilindros.length;i++){
+           
+            // preenche as cores da fotocelula
+            
+          
+            
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            var cell9 = row.insertCell(8);
+            var cell10 = row.insertCell(9);
+            var cell11 = row.insertCell(10);
+            
+            
+          
+            
+            cell1.innerHTML = '<div style="font-size: 1em; display: inline-block;"><div style="display:inline-block"><span style="margin-top:5px;height:20px;width:20px;background-color:'+os_cilindros[i].hex+';border-radius:50%;display:inline-block"></span></div><span style="display: inline-block;"></span></div><strong> '+os_cilindros[i].cor+'</strong></div>'
+            cell2.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].numero+'</div>'
+            cell3.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].lineatura+'</div>'
+            cell4.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].angulo+'</div>'
+            cell5.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].corpo+'</div>'
+            cell6.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].perimetro+'</div>'
+            cell7.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].profundidade+'</div>'
+            cell8.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].gravacao+'</div>'
+            cell9.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].tipo+'</div>'
+            cell10.innerHTML = '<div style="font-size: 1em; display: inline-block; cursor: pointer;"  ><img id="'+os_cilindros[i].cor+'" src="./Icons/Edit.png" width="50px" onclick="editar_cilindro()"></div>'
+            cell11.innerHTML = '<div style="font-size: 1em; display: inline-block; cursor: pointer;" ><img id="'+os_cilindros[i].cor+'" src="./Icons/delete.png" width="50px" onclick="apagar_cilindro()"></div>'
+         
+            qtasrow = qtasrow +1
+         
+        }    
+           
+           preencheCoresFotocelula() 
+        }
+        
+        function preencheDadosCilindro(){
+           
+            var qual_cilindro = document.getElementById("numero").value
+           var cilindro_caracteristica =  api.custom_objects.list_with_options("BR-ROTOC_romaneio",["CLIENTE","equal to",document.getElementById("id_cliente").innerText,"and","detalhes_romaneio.NR_CILINDRO","contains",qual_cilindro]).results
+            
+            document.getElementById("perimetro").value = cilindro_caracteristica[0].PERIMETRO
+            var os_detalhes_romaneio = cilindro_caracteristica[0].detalhes_romaneio
+            
+            for (i=0;i<os_detalhes_romaneio.length;i++){
+                if (os_detalhes_romaneio[i].NR_CILINDRO == qual_cilindro){
+                    console.log(os_detalhes_romaneio[i].TPCILINDRO)
+                    if (os_detalhes_romaneio[i].TPCILINDRO == "COBRE"){
+                        document.getElementById("tipo").value = "CIC"
+                    }
+                    if (os_detalhes_romaneio[i].TPCILINDRO == "FERRO"){
+                        document.getElementById("tipo").value = "CIF"
+                    }
+                }
+            }
+
+        }
+        
+        
+    </script>  
+      
+  <script>
+      
+      // verifica se o cliente existe e busca os cilindros desse cliente
+      
+      function verifica_cliente(){
+          
+          var options5=''
+          document.getElementById('codigos_cilindro').innerHTML = options5
+          
+          var qual_nome = document.getElementById("busca_cliente").value
+          
+          var busca_codigo = api.custom_objects.list_with_options("BR-ROTOC_customers",["FANTASIA","equal to",qual_nome],[],["CODIGO"]).results
+          
+          if (busca_codigo.length > 0){
+              
+              // verifica se o cliente possui codigo na base
+              
+              
+              if (busca_codigo[0].CODIGO != undefined){
+              document.getElementById("id_cliente").innerText = busca_codigo[0].CODIGO
+              document.getElementById("error_busca_cliente").innerText = ""
+            document.getElementById("imagem_adiciona_cliente").style = "display: none;"
+              
+              var busca_romaneio = api.custom_objects.list_with_options("BR-ROTOC_romaneio",["CLIENTE","equal to", busca_codigo[0].CODIGO.toString()],[],["PERIMETRO","CORPO","detalhes_romaneio"]).results
+            var detalhes_cilindro = []
+            for (i=0;i<busca_romaneio.length;i++){
+    var os_romaneios = busca_romaneio[i].detalhes_romaneio
+    for (j=0;j<os_romaneios.length;j++){
+        detalhes_cilindro.push(os_romaneios[j].NR_CILINDRO)
+    }
+            }
+        var unicos_cilindros = detalhes_cilindro.filter(onlyUnique)
+        var options5=''; // variable to store the options
+        for(var i = 0; i < unicos_cilindros.length; i++){
+          if (unicos_cilindros[i] != ""){  
+        options5 += '<option value="'+unicos_cilindros[i]+'" />';
+          }
+        }
+          document.getElementById('codigos_cilindro').innerHTML = options5;
+
+        
+          }
+          }
+          else {
+            document.getElementById("error_busca_cliente").innerText = "Cliente não encontrado na base de dados!"
+            document.getElementById("imagem_adiciona_cliente").style = "display: inline-block;"
+          }
+         
+    }
+
+
+
+  </script>
+  
+  <script>
+      function editar_cilindro(){
+          
+       var linha = event.srcElement.id
+       console.log(linha)
+       for (i=0;i<os_cilindros.length;i++){
+           if (os_cilindros[i].cor == linha){
+               var chaves = Object.keys(os_cilindros[i])
+               
+               for (j=0;j<chaves.length;j++){
+                   if (chaves[j] != "hex" || chaves[j] != "fotocelula" || chaves[j] != "pct_fotocelula" ){
+                   document.getElementById(chaves[j]).style = "border-color: orange; background-color: floralwhite;"
+              document.getElementById(chaves[j]).value = os_cilindros[i][chaves[j]]
+                   }
+               }
+              
+              
+           }
+       }
+      }
+      
+      function apagar_cilindro(){
+          if (confirm("Deseja mesmo apagar esse cilindro?") === true){
+            var linha = event.srcElement.id
+            
+          
+            
+            
+            for (i=0;i<os_cilindros.length;i++){
+                var numero = i+1
+                if (os_cilindros[i].cor == linha){
+                    var tira = os_cilindros.splice(i,1)
+                    var indice_tira = i
+                }
+            
+                
+            }
+                    
+                    preencheTabelaCilindros()
+                }
+      }
+            
+    
+  </script>
+  <script>
+      // funcoes de codigo de barras
+      
+      var os_codigos_barra = []
+      
+      function adiciona_codigo_barras(){
+          var tipo_de_codigo = document.getElementById("tipo_codigo").value
+          var o_codigo = document.getElementById("valor_codigo").value
+          var existe = false
+          
+          if (tipo_de_codigo == "undefined"){
+              document.getElementById("error_tipo_codigo_barra").innerText = "Selecione o tipo de código"
+          } else {
+             document.getElementById("error_tipo_codigo_barra").innerText = "" 
+          }
+          if (o_codigo == ""){
+              document.getElementById("error_numero_codigo_barra").innerText = "Não é possível incluir um código em branco"
+          } else {
+              document.getElementById("error_numero_codigo_barra").innerText = ""
+          }
+          
+          if (tipo_de_codigo != "undefined" && o_codigo != ""){
+              var existe = false
+              for (i=0;i<os_codigos_barra.length;i++){
+                  if (os_codigos_barra[i].tipo == tipo_de_codigo && os_codigos_barra[i].valor == o_codigo){
+                      existe = true
+                      var indice = i
+                  }
+              }
+              
+              console.log
+              if (existe === false){
+                  var info_codigo = {}
+                  info_codigo["tipo"] = tipo_de_codigo
+                  info_codigo["valor"] = o_codigo
+                  os_codigos_barra.push(info_codigo)
+              } 
+              
+          }
+         preencheCodigosBarra() 
+      }
+      
+      function preencheCodigosBarra(){
+          var table = document.getElementById("tabelaCodigosBarra")
+        clearTable(table)
+        var qtasrow = table.rows.length
+      
+       
+        
+            
+        for (i=0;i<os_codigos_barra.length;i++){
+           
+            // preenche as cores da fotocelula
+            
+          
+            
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            
+          
+            
+            cell1.innerHTML = '<div style="font-size: 1em; display: inline-block;"> '+os_codigos_barra[i].tipo+'</div>'
+            cell2.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_codigos_barra[i].valor+'</div>'
+            cell3.innerHTML = '<div style="font-size: 1em; display: inline-block; cursor: pointer;" ><img id="'+os_codigos_barra[i].tipo+'_'+os_codigos_barra[i].valor+'" src="./Icons/delete.png" width="50px" onclick="apagar_codigoBarra()"></div>'
+         
+            qtasrow = qtasrow +1
+         
+        }    
+          
+      }
+      
+      function apagar_codigoBarra(){
+           var linha = event.srcElement.id
+           var linha_array = linha.split("_")
+           console.log(linha_array[0])
+           console.log(linha_array[1])
+           for (i=0;i<os_codigos_barra.length;i++){
+               if (os_codigos_barra[i].tipo == linha_array[0] && os_codigos_barra[i].valor == linha_array[1]){
+                   var tira = os_codigos_barra.splice(i,1)
+               }
+           }
+           preencheCodigosBarra()
+      }
+      
+  </script>
+  
+  <script>
+      // funçnoes de fluxo de aprovação
+      
+      function criar_novo_fluxo(){
+          
+          if (document.getElementById("salvar_fluxo").checked === true){
+              document.getElementById("mostra_nome_fluxo").style = "display: inline-block"
+          } else {
+              document.getElementById("mostra_nome_fluxo").style = "display: none" 
+               document.getElementById("nome_novo_fluxo").value = ""
+          }
+          
+      }
+      
+      var os_fluxos_aprovacao = {}
+      
+      function que_envia_aprovacao(){
+           var linha = event.srcElement.id
+          if (os_fluxos_aprovacao.que_enviar === undefined){
+              var envia = []
+              envia.push(linha)
+              os_fluxos_aprovacao["que_enviar"] = envia
+          } else {
+              var envia_existentes = os_fluxos_aprovacao.que_enviar
+              envia_existentes.push(linha)
+              os_fluxos_aprovacao["que_enviar"] = envia_existentes
+          }
+      
+          
+          
+      }
+      
+      
+      var os_aprovadores = []
+      
+      function adiciona_aprovadores(){
+          var nome = document.getElementById("nome_aprovador").value
+          var email = document.getElementById("email_aprovador").value
+          
+          var valid_nome = false
+          var valid_email = false
+          
+          if (nome == ""){
+            document.getElementById("error_nome_aprovador").innerText = "O nome não pode estar em branco."  
+          } else {
+             var test_nome = new RegExp("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$")
+             if (test_nome.test(nome) === true){
+            document.getElementById("error_nome_aprovador").innerText = ""   
+            valid_nome = true
+             } else {
+               document.getElementById("error_nome_aprovador").innerText = "Há números ou caracteres especiais no nome do aprovador."    
+             }
+          }
+          if (email == ""){
+            document.getElementById("error_email_aprovador").innerText = "O email não pode estar em branco."  
+          } else {
+           var test_email = new RegExp("[a-z0-9]+@[a-z]+\.[a-z]{2,3}")
+           if (test_email.test(email) === false){
+              document.getElementById("error_email_aprovador").innerText = "Entre com um email valido"  
+           } else {
+            document.getElementById("error_email_aprovador").innerText = "" 
+            valid_email = true
+          }
+          }
+          
+         if (valid_nome === true && valid_email === true){
+             if (document.getElementInfo("info_aprovador").innerText == ""){
+             info_aprova = {}
+             info_aprova["nome"] = nome
+             info_aprova["email"] = email
+             os_aprovadores.push(info_aprova)
+             os_fluxos_aprovacao["aprovadores"] = os_aprovadores
+             } else {
+                 var aprova = document.getElementInfo("info_aprovador").innerText
+                 var aprova_array = aprova.split("_")
+             }
+            
+         }
+         
+          
+          preencheTabelaAprovadores()
+      }
+      
+      
+      
+      function salva_teste(){
+         var linha = event.srcElement.id
+         console.log(linha)
+         var cliente = document.getElementById("id_cliente").innerText
+         var busca_cliente = api.custom_objects.list_with_options("BR-ROTOC_customers",["CODIGO","equal to",parseInt(cliente)]).results
+         
+         if (busca_cliente.length == 0){
+             alert("Para enviar uma aprovação é necessário selecionar o cliente!")
+         } else {
+             var fluxos = busca_cliente[0].fluxos
+             
+             if (fluxos == undefined){
+                 
+             }
+         }
+         
+         
+          
+      }
+      
+  </script>
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,371 @@
+@charset "utf-8";
+/* CSS Document */
+
+body 
+{
+	background-color:#B0B0B0;
+}
+
+#line 
+{
+	position:absolute;
+	top:0;
+	left:0;
+	height:50;
+	width:50;
+	z-index:4000;
+}
+
+.smallfont
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:0.8em;
+}
+
+#rejectmessage, #approvalmessage
+{
+	display:none; 
+	position:fixed; 
+	bottom:5px; 
+	width:100%; 
+	z-index: 9999;
+}
+
+.ui-state-error ui-corner-all /* bij deze klasse moet nog id en bijkomende stijlelementen komen */
+{
+	padding:10px;
+}
+#ui-state-error-rejectmessage
+{
+	width:220px; 
+	margin:5px auto;	
+}
+
+.ui-icon ui-icon-close, .ui-icon ui-icon-check, .ui-icon ui-icon-alert
+{
+	float: left; 
+	margin-right: 5px;
+}
+
+.ui-state-highlight ui-corner-all
+{
+	width:250px; 
+	margin:5px auto; 
+	padding: 10px;
+}
+
+#menu 
+{
+	width:50%; 
+	margin-left:200px; 
+	margin-top: -7px; 
+	display: none;
+}
+#menubar 
+{ 
+margin: 0 0 4em; 
+}
+#controls
+{
+	position:fixed; 
+	top: 0; 
+	left:0px; 
+	right:0px; 
+	height:34; 
+	z-index: 5000; 
+	overflow:hidden;
+}
+#toolbar
+{
+	padding: 10px 3px; 
+	width:100%; 
+	display: none;	
+}
+#ui_username
+{
+	float:right;
+}
+
+
+/*****MAIN CONTENT**********/
+#content_container
+{
+	position:absolute; 
+	top:31px; 
+	left:0px; 
+	bottom:0px; 
+	right:0px; 
+	display:none; 
+	min-height:100%;
+}
+
+#sidebar
+{
+	overflow:visible;
+	z-index:6500;
+	background:#B0B0B0;
+	height:100%;
+}
+.ui-tab-dialog-close
+{
+	position: absolute; 
+	right: -1px; 
+	top: 4px;
+}
+
+#thumbnails, #notelist, #separations
+{
+	position:fixed; 
+	top:31px; 
+	left:-200px; 
+	bottom:0px; 
+	width:200px; 
+	border:0px; 
+	overflow:auto;
+}
+#content
+{
+	position:absolute; 
+	top:5px; 
+	left:0px; 
+	right:0px; 
+	background-color:#B0B0B0;
+}
+#densitometer
+{
+	position:absolute; 
+	display:none;
+}
+
+#densitometer_values
+{
+	position:absolute;
+	opacity:0.8;
+	left:15px;
+	top:15px;
+}
+#crosshairimage
+{
+	position:absolute;
+}
+
+.ui-dialog-content ui-widget-content
+{
+	background: none; 
+	border: 0; 
+	padding:5px 10px;
+}
+
+/*********** FILE OVERVIEW *************/
+
+.fileoverview
+{
+	z-index: 5000; 
+	display:none;	
+}
+
+#refresh
+{
+	position:absolute; 
+	left:5px;
+	z-index: 5000; 
+	top:13px;
+}
+#fileupload
+{
+	position:absolute; 
+	right:5px;
+	z-index: 5000;
+}
+#fileuploadwaiting
+{
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+#selectfilebutton
+{
+	position:fixed; 
+	left:-100px;
+	width:0px; 
+	height:0px;
+}
+#upload{
+	z-index: 5000;
+	top:6px;
+}
+#filelist
+{
+	position:absolute; 
+	top:50px;
+	width:100%;
+}
+
+/******************* LOGIN DIALOG ***********************/
+
+
+#login
+{
+	display:none;
+	width:350px;
+}
+#username
+{
+	width:200px; 
+	position:absolute; 
+	top:22px; 
+	right:20px;
+}
+#password
+{
+	width:200px; 
+	position:absolute; 
+	top:62px; 
+	right:20px
+}
+#loginerror
+{
+	display: none; 
+	padding-top:10px;
+	
+}
+
+/**************** DEFAULT FILE VIEWER *********************/
+
+#filechooser
+{
+	overflow: auto; 
+	display: none;
+}
+#invite
+{
+	z-index:100; 
+	display:none;
+}
+#guest
+{
+	width:90%;
+}
+#waiting
+{
+	display:none;
+}
+
+/*************************FIND AND REPLACE DIALOG *************/
+#findreplace
+{
+	display:none; 
+	width:auto;
+}
+#find, #replace
+{
+	width:200px; 
+	position:absolute; 
+	right:20px
+}
+
+
+/**************** TEXT DIALOG *********************/
+
+#textparameters
+{
+	display:none;
+}
+#fontsize
+{
+	width:30px; 
+	position:absolute;
+	margin-right:20px;
+}
+
+/*************************PAINT DIALOG ****************/
+
+#paintstyledialog
+{
+	display:none;
+}
+#copypastebuffer
+{
+	z-index:1000; 
+	width:200; 
+	position:absolute; 
+	display:none;
+}
+
+
+
+
+/************************NOTES ****************************/
+.noteclass
+{  
+	position: fixed !important;
+	background: rgb(251,247,170) !important;
+}
+
+.noteclass .ui-dialog-titlebar
+{  
+	background: rgb(240,222,125) !important;
+}
+
+.noteclass .ui-dialog-buttonpane
+{  
+	background: rgb(251,247,170) !important;
+}
+
+.notelist 
+{  
+	background: rgb(251,247,170) !important;
+}
+
+/* Navigation Table */
+.styleTable { border-collapse: separate; }
+.styleTable TD { font-weight: normal !important; padding: .4em; border-top-width: 0px !important; }
+.styleTable TH { text-align: center; padding: .8em .4em; }
+.styleTable TD.first, .styleTable TH.first { border-left-width: 0px !important; }
+
+/* Polish */
+.dropshadow 
+{
+	border: 1px solid #888;
+	-moz-box-shadow: 1px 5px 7px #888;
+	-webkit-box-shadow: 1px 5px 7px #888;
+}
+	
+.selected 
+{
+	background-color: #B2D8F2;
+}
+
+.ui-button.redButton 
+{
+	background-color: red;
+}
+
+.ui-button.greenButton 
+{
+	background-color: green;
+}
+
+.smallfont
+{
+	font-family: Arial,sans-serif; 
+	font-size: .8em; 
+}
+
+.toolbuttonimage 
+{	
+	width: 32px;	height:32px;	border:1px; 	solid #464f5a;	background-color:#efefef; border-radius: 4px; 
+}  
+
+.toolbutton 
+{ 
+	margin-left:2px; margin-right:2px; margin-top:1px; margin-bottom:-1px; 
+}
+
+/* Note content */	
+#commentlist .ui-selecting { background: #FECA40; }
+#commentlist .ui-selected { background: #F39814; color: white; }
+#commentlist { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+
+
+

@@ -1,0 +1,87 @@
+
+.colored-button, .colored-button:visited,
+a.green-button, a.green-button:visited
+{
+    background-color: #F2F7FA;
+    background-clip: padding-box;
+    border-color: #0080BF;
+    color: #0080BF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: initial;
+}
+.colored-button:hover:not([disabled]),
+a.green-button:hover,
+a.red-button:hover
+{
+    background-color: #0080BF;
+    border-color: #FFF;
+    color: #FFF;
+}
+
+a.green-button:active {
+   
+    
+}
+
+.uncolored-button, 
+.uncolored-button:visited {
+    background-color: #0080BF;
+    color: #FFF;
+}
+
+.uncolored-button:hover:not([disabled]) {
+
+}
+
+a.red-button, a.red-button:visited
+{
+    background-color: #F2F7FA;
+    background-clip: padding-box;
+    border-color: #0080BF;
+    color: #0080BF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: initial;
+}
+
+a.red-button:active
+{
+   
+}

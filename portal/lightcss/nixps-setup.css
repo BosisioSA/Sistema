@@ -1,0 +1,38 @@
+tr.heading {
+}
+
+td.heading {
+	padding: 5px;
+	padding-top: 15px;
+	font-weight: bold;
+}
+
+tr.field {
+}
+
+td.field-prompt {
+	padding: 5px;
+}
+
+td.field-value {
+	padding: 5px;
+}
+
+tr.buttons {
+}
+
+td.buttons {
+	padding: 5px;
+	padding-top: 15px;
+}
+
+tr.message {
+}
+
+td.message {
+	padding: 5px;
+}
+
+span.error {
+	color: red
+}

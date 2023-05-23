@@ -1,0 +1,596 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Checklist Desenvolvimento</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+         <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload.js'></script>
+      
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload-controller.js'></script>
+       <script>
+            var queryString = window.location.search;
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+        </script>
+    
+       
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+               <ul class="active components mb-5">
+               <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li style="list-style-type: none">
+               <img src="./Icons/responsavel.png" width="20px" style="margin-right: 10px;"><span id="user_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/inicio.png" width="20px" style="margin-right: 10px"><span id="inicio_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/final.png" width="20px" style="margin-right: 10px"><span id="final_pacote" style="color: black;"></span>
+          </li>
+          
+          
+          </ul>
+        
+            
+         </li>   
+         <li>
+              <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/analiseespecificacao.png" width="30px" style="margin-right: 10px">Especificação Técnica</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+            <li style="list-style-type: none">
+               <img src="./Icons/responsavel.png" width="20px" style="margin-right: 10px;"><span id="user_analiseespecificacao" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/inicio.png" width="20px" style="margin-right: 10px"><span id="inicio_analiseespecificacao" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/final.png" width="20px" style="margin-right: 10px"><span id="final_analiseespecificacao" style="color: black;"></span>
+          </li>
+          
+          
+          </ul>
+         </li>
+            
+   
+       </ul>
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 70%;">
+        <h2 id="nome_ticket" style="display:block;">Checklist Desenvolvimento</h2>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 25%;">
+            <h6 id="tempo_para_entrega">Tempo para entrega: 00:00hs</h6>
+        </div>
+        <hr>
+     <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+      <p style="margin-top: -9px;"><strong>Informações do Ticket</strong></p>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="numero_ticket">Ticket Numero</label>
+            <input type="text" class="form-control"  id="numero_ticket" name="numero_ticket" readonly>
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="item_ticket">Item</label>
+            <input type="text" class="form-control"  id="item_ticket" name="item_ticket" readonly>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 15%; margin-right: 2%">
+          <label for="cliente_ticket">Cliente</label>
+            <input type="text" class="form-control"   id="cliente_ticket" name="cliente_ticket" readonly>
+        </div> 
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 34%; margin-right: 2%">
+          <label for="descricao_ticket">Descrição</label>
+            <input type="text" class="form-control"   id="descricao_ticket" name="descricao_ticket" readonly>
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 2%; margin-right: 2%">
+        <label for="Imp">Imp</label>
+            <img src="./Icons/maq_roto.png" style="width: 100%" id="img_imp">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 8%; margin-right: 2%">
+          <label for="criacao_ticket">Criado em</label>
+            <input type="text" class="form-control"   id="criacao_ticket" name="criacao_ticket" readonly>
+        </div> 
+       </div> 
+       
+       <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 60%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px; margin-right: 10px;">
+      
+    
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%; margin-right: 2%">
+          <label for="data_especificacao">Data Recebimento Especificação Técnica</label>
+            <input type="date" class="form-control"   id="data_especificacao" name="data_especificacao">
+         </div>
+         
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%;">
+          <label for="codigo_item">Código do Item</label>
+            <input type="text" class="form-control"   id="codigo_item" name="codigo_item">
+         </div>
+        
+    </div>
+        
+     <br>   
+       
+        
+        
+        
+  
+   
+                 
+                 
+                 
+                 
+           
+                
+    <div class="form-group" style="display:inline-block; width: 16%; margin-top: 10px;">
+    <button class="btn btn-secondary" onclick="verifica_campos('rascunho')">Salvar Rascunho</button><br>
+    </div>
+    <div class="form-group" style="display:inline-block;  width: 16%; margin-top: 10px;">
+    <button class="btn btn-primary" onclick="verifica_campos('enviar')">Terminar Tarefa</button><br>
+    </div>
+    <div class="form-group" style="display:inline-block;  width: 16%; margin-top: 10px;">
+    <button class="btn btn-primary" onclick="cancelar()">Cancelar</button><br>
+    </div>
+    
+    <div id="info_ticket"></div>
+                
+                
+              
+                
+                 
+                 
+       
+            
+    
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	    var usuario = api.auth.get_current_user()
+  	    
+  	    document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname
+  	 //   document.getElementById("data_entrega").value = "02:00"
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function padWithZero(num, targetLength) {
+  return String(num).padStart(targetLength, '0')
+}
+
+
+
+if (usuario.scope_name != undefined){
+    var nome_scope = usuario.scope_name[0].split("_")
+   
+}
+
+
+
+
+// preenche Selects
+
+
+var hoje = new Date()
+//document.getElementById("data_abertura").value = dateFormat(hoje,"yyyy-mm-dd")
+
+//hoje.setDate(hoje.getDate()+30)
+//document.getElementById("data_entrega").value = dateFormat(hoje,"yyyy-mm-dd")
+
+  	</script>
+  <script>
+      
+      // preenche dados do ticket
+      
+    var busca_ticket = api.custom_objects.list_with_options("BR-TECNO_Tickets",["_id","equal to",ordem]).results[0]
+      
+      document.getElementById("numero_ticket").value = busca_ticket.numero_ticket
+      document.getElementById("cliente_ticket").value = busca_ticket.cliente
+      document.getElementById("descricao_ticket").value = busca_ticket.descricao
+      document.getElementById("item_ticket").value = busca_ticket.item
+      
+      var icone_imp = "./Icons/maq_flexo.png"
+        if (busca_ticket.processo.valor == "Rotogravura"){
+                icone_imp = "./Icons/maq_roto.png"
+            }
+            
+      document.getElementById("img_imp").src = icone_imp
+      
+      
+      
+      var dataentrada = new Date(busca_ticket.entrada_em)
+      var datacalculo = new Date(busca_ticket.entrada_em)
+      if (dataentrada.getDay() === 5){
+          var final = dataentrada.setDate(dataentrada.getDate()+3)
+      } else {
+          var final = dataentrada.setDate(dataentrada.getDate()+1)
+      }
+      console.log(final)
+      var agora = new Date()
+      var horas_diferenca = final-agora
+      console.log("HORAS DIFERENCA")
+      console.log(horas_diferenca)
+      document.getElementById("criacao_ticket").value = dateFormat(datacalculo,"dd/mm/yyyy")
+      var calcula_horas = parseInt(horas_diferenca/3600000)
+      var calcula_minutos = (horas_diferenca/3600000)%1
+      var minutos = parseInt(calcula_minutos*60)
+      if (calcula_horas < 4){
+       document.getElementById("tempo_para_entrega").style = "color:brown"   
+      }
+      if (calcula_horas < 2){
+       document.getElementById("tempo_para_entrega").style = "color: orange"   
+      }
+      if (calcula_horas < 0){
+       document.getElementById("tempo_para_entrega").style = "color: red"   
+      }
+      if (calcula_horas < 10){
+          calcula_horas = "0"+calcula_horas
+      }
+      if (minutos < 10){
+          minutos = "0"+minutos
+      }
+      document.getElementById("tempo_para_entrega").innerText = "Tempo para Entrega: "+calcula_horas+":"+minutos+"hs"
+    
+    
+    var tempos_atuais = busca_ticket.tempos_processo
+    
+    for (i=0;i<tempos_atuais.length;i++){
+        if (tempos_atuais[i].formulario == "DES1"){
+            var thetimes = new Date(tempos_atuais[i].tempos[tempos_atuais[i].tempos.length-1]["final"])
+            document.getElementById("data_especificacao").value = dateFormat(new Date(thetimes),"yyyy-mm-dd")
+           
+        }
+        
+    }
+     document.getElementById("codigo_item").value = busca_ticket.item
+    
+    
+    if (busca_ticket.des3 != undefined){
+    document.getElementById("data_especificacao").value = dateFormat(new Date(busca_ticket.des3.data_especificacao),"yyyy-mm-dd")
+    document.getElementById("codigo_item").value = busca_ticket.des3.codigo_item
+    
+    }
+      
+  </script>
+ 
+  	<script>
+  	
+  	function muda_figura(){
+  	    var ref = document.getElementById("referencia_arte").value
+  	    var lado = document.getElementById("lado_impressao").value
+  	    var puxada = document.getElementById("puxada_impressao").value
+  	    var fot = document.getElementById("fotocelula").value
+  	    var figura = ref+"_"+lado+"_"+puxada+"_"+fot+".png"
+  	    document.getElementById("img_puxada").src = "./Icons/bob_puxada/"+figura
+  	}
+  	
+  	
+  	function verifica_campos(que_fazer){
+  	    
+  	
+  	
+  	
+    var valido = true
+    
+    var data = {}
+    data["codigo_item"] = document.getElementById("codigo_item").value
+    data["especificacao"] = document.getElementById("data_especificacao").value
+   
+  
+    for (i=0;i<tempos_atuais.length;i++){
+        if (tempos_atuais[i].formulario == "DES1"){
+            var thetimes = new Date(tempos_atuais[i].tempos[tempos_atuais[i].tempos.length-1]["final"])
+           
+        }
+    }
+    if (busca_ticket.alteracoes === undefined){
+    var alteracoes = []
+    } else {
+     var alteracoes =  busca_ticket.alteracoes 
+    }
+   
+   if (document.getElementById("data_especificacao").value != dateFormat(new Date(thetimes),"yyyy-mm-dd")){
+       var qual_altera = {}
+       qual_altera["campo"] = "data_especificacao"
+       qual_altera["de"] = dateFormat(new Date(thetimes),"yyyy-mm-dd")
+       qual_altera["para"] = document.getElementById("data_especificacao").value
+       qual_altera["quem"] = usuario.fullname
+       alteracoes.push(qual_altera)
+   }
+   if (document.getElementById("codigo_item").value != busca_ticket.item){
+       var qual_altera = {}
+       qual_altera["campo"] = "codigo_item"
+       qual_altera["de"] = busca_ticket.item
+       qual_altera["para"] = document.getElementById("codigo_item").value
+       qual_altera["quem"] = usuario.fullname
+       alteracoes.push(qual_altera)
+       
+   }
+   
+    api.custom_objects.set_keys("BR-TECNO_Tickets",ordem,{"item":document.getElementById("codigo_item").value})
+   
+    
+     var nextstage = []
+   
+                    var proxima_etapa = {}
+                         proxima_etapa["forms"] = "FORM1"
+                        proxima_etapa["nomes"] = "Liberação Comercial de Gravação"
+                         proxima_etapa["inicio"] = new Date()
+                         proxima_etapa["dashboard"] = "comercial"
+                        var infohora = new Date()
+                        infohora.setDate(infohora.getDate()+1)
+                        proxima_etapa["final"] = new Date(infohora)
+                        nextstage.push(proxima_etapa)
+   
+    
+    
+  var temposdeexecucao = busca_ticket.tempos_processo
+    
+   // for (i=0;i<temposdeexecucao.length;i++){
+    //    if (temposdeexecucao[i].formulario == "ART2"){
+     //      temposdeexecucao[i].tempos[temposdeexecucao[i].tempos.length-1]["final"] = new Date()
+          
+       // }
+    //}
+    
+                         var tempo_processo = {}
+                        
+                        tempo_processo["etapa"] = "Liberação Comercial de Gravação"
+                        tempo_processo["formulario"] = "FORM1"
+                        tempo_processo["criado_por"] = usuario.fullname
+                        var tempos = []
+                        var os_tempos = {}
+                        os_tempos["inicio"] = new Date()
+                        tempos.push(os_tempos)
+                        tempo_processo["tempos"] = tempos
+                        temposdeexecucao.push(tempo_processo)
+    
+   if (que_fazer == "enviar"){
+    
+    for (i=0;i<nextstage.length;i++){
+        if (nextstage[i].forms == "DES3"){
+            var tira = nextstage.splice(i,1)
+        }
+    }
+    
+    
+    
+    
+    salva_ticket2(data,ordem,temposdeexecucao,nextstage,alteracoes)
+    } else {
+    
+    for (i=0;i<nextstage.length;i++){
+        if (nextstage[i].forms == "DES3"){
+            nextstage[i]["pending"] = true
+        }
+    }
+    
+     salva_ticket(data,ordem,nextstage,alteracoes)
+    }
+    
+   
+  	
+  	}
+  	</script>
+  	
+   <script>
+       function salva_ticket(dados,id,proximaetapa,mudancas){
+          
+            
+            
+            
+            api.custom_objects.set_keys("BR-TECNO_Tickets",id,{"des3":dados,"alteracoes":mudancas})
+            document.getElementById("info_ticket").innerText = "Ticket atualizado com sucesso!"
+           setTimeout(function(){window.open("desenvolvimento_dash_sp1.html","_self")}, 3000);
+       }
+       
+       function salva_ticket2(dados,id,ostempos,proximaetapa,mudancas){
+          
+             
+            
+            
+            api.custom_objects.set_keys("BR-TECNO_Tickets",id,{"des3":dados,"tempos_processo":ostempos,"proxima_etapa":proximaetapa,"alteracoes":mudancas})
+            document.getElementById("info_ticket").innerText = "Ticket atualizado com sucesso!"
+           setTimeout(function(){window.open("desenvolvimento_dash_sp1.html","_self")}, 3000);
+       }
+       
+       function cancelar(){
+          window.open("engenharia_dash_sp1.html","_self")
+      }
+   </script>
+   
+  <script>
+      function tem_verniz(){
+         if (document.getElementById("inlineRadio7").checked === true){
+             document.getElementById("div_tipo_verniz").style.display = "inline-block"
+         } else {
+            document.getElementById("div_tipo_verniz").style.display = "none" 
+         }
+      }
+      
+      function calcula_pistas(){
+          var largura_filme = document.getElementById("largura_impressao").value
+          var largura_produto =  document.getElementById("largura_filme").value
+          if (largura_filme != "" && largura_produto != ""){
+              var larg = parseInt(largura_filme)
+              var larg_2 = parseInt(largura_produto)
+              document.getElementById("pistas").value = parseInt(larg_2/larg)
+          }
+          
+      }
+  </script>	
+  
+  
+  	
+  
+
+
+
+
+
+
+    </body>
+
+</html>

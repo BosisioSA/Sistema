@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+	<script src="/okilms/3rdParty/jquery-1.7.2.js"></script>
+	<script src="/okilms/3rdParty/underscore.js"></script>
+	<script src="/common/js/namespace.js"></script>
+	<script src="/portal/js/nixps-cloudflow_path.js"></script>
+	<script src="/portal/js/nixps-layout-resource.js"></script>
+	<script src="/portal/js/nixps-layout-file_resource_element.js"></script>
+	<script src="/portal/js/nixps-layout-document.js"></script>
+
+	<!-- Setup the unit test -->
+	<script src="/okilms/tests/3rdParty/mocha.js"></script>
+    <script src="/okilms/tests/3rdParty/should.js"></script>
+	<link type="text/css" href="/okilms/tests/css/mocha.css" rel="stylesheet" />
+    <script>mocha.setup('bdd')</script>
+
+
+	<script type="text/javascript">
+		$(function() {
+			describe("nixps.layout.file_resource_element", function() {
+				describe('construction', function() {
+					it("should throw when invalid parameters are supplied", function() {
+						(function() {
+							new nixps.layout.file_resource_element(null);
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.file_resource_element(5);
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.file_resource_element("");
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.file_resource_element(undefined);
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.file_resource_element({});
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.file_resource_element();
+						}).should.throw();
+					});
+
+					it("should accept a resource json", function() {
+						(function() {
+							var resource = new nixps.layout.file_resource_element({ url: 'cloudflow://PP_FILE_STORE/hello.pdf' });
+						}).should.not.throw();
+					});
+
+					it("should accept a cloudflow path", function() {
+						(function() {
+							var path = new cloudflow_path('cloudflow://PP_FILE_STORE/hello.pdf');
+							var resource = new nixps.layout.file_resource_element(path);
+						}).should.not.throw();
+					});
+				});
+
+				describe('file_resource_element', function() {
+
+					var file_resource;
+					var path;
+
+					beforeEach(function() {
+						path = new cloudflow_path('cloudflow://PP_FILE_STORE/hello.pdf');
+						file_resource = new nixps.layout.file_resource_element(path);
+					});
+
+					describe('get_file', function() {
+						it('should return a cloudflow path', function() {
+							file_resource.get_file().should.be.an.instanceof(cloudflow_path);
+							file_resource.get_file().get_full_path().should.eql(path.get_full_path());
+						});
+					});
+
+					describe('set_clip_box', function() {
+						it('not accept invalid parametes', function() {
+							(function() {
+								file_resource.set_clip_box();
+							}).should.throw();
+
+							(function() {
+								file_resource.set_clip_box(undefined);
+							}).should.throw();
+
+							(function() {
+								file_resource.set_clip_box(null);
+							}).should.throw();
+
+							(function() {
+								file_resource.set_clip_box("brol", 1, 2, 3, 4);
+							}).should.throw();
+
+							(function() {
+								file_resource.set_clip_box("artbox", '1', 2, 3, 4);
+							}).should.throw();
+						});
+
+						it('set the clip box', function() {
+							file_resource.set_clip_box("cropbox", 0, 0, 100, 100);
+							file_resource.get_clip_box().should.eql({ x: 0, y: 0, width: 100, height: 100});
+							file_resource.get_reference_box().should.eql("cropbox");
+						});
+					});
+
+					describe('set_separation', function() {
+						it('should not accept invalid parameters', function() {
+							(function() {
+								file_resource.set_separation("");
+							}).should.throw();
+
+							(function() {
+								file_resource.set_separation();
+							}).should.throw();
+
+							(function() {
+								file_resource.set_separation(null);
+							}).should.throw();
+
+							(function() {
+								file_resource.set_separation({});
+							}).should.throw();
+
+							(function() {
+								file_resource.set_separation(5);
+							}).should.throw();
+						});
+
+
+						it('set the separation', function() {
+							file_resource.set_separation("Cyan");
+							file_resource.get_separation().should.eql("Cyan");
+
+							file_resource.set_separation("Magenta");
+							file_resource.get_separation().should.eql("Magenta");
+						});
+					});
+
+					describe('set_page', function() {
+						it('should not accept invalid parameters', function() {
+							(function() {
+								file_resource.set_page("");
+							}).should.throw();
+
+							(function() {
+								file_resource.set_page();
+							}).should.throw();
+
+							(function() {
+								file_resource.set_page(null);
+							}).should.throw();
+
+							(function() {
+								file_resource.set_page({});
+							}).should.throw();
+
+							(function() {
+								file_resource.set_page(-1);
+							}).should.throw();
+						});
+
+
+						it('set the page', function() {
+							file_resource.set_page(10);
+							file_resource.get_page().should.eql(10);
+						});
+					});
+
+					describe('to_json', function() {
+						it('should output a well formatted file resource element', function() {
+							var file_resource = new nixps.layout.file_resource_element(new cloudflow_path("cloudflow://PP_FILE_STORE/file1.pdf"));
+							file_resource.set_clip_box("cropbox", 2, 3, 4, 5);
+							file_resource.set_separation("Cyan");
+							file_resource.set_page(0);
+
+							file_resource.to_json().should.eql({
+								url: "cloudflow://PP_FILE_STORE/file1.pdf",
+								box: "cropbox",
+								page: 0,
+								x: 2,
+								y: 3,
+								width: 4,
+								height: 5,
+								separation: "Cyan"
+							});
+						});
+					});
+				});
+			});
+
+			mocha.run();
+		});
+	</script>
+</head>
+<body>
+	<div id="mocha"></div>
+</body>
+</html>

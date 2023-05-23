@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 21, 2016, 10:58:23 AM
+    Author     : guillaume
+*/
+
+div.shareContainer {
+    position: absolute;
+    top: 45px;
+    left: 15px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 13px;
+}
+
+div.shareContainer .nixps-cloudflow-Table {
+    overflow: auto;
+}
+
+div.shareContainer .nixps-share-Sites,
+div.shareContainer .nixps-share-Status,
+div.shareContainer .nixps-share-Syncspecs {
+    margin: 0px;
+}

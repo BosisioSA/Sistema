@@ -1,0 +1,261 @@
+/*********************************************************************/
+/* NiXPS MetaData CSS                                                */
+/*                                                                   */
+/* Copyright 2012, NiXPS (www.nixps.com)                             */
+/*********************************************************************/
+
+/*********************************************************************/
+/*  METADATA PANE                                                    */
+/*********************************************************************/
+
+/* The panel */
+div.meta-pane
+{
+	position: absolute;
+	min-height: 400px;
+	top: 32px;
+	left: 400px;
+	right: 0px;
+	bottom: 5px;
+	display: none;
+}
+
+/* Header styles */
+div.meta-pane h1
+{
+	padding: 5px 0 5px 0;
+	font-size:15px;
+	font-family: 'Magra', sans-serif;
+	color:#fff;
+	font-weight:normal;
+	text-transform: capitalize;
+}
+
+div.meta-content
+{
+	position: absolute;
+	font-size: 13px;
+	left: 0px;
+	top: 25px;
+	bottom: 25px;
+	right: 25px;
+}
+
+div.unit-selector
+{
+	position: absolute;
+	right: 10px;
+	top: 13px;
+	text-align: right;
+}
+
+div.thumb-pane
+{
+	position: absolute;
+	margin: 0px auto;
+}
+
+div.swatch
+{
+	width:13px;
+	height:13px;
+	border:1px solid #aaa; 
+}
+
+table.#info_table
+{
+	margin-left: 10px;
+	padding: 2px;
+}
+
+#pagebox-showoff
+{
+	position: absolute;
+	left: 25px;
+	top: 75px;
+	width: 250px;
+}
+
+#pageboxers
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#boxes-image
+{
+	width: 250px;
+	opacity: 0.5;
+}
+
+div.image_box
+{
+	position: static;
+	display: inline; 
+	float: left;
+	margin: 10px;
+	width: 160px;
+	height: 160px;
+}
+
+.mini_headings
+{
+	color: #cccccc;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.thumb_name
+{
+    width: 120%;
+    margin-left: -10%;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 1px 1px 0 #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 15px;
+    white-space: nowrap;
+}
+
+div.image-preview
+{
+	position: relative;
+}
+
+/**
+ * Thumbnails - ????
+ */
+div.thumb_box
+{
+	position: static;
+	display: inline; 
+	float: left;
+	margin: 10px;
+}
+
+img.thumb_image
+{
+	margin: 5px 5px;
+	border: 1px solid #b0b0b0;
+}
+
+div.thumb_border
+{
+	background-color: white;
+	border: 1px solid #b0b0b0;
+}
+
+img.transparant_thumb_image
+{
+	margin: 5px 5px;
+}
+
+div.transparant_thumb_border
+{
+}
+
+/**
+ * Style for information pairs 'label': 'info'
+ */
+.infolabel, .infovalue {
+	display: inline-block;
+    margin-bottom:10px;
+}
+
+.infolabel {
+    width: 120px;
+	text-align: right;
+	margin-right: 5px;
+}
+
+.infovalue {
+	text-align: left;
+}
+
+/**
+ * Table style used for separations and pageboxes
+ */
+table.matrix img
+{
+	border:0
+}
+
+table.matrix
+{
+	border-spacing:0;
+	border:0;
+	margin:15px
+}
+
+table.matrix th,table.matrix td
+{
+	padding:14px;
+	text-align:center
+}
+
+table.matrix th
+{
+	padding:12px 0 10px 0;
+	font-size:15px;
+	border-bottom:1px solid #888; /* #353535; */
+	font-family: 'Magra', sans-serif;
+	color:#fff;
+	font-weight:normal;
+	text-align:center;
+	vertical-align:middle;
+	background-color:#242424
+}
+
+table.matrix td
+{
+	border:0;
+	border-bottom:1px solid #888;
+	color:#ccc;
+	line-height:135%
+}
+
+table.matrix span
+{
+	font-size:10px;
+	color:#ccc;
+	padding-left:1px
+}
+
+table.matrix td.heading
+{
+	color:white;
+	text-align:right;
+	padding-left:12px;
+	width:50px;
+	white-space: nowrap;
+}
+
+table.matrix td.heading2
+{
+	color:white;
+    font-weight:bold;
+	white-space: nowrap;
+}
+
+table.matrix td.heading strong
+{
+	font-weight:normal;
+	font-size:12px
+}
+
+table.matrix tr.bot td
+{
+	background-color:#242424;
+	background-image:none;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom:0
+}
+
+/*********************************************************************/
+/* NiXPS MetaData CSS                                                */
+/*                                                                   */
+/* Copyright 2012, NiXPS (www.nixps.com)                             */
+/*********************************************************************/

@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 21, 2016, 10:58:23 AM
+    Author     : guillaume
+*/
+
+div.shareContainer {
+    position: absolute;
+    top: 140px;
+    left: 15px;
+    bottom: 15px;
+    right: 15px;
+}
+
+div.shareContainer th {
+    color: #6B7D89;
+    padding: 10px 5px 10px 5px;
+}
+
+div.shareContainer .nixps-cloudflow-Table {
+    overflow: auto;
+}
+
+.nixps-share-Status table tr:nth-child(2n+2),
+.nixps-share-Sites table tr:nth-child(2n+2) {
+    background-color: #F2F7FA;
+}
+
+.nixps-share-Sites .sitesAddPenal {
+    background-color: #F2F7FA;
+}
+.nixps-share-Syncspecs .mapping {
+    background-color: #F2F7FA;
+}
+.nixps-share-Syncspecs tr:not(.mapping):not(.tableHeader):not(.syncspecs-add):hover {
+    cursor: pointer;
+    background-color: rgba(0,128,191,0.3);
+}

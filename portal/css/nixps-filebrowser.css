@@ -1,0 +1,35 @@
+/*
+ * NiXPS FileBrowser CSS
+ *
+ * Copyright 2012, NiXPS (www.nixps.com)
+ */
+
+body
+{
+    font: 62.5% Cambria, Georgia, serif; 
+}
+
+div.filethumb
+{
+    width: 110px;
+    height: 100px;
+    overflow: hidden;
+    float:left;
+    margin: 5px;
+}
+
+a
+{
+  text-decoration:  none;
+}
+
+.ui-button .ui-icon.list-button-edit 
+{
+    background-image: url(images/list.png);
+}
+
+.ui-button .ui-icon.thumb-button-edit 
+{
+    background-image: url(images/thumb.png);
+}
+

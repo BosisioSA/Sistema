@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+	<script src="/3rdParty/jquery-1.7.2.js"></script>
+	<script src="/3rdParty/underscore.js"></script>
+	<script src="/3rdParty/underscore.string.js"></script>
+	<script src="/common/js/namespace.js"></script>
+
+	<script src="/?api=js"></script>
+
+	<!-- cloudflow includes -->
+	<script src="/portal/js/nixps-cloudflow_path.js"></script>
+	<script src="/portal/js/nixps-cloudflow-URLPath.js"></script>
+	<script src="/portal/js/nixps-layout-resource.js"></script>
+	<script src="/portal/js/nixps-layout-generic_resource_element.js"></script>
+	<script src="/portal/js/nixps-layout-file_resource_element.js"></script>
+	<script src="/portal/js/nixps-layout-document.js"></script>
+	<script src="/portal/js/nixps-layout-sheet.js"></script>
+
+	<!-- patchplanner includes -->
+	<script src="/portal/panzer/js/nixps-patchplanner-util.js"></script>
+	<script src="/portal/panzer/js/nixps-patchplanner-layout_document.js"></script>
+	<script src="/portal/panzer/js/nixps-patchplanner-CloudflowSettings.js"></script>
+	<script src="/portal/panzer/js/nixps-patchplanner-SheetSettings.js"></script>
+	<script src="/portal/panzer/js/nixps-patchplanner-MOMSettings.js"></script>
+
+	<!-- Setup the unit test -->
+	<script src="/okilms/tests/3rdParty/mocha.js"></script>
+    <script src="/okilms/tests/3rdParty/should.js"></script>
+	<link type="text/css" href="/okilms/tests/css/mocha.css" rel="stylesheet" />
+    <script>mocha.setup('bdd')</script>
+
+    <!-- Testcases -->
+	<script src="/portal/tests/nixps-patchplanner-CloudflowSettings.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			mocha.run();
+		});
+	</script>
+</head>
+<body>
+	<div id="mocha"></div>
+</body>
+</html>

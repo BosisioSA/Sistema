@@ -1,0 +1,1069 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Fornecedores Porta Clichê</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+          <script src="js/js-brasil.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script>
+          function pesquisacep(valor,campo) {
+console.log(campo)
+console.log(valor)
+  //Nova variável "cep" somente com dígitos.
+  var cep = valor.replace(/\D/g, '');
+
+  //Verifica se campo cep possui valor informado.
+  if (cep != "") {
+
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
+
+      //Valida o formato do CEP.
+      if(validacep.test(cep)) {
+
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="Buscando...";
+          document.getElementById('bairro').value="Buscando...";
+          document.getElementById('cidade').value="Buscando...";
+          document.getElementById('uf').value="Buscando...";
+      
+        var url_busca = "https://viacep.com.br/ws/"+cep+"/json/?"
+        var busca_o_cep = api_sync.hub.start_from_whitepaper_with_files_and_variables("BUSCA_CEP","busca_cep", [] ,{"url":url_busca});
+       
+       
+        var workable_id = busca_o_cep.workable_id
+        var workableConsoleLog = function ()  // a cada 30s roda isso e atualiza a variavel form...
+          {
+            var variaveis = api.workable.get_merged_variables(workable_id)
+           if (variaveis.variables.state.value == "buscando"){
+      
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="Buscando...";
+          document.getElementById('bairro').value="Buscando...";
+          document.getElementById('cidade').value="Buscando...";
+          document.getElementById('uf').value="Buscando...";
+        
+               
+           } else {
+              
+          document.getElementById('rua').value=variaveis.variables.resultado.value.logradouro
+          document.getElementById('bairro').value=variaveis.variables.resultado.value.bairro
+          document.getElementById('cidade').value=variaveis.variables.resultado.value.localidade
+          document.getElementById('uf').value=variaveis.variables.resultado.value.uf 
+           
+                  myStopFunction();
+              }
+        }
+	   var workflowTimeout = setInterval(workableConsoleLog, 500);
+        function myStopFunction() {
+                    clearInterval(workflowTimeout);
+                    }
+        
+       
+        
+          
+        }
+  }
+      }
+    
+     </script>
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+             	   <ul class="active components mb-5">
+           
+          <li  style="list-style-type: none">
+               <a href="cadastros_clientes.html"><img src="./Icons/clientes.png" width="30px" style="margin-right: 10px">Clientes</a>
+              </li>
+          <li class="active">
+              <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/fornecedores.png" width="30px" style="margin-right: 10px">Fornecedores</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+               <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_flexo.html"><img src="./Icons/flexo.png" width="20px" style="margin-right: 10px">Flexo</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_roto.html"><img src="./Icons/roto.png" width="20px" style="margin-right: 10px">Roto</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_anilox.html"><img src="./Icons/anilox.png" width="20px" style="margin-right: 10px">Anilox</a>
+          </li>
+          <li class="active" style="list-style-type: none">
+               <a href="cadastros_fornecedores_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindro Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_prepress.html"><img src="./Icons/prepress.png" width="20px" style="margin-right: 10px">Prepress</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_materiaprima.html"><img src="./Icons/material.png" width="20px" style="margin-right: 10px">Matéria Prima</a>
+          </li>
+          </ul>
+          
+          <li>
+              <a  href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/tecnicos.png" width="30px" style="margin-right: 10px">Cadastros Técnicos</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu3">
+              
+          <li  style="list-style-type: none">
+               <a href="cadastros_tecnicos_unidades.html"><img src="./Icons/unidades.png" width="20px" style="margin-right: 10px">Unidades</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_tipotrabalho.html"><img src="./Icons/tipo_trabalho.png" width="20px" style="margin-right: 10px">Tipo de Trabalho</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_finalidade.html"><img src="./Icons/finalidade.png" width="20px" style="margin-right: 10px">Finalidade</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_substratos.html"><img src="./Icons/substratos.png" width="20px" style="margin-right: 10px">Substratos</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_duplaface.html"><img src="./Icons/dupla_face.png" width="20px" style="margin-right: 10px">Dupla Face</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_estruturas.html"><img src="./Icons/estruturas.png" width="20px" style="margin-right: 10px">Estruturas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_tintas.html"><img src="./Icons/tintas.png" width="20px" style="margin-right: 10px">Tintas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_situacaoanilox.html"><img src="./Icons/situacao_anilox.png" width="20px" style="margin-right: 10px">Situação de Anilox</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindros Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_lavagemanilox.html"><img src="./Icons/lavagem_anilox.png" width="20px" style="margin-right: 10px">Anilox (tipo de lavagem)</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_segmentos.html"><img src="./Icons/segmentos.png" width="20px" style="margin-right: 10px">Segmentos</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_maquinas.html"><img src="./Icons/impressoras.png" width="20px" style="margin-right: 10px">Máquinas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_testform.html"><img src="./Icons/testform.png" width="20px" style="margin-right: 10px">Test Form</a>
+          </li>
+          </ul>
+          
+              
+                <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/sequencia.png" width="30px" style="margin-right: 10px">Sequência Padrão</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li class="active" style="list-style-type: none">
+               <a href="receita_tintas.html"><img src="./Icons/contagotas.png" width="20px" style="margin-right: 10px">Criar Sequência</a>
+              </li>
+              <li  style="list-style-type: none">
+               <a href="lista_receitas.html"><img src="./Icons/listasequencia.png" width="20px" style="margin-right: 10px">Lista Sequências</a>
+              </li>
+              <li style="list-style-type: none">
+               <a href="cadastros_tintas.html"><img src="./Icons/novasequencia.png" width="20px" style="margin-right: 10px">Lista de Cores</a>
+              </li>
+              </ul>
+          </li>
+              </ul>
+          
+            
+            
+                    
+                    
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item">
+                  <div class="input-icons">
+                     <i class="fa fa-search icon"></i>
+                    <input id="filtrarTabela" class="input-field form-control" onkeyup="filtro_tabela()" style="width: 400px;border-top-left-radius: 40px;border-top-right-radius: 40px;border-bottom-left-radius: 40px;border-bottom-right-radius: 40px;" type="text"> 
+                    </div>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+       
+        <br>
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+       
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_cliente" style="display:none"></div>
+            <div id="id_flexo" style="display:none"></div>
+            <div id="id_roto" style="display:none"></div>
+            <div id="id_prepress" style="display:none"></div>
+            <div id="id_anilox" style="display:none"></div>
+            <div id="id_portacliche" style="display:none"></div>
+            
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+            
+           
+  
+            
+            <div  id="mostra_portacliche" class="form-group" style="display:inline-block; width: 100%;">
+             
+              <h5 id="a_div_novo5"><i id="novo5Arrow" class="fas fa-plus-square" onclick="mostraNovo5()" style="margin-right: 5px; cursor:pointer;"></i>Fornecedores de Porta Clichê</h5>
+                  <p><i>Gestão de Fornecedores de Fabricação de Porta-Clichê</i></p>
+                 <div id="info_novo5" class="form-group" style="display: none">
+ 
+                 
+            
+                 
+                 
+                 <div  class="form-group col-md-5" style="display:inline-block;">
+                <label for="nome_fornecedor_portacliche">Nome do Fornecedor</label>
+                  <input type="text" class="form-control" id="nome_fornecedor_portacliche" onkeyup="this.value=this.value.toUpperCase()" name="nome_fornecedor_portacliche">
+                 </div>
+                  <div  class="form-group col-md-3" style="display:inline-block;">
+                 <label for="nome_fantasiar_portacliche">Nome Fantasia</label>
+                  <input type="text" class="form-control" id="nome_fantasia_portacliche" name="nome_fantasia_portacliche">
+                 </div>
+                 <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="cnpj">CNPJ</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9]/g, '')" onfocusout="formata_cnpj()"  id="cnpj" name="cnpj">
+                </div>
+                
+                <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="cep">CEP</label>
+                  <input type="text" class="form-control" id="cep" name="cep" value="" size="10" maxlength="9"
+                 onblur="pesquisacep(this.value,'entrega');" onkeyup="this.value=this.value.replace(/[^0-9-]/g, '')" placeholder="00000-000">
+                </div>
+                
+                <div class="form-group col-md-6" style="display:inline-block;">
+                  <label for="rua">Rua</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="rua" name="rua">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="numero">Número</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9]/g, '')" id="numero" name="numero">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="bairro">Bairro</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="bairro" name="bairro">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="cidade">Cidade</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="cidade" name="cidade">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="uf">Estado</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="uf" name="uf">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="pais">País</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="pais" name="pais">
+                </div>
+             
+                 <br>
+       
+           <div id="altera_contato_portacliche" style="display:none">99</div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="contato_portacliche">Contato</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()" id="contato_portacliche" name="contato_portacliche">
+                   <datalist id="os_representantes"></datalist>
+                    <span class="error"><p id="error_busca_representante" style="color:orange"></p></span>
+                 
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="telefone_contato_portacliche">Telefone</label>
+                  <input type="text" class="form-control" id="telefone_contato_portacliche" name="telefone_contato_portacliche">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="email_contato_portacliche">e-mail</label>
+                  <input type="text" class="form-control" id="email_contato_portacliche" name="email_contato_portacliche">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="departamento_portacliche">Depto.</label>
+                  <select  class="form-control" id="departamento_portacliche" name="departamento_portacliche">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Comercial</option>
+                      <option>Técnico</option>
+                    </select>
+                </div>
+                  <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_contato_portacliche()" src="./Icons/icone_mais.png" width="25px"></div> 
+              
+                
+                <table id="tabela_contatos_portacliche" class="table custom-table" style="display: none">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:25%">Nome
+              </th>
+              <th class="th-sm" style="width:30%">E-mail
+              </th>
+              <th class="th-sm" style="width:15%">Telefone
+              </th>
+              <th class="th-sm" style="width:20%">Departamento
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>   
+        <br>
+    <button class="btn btn-primary" onclick="salvar_fornecedor_portacliche()" style="cursor: pointer">Salvar Fornecedor</button>
+    <button class="btn btn-secondary" onclick="cancelar_forn_portacliche()" style="cursor: pointer">Cancelar</button>
+    
+    </div>
+     
+          <br>
+          <table id="tabela_fornecedores_portacliche" class="table custom-table"  style="display: inline-block">
+          <thead>
+            <tr>
+            
+             
+              <th class="th-sm" style="width:90%">Fornecedor<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+                <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+                
+                
+        
+          
+   
+             
+            </div>
+         
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	
+  	var usuario = api.auth.get_current_user()
+  	    // funcoes de apoio
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+  	</script>
+  	
+  	
+  	
+  
+ 
+  
+
+
+     
+
+      
+ 
+
+
+
+
+`
+
+
+ 
+    
+    
+    <script>
+      function filtro_tabela() {
+      var input, filter, table, tr, td, td2, i, txtValue;
+      input = document.getElementById("filtrarTabela");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_fornecedores_portacliche");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td || td2) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+    
+    </script>
+
+<script>
+      
+       function mostraNovo5(){
+         
+        var div_cliente = document.getElementById("info_novo5")
+        var icone = document.getElementById("novo5Arrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+       
+      }
+  </script>
+<script>
+    
+    
+     function preenche_fornecedores_portacliche(){
+        var os_fornecedores_portacliche = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","portacliche"]).results
+        
+        clearTable(document.getElementById("tabela_fornecedores_portacliche"))
+          
+          
+         var table = document.getElementById("tabela_fornecedores_portacliche")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_fornecedores_portacliche.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_fornecedores_portacliche[i].nome+'</div>'
+            
+            cell2.innerHTML = '<div><img id="'+os_fornecedores_portacliche[i]._id+'" src="Icons/edit.png" height="25px" onclick="editarFornecedor_portacliche()" style="cursor: pointer;"></div>'
+            
+            cell3.innerHTML = '<div><img id="'+os_fornecedores_portacliche[i]._id+'" src="Icons/delete.png" height="25px" onclick="apagarFornecedor_portacliche()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+function apagarFornecedor_portacliche(){
+    if (confirm("Deseja mesmo apagar esse fornecedor?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_Fornecedores",linha)
+    preenche_fornecedores_portacliche()    
+    }
+     }
+     
+ function editarFornecedor_portacliche(){
+     var linha = event.srcElement.id
+     document.getElementById("id_portacliche").innerText = linha
+      var icone = document.getElementById("novo5Arrow")
+        icone.classList.toggle("fa-chevron-down")
+       
+    var busca_fornecedor = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["_id","equal to",linha]).results[0]
+   // console.log(busca_fornecedor)
+    document.getElementById("info_novo5").style = "display: inline-block; width: 100%;"
+    document.getElementById("nome_fantasia_portacliche").value = busca_fornecedor.nome
+    document.getElementById("nome_fornecedor_portacliche").value = busca_fornecedor.nome_real
+    
+     document.getElementById("cnpj").value = jsbrasil.maskBr.cnpj(busca_fornecedor.cnpj)
+       // data["segmento"] = document.getElementById("segmento").value
+        
+       
+        var info_endereco = {}
+        document.getElementById("cep").value = busca_fornecedor.endereco.CEP
+        document.getElementById("rua").value = busca_fornecedor.endereco.rua
+        document.getElementById("numero").value = busca_fornecedor.endereco.numero
+        document.getElementById("bairro").value = busca_fornecedor.endereco.bairro
+        document.getElementById("cidade").value = busca_fornecedor.endereco.cidade
+        document.getElementById("uf").value = busca_fornecedor.endereco.estado
+        document.getElementById("pais").value = busca_fornecedor.endereco.pais
+        
+    
+    
+    contatos_portacliche = busca_fornecedor.contatos
+        
+        
+        
+        
+        
+    
+    if (contatos_portacliche != undefined){
+        
+       contatos = contatos_portacliche
+       
+        var tabela2 = document.getElementById("tabela_contatos_portacliche");
+      clearTable(tabela2)
+      
+      if (contatos.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos[i])
+       if (contatos[i].departamento == "Representante" && contatos[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].nome+'" src="Icons/edit.png" width="25px" onclick="reply_edit_contato_anilox()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].nome+'" src="Icons/delete.png" width="25px" onclick="reply_delete_contato_anilox()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+        
+    }
+    
+    
+    }
+</script>
+<script>
+
+            
+      function salvar_fornecedor_portacliche(){
+             var data = {}
+            data["nome_real"] = document.getElementById("nome_fornecedor_portacliche").value
+            data["nome"] = document.getElementById("nome_fantasia_portacliche").value
+            data["tipo"] = "portacliche"
+            
+            data["contatos"] = contatos_portacliche
+            
+             data["cnpj"] = document.getElementById("cnpj").value.replace(/[^0-9]/g, '')
+            var info_endereco = {}
+            info_endereco["CEP"] = document.getElementById("cep").value
+            info_endereco["rua"] = document.getElementById("rua").value.toUpperCase()
+            info_endereco["numero"] = document.getElementById("numero").value.toUpperCase()
+            info_endereco["bairro"] = document.getElementById("bairro").value.toUpperCase()
+            info_endereco["cidade"] = document.getElementById("cidade").value.toUpperCase()
+            info_endereco["estado"] = document.getElementById("uf").value.toUpperCase()
+            info_endereco["pais"] = document.getElementById("pais").value.toUpperCase()
+            data["endereco"] = info_endereco
+            
+            grava_base_fornecedores(data)
+            } 
+        
+    function grava_base_fornecedores(info){    
+       
+      
+       if (info.tipo == "flexografia"){
+       var theID = document.getElementById("id_flexo").innerText
+       }
+       if (info.tipo == "rotogravura"){
+       var theID = document.getElementById("id_roto").innerText
+       }
+       if (info.tipo == "prepress"){
+       var theID = document.getElementById("id_prepress").innerText
+       }
+       if (info.tipo == "anilox"){
+       var theID = document.getElementById("id_anilox").innerText
+       }
+       if (info.tipo == "portacliche"){
+       var theID = document.getElementById("id_portacliche").innerText
+       }
+       
+       var existe_id = document.getElementById("id_portacliche").innerText
+       
+       var query = []
+       if (existe_id == ""){
+        var cria_cliente = api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","fornecedorPC_Criar",{"info":info,"usuario":usuario})
+        console.log(cria_cliente)   
+            } else {
+            data["_id"] = existe_id
+            var atualiza_cliente = api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","fornecedorPC_Alterar",{"info":info,"usuario":usuario})
+           console.log(atualiza_cliente)
+        }
+        
+        document.getElementById("id_roto").innerText = ""
+        document.getElementById("id_flexo").innerText = ""
+        document.getElementById("id_prepress").innerText = ""
+        document.getElementById("id_anilox").innerText = ""
+        document.getElementById("id_portacliche").innerText = ""
+        
+        if (info.tipo== "flexografia"){
+            clearTable(document.getElementById("tabela_contatos"))
+            clearTable(document.getElementById("tabela_materiais"))
+            clearTable(document.getElementById("tabela_espessura"))
+             setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo")
+        var icone = document.getElementById("novoArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores()
+            },1000)
+            
+          
+        } 
+        
+        if (info.tipo== "rotogravura"){
+            clearTable(document.getElementById("tabela_contatos_roto"))
+          document.getElementById("local_gravacao").value = "undefined"
+          document.getElementById("nome_fornecedor_roto").value = ""
+             setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo2")
+        var icone = document.getElementById("novo2Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_roto()
+            },1000)
+            
+          
+        } 
+    
+    if (info.tipo== "prepress"){
+            clearTable(document.getElementById("tabela_contatos_prepress"))
+            document.getElementById("nome_fornecedor_prepress").value = ""
+            document.getElementById("o_prepress_tipo").value = ""
+            document.getElementById("servico_PREPRESS").checked = false
+            document.getElementById("servico_ROTOGRAVURA").checked = false
+            document.getElementById("servico_FLEXOGRAFIA").checked = false
+             setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo3")
+        var icone = document.getElementById("novo3Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_prepress()
+            },1000)
+            
+          
+        } 
+        
+        
+        if (info.tipo == "anilox"){
+            document.getElementById("nome_fornecedor_anilox").value = ""
+            clearTable(document.getElementById("tabela_contatos_anilox"))
+            setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo4")
+        var icone = document.getElementById("novo4Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_anilox()
+            },1000)
+            
+            
+        }
+        
+        if (info.tipo == "portacliche"){
+            document.getElementById("nome_fornecedor_portacliche").value = ""
+            document.getElementById("nome_fantasia_portacliche").value = ""
+            document.getElementById("cnpj").value = ""
+            document.getElementById("cep").value = ""
+            document.getElementById("rua").value = ""
+            document.getElementById("numero").value = ""
+            document.getElementById("bairro").value = ""
+            document.getElementById("cidade").value = ""
+            document.getElementById("uf").value = ""
+            
+            clearTable(document.getElementById("tabela_contatos_portacliche"))
+            setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo5")
+        var icone = document.getElementById("novo5Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_portacliche()
+            },1000)
+            
+            
+        }
+        
+    }
+        
+        
+    
+</script>
+<script>
+    function cancelar_forn_portacliche(){
+       document.getElementById("nome_fornecedor_portacliche").value = ""
+            document.getElementById("nome_fantasia_portacliche").value = ""
+            document.getElementById("cnpj").value = ""
+            document.getElementById("cep").value = ""
+            document.getElementById("rua").value = ""
+            document.getElementById("numero").value = ""
+            document.getElementById("bairro").value = ""
+            document.getElementById("cidade").value = ""
+            document.getElementById("uf").value = "" 
+            clearTable(document.getElementById("tabela_contatos_portacliche"))
+            setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo5")
+        var icone = document.getElementById("novo5Arrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_portacliche()
+            },1000)
+        
+    }
+</script>
+<script>
+
+   var contatos_portacliche = []
+          
+         
+         
+          function adiciona_contato_portacliche(){      
+             if (document.getElementById("altera_contato_portacliche").innerText == "99"){
+              if (document.getElementById("departamento_portacliche").value != "undefined"){
+              console.log("Estou dentro")
+                  document.getElementById("tabela_contatos_portacliche").style = "display: inline-block;"
+                  var info_contato = {}
+                  info_contato["nome"] = document.getElementById("contato_portacliche").value
+                  info_contato["telefone"] = document.getElementById("telefone_contato_portacliche").value
+                  info_contato["email"] = document.getElementById("email_contato_portacliche").value
+                  info_contato["departamento"] = document.getElementById("departamento_portacliche").value
+                  contatos_portacliche.push(info_contato)
+                 
+                  document.getElementById("contato_portacliche").value = ""
+                 document.getElementById("telefone_contato_portacliche").value = ""
+                 document.getElementById("email_contato_portacliche").value = ""
+                 document.getElementById("departamento_portacliche").value = "undefined"
+              
+                preenche_tabela_contatos_portacliche() 
+              } else {
+                  alert("Por favor, selecione o setor do contato!")
+              }
+               
+             }
+             else {
+                 
+                     var numero = parseInt(document.getElementById("altera_contato_portacliche").innerText)
+                   
+                         contatos_anilox[numero]["nome"] = document.getElementById("contato_portacliche").value
+                         contatos_anilox[numero]["telefone"] = document.getElementById("telefone_contato_portacliche").value
+                         contatos_anilox[numero]["email"] = document.getElementById("email_contato_portacliche").value
+                         contatos_anilox[numero]["departamento"] = document.getElementById("departamento_portacliche").value
+                    
+                        
+                     document.getElementById("altera_contato_portacliche").innerText == "99"
+                     document.getElementById("contato_portacliche").value = ""
+                 document.getElementById("telefone_contato_portacliche").value = ""
+                 document.getElementById("email_contato_portacliche").value = ""
+                 document.getElementById("departamento_portacliche").value = "undefined"
+                    preenche_tabela_contatos_portacliche() 
+                 } 
+                 
+                 
+                 
+             }
+              
+          
+          
+          
+   
+         
+   function preenche_tabela_contatos_portacliche(){
+      var tabela2 = document.getElementById("tabela_contatos_portacliche");
+      clearTable(tabela2)
+      
+      if (contatos_portacliche.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos_portacliche.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos_portacliche[i])
+       if (contatos_portacliche[i].departamento == "Representante" && contatos_portacliche[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_portacliche[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_portacliche[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_portacliche[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_portacliche[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos_portacliche[i].nome+'" src="Icons/edit.png" width="25px" onclick="reply_edit_contato_portacliche()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos_portacliche[i].nome+'" src="Icons/delete.png" width="25px" onclick="reply_delete_contato_portacliche()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+             
+          
+      </script>
+      <script>
+   
+    
+    
+     function reply_edit_contato_portacliche(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    console.log(contatos_anilox.length)
+    for (i=0;i<contatos_anilox.length;i++){
+        console.log(linha)
+        console.log(contatos_portacliche[i].email)
+        if (contatos_portacliche[i].nome == linha){
+            document.getElementById("altera_contato_portacliche").innerText = i
+            document.getElementById("contato_portacliche").value = contatos_anilox[i].nome
+            document.getElementById("email_contato_portacliche").value = contatos_anilox[i].email
+            document.getElementById("telefone_contato_portacliche").value = contatos_anilox[i].telefone
+            var busca_select = document.getElementById("departamento_portacliche")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos_portacliche[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+</script>
+<script>
+  
+    
+     function reply_delete_contato_portacliche(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos_anilox.length;i++){
+        console.log(contatos_portacliche[i].nome)
+        if (contatos_portacliche[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos_portacliche.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos_portacliche()
+    }
+    
+    preenche_fornecedores_portacliche()
+</script>
+   
+<script>
+    function formata_cnpj(){
+        var numero = document.getElementById("cnpj").value
+        console.log(numero)
+        if (numero != ""){
+            console.log(jsbrasil.validateBr.cnpj(numero))
+            if (jsbrasil.validateBr.cnpj(numero) === true){
+                document.getElementById("cnpj").value = jsbrasil.maskBr.cnpj(numero)
+            } else {
+                alert("Esse não é um CNPJ válido!")
+            }
+        }
+    }
+</script>
+
+
+
+
+    </body>
+
+</html>

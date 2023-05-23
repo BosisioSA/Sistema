@@ -1,0 +1,41 @@
+
+.nixps-config-user-preferences {
+    margin: 20px;
+	margin-top: 5px;
+}
+
+.nixps-config-user-preferences .tsw-table > tbody > tr:first-child td {
+	padding-top: 0px;
+}
+
+.nixps-config-user-preferences .panel {
+	border-radius: 7px;
+	padding: 15px;
+    padding-top: 5px;
+}
+
+.nixps-config-user-preferences table {
+	width: 100%;
+}
+
+.nixps-config-user-preferences img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.frameChangeAction, .frameCancelAction {
+    font-size: 13px;
+}
+
+.frameCancelAction {
+    color: #747C83;
+    background-color: rgb(243, 243, 243);
+    border-color: #747C83;
+    border-width: 1px;
+    border-radius: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+}

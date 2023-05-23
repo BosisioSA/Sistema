@@ -1,0 +1,1621 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Pedido de Arte</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+      
+       <script>
+            var queryString = window.location.search;
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+        </script>
+    
+    
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+               <ul class="active components mb-5">
+                <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/analisepacotegrafico.png" width="30px" style="margin-right: 10px">An. Pacote Gráfico</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li style="list-style-type: none">
+               <img src="./Icons/responsavel.png" width="20px" style="margin-right: 10px;"><span id="user_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/inicio.png" width="20px" style="margin-right: 10px"><span id="inicio_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/final.png" width="20px" style="margin-right: 10px"><span id="final_pacote" style="color: black;"></span>
+          </li>
+          
+          
+          </ul>
+         </li>
+            
+            
+       </ul>
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 70%;">
+        <h2 style="display:block;">Solicitação de Desenvolvimento de Arte</h2>
+        </div>
+       
+    
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 25%;">
+            <h6 id="tempo_para_entrega">Tempo para entrega: 00:00hs</h6>
+        </div>
+        <hr>
+     <!-- informacaoes do ticket -->
+     <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+        <p style="margin-top: -9px;"><strong>Informações do Ticket</strong></p>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="numero_ticket">Ticket Numero</label>
+            <input type="text" class="form-control"  id="numero_ticket" name="numero_ticket" readonly>
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="item_ticket">Item</label>
+            <input type="text" class="form-control"  id="item_ticket" name="item_ticket" readonly>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 15%; margin-right: 2%">
+          <label for="cliente_ticket">Cliente</label>
+            <input type="text" class="form-control"   id="cliente_ticket" name="cliente_ticket" readonly>
+        </div> 
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 34%; margin-right: 2%">
+          <label for="descricao_ticket">Descrição</label>
+            <input type="text" class="form-control"   id="descricao_ticket" name="descricao_ticket" readonly>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 2%; margin-right: 2%">
+             <label for="Imp">Imp</label>
+            <img src="./Icons/maq_roto.png" style="width: 100%" id="img_imp">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 8%; margin-right: 2%">
+          <label for="criacao_ticket">Criado em</label>
+            <input type="text" class="form-control"   id="criacao_ticket" name="criacao_ticket" readonly>
+        </div> 
+        
+      </div>  
+   <br>
+   
+     <hr>
+  
+     <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 48%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px; margin-right: 1%"> 
+      <p style="margin-top: -9px;"><strong>Informações Prepress</strong></p> 
+        <div style="width: 100%">
+          <table id="tabela_observacoes" class="table custom-table" cellspacing="0" width="100%" style="display: inline-block; min-width: 500px;">
+          <thead>
+            <tr>
+            
+            
+              <th class="col" style="width:80%">
+              </th>
+              <th class="col" style="width:5%; vertical-align: top;">Apagar
+              </th>
+              <th class="col" style="width:5%; vertical-align: top;">
+              </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th><div><textarea class="form-control" id="observa_1" rows="1"></textarea></div></th>
+                  <th><div><img id="remove_1" src="./Icons/delete.png" width="30px" onclick="apaga_observa()" style="cursor: pointer"></div></th>
+                  <th><div><img id="add_1" src="./Icons/icone_mais.png" width="30px" onclick="adiciona_observa()" style="cursor: pointer"></div></th>
+              </tr>
+          </tbody>
+        </table>
+    </div>`
+   
+  
+   </div>
+  
+   <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 48%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px; margin-right: 1%"> 
+      <p style="margin-top: -9px;"><strong>Informações Gravação</strong></p> 
+        <div style="width: 100%">
+          <table id="tabela_observacoes2" class="table custom-table" cellspacing="0" width="100%" style="display: inline-block; min-width: 500px;">
+          <thead>
+            <tr>
+            
+            
+              <th class="col" style="width:80%">
+              </th>
+              <th class="col" style="width:5%; vertical-align: top;">Apagar
+              </th>
+              <th class="col" style="width:5%; vertical-align: top;">
+              </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th><div><textarea class="form-control" id="observa2_1" rows="1"></textarea></div></th>
+                  <th><div><img id="remove_1" src="./Icons/delete.png" width="30px" onclick="apaga_observa2()" style="cursor: pointer"></div></th>
+                  <th><div><img id="add_1" src="./Icons/icone_mais.png" width="30px" onclick="adiciona_observa2()" style="cursor: pointer"></div></th>
+              </tr>
+          </tbody>
+        </table>
+    </div>`
+   
+  
+   </div>
+  
+   <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 96%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px;">
+       <p><strong>Aprovação</strong></p>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 24%; margin-right:1%">
+        <label>Via Print?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="aprovacao_print"    id="aprovacao_print" value="Sim">
+        <label class="form-check-label" for="aprovacao_print">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="aprovacao_print2"  id="aprovacao_print2" value="Não" checked>
+        <label class="form-check-label" for="aprovacao_print2">Não</label>
+    </div>
+       </div>
+       
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 24%; margin-right:1%">
+        <label>Enviar Prova de Cor?</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="provadecor"   id="provadecor" value="Sim">
+        <label class="form-check-label" for="provadecor">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="provadecor2"  id="provadecor2" value="Não" checked>
+        <label class="form-check-label" for="provadecor2">Não</label>
+    </div>
+       </div>
+          <div class="form-group" style="display:inline-block; vertical-align: top; width: 24%; margin-right:1%">
+        <label>Prova Digital PDT</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="provadigitalpdt"   id="provadigitalpdt" value="Sim">
+        <label class="form-check-label" for="provadigitalpdt">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="provadigitalpdt2"  id="provadigitalpdt2" value="Não" checked>
+        <label class="form-check-label" for="provadigitalpdt2">Não</label>
+    </div>
+       </div>
+          <div class="form-group" style="display:inline-block; vertical-align: top; width: 23%;">
+        <label>Prova Digital PMT</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="provadigitalpmt"   id="provadigitalpmt" value="Sim">
+        <label class="form-check-label" for="provadigitalpmt">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="provadigitalpmt2"  id="provadigitalpmt2" value="Não" checked>
+        <label class="form-check-label" for="provadigitalpmt2">Não</label>
+    </div>
+       </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 24%; margin-right:1%">
+        <label>Vias</label>
+        <input class="form-control" type="number" name="print_vias"  id="print_vias" value="0" style="width: 50%;">
+      
+      </div>
+      <section class="form-group" style="display:inline-block; vertical-align: top; width: 24%; margin-right:1%">
+          </section>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 24%; margin-right:1%">
+        <label>Vias</label>
+        <input class="form-control" type="number" name="provadigitalpdt_vias"  id="provadigitalpdt_vias" value="0" style="width: 50%;">
+      
+      </div> 
+      <div class="form-group" style="display:inline-block; vertical-align: top; width: 23%;">
+        <label>Vias</label>
+        <input class="form-control" type="number" name="provadigitalpmt_vias"  id="provadigitalpmt_vias" value="0" style="width: 50%;">
+      
+      </div> 
+        
+        
+        
+      </div>  
+  
+    <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 25%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px;">
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+        <label>Primeiro Fornecimento</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions100"    id="primeiro_fornecimento" value="Sim">
+        <label class="form-check-label" for="primeiro_fornecimento">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions100"  id="primeiro_fornecimento2" value="Não">
+        <label class="form-check-label" for="primeiro_fornecimento2">Não</label>
+    </div>
+       </div>
+       
+      
+         <div id="mostra_referencia_cor" class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+             <label for="qual_referencia_cor">Referência de Cor</label>
+            <input type="text" class="form-control"  id="qual_referencia_cor" name="qual_referencia_cor">
+        
+      </div> 
+        
+        
+      </div>  
+  
+  
+  
+    <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 70%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px;">
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%; margin-right: 1% ">
+          <label for="data_entrada_arte">Data Entrada Arte</label>
+            <input type="date" class="form-control"   id="data_entrada_arte"  name="data_entrada_arte" readonly>
+            
+        </div>
+        
+        
+        
+        
+        <div class="form-group" style="display:inline-block; vertical-align: top;width: 32%; margin-right: 1% ">
+          <label for="prazo_pdf_aprovacao">Prazo PDF Aprovação</label>
+            <input type="date" class="form-control"   id="prazo_pdf_aprovacao"  name="prazo_pdf_aprovacao" readonly>
+            
+        </div>
+        
+        
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 33%;">
+          <label for="prepress">Prepress</label>
+            <select class="form-control"   id="prepress" name="prepress">
+            <option value="undefined" disabled>Selecionar...</option>
+             </select> 
+        </div>
+        
+           <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%; margin-right: 1% ">
+        <label>Item Novo</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions101"   id="item_novo" value="Sim">
+        <label class="form-check-label" for="item_novo">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions101"  id="item_novo2" value="Não" checked>
+        <label class="form-check-label" for="item_novo2">Não</label>
+    </div>
+       </div>
+          <div class="form-group" style="display:inline-block; vertical-align: top; width: 32%;margin-right: 1% ">
+        <label>Alteração</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions102"   id="alteracao" value="Sim">
+        <label class="form-check-label" for="alteracao">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions102"  id="alteracao2" value="Não" checked>
+        <label class="form-check-label" for="alteracao2">Não</label>
+    </div>
+       </div>
+          <div class="form-group" style="display:inline-block; vertical-align: top; width: 31%;">
+        <label>Logo Valgroup</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions103"   id="logo_valgroup" value="Sim">
+        <label class="form-check-label" for="item_novo">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions103"  id="logo_valgroup2" value="Não" checked>
+        <label class="form-check-label" for="logo_valgroup2">Não</label>
+    </div>
+       </div>
+    
+             
+      </div>  
+  
+    <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px">
+  
+  
+  </div>
+    <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 33%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px">
+     
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%; margin-right: 1%">
+          <label for="largura">Largura</label>
+            <input type="text" class="form-control"  id="largura" name="largura">
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top;width: 48%; ">
+          <label for="passo">Passo</label>
+            <input type="text" class="form-control"  id="passo" name="passo">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%; margin-right: 1%">
+          <label for="passo_compensado_roto">Passo Compensado</label>
+            <input type="text" class="form-control"  id="passo_compensado_roto" name="passo_compensado_roto">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 47%;">
+         <label for="lado_impressao">Lado Impressão</label>
+            <select class="form-control"   id="lado_impressao"  name="lado_impressao">
+            <option value="Externa">Externa</option>
+            <option value="Interna">Interna</option>
+             </select> 
+        </div>
+     
+       
+        
+        
+      </div>  
+   
+  
+    <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 43%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px;">
+       
+          <div class="form-group" style="display:inline-block; vertical-align: top; width: 31%;">
+        <label>Referência de Cor</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions104" onchange="tem_referencia_cor()"  id="referencia_cor" value="Sim">
+        <label class="form-check-label" for="referencia_cor">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions104" onchange="tem_referencia_cor()" id="referencia_cor2" value="Não">
+        <label class="form-check-label" for="referencia_cor2">Não</label>
+    </div>
+       </div>
+         <div id="mostra_referencia_cor" class="form-group" style="display:none; vertical-align: top; width: 31%;">
+             <label for="qual_referencia_cor">Referência de Cor</label>
+            <input type="text" class="form-control"  id="qual_referencia_cor" name="qual_referencia_cor">
+        
+      </div> 
+        
+        
+      </div>  
+  
+   <!-- informacaoes da estrutura -->
+   
+   
+   
+     <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 80%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px; margin-right: 1%">
+        <p style="margin-top: -9px;"><strong>Estrutura</strong></p>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 23%; margin-right: 1%">
+          <label for="substrato_impressao">Substrato de Impressão</label>
+            <select class="form-control"   id="substrato_impressao" name="substrato_impressao">
+            <option value="undefined">Selecionar...</option>
+             </select> 
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 23%; margin-right: 1%">
+          <label for="laminacao_1">Laminação 1</label>
+            <select class="form-control"   id="laminacao_1"  onchange="mostra_bobina()" name="laminacao_1">
+            <option value="N/A">Não Aplica</option>
+             </select> 
+        </div>
+        <div id="div_laminacao_2" class="form-group" style="display:inline-block; vertical-align: top; width: 23%; margin-right: 1%">
+          <label for="laminacao_2">Laminacão 2</label>
+            <select class="form-control"   id="laminacao_2" onchange="mostra_bobina()" name="laminacao_2">
+            <option value="N/A">Não Aplica</option>
+             </select> 
+        </div>
+        <div id="div_laminacao_3" class="form-group" style="display:inline-block; vertical-align: top; width: 23%">
+          <label for="laminacao_3">Laminação 3</label>
+            <select class="form-control"   id="laminacao_3" onchange="mostra_bobina()" name="laminacao_3">
+            <option value="N/A">Não Aplica</option>
+             </select> 
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 22%; margin-right: 2%">
+          
+            <input type="text" class="form-control"   id="bobina_substrato" name="bobina_substrato" placeholder="Numero da Bobina">
+           
+        </div>
+        <div id="bob_lam1" class="form-group" style="display:none; vertical-align: top; width: 22%; margin-right: 2%">
+          
+            <input type="text" class="form-control"   id="bobina_lam1" name="bobina_lam1" placeholder="Numero da Bobina">
+           
+        </div>
+        <div id="bob_lam2" class="form-group" style="display:none; vertical-align: top; width: 22%; margin-right: 2%">
+          
+            <input type="text" class="form-control"   id="bobina_lam2" name="bobina_lam2" placeholder="Numero da Bobina">
+           
+        </div>
+        <div id="bob_lam3" class="form-group" style="display:none; vertical-align: top; width: 22%; margin-right: 2%">
+          
+            <input type="text" class="form-control"   id="bobina_lam3" name="bobina_lam3" placeholder="Numero da Bobina">
+           
+        </div>
+        
+      </div>  
+  
+  
+    <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 18%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px;">
+        <p style="margin-top: -9px;"><strong>Curva</strong></p>
+        <div  class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+          <label for="curva_impressao"></label>
+            <input type="text" class="form-control"   id="curva_impressao" name="curva_impressao">
+           
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+          <label for="codigo_barras">Código de Barras</label>
+            <input type="text" class="form-control"   id="codigo_barras" name="codigo_barras">
+            
+     </div> 
+            
+        
+      </div>  
+  
+   <!-- informacaoes do  Primer e Verniz -->
+   
+   <!-- informacaoes do  Pistas Passo Largura -->
+   
+
+   
+   <!-- Daqui pra baixo tudo escondido para colocar depois se necessário -->
+     <div id="div_info_cilindro_flexo" style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 31%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px; margin-right: 1%">
+       <p style="margin-top: -9px;"><strong>Info Porta Clichê</strong></p>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+          <label for="origem_pc">Origem Porta Clichê</label>
+            <select class="form-control"   id="origem_pc" onchange="seleciona_pcs()" name="origem_pc">
+            <option value="undefined">Selecionar...</option>
+            <option>SP1</option>
+            <option>MG4</option>
+             </select> 
+      </div>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 47%; margin-right: 1%">
+          <label for="porta_cliche">Porta Clichê</label>
+            <select class="form-control"   id="porta_cliche" name="porta_cliche">
+            <option value="undefined">Selecionar...</option>
+             </select> 
+      </div>
+      <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%;">
+          <label for="passo_compensado_flexo">Perímetro Distorcido</label>
+            <input type="text" class="form-control"  id="passo_compensado_flexo" name="passo_compensado_flexo">
+        </div>
+         
+   </div>
+  
+  
+   <div  style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 34%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px"> 
+     <p style="margin-top: -9px;"><strong>Puxada</strong></p>
+    <div class="form-group" style="display:inline-block; vertical-align: top; width: 47%; margin-right: 2%">
+         <label for="referencia_arte">Referência</label>
+            <select class="form-control"   id="referencia_arte" name="referencia_arte">
+            <option value="Código de Barras">Código de Barras</option>
+            <option value="Gramagem">Gramagem</option>
+            <option value="Logo">Logo</option>
+            <option value="Liso">Liso</option>
+             </select> 
+        </div>   
+            
+        
+        
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 47%; margin-right: 2%">
+         <label for="puxada_impressao">Referência da Puxada</label>
+            <select class="form-control"   id="puxada_impressao"  name="puxada_impressao">
+            <option value="Cabeça">Cabeça</option>
+            <option value="Horizontal">Horizontal</option>
+            <option value="Horizontal Rotacionado">Horizontal Rotacionado</option>
+            <option value="Pé">Pé</option>
+             </select> 
+        </div>
+        
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 47%;">
+         <label for="fotocelula">Fotocélula</label>
+            <select class="form-control"   id="fotocelula"  name="fotocelula">
+            <option value="Direita">Direita</option>
+            <option value="Dupla">Dupla</option>
+            <option value="Esquerda">Esquerda</option>
+            <option value="Sem Fotocélula">Sem Fotocélula</option>
+             </select> 
+        </div>
+    </div>
+   
+    <!--<br>
+     <h6 style="display:block;">Impressão</h6>
+     <hr>-->
+   <div  style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 96%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px"> 
+    
+     <div class="form-group" style="display:inline-block; vertical-align: top; width: 29%; margin-right: 1%">
+        <label>Registro</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions5"  onchange="mostra_obs()"  id="inlineRadio27" value="OK" checked>
+        <label class="form-check-label" for="inlineRadio27">OK</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions5"  onchange="mostra_obs()" id="inlineRadio28" value="Não">
+        <label class="form-check-label" for="inlineRadio28">Não</label>
+    </div>
+    <br>
+    <div id="inlineRadioOptions5_obs" class="form-group" style="display:none; vertical-align: top; width: 100%; margin-right: 1%">
+          <textarea id="registro_obs" class="form-control" rows="2"></textarea>
+      </div> 
+       </div>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 29%; margin-right: 1%">
+        <label>Planta Branco</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions6"  onchange="mostra_obs()"  id="inlineRadio9" value="OK" checked>
+        <label class="form-check-label" for="inlineRadio9">OK</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions6" onchange="mostra_obs()" id="inlineRadio10" value="Não">
+        <label class="form-check-label" for="inlineRadio10">Não</label>
+    </div>
+    <br>
+    <div id="inlineRadioOptions6_obs" class="form-group" style="display:none; vertical-align: top; width: 100%; margin-right: 1%">
+          <textarea id="plantabranco_obs" class="form-control" rows="2"></textarea>
+      </div>
+       </div>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 29%; margin-right: 1%">
+        <label>Texto</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions7"  onchange="mostra_obs()"  id="inlineRadio11" value="OK" checked>
+        <label class="form-check-label" for="inlineRadio11">OK</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions7" onchange="mostra_obs()" id="inlineRadio12" value="Não">
+        <label class="form-check-label" for="inlineRadio12">Não</label>
+    </div>
+    <br>
+    <div id="inlineRadioOptions7_obs" class="form-group" style="display:none; vertical-align: top; width: 100%; margin-right: 1%">
+          <textarea id="texto_obs" class="form-control" rows="2"></textarea>
+      </div> 
+       </div>
+      
+      
+      <div class="form-group" style="display:inline-block; vertical-align: top; width: 29%; margin-right: 1%">
+        <label>Composição de Cores</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions8"  onchange="mostra_obs()"  id="inlineRadio13" value="OK" checked>
+        <label class="form-check-label" for="inlineRadio13">OK</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions8"  onchange="mostra_obs()" id="inlineRadio14" value="Não">
+        <label class="form-check-label" for="inlineRadio14">Não</label>
+    </div>
+    <br>
+    <div id="inlineRadioOptions8_obs" class="form-group" style="display:none; vertical-align: top; width: 100%; margin-right: 1%">
+          <textarea id="composicaocores_obs" class="form-control" rows="2"></textarea>
+      </div> 
+       </div>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 29%; margin-right: 1%">
+        <label>Pista Fotocélula</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions9"  onchange="mostra_obs()"  id="inlineRadio15" value="OK" checked>
+        <label class="form-check-label" for="inlineRadio15">OK</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions9" onchange="mostra_obs()" id="inlineRadio16" value="Não">
+        <label class="form-check-label" for="inlineRadio16">Não</label>
+    </div>
+    <br>
+    <div id="inlineRadioOptions9_obs" class="form-group" style="display:none; vertical-align: top; width: 100%; margin-right: 1%">
+          <textarea id="pistafotocelula_obs" class="form-control" rows="2"></textarea>
+      </div>
+       </div>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 29%; margin-right: 1%">
+        <label>Fotocélula</label><br>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions10"  onchange="mostra_obs()"  id="inlineRadio17" value="OK" checked>
+        <label class="form-check-label" for="inlineRadio17">OK</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions10" onchange="mostra_obs()" id="inlineRadio18" value="Não">
+        <label class="form-check-label" for="inlineRadio18">Não</label>
+    </div>
+    <br>
+    <div id="inlineRadioOptions10_obs" class="form-group" style="display:none; vertical-align: top; width: 100%; margin-right: 1%">
+          <textarea id="fotocelula_obs" class="form-control" rows="2"></textarea>
+      </div> 
+       </div>
+      
+       
+      
+    
+    </div>
+  
+   <div  style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 30%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px; margin-right: 2%"> 
+    <p style="margin-top: -9px;"><strong>Processos</strong></p> 
+    <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+             <label for="obs_processos"></label>
+            <textarea class="form-control"  id="obs_processos" name="obs_processos" rows="9"></textarea>
+        </div>
+    
+    </div>
+    
+    <div  style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 29%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px; margin-right: 2%"> 
+    <p style="margin-top: -9px;"><strong>Tintas</strong></p> 
+    <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+          <label for="tinta">Tipo</label>
+            <select class="form-control"   id="tinta" name="tinta">
+            <option value="undefined">Selecionar...</option>
+             </select> 
+      </div>
+     <div class="form-group" style="display:inline-block; vertical-align: top; width: 33%;">
+            <input type="checkbox" class="form-group"  onchange="tinta_especial()" id="tinta_especial" name="tinta_especial">
+            <label for="tinta_especial">Especial</label>
+      </div>
+      <div id="mostra_tinta_especial" class="form-group" style="display:none; vertical-align: top; width: 65%;">
+            <label for="nome_tinta_especial">Nome</label>
+            <input type="text" class="form-control"   id="nome_tinta_especial" name="nome_tinta_especial">
+           
+      </div>
+    
+    <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+             <label for="obs_tintas"></label>
+            <textarea class="form-control"  id="obs_tintas" name="obs_tintas" rows="3"></textarea>
+        </div>
+    
+    </div>
+  
+   <div  style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 30%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px;"> 
+    <p style="margin-top: -9px;"><strong>Qualidade</strong></p> 
+    <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+             <label for="obs_qualidade"></label>
+            <textarea class="form-control"  id="obs_qualidade" name="obs_qualidade" rows="9"></textarea>
+        </div>
+    
+    </div>
+  
+  
+    <!--<br>
+     <h6 style="display:block;">Artes</h6>
+     <hr>-->
+      <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 20%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px; margin-right: 1%;"> 
+    
+     <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+          <label for="prepress">Prepress</label>
+            <select class="form-control"   id="prepress" name="prepress">
+            <option value="undefined">Selecionar...</option>
+            <option>VALGROUP</option>
+            <option>Externo</option>
+             </select> 
+     </div>
+     </div>
+     
+  
+     
+     <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 50%;display: inline-block; padding: 20px; vertical-align: top;margin-bottom: 10px; margin-right: 1%;"> 
+      <p style="margin-top: -9px;"><strong>Cores do Trabalho</strong></p> 
+        <div style="width: 100%">
+          <table id="tabela_cores" class="table custom-table" cellspacing="0" width="100%" style="display: inline-block; min-width: 500px;">
+          <thead>
+            <tr>
+            
+            
+              <th class="col" style="width:60%">Cor
+              </th>
+              <th class="col" id="nome_anilox" style="width:30%">Anilox
+              </th>
+              <th class="col" style="width:5%; vertical-align: top;">Apagar
+              </th>
+              <th class="col" style="width:5%; vertical-align: top;">
+              </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th><div><input type="text" class="form-control" id="nomecor_1" list="ascores_1"><datalist id="ascores_1"></datalist></div></th>
+                  <th><div><input type="text" class="form-control" id="anilox_1"></div></th>
+                  <th><div><img id="remove_1" src="./Icons/delete.png" width="30px" onclick="apaga_cor()" style="cursor: pointer"></div></th>
+                  <th><div><img id="add_1" src="./Icons/icone_mais.png" width="30px" onclick="adiciona_cor()" style="cursor: pointer"></div></th>
+              </tr>
+          </tbody>
+        </table>
+    </div>`
+   
+  
+   </div>
+   
+   
+     
+     <div id="div_artes_roto" style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 48%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px;"> 
+     <div class="form-group" style="display:inline-block; vertical-align: top; width: 47%; margin-right: 1%">
+             <label for="curva_roto">Curva</label>
+            <input type="text" class="form-control"  id="curva_roto" name="curva_roto">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%; ">
+             <label for="provacor_roto">Prova de Cor</label>
+            <input type="text" class="form-control"  id="provacor_roto" name="provacor_roto">
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 47%;margin-right: 1%">
+             <label for="referencia_roto">Referência</label>
+            <input type="text" class="form-control"  id="referencia_roto" name="referencia_roto">
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%;">
+             <label for="variacaodigital_roto">Variação Digital</label>
+            <input type="text" class="form-control"  id="variacaodigital_roto" name="variacaodigital_roto">
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 100%;">
+             <label for="cilindros_roto">Cilindros</label>
+            <input type="text" class="form-control"  id="cilindros_roto" name="cilindros_roto">
+        </div>
+    
+    </div>
+     <div id="div_artes_flexo" style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width:47%;display: none; padding: 20px; vertical-align: top;margin-bottom: 10px;"> 
+     <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%; margin-right: 1%">
+             <label for="processo_flexo">Processo</label>
+            <input type="text" class="form-control"  id="processo_flexo" name="processo_flexo">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%;">
+             <label for="referencia_flexo">Referência</label>
+            <input type="text" class="form-control"  id="referencia_flexo" name="referencia_flexo">
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 48%; margin-right: 1%">
+             <label for="provacor_flexo">Prova de Cor</label>
+            <input type="text" class="form-control"  id="provacor_flexo" name="provacor_flexo">
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 47%;">
+             <label for="fotocelula_flexo">Fotocélula</label>
+            <input type="text" class="form-control"  id="fotocelula_flexo" name="fotocelula_flexo">
+        </div>
+        
+    
+    </div>
+   
+     
+  
+  
+   
+   
+   
+    <div class="form-group" style="display:inline-block; vertical-align: top;  width: 16%; margin-top: 10px;">
+              
+    <button class="btn btn-secondary" onclick="verifica_campos('rascunho')">Salvar Rascunho</button><br>
+    </div>
+    <div class="form-group" style="display:inline-block; vertical-align: top;  width: 16%; margin-top: 10px;">
+   
+     <button class="btn btn-primary" onclick="verifica_campos('enviar')">Finalizar Tarefa</button><br>
+   
+   </div>
+    <div id="info_ticket"></div>
+                
+                
+              
+                
+                 
+                 
+       
+            
+    
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	    var usuario = api.auth.get_current_user()
+  	    
+  	    document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname
+  	 //   document.getElementById("data_entrega").value = "02:00"
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function padWithZero(num, targetLength) {
+  return String(num).padStart(targetLength, '0')
+}
+
+// preenche dados se existe ordem
+
+if (usuario.scope_name != undefined){
+    var nome_scope = usuario.scope_name[0].split("_")
+   
+}
+
+
+
+ var as_tintas = api.custom_objects.list("PantoneColor").results
+
+
+
+// preenche Selects
+selectPrepress = document.getElementById('prepress');
+selectTipo2 = document.getElementById('substrato_impressao');
+selectLam1 = document.getElementById('laminacao_1');
+selectLam2 = document.getElementById('laminacao_2');
+selectLam3 = document.getElementById('laminacao_3');
+    var tiposTipo2 = api.custom_objects.list_with_options("BR-VALFI_substratos").results
+    var nomes_estrutura = []
+    
+    for (i=0;i<tiposTipo2.length;i++){
+        nomes_estrutura.push(tiposTipo2[i].tipo)
+    }
+    var nomes_limpos = nomes_estrutura.filter(onlyUnique)
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectTipo2.appendChild(opt);
+    }
+    
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectLam1.appendChild(opt);
+    }
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectLam2.appendChild(opt);
+    }
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectLam3.appendChild(opt);
+    }
+    
+    var busca_fornecedores = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","prepress"],[],["nome"]).results
+   for (var i = 0; i<busca_fornecedores.length; i++){
+        var opt = document.createElement('option');
+        opt.value = busca_fornecedores[i].nome;
+        opt.innerHTML = busca_fornecedores[i].nome;
+        selectPrepress.appendChild(opt);
+    }
+  
+var hoje = new Date()
+
+// preenche dados
+
+
+ var busca_ticket = api.custom_objects.list_with_options("BR-TECNO_Tickets",["_id","equal to",ordem]).results[0]
+      
+      document.getElementById("numero_ticket").value = busca_ticket.numero_ticket
+      document.getElementById("cliente_ticket").value = busca_ticket.cliente
+      document.getElementById("descricao_ticket").value = busca_ticket.descricao
+      document.getElementById("item_ticket").value = busca_ticket.item
+      
+       var icone_imp = "./Icons/maq_flexo.png"
+        if (busca_ticket.processo.valor == "Rotogravura"){
+                icone_imp = "./Icons/maq_roto.png"
+            }
+            
+      document.getElementById("img_imp").src = icone_imp
+      
+      var dataentrada = new Date(busca_ticket.entrada_em)
+      var datacalculo = new Date(busca_ticket.entrada_em)
+      if (dataentrada.getDay() === 5){
+          var final = dataentrada.setDate(dataentrada.getDate()+3)
+      } else {
+          var final = dataentrada.setDate(dataentrada.getDate()+1)
+      }
+      console.log(final)
+      var agora = new Date()
+      var horas_diferenca = final-agora
+      console.log("HORAS DIFERENCA")
+      console.log(horas_diferenca)
+      document.getElementById("criacao_ticket").value = dateFormat(datacalculo,"dd/mm/yyyy")
+      var calcula_horas = parseInt(horas_diferenca/3600000)
+      var calcula_minutos = (horas_diferenca/3600000)%1
+      var minutos = parseInt(calcula_minutos*60)
+      if (calcula_horas < 4){
+       document.getElementById("tempo_para_entrega").style = "color:brown"   
+      }
+      if (calcula_horas < 2){
+       document.getElementById("tempo_para_entrega").style = "color: orange"   
+      }
+      if (calcula_horas < 0){
+       document.getElementById("tempo_para_entrega").style = "color: red"   
+      }
+      if (calcula_horas < 10){
+          calcula_horas = "0"+calcula_horas
+      }
+      if (minutos < 10){
+          minutos = "0"+minutos
+      }
+      document.getElementById("tempo_para_entrega").innerText = "Tempo para Entrega: "+calcula_horas+":"+minutos+"hs"
+     
+   
+    document.getElementById("substrato_impressao").value = busca_ticket.des1.substrato_impressao
+    document.getElementById("laminacao_1").value = busca_ticket.des1.laminacao_1
+    if (busca_ticket.des1.laminacao_1 != "N/A"){
+        document.getElementById("bob_lam1").style.display = "inline-block"
+    }
+    document.getElementById("laminacao_2").value = busca_ticket.des1.laminacao_2
+    if (busca_ticket.des1.laminacao_2 != "N/A"){
+        document.getElementById("bob_lam2").style.display = "inline-block"
+    }
+    document.getElementById("laminacao_3").value = busca_ticket.des1.laminacao_3
+    if (busca_ticket.des1.laminacao_3 != "N/A"){
+        document.getElementById("bob_lam3").style.display = "inline-block"
+    }
+    
+    
+    //   var verniz_campos = busca_ticket.des1.verniz
+  	 //   var chaves_verniz = Object.keys(verniz_campos)
+  	  //  for (i=0;i<chaves_verniz.length;i++){
+  	   //     nome_chave = chaves_verniz[i]
+  	//        document.getElementById(chaves_verniz[i]).checked = busca_ticket.des1.verniz[nome_chave]
+  	 //   }
+  	    
+  	  //   var primer_campos = busca_ticket.des1.primer
+  	  //  var chaves_primer = Object.keys( primer_campos)
+  	  //  for (i=0;i<chaves_primer.length;i++){
+  	   //     nome_chave = chaves_primer[i]
+  	 //       document.getElementById(chaves_primer[i]).checked = busca_ticket.des1.primer[nome_chave]
+  	  //  }
+  	    
+  	  //  document.getElementById("tipo_impressao").value = busca_ticket.processo.valor
+  	    document.getElementById("lado_impressao").value = busca_ticket.des1.lado_impressao
+  	    document.getElementById("largura").value = busca_ticket.des1.largura_impressao
+  	    document.getElementById("passo").value = busca_ticket.des1.passo_impressao
+  	    document.getElementById("passo_compensado_roto").value = busca_ticket.des1.passocompensado_impressao
+  	  //  document.getElementById("pistas").value = busca_ticket.des1.pistas
+  	    document.getElementById("referencia_arte").value = busca_ticket.des1.referencia_arte
+  	    document.getElementById("puxada_impressao").value = busca_ticket.des1.puxada_impressao
+  	    document.getElementById("fotocelula").value = busca_ticket.des1.fotocelula
+  	     
+   if (busca_ticket.art2 != undefined){
+       
+       
+       document.getElementById("cilindros_roto").value = busca_ticket.art2.cilindros_roto
+       
+      document.getElementById("inlineRadio13").checked = busca_ticket.art2.compensacaocores_ok.inlineRadio13
+      document.getElementById("inlineRadio14").checked = busca_ticket.art2.compensacaocores_ok.inlineRadio14
+      if (busca_ticket.art2.compensacaocores_ok.composicaocores_obs != ""){
+          document.getElementById("inlineRadioOptions8_obs").style.display = "inline-block"
+          document.getElementById("composicaocores_obs").value = busca_ticket.art2.compensacaocores_ok.composicaocores_obs
+      }
+       var table = document.getElementById("tabela_cores")
+       
+         if (busca_ticket.art2.cores_arte.length > 0){
+         table.rows[1].remove()
+             }
+      var table = document.getElementById("tabela_cores")
+        var qtasrow = table.rows.length
+   
+     
+     for (i=0;i<busca_ticket.art2.cores_arte.length;i++){
+          var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+           
+            var cell4 = row.insertCell(3);
+             
+         
+        var numero_linha = i+1
+        
+          cell1.innerHTML = '<div><input type="text" class="form-control" id="nomecor_'+numero_linha+'" list="ascores_'+numero_linha+'" value="'+busca_ticket.art2.cores_arte[i][0]+'"><datalist id="ascores_'+numero_linha+'"></datalist></div>'
+          cell2.innerHTML = '<div><input type="text" class="form-control" id="anilox_'+numero_linha+'" value="'+busca_ticket.art2.cores_arte[i][1]+'"></div>'
+           cell3.innerHTML = '<div><img id="remove_'+numero_linha+'" src="./Icons/delete.png" width="30px" onclick="apaga_cor()" style="cursor: pointer"></div>'
+           cell4.innerHTML = '<div><img id="add_'+numero_linha+'" src="./Icons/icone_mais.png" width="30px" onclick="adiciona_cor()" style="cursor: pointer"></div>'
+           
+            
+         var div_cores =  "ascores_"+numero_linha
+          var options=''; // variable to store the options
+        for(var k = 0; k < as_tintas.length; k++){
+            
+        options += '<option value="'+as_tintas[k].nome+'" />';
+
+        }
+        document.getElementById(div_cores).innerHTML = options
+      
+       qtasrow = qtasrow+1
+       
+     }
+     
+     
+     document.getElementById("curva_roto").value = busca_ticket.art2.curva_roto
+     document.getElementById("fotocelula_flexo").value = busca_ticket.art2.fotocelula_flexo
+     
+      document.getElementById("inlineRadio17").checked = busca_ticket.art2.fotocelula_ok.inlineRadio17
+      document.getElementById("inlineRadio18").checked = busca_ticket.art2.fotocelula_ok.inlineRadio18
+      if (busca_ticket.art2.fotocelula_ok.fotocelula_obs != ""){
+          document.getElementById("inlineRadioOptions10_obs").style.display = "inline-block"
+          document.getElementById("fotocelula_obs").value = busca_ticket.art2.compensacaocores_ok.fotocelula_obs
+      }
+     
+     document.getElementById("nome_tinta_especial").value = busca_ticket.art2.nome_tinta_especial
+     document.getElementById("obs_processos").value = busca_ticket.art2.obs_processos
+     document.getElementById("obs_qualidade").value = busca_ticket.art2.obs_qualidade
+     document.getElementById("obs_tintas").value = busca_ticket.art2.obs_tintas
+     document.getElementById("origem_pc").value = busca_ticket.art2.origem_pc
+     document.getElementById("passo_compensado_flexo").value = busca_ticket.art2.passo_compensado_flexo
+     
+      document.getElementById("inlineRadio15").checked = busca_ticket.art2.pistafotocelula_ok.inlineRadio15
+      document.getElementById("inlineRadio16").checked = busca_ticket.art2.pistafotocelula_ok.inlineRadio16
+      if (busca_ticket.art2.pistafotocelula_ok.pistafotocelula_obs != ""){
+          document.getElementById("inlineRadioOptions9_obs").style.display = "inline-block"
+          document.getElementById("pistafotocelula_obs").value = busca_ticket.art2.pistafotocelula_ok.pistafotocelula_obs
+      } 
+      
+       document.getElementById("inlineRadio9").checked = busca_ticket.art2.plantabranco_ok.inlineRadio9
+      document.getElementById("inlineRadio10").checked = busca_ticket.art2.plantabranco_ok.inlineRadio10
+      if (busca_ticket.art2.plantabranco_ok.plantabranco_obs != ""){
+          document.getElementById("inlineRadioOptions6_obs").style.display = "inline-block"
+          document.getElementById("plantabranco_obs").value = busca_ticket.art2.plantabranco_ok.plantabranco_obs
+      } 
+      
+      
+      document.getElementById("porta_cliche").value = busca_ticket.art2.porta_cliche
+      document.getElementById("processo_flexo").value = busca_ticket.art2.processo_flexo
+       document.getElementById("provacor_flexo").value = busca_ticket.art2.provacor_flexo
+       document.getElementById("provacor_roto").value = busca_ticket.art2.provacor_roto
+       document.getElementById("referencia_flexo").value = busca_ticket.art2.referencia_flexo
+       document.getElementById("referencia_roto").value = busca_ticket.art2.referencia_roto
+       
+      document.getElementById("inlineRadio27").checked = busca_ticket.art2.registro_ok.inlineRadio27
+      document.getElementById("inlineRadio28").checked = busca_ticket.art2.registro_ok.inlineRadio28
+      if (busca_ticket.art2.registro_ok.registro_obs != ""){
+          document.getElementById("inlineRadioOptions5_obs").style.display = "inline-block"
+          document.getElementById("registro_obs").value = busca_ticket.art2.registro_ok.registro_obs
+      } 
+      
+      document.getElementById("inlineRadio11").checked = busca_ticket.art2.texto_ok.inlineRadio11
+      document.getElementById("inlineRadio12").checked = busca_ticket.art2.texto_ok.inlineRadio12
+      if (busca_ticket.art2.texto_ok.texto_obs != ""){
+          document.getElementById("inlineRadioOptions7_obs").style.display = "inline-block"
+          document.getElementById("texto_obs").value = busca_ticket.art2.texto_ok.texto_obs
+      }
+      
+       document.getElementById("tinta").value = busca_ticket.art2.tinta
+        document.getElementById("tinta_especial").checked = busca_ticket.art2.tinta_especial
+        document.getElementById("variacaodigital_roto").checked = busca_ticket.art2.variacaodigital_roto
+       
+     
+   }
+   
+   for (i=0;i<busca_ticket.pcp.length;i++){
+       if (busca_ticket.pcp[i].nome == "PDF Aprovado"){
+           document.getElementById("prazo_pdf_aprovacao").value = dateFormat(new Date(busca_ticket.pcp[i].data_final),"yyyy-mm-dd")
+       }
+   }
+
+  	</script>
+ 
+  	<script>
+  	function verifica_campos(que_fazer){
+  	    
+  
+  	
+    var valido = true
+    
+    var data = {}
+    
+    data["origem_pc"] = document.getElementById("origem_pc").value
+    data["porta_cliche"] = document.getElementById("porta_cliche").value
+    data["passo_compensado_flexo"] = document.getElementById("passo_compensado_flexo").value
+    
+    var registrook = {}
+    registrook["inlineRadio27"] = document.getElementById("inlineRadio27").checked
+    registrook["inlineRadio28"] = document.getElementById("inlineRadio28").checked
+    registrook["registro_obs"] = document.getElementById("registro_obs").value 
+    data["registro_ok"] = registrook
+    
+    var plantabrancook = {}
+    plantabrancook["inlineRadio9"] = document.getElementById("inlineRadio9").checked
+    plantabrancook["inlineRadio10"] = document.getElementById("inlineRadio10").checked
+    plantabrancook["plantabranco_obs"] = document.getElementById("plantabranco_obs").value
+    data["plantabranco_ok"] = plantabrancook
+    
+    var textook = {}
+    textook["inlineRadio11"] = document.getElementById("inlineRadio11").checked
+    textook["inlineRadio12"] = document.getElementById("inlineRadio12").checked
+    textook["texto_obs"] = document.getElementById("texto_obs").value
+    data["texto_ok"] = textook
+    
+    var compensacaocoresok = {}
+    compensacaocoresok["inlineRadio13"] = document.getElementById("inlineRadio13").checked
+    compensacaocoresok["inlineRadio14"] = document.getElementById("inlineRadio14").checked
+    compensacaocoresok["composicaocores_obs"] = document.getElementById("composicaocores_obs").value
+    data["compensacaocores_ok"] = compensacaocoresok
+    
+       var pistafotocelulaok = {}
+    pistafotocelulaok["inlineRadio15"] = document.getElementById("inlineRadio15").checked
+    pistafotocelulaok["inlineRadio16"] = document.getElementById("inlineRadio16").checked
+    pistafotocelulaok["pistafotocelula_obs"] = document.getElementById("pistafotocelula_obs").value
+    data["pistafotocelula_ok"] = pistafotocelulaok
+    
+        var fotocelulaok = {}
+    fotocelulaok["inlineRadio17"] = document.getElementById("inlineRadio17").checked
+    fotocelulaok["inlineRadio18"] = document.getElementById("inlineRadio18").checked
+    fotocelulaok["fotocelula_obs"] = document.getElementById("fotocelula_obs").value
+    data["fotocelula_ok"] = fotocelulaok
+    
+    
+    data["obs_processos"] = document.getElementById("obs_processos").value
+    data["tinta"] = document.getElementById("tinta").value
+    data["tinta_especial"] = document.getElementById("tinta_especial").checked
+    data["nome_tinta_especial"] = document.getElementById("nome_tinta_especial").value
+    data["obs_tintas"] = document.getElementById("obs_tintas").value
+    data["obs_qualidade"] = document.getElementById("obs_qualidade").value
+    
+   
+   var cores = []
+   
+   var tabela = document.getElementById("tabela_cores")
+   var rows_cores = tabela.rows
+   
+   for (i=1;i<rows_cores.length;i++){
+       cores.push([rows_cores[i].children[0].children[0].children[0].value,rows_cores[i].children[1].children[0].children[0].value])
+       
+   }
+   data["cores_arte"] = cores
+   
+   data["processo_flexo"] = document.getElementById("processo_flexo").value
+   data["referencia_flexo"] = document.getElementById("referencia_flexo").value
+   data["provacor_flexo"] = document.getElementById("provacor_flexo").value
+   data["fotocelula_flexo"] = document.getElementById("fotocelula_flexo").value
+   data["curva_roto"] = document.getElementById("curva_roto").value
+   data["provacor_roto"] = document.getElementById("provacor_roto").value
+   data["referencia_roto"] = document.getElementById("referencia_roto").value
+   data["variacaodigital_roto"] = document.getElementById("variacaodigital_roto").value
+   data["cilindros_roto"] = document.getElementById("cilindros_roto").value
+
+   
+    // atualiza datas
+   var nextstage = []
+   
+                    var proxima_etapa = {}
+                         proxima_etapa["forms"] = "DES3"
+                        proxima_etapa["nomes"] = "Checklist Desenvolvimento"
+                         proxima_etapa["inicio"] = new Date()
+                         proxima_etapa["dashboard"] = "desenvolvimento"
+                        var infohora = new Date()
+                        infohora.setDate(infohora.getDate()+1)
+                        proxima_etapa["final"] = new Date(infohora)
+                        nextstage.push(proxima_etapa)
+   
+    
+    
+  var temposdeexecucao = busca_ticket.tempos_processo
+    
+   // for (i=0;i<temposdeexecucao.length;i++){
+    //    if (temposdeexecucao[i].formulario == "ART2"){
+     //      temposdeexecucao[i].tempos[temposdeexecucao[i].tempos.length-1]["final"] = new Date()
+          
+       // }
+    //}
+    
+                         var tempo_processo = {}
+                        
+                        tempo_processo["etapa"] = "Checklist Desenvolvimento"
+                        tempo_processo["formulario"] = "DES3"
+                        tempo_processo["criado_por"] = usuario.fullname
+                        var tempos = []
+                        var os_tempos = {}
+                        os_tempos["inicio"] = new Date()
+                        tempos.push(os_tempos)
+                        tempo_processo["tempos"] = tempos
+                        temposdeexecucao.push(tempo_processo)
+   
+    
+    
+    
+    
+    if (que_fazer == "enviar"){
+    
+    for (i=0;i<nextstage.length;i++){
+        if (nextstage[i].forms == "ART2"){
+            var tira = nextstage.splice(i,1)
+        }
+    }
+    
+    
+    
+    
+    salva_ticket2(data,ordem,temposdeexecucao,nextstage)
+    } else {
+    
+    for (i=0;i<nextstage.length;i++){
+        if (nextstage[i].forms == "ART2"){
+            nextstage[i]["pending"] = true
+        }
+    }
+    
+     salva_ticket(data,ordem,nextstage)
+    }
+   
+  	}
+  	</script>
+  	
+   <script>
+     //  function salva_ticket(dados,id,temposexecucao,proximaetapa){
+          
+            
+       function salva_ticket(dados,id,nextstage){
+          
+        
+        
+            
+           api.custom_objects.set_keys("BR-TECNO_Tickets",id,{"art2":dados})
+            document.getElementById("info_ticket").innerText = "Ticket atualizado com sucesso!"
+           setTimeout(function(){window.open("prepress_dash_sp1.html","_self")}, 3000);
+       }
+       
+       function salva_ticket2(dados,id,ostempos,proxima_etapa){
+          
+           
+    
+            
+           api.custom_objects.set_keys("BR-TECNO_Tickets",id,{"art2":dados,"proxima_etapa":proxima_etapa,"tempos_processo":ostempos})
+            document.getElementById("info_ticket").innerText = "Ticket atualizado com sucesso!"
+           setTimeout(function(){window.open("prepress_dash_sp1.html","_self")}, 3000);
+       }
+       
+      
+   </script>
+
+<script>
+    function muda_campos_tipo_impressao(){
+        if (document.getElementById("tipo_impressao").value == "Rotogravura"){
+            document.getElementById("div_info_cilindro_roto").style.display = "inline-block"
+             document.getElementById("div_info_cilindro_flexo").style.display = "none"
+             document.getElementById("div_artes_roto").style.display = "inline-block"
+              document.getElementById("div_artes_flexo").style.display = "none"
+               var busca_table = document.getElementById("tabela_cores")
+              var therows = busca_table.rows
+              for (i=0;i<therows.length;i++){
+                 therows[i].children[1].style.display = "none"
+                 }
+        } else {
+            document.getElementById("div_info_cilindro_flexo").style.display = "inline-block"
+             document.getElementById("div_info_cilindro_roto").style.display = "none" 
+              document.getElementById("div_artes_flexo").style.display = "inline-block"
+              document.getElementById("div_artes_roto").style.display = "none"
+              var busca_table = document.getElementById("tabela_cores")
+              var therows = busca_table.rows
+              for (i=0;i<therows.length;i++){
+                 therows[i].children[1].removeAttribute("style")
+                }
+        }
+        
+    }
+</script>
+
+<script>
+    function mostra_obs(){
+         var linha = event.srcElement.name
+         console.log(linha)
+         var div_mostrar = linha+"_obs"
+         var qual_alterar = document.getElementsByName(linha)
+         if (qual_alterar[0].checked === true){
+             document.getElementById(div_mostrar).style.display = "none"
+         } else if (qual_alterar[1].checked === true) {
+             document.getElementById(div_mostrar).style.display = "inline-block"
+         }
+    }
+    
+    function tinta_especial(){
+        if (document.getElementById("tinta_especial").checked === true){
+            document.getElementById("mostra_tinta_especial").style.display = "inline-block"
+        } else {
+            document.getElementById("mostra_tinta_especial").style.display = "none"
+        }
+    }
+</script>
+<script>
+var cores_trabalho = []
+    function adiciona_cor(){
+      var linha = event.srcElement.id
+      var linha_array = linha.split("_")
+         var table = document.getElementById("tabela_cores")
+        var qtasrow = table.rows.length
+      var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+           
+            var cell4 = row.insertCell(3);
+             
+         
+        var numero_linha = parseInt(linha_array[1])+1
+        
+          cell1.innerHTML = '<div><input type="text" class="form-control" id="nomecor_'+numero_linha+'" list="ascores_'+numero_linha+'"><datalist id="ascores_'+numero_linha+'"></datalist></div>'
+          cell2.innerHTML = '<div><input type="text" class="form-control" id="anilox_'+numero_linha+'"></div>'
+           cell3.innerHTML = '<div><img id="remove_'+numero_linha+'" src="./Icons/delete.png" width="30px" onclick="apaga_cor()" style="cursor: pointer"></div>'
+           cell4.innerHTML = '<div><img id="add_'+numero_linha+'" src="./Icons/icone_mais.png" width="30px" onclick="adiciona_cor()" style="cursor: pointer"></div>'
+           
+            
+         var div_cores =  "ascores_"+numero_linha
+       
+       
+       apaga_flexo(div_cores) 
+       
+    }
+    
+    
+    function apaga_cor(){
+      var linha = event.srcElement.id
+       var table = document.getElementById("tabela_cores")
+       var therows = table.rows
+       var linha_array = linha.split("_")
+       console.log(linha_array)
+       var div_nome = "nomecor_"+linha_array[1]
+       console.log(div_nome)
+       var nome_cor = document.getElementById(div_nome).value
+      // console.log(nome_cor)
+      if (therows.length > 2){
+       for (i=1;i<therows.length;i++){
+           console.log(therows[i].children[0].children[0].children[0].id)
+           if (document.getElementById(therows[i].children[0].children[0].children[0].id).value == nome_cor){
+               therows[i].remove()
+           }
+           
+       }
+      }
+       
+       
+    }
+</script>
+ <script>
+    $("tbody").sortable({
+    items: "> tr",
+    appendTo: "parent",
+    helper: "clone"
+});
+
+$("#tabs ul li a").droppable({
+    hoverClass: "drophover",
+    tolerance: "pointer",
+    drop: function(e, ui) {
+        var tabdiv = $(this).attr("href");
+        $(tabdiv + " table tr:last").after("<tr>" + ui.draggable.html() + "</tr>");
+        ui.draggable.remove();
+    }
+});
+
+
+        </script>
+        <script>
+            function adiciona_observa(){
+      var linha = event.srcElement.id
+      var linha_array = linha.split("_")
+         var table = document.getElementById("tabela_observacoes")
+        var qtasrow = table.rows.length
+      var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+           
+           
+             
+         
+        var numero_linha = parseInt(linha_array[1])+1
+        
+          cell1.innerHTML = '<div><textarea class="form-control" id="observe_'+numero_linha+'" rows="2"></textarea></div>'
+         
+           cell2.innerHTML = '<div><img id="remove_'+numero_linha+'" src="./Icons/delete.png" width="30px" onclick="apaga_observa()" style="cursor: pointer"></div>'
+           cell3.innerHTML = '<div><img id="add_'+numero_linha+'" src="./Icons/icone_mais.png" width="30px" onclick="adiciona_observa()" style="cursor: pointer"></div>'
+           
+     
+     
+       
+    }
+    
+    
+    function apaga_observa(){
+      var linha = event.srcElement.id
+       var table = document.getElementById("tabela_observacoes")
+       var therows = table.rows
+       var linha_array = linha.split("_")
+       console.log(linha_array)
+       var div_nome = "observa_"+linha_array[1]
+       console.log(div_nome)
+       var nome_cor = document.getElementById(div_nome).value
+      // console.log(nome_cor)
+      if (therows.length > 2){
+       for (i=1;i<therows.length;i++){
+           console.log(therows[i].children[0].children[0].children[0].id)
+           if (document.getElementById(therows[i].children[0].children[0].children[0].id).value == nome_cor){
+               therows[i].remove()
+           }
+           
+       }
+      }
+       
+       
+    }
+        </script>
+        <script>
+           
+        
+        
+         var options=''; // variable to store the options
+        for(var i = 0; i < as_tintas.length; i++){
+            
+        options += '<option value="'+as_tintas[i].nome+'" />';
+
+        }
+         document.getElementById('ascores_1').innerHTML = options;
+         
+         if (busca_ticket.processo.valor != "Flexografia"){
+             var tabela = document.getElementById("tabela_cores")
+             var linha_tabela = tabela.rows
+             for (i=0;i<linha_tabela.length;i++){
+                 linha_tabela[i].children[1].style.display = "none"
+             }
+            
+         }
+         
+         function apaga_flexo(qual_div){
+             
+             console.log(qual_div)
+             
+              var options=''; // variable to store the options
+        for(var i = 0; i < as_tintas.length; i++){
+            
+        options += '<option value="'+as_tintas[i].nome+'" />';
+
+        }
+        document.getElementById(qual_div).innerHTML = options
+             
+              var tabela = document.getElementById("tabela_cores")
+             var linha_tabela = tabela.rows
+             for (i=0;i<linha_tabela.length;i++){
+                 linha_tabela[i].children[1].style.display = "none"
+             }
+         }
+        </script>
+<script>
+    function mostra_bobina(){
+        var linha = event.srcElement.id
+        console.log(linha)
+        if (linha === "laminacao_1"){
+            if (document.getElementById(linha).value != "N/A"){
+            document.getElementById("bob_lam1").style.display = "inline-block"
+            } else {
+               document.getElementById("bob_lam1").style.display = "none"  
+            }
+        }
+        if (linha === "laminacao_2"){
+            if (document.getElementById(linha).value != "N/A"){
+            document.getElementById("bob_lam2").style.display = "inline-block"
+            } else {
+               document.getElementById("bob_lam2").style.display = "none"  
+            }
+        }
+        if (linha === "laminacao_3"){
+            if (document.getElementById(linha).value != "N/A"){
+            document.getElementById("bob_lam3").style.display = "inline-block"
+            } else {
+               document.getElementById("bob_lam3").style.display = "none"  
+            }
+        }
+    }
+</script>
+
+    </body>
+
+</html>

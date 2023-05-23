@@ -1,0 +1,23 @@
+.nixps-config-user-preferences {
+	margin: 20px;
+	margin-top: 55px;
+}
+
+.nixps-config-user-preferences h1 {
+	font-weight: normal;
+	color: #fff;
+	font-size: 16px;
+	vertical-align: super;
+	display: inline-block;
+	margin-left: 7px;
+}
+
+.nixps-config-user-preferences .panel {
+	border-radius: 7px;
+	padding: 15px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.nixps-config-user-preferences table {
+	width: 100%;
+}

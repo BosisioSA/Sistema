@@ -1,0 +1,681 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Validação Disponibilidade de Cilindros</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+         <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload.js'></script>
+      
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload-controller.js'></script>
+       <script>
+            var queryString = window.location.search;
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+        </script>
+    
+       
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+               <ul class="active components mb-5">
+            <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/analisepacotegrafico.png" width="30px" style="margin-right: 10px">Pacote Gráfico</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li style="list-style-type: none">
+               <img src="./Icons/responsavel.png" width="20px" style="margin-right: 10px;"><span id="user_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/inicio.png" width="20px" style="margin-right: 10px"><span id="inicio_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/final.png" width="20px" style="margin-right: 10px"><span id="final_pacote" style="color: black;"></span>
+          </li>
+          
+          
+          </ul>
+         </li>
+            
+         </li>   
+         <li>
+              <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/analiseespecificacao.png" width="30px" style="margin-right: 10px">Especificação Técnica</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+            <li style="list-style-type: none">
+               <img src="./Icons/responsavel.png" width="20px" style="margin-right: 10px;"><span id="user_analiseespecificacao" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/inicio.png" width="20px" style="margin-right: 10px"><span id="inicio_analiseespecificacao" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/final.png" width="20px" style="margin-right: 10px"><span id="final_analiseespecificacao" style="color: black;"></span>
+          </li>
+          
+          
+          </ul>
+         </li>
+            
+         </li>   
+       </ul>
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">f
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 70%;">
+        <h2 id="numero_ticket" style="display:block;">Validação Disponibilidade de Cilindros</h2>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 25%;">
+            <h6>Tempo para entrega: 00:00hs</h6>
+        </div>
+        <hr>
+    <h6>Informações do Produto</h6>
+    <hr>
+       
+       
+      
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 14%; margin-right: 2%">
+          <label for="passo_nominal">Passo Nominal</label>
+            <input type="text" class="form-control"  id="passo_nominal" name="passo_nominal">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 17%; margin-right: 2%">
+          <label for="passo_compensado">Passo Compensado</label>
+            <input type="text" class="form-control"  id="passo_compensado" name="passo_compensado">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 14%; margin-right: 2%">
+          <label for="largura">Largura</label>
+            <input type="text" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  id="largura" name="largura">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 15%; margin-right: 2%">
+          <label for="numero_pistas">N<sup>o</sup> de Pistas</label>
+            <input type="text" class="form-control"  id="numero_pistas" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" name="numero_pistas">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 15%; margin-right: 2%">
+          <label for="qtde_cores">Cores</label>
+            <input type="text" class="form-control"  id="qtde_cores" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" name="qtde_cores">
+        </div>
+        <br>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 18%; margin-right: 2%">
+          <label for="impressao">Impressao</label>
+            <input type="text" class="form-control"  id="impressao" name="impressao" readonly>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 17%;">
+         <label for="lado_impressao">Lado Impressão</label>
+            <select class="form-control"   id="lado_impressao" onchange="muda_figura()" name="lado_impressao">
+            <option value="externa">Externa</option>
+            <option value="interna">Interna</option>
+             </select> 
+        </div>
+        
+        
+        
+       
+                 
+                 
+                 
+                
+        <h6>Disponibilidade de Cilindros</h6>
+                <hr>
+        
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 25%; margin-right: 2%">
+          <label for="cilindros_disponiveis">Disponíveis (sem gravação)</label>
+            <input type="text" class="form-control"  id="cilindros_disponiveis" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" name="cilindros_disponiveis" value="0">
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 25%; margin-right: 2%">
+          <label for="cilindros_ativos">Ativo (com gravação)</label>
+            <input type="text" class="form-control"  id="cilindros_ativos" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" name="cilindros_ativos" value="0">
+        </div>
+        <div  class="form-group" style="display:inline-block; width: 20%;" >
+                     <div class="custom-control custom-switch" style="display: inline-block;">
+                      <input type="checkbox" class="custom-control-input"  id="customSwitch1" checked>
+                      <label class="custom-control-label" id="label_customSwitch1" for="customSwitch1">Cilindros Disponíveis</label>
+                </div>
+                </div>
+    
+    <br>
+    <button class="btn btn-primary" onclick="verifica_campos()">Salvar Ticket</button><br>
+    <div id="info_ticket"></div>
+    
+                
+                
+              
+                
+                 
+                 
+       
+            
+    
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	    var usuario = api.auth.get_current_user()
+  	    
+  	    document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname
+  	 //   document.getElementById("data_entrega").value = "02:00"
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function padWithZero(num, targetLength) {
+  return String(num).padStart(targetLength, '0')
+}
+
+// preenche dados se existe ordem
+
+if (usuario.scope_name != undefined){
+    var nome_scope = usuario.scope_name[0].split("_")
+   
+}
+
+
+
+
+// preenche Selects
+
+selectTipo2 = document.getElementById('estrutura_impressao');
+    var tiposTipo2 = api.custom_objects.list_with_options("BR-VALFI_estruturas").results
+    var nomes_estrutura = []
+    
+    for (i=0;i<tiposTipo2.length;i++){
+        nomes_estrutura.push(tiposTipo2[i].impressao)
+    }
+    var nomes_limpos = nomes_estrutura.filter(onlyUnique)
+    for (var i = 0; i<nomes_limpos.length; i++){
+        var opt = document.createElement('option');
+        opt.value = nomes_limpos[i];
+        opt.innerHTML = nomes_limpos[i];
+        selectTipo2.appendChild(opt);
+    }
+   
+  
+var hoje = new Date()
+//document.getElementById("data_abertura").value = dateFormat(hoje,"yyyy-mm-dd")
+
+//hoje.setDate(hoje.getDate()+30)
+//document.getElementById("data_entrega").value = dateFormat(hoje,"yyyy-mm-dd")
+
+  	</script>
+ 
+  	<script>
+  	
+  	function muda_figura(){
+  	    var lado = document.getElementById("lado_impressao").value
+  	    var puxada = document.getElementById("puxada_impressao").value
+  	    var figura = lado+puxada+".png"
+  	    document.getElementById("img_puxada").src = "./Icons/"+figura
+  	}
+  	
+  	function muda_encanoamento(){
+  	    
+  	    if (document.getElementById("inlineRadio1").checked === true){
+  	        document.getElementById("mostra_encanoamento").style.display = "inline-block"
+  	    } else {
+  	         document.getElementById("mostra_encanoamento").style.display = "none"
+  	    }
+  	    
+  	}
+  	
+  		function muda_passocontinuo(){
+  	    
+  	    if (document.getElementById("inlineRadio3").checked === true){
+  	        document.getElementById("mostra_passocontinuo").style.display = "inline-block"
+  	    } else {
+  	         document.getElementById("mostra_passocontinuo").style.display = "none"
+  	    }
+  	    
+  	}
+  		function muda_dureza(){
+  	    
+  	    if (document.getElementById("inlineRadio5").checked === true){
+  	        document.getElementById("mostra_dureza").style.display = "inline-block"
+  	    } else {
+  	         document.getElementById("mostra_dureza").style.display = "none"
+  	    }
+  	    
+  	}
+  	
+  	
+  	function verifica_campos(){
+  	    
+  	var conta = api.custom_objects.count("BR-TECNO_Tickets").count
+  	
+  	
+  	
+    var valido = true
+    
+    var data = {}
+    
+    if (conta === 0){
+        var numero_ticket =  padWithZero(conta,5)
+        
+    } else {
+        var busca_ultimo = api.custom_objects.list_with_options("BR-TECNO_Tickets",[],[],["numero_ticket"]).results[conta-1]
+        var o_ticket = parseInt(busca_ultimo.numero_ticket)+1
+        var numero_ticket =  padWithZero(o_ticket,5)
+        
+    }
+    data["numero_ticket"] = numero_ticket
+    
+    var amostra = {}
+    var campos_amostra = {}
+    campos_amostra["inlineRadio15"] = document.getElementById("inlineRadio15").checked
+    campos_amostra["inlineRadio16"] = document.getElementById("inlineRadio16").checked
+    amostra["campos"] = campos_amostra
+    if (campos_amostra["inlineRadio15"] === true){
+        amostra["valor"] = document.getElementById("inlineRadio15").value
+    } else {
+       amostra["valor"] = document.getElementById("inlineRadio16").value
+    }
+    data["amostra"] = amostra
+    
+    if (document.getElementById("cliente").value != ""){
+        data["cliente"] = document.getElementById("cliente").value 
+    } else {
+        valido = false
+    }
+    var tipo_trabalho = {}
+    var campos_tipo_trabalho = {}
+    campos_tipo_trabalho["inlineRadio23"] =  document.getElementById("inlineRadio23").checked
+    campos_tipo_trabalho["inlineRadio24"] =  document.getElementById("inlineRadio24").checked
+    campos_tipo_trabalho["inlineRadio25"] =  document.getElementById("inlineRadio25").checked
+    campos_tipo_trabalho["inlineRadio26"] =  document.getElementById("inlineRadio26").checked
+    tipo_trabalho["campos"] = campos_tipo_trabalho
+    if (campos_tipo_trabalho["inlineRadio23"] === true){
+    tipo_trabalho["valor"] = document.getElementById("inlineRadio23").value
+    }
+    if (campos_tipo_trabalho["inlineRadio24"] === true){
+    tipo_trabalho["valor"] = document.getElementById("inlineRadio24").value
+    }
+    if (campos_tipo_trabalho["inlineRadio25"] === true){
+    tipo_trabalho["valor"] = document.getElementById("inlineRadio25").value
+    }
+    if (campos_tipo_trabalho["inlineRadio26"] === true){
+    tipo_trabalho["valor"] = document.getElementById("inlineRadio26").value
+    }
+    data["tipo_trabalho"] = tipo_trabalho
+  	
+  	var novos_projetos = {}
+  	var campos_novos_projetos = {}
+  	campos_novos_projetos["inlineRadio4"] =  document.getElementById("inlineRadio4").checked
+    campos_novos_projetos["inlineRadio5"] =  document.getElementById("inlineRadio5").checked
+  	novos_projetos["campos"] = campos_novos_projetos
+  	if (campos_novos_projetos["inlineRadio4"] === true){
+    novos_projetos["valor"] = document.getElementById("inlineRadio4").value
+    }
+    if (campos_novos_projetos["inlineRadio5"] === true){
+    novos_projetos["valor"] = document.getElementById("inlineRadio5").value
+    }
+    data["novos_projetos"] = novos_projetos
+  	
+  	var usar_referencia = {}
+  	var campos_usar_referencia = {}
+  	campos_usar_referencia["inlineRadio6"] =  document.getElementById("inlineRadio6").checked
+  	campos_usar_referencia["inlineRadio7"] =  document.getElementById("inlineRadio7").checked
+  	usar_referencia["campos"] = campos_usar_referencia
+  	if (campos_usar_referencia["inlineRadio6"] === true){
+    usar_referencia["valor"] = document.getElementById("inlineRadio6").value
+    }
+    if (campos_usar_referencia["inlineRadio7"] === true){
+    usar_referencia["valor"] = document.getElementById("inlineRadio7").value
+    }
+    data["usar_referencia"] = usar_referencia
+    
+    data["descricao"] = document.getElementById("descricao").value
+    data["que_referencia"] = document.getElementById("item_referencia").value
+    data["observacoes"] = document.getElementById("observacoes").value.trim()
+    data["entrada_em"] = new Date()
+    data["entrega_em"] = new Date(document.getElementById("data_entrega").value)
+    
+    var cobrar_cilindros = {}
+    var campos_cobrar_cilindros = {}
+    campos_cobrar_cilindros["inlineRadio8"] =  document.getElementById("inlineRadio8").checked
+    campos_cobrar_cilindros["inlineRadio9"] =  document.getElementById("inlineRadio9").checked
+    cobrar_cilindros["campos"] = campos_cobrar_cilindros
+    if (campos_cobrar_cilindros["inlineRadio8"] === true){
+    cobrar_cilindros["valor"] = document.getElementById("inlineRadio8").value
+    }
+    if (campos_cobrar_cilindros["inlineRadio9"] === true){
+    cobrar_cilindros["valor"] = document.getElementById("inlineRadio9").value
+    }
+    data["cobrar_cilindros"] = cobrar_cilindros
+    
+    
+    var processo = {}
+    var campos_processo = {}
+    campos_processo["inlineRadio10"] =  document.getElementById("inlineRadio10").checked
+    campos_processo["inlineRadio11"] =  document.getElementById("inlineRadio11").checked
+    campos_processo["inlineRadio12"] =  document.getElementById("inlineRadio12").checked
+    
+    processo["campos"] = campos_processo
+    if (campos_processo["inlineRadio10"] === true){
+    processo["valor"] = document.getElementById("inlineRadio10").value
+    }
+    if (campos_processo["inlineRadio11"] === true){
+    processo["valor"] = document.getElementById("inlineRadio11").value
+    }
+    if (campos_processo["inlineRadio12"] === true){
+    processo["valor"] = document.getElementById("inlineRadio12").value
+    }
+    
+    data["processo"] = processo
+    
+    data["versao_arte"] = document.getElementById("versao_arte").value
+    
+     var logo_valgroup= {}
+    var campos_logo_valgroup = {}
+    campos_logo_valgroup["inlineRadio13"] =  document.getElementById("inlineRadio13").checked
+    campos_logo_valgroup["inlineRadio14"] =  document.getElementById("inlineRadio14").checked
+    logo_valgroup["campos"] = campos_logo_valgroup
+    if (campos_logo_valgroup["inlineRadio13"] === true){
+    logo_valgroup["valor"] = document.getElementById("inlineRadio13").value
+    }
+    if (campos_logo_valgroup["inlineRadio14"] === true){
+    logo_valgroup["valor"] = document.getElementById("inlineRadio14").value
+    }
+    data["logo_valgroup"] = logo_valgroup
+    
+    var info_amostra = {}
+    var contato_amostra = {}
+    contato_amostra["contato"] = document.getElementById("contato_cliente").value
+    contato_amostra["email"] = document.getElementById("emailcontato_cliente").value
+    contato_amostra["telefone"] = document.getElementById("telcontato_cliente").value
+    contato_amostra["setor"] = document.getElementById("setorcontato_cliente").value
+    info_amostra["contato"] = contato_amostra
+    data["amostra_contato"]
+    
+     var projeto_semelhante= {}
+    var campos_projeto_semelhante = {}
+    campos_projeto_semelhante["inlineRadio17"] =  document.getElementById("inlineRadio17").checked
+    campos_projeto_semelhante["inlineRadio18"] =  document.getElementById("inlineRadio18").checked
+    projeto_semelhante["campos"] = campos_projeto_semelhante
+    if (campos_projeto_semelhante["inlineRadio17"] === true){
+    projeto_semelhante["valor"] = document.getElementById("inlineRadio17").value
+    }
+    if (campos_projeto_semelhante["inlineRadio18"] === true){
+    projeto_semelhante["valor"] = document.getElementById("inlineRadio18").value
+    }
+    projeto_semelhante["nome_projeto_semelhante"] = document.getElementById("produto_semelhante").value
+    info_amostra["projeto_semelhante"] = projeto_semelhante
+    
+    var info_estrutura = {}
+    info_estrutura["atual"] = document.getElementById("estrutura_atual").value
+    info_estrutura["solicitada"] = document.getElementById("estrutura_solicitada").value
+    data["amostra_estrutura"] = info_estrutura
+    
+    
+     var unidade = {}
+    var campos_unidade = {}
+    campos_unidade["inlineRadio27"] =  document.getElementById("inlineRadio27").checked
+    campos_unidade["inlineRadio28"] =  document.getElementById("inlineRadio28").checked
+    campos_unidade["inlineRadio29"] =  document.getElementById("inlineRadio29").checked
+    
+    unidade["campos"] = campos_unidade
+    if (campos_unidade["inlineRadio27"] === true){
+    unidade["valor"] = document.getElementById("inlineRadio27").value
+    }
+    if (campos_unidade["inlineRadio28"] === true){
+    unidade["valor"] = document.getElementById("inlineRadio29").value
+    }
+    if (campos_unidade["inlineRadio29"] === true){
+    unidade["valor"] = document.getElementById("inlineRadio29").value
+    }
+    unidade["outra_unidade"] = document.getElementById("outra_unidade").value
+    data["amostra_unidade"] = unidade
+    
+    var quantidade = {}
+    quantidade["solicitada"] = document.getElementById("quantidade_solicitada").value
+    quantidade["volume_previsto"] = document.getElementById("volume_previsto").value
+    data["amostra_quantidade"] = quantidade
+    
+    
+     var tipo_produto= {}
+    var campos_tipo_produto = {}
+    campos_tipo_produto["inlineRadio19"] =  document.getElementById("inlineRadio19").checked
+    campos_tipo_produto["inlineRadio20"] =  document.getElementById("inlineRadio20").checked
+    campos_tipo_produto["inlineRadio21"] =  document.getElementById("inlineRadio21").checked
+    campos_tipo_produto["inlineRadio22"] =  document.getElementById("inlineRadio22").checked
+    tipo_produto["campos"] = campos_tipo_produto
+    if (campos_tipo_produto["inlineRadio19"] === true){
+    tipo_produto["valor"] = document.getElementById("inlineRadio19").value
+    }
+    if (campos_tipo_produto["inlineRadio20"] === true){
+    tipo_produto["valor"] = document.getElementById("inlineRadio20").value
+    }
+    if (campos_tipo_produto["inlineRadio21"] === true){
+    tipo_produto["valor"] = document.getElementById("inlineRadio21").value
+    }
+    if (campos_tipo_produto["inlineRadio22"] === true){
+    tipo_produto["valor"] = document.getElementById("inlineRadio22").value
+    }
+    data["amostra_tipo_produto"] = tipo_produto
+    
+    
+     var tipo_arte= {}
+    var campos_tipo_arte = {}
+    campos_tipo_arte["inlineRadio30"] =  document.getElementById("inlineRadio30").checked
+    campos_tipo_arte["inlineRadio31"] =  document.getElementById("inlineRadio31").checked
+    campos_tipo_arte["inlineRadio32"] =  document.getElementById("inlineRadio32").checked
+    tipo_arte["campos"] = campos_tipo_arte
+    if (campos_tipo_arte["inlineRadio30"] === true){
+    tipo_arte["valor"] = document.getElementById("inlineRadio30").value
+    }
+    if (campos_tipo_arte["inlineRadio31"] === true){
+    tipo_arte["valor"] = document.getElementById("inlineRadio31").value
+    }
+    if (campos_tipo_arte["inlineRadio32"] === true){
+    tipo_arte["valor"] = document.getElementById("inlineRadio32").value
+    }
+    
+    info_amostra["tipo_arte"] = tipo_arte
+    data["amostra_tipo_arte"] = info_amostra
+    
+    
+    if (valido === true){
+        salva_ticket(data)
+    }
+    if (data.tipo_trabalho.valor == "tipo_alteracao"){
+        data["proxima_etapa"] = "ART1"
+    }
+    if (data.tipo_trabalho.valor == "tipo_novo"){
+        data["proxima_etapa"] = "DES1"
+    }
+    if (data.tipo_trabalho.valor == "tipo_duplicacao"){
+        data["proxima_etapa"] = "ART5"
+    }
+    
+  	
+  	console.log(data)
+  	}
+  	</script>
+  	
+   <script>
+       function salva_ticket(dados){
+          
+            
+            
+            
+            api.custom_objects.create("BR-TECNO_Tickets",dados)
+            document.getElementById("info_ticket").innerText = "Ticket criado com sucesso!"
+            
+           setTimeout(function(){location.reload()}, 3000);
+       }
+       
+      
+   </script>
+   
+  	
+  
+  
+  	
+  
+
+
+
+
+
+
+    </body>
+
+</html>

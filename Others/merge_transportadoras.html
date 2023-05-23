@@ -1,0 +1,848 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Gestão Transportad - Rotocrom</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <style>
+        .esconder div #detalhe_draft { display:none;}
+        .esconder div #triangulo { cursor: pointer;}
+     </style>
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./assets/img/rotocrom.jpg" style="width: 70%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                 
+                
+                   <li style="color: #004b93; list-style-type: none">Transportadoras
+                  <ul> 
+                  <li  style="list-style-type: none">
+                     <a href="lista_transportadoras.html"><i class="fas fa-user-circle" style="margin-right: 5px"></i>Lista Transportadoras</a>
+                    </li>
+                 <li class="active" style="list-style-type: none">
+                     <a href="merge_transportadoras.html"><i class="fas fa-object-group" style="margin-right: 5px"></i>Unir NF --> CADOP</a>
+                    </li>
+                    
+                   
+                    
+                  
+                    </ul>
+                    </li>
+                    </ul>
+                    
+        <!--<li>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Paginas Administrativas</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>
+                  <a href="artes.html">Artes</a>
+              </li>
+            </ul>
+          </li>-->
+     
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <!--<li class="nav-item">
+                      <a class="nav-link" href="solicitacaoArtes.html">Nova Solicitação</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="DashBoard_aprovacoes.html">Dashboard</a>
+                  </li>-->
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <div id="qtde_falta"></div>
+        <div id="id_do_cadop"></div>
+        <div class="form-group col-md-5" style="display:inline-block; vertical-align: top">     
+        <h2 style="display:inline-block;">Transportadora CADOP</h2><br>
+        <div class="form-group col-md-3" style="display:inline-block">
+         <input type="checkbox" id="check_codigo_amdc" onchange="adiciona_alteracao()">
+          <label for="codigo_amdc">Código</label>
+          <input type="text"  class="form-control" id="codigo_amdc" name="codigo_amdc">
+        </div>
+        <div class="form-group col-md-8" style="display:inline-block">
+         <input type="checkbox" id="check_cliente_amdc" onchange="adiciona_alteracao()">
+          <label for="cliente_amdc">Nome</label>
+          <input type="text"  onchange="preencheClienteAMDC()" class="form-control" id="cliente_amdc" name="cliente_amdc" list="os_clientes_amdc">
+          <datalist id="os_clientes_amdc">
+          </datalist>
+        </div>
+        <div class="form-group col-md-11" style="display:inline-block">
+            <input type="checkbox" id="check_razao_amdc" onchange="adiciona_alteracao()">
+          <label for="cnpj_amdc">CNPJ</label>
+          <input type="text"  class="form-control" id="cnpj_amdc" name="cnpj_amdc" readonly>
+        </div>
+       
+        <div class="form-group col-md-11" style="display:inline-block">
+        <input type="checkbox" id="check_endereco_amdc" onchange="adiciona_alteracao()">
+          <label for="endereco_amdc">Endereco</label>
+          <input type="text"  class="form-control" id="endereco_amdc" name="endereco_amdc" readonly>
+        </div>
+        <div class="form-group col-md-8" style="display:inline-block">
+            <input type="checkbox" id="check_cidade_amdc" onchange="adiciona_alteracao()">
+          <label for="cidade_amdc">Cidade</label>
+          <input type="text"  class="form-control" id="cidade_amdc" name="cidade_amdc" readonly>
+        </div>
+        <div class="form-group col-md-3" style="display:inline-block">
+            <input type="checkbox" id="check_estado_amdc" onchange="adiciona_alteracao()">
+          <label for="estado_amdc">Estado</label>
+          <input type="text"  class="form-control" id="estado_amdc" name="estado_amdc" readonly>
+        </div>
+        <div class="form-group col-md-11" style="display:inline-block">
+            <input type="checkbox" id="check_inscricao_amdc" onchange="adiciona_alteracao()">
+          <label for="inscricao_amdc">Inscrição</label>
+          <input type="text"  class="form-control" id="inscricao_amdc" name="inscricao_amdc" readonly>
+        </div>
+        <div class="form-group col-md-11" style="display:inline-block">
+            <input type="checkbox" id="selecionar_amdc" class="form-group" onchange="selecionar_tudo()">
+            <label for="selecionar_amdc">Selecionar Tudo</label>
+            </div>
+        <div class="form-group col-md-11" style="display:inline-block">
+            <p>Selecione a transportadora da base CADOP e depois selecione os campos que deseja passar para a base de NF.<br>
+            Após terminar clicar em Transferir</p>
+        </div>
+        <button class="btn btn-primary" onclick="transferir()">Transferir</button>
+        </div>
+         <div class="form-group col-md-5" style="display:inline-block;; vertical-align: top">     
+        <h2 style="display:inline-block;">Transportadora N.F.</h2><br>
+        <div class="form-group col-md-3" style="display:inline-block">
+          <label for="codigo_cadop">Código</label>
+          <input type="text"  class="form-control" id="codigo_cadop" name="codigo_cadop">
+        </div>
+        <div class="form-group col-md-8" style="display:inline-block">
+          <label for="cliente_cadop">Nome</label>
+          <input type="text"  onchange="preencheClienteCADOP()" class="form-control" id="cliente_cadop" name="cliente_cadop" list="os_clientes_cadop">
+          <datalist id="os_clientes_cadop">
+          </datalist>
+        </div>
+        <div class="form-group col-md-11" style="display:inline-block">
+          <label for="cnpj_cadop">CNPJ</label>
+          <input type="text"  class="form-control" id="cnpj_cadop" name="cnpj_cadop">
+        </div>
+        <div class="form-group col-md-11" style="display:inline-block">
+          <label for="endereco_cadop">Endereco</label>
+          <input type="text"  class="form-control" id="endereco_cadop" name="endereco_cadop">
+        </div>
+        <div class="form-group col-md-8" style="display:inline-block">
+          <label for="cidade_cadop">Cidade</label>
+          <input type="text"  class="form-control" id="cidade_cadop" name="cidade_cadop">
+        </div>
+        <div class="form-group col-md-3" style="display:inline-block">
+          <label for="estado_cadop">Estado</label>
+          <input type="text"  class="form-control" id="estado_cadop" name="estado_cadop">
+        </div>
+        <div class="form-group col-md-11" style="display:inline-block">
+          <label for="inscricao_cadop">Inscrição</label>
+          <input type="text"  class="form-control" id="inscricao_cadop" name="inscricao_cadop">
+        </div>
+        
+        <div class="form-group col-md-11" style="display:inline-block">
+          <label for="id_base">ID</label>
+          <input type="text"  class="form-control" id="id_base" name="id_base">
+        </div>
+         <div id="info_update" style="color: green"></div>
+         <div id="info_id" style="display: none"></div>
+         <br>
+        <button class="btn btn-primary" id="botao_salvar" onclick="salva_alteracoes()">Salvar Transportadora</button>
+        </div>
+       
+        
+        
+       
+        <br>
+        <br>
+        
+  		<hr>
+  	<script>
+  	    function selecionar_tudo(){
+  	        if (document.getElementById("selecionar_amdc").checked === true){
+  	            document.getElementById("check_cliente_amdc").checked = true
+  	            alteracoes["check_cliente_amdc"] = document.getElementById("cliente_amdc").value
+  	            document.getElementById("check_razao_amdc").checked = true
+  	            alteracoes["check_razao_amdc"] = document.getElementById("razao_amdc").value
+  	            document.getElementById("check_endereco_amdc").checked = true
+  	            alteracoes["check_endereco_amdc"] = document.getElementById("endereco_amdc").value
+  	            document.getElementById("check_cep_amdc").checked = true
+  	            alteracoes["check_cep_amdc"] = document.getElementById("cep_amdc").value
+  	            document.getElementById("check_bairro_amdc").checked = true
+  	            alteracoes["check_bairro_amdc"] = document.getElementById("bairro_amdc").value
+  	            document.getElementById("check_cidade_amdc").checked = true
+  	            alteracoes["check_cidade_amdc"] = document.getElementById("cidade_amdc").value
+  	            document.getElementById("check_estado_amdc").checked = true
+  	            alteracoes["check_estado_amdc"] = document.getElementById("estado_amdc").value
+  	            document.getElementById("check_email_amdc").checked = true
+  	            alteracoes["check_email_amdc"] = document.getElementById("email_amdc").value
+  	            document.getElementById("check_inscricao_amdc").checked = true
+  	            alteracoes["check_inscricao_amdc"] = document.getElementById("inscricao_amdc").value
+  	            document.getElementById("check_cnpj_amdc").checked = true
+  	            alteracoes["check_cnpj_amdc"] = document.getElementById("cnpj_amdc").value
+  	            
+  	        } else {
+  	            alteracoes = {}
+  	            document.getElementById("check_cliente_amdc").checked = false
+  	            document.getElementById("check_razao_amdc").checked = false
+  	            document.getElementById("check_endereco_amdc").checked = false
+  	            document.getElementById("check_cep_amdc").checked = false
+  	            document.getElementById("check_bairro_amdc").checked = false
+  	            document.getElementById("check_cidade_amdc").checked = false
+  	            document.getElementById("check_estado_amdc").checked = false
+  	            document.getElementById("check_email_amdc").checked = false
+  	            document.getElementById("check_inscricao_amdc").checked = false
+  	            document.getElementById("check_cnpj_amdc").checked = false
+  	           
+  	        }
+  	        }
+  	    
+  	</script>
+  	<script>
+  	    var qtos = api.custom_objects.count("BR-ROTOC_transportadoras",["MERGED","equal to",true]).count
+  	    var qtos2 = api.custom_objects.count("BR-ROTOC_transportadoras",["MERGED","equal to",undefined]).count
+  	    var total2 = qtos+qtos2
+  	    var total = api.custom_objects.count("Transp_CADOP").count
+  	    document.getElementById("qtde_falta").innerHTML = "<span>Registros concluidos <strong>"+qtos+"</strong> de um total de <strong>"+total+"</strong>. Base de dados NF é de <strong>"+total2+"</strong></span>"
+  	</script>
+  		  
+     <script>
+        // Preenche as listas de clientes 
+          var listaCodigo = api.custom_objects.list_with_options("Transp_CADOP",["MERGED","equal to",undefined],[],["NOME"]).results;
+          var options=''; // variable to store the options
+          for(var i = 0; i < listaCodigo.length; i++){
+              
+          options += '<option value="'+listaCodigo[i].NOME+'" />';
+  
+          }
+           document.getElementById('os_clientes_amdc').innerHTML = options;
+         
+         
+         //preenche listas CADOP
+         
+         
+           var listaCodigo2 = api.custom_objects.list_with_options("BR-ROTOC_transportadoras",[],[],["xNome"]).results;
+          var options=''; // variable to store the options
+          
+    var busca_Proprio = new RegExp(".*[Pp][Rr][Oo][Pp][Rr][Ii][AaOo].*")
+    var busca_Retira = new RegExp(".*[Rr][Ee][Tt][Ii][Rr][Aa].*")
+    var busca_Emitente = new RegExp(".*[Ee][Mm][Ii][Tt][Ee][Nn][Tt][Ee].*")
+    var busca_Remetente = new RegExp(".*[Rr][Ee][Mm][Ee][Tt][Ee][Nn][Tt][Ee].*")
+    var busca_Nosso = new RegExp(".*[No][Oo][Ss][Ss][OoAa].*")
+    var busca_Correio = new RegExp(".*[Cc][Oo][Rr][Rr][Ee][Ii][Oo].*")
+    var busca_Mesmo = new RegExp(".*[Mm][Es][Ss][Mm][OoAa].*")
+    
+          
+    for (i=0;i<listaCodigo2.length;i++){
+          if (busca_Proprio.test(listaCodigo2[i].xNome) === true){
+             var tira =listaCodigo2.splice(i,1)
+        }
+              if (busca_Retira.test(listaCodigo2[i].xNome) === true){
+               var tira =listaCodigo2.splice(i,1) 
+              }
+              if (busca_Emitente.test(listaCodigo2[i].xNome) === true){
+               var tira =listaCodigo2.splice(i,1) 
+              }
+              if (busca_Nosso.test(listaCodigo2[i].xNome) === true){
+               var tira =listaCodigo2.splice(i,1) 
+              }
+              if (busca_Remetente.test(listaCodigo2[i].xNome) === true){
+               var tira =listaCodigo2.splice(i,1) 
+              }
+              if (busca_Correio.test(listaCodigo2[i].xNome) === true){
+               var tira =listaCodigo2.splice(i,1) 
+              }
+              if (busca_Mesmo.test(listaCodigo2[i].xNome) === true){
+               var tira =listaCodigo2.splice(i,1) 
+              }
+              if (listaCodigo2[i].xNome === undefined){
+                 var tira =listaCodigo2.splice(i,1)  
+              }
+         }
+          
+          for(var i = 0; i < listaCodigo2.length; i++){
+              
+          options += '<option value="'+listaCodigo2[i].xNome+'" />';
+  
+          }
+           document.getElementById('os_clientes_cadop').innerHTML = options;
+
+           
+      </script>
+      <script>
+          function preencheClienteAMDC(){
+              var qual_cliente = document.getElementById("cliente_amdc").value
+              var busca_o_cliente = api.custom_objects.list_with_options("Transp_CADOP",["NOME","equal to",qual_cliente]).results
+              
+              if (qual_cliente == ""){
+                 document.getElementById("id_do_cadop").innerText = "" 
+              } else {
+              document.getElementById("id_do_cadop").innerText = busca_o_cliente[0]._id
+              }
+              document.getElementById("codigo_amdc").value = busca_o_cliente[0].CODIGO
+            //  document.getElementById("cep_amdc").value = busca_o_cliente[0].CEP
+            //  document.getElementById("endereco_amdc").value = busca_o_cliente[0].Endereco
+             // document.getElementById("bairro_amdc").value = busca_o_cliente[0].Bairro
+            //  document.getElementById("estado_amdc").value = busca_o_cliente[0].Estado
+         //     document.getElementById("cidade_amdc").value = busca_o_cliente[0].Municipio
+             // document.getElementById("email_amdc").value = busca_o_cliente[0].EMail
+              document.getElementById("inscricao_amdc").value = busca_o_cliente[0].IE
+              document.getElementById("cnpj_amdc").value = busca_o_cliente[0].CNPJ
+              if (busca_o_cliente[0].CNPJ != ""){
+                  var cnpj_corrigido = busca_o_cliente[0].CNPJ.replaceAll(".","").replaceAll("/","").replaceAll("-","")
+                  console.log(cnpj_corrigido)
+                  var busca_o_cliente = api.custom_objects.list_with_options("BR-ROTOC_transportadoras",["CNPJ","equal to",parseInt(cnpj_corrigido)],[],[]).results;
+                  if (busca_o_cliente.length > 0){
+                      console.log("encontrei")
+                      console.log(busca_o_cliente[0])
+                      if (busca_o_cliente[0].CODIGO != undefined){
+              document.getElementById("codigo_cadop").value = busca_o_cliente[0].CODIGO
+             }
+             
+             if (busca_o_cliente[0].xNome != undefined){
+              document.getElementById("cliente_cadop").value = busca_o_cliente[0].xNome
+             }
+             
+             if (busca_o_cliente[0].xEnder != undefined){
+              document.getElementById("endereco_cadop").value = busca_o_cliente[0].xEnder
+             }
+            if (busca_o_cliente[0].UF != undefined){
+              document.getElementById("estado_cadop").value = busca_o_cliente[0].UF
+            }
+            if (busca_o_cliente[0].xMun != undefined){
+              document.getElementById("cidade_cadop").value = busca_o_cliente[0].xMun
+            }
+             if (busca_o_cliente[0].IE != undefined){
+              document.getElementById("inscricao_cadop").value = busca_o_cliente[0].IE
+             }
+             if (busca_o_cliente[0].CNPJ != undefined){
+              document.getElementById("cnpj_cadop").value = busca_o_cliente[0].CNPJ
+             }
+              document.getElementById("id_base").value = busca_o_cliente[0]._id
+                      
+                  } else {
+                    console.log("nao encontrei")   
+                  }
+              }
+              
+          }
+      </script>
+      <script>
+          function preencheClienteCADOP(){
+              var qual_cliente = document.getElementById("cliente_cadop").value
+              if (qual_cliente == ""){
+                  document.getElementById('id_base').value = ""
+                  
+              } else {
+              var busca_o_cliente = api.custom_objects.list_with_options("BR-ROTOC_transportadoras",["xNome","equal to",qual_cliente]).results
+              if (busca_o_cliente.length == 0){
+                document.getElementById('id_base').value = ""  
+              } else {
+             // document.getElementById("razao_cadop").value = busca_o_cliente[0].RAZAO
+             // document.getElementById("cep_cadop").value = busca_o_cliente[0].CEP
+             if (busca_o_cliente[0].CODIGO != undefined){
+              document.getElementById("codigo_cadop").value = busca_o_cliente[0].CODIGO
+             }
+             
+             if (busca_o_cliente[0].xEnder != undefined){
+              document.getElementById("endereco_cadop").value = busca_o_cliente[0].xEnder
+             }
+            //  document.getElementById("bairro_cadop").value = busca_o_cliente[0].BAIRRO
+            if (busca_o_cliente[0].UF != undefined){
+              document.getElementById("estado_cadop").value = busca_o_cliente[0].UF
+            }
+            if (busca_o_cliente[0].xMun != undefined){
+              document.getElementById("cidade_cadop").value = busca_o_cliente[0].xMun
+            }
+             // document.getElementById("email_cadop").value = busca_o_cliente[0].EMAIL
+             if (busca_o_cliente[0].IE != undefined){
+              document.getElementById("inscricao_cadop").value = busca_o_cliente[0].IE
+             }
+             if (busca_o_cliente[0].CNPJ != undefined){
+              document.getElementById("cnpj_cadop").value = busca_o_cliente[0].CNPJ
+             }
+              document.getElementById("id_base").value = busca_o_cliente[0]._id
+              
+              
+              
+              if (busca_o_cliente[0].MERGED != undefined){
+                  document.getElementById("info_update").style = "background-color: green; color: white; height: 25px; text-align: center"
+                  document.getElementById("info_update").innerText = "Essa Transportadora já foi atualizada na base!"
+              } else {
+                 document.getElementById("info_update").style = "background-color: red; color: white; height: 25px; text-align: center"
+                  document.getElementById("info_update").innerText = "Essa Transportadora ainda não foi atualizada na base!" 
+              }
+              }
+              }
+              
+          }
+      </script>
+      <script>
+          function transferir(){
+              for (var key in alteracoes) {
+    if (alteracoes.hasOwnProperty(key)) {
+        var valor = key.replace("check_","").replace("amdc","cadop")
+        document.getElementById(valor).value = alteracoes[key]
+    }
+}
+          }
+      </script>
+      <script>
+          function salva_alteracoes(){
+              var qualID = document.getElementById("id_base").value
+            console.log(qualID)
+             if (qualID == ""){
+                 
+                   var busca_existente = api.custom_objects.list_with_options("BR-ROTOC_transportadoras",["CNPJ","equal to",parseInt(document.getElementById("cnpj_cadop").value)]).results
+    
+                 if (busca_existente.length == 0){
+                 api.custom_objects.create("BR-ROTOC_transportadoras",
+                 { 
+                    "CODIGO":document.getElementById("codigo_cadop").value,
+                   "xMun":document.getElementById("cidade_cadop").value,
+                   "xNome":document.getElementById("cliente_cadop").value,
+                    "CNPJ":document.getElementById("cnpj_cadop").value,
+                     "xEnder":document.getElementById("endereco_cadop").value,
+                    "UF":document.getElementById("estado_cadop").value,
+                    "IE":document.getElementById("inscricao_cadop").value,
+                    "MERGED":true,
+                    })
+                    
+                    if (document.getElementById("id_do_cadop").innerText != ""){
+                        api.custom_objects.set_keys("Transp_CADOP",document.getElementById("id_do_cadop").innerText,{"MERGED":true})
+                         setTimeout(() => {  $('#info_update').text(); location.reload()}, 2000);
+                    }
+                    
+                    document.getElementById("info_update").style = "background-color: white, color: green;"
+                 $('#info_update').text('O cliente foi criado na base')
+                setTimeout(() => {  $('#info_update').text(); location.reload()}, 2000); 
+                 }
+             } else {
+                 console.log("vou atualizr")
+                 api.custom_objects.set_keys("BR-ROTOC_transportadoras",qualID,
+                 { 
+                    "CODIGO":document.getElementById("codigo_cadop").value,
+                   "xMun":document.getElementById("cidade_cadop").value,
+                    "CNPJ":document.getElementById("cnpj_cadop").value,
+                     "xEnder":document.getElementById("endereco_cadop").value,
+                    "UF":document.getElementById("estado_cadop").value,
+                    "xNome":document.getElementById("cliente_cadop").value,
+                    "IE":document.getElementById("inscricao_cadop").value,
+                    "MERGED":true,
+                    
+                    
+                    })
+                    console.log("o codigo "+document.getElementById("codigo_cadop").value)
+                   if (document.getElementById("id_do_cadop").innerText != ""){
+                        api.custom_objects.set_keys("Transp_CADOP",document.getElementById("id_do_cadop").innerText,{"MERGED":true})
+                        
+                    }
+                    
+                document.getElementById("info_update").style = "background-color: white, color: green;"
+                 $('#info_update').text('A base está sendo atualizada')
+               setTimeout(() => {  $('#info_update').text(); location.reload()}, 2000);  
+             }
+          }
+      </script>
+      <script>
+          var alteracoes = {}
+          function adiciona_alteracao(){
+              var linha = event.srcElement.id
+              var o_valor = linha.replace("check_","")
+              console.log(linha)
+              if(document.getElementById(linha).checked === true){
+                  alteracoes[linha] = document.getElementById(o_valor).value
+                  
+              } else {
+               delete alteracoes[linha]   
+              }
+             
+          }
+          
+      </script>
+      
+
+
+
+      <script>
+      var usuario = api.auth.get_current_user()
+      var nome_user = "Bem vindo, "+usuario.fullname
+      document.getElementById("bemvindo").innerText = nome_user
+      </script>
+      <script>
+      //Preenche lista de Drafts
+
+        var hoje = new Date()
+        var ano = hoje.getFullYear()
+        var mes = hoje.getMonth()+1
+        var dia = hoje.getDate()
+        //document.getElementById("data-final").value = ano+"-"+mes+"-"+dia
+        hoje.setDate(hoje.getDate()-30)
+        var ano2 = hoje.getFullYear()
+        var mes2 = hoje.getMonth()+1
+        var dia2 = hoje.getDate()
+        //document.getElementById("data-inicio").value = ano2+"-"+mes2+"-"+dia2
+
+        </script>
+      <script>
+      function reply_click()
+  {
+      //alert(event.srcElement.id);
+      var linha = event.srcElement.id
+      
+      //console.log(linha)
+      var linha_2 = linha.split("_")
+      var qualSolBuscar = "valor_sol"+linha_2[1]
+
+      var selecionaSol = document.getElementById(qualSolBuscar).innerText
+
+      var buscasol_naBase = api.custom_objects.list_with_options("BR-BIOVE_artes",["sol_cm","equal to",selecionaSol]).results[0]
+
+      api.custom_objects.set_keys("BR-BIOVE_artes",buscasol_naBase._id,{estagio:"criacao"})
+
+      $('#status_draft').text('A solicitação '+selecionaSol+' está sendo transferida para Criação')
+      setTimeout(() => {  $('#status_draft').text(); location.reload() }, 5000);
+  }
+
+  function reply_click2()
+  {
+      //alert(event.srcElement.id);
+      var linha = event.srcElement.id
+      //console.log(linha)
+      var linha_2 = linha.split("_")
+      var qualSolBuscar = linha_2[1]
+
+      var selecionaSol = document.getElementById(qualSolBuscar).innerText
+
+      var buscasol_naBase = api.custom_objects.list_with_options("BR-BIOVE_artes",["sol_cm","equal to",selecionaSol]).results[0]
+
+      api.custom_objects.set_keys("BR-BIOVE_artes",buscasol_naBase._id,{estagio:"regulatorios"})
+
+      $('#status_draft').text('A solicitação '+selecionaSol+' está sendo transferida para Regulatórios')
+      setTimeout(() => {  $('#status_draft').text(); location.reload() }, 5000);
+  }
+
+
+  function reply_SR(){
+    var linha = event.srcElement.id
+    var linha_2 = linha.split("_")
+    var qualBuscar = linha_2[1]
+    //console.log(qualBuscar)
+    var buscaOPnaBase = api.custom_objects.list_with_options("BR-FINEP_OPs",["_id","equal to",qualBuscar]).results[0]
+    var numero = buscaOPnaBase.OP
+    var arquivo_xml = numero+".xml"
+    var manda_xml = api.hub.start_from_whitepaper_with_files_and_variables("CriaBase_XML","update_montagem",[arquivo_xml],{"arquivo":arquivo_xml}).workable_id
+//    console.log(manda_xml.workable_id)
+
+    // FUNCAO QUE ESPERA UM FLUXO TERMINAR PARA DISPARAR OUTRO
+
+    var workableConsoleLog = function ()  {
+
+      console.log(manda_xml)
+      var o_estado = api.hub.get_variables_from_workable(manda_xml,["status"]).variables["status"]
+        
+   //   var statusWorkable = api.workable.get_progress(manda_xml)
+      
+      console.log("Finalizou "+o_estado)
+      if (o_estado === "finalizado"){
+        
+        if (buscaOPnaBase.TINTAS.ITEM.length == 0){
+          alert("Nao ha tintas cadastradas na OP")
+      } else {
+      if (buscaOPnaBase.separacoes_saida === undefined){
+          alert("Por favor, Salvar as Tintas da OP "+buscaOPnaBase.OP)
+      } else {
+        if (buscaOPnaBase.separacoes_saida.length == buscaOPnaBase.TINTAS.ITEM.length){
+          if (confirm("Fazer a montagem da OP "+buscaOPnaBase.OP)){
+           
+            var infoFluxo = {}
+            infoFluxo["cilindro"] = parseFloat(buscaOPnaBase.Cilindro.replace(",","."))
+            infoFluxo["cod_cliente"] = buscaOPnaBase.Cliente
+            infoFluxo["nome_cliente"] = buscaOPnaBase.Nome_Cliente
+            infoFluxo["OP"] = buscaOPnaBase.OP
+            infoFluxo["Produto"] = buscaOPnaBase.Produto
+            infoFluxo["largura_arte"] = parseFloat(buscaOPnaBase.Repeticao_largura.replace(",","."))
+            infoFluxo["altura_arte"] = parseFloat(buscaOPnaBase.Repeticao_Comprimento.replace(",","."))
+            infoFluxo["refile"] = buscaOPnaBase.Refile
+            infoFluxo["camada"] = buscaOPnaBase.Tp_Impressao.toLowerCase()
+            if (buscaOPnaBase.Impressora != undefined){
+              infoFluxo["marca"] = buscaOPnaBase.Impressora
+            } else {
+              infoFluxo["marca"] = ""
+            }
+            infoFluxo["largura_substrato"] = parseFloat(buscaOPnaBase.Larg_Substrato.replace(",","."))
+            var os_vinculos = buscaOPnaBase.Vinculos
+            var montagem = []
+            if (buscaOPnaBase.CONJUGADO.ITEM.length > 0){
+              var conjugados = buscaOPnaBase.CONJUGADO.ITEM
+              for (i=0;i<conjugados.length;i++){
+                var info_montagem = {}
+                info_montagem["id_vinculo"] = os_vinculos[i]
+                info_montagem["repeat"] = conjugados[i].Faixas
+                info_montagem["step"] = parseInt(buscaOPnaBase.Montagem_Comprimento)
+                montagem.push(info_montagem)
+              }
+            } 
+            else {
+              var info_montagem = {}
+              info_montagem["id_vinculo"] = os_vinculos[0]
+              info_montagem["repeat"] = parseInt(buscaOPnaBase.Montagem_Largura)
+              info_montagem["step"] = parseInt(buscaOPnaBase.Montagem_Comprimento)
+              montagem.push(info_montagem)
+            }
+            infoFluxo["montagem"] = montagem
+            // console.log(infoFluxo)
+            api.hub.start_from_whitepaper_with_files_and_variables("BR-FINEP_Montagem Vinculo OP","montagem_op",[],infoFluxo)
+            myStopFunction();
+          } 
+          else {
+            myStopFunction();
+          }
+        }
+        else {
+          alert("Nao foi possivel encontrar todas as tintas da OP "+buscaOPnaBase.OP+" nos arquivos!")
+          myStopFunction();
+        }          
+       
+      }
+    }
+		
+  }
+      
+      
+      
+}
+var workflowTimeout = setInterval(workableConsoleLog, 4000);
+		function myStopFunction() {
+     clearInterval(workflowTimeout);
+    }
+
+  }
+
+
+
+
+
+      </script>
+
+ <script>
+  function filtro2() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("Cliente");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      txtValue =  td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+         
+  }
+}
+</script>
+<script>
+  function filtro3() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("descricao");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[5];
+    if (td) {
+      txtValue =  td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+         
+  }
+}
+</script>
+<script>
+  function filtro4() {
+  var input, filter, table, tr, td, i, txtValue, color_OP;
+  input = document.getElementById("tipo_OP").value;
+  if (input == "Todos"){
+    table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    tr[i].style.display = "";
+  }
+  } else {
+    if (input == "NOVA") {
+      color_OP = "rgb(255, 0, 0)"
+    }
+    if (input == "REPETICAO SEM ALTERACAO") {
+      color_OP = "rgb(0, 255, 0)"
+    }
+    if (input == "REPETICAO COM ALTERACAO") {
+      color_OP = "rgb(0, 0, 255)"
+    }
+    console.log(color_OP)
+  filter = color_OP;
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    console.log(td.style.backgroundColor)
+    if (td) {
+      txtValue =  td.children[0].style.backgroundColor;
+      if (txtValue.indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+         
+  }
+}
+  }
+</script>
+<script>
+  function filtro5() {
+  var input, filter, table, tr, td, i, txtValue, color_OP;
+  input = document.getElementById("status_OP").value;
+  filter = input.toUpperCase();
+  console.log("*"+filter+"*")
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  if (input == "Todos"){
+    table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    tr[i].style.display = "";
+  }
+
+  } else {
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[6];
+    if (td) {
+      txtValue =  td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+         
+  }
+}
+
+</script>
+<script>
+  function filtro6() {
+  var input, filter, table, tr, td, i, txtValue, color_OP;
+  input = document.getElementById("fp-cadastrada").checked;
+  if (input === false){
+    table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    tr[i].style.display = "";
+  }
+  } else {
+  var color_OP = "rgb(255, 165, 0)"
+  var color_OP2 = "rgb(0, 255, 0)"
+  filter = color_OP;
+  filter2 = color_OP2
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[8];
+    //console.log(td.style.backgroundColor)
+    if (td) {
+      
+      txtValue =  td.children[0].children[0].style.backgroundColor;
+      if (txtValue.indexOf(filter) > -1 || txtValue.indexOf(filter2) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+         
+  }
+  
+}
+  }
+</script>
+
+
+    </body>
+
+</html>

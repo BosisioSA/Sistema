@@ -1,0 +1,276 @@
+/*********************************************************************/
+/* NiXPS Approval Chain Component CSS                                */
+/*                                                                   */
+/* Copyright 2012, NiXPS (www.nixps.com)                             */
+/*********************************************************************/
+
+a#chain_add
+{
+    float: right;
+}
+
+div.approval_step
+{
+    width: 300px;
+    z-index: 9999;
+    position: relative;
+    padding: 20px;  
+    background: #fff; 
+    border-radius: 5px;
+}
+
+
+#chain_editor {
+    font-size: 12px;
+    background: #FFF;
+    width: 90%;
+    height: 600px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+#chain_viewer {
+    font-size: 12px;
+    background: transparent;
+    width: 90%;
+    padding: 3px;
+}
+
+
+#chain_viewer .toolbar,
+#chain_editor .toolbar {
+    width: 100%;
+    height: 2em;
+    border-bottom: 1px solid gray;
+}
+
+#chain_viewer .toolbar label,
+#chain_editor .toolbar label {
+    font-size: 1.5em;
+    padding-right: 15px;
+    float: left;
+    display: block;
+}
+
+#chain_viewer .toolbar a,
+#chain_editor .toolbar a {
+    vertical-align: bottom;
+}
+
+#chain_editor .editor {
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    min-height: 95%;
+}
+
+#chain_viewer .viewer {
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.columntitle {
+    font-size: 1.1em;
+    padding: 3px;
+    color: #9E7;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #242424;
+}
+
+div.columntitle.highlight {
+    color: #242424;
+    background-color: #9E7;
+}
+
+div.dropzone {
+    min-height: 100px;
+    width: 100%;
+}
+
+div.dropzone.highlight {
+    background-color: #9E7
+}
+
+.dropshadow {
+    border-radius: 3px;  
+    margin: 10px;
+    background-color: #9E7;
+    height: 80px;
+    border: 1px solid #515151;
+}
+
+.approval_by_quantum  .dropshadow {
+    float: left;
+}
+
+div.column {
+    width: 275px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.approval_by_quantum div.column {
+    width: auto;
+}
+
+div.newcolumn {
+    border: 2px dashed #515151;
+    background-color: #555;
+}
+
+div.column.highlight {
+    background-color: #9E7
+}
+
+div.step {
+    border-radius: 3px;  
+    border: 1px solid #0080BF;
+    margin: 10px;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.approval_by_quantum div.step {
+    float: left;
+}
+
+div.step label {
+    font-weight: bold;
+    color: #777;
+    text-align: right;
+    padding-right: 5px;
+    width: 75px;
+    display: block;
+    float: left;
+    margin-top: 0px;
+}
+
+div.step div.row {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 3px;
+    min-height: 2em;
+}
+
+div.step div.rule {
+    width: 90%;
+}
+
+div.addstep {
+    border-radius: 3px;
+    background-color: #242424;
+    border: 2px dashed #515151;
+    color: #515151;
+    text-align: center;
+    margin: 10px;
+    padding: 8px;
+}
+
+div.step.approved {
+    border: 1px solid green;
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+div.step.rejected {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+div.step.active {
+    border: 1px solid white;
+}
+
+div.step div.center {
+    text-align: center;
+}
+
+div.step select {
+    display: inline-block;
+    float: left;
+    margin: 0px;
+}
+
+div.step div.userlist {
+    overflow: hidden;
+    float: left;
+}
+
+div.step div.rulename {
+    text-transform: capitalize;
+}
+
+div.step div.user.addbutton {
+    color: #777;
+    margin: 0px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+div.step div.user.addbutton:hover {
+    color: #ddd;
+    margin: 0px;
+    cursor: pointer;
+}
+    
+div.step div.user {
+    display: block; 
+    float: none;
+    margin: 4px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    padding: 0px;
+}
+
+div.step div.closebutton {
+    float: right;
+}
+
+div.user img.state {
+    padding-right: 5px;
+}
+
+div.user img.approvalstate {
+    vertical-align: bottom;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+div.user img {
+    /*height: 1em;*/
+}
+
+div.user img.query {
+    margin-top: 5px;
+    margin-left: 1px;
+    height: 14px;
+    vertical-align: top;
+}
+
+div.user img.remove {
+    margin-right: 4px;
+    margin-top: 1px;
+    vertical-align: top;
+}
+
+/**
+ * User autocomplete
+ */
+
+.useritem {
+    font-family: futura, Arial, sans-serif;
+    font-size: 11px;
+}
+
+.useritem .username {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.useritem .fullname {
+}
+ 

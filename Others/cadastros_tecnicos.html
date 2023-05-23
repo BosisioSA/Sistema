@@ -1,0 +1,3518 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Cadastro Técnicos - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+       
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li class="active" style="color: #004b93; list-style-type: none">Cadastros
+                  <ul>
+                       <li style="list-style-type: none">
+                     <a href="cadastros_clientes.html"><i class="fas fa-user-tie" style="margin-right: 5px"></i>Clientes</a>
+                    </li>
+                 <li  style="list-style-type: none">
+                     <a href="cadastros_fornecedores.html"><i class="fas fa-receipt" style="margin-right: 5px"></i>Fornecedores</a>
+                    </li>
+                     <li class="active" style="list-style-type: none">
+                     <a href="cadastros_tecnicos.html"><i class="fas fa-cogs" style="margin-right: 5px"></i>Técnicos</a>
+                    </li>
+                      <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Sequência de Tinta</a>
+  	                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li class="active" style="list-style-type: none">
+                     <a href="receita_tintas.html"><i class="fas fa-swatchbook" style="margin-right: 5px"></i>Criar Sequência</a>
+                    </li>
+                    <li  style="list-style-type: none">
+                     <a href="lista_receitas.html"><i class="fas fa-swatchbook" style="margin-right: 5px"></i>Lista Sequências</a>
+                    </li>
+                    <li style="list-style-type: none">
+                     <a href="cadastros_tintas.html"><i class="fas fa-receipt" style="margin-right: 5px"></i>Lista de Cores</a>
+                    </li>
+                    </ul>
+                </li>
+                    </ul>
+                </ul>
+                <ul class="components mb-5">
+                   <li style="color: #004b93; list-style-type: none">Anilox
+                  <ul>
+                     <li style="list-style-type: none">
+                     <a href="cadastros_anilox.html"><i class="fas fa-cog" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                    <li  style="list-style-type: none">
+                     <a href="alteracao_bcm_anilox.html"><i class="fas fa-wrench" style="margin-right: 5px"></i>Alteração BCM</a>
+                    </li>
+                    <li style="list-style-type: none">
+                     <a href="lavagem_anilox.html"><i class="fas fa-biohazard" style="margin-right: 5px"></i>Registrar Lavagem</a>e
+                    </li>
+                    </ul>
+                </ul>
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item">
+                      <a class="nav-link" href="cadastros_clientes.html">Cadastros</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="solicitacao_desenho.html">Tickets</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2 style="display:inline-block;">Cadastros Técnicos</h2>
+       
+        
+       
+        <br>
+        <br>
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+        <hr>
+       
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_tipo_trabalho" style="display:none"></div>
+            <div id="id_finalidade" style="display:none"></div>
+            <div id="id_substrato" style="display:none"></div>
+             <div id="id_detalhe" style="display:none"></div>
+             <div id="id_situacaoanilox" style="display:none"></div>
+             <div id="id_portacliche" style="display:none"></div>
+             <div id="qual_cilindro" style="display:none"></div>
+             <div id="id_lavagemanilox" style="display:none"></div>
+             
+             <div id="id_segmento" style="display:none"></div>
+             <div id="id_planta" style="display:none"></div>
+             <div id="id_dupla" style="display:none"></div>
+             <div id="id_maquina" style="display:none"></div>
+             <div id="id_tinta" style="display:none"></div>
+             <div id="id_estrutura" style="display:none"></div>
+            <div id="id_familia" style="display:none"></div>
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+            
+    
+  
+       
+            
+            <h5 id="a_div_planta"><i id="plantaArrow" class="fas fa-chevron-right" onclick="mostraPlantas()" style="margin-right: 5px; cursor:pointer;"></i>Unidades</h5>
+                 <div id="info_planta" class="form-group" style="display: none">
+ 
+                 <div  class="form-group col-md-5" style="display:inline-block;">
+                <label for="planta">Unidade</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="planta" name="planta">
+                 </div>
+                
+                
+                 <button class="btn btn-primary" onclick="salvar_planta()" style="cursor: pointer">Salvar Unidade</button>
+                 <button class="btn btn-secondary" onclick="cancelar_planta()" style="cursor: pointer">Cancelar</button>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_plantas" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:70%">Unidade<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+               <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>    
+             
+             
+             
+             
+             
+              <h5 id="a_div_tipo"><i id="tipoArrow" class="fas fa-chevron-right" onclick="mostraTipo()" style="margin-right: 5px; cursor:pointer;"></i>Tipo Trabalho</h5>
+                 <div id="info_tipo" class="form-group" style="display: none">
+                <div  class="form-group col-md-7" style="display:inline-block; vertical-align:top">
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="tipo_trabalho">Tipo Trabalho</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="tipo_trabalho" name="tipo_trabalho">
+                 </div>
+                
+                
+                 <button class="btn btn-primary" onclick="salvar_tipo_trabalho()" style="cursor: pointer">Salvar Tipo Trabalho</button>
+                 <button class="btn btn-secondary" onclick="cancelar_tipo_trabalho()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                 
+                 <div  class="form-group col-md-4" style="display:none;">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_tipo">Unidade</label>
+                  <select class="form-control"  id="planta_tipo" name="planta_tipo">
+                    </select>
+                 </div><span><img id="img-planta_tipo" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_tipo_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_tipo" name="as_planta_tipo">
+                  <span class="error" id="error_planta_tipo" style="color: red"></span>
+                 </div>
+                </div>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_tipo_trabalho" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:50%">Tipo<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%">Unidades<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+        <h5 id="a_div_finalidade"><i id="finalidadeArrow" class="fas fa-chevron-right" onclick="mostraFinalidade()" style="margin-right: 5px; cursor:pointer;"></i>Finalidade</h5>
+                 <div id="info_finalidade" class="form-group" style="display: none">
+                 <div  class="form-group col-md-7" style="display:inline-block; vertical-align:top">
+               
+                 <div  class="form-group col-md-11" style="display:inline-block;f">
+                <label for="finalidade">Finalidade</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="finalidade" name="finalidade">
+                 </div>
+                
+                
+                 <button class="btn btn-primary" onclick="salvar_finalidade()" style="cursor: pointer">Salvar dFinalidade</button>
+                 <button class="btn btn-secondary" onclick="cancelar_finalidade()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                 <div  class="form-group col-md-4" style="display:none">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_tipo">Unidade</label>
+                  <select class="form-control"  id="planta_finalidade" name="planta_finalidade">
+                    </select>
+                 </div><span><img id="img-planta_finalidade" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_finalidade_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_finalidade" name="as_planta_finalidade">
+                  <span class="error" id="error_planta_finalidade" style="color:red;"></span>
+                 </div>
+                </div>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_finalidade" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:50%">Finalidade<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%">Unidades<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+        
+         <h5 id="a_div_substratos"><i id="substratosArrow" class="fas fa-chevron-right" onclick="mostraSubstratos()" style="margin-right: 5px; cursor:pointer;"></i>Substratos</h5>
+                 <div id="info_substratos" class="form-group" style="display: none">
+ 
+                 <div  class="form-group col-md-7" style="display:inline-block; vertical-align:top">
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="tipo_substrato">Substrato</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="tipo_substrato" name="tipo_substrato">
+                 </div>
+                
+                
+                 </div>
+                 <div  class="form-group col-md-7" style="display:inline-block;  vertical-align:top">
+                <div  class="form-group col-md-6" style="display:inline-block;">
+                <label for="planta_subtinta">Tinta</label>
+                  <select class="form-control"  id="planta_subtinta" name="planta_subtinta">
+                    </select>
+                 </div><span><img id="img-planta_subtinta" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_subtinta_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_subtinta" name="as_planta_subtinta">
+                 </div>
+                </div>
+                 <div  class="form-group col-md-4" style="display:none">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_substrato">Planta</label>
+                  <select class="form-control"  id="planta_substrato" name="planta_substrato">
+                    </select>
+                 </div><span><img id="img-planta_substrato" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_substrato_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_substrato" name="as_planta_substrato">
+                  <span class="error" id="error_planta_substrato" style="color: red"></span>
+                  
+                 </div>
+                </div>
+                <br>
+                 <button class="btn btn-primary" onclick="salvar_tipo_substrato()" style="cursor: pointer">Salvar Substrato</button>
+                
+                 <button class="btn btn-secondary" onclick="cancelar_tipo_substrato()" style="cursor: pointer">Cancelar</button>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_substratos" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:30%">Substrato<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%">Tintas<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:20%">Unidades<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        
+        
+        </div>
+        
+          <h5 id="a_div_duplaFace"><i id="duplaFaceArrow" class="fas fa-chevron-right" onclick="mostraDuplaFace()" style="margin-right: 5px; cursor:pointer;"></i>Fita Dupla Face</h5>
+                 <div id="info_duplaFace" class="form-group" style="display: none">
+                 <div  class="form-group col-md-7" style="display:inline-block; vertical-align:top">
+               
+                 <div  class="form-group col-md-4" style="display:inline-block;">
+                <label for="codigo_dupla_face">Codigo</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="codigo_dupla_face" name="codigo_dupla_face">
+                 </div>
+                  <div  class="form-group col-md-7" style="display:inline-block;">
+                <label for="item_dupla_face">Item</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="item_dupla_face" name="item_dupla_face">
+                 </div>
+                  <div  class="form-group col-md-4" style="display:inline-block;">
+                <label for="espessura_dupla_face">Espessura</label>
+                  <input type="rnumbe" class="form-control"   id="espessura_dupla_face" name="espessura_dupla_face" step="0.01">
+                 </div>
+                 <div  class="form-group col-md-7" style="display:inline-block;">
+                <label for="descricao_dupla_face">descricao</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="descricao_dupla_face" name="descricao_dupla_face">
+                 </div>
+                
+                
+                 <button class="btn btn-primary" onclick="salvar_duplaFace()" style="cursor: pointer">Salvar Dupla Face</button>
+                 <button class="btn btn-secondary" onclick="cancelar_duplaFace()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                 <div  class="form-group col-md-4" style="display:none">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_dupla">Unidade</label>
+                  <select class="form-control"  id="planta_dupla" name="planta_dupla">
+                    </select>
+                 </div><span><img id="img-planta_dupla" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_dupla_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_dupla" name="as_planta_dupla">
+                  <span class="error" id="error_planta_dupla" style="color:red;"></span>
+                 </div>
+                </div>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_duplaFace" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:10%">Código<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:10%">Item<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:60%">Descrição<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:20%">Plantas<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+       
+       
+         <h5 id="a_div_estruturas"><i id="estruturasArrow" class="fas fa-chevron-right" onclick="mostraEstruturas()" style="margin-right: 5px; cursor:pointer;"></i>Estruturas</h5>
+                 <div id="info_estruturas" class="form-group" style="display: none">
+ 
+                <div  class="form-group col-md-4" style="display:inline-block; vertical-align: top;">
+                 <div  class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                <label for="estrutura_impressao">Impressão</label>
+                  <select class="form-control"  id="estrutura_impressao" onchange="preenche_laminacao()" name="estrutura_impressao">
+                    <option value="undefined">Selecionar...</option>
+                    </select>
+                 </div>
+                 <hr>
+                <span><img id="img-planta_laminacao1" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_laminacao()"></span>
+                
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="planta_laminacao1">Laminação 1</label>
+                  <select class="form-control"  id="planta_laminacao1" onchange="preenche_laminacao2()" name="planta_laminacao1">
+                      <option value="N/A">Não Aplica</option>
+                    </select>
+                 </div>
+                 <div  id="div_laminacao_2" class="form-group col-md-11" style="display:none;">
+                <label for="planta_laminacao2">Laminação 2</label>
+                  <select class="form-control"  id="planta_laminacao2" name="planta_laminacao2">
+                      <option value="N/A">NÃO APLICA</option>
+                    </select>
+                 </div>
+                  <button class="btn btn-primary" onclick="salvar_tipo_estrutura()" style="cursor: pointer">Salvar Estrutura</button>
+                
+                  <button class="btn btn-secondary" onclick="cancelar_tipo_estrutura()" style="cursor: pointer">Cancelar</button>
+                
+                 </div>
+               
+                
+        
+              
+                 <div  class="form-group col-md-7" style="display:inline-block; vertical-align: top;">
+                <h6>Opções de Estrutura</h6>
+                <table id="tabela_opcoes" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:45%">Laminação 1<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:45%">Laminação 2<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:10%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+                 </div>
+                
+                <br>
+                
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_estruturas" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:30%">Substrato<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%">Laminação 1<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:20%">Laminação 2<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        
+        
+        </div>
+       
+       
+         <h5 id="a_div_tintas"><i id="tintasArrow" class="fas fa-chevron-right" onclick="mostraTintas()" style="margin-right: 5px; cursor:pointer;"></i>Tintas</h5>
+                 <div id="info_tintas" class="form-group" style="display: none">
+ 
+                 <div  class="form-group col-md-7" style="display:inline-block; vertical-align:top">
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="nome_tinta">Tinta</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="nome_tinta" name="nome_tinta">
+                 </div>
+                
+                
+                 <button class="btn btn-primary" onclick="salvar_tipo_tinta()" style="cursor: pointer">Salvar Tinta</button>
+                  <button class="btn btn-secondary" onclick="cancelar_tipo_tinta()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                 
+                 
+                 <div  class="form-group col-md-3" style="display:none">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_tinta">Planta</label>
+                  <select class="form-control"  id="planta_tinta" name="planta_tinta">
+                    </select>
+                 </div><span><img id="img-planta_tinta" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_tipo_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_tinta" name="as_planta_tinta">
+                 </div>
+                </div>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_tintas" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:50%">Tinta<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%">Unidades<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        
+        
+        </div>
+       
+        
+       <!--  <h5 id="a_div_detalheCor"><i id="detalheCorArrow" class="fas fa-chevron-right" onclick="mostraDetalheCor()" style="margin-right: 5px; cursor:pointer;"></i>Detalhe Cor</h5>
+                 <div id="info_detalheCor" class="form-group" style="display: none">
+ 
+                 <div  class="form-group col-md-5" style="display:inline-block;">
+                <label for="detalhe_cor">Detalhe</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="detalhe_cor" name="detalhe_cor">
+                 </div>
+                <div  class="form-group col-md-3" style="display:inline-block;">
+                  <input type="checkbox" class="form-group" id="check_detalhe_Valfilm" name="check_detalhe_Valfilm">
+                 <label for="check_substrato_Valfilm">VALFILM</label>
+                 </div>
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                  <input type="checkbox" class="form-group" id="check_detalhe_Tecnoval" name="check_detalhe_Tecnoval">
+                 <label for="check_substrato_Tecnoval">TECNOVAL</label>
+                 </div>
+                
+                 <button class="btn btn-primary" onclick="salvar_substrato()" style="cursor: pointer">Salvar Detalhe</button>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_detalheCor" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:70%">Detalhe<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>
+            </th>
+              <th class="th-sm" style="width:10%">Valfilm<<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>
+              </th>
+              <th class="th-sm" style="width:10%">Tecnoval<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>-->
+        
+         <h5 id="a_div_anilox"><i id="aniloxArrow" class="fas fa-chevron-right" onclick="mostraAnilox()" style="margin-right: 5px; cursor:pointer;"></i>Situação de Anilox</h5>
+                 <div id="info_anilox" class="form-group" style="display: none">
+                 <div  class="form-group col-md-7" style="display:inline-block; vertical-align:top">
+               
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="anilox_situacao">Situação</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="anilox_situacao" name="anilox_situacao">
+                 </div>
+                
+                 <button class="btn btn-primary" onclick="salvar_situacao_anilox()" style="cursor: pointer">Salvar Situação</button>
+                 <button class="btn btn-secondary" onclick="cancelar_situacao_anilox()" style="cursor: pointer">Cancelar</button>
+                </div>
+                 
+                 <div  class="form-group col-md-4" style="display:none">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_anilox">Unidade</label>
+                  <select class="form-control"  id="planta_anilox" name="planta_anilox">
+                    </select>
+                 </div><span><img id="img-planta_anilox" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_anilox_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_anilox" name="as_planta_anilox">
+                  <span class="error" id="error_planta_anilox" style="color: red"></span>
+                 </div>
+                </div>
+                
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_situacao_anilox" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:50%">Situação<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%">Unidades<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+        
+         <h5 id="a_div_portacliche"><i id="portaclicheArrow" class="fas fa-chevron-right" onclick="mostraPortacliche()" style="margin-right: 5px; cursor:pointer;"></i>Cilindro Porta Clichê</h5>
+                 <div id="info_portacliche" class="form-group" style="display: none">
+                
+               
+                
+                   
+                  
+                  
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="nomenclatura_portacliche">Nomenclatura</label>
+                  <input type="number" class="form-control" onchange="busca_portacliche()" id="nomenclatura_portacliche" name="nomenclatura_portacliche" step="0.01">
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="passo_portacliche">Passo do Cilindro</label>
+                  <input type="number" class="form-control"  id="passo_portacliche" name="passo_portacliche" step="0.01">
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="perimetro_portacliche">Perímetro Real</label>
+                  <input type="number" class="form-control" id="perimetro_portacliche"  onchange="calcula_diametro()" name="perimetro_portacliche" min="0" step="0.001" value="0.000">
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="distorcido_portacliche">Perímetro Distorcido</label>
+                  <input type="number" class="form-control"  id="distorcido_portacliche" name="distorcido_portacliche" step="0.01">
+                 </div>
+                <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="diametro_portacliche">Diametro</label>
+                  <input type="text" class="form-control" id="diametro_portacliche"  name="diametro_portacliche" readonly>
+                 </div>
+               
+                 
+               
+                  
+                 
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="fornecedor_portacliche">Fornecedor</label>
+                  <select class="form-control"  id="fornecedor_portacliche" name="fornecedor_portacliche">
+                      <option value="undefined">Selecionar..</option>
+                      </select>
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="numero_portacliche">Número</label>
+                  <input type="text" class="form-control" onkeypress="return onlyNumberKey(event)" id="numero_portacliche" name="numero_portacliche">
+                 </div>
+                  <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="lote_portacliche">Lote</label>
+                  <input type="text" class="form-control" id="lote_portacliche" name="lote_portacliche">
+                 </div>
+                  <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="totalpecas_portacliche">Qt.Peças</label>
+                  <input type="text" class="form-control"  id="totalpecas_portacliche" name="totalpecas_portacliche" value="0" readonly>
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                 <label for="espessuradupla_portacliche">Espessura Dupla Face</label>
+                  <select class="form-control"  id="espessuradupla_portacliche" name="espessuradupla_portacliche">
+                      <option value="0.50">0.50</option>
+                      <option value="0.38">0.38</option>
+                      </select>
+                 </div>
+               <div  class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+                <label for="status_portacliche">Status PC</label>
+                  <select class="form-control"  id="status_portacliche" name="status_portacliche">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Liberado</option>
+                      <option>Com Avaria</option>
+                      <option>Inativo</option>
+                      </select>
+            </div>
+            <div  class="form-group col-md-7" style="display:inline-block; vertical-align: top;">
+                <label for="observacoes_portacliche">Observações</label>
+                  <textarea class="form-control"  id="observacoes_portacliche" name="observacoes_portacliche"></textarea>
+               
+            </div>
+    
+                 
+                <div  class="form-group col-md-4" style="display:none">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_portacliche">Unidade</label>
+                  <select class="form-control"  id="planta_portacliche" name="planta_portacliche">
+                    </select>
+                 </div><span><img id="img-planta_portacliche" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_portacliche_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_portacliche" name="as_planta_portacliche">
+                  <span class="error" id="error_planta_portacliche" style="color: red"></span>
+                 </div>
+                </div>
+                 
+                 
+                <br>
+                 <div  class="form-group col-md-11" style="display:inline-block; margin-top: 10px;">
+                  <button class="btn btn-primary" onclick="salvar_portacliche()" style="cursor: pointer">Salvar Cilindro</button>
+                 <button class="btn btn-secondary" onclick="cancelar_portacliche()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-4"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_portacliche" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+               <th class="th-sm" style="width:20%; text-align: center;">QT. PEÇAS<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%; text-align: center;">NOMENCLATURA<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%;text-align: center;">PASSO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+            <div id="div_tabela_detalhes_pc" class="form-group col-md-7"  style="display:none;">
+            <h6 id="titulo_detalhe_pc"></h6>
+            <table id="tabela_detalheportacliche" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+               <th class="th-sm" style="width:20%;text-align: center;">PERIMETRO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:20%;text-align: center;">DISTORCIDO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:20%;text-align: center;">DIÂMETRO<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:10%;text-align: center;">VISUALIZAR<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+               <th class="th-sm" style="width:10%;text-align: center;">UPLOAD<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:10%;text-align: center;">EDITAR<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:10%;text-align: center;">APAGAR<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+      
+        </div>
+        
+        
+        
+        
+         <h5 id="a_div_lavagemanilox"><i id="lavagemaniloxArrow" class="fas fa-chevron-right" onclick="mostralavagemAnilox()" style="margin-right: 5px; cursor:pointer;"></i>Anilox - Tipo de Lavagem</h5>
+                 <div id="info_lavagemanilox" class="form-group" style="display: none">
+                 <div  class="form-group col-md-7" style="display:inline-block; vertical-align:top">
+               
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="anilox_lavagem">Tipo de Lavagem</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="anilox_lavagem" name="anilox_lavagem">
+                 </div>
+                
+                 <button class="btn btn-primary" onclick="salvar_lavagem_anilox()" style="cursor: pointer">Salvar Lavagem</button>
+                 
+                 <button class="btn btn-secondary" onclick="cancelar_lavagem_anilox()" style="cursor: pointer">Cancelar</button>
+                </div>
+                  <div  class="form-group col-md-4" style="display:none">
+                <div  class="form-group col-md-9" style="display:inline-block;">
+                <label for="planta_lavagem">Unidade</label>
+                  <select class="form-control"  id="planta_lavagem" name="planta_lavagem">
+                    </select>
+                 </div><span><img id="img-planta_lavagem" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_lavagem_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_lavagem" name="as_planta_lavagem">
+                  <span class="error" id="error_planta_lavagem" style="color: red"></span>
+                 </div>
+                </div>
+                 
+                 
+                
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_lavagem_anilox" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:70%">Tipo de Lavagem<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:20%; vertical-align: top;">Plantas
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+        
+        
+        
+         <h5 id="a_div_segmento"><i id="segmentoArrow" class="fas fa-chevron-right" onclick="mostraSegmentos()" style="margin-right: 5px; cursor:pointer;"></i>Segmentos</h5>
+                 <div id="info_segmento" class="form-group" style="display: none">
+                 <div  class="form-group col-md-7" style="display:inline-block;">
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="segmento">Segmento</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="segmento" name="segmento">
+                 </div>
+               
+                
+                 <button class="btn btn-primary" onclick="salvar_segmento()" style="cursor: pointer">Salvar Segmento</button>
+                  <button class="btn btn-secondary" onclick="cancelar_segmento()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                  <div  class="form-group col-md-4" style="display:none">
+                <div  class="form-group col-md-8" style="display:inline-block;">
+                <label for="planta_segmento">Unidade</label>
+                  <select class="form-control"  id="planta_segmento" name="planta_segmento">
+                    </select>
+                 </div><span><img id="img-planta_segmento" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_segmento_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_segmento" name="as_planta_segmento">
+                  <span class="error" id="error_planta_segmento" style="color: red"></span>
+                 </div>
+                </div>
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_segmentos" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:70%">Segmento<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:20%">Plantas<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+        
+        
+      <!--<h5 id="a_div_familia"><i id="familiaArrow" class="fas fa-chevron-right" onclick="mostraFamilias()" style="margin-right: 5px; cursor:pointer;"></i>Familias de Produto</h5>
+                 <div id="info_familia" class="form-group" style="display: none">
+  <div  class="form-group col-md-7" style="display:inline-block;">
+                
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="familia">Familia</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="familia" name="familia">
+                 </div>
+                 
+                <!--<div  class="form-group col-md-3" style="display:inline-block;">
+                  <input type="checkbox" class="form-group" id="check_substrato_Valfilm" name="check_substrato_Valfilm">
+                 <label for="check_substrato_Valfilm">VALFILM</label>
+                 </div>
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                  <input type="checkbox" class="form-group" id="check_substrato_Tecnoval" name="check_substrato_Tecnoval">
+                 <label for="check_substrato_Tecnoval">TECNOVAL</label>
+                 </div>-->
+                
+                 <!--<button class="btn btn-primary" onclick="salvar_familia()" style="cursor: pointer">Salvar Familia</button>
+                  <button class="btn btn-secondary" onclick="cancelar_familia()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                  <div  class="form-group col-md-4" style="display:inline-block;  vertical-align:top">
+                <div  class="form-group col-md-8" style="display:inline-block;">
+                <label for="planta_familia">Unidade</label>
+                  <select class="form-control"  id="planta_familia" name="planta_familia">
+                    </select>
+                 </div><span><img id="img-planta_familia" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_familia_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 <div  class="form-group col-md-11" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_familia" name="as_planta_familia">
+                  <span class="error" id="error_planta_familia" style="color: red"></span>
+                 </div>
+                </div>
+                 <hr>
+                 
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_familia" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:70%">Familia<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>
+              </th>
+               <th class="th-sm" style="width:20%">Plantas<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>
+              </th>
+              
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>-->
+        
+        
+        <h5 id="a_div_maquinas"><i id="maquinasArrow" class="fas fa-chevron-right" onclick="mostraMaquinas()" style="margin-right: 5px; cursor:pointer;"></i>Máquinas</h5>
+                 <div id="info_maquinas" class="form-group" style="display: none">
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="maquina">Maquina</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()"  id="maquina" name="maquina">
+                 </div>
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="maquina_tipo_impressao">Impressão</label>
+                  <select class="form-control"  id="maquina_tipo_impressao" onchange="seleciona_impressao_maquina()" name="maquina_tipo_impressao">
+                      <option value="undefined">Selecionar...</option>
+                      <option>FLEXO</option>
+                      <option>ROTO</option>
+                    </select>
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="maquina_qtde_cores">Qtde Cores</label>
+                  <select class="form-control"  id="maquina_qtde_cores"  name="maquina_qtde_cores">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                 </div>
+                 <div id="mostra_laminacao" class="form-group col-md-3" style="display:none;">
+                <label for="maquina_laminacao">Laminação em Linha</label>
+                  <select class="form-control"  id="maquina_laminacao"  name="maquina_laminacao">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Sim</option>
+                      <option>Não</option>
+                    </select>
+                 </div>
+                 
+                 <br>
+                 <div style="display: none;">
+                 <span><img id="img-planta_maquina" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_maquina_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="planta_maquina">Unidade</label>
+                  <select class="form-control"  id="planta_maquina" name="planta_maquina">
+                    </select>
+                 </div>
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_maquina" name="as_planta_maquina">
+                  <span id="error_planta_maquina" class="error" style="color: red"></span>
+                 </div>
+                 </div>
+                 <hr>
+                 
+                 
+                 
+                
+                 
+                 <div id="div_mostra_cilindros" class="form-group col-md-11" style="display:none;">
+                 <h6>Cilindros</h6>
+                  <div id="altera_cilindro" style="display:none">99</div>
+          
+                   <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_cilindro()" src="./Icons/icone_mais.png" width="30px"></div> 
+              
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="pc">PC</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9.,]/g, '')" id="pc" name="pc">
+                  
+                 </div>
+                 
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="distorcao">Distorção</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9.,]/g, '')"  id="distorcao" name="distorcao">
+                 </div>
+                 
+                 
+                 <br>
+                 <h6>Lista de Cilindros</h6>
+                 <table id="tabela_cilindros" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:50%">PC<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40%">Distorcao<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+                 
+                
+                
+                 <button class="btn btn-primary" onclick="salvar_maquina()" style="cursor: pointer">Salvar Máquina</button>
+                
+                 <button class="btn btn-secondary" onclick="cancelar_maquina()" style="cursor: pointer">Cancelar</button>
+                
+                 <hr>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            <h6>Lista de Máquinas</h6>
+            <table id="tabela_maquinas" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:10%">Impressao<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:35%">Maquina<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:25%">Unidades<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:10%">Cores<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:10%">Cilindros<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+        
+                
+                
+                
+        
+           <hr> 
+            
+             
+          
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+var usuario = api.auth.get_current_user()
+
+if (usuario.username != "admin"){
+    if (usuario.scope_name[0].indexOf("_") != -1){
+        var scopo =  usuario.scope_name[0]
+        var scopo_array = scopo.split("_")
+        var planta = (scopo_array[scopo_array.length-1]).toUpperCase()
+        document.getElementById("as_planta_tipo").value = planta
+        document.getElementById("as_planta_finalidade").value = planta
+        document.getElementById("as_planta_substrato").value = planta
+        document.getElementById("as_planta_dupla").value = planta
+        document.getElementById("as_planta_tinta").value = planta
+        document.getElementById("as_planta_anilox").value = planta
+        document.getElementById("as_planta_lavagem").value = planta
+        document.getElementById("as_planta_segmento").value = planta
+        document.getElementById("as_planta_portacliche").value = planta
+    } 
+}
+
+
+  	</script>
+  	
+  	<script>
+  	
+  // preenche selects
+  
+  selectTipo = document.getElementById('planta_tipo');
+    var tiposTipo = api.custom_objects.list_with_options("BR-VALFI_plantas").results
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo.appendChild(opt);
+    }
+    selectTipo2 = document.getElementById('planta_finalidade');
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo2.appendChild(opt);
+    }
+    selectTipo3 = document.getElementById('planta_anilox');
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo3.appendChild(opt);
+    }
+    
+    selectTipo4 = document.getElementById('planta_maquina');
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo4.appendChild(opt);
+    }
+    selectTipo5 = document.getElementById('planta_substrato');
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo5.appendChild(opt);
+    }
+    selectTipo6 = document.getElementById('planta_tinta');
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo6.appendChild(opt);
+    }
+    
+    selectTipo9 = document.getElementById('planta_lavagem');
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo9.appendChild(opt);
+    }
+    
+     selectTipo10 = document.getElementById('planta_segmento');
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo10.appendChild(opt);
+    }
+  //    selectTipo11 = document.getElementById('planta_familia');
+//    for (var i = 0; i<tiposTipo.length; i++){
+  //      var opt = document.createElement('option');
+//        opt.value = tiposTipo[i].nome;
+ //       opt.innerHTML = tiposTipo[i].nome;
+  //      selectTipo11.appendChild(opt);
+//    }
+    
+      selectTipo12 = document.getElementById('planta_dupla');
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo12.appendChild(opt);
+    }
+    
+    var tiposTipo2 = api.custom_objects.list_with_options("BR-VALFI_tintas").results
+    selectTipo7 = document.getElementById('planta_subtinta');
+    for (var i = 0; i<tiposTipo2.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo2[i].nome;
+        opt.innerHTML = tiposTipo2[i].nome;
+        selectTipo7.appendChild(opt);
+    }
+    
+    var tiposTipo3 = api.custom_objects.list_with_options("BR-VALFI_substratos").results
+    selectTipo8 = document.getElementById('estrutura_impressao');
+    for (var i = 0; i<tiposTipo3.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo3[i].tipo;
+        opt.innerHTML = tiposTipo3[i].tipo;
+        selectTipo8.appendChild(opt);
+    }
+    
+    
+  
+    
+    
+    selectTipo15 = document.getElementById('fornecedor_portacliche');
+  
+  
+    var tiposTipo15 = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","portacliche"]).results
+    for (var i = 0; i<tiposTipo15.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo15[i].nome;
+        opt.innerHTML = tiposTipo15[i].nome;
+        selectTipo15.appendChild(opt);
+    }
+    
+   
+    
+    </script>
+  	
+  	
+  
+  
+<script>
+    function reply_delete_contato(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].nome)
+        if (contatos[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos()
+    }
+</script>
+     
+
+      
+ 
+<script>
+    function verifica_cliente(){
+        var codigo_pedido = document.getElementById("busca_cliente").value
+        var existe_codigo = api.custom_objects.list_with_options("BR-ROTOC_customers",["FANTASIA","equal to",codigo_pedido]).results
+        if (existe_codigo.length === 0){
+            document.getElementById("error_busca_cliente").innerText = "Para adicinar um novo cleinte, clique no icone ao lado"
+            document.getElementById("imagem_adiciona_cliente").style = "display:inline-block; cursor: pointer; margin-top: 38px"
+        } else {
+            document.getElementById("error_busca_cliente").innerText = ""
+            document.getElementById("imagem_adiciona_cliente").style = "display:none;"
+        }
+    }
+</script>
+
+
+<script>
+
+  
+       
+     
+    function preenche_planta(){
+         var as_plantas = api.custom_objects.list_with_options("BR-VALFI_plantas").results
+    
+        clearTable(document.getElementById("tabela_plantas"))
+          
+          
+         var table = document.getElementById("tabela_plantas")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_plantas.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_plantas[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div><img id="'+as_plantas[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_planta()" style="cursor: pointer;"></div>'
+            cell3.innerHTML = '<div><img id="'+as_plantas[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_planta()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagar_planta(){
+    if (confirm("Deseja mesmo apagar essa planta? Todos os usuários relacionados com essa planta serão apagados!") === true){     
+    var linha = event.srcElement.id
+    var busca_nome_planta = api.custom_objects.list_with_options("BR-VALFI_plantas",["_id","equal to",linha]).results[0]
+    var busca_usuarios = api.users.list_with_options(["scope_name","contains text like",busca_nome_planta.nome]).results
+    for (i=0;i<busca_usuarios.length;i++){
+        api.users.delete(busca_usuarios._id)
+    }
+    var busca_scopes = api.scope.list_with_options(["name","contains text like",busca_nome_planta.nome]).results
+    for (i=0;i<busca_scopes.length;i++){
+        api.scope.delete(busca_scopes[i]._id)
+    }
+    
+    api.custom_objects.delete("BR-VALFI_plantas",linha)
+    preenche_planta()    
+    }
+     }
+    
+     function editar_planta(){
+     var linha = event.srcElement.id
+     document.getElementById("id_planta").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_plantas",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_planta").style = "display: inline-block; width: 100%;"
+    document.getElementById("planta").value = busca_tipo.nome
+    
+    
+    
+    }
+    
+    function cancelar_planta(){
+     document.getElementById("planta").value = ""
+     clearTable(document.getElementById("tabela_plantas"))
+     setTimeout(function(){mostraPlantas()},1000)
+     
+    }
+    
+    
+      
+</script>
+
+
+<script>
+
+  
+       
+     
+    function preenche_tipo_trabalho(){
+         var os_tipos_trabalho = api.custom_objects.list_with_options("BR-VALFI_TipoTrabalho").results
+    
+        clearTable(document.getElementById("tabela_tipo_trabalho"))
+          
+          
+         var table = document.getElementById("tabela_tipo_trabalho")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_tipos_trabalho.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+          
+          
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_tipos_trabalho[i].tipo.toUpperCase()+'</div>'
+             cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_tipos_trabalho[i].plantas.toUpperCase()+'</div>'
+           
+            cell3.innerHTML = '<div><img id="'+os_tipos_trabalho[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editartipo_trabalho()" style="cursor: pointer;"></div>'
+            cell4.innerHTML = '<div><img id="'+os_tipos_trabalho[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagartipo_trabalho()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+  
+    }
+    
+     function apagartipo_trabalho(){
+    if (confirm("Deseja mesmo apagar esse tipo de trabalho?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_TipoTrabalho",linha)
+    preenche_tipo_trabalho()    
+    }
+     }
+    
+     function editartipo_trabalho(){
+     var linha = event.srcElement.id
+     document.getElementById("id_tipo_trabalho").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_TipoTrabalho",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_tipo").style = "display: inline-block; width: 100%;"
+    document.getElementById("tipo_trabalho").value = busca_tipo.tipo
+    document.getElementById("as_planta_tipo").value = busca_tipo.plantas
+    
+    
+    
+    }
+    
+    function cancelar_tipo_trabalho(){
+     document.getElementById("tipo_trabalho").value = ""
+     document.getElementById("as_planta_tipo").value = ""
+     clearTable(document.getElementById("tabela_tipo_trabalho"))
+     setTimeout(function(){mostraTipo()},1000)
+     
+    }
+    
+    
+      
+</script>
+
+
+<script>
+
+  
+       
+     
+    function preenche_finalidade(){
+         var as_finalidades = api.custom_objects.list_with_options("BR-VALFI_filmes").results
+    
+        clearTable(document.getElementById("tabela_finalidade"))
+          
+          
+         var table = document.getElementById("tabela_finalidade")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_finalidades.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+          
+          
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_finalidades[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_finalidades[i].plantas.toUpperCase()+'</div>'
+            
+            cell3.innerHTML = '<div><img id="'+as_finalidades[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_finalidade()" style="cursor: pointer;"></div>'
+            cell4.innerHTML = '<div><img id="'+as_finalidades[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_finalidade()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+  
+    }
+    
+     function apagar_finalidade(){
+    if (confirm("Deseja mesmo apagar essa finalidade?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_filmes",linha)
+    preenche_finalidade()    
+    }
+     }
+    
+     function editar_finalidade(){
+     var linha = event.srcElement.id
+     document.getElementById("id_finalidade").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_filmes",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_finalidade").style = "display: inline-block; width: 100%;"
+    document.getElementById("finalidade").value = busca_tipo.nome
+    document.getElementById("as_planta_finalidade").value = busca_tipo.plantas
+    
+    
+    }
+    
+    function cancelar_finalidade(){
+     document.getElementById("finalidade").value = ""
+     document.getElementById("as_planta_finalidade").value = ""
+     clearTable(document.getElementById("tabela_finalidade"))
+     setTimeout(function(){mostraFinalidade()},1000)
+     
+    }
+    
+    
+      
+</script>
+
+<script>
+     function preenche_familia(){
+         var as_familias = api.custom_objects.list_with_options("BR-VALFI_familiasProduto").results
+    
+        clearTable(document.getElementById("tabela_familia"))
+          
+          
+         var table = document.getElementById("tabela_familia")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_familias.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+          
+          
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_familias[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_familias[i].plantas.toUpperCase()+'</div>'
+            
+            cell3.innerHTML = '<div><img id="'+as_familias[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_familia()" style="cursor: pointer;"></div>'
+            cell4.innerHTML = '<div><img id="'+as_familias[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_familia()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+  
+    }
+    
+     function apagar_familia(){
+    if (confirm("Deseja mesmo apagar essa familia?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_familiasProduto",linha)
+    preenche_familia()    
+    }
+     }
+    
+     function editar_familia(){
+     var linha = event.srcElement.id
+     document.getElementById("id_familia").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_familiasProduto",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_familia").style = "display: inline-block; width: 100%;"
+    document.getElementById("familia").value = busca_tipo.nome
+    document.getElementById("as_planta_familia").value = busca_tipo.plantas
+    
+    
+    }
+    
+    
+    
+    
+</script>
+
+
+
+<script>
+
+  
+       
+     
+    function preenche_tinta(){
+         var as_finalidades = api.custom_objects.list_with_options("BR-VALFI_tintas").results
+    
+        clearTable(document.getElementById("tabela_tintas"))
+          
+          
+         var table = document.getElementById("tabela_tintas")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_finalidades.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+        
+          
+          
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_finalidades[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_finalidades[i].plantas.toUpperCase()+'</div>'
+         
+            cell3.innerHTML = '<div><img id="'+as_finalidades[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_tinta()" style="cursor: pointer;"></div>'
+            cell4.innerHTML = '<div><img id="'+as_finalidades[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_tinta()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+  
+    }
+    
+     function apagar_tinta(){
+    if (confirm("Deseja mesmo apagar essa tinta?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_tintas",linha)
+    preenche_tinta()    
+    }
+     }
+    
+     function editar_tinta(){
+     var linha = event.srcElement.id
+     document.getElementById("id_tinta").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_tintas",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("nome_tinta").value = busca_tipo.nome
+    document.getElementById("as_planta_tinta").value = busca_tipo.plantas
+    
+    
+    }
+    
+        function cancelar_tipo_tinta(){
+     document.getElementById("nome_tinta").value = ""
+     document.getElementById("as_planta_tinta").value = ""
+     clearTable(document.getElementById("tabela_tintas"))
+     setTimeout(function(){mostraTintas()},1000)
+     
+    }
+    
+    
+      
+</script>
+
+
+<script>
+
+  
+       
+     
+    function preenche_substratos(){
+         var os_substratos = api.custom_objects.list_with_options("BR-VALFI_substratos").results
+    
+        clearTable(document.getElementById("tabela_substratos"))
+          
+          
+         var table = document.getElementById("tabela_substratos")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_substratos.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+          
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_substratos[i].tipo.toUpperCase()+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_substratos[i].plantas+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_substratos[i].tintas.toString()+'</div>'
+            
+            cell4.innerHTML = '<div><img id="'+os_substratos[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_substrato()" style="cursor: pointer;"></div>'
+            cell5.innerHTML = '<div><img id="'+os_substratos[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_substrato()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+   
+    }
+    
+     function apagar_substrato(){
+    if (confirm("Deseja mesmo apagar esse substrato?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_substratos",linha)
+    preenche_substratos()    
+    }
+     }
+    
+     function editar_substrato(){
+     var linha = event.srcElement.id
+     document.getElementById("id_substrato").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_substratos",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_substratos").style = "display: inline-block; width: 100%;"
+    document.getElementById("tipo_substrato").value = busca_tipo.tipo
+    document.getElementById("as_planta_substrato").value = busca_tipo.plantas
+    document.getElementById("as_planta_subtinta").value = busca_tipo.tintas.toString()
+    
+    
+    
+    }
+    
+        function cancelar_tipo_substrato(){
+     document.getElementById("tipo_substrato").value = ""
+     document.getElementById("as_planta_substrato").value = ""
+     document.getElementById("as_planta_subtinta").value = ""
+     clearTable(document.getElementById("tabela_substratos"))
+     setTimeout(function(){mostraSubstratos()},1000)
+     
+    }
+    
+    
+    
+      
+</script>
+
+<script>
+
+  
+       
+     
+    function preenche_anilox(){
+         var as_situacoes = api.custom_objects.list_with_options("BR-VALFI_situacaoAnilox").results
+    
+        clearTable(document.getElementById("tabela_situacao_anilox"))
+          
+          
+         var table = document.getElementById("tabela_situacao_anilox")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_situacoes.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_situacoes[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_situacoes[i].plantas.toUpperCase()+'</div>'
+            cell3.innerHTML = '<div><img id="'+as_situacoes[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_situacao()" style="cursor: pointer;"></div>'
+            cell4.innerHTML = '<div><img id="'+as_situacoes[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_situacao()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagar_situacao(){
+    if (confirm("Deseja mesmo apagar esse detalhe?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_situacaoAnilox",linha)
+    preenche_anilox()    
+    }
+     }
+    
+     function editar_situacao(){
+     var linha = event.srcElement.id
+     document.getElementById("id_situacaoanilox").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_situacaoAnilox",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_anilox").style = "display: inline-block; width: 100%;"
+    document.getElementById("anilox_situacao").value = busca_tipo.nome
+    document.getElementById("as_planta_anilox").value = busca_tipo.plantas
+    
+    
+    
+    }
+    
+      function cancelar_situacao_anilox(){
+    document.getElementById("id_situacaoanilox").innerText = ""
+     document.getElementById("as_planta_anilox").value = ""
+     document.getElementById("anilox_situacao").value = ""
+     clearTable(document.getElementById("tabela_situacao_anilox"))
+     setTimeout(function(){mostraAnilox()},1000)
+     
+    }
+    
+    
+      
+</script>
+
+<script>
+
+  
+       
+     
+    function preenche_lavagem_anilox(){
+         var as_lavagens = api.custom_objects.list_with_options("BR-VALFI_lavagemAnilox").results
+    
+        clearTable(document.getElementById("tabela_lavagem_anilox"))
+          
+          
+         var table = document.getElementById("tabela_lavagem_anilox")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_lavagens.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_lavagens[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_lavagens[i].plantas.toUpperCase()+'</div>'
+            
+            cell3.innerHTML = '<div><img id="'+as_lavagens[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_lavagem()" style="cursor: pointer;"></div>'
+          
+            cell4.innerHTML = '<div><img id="'+as_lavagens[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_lavagem()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagar_lavagem(){
+    if (confirm("Deseja mesmo apagar essa lavagem?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_lavagemAnilox",linha)
+    preenche_lavagem_anilox()    
+    }
+     }
+    
+     function editar_lavagem(){
+     var linha = event.srcElement.id
+     document.getElementById("id_lavagemanilox").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_lavagemAnilox",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_lavagemanilox").style = "display: inline-block; width: 100%;"
+    document.getElementById("anilox_lavagem").value = busca_tipo.nome
+     document.getElementById("as_planta_lavagem").value = busca_tipo.plantas
+    
+    
+    
+    }
+    
+       function cancelar_lavagem_anilox(){
+    document.getElementById("id_lavagemanilox").innerText = ""
+     document.getElementById("as_planta_lavagem").value = ""
+     document.getElementById("anilox_lavagem").value = ""
+     clearTable(document.getElementById("tabela_lavagem_anilox"))
+     setTimeout(function(){mostralavagemAnilox()},1000)
+     
+    }
+    
+      
+</script>
+
+
+<script>
+
+  
+       
+     
+    function preenche_detalheCor(){
+         var os_detalhes = api.custom_objects.list_with_options("BR-VALFI_detalhesCor").results
+    
+        clearTable(document.getElementById("tabela_detalheCor"))
+          
+          
+         var table = document.getElementById("tabela_detalheCor")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_detalhes.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+          
+           var string_valfilm = "#CCC"
+           if (os_detalhes[i].check_Valfilm === true){
+               
+               string_valfilm = "green"
+           }
+           
+           var string_tecnoval = "#CCC"
+           if (os_detalhes[i].check_Tecnoval === true){
+               
+               string_tecnoval = "green"
+           }
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_detalhes[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<span style="margin-top:5px;height:20px;width:20px;background-color:'+string_valfilm+';border-radius:50%;display:inline-block"></span>'
+            cell3.innerHTML = '<span style="margin-top:5px;height:20px;width:20px;background-color:'+string_tecnoval+';border-radius:50%;display:inline-block"></span>'
+            cell4.innerHTML = '<div><img id="'+os_detalhes[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_detalhe()" style="cursor: pointer;"></div>'
+            cell5.innerHTML = '<div><img id="'+os_detalhes[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_detalhe()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagar_detalhe(){
+    if (confirm("Deseja mesmo apagar esse detalhe?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_detalhesCor",linha)
+    preenche_detalheCor()    
+    }
+     }
+    
+     function editar_detalhe(){
+     var linha = event.srcElement.id
+     document.getElementById("id_detalhe").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_detalhesCor",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_substrato").style = "display: inline-block; width: 100%;"
+    document.getElementById("detalhe_cor").value = busca_tipo.nome
+    document.getElementById("check_detalhe_Valfilm").checked = busca_tipo.check_Valfilm
+    document.getElementById("check_detalhe_Tecnoval").checked = busca_tipo.check_Tecnoval
+    
+    
+    
+    }
+    
+    
+      
+</script>
+
+
+<script>
+
+  
+       
+     
+    function preenche_segmento(){
+         var os_detalhes = api.custom_objects.list_with_options("BR-VALFI_segmentos").results
+    
+        clearTable(document.getElementById("tabela_segmentos"))
+          
+          
+         var table = document.getElementById("tabela_segmentos")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_detalhes.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_detalhes[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em;">'+os_detalhes[i].plantas.toUpperCase()+'</div>'
+            cell3.innerHTML = '<div><img id="'+os_detalhes[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_segmento()" style="cursor: pointer;"></div>'
+            
+           
+            cell4.innerHTML = '<div><img id="'+os_detalhes[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_segmento()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagar_segmento(){
+    if (confirm("Deseja mesmo apagar esse segmento?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_segmentos",linha)
+    preenche_detalheCor()    
+    }
+     }
+    
+     function editar_segmento(){
+     var linha = event.srcElement.id
+     document.getElementById("id_segmento").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_segmentos",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_segmento").style = "display: inline-block; width: 100%;"
+    document.getElementById("segmento").value = busca_tipo.nome
+    document.getElementById("as_planta_segmento").value = busca_tipo.plantas
+    
+    
+    
+    }
+    
+    
+     function salvar_segmento(){
+        var existe_id = document.getElementById("id_segmento").innerText
+        var data ={}
+        data["nome"] = document.getElementById("segmento").value
+       data["plantas"] = document.getElementById("as_planta_segmento").value
+       if (data.plantas == ""){
+           document.getElementById("error_planta_segemento").innerText = "Adicionar ao menos uma unidade!"
+       } else {
+           document.getElementById("error_planta_segmento").innerText = ""
+        if (existe_id == ""){
+            api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","segmentos_Criar",data)
+          
+        } else {
+            data["_id"] = existe_id
+             api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","segmentos_Alterar",data)
+        
+        }
+       setTimeout(function(){document.getElementById("segmento").value="";
+                            preenche_segmento()},1000)
+       }
+    }
+    
+    
+      
+</script>
+
+
+<script>
+
+  
+       
+     
+    function preenche_dupla(){
+         var os_detalhes = api.custom_objects.list_with_options("BR-VALFI_duplaface").results
+    
+        clearTable(document.getElementById("tabela_duplaFace"))
+          
+          
+         var table = document.getElementById("tabela_duplaFace")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_detalhes.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_detalhes[i].codigo.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em;">'+os_detalhes[i].item.toUpperCase()+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em;">'+os_detalhes[i].descricao.toUpperCase()+'</div>'
+           cell4.innerHTML = '<div style="font-size:1em;">'+os_detalhes[i].plantas.toUpperCase()+'</div>'
+           
+            cell5.innerHTML = '<div><img id="'+os_detalhes[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_fita()" style="cursor: pointer;"></div>'
+            
+           
+            cell6.innerHTML = '<div><img id="'+os_detalhes[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_fita()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagar_fita(){
+    if (confirm("Deseja mesmo apagar essa fita?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_duplaface",linha)
+    preenche_dupla()    
+    }
+     }
+    
+     function editar_fita(){
+     var linha = event.srcElement.id
+     document.getElementById("id_dupla").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_duplaface",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_segmento").style = "display: inline-block; width: 100%;"
+    document.getElementById("codigo_dupla_face").value = busca_tipo.codigo
+    document.getElementById("item_dupla_face").value = busca_tipo.item
+    document.getElementById("descricao_dupla_face").value = busca_tipo.descricao
+    document.getElementById("as_planta_dupla").value = busca_tipo.plantas
+    
+    
+    
+    }
+    
+    
+     function salvar_duplaFace(){
+        var existe_id = document.getElementById("id_dupla").innerText
+        var data ={}
+        data["codigo"] = document.getElementById("codigo_dupla_face").value
+        data["item"] = document.getElementById("item_dupla_face").value
+        data["descricao"] = document.getElementById("descricao_dupla_face").value
+        data["espessura"] = document.getElementById("espessura_dupla_face").value
+   
+       data["plantas"] = document.getElementById("as_planta_dupla").value
+       if (data.plantas == ""){
+           document.getElementById("error_planta_dupla").innerText = "Adicionar ao menos uma unidade!"
+       } else {
+           document.getElementById("error_planta_dupla").innerText = ""
+        if (existe_id == ""){
+            api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","duplaface_Criar",data)
+          
+        } else {
+            data["_id"] = existe_id
+             api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","duplaface_Alterar",data)
+        
+        }
+       setTimeout(function(){document.getElementById("codigo_dupla_face").value="";
+                             document.getElementById("item_dupla_face").value="";
+                             document.getElementById("descricao_dupla_face").value="";
+                             document.getElementById("espessura_dupla_face").value="";
+                             preenche_dupla()},1000)
+       }
+    }
+    
+    
+      
+</script>
+
+
+
+<script>
+
+
+    function seleciona_impressao_maquina(){
+        if (document.getElementById("maquina_tipo_impressao").value == "ROTO"){
+            document.getElementById("mostra_laminacao").style = "display: inline-block;"
+            document.getElementById("div_mostra_cilindros").style = "display: none;"
+        }
+        if (document.getElementById("maquina_tipo_impressao").value == "FLEXO"){
+            document.getElementById("mostra_laminacao").style = "display: none;"
+            document.getElementById("div_mostra_cilindros").style = "display: inline-block;"
+        } 
+        
+    }
+  
+       
+     
+    function preenche_maquinas(){
+         var as_maquinas = api.custom_objects.list_with_options("BR-VALFI_maquina").results
+    
+        clearTable(document.getElementById("tabela_maquinas"))
+          
+          
+         var table = document.getElementById("tabela_maquinas")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_maquinas.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+             
+            if (as_maquinas[i].cilindros === undefined){
+                var thecils = "N/A"
+            } else {
+                var thecils = as_maquinas[i].cilindros.length
+            }
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_maquinas[i].impressao.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_maquinas[i].nome.toUpperCase()+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_maquinas[i].planta+'</div>'
+            cell4.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_maquinas[i].cores+'</div>'
+            
+            cell5.innerHTML = '<div style="font-size:1em; cursor: pointer">'+thecils+'</div>'
+            cell6.innerHTML = '<div><img id="'+as_maquinas[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_maquina()" style="cursor: pointer;"></div>'
+            cell7.innerHTML = '<div><img id="'+as_maquinas[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_maquina()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+   preenche_tabela_cilindros()
+    }
+    
+     function apagar_maquina(){
+    if (confirm("Deseja mesmo apagar essa maquina?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_maquina",linha)
+    preenche_maquinas()    
+    }
+     }
+    
+     function editar_maquina(){
+     var linha = event.srcElement.id
+     document.getElementById("id_maquina").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_maquina",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("maquina").value = busca_tipo.nome
+    document.getElementById("as_planta_maquina").value = busca_tipo.planta
+    document.getElementById("maquina_tipo_impressao").value = busca_tipo.impressao
+    document.getElementById("maquina_qtde_cores").value = busca_tipo.cores
+    if (busca_tipo.impressao == "FLEXO"){
+    document.getElementById("div_mostra_cilindros").style = "display: inline-block;"
+    document.getElementById("mostra_laminacao").style = "display: none;"
+    contatos = busca_tipo.cilindros
+    preenche_tabela_cilindros()
+    }
+    if (busca_tipo.impressao == "ROTO"){
+    document.getElementById("div_mostra_cilindros").style = "display: none;"
+    document.getElementById("mostra_laminacao").style = "display: inline-block;"
+    document.getElementById("maquina_laminacao").value = busca_tipo.laminacao_em_linha
+    
+    }
+    
+    
+    
+    
+    }
+    
+    
+      
+</script>
+
+
+
+
+ 
+    
+    
+    <script>
+      function filtro_grupoferramenta() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("input_grupoferramenta");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_ferramentas");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+    
+    </script>
+
+<script>
+
+     function mostraPlantas(){
+         
+        var div_cliente = document.getElementById("info_planta")
+        var icone = document.getElementById("plantaArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_planta()
+      }
+      
+      
+      function mostraFamilias(){
+         
+        var div_cliente = document.getElementById("info_familia")
+        var icone = document.getElementById("familiaArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_familia()
+      }
+      
+
+
+      function mostraTipo(){
+         
+        var div_cliente = document.getElementById("info_tipo")
+        var icone = document.getElementById("tipoArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_tipo_trabalho()
+      }
+      
+       function mostraFinalidade(){
+         
+        var div_cliente = document.getElementById("info_finalidade")
+        var icone = document.getElementById("finalidadeArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_finalidade()
+      }
+      
+      function mostraSubstratos(){
+         
+        var div_cliente = document.getElementById("info_substratos")
+        var icone = document.getElementById("substratosArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_substratos()
+      }
+      
+      function mostraDetalheCor(){
+         
+        var div_cliente = document.getElementById("info_detalheCor")
+        var icone = document.getElementById("detalheCorArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+            
+            preenche_detalheCor()
+       
+      }
+      
+      function mostraAnilox(){
+         
+        var div_cliente = document.getElementById("info_anilox")
+        var icone = document.getElementById("aniloxArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_anilox()
+      }
+      
+      
+      function mostralavagemAnilox(){
+         
+        var div_cliente = document.getElementById("info_lavagemanilox")
+        var icone = document.getElementById("lavagemaniloxArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_lavagem_anilox()
+      }
+      
+      function mostraSegmentos(){
+         
+        var div_cliente = document.getElementById("info_segmento")
+        var icone = document.getElementById("segmentoArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_segmento()
+      }
+      
+      
+       function mostraTintas(){
+         
+        var div_cliente = document.getElementById("info_tintas")
+        var icone = document.getElementById("tintasArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_tinta()
+      }
+      
+      function mostraEstruturas(){
+         
+        var div_cliente = document.getElementById("info_estruturas")
+        var icone = document.getElementById("estruturasArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_tabela_estruturas()
+      }
+      
+      function mostraMaquinas(){
+         
+        var div_cliente = document.getElementById("info_maquinas")
+        var icone = document.getElementById("maquinasArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+      document.getElementById("id_maquina").innerText = ""
+      document.getElementById("maquina").value = ""
+      document.getElementById("as_planta_maquina").value = ""
+      document.getElementById("pc").value = ""
+      document.getElementById("distorcao").value = ""
+      contatos = []
+       preenche_maquinas()
+      }
+      
+      
+     function mostraDuplaFace(){
+         
+        var div_cliente = document.getElementById("info_duplaFace")
+        var icone = document.getElementById("duplaFaceArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       preenche_dupla()
+      }
+      
+        function mostraPortacliche(){
+         
+        var div_cliente = document.getElementById("info_portacliche")
+        var icone = document.getElementById("portaclicheArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            
+            } else {
+                div_cliente.style.display = "none";
+            }
+      preenche_portacliche()
+      }
+      
+  </script>
+  
+<script>
+    function salvar_planta(){
+        var existe_id = document.getElementById("id_planta").innerText
+        var data ={}
+        data["nome"] = document.getElementById("planta").value
+      
+        if (existe_id == ""){
+            api.custom_objects.create("BR-VALFI_plantas",data)
+            var scope1 = "gestor_"+document.getElementById("planta").value.toLowerCase()
+            var scope2 = "clicheria_"+document.getElementById("planta").value.toLowerCase()
+            var scope3 = "artes_"+document.getElementById("planta").value.toLowerCase()
+            var scope4 = "vendas_"+document.getElementById("planta").value.toLowerCase()
+            var scope5 = "assistente_"+document.getElementById("planta").value.toLowerCase()
+            api.scope.create({"name":scope1,"filter":"","welcomepage":""})
+            api.scope.create({"name":scope2,"filter":"","welcomepage":""})
+            api.scope.create({"name":scope3,"filter":"","welcomepage":""})
+            api.scope.create({"name":scope4,"filter":"","welcomepage":""})
+            api.scope.create({"name":scope5,"filter":"","welcomepage":""})
+            
+        } else {
+            data["_id"] = existe_id
+            api.custom_objects.update("BR-VALFI_plantas",data)
+        }
+        
+       preenche_planta()
+    }
+</script>
+
+
+  
+<script>
+     function salvar_familia(){
+        var existe_id = document.getElementById("id_familia").innerText
+        var data ={}
+        data["nome"] = document.getElementById("familia").value
+       data["plantas"] = document.getElementById("as_planta_familia").value
+       if (data.plantas == ""){
+           document.getElementById("error_planta_familia").innerText = "Adicionar ao menos uma unidade!"
+       } else {
+           document.getElementById("error_planta_familia").innerText = ""
+        if (existe_id == ""){
+            api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","familia_Criar",data)
+          
+        } else {
+            data["_id"] = existe_id
+             api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","familia_Alterar",data)
+        
+        }
+       setTimeout(function(){preenche_familia()},1000)
+       }
+    }
+</script>
+
+<script>
+    function salvar_tipo_trabalho(){
+        var existe_id = document.getElementById("id_tipo_trabalho").innerText
+        var data ={}
+        data["tipo"] = document.getElementById("tipo_trabalho").value
+       data["plantas"] = document.getElementById("as_planta_tipo").value
+       if (data.plantas == ""){
+           document.getElementById("error_planta_tipo").innerText = "Adicionar ao menos uma unidade!"
+       } else {
+           document.getElementById("error_planta_tipo").innerText = ""
+        if (existe_id == ""){
+            api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","tipoTrabalho_Criar",data)
+          
+        } else {
+            data["_id"] = existe_id
+             api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","tipoTrabalho_Alterar",data)
+        
+        }
+       setTimeout(function(){preenche_tipo_trabalho()},1000)
+       }
+    }
+</script>
+
+<script>
+    function salvar_tipo_estrutura(){
+        var existe_id = document.getElementById("id_estrutura").innerText
+        var data ={}
+        data["impressao"] = document.getElementById("estrutura_impressao").value
+       data["laminacao"] = as_laminacoes
+        if (existe_id == ""){
+            api.custom_objects.create("BR-VALFI_estruturas",data)
+        } else {
+            data["_id"] = existe_id
+            api.custom_objects.update("BR-VALFI_estruturas",data)
+        }
+        as_laminacoes= []
+        document.getElementById("estrutura_impressao").value = "N/A"
+        document.getElementById("planta_laminacao1").value = "N/A"
+        document.getElementById("planta_laminacao2").value = "N/A"
+        document.getElementById("div_laminacao_2").style = "display: none;"
+        
+        
+       preenche_tabela_estruturas()
+    }
+</script>
+
+
+<script>
+    function salvar_tipo_substrato(){
+        var existe_id = document.getElementById("id_substrato").innerText
+        var data ={}
+        data["tipo"] = document.getElementById("tipo_substrato").value
+       data["plantas"] = document.getElementById("as_planta_substrato").value
+       
+       var as_tintas = (document.getElementById("as_planta_subtinta").value).split(",")
+       data["tintas"] = as_tintas
+       if (data.plantas == ""){
+           document.getElementById("error_planta_substrato").innerText = "Adicionar ao menos uma unidade!"
+       } else {
+           
+           document.getElementById("error_planta_substrato").innerText = ""
+       
+        if (existe_id == ""){
+          api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","substrato_Criar",data)
+         
+        } else {
+            data["_id"] = existe_id
+              api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","substrato_Alterar",data)
+         
+        }
+       setTimeout(function(){document.getElementById("tipo_substrato").value="";document.getElementById("as_planta_substrato").value;document.getElementById("as_planta_subtinta").value="";preenche_substratos()},1000)
+       }
+    }
+</script>
+
+<script>
+    function salvar_finalidade(){
+        var existe_id = document.getElementById("id_finalidade").innerText
+        var data ={}
+        data["nome"] = document.getElementById("finalidade").value
+        data["plantas"] = document.getElementById("as_planta_finalidade").value
+        if (data.plantas != ""){
+        document.getElementById("error_planta_finalidade").innerText = ""
+        
+        
+        if (existe_id == ""){
+            api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","finalidade_Criar",data)
+        } else {
+            data["_id"] = existe_id
+            api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","finalidade_Alterar",data)
+        }
+       setTimeout(function(){document.getElementById("finalidade").value= "";document.getElementById("as_planta_finalidade").value = "";preenche_finalidade()},1000)
+        } else {
+            document.getElementById("error_planta_finalidade").innerText = "Adicionar ao menos uma planta"
+        }
+    }
+</script>
+
+
+<script>
+    function salvar_tipo_tinta(){
+        var existe_id = document.getElementById("id_tinta").innerText
+        var data ={}
+        data["nome"] = document.getElementById("nome_tinta").value
+        data["plantas"] = document.getElementById("as_planta_tinta").value
+        console.log(data)
+        if (existe_id == ""){
+            
+         api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","tintas_Criar",data)
+        } else {
+            data["_id"] = existe_id
+            api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","tintas_Alterar",data)
+         
+        }
+      // preenche_tinta()
+    }
+</script>
+
+<script>
+    function salvar_detalheCor(){
+        var existe_id = document.getElementById("id_detalhe").innerText
+        var data ={}
+        data["nome"] = document.getElementById("detalhe_cor").value
+        data["check_Valfilm"] = document.getElementById("check_detalhe_Valfilm").checked
+        data["check_Tecnoval"] = document.getElementById("check_detalhe_Tecnoval").checked
+        console.log(data)
+        if (existe_id == ""){
+            api.custom_objects.create("BR-VALFI_detalhesCor",data)
+        } else {
+            data["_id"] = existe_id
+            api.custom_objects.update("BR-VALFI_detalhesCor",data)
+        }
+       preenche_detalheCor()
+    }
+</script>
+<script>
+    function salvar_situacao_anilox(){
+        var existe_id = document.getElementById("id_situacaoanilox").innerText
+        console.log(existe_id)
+        var data ={}
+        data["nome"] = document.getElementById("anilox_situacao").value
+       data["plantas"] = document.getElementById("as_planta_anilox").value
+       if (data.plantas == ""){
+          document.getElementById("error_planta_anilox").innerText = "Adicione ao menos uma unidade!" 
+       } else {
+            document.getElementById("error_planta_anilox").innerText = "" 
+        if (existe_id == ""){
+         api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","situacaoAnilox_Criar",data)
+
+        } else {
+            console.log("vou alterar")
+            data["_id"] = existe_id
+              api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","situacaoAnilox_Alterar",data)
+      
+        }
+       setTimeout(function(){document.getElementById("id_situacaoanilox").innerText="";document.getElementById("anilox_situacao").value="";document.getElementById("as_planta_anilox").value="";preenche_anilox()},1000)
+       }
+    }
+</script>
+
+
+<script>
+    function salvar_portacliche(){
+        var existe_id = document.getElementById("id_portacliche").innerText
+        console.log(existe_id)
+        var data ={}
+        data["nomenclatura"] = document.getElementById("nomenclatura_portacliche").value
+        data["distorcido"] = document.getElementById("distorcido_portacliche").value
+        data["numero"] = document.getElementById("numero_portacliche").value
+        data["fornecedor"] = document.getElementById("fornecedor_portacliche").value
+        data["lote"] = document.getElementById("lote_portacliche").value
+        data["perimetro"] = document.getElementById("perimetro_portacliche").value
+        data["passo"] = document.getElementById("passo_portacliche").value
+        data["diametro"] = document.getElementById("diametro_portacliche").value
+        data["usuario"] = usuario
+        data["espessuradupla"] = document.getElementById("espessuradupla_portacliche").value
+        data["status"] = document.getElementById("status_portacliche").value
+        data["observacoes"] = document.getElementById("observacoes_portacliche").value
+        data["planta"] = [planta]
+        
+        
+        var conta = api.custom_objects.list_with_options("BR-VALFI_portacliche",["nomenclatura","equal to",data.nomenclatura]).results
+        console.log("contando e deu "+conta.length)
+       if (conta.length > 0){
+           
+           var existe = false
+           
+       
+               var numeros = conta[0].cilindros
+               
+               for (j=0;j<numeros.length;j++){
+                   if (numeros[j].numero == data.numero && numeros[j].lote == data.lote){
+                       var existe = true
+                   }
+               }
+           }
+           
+       
+       console.log("Existe")
+       console.log(existe)
+       
+       if (existe === true){
+           
+           alert("Já existe um cilindro com esse número e lote para essa nomenclatura!")
+           
+       } else {
+        
+        if (existe_id  == ""){
+      
+        document.getElementById("error_planta_portacliche").innerText = "" 
+        if (existe_id == ""){
+         api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","portacliche_Criar",data)
+
+        } 
+        else {
+           console.log("vou alterar")
+            data["_id"] = existe_id
+            data["qual_cilindro"] = document.getElementById("qual_cilindro").innerText
+              api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","portacliche_Alterar",data)
+         }
+       setTimeout(function(){document.getElementById("nomenclatura_portacliche").value="";
+       
+                            document.getElementById("passo_portacliche").value="";
+                            document.getElementById("perimetro_portacliche").value= "";
+                            document.getElementById("distorcido_portacliche").value= "";
+                            document.getElementById("diametro_portacliche").value="";
+                            document.getElementById("fornecedor_portacliche").value="undefined";
+                            document.getElementById("numero_portacliche").value="";
+                            document.getElementById("lote_portacliche").value = "";
+                            document.getElementById("totalpecas_portacliche").value="0";
+                            document.getElementById("id_portacliche").innerText="";
+                            document.getElementById("espessuradupla_portacliche").value="0.50";
+                            document.getElementById("status_portacliche").value="0.50";
+                            document.getElementById("observacoes_portacliche").innerText="";
+                            document.getElementById("qual_cilindro").innerText="";
+                            
+                            
+                           // document.getElementById("as_planta_portacliche").value="";
+                           // document.getElementById("as_planta_portacliche").value="";
+                            preenche_portacliche()},1000)
+                            
+        } 
+       }
+       }
+    
+    
+    let os_porta
+     function preenche_portacliche(){
+        os_porta = api.custom_objects.list_with_options("BR-VALFI_portacliche").results
+     document.getElementById("div_tabela_detalhes_pc").style ="display: none;"
+       
+        clearTable(document.getElementById("tabela_portacliche"))
+        clearTable(document.getElementById("tabela_detalheportacliche"))
+          
+          
+         var table = document.getElementById("tabela_portacliche")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_porta.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            
+             
+            var quantas =  os_porta[i].cilindros.length
+           
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer" onclick="preencheDetalhesPC('+i+')">'+quantas+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer" onclick="preencheDetalhesPC('+i+')">'+os_porta[i].nomenclatura+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer" onclick="preencheDetalhesPC('+i+')">'+os_porta[i].passo+'</div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+    function preencheDetalhesPC(numero){
+        console.log(numero)
+        document.getElementById("div_tabela_detalhes_pc").style ="display: inline-block; vertical-align: 100%;"
+        document.getElementById("titulo_detalhe_pc").innerText = "Lista de Cilindros da Nomenclatura "+os_porta[parseInt(numero)].nomenclatura
+        clearTable(document.getElementById("tabela_detalheportacliche"))
+        var baseID = os_porta[parseInt(numero)]._id
+        var table = document.getElementById("tabela_detalheportacliche")
+        var qtasrow = table.rows.length
+        
+        for (i=0;i<os_porta[parseInt(numero)].cilindros.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            
+            
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_porta[parseInt(numero)].cilindros[i].perimetro+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_porta[parseInt(numero)].cilindros[i].distorcido+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_porta[parseInt(numero)].cilindros[i].diametro+'</div>'
+            if (os_porta[parseInt(numero)].cilindros[i].relatorios === undefined){
+            cell4.innerHTML = '<div></div>'
+            } else {
+             var last_report = os_porta[parseInt(numero)].cilindros[i].relatorios.length
+             cell4.innerHTML = '<div><a href="'+os_porta[parseInt(numero)].cilindros[i].relatorios[last_report-1].view_url+'" target="_Blank"><img src="Icons/view.png" height="30px"  style="cursor: pointer;"></a></div>'  
+            }
+            cell5.innerHTML = '<div><a href="uploadPDF_Cilindro.html?ordem='+i+'_'+baseID+'_'+numero+'" target="_Blank"><img src="Icons/Upload.png" height="30px"  style="cursor: pointer;"></a></div>'
+            cell6.innerHTML = '<div><img id="editpc_'+i+'_'+numero+'_'+baseID+'" src="Icons/Edit.png" height="30px" onclick="editar_portacliche()" style="cursor: pointer;"></div>'
+            cell7.innerHTML = '<div><img id="deletepc_'+i+'_'+numero+'_'+baseID+'" src="Icons/delete.png" height="30px" onclick="apagar_portacliche()" style="cursor: pointer;"></div>'
+           
+           
+            qtasrow = qtasrow +1
+            
+            
+            
+        
+    }
+    }
+    
+     function apagar_portacliche(){
+    if (confirm("Deseja mesmo apagar esse porta clichê?") === true){     
+    var linha = event.srcElement.id
+    var linha_array = linha.split("_")
+     var numerocilindro = parseInt(linha_array[1])
+     var numeroporta = parseInt(linha_array[2])
+     var ID = linha_array[3]
+     var cilindros_atuais = os_porta[numeroporta].cilindros
+    var tira = cilindros_atuais.splice(numerocilindro,1)
+    if (cilindros_atuais.length > 0){
+    api.custom_objects.set_keys("BR-VALFI_portacliche",ID,{"cilindros":cilindros_atuais})
+    } else {
+        api.custom_objects.delete("BR-VALFI_portacliche",ID)
+    }
+    preenche_portacliche()    
+    }
+     }
+    
+     function editar_portacliche(){
+     var linha = event.srcElement.id
+     var linha_array = linha.split("_")
+     var numeroporta= parseInt(linha_array[1])
+     console.log("NUMERO CILINDRO ---> "+numerocilindro)
+     var numerocilindro = parseInt(linha_array[2])
+     console.log("NUMERO PORTA CLICHE ---> "+numeroporta)
+     var ID = linha_array[3]
+     
+     document.getElementById("id_portacliche").innerText = linha
+    
+    document.getElementById("info_portacliche").style = "display: inline-block; width: 100%;"
+    document.getElementById("nomenclatura_portacliche").value = os_porta[numerocilindro].nomenclatura
+    document.getElementById("distorcido_portacliche").value = os_porta[numerocilindro].cilindros[numeroporta].distorcido
+    document.getElementById("passo_portacliche").value = os_porta[numerocilindro].passo
+    document.getElementById("numero_portacliche").value = os_porta[numerocilindro].cilindros[numeroporta].numero
+    document.getElementById("perimetro_portacliche").value = os_porta[numerocilindro].cilindros[numeroporta].perimetro
+    document.getElementById("lote_portacliche").value = os_porta[numerocilindro].cilindros[numeroporta].lote
+    document.getElementById("fornecedor_portacliche").value = os_porta[numerocilindro].cilindros[numeroporta].fornecedor
+    document.getElementById("as_planta_portacliche").value = os_porta[numerocilindro].cilindros[numeroporta].plantas
+    
+     document.getElementById("totalpecas_portacliche").value = os_porta[numerocilindro].cilindros.length
+     var perimetro = parseFloat(os_porta[numerocilindro].cilindros[numeroporta].perimetro.replace(",","."))
+     document.getElementById("diametro_portacliche").value = (perimetro/Math.PI).toFixed(3)
+    
+    
+    
+    }
+    
+    function cancelar_portacliche(){
+     document.getElementById("nomenclatura_portacliche").value = ""
+     document.getElementById("distorcido_portacliche").value = ""
+    document.getElementById("numero_portacliche").value = ""
+    document.getElementById("perimetro_portacliche").value = ""
+    document.getElementById("lote_portacliche").value = ""
+    document.getElementById("passo_portacliche").value = ""
+    document.getElementById("fornecedor_portacliche").value = "undefined"
+     document.getElementById("totalpecas_portacliche").value = "0"
+     document.getElementById("diametro_portacliche").value = "0"
+    
+     clearTable(document.getElementById("tabela_portacliche"))
+     setTimeout(function(){mostraPortacliche()},1000)
+     
+    }
+</script>
+
+
+<script>
+    function salvar_lavagem_anilox(){
+        var existe_id = document.getElementById("id_lavagemanilox").innerText
+        var data ={}
+        data["nome"] = document.getElementById("anilox_lavagem").value
+        
+        data["plantas"] = document.getElementById("as_planta_lavagem").value
+        if (data.plantas == ""){
+            document.getElementById("error_planta_lavagem").innerText = "Adicionar ao menos uma unidade."
+        } else {
+            
+            document.getElementById("error_planta_lavagem").innerText = ""
+        if (existe_id == ""){
+              api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","lavagemAnilox_Criar",data)
+
+        } else {
+            data["_id"] = existe_id
+              api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","lavagemAnilox_Alterar",data)
+
+        }
+       setTimeout(function(){ document.getElementById("id_lavagemanilox").innerText="";
+                              document.getElementById("anilox_lavagem").value="";
+                             document.getElementById("as_planta_lavagem").value="";
+                             preenche_lavagem_anilox()},1000)
+        }
+    }
+</script>
+
+<script>
+    function salvar_maquina(){
+        var existe_id = document.getElementById("id_maquina").innerText
+        var data ={}
+        data["nome"] = document.getElementById("maquina").value
+        data["impressao"] = document.getElementById("maquina_tipo_impressao").value
+        data["cores"] = parseInt(document.getElementById("maquina_qtde_cores").value)
+       data["planta"] = document.getElementById("as_planta_maquina").value
+       data["laminacao_em_linha"] = document.getElementById("maquina_laminacao").value
+       data["cilindros"] = contatos
+       if (data.planta == ""){
+           document.getElementById("error_planta_maquina").innerText = "Adicionar ao menos uma unidade."
+       } else {
+             document.getElementById("error_planta_maquina").innerText = ""
+        if (existe_id == ""){
+         api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","maquinas_Criar",data)
+        } else {
+            data["_id"] = existe_id
+          api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","maquinas_Alterar",data) 
+        }
+       setTimeout(function(){document.getElementById("id_maquina").innerText="";
+                            document.getElementById("maquina").value="";
+                            document.getElementById("maquina_qtde_cores").value = "1";
+                            document.getElementById("planta_maquina").value = ""
+                            preenche_maquinas()},1000)
+       }
+    }
+</script>
+<script>
+    function adiciona_planta(){
+        var linha = event.srcElement.id
+        var div_planta = linha.replace("img-","")
+        var qual_planta = document.getElementById(div_planta).value
+        var div_resultado = linha.replace("img-","as_")
+        var info_resultado = document.getElementById(div_resultado).value
+        
+        if (info_resultado.indexOf(qual_planta) === -1){
+            if (info_resultado == ""){
+                info_resultado = qual_planta
+            } else {
+                info_resultado = info_resultado+", "+qual_planta
+            }
+        }
+        document.getElementById(div_resultado).value = info_resultado
+        
+    }
+    
+    function remove_planta(){
+        var linha = event.srcElement.id
+        var div_planta = linha.replace("img-","").replace("_menos","")
+        var qual_planta = document.getElementById(div_planta).value
+        console.log(qual_planta)
+        var div_resultado = linha.replace("img-","as_").replace("_menos","")
+        var info_resultado = document.getElementById(div_resultado).value
+        console.log(info_resultado)
+        console.log(info_resultado.indexOf(qual_planta))
+       
+           info_resultado = info_resultado.replace(qual_planta,"")
+            info_resultado = info_resultado.replace(",,",",")
+            if (info_resultado.indexOf(",") === 0){
+                info_resultado = info_resultado.substring(2,info_resultado.length)
+            }
+            if (info_resultado.substring(info_resultado.length-1,info_resultado.length) == ","){
+               info_resultado = info_resultado.substring(0,info_resultado.length-1) 
+            }
+        
+        document.getElementById(div_resultado).value = info_resultado
+        
+    }
+</script>
+<script>
+var contatos = []
+          function adiciona_cilindro(){
+              
+              
+             if (document.getElementById("altera_cilindro").innerText == "99"){
+              console.log("Estou dentro")
+                  var info_contato = {}
+                  
+                  info_contato["pc"] = document.getElementById("pc").value.replace(",",".")
+                  info_contato["distorcao"] = document.getElementById("distorcao").value.replace(",",".")
+                  contatos.push(info_contato)
+                  
+                  var existe_cilindro = api.custom_objects.list_with_options("Cilindros",["pc","equal to",document.getElementById("pc").value,"and","maquina","contains",document.getElementById("maquina").value]).results
+                  
+                  if (existe_cilindro.length == 0){
+                      api.custom_objects.create("Cilindros",{"maquina":document.getElementById("maquina").value,"pc":document.getElementById("pc").value,"distorcao":document.getElementById("distorcao").value})
+                  }
+                 
+                  
+              
+                preenche_tabela_cilindros() 
+              
+               
+             } else {
+                 for (i=0;i<contatos.length;i++){
+                     var numero = parseInt(document.getElementById("altera_contato").innerText)
+                   
+                     var valores = contatos[i]
+                       console.log(valores)
+                         valores["pc"] = document.getElementById("pc").value.replace(",",".")
+                         valores["distorcao"] = document.getElementById("distorcao").value.replace(",",".")
+                        
+                         contato[i] = valores
+                     }
+                    preenche_tabela_cilindros() 
+                 }
+              
+          }
+         
+          function preenche_tabela_cilindros(){
+          
+      var tabela2 = document.getElementById("tabela_cilindros");
+      clearTable(tabela2)
+      
+      
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+       
+       
+      
+        cell1.innerHTML = '<div style="vertical-align: middle;">'+contatos[i].pc+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle;">'+contatos[i].distorcao+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].pc+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_cilindro()"></div>';
+        cell4.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].pc+'" src="Icons/delete.png" width="50px" onclick="reply_delete_cilindro()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+
+</script>
+<script>
+    function reply_edit_cilindro(){
+    var linha = event.srcElement.id
+    for (i=0;i<contatos.length;i++){
+        if (contatos[i].pc == linha){
+            document.getElementById("altera_cilindro").innerText = i
+            document.getElementById("pc").value = contatos[i].pc
+            document.getElementById("distorcao").value = contatos[i].distorcao
+           
+        }
+    }
+ 
+     
+    
+    }
+</script>
+<script>
+    function reply_delete_cilindro(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].pc)
+        if (contatos[i].pc == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+    document.getElementById("pc").value = ""
+    document.getElementById("distorcao").value = ""
+    document.getElementById("altera_cilindro").innerText = "99"
+      preenche_tabela_cilindros()
+    }
+</script>
+<script>
+    function preenche_laminacao(){
+        var qual_impressao = document.getElementById("estrutura_impressao").value
+        var dados_lamina1 = []
+        var dados_lamina2 = []
+        if (qual_impressao == "BOPP BRILHO"){
+            dados_lamina1.push("PP TRANSPARENTE")
+            dados_lamina1.push("PP METALIZADO")
+            dados_lamina1.push("PP BRANCO")
+            dados_lamina1.push("PE TRANSPARENTE")
+            dados_lamina1.push("BOPP METALIZADO")
+            dados_lamina1.push("BOPP BRILHO")
+        }
+        if (qual_impressao == "BOPP MATTE"){
+           
+            dados_lamina1.push("PE TRANSPARENTE")
+            dados_lamina1.push("BOPP METALIZADO")
+           
+        }
+        if (qual_impressao == "BOPP PEROLIZADO"){
+            
+            dados_lamina1.push("BOPP TRANSPARENTE")
+        }
+        if (qual_impressao == "PE MONOCAMADA"){
+            
+            dados_lamina1.push("BOPP TRANSPARENTE")
+        }
+        if (qual_impressao == "PET TRANSPARENTE"){
+            
+            dados_lamina1.push("ALUMINIO")
+            dados_lamina1.push("PP METALIZADO")
+            dados_lamina1.push("PE BRANCO")
+            dados_lamina1.push("PE TRANSPARENTE")
+            dados_lamina1.push("PET METALIZADO")
+            
+        }
+        if (qual_impressao == "PET METALIZADO"){
+            
+            dados_lamina1.push("PE TRANSPARENTE")
+         
+        }
+        if (qual_impressao == "PE TRANSPARENTE"){
+            
+            dados_lamina1.push("PE TRANSPARENTE")
+         
+        }
+        
+        if (qual_impressao == "PP TRANSPARENTE"){
+            
+            dados_lamina1.push("ALUMINIO")
+            dados_lamina1.push("PP METALIZADO")
+            dados_lamina1.push("PE BRANCO")
+            dados_lamina1.push("PE TRANSPARENTE")
+            dados_lamina1.push("PET METALIZADO")
+            
+        }
+        if (qual_impressao == "PP METALIZADO"){
+            
+            dados_lamina1.push("PE TRANSPARENTE")
+         
+        }
+        if (qual_impressao == "PAPEL"){
+            
+            dados_lamina1.push("PE TRANSPARENTE")
+         
+        }
+        var theSelect = document.getElementById("planta_laminacao1")
+        
+        $('#planta_laminacao1').empty().append('<option selected="selected" value="N/A">NÃO APLICA</option>');
+        
+        
+         for (var i = 0; i<dados_lamina1.length; i++){
+        var opt = document.createElement('option');
+        opt.value = dados_lamina1[i];
+        opt.innerHTML = dados_lamina1[i];
+        theSelect.appendChild(opt);
+    }
+        
+        
+        
+    }
+    
+    function preenche_laminacao2(){
+        var lamina1 = document.getElementById("planta_laminacao1").value
+        var estrutura = document.getElementById("estrutura_impressao").value
+         $('#planta_laminacao2').empty().append('<option selected="selected" value="N/A">NÃO APLICA</option>');
+        if (estrutura == "PET TRANSPARENTE" || estrutura == "PP TRANSPARENTE"){
+            if (lamina1 == "PP METALIZADO" || lamina1 == "PET METALIZADO" ){
+                document.getElementById("div_laminacao_2").style = "display: inline-block;"
+                var theSelect2 = document.getElementById("planta_laminacao2")
+                var opt = document.createElement('option');
+                 opt.value = "PE TRANSPARENTE";
+                opt.innerHTML = "PE TRANSPARENTE";
+                theSelect2.appendChild(opt);
+                
+                
+            }
+        } else {
+           document.getElementById("div_laminacao_2").style = "display: none;" 
+        }
+        
+        
+    }
+</script>
+<script>
+var as_laminacoes = []
+    function adiciona_laminacao(){
+        if (document.getElementById("planta_laminacao1").value != "N/A"){
+        as_laminacoes.push([document.getElementById("planta_laminacao1").value,document.getElementById("planta_laminacao2").value])
+        }
+        
+        preenche_tabela_laminacoes()
+        
+    }
+    
+     function preenche_tabela_laminacoes(){
+          
+      var tabela2 = document.getElementById("tabela_opcoes");
+      clearTable(tabela2)
+      
+      
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<as_laminacoes.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+       
+       
+      
+        cell1.innerHTML = '<div style="vertical-align: middle;">'+as_laminacoes[i][0]+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle;">'+as_laminacoes[i][1]+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+i+'" src="Icons/delete.png" width="50px" onclick="apagar_laminacao()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+          
+          function apagar_laminacao(){
+              var linha = parseInt(event.srcElement.id)
+              as_laminacoes.splice(linha,1)
+              preenche_tabela_laminacoes()
+          }
+    
+    
+</script>
+<script>
+     function preenche_tabela_estruturas(){
+         var os_detalhes = api.custom_objects.list_with_options("BR-VALFI_estruturas").results
+    
+        clearTable(document.getElementById("tabela_estruturas"))
+          
+          
+         var table = document.getElementById("tabela_estruturas")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_detalhes.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            
+            var as_lam  = os_detalhes[i].laminacao
+            
+            var lam1 = ""
+            var lam2 = []
+            for (j=0;j<as_lam.length;j++){
+              
+                lam1 = lam1 + as_lam[j][0]+","
+                lam2.push(as_lam[j][1])
+            }
+            
+            var unique = lam2.filter(onlyUnique);
+            
+            var lam_2 = ""
+            
+            for (k=0;k<unique.length;k++){
+                lam_2 = lam_2+unique[k]+","
+            }
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_detalhes[i].impressao.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+lam1.substring(0,lam1.length-1)+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer">'+lam_2.substring(0,lam_2.length-1)+'</div>'
+            
+            cell4.innerHTML = '<div><img id="'+os_detalhes[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editar_estrutura()" style="cursor: pointer;"></div>'
+            cell5.innerHTML = '<div><img id="'+os_detalhes[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_estrutura()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagar_estrutura(){
+    if (confirm("Deseja mesmo apagar esse segmento?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_estruturas",linha)
+    preenche_tabela_estruturas()    
+    }
+     }
+    
+     function editar_estrutura(){
+     var linha = event.srcElement.id
+     document.getElementById("id_estrutura").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_estruturas",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_estruturas").style = "display: inline-block; width: 100%;"
+    document.getElementById("estrutura_impressao").value = busca_tipo.impressao
+    as_laminacoes = busca_tipo.laminacao
+    
+    preenche_tabela_laminacoes()
+    
+    
+    }
+    
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+    
+    function calcula_diametro(){
+        var perimetro = parseFloat(document.getElementById("perimetro_portacliche").value.replace(",","."))
+        
+        document.getElementById("diametro_portacliche").value = (perimetro/Math.PI).toFixed(3)
+        console.log(perimetro)
+        
+    }
+    
+    function busca_portacliche(){
+       var qtepecas = api.custom_objects.count("BR-VALFI_portacliche",["nomenclatura","equal to",document.getElementById("nomenclatura_portacliche").value]).count
+        document.getElementById("totalpecas_portacliche").value = qtepecas+1
+    }
+</script>
+
+    </body>
+
+</html>

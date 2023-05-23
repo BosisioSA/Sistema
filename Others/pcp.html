@@ -1,0 +1,2784 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Planejamento de Projeto</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+         <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload.js'></script>
+      
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload-controller.js'></script>
+       <script>
+            var queryString = window.location.search;
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+        </script>
+    
+       
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+               <ul class="active components mb-5">
+            <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/analisepacotegrafico.png" width="30px" style="margin-right: 10px">Pacote Gráfico</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li style="list-style-type: none">
+               <img src="./Icons/responsavel.png" width="20px" style="margin-right: 10px;"><span id="user_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/inicio.png" width="20px" style="margin-right: 10px"><span id="inicio_pacote" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/final.png" width="20px" style="margin-right: 10px"><span id="final_pacote" style="color: black;"></span>
+          </li>
+          
+          
+          </ul>
+         </li>
+            
+         
+         <li>
+              <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/analiseespecificacao.png" width="30px" style="margin-right: 10px">Especificação Técnica</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+            <li style="list-style-type: none">
+               <img src="./Icons/responsavel.png" width="20px" style="margin-right: 10px;"><span id="user_analiseespecificacao" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/inicio.png" width="20px" style="margin-right: 10px"><span id="inicio_analiseespecificacao" style="color: black;"></span>
+          </li>
+          <li style="list-style-type: none">
+               <img src="./Icons/final.png" width="20px" style="margin-right: 10px"><span id="final_analiseespecificacao" style="color: black;"></span>
+          </li>
+          
+          
+          </ul>
+         </li>
+            
+        
+       </ul>
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                  <div class="input-icons">
+                     <i class="fa fa-search icon"></i>
+                    <input id="filtrarTabela" class="input-field form-control" onkeyup="filtro_tabela()" style="width: 400px;border-top-left-radius: 40px;border-top-right-radius: 40px;border-bottom-left-radius: 40px;border-bottom-right-radius: 40px;" type="text"> 
+                    </div>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" onclick="logout()">Logout</a>
+                  </li>
+                 </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 70%;">
+        <h2 style="display:block;">Planejamento de Projeto</h2>
+        </div>
+       <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 25%;">
+            <h6 id="tempo_para_entrega">Tempo para entrega: 00:00hs</h6>
+        </div>
+        <hr>
+       <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="numero_ticket">Ticket Numero</label>
+            <input type="text" class="form-control"  id="numero_ticket" name="numero_ticket" readonly>
+        </div>
+         <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="item_ticket">Item</label>
+            <input type="text" class="form-control"  id="item_ticket" name="item_ticket" readonly>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 15%; margin-right: 2%">
+          <label for="cliente_ticket">Cliente</label>
+            <input type="text" class="form-control"   id="cliente_ticket" name="cliente_ticket" readonly>
+        </div> 
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 34%; margin-right: 2%">
+          <label for="descricao_ticket">Descrição</label>
+            <input type="text" class="form-control"   id="descricao_ticket" name="descricao_ticket" readonly>
+        </div>
+        <div class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-right: 2%">
+          <label for="criacao_ticket">Criado em</label>
+            <input type="text" class="form-control"   id="criacao_ticket" name="criacao_ticket" readonly>
+        </div> 
+        <section class="form-group" style="display:inline-block; vertical-align: base-line; width: 70%;"></section>
+        <div class="form-group" style="display:inline-block; vertical-align: base-line; width: 29%;">
+             <label for="data_inicio">Entrada</label>
+                  <input type="date" class="form-control" onchange="recalcula()" id="data_inicio" name="data_inicio">
+               
+        </div>
+      
+              <div class="form-group"  style="display:inline-block; vertical-align: top; width: 100%;">
+            <div class="table-responsive">
+            <table id="tabela_tempoPCP" class="table custom-table">
+          <thead>
+            <tr>
+             
+             
+              <th class="col" style="width: 50%;">Processo
+              </th>
+              <th class="col" style="width: 10%;">Data Início
+              </th>
+              <th class="col" style="width: 10%;">Data Término
+              </th>
+              <th class="col" style="width: 10%;">Apagar
+              </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+  
+      
+       
+                 
+                 
+                 
+                 <hr>
+                
+    
+    <button class="btn btn-primary" onclick="verifica_campos()">Salvar Ticket</button> <button class="btn btn-primary" onclick="devolver_comercial()">Devolver Comercial</button>
+    <div id="info_ticket"></div>
+                
+                
+              
+                
+                 
+                 
+       
+            
+    
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	    var usuario = api.auth.get_current_user()
+  	    
+  	    document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname
+  	 //   document.getElementById("data_entrega").value = "02:00"
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+
+ function array_move(arr, old_index, new_index) {
+    if (new_index >= arr.length) {
+        var k = new_index - arr.length + 1;
+        while (k--) {
+            arr.push(undefined);
+        }
+    }
+    arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+    return arr; // for testing
+};
+
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: kh
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function padWithZero(num, targetLength) {
+  return String(num).padStart(targetLength, '0')
+}
+
+// preenche dados se existe ordem
+
+if (usuario.scope_name != undefined){
+    var nome_scope = usuario.scope_name[0].split("_")
+   
+}
+
+
+
+
+// preenche Selects
+
+
+var hoje = new Date()
+document.getElementById("data_inicio").value = dateFormat(hoje,"yyyy-mm-dd")
+var calcula_data = new Date()
+
+
+//hoje.setDate(hoje.getDate()+30)
+//document.getElementById("data_entrega").value = dateFormat(hoje,"yyyy-mm-dd")
+
+// preenche dados to ticket
+
+    var busca_ticket = api.custom_objects.list_with_options("BR-TECNO_Tickets",["_id","equal to",ordem]).results[0]
+        
+      document.getElementById("numero_ticket").value = busca_ticket.numero_ticket
+      document.getElementById("cliente_ticket").value = busca_ticket.cliente
+      document.getElementById("descricao_ticket").value = busca_ticket.descricao
+      document.getElementById("item_ticket").value = busca_ticket.item
+      var dataentrada = new Date(busca_ticket.entrada_em)
+      var datacalculo = new Date(busca_ticket.entrada_em)
+      if (dataentrada.getDay() === 5){
+          var final = dataentrada.setDate(dataentrada.getDate()+3)
+      } else {
+          var final = dataentrada.setDate(dataentrada.getDate()+1)
+      }
+      console.log(final)
+      var agora = new Date()
+      var horas_diferenca = final-agora
+      console.log("HORAS DIFERENCA")
+      console.log(horas_diferenca)
+      document.getElementById("criacao_ticket").value = dateFormat(datacalculo,"dd/mm/yyyy")
+      var calcula_horas = parseInt(horas_diferenca/3600000)
+      var calcula_minutos = (horas_diferenca/3600000)%1
+      var minutos = parseInt(calcula_minutos*60)
+      if (calcula_horas < 4){
+       document.getElementById("tempo_para_entrega").style = "color:brown"   
+      }
+      if (calcula_horas < 2){
+       document.getElementById("tempo_para_entrega").style = "color: orange"   
+      }
+      if (calcula_horas < 0){
+       document.getElementById("tempo_para_entrega").style = "color: red"   
+      }
+      if (calcula_horas < 10 && calcula_horas > 0){
+          calcula_horas = "0"+calcula_horas
+      }
+      if (minutos < 0){
+          minutos = -minutos
+      }
+      if (minutos < 10 && minutos > 0){
+          minutos = "0"+minutos
+      }
+      document.getElementById("tempo_para_entrega").innerText = "Tempo para Entrega: "+calcula_horas+":"+minutos+"hs"
+
+  	</script>
+ 
+  	<script>
+  	
+  	function muda_figura(){
+  	    var lado = document.getElementById("lado_impressao").value
+  	    var puxada = document.getElementById("puxada_impressao").value
+  	    var figura = lado+puxada+".png"
+  	    document.getElementById("img_puxada").src = "./Icons/"+figura
+  	}
+  	
+  	function muda_encanoamento(){
+  	    
+  	    if (document.getElementById("inlineRadio1").checked === true){
+  	        document.getElementById("mostra_encanoamento").style.display = "inline-block"
+  	    } else {
+  	         document.getElementById("mostra_encanoamento").style.display = "none"
+  	    }
+  	    
+  	}
+  	
+  		function muda_passocontinuo(){
+  	    
+  	    if (document.getElementById("inlineRadio3").checked === true){
+  	        document.getElementById("mostra_passocontinuo").style.display = "inline-block"
+  	    } else {
+  	         document.getElementById("mostra_passocontinuo").style.display = "none"
+  	    }
+  	    
+  	}
+  		function muda_dureza(){
+  	    
+  	    if (document.getElementById("inlineRadio5").checked === true){
+  	        document.getElementById("mostra_dureza").style.display = "inline-block"
+  	    } else {
+  	         document.getElementById("mostra_dureza").style.display = "none"
+  	    }
+  	    
+  	}
+  	
+  	
+  	function verifica_campos(){
+  	    
+  var valido = true
+  
+  if (busca_ticket.des1 === undefined || busca_ticket.art1 === undefined || busca_ticket.eng === undefined){
+      valido = false
+  }
+ 
+   if (valido === true){
+   busca_ticket["pcp"] = os_tempos
+   
+     var temposdeexecucao = busca_ticket.tempos_processo
+     
+      var nextstage = []
+                    
+                   
+                   if (busca_ticket.amostra.valor == "Não"){ 
+                    if (busca_ticket.tipo_trabalho.valor != "Sem Pedido"){
+                    
+                        var tempo_processo = {}
+                        tempo_processo["inicio"] = new Date
+                        tempo_processo["etapa"] = "Disponibilidade de Cilindros"
+                        tempo_processo["formulario"] = "FORM3"
+                        tempo_processo["criado_por"] = usuario.fullname
+                         temposdeexecucao.push(tempo_processo)
+                         
+                          var proxima_etapa = {}
+                         proxima_etapa["forms"] = "FORM3"
+                        proxima_etapa["nomes"] = "Disponibilidade de Cilindros"
+                         proxima_etapa["inicio"] = new Date()
+                         proxima_etapa["dashboard"] = "prepress"
+                        var infohora = new Date()
+                        infohora.setDate(infohora.getDate()+1)
+                        proxima_etapa["final"] = new Date(infohora)
+                        nextstage.push(proxima_etapa)
+                    }
+                    
+                    if (busca_ticket.tipo_trabalho.valor == "Sem Pedido"){
+                    
+                        var tempo_processo = {}
+                        tempo_processo["inicio"] = new Date
+                        tempo_processo["etapa"] = "Checklist Arte"
+                        tempo_processo["formulario"] = "ART5"
+                        tempo_processo["criado_por"] = usuario.fullname
+                         temposdeexecucao.push(tempo_processo)
+                         
+                          var proxima_etapa = {}
+                         proxima_etapa["forms"] = "ART5"
+                        proxima_etapa["nomes"] = "Checklist Arte"
+                         proxima_etapa["inicio"] = new Date()
+                         proxima_etapa["dashboard"] = "prepress"
+                        var infohora = new Date()
+                        infohora.setDate(infohora.getDate()+1)
+                        proxima_etapa["final"] = new Date(infohora)
+                        nextstage.push(proxima_etapa)
+                    }
+                   } else {
+                       
+                        var tempo_processo = {}
+                        tempo_processo["inicio"] = new Date
+                        tempo_processo["etapa"] = "Informações Especificação do Cliente"
+                        tempo_processo["formulario"] = "DES2"
+                        tempo_processo["criado_por"] = usuario.fullname
+                         temposdeexecucao.push(tempo_processo)
+                         
+                          var proxima_etapa = {}
+                         proxima_etapa["forms"] = "DES2"
+                        proxima_etapa["nomes"] = "Informações Especificação do Cliente"
+                         proxima_etapa["inicio"] = new Date()
+                         proxima_etapa["dashboard"] = "desenvolvimento"
+                        var infohora = new Date()
+                        infohora.setDate(infohora.getDate()+1)
+                        proxima_etapa["final"] = new Date(infohora)
+                        nextstage.push(proxima_etapa)
+                       
+                   }
+                    
+                   
+               busca_ticket.tempos_processo = temposdeexecucao
+               busca_ticket.proxima_etapa = nextstage
+   
+   for (i=0;i<os_tempos.length;i++){
+       if (os_tempos[i].nome == "Produção"){
+           busca_ticket["data_inicio_producao"] = new Date(os_tempos[i].data_inicio)
+       }
+   }
+    console.log(busca_ticket)
+    
+    if (valido === true){
+       salva_ticket(busca_ticket)
+    }
+   } else {
+       alert("Não é possível terminar essa tarefa pois existem pendências em etapas anteriores!")
+   }
+    
+    
+  	
+  	}
+  	</script>
+  	
+   <script>
+       function salva_ticket(dados){
+          
+            
+            
+            
+            var atualiza = api.custom_objects.update("BR-TECNO_Tickets",busca_ticket)
+            console.log(atualiza)
+            document.getElementById("info_ticket").innerText = "Ticket atualizado com sucesso!"
+            
+           setTimeout(function(){window.open("pcp_dash_sp1.html","_self")}, 3000);
+       }
+       
+      
+   </script>
+   
+  <script>
+      
+      var os_tempos = api.custom_objects.list("BR-TECNO_tempoPremeet").results
+      
+      array_move(os_tempos,9,8)
+      array_move(os_tempos,17,16)
+      array_move(os_tempos,18,17)
+      array_move(os_tempos,19,18)
+      array_move(os_tempos,21,20)
+      array_move(os_tempos,31,29)
+      array_move(os_tempos,31,30)
+    
+    
+    for (i=0;i<os_tempos.length;i++){
+           os_tempos[i]["data_inicio"] = new Date(calcula_data)
+           
+           var soma_dias = parseInt(os_tempos[i].tempo)
+           
+            if (os_tempos[i].nome == "Abertura de Ticket pelo Comercial" || os_tempos[i].nome == "Envio de Especificação e Pacote gráfico"){
+            os_tempos[i]["data_inicio"] = new Date(calcula_data)
+            
+            if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+            }
+            calcula_data.setDate(calcula_data.getDate()+soma_dias)
+            if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+            }
+            if (calcula_data.getDay() === 0){
+                calcula_data.setDate(calcula_data.getDate()+1)
+            }
+            os_tempos[i]["data_final"] = new Date(calcula_data)
+            if (os_tempos[i].nome == "Abertura de Ticket pelo Comercial"){
+                var linha3 = new Date(calcula_data)
+            }
+            
+            if (os_tempos[i].nome == "Envio de Especificação e Pacote gráfico"){
+                 var linha2 = new Date(calcula_data)
+            }
+            }
+                else if (os_tempos[i].nome == "Análise crítica espec tec e envio da planta técnica para artes"){
+                console.log("estou na analise")
+                if (linha3 >= linha2){
+                  calcula_data = new Date(linha3)
+                 
+                } else {
+                 calcula_data = new Date(linha2) 
+                }
+                calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha4 = new Date(calcula_data)
+            } else if (os_tempos[i].nome == "Pré-Meeting"){
+                calcula_data = new Date(linha4)
+                calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   var linha5 = new Date(calcula_data) 
+                
+            } else if (os_tempos[i].nome == "Contagem do LT"){
+                calcula_data = new Date(linha5)
+                calcula_data.setDate(calcula_data.getDate())
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   var linha6 = new Date(calcula_data) 
+            } else if (os_tempos[i].nome == "Meeting" ||
+                       os_tempos[i].nome == "Análise de disponibilidade de cilindros" ||
+                       os_tempos[i].nome == "Envio da planta para produtora / especialista" ||
+                       os_tempos[i].nome == "Criação de item"){
+                calcula_data = new Date(linha5)
+                calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                if (os_tempos[i].nome == "Análise de disponibilidade de cilindros"){
+                    var linha8 = new Date(calcula_data)
+                }
+                if (os_tempos[i].nome == "Envio da planta para produtora / especialista"){
+                    var linha9 = new Date(calcula_data)
+                }
+                if (os_tempos[i].nome == "Criação de item"){
+                    var linha10 = new Date(calcula_data)
+                }
+            } else if (os_tempos[i].nome == "Revisão e liberação de item"){
+                calcula_data = new Date(linha10)
+                 calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha11 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Meeting de novos produtos"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.push(linha9)
+                tempos_anteriores.push(linha10)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha12 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Info Data de entrega"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.push(linha9)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   
+                
+            } else if(os_tempos[i].nome == "Análise itens para desgravar" ||
+                    os_tempos[i].nome == "Avaliação de MP"){
+                        calcula_data = new Date(linha12)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    if (os_tempos[i].nome == "Avaliação de MP"){
+                        var linha15 = new Date(calcula_data)
+                    }
+                        
+                
+            } else if(os_tempos[i].nome == "Abertura de pedido"){
+                        calcula_data = new Date(linha11)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha16 = new Date(calcula_data)
+                
+            }  else if(os_tempos[i].nome == "Geração automática OP"){
+                        calcula_data = new Date(linha16)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha17 = new Date(calcula_data)
+                
+            }  else if(os_tempos[i].nome == "Fila do preactor"){
+                        calcula_data = new Date(linha17)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha17 = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Compra de MP"){
+                        calcula_data = new Date(linha12)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  
+                
+            } else if(os_tempos[i].nome == "Solicitação de compra"){
+                        calcula_data = new Date(linha15)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha20 = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Envio de OC para fornecedor"){
+                        calcula_data = new Date(linha20)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha21 = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Chegada de MP"){
+                        calcula_data = new Date(linha21)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha22 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "PDF Aprovado"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha11)
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            } else if (os_tempos[i].nome == "Elaboração de PDF"){
+               
+               
+                calcula_data = new Date(linha12)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha24 = new Date(calcula_data) 
+                
+            }  else if (os_tempos[i].nome == "Envio de PDF para Desenvolvimento" ||
+                        os_tempos[i].nome == "Aprovação de PDF pelo Desenvolvimento"){
+               
+               
+                calcula_data = new Date(linha24)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 if (os_tempos[i].nome == "Aprovação de PDF pelo Desenvolvimento"){
+                     var linha26 = new Date(calcula_data)
+                 } 
+                
+            }  else if (os_tempos[i].nome == "Cilindros Liberados"){
+               
+               
+                calcula_data = new Date(linha26)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            }  else if (os_tempos[i].nome == "Ordem de serviço (CIL0005)"){
+               var tempos_anteriores = []
+                tempos_anteriores.push(linha26)
+                tempos_anteriores.push(linha17)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha28 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Gravação de Cilindros PB"){
+               
+               
+                calcula_data = new Date(linha28)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha29 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Análise crítica prova máquina e Liberação de artes"){
+               
+               
+                calcula_data = new Date(linha29)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            } else if (os_tempos[i].nome == "Análise crítica prova máquina e Liberação de artes"){
+               
+               
+                calcula_data = new Date(linha29)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            }  else if (os_tempos[i].nome == "Produção e Programação" ||
+                        os_tempos[i].nome == "Programação"){
+               
+               
+                calcula_data = new Date(linha22)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 if ( os_tempos[i].nome == "Programação"){
+                     var linha32 = new Date(calcula_data)
+                     console.log("sou a linha 32")
+                     console.log(linha32)
+                 }
+                
+            } else if (os_tempos[i].nome == "Produção"){
+               
+               
+                calcula_data = new Date(linha32)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                     var linha33 = new Date(calcula_data)
+                 
+                
+            } else if (os_tempos[i].nome == "Liberação e expedição"){
+               
+               
+                calcula_data = new Date(linha33)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                     var linha33 = new Date(calcula_data)
+                 
+                
+            }
+             
+             else {
+               os_tempos[i]["data_inicio"] = new Date(calcula_data)
+               os_tempos[i]["data_final"] = new Date(calcula_data)
+               
+            }
+    }
+       
+     
+    function preenche_premeet(){
+       
+       clearTable(document.getElementById("tabela_tempoPCP"))
+          
+        var data_inicial = new Date(document.getElementById("data_inicio").value)
+        
+    var table = document.getElementById("tabela_tempoPCP")
+       
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_tempos.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em;">'+os_tempos[i].nome+'</div>'
+            
+            
+            cell2.innerHTML = '<div style="font-size:1em;"><input type="date" class="form-control" style="width: 100%" onchange="recalcula_tempos()" id="recalcula_'+i+'" value="'+dateFormat(new Date(os_tempos[i]["data_inicio"]),"yyyy-mm-dd")+'" ></div>'
+             cell3.innerHTML = '<div style="font-size:1em;"><input type="date" class="form-control" style="width: 100%" onchange="recalcula_tempos()" id="recalcula2_'+i+'" value="'+dateFormat(new Date(os_tempos[i]["data_final"]),"yyyy-mm-dd")+'" ></div>'
+           cell4.innerHTML = '<div><img id="qualtempo_'+i+'" src="Icons/delete.png" height="30px" style="cursor: pointer;"></div>'
+         
+            //cell4.innerHTML = '<div><img id="qualtempo_'+i+'" src="Icons/delete.png" height="30px" onclick="apagar_tempo()" style="cursor: pointer;"></div>'
+        
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+    function apagar_tempo(){
+      var linha = event.srcElement.id
+      console.log(linha)
+      var linha_array = linha.split("_")
+      var numero = parseInt(linha_array[1])
+      console.log(os_tempos.length)
+      var tira = os_tempos.splice(numero,1)
+      console.log(os_tempos.length)
+      preenche_premeet()
+        
+    }
+    
+   
+    
+    
+    function recalcula_tempos(){
+           var linha = event.srcElement.id
+     // console.log(linha)
+        var linha_array = linha.split("_")
+         console.log(linha_array[0])
+         var numero = parseInt(linha_array[1])
+        console.log(numero)
+          
+             var calcula_data = new Date(document.getElementById(linha).value) 
+          calcula_data.setDate(calcula_data.getDate()+1)
+          console.log(calcula_data)
+         
+          
+          
+          if (linha_array[0] == "recalcula"){
+             os_tempos[numero]["data_inicio"] = new Date(calcula_data)
+             var soma_dias2 = parseInt(os_tempos[numero].tempo)
+             if (soma_dias2 > 0){
+                soma_dias2 = soma_dias2 - 1
+            }
+            calcula_data.setDate(calcula_data.getDate()+soma_dias2)
+            if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+            }
+            if (calcula_data.getDay() === 0){
+                calcula_data.setDate(calcula_data.getDate()+1)
+            }
+            os_tempos[numero]["data_final"] = new Date(calcula_data)
+         
+          } else {
+            
+            os_tempos[numero]["data_final"] = new Date(calcula_data) 
+            
+          }
+          
+          
+           for (i=0;i<numero+1;i++){
+              console.log(i)
+              
+              if (os_tempos[i].nome == "Abertura de Ticket pelo Comercial"){
+                 var linha3 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Envio de Especificação e Pacote gráfico"){
+                 var linha2 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Análise crítica espec tec e envio da planta técnica para artes"){
+                 var linha4 = new Date(os_tempos[i].data_final) 
+                 console.log("liunha 4")
+                 console.log(linha4)
+              }
+              if (os_tempos[i].nome == "Pré-Meeting"){
+                 var linha5 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Contagem do LT"){
+                 var linha6 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Análise de disponibilidade de cilindros"){
+                 var linha8 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Envio da planta para produtora / especialista"){
+                 var linha9 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Criação de item"){
+                 var linha10 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Revisão e liberação de item"){
+                 var linha11 = new Date(os_tempos[i].data_final) 
+              }
+               if (os_tempos[i].nome == "Meeting de novos produtos"){
+                 var linha12 = new Date(os_tempos[i].data_final) 
+              }
+               if (os_tempos[i].nome == "Avaliação de MP"){
+                 var linha15 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Abertura de pedido"){
+                 var linha16 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Geração automática OP"){
+                 var linha17 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Solicitação de compra"){
+                 var linha20 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Envio de OC para fornecedor"){
+                 var linha21 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Chegada de MP"){
+                 var linha22 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Elaboração de PDF"){
+                 var linha24 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Aprovação de PDF pelo Desenvolvimento"){
+                 var linha26 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Ordem de serviço (CIL0005)"){
+                 var linha28 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Gravação de Cilindros PB"){
+                 var linha29 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Programação"){
+                 var linha32 = new Date(os_tempos[i].data_final) 
+              }
+              if (os_tempos[i].nome == "Produção"){
+                 var linha33 = new Date(os_tempos[i].data_final) 
+              }
+          }
+          
+          for (i=numero+1;i<os_tempos.length;i++){
+           
+           
+           
+           var soma_dias = parseInt(os_tempos[i].tempo)
+           
+            if (os_tempos[i].nome == "Abertura de Ticket pelo Comercial" || os_tempos[i].nome == "Envio de Especificação e Pacote gráfico"){
+           if (linha_array[0] == "recalcula"){
+            os_tempos[i]["data_inicio"] = new Date(calcula_data)
+           }
+            
+            if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+            }
+            calcula_data.setDate(calcula_data.getDate()+soma_dias)
+            if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+            }
+            if (calcula_data.getDay() === 0){
+                calcula_data.setDate(calcula_data.getDate()+1)
+            }
+            os_tempos[i]["data_final"] = new Date(calcula_data)
+            if (os_tempos[i].nome == "Abertura de Ticket pelo Comercial"){
+                var linha3 = new Date(calcula_data)
+            }
+            
+            if (os_tempos[i].nome == "Envio de Especificação e Pacote gráfico"){
+                 var linha2 = new Date(calcula_data)
+            }
+            }
+                else if (os_tempos[i].nome == "Análise crítica espec tec e envio da planta técnica para artes"){
+                console.log("estou na analise")
+                if (linha3 >= linha2){
+                  calcula_data = new Date(linha3)
+                 
+                } else {
+                 calcula_data = new Date(linha2) 
+                }
+                calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha4 = new Date(calcula_data)
+            } else if (os_tempos[i].nome == "Pré-Meeting"){
+                calcula_data = new Date(linha4)
+                calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   var linha5 = new Date(calcula_data) 
+                
+            } else if (os_tempos[i].nome == "Contagem do LT"){
+                calcula_data = new Date(linha5)
+                calcula_data.setDate(calcula_data.getDate())
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   var linha6 = new Date(calcula_data) 
+            } 
+            else if (os_tempos[i].nome == "Meeting" ||
+                       os_tempos[i].nome == "Análise de disponibilidade de cilindros" ||
+                       os_tempos[i].nome == "Envio da planta para produtora / especialista" ||
+                       os_tempos[i].nome == "Criação de item"){
+                calcula_data = new Date(linha5)
+                calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                if (os_tempos[i].nome == "Análise de disponibilidade de cilindros"){
+                    var linha8 = new Date(calcula_data)
+                }
+                if (os_tempos[i].nome == "Envio da planta para produtora / especialista"){
+                    var linha9 = new Date(calcula_data)
+                }
+                if (os_tempos[i].nome == "Criação de item"){
+                    var linha10 = new Date(calcula_data)
+                }
+            } else if (os_tempos[i].nome == "Revisão e liberação de item"){
+                calcula_data = new Date(linha10)
+                 calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha11 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Meeting de novos produtos"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.push(linha9)
+                tempos_anteriores.push(linha10)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha12 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Info Data de entrega"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.push(linha9)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   
+                
+            } else if(os_tempos[i].nome == "Análise itens para desgravar" ||
+                    os_tempos[i].nome == "Avaliação de MP"){
+                        calcula_data = new Date(linha12)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    if (os_tempos[i].nome == "Avaliação de MP"){
+                        var linha15 = new Date(calcula_data)
+                    }
+                        
+                
+            } else if(os_tempos[i].nome == "Abertura de pedido"){
+                        calcula_data = new Date(linha11)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha16 = new Date(calcula_data)
+                
+            }  else if(os_tempos[i].nome == "Geração automática OP"){
+                        calcula_data = new Date(linha16)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha17 = new Date(calcula_data)
+                
+            }  else if(os_tempos[i].nome == "Fila do preactor"){
+                        calcula_data = new Date(linha17)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Compra de MP"){
+                        calcula_data = new Date(linha12)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  
+                
+            } else if(os_tempos[i].nome == "Solicitação de compra"){
+                        calcula_data = new Date(linha15)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha20 = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Envio de OC para fornecedor"){
+                        calcula_data = new Date(linha20)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha21 = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Chegada de MP"){
+                        calcula_data = new Date(linha21)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha22 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "PDF Aprovado"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha11)
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            } else if (os_tempos[i].nome == "Elaboração de PDF"){
+               
+               
+                calcula_data = new Date(linha12)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha24 = new Date(calcula_data) 
+                
+            }  else if (os_tempos[i].nome == "Envio de PDF para Desenvolvimento" ||
+                        os_tempos[i].nome == "Aprovação de PDF pelo Desenvolvimento"){
+               
+               
+                calcula_data = new Date(linha24)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 if (os_tempos[i].nome == "Aprovação de PDF pelo Desenvolvimento"){
+                     var linha26 = new Date(calcula_data)
+                 } 
+                
+            }  else if (os_tempos[i].nome == "Cilindros Liberados"){
+               
+               
+                calcula_data = new Date(linha26)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            }  else if (os_tempos[i].nome == "Ordem de serviço (CIL0005)"){
+               var tempos_anteriores = []
+                tempos_anteriores.push(linha26)
+                tempos_anteriores.push(linha17)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha28 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Gravação de Cilindros PB"){
+               
+               
+                calcula_data = new Date(linha28)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha29 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Análise crítica prova máquina e Liberação de artes"){
+               
+               
+                calcula_data = new Date(linha29)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            }  else if (os_tempos[i].nome == "Produção e Programação" ||
+                        os_tempos[i].nome == "Programação"){
+               
+               
+                calcula_data = new Date(linha22)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 if ( os_tempos[i].nome == "Programação"){
+                     var linha32 = new Date(calcula_data)
+                     console.log("sou a linha 32")
+                     console.log(linha32)
+                 }
+                
+            } else if (os_tempos[i].nome == "Produção"){
+               
+               
+                calcula_data = new Date(linha32)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                     var linha33 = new Date(calcula_data)
+                 
+                
+            } else if (os_tempos[i].nome == "Liberação e expedição"){
+               
+               
+                calcula_data = new Date(linha33)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                     var linha33 = new Date(calcula_data)
+                 
+                
+            }
+             
+             else {
+               os_tempos[i]["data_inicio"] = new Date(calcula_data)
+               os_tempos[i]["data_final"] = new Date(calcula_data)
+               
+            }
+    }
+    preenche_premeet()
+    }
+    
+    function recalcula(){
+          
+        var calcula_data = new Date(document.getElementById("data_inicio").value) 
+          calcula_data.setHours(calcula_data.getHours()+4)
+          console.log(calcula_data)
+         
+          
+          
+         
+          
+          
+         var data_de_inicio = new Date(calcula_data)
+          
+          for (i=0;i<os_tempos.length;i++){
+           
+           
+           
+           var soma_dias = parseInt(os_tempos[i].tempo)
+           
+            if (os_tempos[i].nome == "Abertura de Ticket pelo Comercial" || os_tempos[i].nome == "Envio de Especificação e Pacote gráfico"){
+        
+            os_tempos[i]["data_inicio"] = new Date(data_de_inicio)
+           
+            
+            if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+            }
+            calcula_data.setDate(calcula_data.getDate()+soma_dias)
+            if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+            }
+            if (calcula_data.getDay() === 0){
+                calcula_data.setDate(calcula_data.getDate()+1)
+            }
+            os_tempos[i]["data_final"] = new Date(calcula_data)
+            if (os_tempos[i].nome == "Abertura de Ticket pelo Comercial"){
+                var linha3 = new Date(calcula_data)
+            }
+            
+            if (os_tempos[i].nome == "Envio de Especificação e Pacote gráfico"){
+                 var linha2 = new Date(calcula_data)
+            }
+            }
+                else if (os_tempos[i].nome == "Análise crítica espec tec e envio da planta técnica para artes"){
+                console.log("estou na analise")
+                if (linha3 >= linha2){
+                  calcula_data = new Date(linha3)
+                 
+                } else {
+                 calcula_data = new Date(linha2) 
+                }
+                calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha4 = new Date(calcula_data)
+            } else if (os_tempos[i].nome == "Pré-Meeting"){
+                calcula_data = new Date(linha4)
+                calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   var linha5 = new Date(calcula_data) 
+                
+            } else if (os_tempos[i].nome == "Contagem do LT"){
+                calcula_data = new Date(linha5)
+                calcula_data.setDate(calcula_data.getDate())
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   var linha6 = new Date(calcula_data) 
+            } 
+            else if (os_tempos[i].nome == "Meeting" ||
+                       os_tempos[i].nome == "Análise de disponibilidade de cilindros" ||
+                       os_tempos[i].nome == "Envio da planta para produtora / especialista" ||
+                       os_tempos[i].nome == "Criação de item"){
+                calcula_data = new Date(linha5)
+                calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                if (os_tempos[i].nome == "Análise de disponibilidade de cilindros"){
+                    var linha8 = new Date(calcula_data)
+                }
+                if (os_tempos[i].nome == "Envio da planta para produtora / especialista"){
+                    var linha9 = new Date(calcula_data)
+                }
+                if (os_tempos[i].nome == "Criação de item"){
+                    var linha10 = new Date(calcula_data)
+                }
+            } else if (os_tempos[i].nome == "Revisão e liberação de item"){
+                calcula_data = new Date(linha10)
+                 calcula_data.setDate(calcula_data.getDate()+1)
+                 if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha11 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Meeting de novos produtos"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.push(linha9)
+                tempos_anteriores.push(linha10)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha12 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Info Data de entrega"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.push(linha9)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                   
+                
+            } else if(os_tempos[i].nome == "Análise itens para desgravar" ||
+                    os_tempos[i].nome == "Avaliação de MP"){
+                        calcula_data = new Date(linha12)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    if (os_tempos[i].nome == "Avaliação de MP"){
+                        var linha15 = new Date(calcula_data)
+                    }
+                        
+                
+            } else if(os_tempos[i].nome == "Abertura de pedido"){
+                        calcula_data = new Date(linha11)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha16 = new Date(calcula_data)
+                
+            }  else if(os_tempos[i].nome == "Geração automática OP"){
+                        calcula_data = new Date(linha16)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha17 = new Date(calcula_data)
+                
+            }  else if(os_tempos[i].nome == "Fila do preactor"){
+                        calcula_data = new Date(linha17)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Compra de MP"){
+                        calcula_data = new Date(linha12)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  
+                
+            } else if(os_tempos[i].nome == "Solicitação de compra"){
+                        calcula_data = new Date(linha15)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha20 = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Envio de OC para fornecedor"){
+                        calcula_data = new Date(linha20)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha21 = new Date(calcula_data)
+                
+            } else if(os_tempos[i].nome == "Chegada de MP"){
+                        calcula_data = new Date(linha21)
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                  var linha22 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "PDF Aprovado"){
+                var tempos_anteriores = []
+                tempos_anteriores.push(linha11)
+                tempos_anteriores.push(linha8)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            } else if (os_tempos[i].nome == "Elaboração de PDF"){
+               
+               
+                calcula_data = new Date(linha12)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                    var linha24 = new Date(calcula_data) 
+                
+            }  else if (os_tempos[i].nome == "Envio de PDF para Desenvolvimento" ||
+                        os_tempos[i].nome == "Aprovação de PDF pelo Desenvolvimento"){
+               
+               
+                calcula_data = new Date(linha24)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 if (os_tempos[i].nome == "Aprovação de PDF pelo Desenvolvimento"){
+                     var linha26 = new Date(calcula_data)
+                 } 
+                
+            }  else if (os_tempos[i].nome == "Cilindros Liberados"){
+               
+               
+                calcula_data = new Date(linha26)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            }  else if (os_tempos[i].nome == "Ordem de serviço (CIL0005)"){
+               var tempos_anteriores = []
+                tempos_anteriores.push(linha26)
+                tempos_anteriores.push(linha17)
+                tempos_anteriores.sort()
+                calcula_data = new Date(tempos_anteriores[tempos_anteriores.length-1])
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha28 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Gravação de Cilindros PB"){
+               
+               
+                calcula_data = new Date(linha28)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 var linha29 = new Date(calcula_data)
+                
+            } else if (os_tempos[i].nome == "Análise crítica prova máquina e Liberação de artes"){
+               
+               
+                calcula_data = new Date(linha29)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                
+            }  else if (os_tempos[i].nome == "Produção e Programação" ||
+                        os_tempos[i].nome == "Programação"){
+               
+               
+                calcula_data = new Date(linha22)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 if ( os_tempos[i].nome == "Programação"){
+                     var linha32 = new Date(calcula_data)
+                     console.log("sou a linha 32")
+                     console.log(linha32)
+                 }
+                
+            } else if (os_tempos[i].nome == "Produção"){
+               
+               
+                calcula_data = new Date(linha32)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                     var linha33 = new Date(calcula_data)
+                 
+                
+            } else if (os_tempos[i].nome == "Liberação e expedição"){
+               
+               
+                calcula_data = new Date(linha33)
+                if (calcula_data.getDay() === 6){
+                calcula_data.setDate(calcula_data.getDate()+2)
+                }
+                if (calcula_data.getDay() === 0){
+                    calcula_data.setDate(calcula_data.getDate()+1)
+                }
+                 os_tempos[i]["data_inicio"] = new Date(calcula_data)
+                 if (soma_dias > 0){
+                soma_dias = soma_dias - 1
+                 }
+                 calcula_data.setDate(calcula_data.getDate()+soma_dias)
+                    if (calcula_data.getDay() === 6){
+                        calcula_data.setDate(calcula_data.getDate()+2)
+                    }
+                    if (calcula_data.getDay() === 0){
+                        calcula_data.setDate(calcula_data.getDate()+1)
+                    }
+                    os_tempos[i]["data_final"] = new Date(calcula_data)
+                 
+                     var linha33 = new Date(calcula_data)
+                 
+                
+            }
+             
+             else {
+               os_tempos[i]["data_inicio"] = new Date(calcula_data)
+               os_tempos[i]["data_final"] = new Date(calcula_data)
+               
+            }
+    }
+    preenche_premeet()
+    }
+    
+   preenche_premeet()
+  </script>
+  
+  
+  	
+  
+<script>
+  
+     function filtro_tabela() {
+      var input, filter, table, tr, td, td2,td3,td4,td5,td6, i, txtValue;
+      input = document.getElementById("filtrarTabela");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_tempoPCP");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        td2 = tr[i].getElementsByTagName("td")[2];
+        td3 = tr[i].getElementsByTagName("td")[3];
+        td4 = tr[i].getElementsByTagName("td")[4];
+        td5 = tr[i].getElementsByTagName("td")[5];
+        td6 = tr[i].getElementsByTagName("td")[7];
+        if (td || td2 || td3 || td4 || td5 || td6) {
+          txtValue = td.textContent || td.innerText;
+          txtValue2 = td2.textContent || td2.innerText;
+          txtValue3 = td3.textContent || td3.innerText;
+          txtValue4 = td4.textContent || td4.innerText;
+          txtValue5 = td5.textContent || td5.innerText;
+          txtValue6 = td6.textContent || td6.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1 
+                || txtValue2.toUpperCase().indexOf(filter) > -1
+                || txtValue3.toUpperCase().indexOf(filter) > -1
+                || txtValue4.toUpperCase().indexOf(filter) > -1
+                || txtValue5.toUpperCase().indexOf(filter) > -1
+                || txtValue6.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    
+    
+
+</script>
+
+
+
+
+
+
+    </body>
+
+</html>

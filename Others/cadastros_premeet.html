@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Cadastro de Processo - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+       <style>
+       
+    </style>
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+           <ul class="active components mb-5">
+             <li style="list-style-type: none">
+                     <a href="cadastros_processo.html"><img src="./Icons/relogio.png" width="30px" style="margin-right: 10px">Processos</a>
+                    </li>
+                 <li class="active"  style="list-style-type: none">
+                     <a href="cadastros_premeet.html"><img src="./Icons/premeet.png" width="30px" style="margin-right: 10px">Pre Meeting</a>
+                    </li>
+            </ul>
+              <!--       <li class="active" style="color: #004b93; list-style-type: none">Cadastros
+                  <ul>
+                       <li style="list-style-type: none">
+                     <a href="cadastros_clientes.html"><i class="fas fa-user-tie" style="margin-right: 5px"></i>Clientes</a>
+                    </li>
+                 <li  style="list-style-type: none">
+                     <a href="cadastros_fornecedores.html"><i class="fas fa-receipt" style="margin-right: 5px"></i>Fornecedores</a>
+                    </li>
+                     <li class="active" style="list-style-type: none">
+                     <a href="cadastros_tecnicos.html"><i class="fas fa-cogs" style="margin-right: 5px"></i>Técnicos</a>
+                    </li>
+                      <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Sequência de Tinta</a>
+  	                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li class="active" style="list-style-type: none">
+                     <a href="receita_tintas.html"><i class="fas fa-swatchbook" style="margin-right: 5px"></i>Criar Sequência</a>
+                    </li>
+                    <li  style="list-style-type: none">
+                     <a href="lista_receitas.html"><i class="fas fa-swatchbook" style="margin-right: 5px"></i>Lista Sequências</a>
+                    </li>
+                    <li style="list-style-type: none">
+                     <a href="cadastros_tintas.html"><i class="fas fa-receipt" style="margin-right: 5px"></i>Lista de Cores</a>
+                    </li>
+                    </ul>
+                </li>
+                    </ul>
+                </ul>
+                <ul class="components mb-5">
+                   <li style="color: #004b93; list-style-type: none">Anilox
+                  <ul>
+                     <li style="list-style-type: none">
+                     <a href="cadastros_anilox.html"><i class="fas fa-cog" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                    <li  style="list-style-type: none">
+                     <a href="alteracao_bcm_anilox.html"><i class="fas fa-wrench" style="margin-right: 5px"></i>Alteração BCM</a>
+                    </li>
+                    <li style="list-style-type: none">
+                     <a href="lavagem_anilox.html"><i class="fas fa-biohazard" style="margin-right: 5px"></i>Registrar Lavagem</a>e
+                    </li>
+                    </ul>
+                </ul>-->
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item">
+                    <div class="input-icons">
+                     <i class="fa fa-search icon"></i>
+                    <input id="filtrarTabela" class="input-field form-control" onkeyup="filtro_tabela()" style="width: 400px;border-top-left-radius: 40px;border-top-right-radius: 40px;border-bottom-left-radius: 40px;border-bottom-right-radius: 40px;" type="text"> 
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+       
+        
+       
+       
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+       
+       
+          
+             <div id="id_tempoArteValfilm" style="display:none"></div>
+              <div id="id_tempoProcessoTecnoval" style="display:none"></div>
+             
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+            
+    
+  
+       
+            
+                <h5 id="a_div_planta"><i id="plantaArrow" class="fas fa-plus-square" onclick="mostraPlantas()" style="margin-right: 5px; cursor:pointer;"></i>Novo Tempo</h5>
+                 <div id="info_planta" class="form-group" style="display: none">
+   
+                  <div id="info_tempoPremeet" class="form-group" style="display: inline-block; width: 100%;">
+            
+               
+                
+                 
+                 <div  class="form-group col-md-5" style="display:inline-block; vertical-align: top">
+                <label for="processo_tecnoval">Processo</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="processo_tecnoval" name="processo_tecnoval">
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="tempo_tecnoval">Tempo</label>
+                  <input type="text" class="form-control"   id="tempo_tecnoval" name="tempo_tecnoval">
+                 </div>
+                  <div  class="form-group col-md-4" style="display:inline-block; vertical-align: top;">
+                <label>Horas Disponíveis</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions2"  id="inlineRadio5" value="dias_corridos" checked>
+                    <label class="form-check-label" for="inlineRadio5">Dias Corridos</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="horario_comercial">
+                    <label class="form-check-label" for="inlineRadio4">Horário Comercial</label>
+                </div>
+                
+                </div>
+                <!-- <div  class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+                <label>Possível Recálculo</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="possivel_recalculo">
+                    <label class="form-check-label" for="inlineRadio2">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions3"  id="inlineRadio3" value="impossivel_recalculo" checked>
+                    <label class="form-check-label" for="inlineRadio3">Não</label>
+                </div>
+                </div>-->
+                <br>
+                
+                
+                 <button class="btn btn-primary" onclick="salvar_tempoProcessoPremeet()" style="cursor: pointer">Salvar Processo</button>
+                 
+             <br>
+             <br>
+             </div>
+            </div>
+             
+                 
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+             <div class="table-responsive">
+            <table id="tabela_tempoProcessoPreMeet" class="table custom-table">
+          <thead>
+            <tr>
+             
+             
+              <th class="col" style="width: 45%;">Etapa<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="col" style="width: 15%;">Tempo Estimado<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+             <th class="col" style="width: 20%;">Horas.
+            </th>
+            
+               <th class="col" style="width: 10%;">Editar
+            </th>
+            
+              <th class="col" style="width: 10%;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+             
+             
+             
+        
+        
+     
+        
+       
+        
+        
+               
+                
+                
+        
+            
+             
+          
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	
+ 
+  	
+  	    // funcoes de apoio
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+  	</script>
+  	
+  	<script>
+  	
+  // preenche selects
+  
+  
+    
+  //  selectTipo15 = document.getElementById('fornecedor_portacliche');
+  
+  
+//    var tiposTipo15 = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","portacliche"]).results
+  //  for (var i = 0; i<tiposTipo15.length; i++){
+//        var opt = document.createElement('option');
+ //       opt.value = tiposTipo15[i].nome;
+  //      opt.innerHTML = tiposTipo15[i].nome;
+//        selectTipo15.appendChild(opt);
+ //   }
+    
+   
+    
+    </script>
+  	
+  	
+  
+  
+<script>
+    function reply_delete_contato(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].nome)
+        if (contatos[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos()
+    }
+</script>
+     
+
+      
+ 
+
+
+<script>
+
+
+function salvar_tempoProcessoPremeet(){
+    
+    var data = {}
+    
+    data["nome"] = document.getElementById("processo_tecnoval").value
+    data["tempo"] = document.getElementById("tempo_tecnoval").value
+    if (document.getElementById("inlineRadio4").checked === true){
+        data["horario"] = "Horário Comercial"
+    } else {
+       data["horario"] = "Dias Corridos" 
+    }
+    
+    data["a_planta"] = "SP1"
+    console.log(data)
+    if (document.getElementById("id_tempoProcessoTecnoval").innerText == ""){
+      var cria = api.hub.start_from_whitepaper_with_files_and_variables("[CADASTRO PROCESSO]","tempoProcessoMeetSP1_Criar",[],data)
+      document.getElementById("inlineRadio4").checked = true
+      document.getElementById("inlineRadio5").checked = false
+      document.getElementById("tempo_tecnoval").value = ""
+      document.getElementById("processo_tecnoval").value = ""
+     
+      setTimeout(mostraPlantas(),1000)
+    } else {
+        data["_id"] = document.getElementById("id_tempoProcessoTecnoval").innerText
+        api.hub.start_from_whitepaper_with_files_and_variables("[CADASTRO PROCESSO]","tempoProcessoMeetSP1_Alterar",[],data)
+      document.getElementById("inlineRadio4").checked = true
+      document.getElementById("inlineRadio5").checked = false
+      document.getElementById("tempo_tecnoval").value = ""
+      document.getElementById("processo_tecnoval").value = ""
+      setTimeout(mostraPlantas(),1000)
+    }
+    
+}
+  
+       
+     
+    function preenche_processopremeet(){
+        var os_tempos = api.custom_objects.list_with_options("BR-TECNO_tempoPremeet").results
+    
+       clearTable(document.getElementById("tabela_tempoProcessoPreMeet"))
+          
+    
+            var table = document.getElementById("tabela_tempoProcessoPreMeet")
+       
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_tempos.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_tempos[i].nome.toUpperCase()+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_tempos[i].tempo+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_tempos[i].horario+'</div>'
+            cell4.innerHTML = '<div><img id="'+os_tempos[i]._id+'" src="Icons/edit.png" height="30px" onclick="editar_tempo2()" style="cursor: pointer;"></div>'
+            cell5.innerHTML = '<div><img id="'+os_tempos[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_tempo2()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     
+     
+      
+     function apagar_tempo2(){
+    if (confirm("Deseja mesmo apagar esse tempo?") === true){     
+    var linha = event.srcElement.id
+    
+    
+    api.custom_objects.delete("BR-TECNO_tempoPremeet",linha)
+   preenche_processopremeet()  
+    }
+     }
+     
+     
+     
+    
+     function editar_tempo2(){
+     var linha = event.srcElement.id
+     console.log(linha)
+     document.getElementById("id_tempoProcessoTecnoval").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("BR-TECNO_tempoPremeet",["_id","equal to",linha]).results[0]
+    console.log(busca_tipo)
+    
+    if (busca_tipo.horario == "Horário Comercial"){
+        document.getElementById("inlineRadio4").checked = true
+      document.getElementById("inlineRadio5").checked = false
+        
+    } else {
+        document.getElementById("inlineRadio4").checked = false
+      document.getElementById("inlineRadio5").checked = true
+    }
+    
+    
+    document.getElementById("processo_tecnoval").value = busca_tipo.nome
+    document.getElementById("tempo_tecnoval").value = busca_tipo.tempo
+    
+    
+     var div_cliente = document.getElementById("info_planta")
+        var icone = document.getElementById("plantaArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                 document.getElementById("inlineRadio4").checked = true
+                  document.getElementById("inlineRadio5").checked = false 
+                document.getElementById("processo_tecnoval").value = ""
+                document.getElementById("tempo_tecnoval").value = ""
+                div_cliente.style.display = "none";
+            }
+    
+    preenche_processopremeet()
+    
+    }
+    
+    function cancelar_tempoArteValfilm(){
+      document.getElementById("inlineRadio4").checked = true
+      document.getElementById("inlineRadio5").checked = false 
+    document.getElementById("processo_tecnoval").value = ""
+    document.getElementById("tempo_tecnoval").value = ""
+     setTimeout(function(){mostraPlantas()},1000)
+     
+    }
+    
+    
+      
+</script>
+
+
+ <script>
+       function filtro_tabela() {
+      var input, filter, table, tr, td, td2, td3, i, txtValue;
+      input = document.getElementById("filtrarTabela");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_tempoProcessoPreMeet");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        td2 = tr[i].getElementsByTagName("td")[1];
+        td3 = tr[i].getElementsByTagName("td")[2];
+        if (td || td2 || td3 || td4) {
+          txtValue = td.textContent || td.innerText;
+          txtValue2 = td2.textContent || td2.innerText;
+          txtValue3 = td3.textContent || td3.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1 || txtValue3.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+    
+    </script>
+
+<script>
+
+     function mostraPlantas(){
+         
+        var div_cliente = document.getElementById("info_planta")
+        var icone = document.getElementById("plantaArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                 document.getElementById("inlineRadio4").checked = true
+                  document.getElementById("inlineRadio5").checked = false 
+                document.getElementById("processo_tecnoval").value = ""
+                document.getElementById("tempo_tecnoval").value = ""
+                div_cliente.style.display = "none";
+            }
+      preenche_processopremeet()
+      }
+      
+      
+       function mostraTempoArte2(){
+         
+        var div_cliente = document.getElementById("info_tempoArte2")
+        var icone = document.getElementById("tempoArte2Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+          preenche_processotecnoval()
+            } else {
+                div_cliente.style.display = "none";
+            }
+       
+      }//
+      preenche_processopremeet()
+      </script>
+
+    </body>
+
+</html>

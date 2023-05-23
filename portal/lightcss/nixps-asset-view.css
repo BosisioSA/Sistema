@@ -1,0 +1,928 @@
+/*********************************************************************/
+/* NiXPS Asset View CSS                                              */
+/*                                                                   */
+/* Copyright 2012-2013, NiXPS (www.nixps.com)                        */
+/*********************************************************************/
+
+/*********************************************************************/
+/*  ASSET PREVIEW                                                    */
+/*********************************************************************/
+
+div.asset-properties div.asset-preview {
+    margin-top: 0px;
+}
+
+div.asset-preview
+{
+    display: none;
+    position: relative;
+    padding-top: 6px;
+    min-height: 160px;
+    width: 100%;
+    background: rgb(242,247,250);
+}
+.nixps-cloudflow-CloudflowBar ~ .nixps-cloudflow-TopNavigation ~ div.asset-preview {
+    margin-top: 66px;
+}
+.assetview_detailsview div.asset-preview {
+    width: 50%;
+}
+div.asset-preview .asset-breadcrumb
+{
+    position: absolute;
+    left: 10px;
+}
+
+div.asset-preview .asset-breadcrumb a
+{
+    font-size: 15px;
+    text-decoration: none;
+}
+
+div.asset-preview .asset-breadcrumb a:hover
+{
+    text-decoration: underline;
+}
+
+div.asset-preview .asset-breadcrumb .filestoreIcon {
+    width: 15px;
+    height: 15px;
+    margin-bottom: -3px;
+}
+
+div.asset-preview .asset-breadcrumb .breadcrumb_rootname {
+    font-style: italic;
+    margin-left: 3px;
+}
+
+div.asset-preview .asset-thumb
+{
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    height: 125px;
+    width: 155px;
+}
+
+div.asset-preview .asset-thumb img.transparent
+{
+    border: none;
+}
+
+div.asset-preview .asset-thumb img
+{
+    border: 1px solid #181818;
+    max-height: 117px;
+    max-width: 117px;
+    margin: auto;
+}
+
+div.asset-preview .asset-thumb img.thumbIcon {
+    width: 150px;
+    height: 150px;
+}
+
+div.asset-preview .asset-thumb .loadingtext
+{
+    position: absolute;
+    bottom: 25%;
+    text-align: center;
+    width: 100%;
+    visibility: hidden;
+    -webkit-transition:none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+div.asset-preview .asset-thumb img.loading + div.loadingtext {
+    /* add delay to disable if loading appears only a very short time
+       some only show when it takes a while
+    */
+    -webkit-transition: visibility 100ms;
+    -moz-transition: visibility 100ms;
+    -o-transition: visibility 100ms;
+    transition: visibility 100ms;
+    -webkit-transition-delay: 2s;
+    -moz-transition-delay: 2s;
+    -o-transition-delay: 2s;
+    transition-delay: 2s;
+    visibility: visible;
+}
+
+div.asset-preview .asset-text
+{
+    position: absolute;
+    top: 37px;
+    left: 225px;
+}
+
+div.asset-preview .asset-name
+{
+    font-size: 24px;
+}
+
+div.asset-preview .asset-type
+{
+   
+}
+
+div.asset-preview .asset-actions
+{  
+    position: absolute;
+    height: 26px;
+    left: 217px;
+    top: 127px;
+    right: 20px;
+}
+
+.assetview_detailsview div.asset-preview .asset-actions > *:not([data-action="iconview"]) {
+    display: none;
+}
+
+div.asset-preview .search-container {
+    position: absolute;
+    right: 25px;
+    top: 116px;
+}
+
+div.asset-preview .search-container .searchwhiletypingicon {
+    visibility: hidden;
+    cursor: pointer;
+    margin-left: 5px;
+    position: relative;
+    top: 3px;
+}
+
+div.asset-preview .search-container .more-search-settings {
+    visibility: hidden;
+    font-size: 14px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+div.asset-preview .search-container:hover .searchwhiletypingicon,
+div.asset-preview .search-container:hover .more-search-settings {
+    visibility: visible;
+}
+
+div.asset-preview .search-container:not(.searchOnTyping) .search-icon {
+    cursor: pointer;
+    color: #c3c3c3;
+}
+div.asset-preview .search-container:not(.searchOnTyping) .searchwhiletypingicon {
+    color: #c3c3c3;
+}
+
+div.asset-preview .search-container:not(.searchOnTyping).searching .search-icon {
+    color: #747C83;
+}
+
+div.asset-preview input
+{
+    background-color: white;
+    
+    color: #333;
+    width: 250px;
+    border-radius: 17px;
+    border: 1px solid #0080BF;
+    
+    outline: none;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div.asset-preview .search-icon
+{
+    position: absolute;
+    top: 12px;
+    right: 258px;
+}
+
+div.asset-preview .removeSearchTextIcon {
+    visibility: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 13px;
+}
+
+div.asset-preview .removeSearchTextIcon:hover {
+    color: #3C4449;
+}
+
+div.asset-preview .search-container:hover .removeSearchTextIcon {
+    visibility: visible;
+}
+
+div.asset-preview button
+{
+    color: #6B7D89;
+    font-size: 14px;
+	background: transparent;
+	border: 0px solid transparent;
+	height: 26px;
+	cursor: pointer;
+    margin-right: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+div.asset-preview button[disabled] {
+    cursor: inherit;
+}
+
+div.asset-preview button:not([disabled]):hover,
+div.asset-preview button:focus {
+    color: #3C4449;
+}
+
+div.asset-preview .approval-waiting
+{
+    color: #e8ba73;
+}
+
+div.asset-preview .approval-waiting img
+{
+    margin-right: 4px;
+    margin-bottom: -2px;
+}
+
+div.asset-preview .approval-accepted 
+{
+	color: #85b264;
+}
+
+div.asset-preview .approval-accepted img
+{
+    margin-right: 4px;
+}
+
+div.asset-preview .approval-rejected 
+{
+	color: #C15656;
+}
+
+div.asset-preview .approval-rejected img
+{
+	margin-right: 4px;
+	margin-bottom: -2px;
+}
+
+div.asset-preview .query-builder .rule-value-container input {
+    height: 1.4em;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid #a0a0a0;
+}
+
+.asset-preview .group-conditions .btn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.asset-preview  .query-builder .rules-list > *::before, 
+.asset-preview  .query-builder .rules-list > *::after {
+    display: none;
+    z-index: -1;
+}
+
+.asset-preview .query-builder .rules-group-container {
+    border-width: 0px;
+    background: rgba(0, 128, 191, 0.2);
+}
+
+.asset-preview .query-builder .btn-danger,
+.asset-preview .query-builder .btn-danger:active,
+.asset-preview .query-builder .btn-danger.active,
+.asset-preview .query-builder .btn-danger:focus,
+.asset-preview .query-builder .btn-danger.focus,
+.asset-preview .query-builder .btn-danger:hover {
+    color: #6B7D89;
+    border: 0px solid #0080BF;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.asset-preview .query-builder [data-delete=rule].btn-danger,
+.asset-preview .query-builder [data-delete=rule].btn-danger:active,
+.asset-preview .query-builder [data-delete=rule].btn-danger.active,
+.asset-preview .query-builder [data-delete=rule].btn-danger:focus,
+.asset-preview .query-builder [data-delete=rule].btn-danger.focus,
+.asset-preview .query-builder [data-delete=rule].btn-danger:hover {
+    margin-top: -4px;
+}
+
+
+.asset-preview .query-builder .btn-success,
+.asset-preview .query-builder .btn-success:active,
+.asset-preview .query-builder .btn-success.active,
+.asset-preview .query-builder .btn-success:focus,
+.asset-preview .query-builder .btn-success.focus,
+.asset-preview .query-builder .btn-success:hover {
+    color: inherit;
+    border: 0px solid #6B7D89;
+    background-color: transparent;
+    font-size: 14px;
+}
+.asset-preview .asset-thumb .downloadButton {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    display: none;
+}
+.asset-preview .asset-thumb:hover .downloadButton {
+    display: inline-block;
+    cursor: pointer;
+}
+
+div#asset_grid
+{
+    font-size: 14px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+div#asset_grid .slick-row.odd
+{
+    background-color: rgba(0,0,0,0.05);
+}
+
+div#asset_grid .slick-row:hover
+{
+    background-color: rgba(0,0,0,0.4);
+}
+
+div#asset_grid a
+{
+    color: #ccc;
+    text-decoration: none;
+}
+
+div#asset_grid a:hover
+{
+    color: white;
+}
+
+div#asset_grid img
+{
+    margin-top: 2px;
+    max-height: 16px;
+    max-width: 16px;
+}
+
+div#asset_grid .slick-cell,
+div#asset_grid .slick-row
+{
+    color: #ccc;
+    background: none;
+    border: none;
+    margin-top: 2px;
+}
+
+/*********************************************************************/
+/*  ASSET METADATA                                                   */
+/*********************************************************************/
+
+
+div.asset-list
+{
+    display: none;
+    position: static;
+    background: transparent;
+    background-image: url(images/asset_back.png);
+    background-position: fixed;
+    background-repeat: repeat-x;
+    width: 100%;
+}
+
+div.asset-list div.thumb_box
+{
+    position: static;
+    display: inline; 
+    float: left;
+    margin-bottom: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div.asset-list .thumb_name
+{
+    width: 120%;
+    margin-left: -10%;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 0 #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 15px;
+    white-space: nowrap;
+}
+
+div.asset-list div.thumb_box
+{
+    position: static;
+    display: inline; 
+    float: left;
+    margin-bottom: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div.asset-list img.thumb_image
+{
+    margin: 5px 5px;
+    border: 1px solid #b0b0b0;
+}
+
+div.asset-list div.thumb_border
+{
+    background-color: white;
+    border: 1px solid #b0b0b0;
+}
+
+div.asset-list img.transparant_thumb_image
+{
+    margin: 5px 5px;
+}
+
+/************** Folder Action List ******************/
+div.asset-actions .nixps-DropdownList .actionList {
+    background-color: #FBFBFB;
+    border-width: 0px;
+    box-shadow: 0px 1.1px 3px 1px #0080BF;
+}
+div.asset-actions .nixps-DropdownList .actionList .actionListItem {
+    border-bottom: 0pt solid #8C8C8C;
+}
+div.asset-actions .nixps-DropdownList .actionListItem.disabled {
+    color: #CACACA;/*#4E4E4E;*/
+}
+div.asset-actions .nixps-DropdownList .actionList .actionListItem:focus,
+div.asset-actions .nixps-DropdownList .actionList .actionListItem:hover {
+    background-color: #F2F7FA;
+    color: #519BBD;
+}
+div.asset-actions .nixps-DropdownList .actionList .actionListItem:focus.disabled,
+div.asset-actions .nixps-DropdownList .actionList .actionListItem:hover.disabled {
+    color: #8C8C8C;
+}     
+
+/**** approval confirmation dialog ***/
+.approvalConfirmationDialog .ui-dialog-titlebar {
+    background: #FFF;
+    color: #0080BF;
+    font-size: 120%;
+    font-weight: normal;
+}
+.approvalConfirmationDialog .ui-button,
+.approvalConfirmationDialog .ui-button:hover, 
+.approvalConfirmationDialog .ui-button:active {
+    box-shadow: none;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in-out; 
+    -moz-transition: -moz-box-shadow 0.25s ease-in-out;
+    -o-transition: -o-box-shadow 0.25s ease-in-out;
+}
+.approvalConfirmationDialog .ui-button .ui-button-text {
+    text-shadow: none;
+}
+.approvalConfirmationDialog .ui-button.ui-state-focus {
+    background: #0080BF;
+    color: #FFF;
+}
+
+/********** asset-advanced-search **********/
+div.asset-advanced-search {
+    margin-top: 150px;
+    margin-left: 15px;
+    background: rgb(242,247,250);
+}
+div.asset-advanced-search .pull-left,
+div.asset-advanced-search .pull-right {
+    float: none;
+}
+
+div.asset-advanced-search button {
+    background: inherit;
+    border-width: 0px;
+    color: #6B7D89;
+    font-size: 15px;
+}
+div.asset-advanced-search button:hover {
+    color: #3C4449;
+}
+div.asset-advanced-search .rules-group-header .operator-group {
+    color: #3C4449;
+    font-weight: bold;
+}
+div.asset-advanced-search div.rule-value-container input {
+    padding-left: 8px;
+}
+
+
+div.asset-properties {
+    display: none;
+    position: absolute;
+    background: transparent;
+    top: 280px;
+    bottom: 0px;
+    width: 100%;
+}
+div.assetview_compareloader div.assetview_metadataview {
+    top: 180px;
+}
+div.asset-properties:not(.assetview_metadataview) {
+    top: 280px !important;
+}
+
+div.asset-properties > .asset-properties {
+    top: 180px !important;
+}
+
+/* The panel */
+div#metadata-tabs
+{
+    display: block;
+	position: absolute;
+	font-size: 13px;
+	left: 15px;
+	top: 20px;
+	bottom: 15px;
+	right: 15px;
+}
+
+/* Header styles */
+div#metadata-tabs h1
+{
+	padding: 5px 0 5px 0;
+	font-size: 14px;
+	/*font-family: 'Magra', sans-serif;*/
+	font-weight:normal;
+	text-transform: capitalize;
+	margin-bottom: 5px;
+}
+
+div#metadata-tabs .infolabel 
+{
+	display: inline-block;
+    margin-bottom:10px;
+    width: 120px;
+	text-align: right;
+	margin-right: 15px;
+}
+
+div#metadata-tabs .infovalue 
+{
+	display: inline-block;
+    margin-bottom:10px;
+	text-align: left;
+}
+
+div#metadata-tabs ul#metadata-navs li
+{
+    display: none;
+}
+
+div#metadata-tabs table.retestrak img
+{
+	border:0
+}
+
+div#metadata-tabs table.retestrak
+{
+    margin-top: 10px;
+    width: 100%;
+	border-spacing:0;
+	border:0;
+}
+
+div#metadata-tabs table.retestrak th,
+div#metadata-tabs table.retestrak td
+{
+	padding:14px;
+	text-align:center
+}
+
+div#metadata-tabs table.retestrak th
+{
+	padding:12px 0 10px 0;
+	font-size:15px;
+	border-bottom:1px solid #888;
+	font-weight:normal;
+	text-align:center;
+	vertical-align:middle;
+}
+
+div#metadata-tabs table.retestrak td
+{
+	border:0;
+	border-bottom:1px solid #888;
+	line-height:135%
+}
+
+div#metadata-tabs table.retestrak a
+{
+	color:#ccc;
+    text-decoration: none;
+}
+
+div#metadata-tabs table.retestrak a:hover
+{
+	color:#ccc;
+    text-decoration: underline;
+}
+
+div#metadata-tabs table.retestrak span
+{
+	font-size:10px;
+	color:#ccc;
+	padding-left:1px
+}
+
+div#metadata-tabs table.retestrak td.heading
+{
+	text-align:right;
+	padding-left:12px;
+	width:50px;
+	white-space: nowrap;
+}
+
+div#metadata-tabs table.retestrak td.heading2
+{
+	color:white;
+    font-weight:bold;
+	white-space: nowrap;
+}
+
+div#metadata-tabs table.retestrak td.heading strong
+{
+	font-weight:normal;
+	font-size:12px
+}
+
+div#metadata-tabs table.retestrak tr.bot td
+{
+	background-color:#242424;
+	background-image:none;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom:0
+}
+
+div#metadata-tabs #tabs-tags .tagsContainer
+{
+    margin-top: 15px;
+    margin-left: 45px;
+}
+
+div#metadata-tabs #tabs-tags .tagsContainer .editPanel
+{
+    margin-top: 10px;
+}
+
+div.asset-properties div.thumb_box
+{
+	display: inline; 
+	float: left;
+    padding: 20px;
+    padding-bottom: 25px;
+    margin: 15px;
+    margin-bottom: 10px;
+}
+
+div.asset-properties img.thumb_image
+{
+	margin: 5px 5px;
+	border: 1px solid #b0b0b0;
+}
+
+div.asset-properties div.thumb_border
+{
+	background-color: white;
+	border: 1px solid #b0b0b0;
+}
+
+div.asset-properties img.transparant_thumb_image
+{
+	margin: 5px 5px;
+}
+
+div.asset-properties #boxes-image
+{
+	width: 250px;
+	opacity: 0.5;
+}
+
+div.asset-properties div.image_box
+{
+	position: static;
+	display: inline; 
+	float: left;
+	margin: 10px;
+	width: 160px;
+	height: 160px;
+}
+
+div.asset-properties.nixps-widget-content
+{
+    display: block;
+    position: static;
+    background: none;
+    top: auto;
+}
+
+div.asset-properties .mini_headings
+{
+	color: #cccccc;
+	font-weight: bold;
+	font-style: italic;
+}
+
+div.asset-properties .thumb_name
+{
+    width: 100%;
+	text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 15px;
+    white-space: nowrap;
+}
+
+div.asset-properties div.image-preview
+{
+	position: relative;
+}
+
+div.asset-properties .asset-compare
+{
+    color: #e8ba73;
+}
+
+div.asset-properties .asset-compare img
+{
+	margin-right: 4px;
+	margin-bottom: -2px;
+}
+
+div.asset-properties div.compare-with
+{
+    position: relative;
+    -webkit-box-shadow: 0px 0px 20px #0080BF;
+    -moz-box-shadow: 0px 0px 20px #0080BF;
+    box-shadow: 0px 0px 20px #0080BF;
+    background-color: #0080BF;
+    padding: 6px;
+    color: #FFFFFF;
+}
+
+div.asset-properties div.asset-preview
+{
+    top: 0px;
+    border-top: none;
+    background-color: rgb(242,247,250);
+}
+
+.asset-waiting,
+.asset-pending,
+div.asset-waiting {
+    background-color: #e8ba73;
+}
+div.asset-waiting
+{
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    font-size: smaller;
+    text-shadow: none;
+}
+.asset-accept, 
+.asset-accepted {
+    background-color: #90DA63;
+}
+div.asset-accepted {
+
+    display: inline-block;
+    border-radius: 10px;
+    margin: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    font-size: smaller;
+    text-shadow: none;
+}
+
+.asset-cancel,
+.asset-reject,
+div.asset-rejected {
+    background-color: #F41B34;
+}
+div.asset-rejected {
+    display: inline-block;
+    border-radius: 10px;
+    margin: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    font-size: smaller;
+    text-shadow: none;
+}
+
+
+#tabs-workflow .generalSubmit.nixps-kiosk-NewWorkable {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.approvalSubmit.nixps-kiosk-NewWorkable {
+    max-width: 500px;
+}
+
+.approvalSubmit.nixps-kiosk-NewWorkable .form-control {
+    height: 27px;
+}
+
+.approvalSubmit.nixps-kiosk-NewWorkable .btn {
+    padding: 3px 10px;
+}
+.approvalSubmit.nixps-kiosk-NewWorkable .nixps-kiosk-CreateWorkable > .container-fluid {
+    margin-top: 10px !important;
+}
+/* Approval Tab overload for Hub Submit Component */
+
+div#tabs-approval .nixps-hub-submit .row label:after
+{
+	content: normal;
+}
+
+
+div#tabs-approval .approval-submitted
+{
+    margin-left: 15px;
+    color: #aaa;
+}
+
+body.nixps-asset-AssetView {
+    overflow-y: scroll;
+    min-width: 900px;
+}
+
+body.nixps-asset-AssetView.holdScroll {
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px; /* simulate the lost of the scroll bar */
+}
+
+body.nixps-asset-AssetView .nixps-cloudflow-FolderView {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+body.nixps-asset-AssetView.assetview_detailsview .nixps-cloudflow-FolderView {
+    right: 50%;
+    max-width: 50%;
+    overflow: auto;
+}
+
+.nixps-asset-AssetView .folderTagsPanel {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 701;
+    background: rgba(0,0,0,0.2);
+}
+.nixps-asset-AssetView .folderTagsPanel .nixps-cloudflow-Tags {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 25px;
+    width: 300px;
+}
+.nixps-asset-AssetView .folderTagsPanel .nixps-cloudflow-Tags .addTagButton {
+    height: 18px;
+    line-height: 19px;
+}
+.nixps-asset-AssetView .folderTagsPanel .nixps-cloudflow-Tags .closeButton {
+    color: #999;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.nixps-asset-AssetView .folderTagsPanel .nixps-cloudflow-Tags .closeButton:hover {
+    
+}
+.nixps-asset-AssetView .folderTagsPanel .nixps-cloudflow-Tags .closeButton:active {
+    color: #555;
+}

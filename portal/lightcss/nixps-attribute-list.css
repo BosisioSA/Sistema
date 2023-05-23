@@ -1,0 +1,106 @@
+/*********************************************************************/
+/*  ATTRIBUTE POPUP                                                  */
+/*********************************************************************/
+
+div#attribute-popup-new,
+div#attribute-popup
+{
+    z-index: 10000;
+    width: 200px;
+    font-size: small;
+    border: 1px solid #0080BF;
+    position: absolute;
+    display: none;
+    background-color: #F2F7FA;
+    border-radius: 7px;
+}
+
+div#attribute-popup-new ul,
+div#attribute-popup ul
+{
+    padding: 0px;
+}
+
+div#attribute-popup-new li,
+div#attribute-popup li
+{
+    margin: 4px 10px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    color: #0080BF;
+    cursor: pointer;
+}
+
+div#attribute-popup-new li:hover,
+div#attribute-popup li:hover
+{
+
+}
+
+div.attributes {
+    overflow: hidden;
+    white-space: normal;
+}
+
+div#attribute-popup-mask {
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+/*********************************************************************/
+/*  ATTRIBUTE VIGNET                                                 */
+/*********************************************************************/
+
+a.attribute
+{
+    color: #0080BF;
+}
+
+a.attribute.selected
+{
+    background: url('images/config_label_back.png') repeat-x;
+}
+
+div.attributes a.attribute.add {
+    display: none;
+}
+
+div.attributes.editable a.attribute.add {
+    display: inline;
+}
+
+a.attribute.add:hover
+{
+    border: 1px solid #0080BF;
+    cursor: pointer;
+}
+
+div.attributes a.attribute:hover
+{
+    border: 1px solid #0080BF;
+    cursor: pointer;
+}
+
+div.attributes.editable a.attribute:hover .delete {
+    display: inline-block;
+}
+
+div.attributes.editable a.attribute .delete:hover {
+}
+
+a.attribute .delete {
+    font-weight: bold;
+    display: none;
+    line-height: 10px;
+    margin-left: 4px;
+    margin-right: -1px;
+    margin-bottom: 1px;
+    vertical-align: text-bottom;
+    padding-bottom: 3px;
+    color: #0080BF;
+}

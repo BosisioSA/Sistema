@@ -1,0 +1,33 @@
+.nixps-patchplanner-NewDialog .ui-tabs {
+	position: absolute;
+	top: 10px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+}
+
+.nixps-patchplanner-NewDialog .ui-tabs .buttons {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	text-align: center;
+}
+
+
+.nixps-patchplanner-NewDialog .ui-tabs button {
+	display: inline-block;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+
+.nixps-patchplanner-NewDialog .ui-tabs label {
+	width: 100px;
+	text-align: right;
+}
+
+
+.nixps-patchplanner-NewDialog .ui-tabs input {
+	width: calc(100% - 100px);
+}

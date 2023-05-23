@@ -1,0 +1,88 @@
+/*********************************************************************/
+/*  OVERVIEW PANE                                                     */
+/*********************************************************************/
+
+div.overview-pane
+{
+	position: absolute;
+	top: 32px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	display: none;
+}
+
+div#overview-content
+{
+    position: relative;
+    top: 20px;
+    padding-bottom: 30px;
+}
+
+div#search-div
+{
+    position: fixed;
+    top: 32px;
+    width: 100%;
+    text-align:right; 
+    padding-left:5px; 
+    padding-right:5px; 
+    opacity:0.75; 
+    color:#000; 
+    background:#fa2;
+}
+
+div#toomuch-div
+{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align:center; 
+    padding:5px; 
+    opacity:0.75; 
+    color:#000; 
+    background:#fa2;
+}
+
+span#overview-breadcrumb
+{
+	text-decoration:none;
+	float: left;
+    padding:5px; 
+}
+
+span#fileupload
+{
+	text-decoration:none;
+	float: left;
+}
+
+span#overview-breadcrumb a
+{
+	text-decoration:none;
+	color: black;
+}
+
+div#search-div input
+{
+    margin-top: 6px;
+    margin-right: 15px;
+}
+
+div.overview_box
+{
+	position: static;
+	display: inline; 
+	float: left;
+	margin: 40px;
+	width: 200px;
+	height: 220px;
+}
+
+input#fileupload {
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+

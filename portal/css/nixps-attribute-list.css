@@ -1,0 +1,116 @@
+/*********************************************************************/
+/*  ATTRIBUTE POPUP                                                  */
+/*********************************************************************/
+
+div#attribute-popup-new,
+div#attribute-popup
+{
+    z-index: 10000;
+    width: 200px;
+    font-size: small;
+    border: 1px solid #555;
+    position: absolute;
+    display: none;
+    background-color: rgba(44,44,44,0.8);
+    border-radius: 7px;
+}
+
+div#attribute-popup-new ul,
+div#attribute-popup ul
+{
+    padding: 0px;
+}
+
+div#attribute-popup-new li,
+div#attribute-popup li
+{
+    margin: 4px 10px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    color: #aaa;
+}
+
+div#attribute-popup-new li:hover,
+div#attribute-popup li:hover
+{
+    cursor: pointer;
+    color: #66cc22;
+}
+
+div.attributes {
+    overflow: hidden;
+    white-space: normal;
+}
+
+div#attribute-popup-mask {
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+/*********************************************************************/
+/*  ATTRIBUTE VIGNET                                                 */
+/*********************************************************************/
+
+a.attribute
+{
+    display: inline-block;
+    border: 1px solid #539a23;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: smaller;
+    color: #539a23;
+    background-color: rgba(60,121,20,0.15);
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+a.attribute.selected
+{
+    background: url('images/config_label_back.png') repeat-x;
+}
+
+div.attributes a.attribute.add {
+    display: none;
+}
+
+div.attributes.editable a.attribute.add {
+    display: inline;
+}
+
+a.attribute.add:hover
+{
+    border: 1px solid #58aa21;
+    cursor: pointer;
+}
+
+div.attributes a.attribute:hover
+{
+    border: 1px solid #58aa21;
+    cursor: pointer;
+}
+
+div.attributes.editable a.attribute:hover .delete {
+    display: inline-block;
+}
+
+div.attributes.editable a.attribute .delete:hover {
+    color: #77d239
+}
+
+a.attribute .delete {
+    font-weight: bold;
+    display: none;
+    color: #539a23;
+    line-height: 10px;
+    margin-left: 1px;
+    margin-right: -4px;
+}

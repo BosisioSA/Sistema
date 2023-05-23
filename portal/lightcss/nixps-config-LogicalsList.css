@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 12, 2017, 5:02:21 PM
+    Author     : guillaume
+*/
+.nixps-config-LogicalsList {
+    margin-bottom: 5px;
+}
+
+.nixps-config-LogicalsList td {
+    height: 40px;
+    vertical-align: middle;
+}
+
+/** name, key of logicals **/
+.nixps-config-LogicalsList td:nth-child(1){
+    width: 200px; /** align to rest */
+}
+/** value of logicals **/
+.nixps-config-LogicalsList td:nth-child(2){
+    padding-left: 7px;
+}
+
+.nixps-config-LogicalsList input {
+    margin-top: 4px;
+    vertical-align: middle;
+}
+
+.nixps-config-LogicalsList.nixps-cloudflow-Table .pagingButtonPanel > button[disabled] {
+    display: none;
+}

@@ -1,0 +1,23 @@
+/*********************************************************************/
+/*  APPROVALSTATE BAR                                                */
+/*********************************************************************/
+
+div.approvalstatebar {
+    padding-left: 10px;
+	opacity: 0.90;
+}
+
+div.approvalstatebar.waiting {
+	background-color: #fa2;
+	color: black;
+}
+
+div.approvalstatebar.approved {
+	background-color: #693;
+	color: white;
+}
+
+div.approvalstatebar.rejected {
+	background-color: #e33;
+	color: white;
+}

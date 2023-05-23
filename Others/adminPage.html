@@ -1,0 +1,301 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Zaraplast Prepress - Admin Page</title>
+        <meta name="description" content="Versioning">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/table.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/main.js"></script>
+
+        <script src="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.appear-1.1.1.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/upload/js/upload.js'></script>
+        <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.i18n.js'></script>
+        <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/upload/js/upload-controller.js'></script>
+        <script>
+        
+        function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('rua').value=("");
+            document.getElementById('bairro').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('uf').value=("");
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('rua').value=(conteudo.logradouro);
+            document.getElementById('bairro').value=(conteudo.bairro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('uf').value=(conteudo.uf);
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+            function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('rua').value="...";
+                document.getElementById('bairro').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('uf').value="...";
+
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
+
+    </script>
+      
+
+    </head>
+
+
+    <body>
+
+
+      <div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/zaraplast.jpg" style="width: 70%; margin-bottom: 50px;">
+                <ul class="active components mb-5">
+                <li>
+                  <a href="adminPage.html">Home</a>
+                </li>
+              <li>
+                  <a href="Nova_OS.html">Lista de Usuarios</a>
+                </li>
+              <li>
+                  <a href="listaOS.html">Lista Clientes</a>
+              </li>
+  	        </ul>
+  	        
+
+  	        <div class="footer">
+  	        	<p style="font-size: 6pt; margin-top:380px">Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						  Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="Nova_OS.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="Nova_OS.html">Lista Usuarios</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="listaOS.html">Lista Clientes</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <h2>Criar Usuario</h2>
+        <form id="formularioUser">
+              <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="nomeUsuario">Nome de Usuario</label>
+                <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario">
+              </div>
+              <div class="form-group col-md-7" style="display:inline-block;">
+                <label for="nomeCompleto">Nome Completo</label>
+                <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto">
+              </div>
+              <div class="form-group col-md-6" style="display:inline-block;">
+                <label for="emailUsuario">e-mail</label>
+                <input type="text" class="form-control" id="emailUsuario" name="emailUsuario">
+              </div>
+          <div class="form-group col-md-5" style="display:inline-block;">
+            <label for="empresa">Empresa</label>
+            <select class="form-control" id="empresa" name="empresa">
+                <option>Zaraplast</option>
+                </select>
+          </div>
+          <button class="button registerButton clearfix" id='createUser' onclick="criaUser()" style="display:block; margin-left: 15px; margin-top: 20px;" >Criar Usuario</button>
+          <hr>
+          <h2>Criar Cliente</h2>
+          <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="nomeCliente">Cliente</label>
+                <input type="text" class="form-control" id="nomeCliente" name="nomeCliente">
+              </div>
+              <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="nomeFantasiaCliente">Nome Fantasia</label>
+                <input type="text" class="form-control" id="nomeFantasiaCliente" name="nomeFantasiaCliente">
+              </div>
+              <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="cnpjCliente">CNPJ</label>
+                <input type="text" class="form-control" id="cnpjCliente" name="cnpjCLiente">
+              </div>
+              <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="cep">CEP</label>
+                <input type="text" class="form-control" id="cep" name="cep" value="" size="10" maxlength="9"
+               onblur="pesquisacep(this.value);">
+              </div>
+              <div class="form-group col-md-6" style="display:inline-block;">
+                <label for="rua">Rua</label>
+                <input type="text" class="form-control" id="rua" name="rua" readonly>
+              </div>
+              <div class="form-group col-md-2" style="display:inline-block;">
+                <label for="numero">Numero</label>
+                <input type="text" class="form-control" id="numero" name="numero">
+              </div>
+              <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="bairro">Bairro</label>
+                <input type="text" class="form-control" id="bairro" name="bairro" readonly>
+              </div>
+              <div class="form-group col-md-6" style="display:inline-block;">
+                <label for="cidade">Cidade</label>
+                <input type="text" class="form-control" id="cidade" name="cidade" readonly>
+              </div>
+              <div class="form-group col-md-2" style="display:inline-block;">
+                <label for="uf">Estado</label>
+                <input type="text" class="form-control" id="uf" name="uf" readonly>
+              </div>
+            <h4></h4>
+                     
+                        <br>
+                    </form>
+                 
+                    <button class="button registerButton clearfix" id='createCustomer' onclick="criaCliente()" style="margin-left:10px;">Criar Cliente</button>
+                 
+                </div>
+                </div>
+
+
+        <div style="clear:both"></div>
+     <script>
+     //função para criar usuario
+        function criaCliente(){
+            var nomeCliente = document.getElementById("nomeCliente");
+            var nomeFantasia = document.getElementById("nomeFantasiaCliente");
+            var cnpj = document.getElementById("cnpjCliente");
+            var rua = document.getElementById("rua");
+            var cep = document.getElementById("cep");
+            var numero = document.getElementById("numero");
+            var bairro = document.getElementById("bairro");
+            var cidade = document.getElementById("cidade");
+            var estado = document.getElementById("uf");
+            var dadosCliente = {}
+            var enderecoCliente = {}
+            var data = {}
+            enderecoCliente["Endereco"] = rua.value
+            enderecoCliente["CEP"] = cep.value
+            enderecoCliente["numero"] = numero.value
+            enderecoCliente["bairro"] = bairro.value
+            enderecoCliente["estado"] = estado.value
+            dadosCliente["nome"] = nomeCliente.value
+            dadosCliente["fantasia"] = nomeFantasia.value
+            dadosCliente["CNPJ"] = cnpj.value
+            data["InfoCliente"] = dadosCliente
+            data["EnderecoCliente"] = enderecoCliente
+            
+            api.hub.start_from_whitepaper_with_variables("BR-ZARAP_AdminPage","Create_Customer",data)
+            
+        }
+        
+        //função para criar cliente
+        function criaUser(){
+            var nomeUsuario = document.getElementById("nomeUsuario");
+            var nomeCompleto = document.getElementById("nomeCompleto");
+            var emailUsuario = document.getElementById("emailUsuario");
+            var empresaUsuario = document.getElementById("empresa");
+            var data = {}
+            data["user_name"] = nomeUsuario.value
+            data["full_name"] = nomeCompleto.value
+            data["email"] = emailUsuario.value
+            data["scope"] = empresaUsuario.value
+            api.hub.start_from_whitepaper_with_variables("BR-ZARAP_AdminPage","Create_User",data)
+            
+        }
+        
+    </script>    
+
+    </body>
+   
+
+</html>

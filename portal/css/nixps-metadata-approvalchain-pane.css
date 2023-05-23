@@ -1,0 +1,28 @@
+/*********************************************************************/
+/*  APRROVALCHAIN PANE                                               */
+/*********************************************************************/
+
+#tabs-approval #viewercontainer
+{
+	padding-left: 15px;
+}
+
+#tabs-approval #approval
+{
+	padding-left: 15px;
+}
+
+#tabs-approval #approvalstate
+{
+	padding-left: 15px;
+	font-size: 1em;
+}
+
+#tabs-approval .cancel_approval {
+	margin-left: 10px;
+}
+
+/* Override default width of 120 px */
+.infolabel.small {
+	width: 75px;
+}

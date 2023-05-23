@@ -1,0 +1,2848 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Cadastro Fornecedores - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script>
+          function pesquisacep(valor,campo) {
+console.log(campo)
+console.log(valor)
+  //Nova variável "cep" somente com dígitos.
+  var cep = valor.replace(/\D/g, '');
+
+  //Verifica se campo cep possui valor informado.
+  if (cep != "") {
+
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
+
+      //Valida o formato do CEP.
+      if(validacep.test(cep)) {
+
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="Buscando...";
+          document.getElementById('bairro').value="Buscando...";
+          document.getElementById('cidade').value="Buscando...";
+          document.getElementById('uf').value="Buscando...";
+      
+        var url_busca = "https://viacep.com.br/ws/"+cep+"/json/?"
+        var busca_o_cep = api_sync.hub.start_from_whitepaper_with_files_and_variables("BUSCA_CEP","busca_cep", [] ,{"url":url_busca});
+       
+       
+        var workable_id = busca_o_cep.workable_id
+        var workableConsoleLog = function ()  // a cada 30s roda isso e atualiza a variavel form...
+          {
+            var variaveis = api.workable.get_merged_variables(workable_id)
+           if (variaveis.variables.state.value == "buscando"){
+      
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="Buscando...";
+          document.getElementById('bairro').value="Buscando...";
+          document.getElementById('cidade').value="Buscando...";
+          document.getElementById('uf').value="Buscando...";
+        
+               
+           } else {
+              
+          document.getElementById('rua').value=variaveis.variables.resultado.value.logradouro
+          document.getElementById('bairro').value=variaveis.variables.resultado.value.bairro
+          document.getElementById('cidade').value=variaveis.variables.resultado.value.localidade
+          document.getElementById('uf').value=variaveis.variables.resultado.value.uf 
+           
+                  myStopFunction();
+              }
+        }
+	   var workflowTimeout = setInterval(workableConsoleLog, 500);
+        function myStopFunction() {
+                    clearInterval(workflowTimeout);
+                    }
+        
+       
+        
+          
+        }
+  }
+      }
+    
+     </script>
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li class="active" style="color: #004b93; list-style-type: none">Cadastros
+                  <ul>
+                       <li style="list-style-type: none">
+                     <a href="cadastros_clientes.html"><i class="fas fa-user-tie" style="margin-right: 5px"></i>Clientes</a>
+                    </li>
+                 <li class="active" style="list-style-type: none">
+                     <a href="cadastros_fornecedores.html"><i class="fas fa-receipt" style="margin-right: 5px"></i>Fornecedores</a>
+                    </li>
+                     <li  style="list-style-type: none">
+                     <a href="cadastros_tecnicos.html"><i class="fas fa-cogs" style="margin-right: 5px"></i>Técnicos</a>
+                    </li>
+                      <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Sequência de Tinta</a>
+  	                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li class="active" style="list-style-type: none">
+                     <a href="receita_tintas.html"><i class="fas fa-swatchbook" style="margin-right: 5px"></i>Criar Sequência</a>
+                    </li>
+                    <li  style="list-style-type: none">
+                     <a href="lista_receitas.html"><i class="fas fa-swatchbook" style="margin-right: 5px"></i>Lista Sequências</a>
+                    </li>
+                    <li style="list-style-type: none">
+                     <a href="cadastros_tintas.html"><i class="fas fa-receipt" style="margin-right: 5px"></i>Lista de Cores</a>
+                    </li>
+                    </ul>
+                </li>
+                    </ul>
+                </ul>
+                <ul class="components mb-5">
+                   <li style="color: #004b93; list-style-type: none">Anilox
+                  <ul>
+                     <li style="list-style-type: none">
+                     <a href="cadastros_anilox.html"><i class="fas fa-cog" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                    <li  style="list-style-type: none">
+                     <a href="alteracao_bcm_anilox.html"><i class="fas fa-wrench" style="margin-right: 5px"></i>Alteração BCM</a>
+                    </li>
+                    <li style="list-style-type: none">
+                     <a href="lavagem_anilox.html"><i class="fas fa-biohazard" style="margin-right: 5px"></i>Registrar Lavagem</a>
+                    </li>
+                    </ul>
+                </ul>
+            
+            
+                    
+                    
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item">
+                      <a class="nav-link" href="cadastros_clientes.html">Cadastros</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="solicitacao_desenho.html">Tickets</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2 style="display:inline-block;">Cadastro Fornecedores</h2>
+       
+        
+       
+        <br>
+        <br>
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+        <hr>
+       
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_cliente" style="display:none"></div>
+            <div id="id_flexo" style="display:none"></div>
+            <div id="id_roto" style="display:none"></div>
+            <div id="id_prepress" style="display:none"></div>
+            <div id="id_anilox" style="display:none"></div>
+            <div id="id_portacliche" style="display:none"></div>
+            
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+            
+            <div id="id_cliente" style="display:none"></div>
+                <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="tipo">Tipo Fornecedor</label>
+                  <select  class="form-control" onchange="seleciona_cadastro()" id="tipo" name="tipo" >
+                      <option value="undefined">Selecionar</option>
+                      <option value="flexografia">Flexografia</option>
+                      <option value="rotogravura">Rotogravura</option>
+                      <option value="prepress">Prepress</option>
+                      <option value="anilox">Anilox</option>
+                      <option value="portacliche">Porta Clichê</option>
+                      </select>
+                </div>
+                <hr>
+  
+       
+            
+            <!-- termina mostra ferramentas e começa locais -->
+            
+             <div  id="mostra_flexografia" class="form-group" style="display:none;">
+             
+              <h5 id="a_div_novo"><i id="novoArrow" class="fas fa-chevron-right" onclick="mostraNovo()" style="margin-right: 5px; cursor:pointer;"></i>Novo Fornecedor</h5>
+                 <div id="info_novo" class="form-group" style="display: none">
+ 
+                 <div  class="form-group col-md-6" style="display:inline-block;">
+                <label for="nome_fornecedor">Nome Fornecedor</label>
+                  <input type="text" class="form-control" id="nome_fornecedor" name="nome_fornecedor">
+                 </div>
+                 <hr>
+                 <br>
+                    <div  class="form-group col-md-5" style="display:inline-block;">
+                 <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+                <span style="vertical-align: top;"><img src="Icons/icone_mais.png" onclick="adiciona_material()" height="20px" style="cursor:pointer;"></span>
+            <div class="form-group col-md-9" style="display:inline-block;">
+                  <label for="material">Adicionar Material</label>
+                    <select class="form-control" id="material" name="material">
+                        <option value="undefined">Selecionar...</option>
+                        <option>Dupont</option>
+                        <option>Kodak</option>
+                        <option>McDermid</option>
+                        <option>Flint</option>
+                        </select>
+                  
+                </div>
+            </div>
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_materiais" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:95%">Material<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+        <div class="form-group col-md-5"  style="display:inline-block; vertical-align: top;">
+         <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+                <span style="vertical-align: top;"><img src="Icons/icone_mais.png" onclick="adiciona_espessura()" height="20px" style="cursor:pointer;"></span>
+            <div class="form-group col-md-9" style="display:inline-block;">
+                  <label for="espessura">Adicionar Espessura</label>
+                    <select class="form-control" id="espessura" name="espessura">
+                        <option value="undefined">Selecionar...</option>
+                        <option>1.14</option>
+                        <option>1.7</option>
+                        <option>2.8</option>
+                        </select>
+                  
+                </div>
+            </div>
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_espessura" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:95%">Espessura<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+       
+         <br>
+           <div id="altera_contato" style="display:none">99</div>
+                <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_contato_flexo()" src="./Icons/icone_mais.png" width="30px"></div> 
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="contato">Contato</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()" id="contato" name="contato" list="os_representantes">
+                   <datalist id="os_representantes"></datalist>
+                    <span class="error"><p id="error_busca_representante" style="color:orange"></p></span>
+                 
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="telefone_contato">Telefone</label>
+                  <input type="text" class="form-control" id="telefone_contato" name="telefone_contato">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="email_contato">e-mail</label>
+                  <input type="text" class="form-control" id="email_contato" name="email_contato">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="departamento">Depto.</label>
+                  <select  class="form-control" id="departamento" name="departamento">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Comercial</option>
+                      <option>Técnico</option>
+                    </select>
+                </div>
+                
+                <table id="tabela_contatos" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: none">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:25%">Nome
+              </th>
+              <th class="th-sm" style="width:30%">E-mail
+              </th>
+              <th class="th-sm" style="width:15%">Telefone
+              </th>
+              <th class="th-sm" style="width:20%">Departamento
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>     
+    <button class="btn btn-primary" onclick="salvar_fornecedor_flexo()" style="cursor: pointer">Salvar Fornecedor</button>
+    <button class="btn btn-secondary" onclick="cancelar_forn_flexo()" style="cursor: pointer">Cancelar</button>
+                
+    </div>  
+    <hr>
+          <h6>Lista Fornecedores Flexo</h6>  
+          <br>
+          <table id="tabela_fornecedores_flexo" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+            
+             
+              <th class="th-sm" style="width:90%">Fornecedor<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+                <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+                
+                
+        
+           <hr> 
+            
+             
+            </div>
+             <div  id="mostra_rotogravura" class="form-group col-md-11" style="display:none;">
+             
+              <h5 id="a_div_novo2"><i id="novo2Arrow" class="fas fa-chevron-right" onclick="mostraNovo2()" style="margin-right: 5px; cursor:pointer;"></i>Criar Novo Fornecedor</h5>
+                 <div id="info_novo2" class="form-group" style="display: none">
+ 
+                 <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="local_gravacao">Local Gravação</label>
+                    <select class="form-control" id="local_gravacao" name="local_gravacao">
+                        <option value="undefined">Selecionar...</option>
+                        <option>Implante</option>
+                        <option>Matriz</option>
+                        <option>Interna</option>
+                        </select>
+                  
+                </div>
+            
+                 
+                 
+                 <div  class="form-group col-md-6" style="display:inline-block;">
+                <label for="nome_fornecedor_roto">Nome Fornecedor</label>
+                  <input type="text" class="form-control" id="nome_fornecedor_roto" name="nome_fornecedor_roto">
+                 </div>
+                 <hr>
+                 <br>
+       
+           <div id="altera_contato_roto" style="display:none">99</div>
+                <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_contato_roto()" src="./Icons/icone_mais.png" width="30px"></div> 
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="contato_roto">Contato</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()" id="contato_roto" name="contato_roto" list="os_representantes">
+                   <datalist id="os_representantes"></datalist>
+                    <span class="error"><p id="error_busca_representante" style="color:orange"></p></span>
+                 
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="telefone_contato_roto">Telefone</label>
+                  <input type="text" class="form-control" id="telefone_contato_roto" name="telefone_contato_roto">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="email_contato_roto">e-mail</label>
+                  <input type="text" class="form-control" id="email_contato_roto" name="email_contato_roto">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="departamento_roto">Depto.</label>
+                  <select  class="form-control" id="departamento_roto" name="departamento_roto">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Comercial</option>
+                      <option>Técnico</option>
+                    </select>
+                </div>
+                
+                <table id="tabela_contatos_roto" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: none">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:25%">Nome
+              </th>
+              <th class="th-sm" style="width:30%">E-mail
+              </th>
+              <th class="th-sm" style="width:15%">Telefone
+              </th>
+              <th class="th-sm" style="width:20%">Departamento
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>     
+     <button class="btn btn-primary" onclick="salvar_fornecedor_roto()" style="cursor: pointer">Salvar Fornecedor</button>
+    <button class="btn btn-secondary" onclick="cancelar_forn_roto()" style="cursor: pointer">Cancelar</button>
+                
+    </div>
+    <hr>
+          <h6>Lista Fornecedores Roto</h6>  
+          <br>
+          <table id="tabela_fornecedores_roto" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+            
+             
+              <th class="th-sm" style="width:60%">Fornecedor<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:30%">Local Gravação<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+                <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+               
+                
+        
+           <hr> 
+   
+             
+            </div>
+            
+              <div  id="mostra_prepress" class="form-group col-md-11" style="display:none;">
+             
+              <h5 id="a_div_novo3"><i id="novo3Arrow" class="fas fa-chevron-right" onclick="mostraNovo3()" style="margin-right: 5px; cursor:pointer;"></i>Criar Novo Fornecedor</h5>
+                 <div id="info_novo3" class="form-group" style="display: none">
+ 
+              
+            
+                 
+                 
+                 <div  class="form-group col-md-6" style="display:inline-block; vertical-align: top;">
+                <label for="nome_fornecedor_prepress">Nome Fornecedor</label>
+                  <input type="text" class="form-control"   onkeyup="this.value=this.value.toUpperCase()" id="nome_fornecedor_prepress" name="nome_fornecedor_prepress">
+                 </div>
+                 <br>
+                <!--<span><img id="img-prepress_tipo" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_prepress()"></span><span><img id="img-prepress_tipo_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_prepress()"></span>-->
+                <div  class="form-group col-md-2" style="display:inline-block;">
+                
+                  <input type="checkbox" id="servico_PREPRESS" class="form-group"  onclick="adiciona_servico_prepress()" name="servico_prepress">
+                  <label for="servico_PREPRESS">Prepress</label>
+                      
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                
+                  <input type="checkbox" id="servico_ROTOGRAVURA"  onclick="adiciona_servico_prepress()" class="form-group"   name="servico_roto">
+                  <label for="servico_ROTOGRAVURA">Roto</label>
+                      
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                
+                  <input type="checkbox" id="servico_FLEXOGRAFIA" onclick="adiciona_servico_prepress()" class="form-group"   name="servico_flexo">
+                  <label for="servico_FLEXOGRAFIA">Flexo</label>
+                      
+                 </div>
+                 <div  class="form-group col-md-5" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="o_prepress_tipo" name="o_prepress_tipo">
+                 </div>
+                
+                 
+                 <hr>
+                 <br>
+                   
+            
+           
+       
+       
+         <br>
+           <div id="altera_contato_prepress" style="display:none">99</div>
+                <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_contato_prepress()" src="./Icons/icone_mais.png" width="30px"></div> 
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="contato_prepress">Contato</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()" id="contato_prepress" name="contato_prepress" list="os_representantes">
+                   <datalist id="os_representantes"></datalist>
+                    <span class="error"><p id="error_busca_representante" style="color:orange"></p></span>
+                 
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="telefone_contato_prepress">Telefone</label>
+                  <input type="text" class="form-control" id="telefone_contato_prepress" name="telefone_contato_prepress">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="email_contato_prepress">e-mail</label>
+                  <input type="text" class="form-control" id="email_contato_prepress" name="email_contato_prepress">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="departamento_prepress">Depto.</label>
+                  <select  class="form-control" id="departamento_prepress" name="departamento_prepress">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Comercial</option>
+                      <option>Técnico</option>
+                    </select>
+                </div>
+                
+                <table id="tabela_contatos_prepress" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: none">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:25%">Nome
+              </th>
+              <th class="th-sm" style="width:30%">E-mail
+              </th>
+              <th class="th-sm" style="width:15%">Telefone
+              </th>
+              <th class="th-sm" style="width:20%">Departamento
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>     
+     <button class="btn btn-primary" onclick="salvar_fornecedor_prepress()" style="cursor: pointer">Salvar Fornecedor</button>
+                 <button class="btn btn-secondary" onclick="cancelar_forn_prepress()" style="cursor: pointer">Cancelar</button>
+                
+    </div>
+    <hr>
+          <h6>Lista Fornecedores Prepress</h6>  
+          <br>
+          <table id="tabela_fornecedores_prepress" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+            
+             
+              <th class="th-sm" style="width:60%">Fornecedor<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:30%">Prepress Oferecido<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+                <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+                
+                
+        
+           <hr> 
+   
+             
+            </div>
+            
+            
+              <div  id="mostra_anilox" class="form-group col-md-11" style="display:none;">
+             
+              <h5 id="a_div_novo4"><i id="novo4Arrow" class="fas fa-chevron-right" onclick="mostraNovo4()" style="margin-right: 5px; cursor:pointer;"></i>Criar Novo Fornecedor</h5>
+                 <div id="info_novo4" class="form-group" style="display: none">
+ 
+                 
+            
+                 
+                 
+                 <div  class="form-group col-md-6" style="display:inline-block;">
+                <label for="nome_fornecedor_anilox">Nome Fornecedor</label>
+                  <input type="text" class="form-control" id="nome_fornecedor_anilox" name="nome_fornecedor_anilox">
+                 </div>
+                 
+                 <hr>
+                 <br>
+       
+           <div id="altera_contato_anilox" style="display:none">99</div>
+                <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_contato_anilox()" src="./Icons/icone_mais.png" width="30px"></div> 
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="contato_anilox">Contato</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()" id="contato_anilox" name="contato_anilox">
+                   <datalist id="os_representantes"></datalist>
+                    <span class="error"><p id="error_busca_representante" style="color:orange"></p></span>
+                 
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="telefone_contato_anilox">Telefone</label>
+                  <input type="text" class="form-control" id="telefone_contato_anilox" name="telefone_contato_anilox">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="email_contato_anilox">e-mail</label>
+                  <input type="text" class="form-control" id="email_contato_anilox" name="email_contato_anilox">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="departamento_anilox">Depto.</label>
+                  <select  class="form-control" id="departamento_anilox" name="departamento_anilox">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Comercial</option>
+                      <option>Técnico</option>
+                    </select>
+                </div>
+                
+                <table id="tabela_contatos_anilox" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: none">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:25%">Nome
+              </th>
+              <th class="th-sm" style="width:30%">E-mail
+              </th>
+              <th class="th-sm" style="width:15%">Telefone
+              </th>
+              <th class="th-sm" style="width:20%">Departamento
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>     
+    <button class="btn btn-primary" onclick="salvar_fornecedor_anilox()" style="cursor: pointer">Salvar Fornecedor</button>
+    <button class="btn btn-secondary" onclick="cancelar_forn_anilox()" style="cursor: pointer">Cancelar</button>
+    
+    </div>
+    <hr>
+          <h6>Lista Fornecedores Anilox</h6>  
+          <br>
+          <table id="tabela_fornecedores_anilox" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+            
+             
+              <th class="th-sm" style="width:90%">Fornecedor<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+                <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+                
+                
+        
+           <hr> 
+   
+             
+            </div>
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+                 <div  id="mostra_portacliche" class="form-group col-md-11" style="display:none;">
+             
+              <h5 id="a_div_novo5"><i id="novo5Arrow" class="fas fa-chevron-right" onclick="mostraNovo5()" style="margin-right: 5px; cursor:pointer;"></i>Criar Novo Fornecedor</h5>
+                 <div id="info_novo5" class="form-group" style="display: none">
+ 
+                 
+            
+                 
+                 
+                 <div  class="form-group col-md-6" style="display:inline-block;">
+                <label for="nome_fornecedor_portacliche">Nome Fornecedor</label>
+                  <input type="text" class="form-control" id="nome_fornecedor_portacliche" name="nome_fornecedor_portacliche">
+                 </div>
+                 
+                 <hr>
+                 <br>
+       
+           <div id="altera_contato_portacliche" style="display:none">99</div>
+                <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_contato_portacliche()" src="./Icons/icone_mais.png" width="30px"></div> 
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="contato_portacliche">Contato</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()" id="contato_portacliche" name="contato_portacliche">
+                   <datalist id="os_representantes"></datalist>
+                    <span class="error"><p id="error_busca_representante" style="color:orange"></p></span>
+                 
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="telefone_contato_portacliche">Telefone</label>
+                  <input type="text" class="form-control" id="telefone_contato_portacliche" name="telefone_contato_portacliche">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="email_contato_portacliche">e-mail</label>
+                  <input type="text" class="form-control" id="email_contato_portacliche" name="email_contato_portacliche">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="departamento_portacliche">Depto.</label>
+                  <select  class="form-control" id="departamento_portacliche" name="departamento_portacliche">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Comercial</option>
+                      <option>Técnico</option>
+                    </select>
+                </div>
+                
+                <table id="tabela_contatos_portacliche" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: none">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:25%">Nome
+              </th>
+              <th class="th-sm" style="width:30%">E-mail
+              </th>
+              <th class="th-sm" style="width:15%">Telefone
+              </th>
+              <th class="th-sm" style="width:20%">Departamento
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>     
+    <button class="btn btn-primary" onclick="salvar_fornecedor_portacliche()" style="cursor: pointer">Salvar Fornecedor</button>
+    <button class="btn btn-secondary" onclick="cancelar_forn_portacliche()" style="cursor: pointer">Cancelar</button>
+    
+    </div>
+    <hr>
+          <h6>Lista Fornecedores Porta Cliche</h6>  
+          <br>
+          <table id="tabela_fornecedores_portacliche" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+            
+             
+              <th class="th-sm" style="width:90%">Fornecedor<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+                <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+                
+                
+        
+           <hr> 
+   
+             
+            </div>
+         
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+  	</script>
+  	
+  	
+  	
+  	<script>
+  	
+  	// seleciona qual tabela  
+  	    function seleciona_cadastro(){
+  	        var sel_codigo = document.getElementById("tipo").value
+  	       
+         if (sel_codigo == "flexografia"){
+             document.getElementById("mostra_flexografia").style = "display: inline-block; vertical-align: top; width: 100%"
+             document.getElementById("mostra_rotogravura").style = "display: none;"
+              document.getElementById("mostra_prepress").style = "display: none;" 
+              document.getElementById("mostra_anilox").style = "display: none;" 
+              document.getElementById("mostra_portacliche").style = "display: none;"
+               preenche_fornecedores()
+            
+         } else {
+             if (sel_codigo == "rotogravura"){
+              document.getElementById("mostra_flexografia").style = "display: none;"
+              document.getElementById("mostra_rotogravura").style = "display: inline-block; vertical-align: top;"
+               document.getElementById("mostra_prepress").style = "display: none;" 
+               document.getElementById("mostra_anilox").style = "display: none;" 
+               document.getElementById("mostra_portacliche").style = "display: none;"
+                preenche_fornecedores_roto()
+             } else {
+                if (sel_codigo == "prepress"){
+                 document.getElementById("mostra_prepress").style = "display: inline-block; vertical-align: top;"  
+                 document.getElementById("mostra_rotogravura").style = "display: none;"
+                 document.getElementById("mostra_flexografia").style = "display: none;"
+                 document.getElementById("mostra_anilox").style = "display: none;" 
+                 document.getElementById("mostra_portacliche").style = "display: none;"
+                 preenche_fornecedores_prepress()
+                } else {
+                   if (sel_codigo == "anilox"){
+                     document.getElementById("mostra_flexografia").style = "display: none;"
+              document.getElementById("mostra_rotogravura").style = "display: none;" 
+              document.getElementById("mostra_prepress").style = "display: none;" 
+              document.getElementById("mostra_anilox").style = "display: inline-block;"  
+              document.getElementById("mostra_portacliche").style = "display: none;"
+              preenche_fornecedores_anilox()
+                       
+                   } else {
+                       if (sel_codigo == "portacliche"){
+              document.getElementById("mostra_portacliche").style = "display: inline-block;" 
+              document.getElementById("mostra_flexografia").style = "display: none;"
+              document.getElementById("mostra_rotogravura").style = "display: none;" 
+              document.getElementById("mostra_prepress").style = "display: none;" 
+              document.getElementById("mostra_anilox").style = "display: none;"  
+              preenche_fornecedores_portacliche()
+                       } else {
+              document.getElementById("mostra_portacliche").style = "display: none;"
+              document.getElementById("mostra_flexografia").style = "display: none;"
+              document.getElementById("mostra_rotogravura").style = "display: none;" 
+              document.getElementById("mostra_prepress").style = "display: none;" 
+              document.getElementById("mostra_anilox").style = "display: none;" 
+                   }
+             }
+            
+         }
+         }
+         
+         
+         
+         
+  	              
+  	    }
+  	    
+  	 // seleciona tipo de gravacao
+  	 
+  	    }
+  	
+  	   
+  	 </script>
+  <script>
+      // adiciona material
+      
+      var os_materiais = []
+      
+      function adiciona_material(){
+         if (document.getElementById("material").value != "undefined"){
+         os_materiais.push(document.getElementById("material").value) 
+         preenche_materiais()
+         }
+      }
+      
+      function preenche_materiais(){
+          
+          clearTable(document.getElementById("tabela_materiais"))
+          
+          
+         var table = document.getElementById("tabela_materiais")
+        var qtasrow = table.rows.length
+       
+            
+        for (i=0;i<os_materiais.length;i++){
+           
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_materiais[i]+'</div>'
+            
+            cell2.innerHTML = '<div><img id="'+i+'" src="Icons/delete.png" height="30px" onclick="apagarMaterial()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+            
+        }
+      }
+      function apagarMaterial(){
+    var linha = parseInt(event.srcElement.id)
+    var tira = os_materiais.splice(linha,1)
+    preenche_materiais()
+    
+    
+      }
+      
+      
+
+
+      
+       </script>
+  
+  
+  
+  <script>
+      // adiciona espessura
+      
+      var as_espessuras = []
+      
+      function adiciona_espessura(){
+         if (document.getElementById("espessura").value != "undefined"){
+         as_espessuras.push(document.getElementById("espessura").value) 
+         preenche_espessuras()
+         }
+      }
+      
+      function preenche_espessuras(){
+          console.log(as_espessuras.length)
+          
+          clearTable(document.getElementById("tabela_espessura"))
+          
+          
+         var table = document.getElementById("tabela_espessura")
+        var qtasrow = table.rows.length
+       
+            
+        for (i=0;i<as_espessuras.length;i++){
+           
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_espessuras[i]+'</div>'
+            
+            cell2.innerHTML = '<div><img id="'+i+'" src="Icons/delete.png" height="30px" onclick="apagarEspessura()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+            
+              
+            
+        }
+      }
+      function apagarEspessura(){
+    var linha = parseInt(event.srcElement.id)
+    var tira = as_espessuras.splice(linha,1)
+    preenche_espessuras()
+    
+    
+      }
+      
+  </script>
+  <script>
+      // adiciona espessura
+      var info_perfil = {}
+      
+      
+      function adiciona_perfil(){
+         var os_perfis = []
+         if (document.getElementById("chapa_perfil").value != "undefined" && document.getElementById("perfil").value != ""){
+         var chaves = Object.keys(info_perfil)
+         var existe_chave = false
+         for (i=0;i<chaves.length;i++){
+             if (chaves[i] == document.getElementById("chapa_perfil").value){
+                 existe_chave = true
+             }
+         }
+         
+         if (existe_chave === false){
+             os_perfis.push(document.getElementById("perfil").value)
+             info_perfil[document.getElementById("chapa_perfil").value] = os_perfis
+         } else {
+             os_perfis = info_perfil[document.getElementById("chapa_perfil").value]
+             os_perfis.push(document.getElementById("perfil").value)
+             info_perfil[document.getElementById("chapa_perfil").value] = os_perfis
+         }
+         
+         preenche_perfis()
+         }
+      }
+      
+      function preenche_perfis_backup(){
+          
+          clearTable(document.getElementById("tabela_perfil"))
+          
+          
+         var table = document.getElementById("tabela_perfil")
+        var qtasrow = table.rows.length
+       var thekeys = Object.keys(info_perfil)
+            
+        for (i=0;i<thekeys.length;i++){
+            
+            var theprofiles = info_perfil[thekeys[i]]
+           
+            for (j=0;j<theprofiles.length;j++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+thekeys[i]+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+theprofiles[j]+'</div>'
+            
+            cell3.innerHTML = '<div><img id="'+thekeys[i]+'_'+j+'" src="Icons/delete.png" height="30px" onclick="apagarPerfil()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+            
+               
+            }
+        }
+      }
+      function apagarPerfil(){
+    var linha = event.srcElement.id
+    var linha_array = linha.split("_")
+    var delete_profiles = info_perfil[linha_array[0]]
+    var tira = delete_profiles.splice(parseInt(linha_array[1]),1)
+    info_perfil[linha_array[0]] = delete_profiles
+    preenche_perfis()
+    
+    
+      }
+      
+  </script>
+  
+<script>
+    function reply_delete_contato(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].nome)
+        if (contatos[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos()
+    }
+</script>
+<script>
+    function adiciona_servico_prepress(){
+     var linha = event.srcElement.id
+     var linha_split = linha.split("_")
+     var valor_atual = document.getElementById("o_prepress_tipo").value
+     console.log(valor_atual)
+     if (document.getElementById(linha).checked === true){
+     if (valor_atual == ""){
+         valor_atual = linha_split[1]
+     } else {
+         valor_atual = valor_atual+", "+linha_split[1]
+     }
+     document.getElementById("o_prepress_tipo").value = valor_atual
+     } else {
+         console.log("Estou no else")
+         if (valor_atual != ""){
+             var valor_atual_split = valor_atual.split(", ")
+             var indice = valor_atual_split.indexOf(linha_split[1])
+             var tira = valor_atual_split.splice(indice,1) 
+             
+            document.getElementById("o_prepress_tipo").value = valor_atual_split.toString().replace(",",", ")
+         }
+         
+     }
+        
+    }
+</script>
+     
+
+      
+ 
+<script>
+    function verifica_cliente(){
+        var codigo_pedido = document.getElementById("busca_cliente").value
+        var existe_codigo = api.custom_objects.list_with_options("BR-ROTOC_customers",["FANTASIA","equal to",codigo_pedido]).results
+        if (existe_codigo.length === 0){
+            document.getElementById("error_busca_cliente").innerText = "Para adicinar um novo cleinte, clique no icone ao lado"
+            document.getElementById("imagem_adiciona_cliente").style = "display:inline-block; cursor: pointer; margin-top: 38px"
+        } else {
+            document.getElementById("error_busca_cliente").innerText = ""
+            document.getElementById("imagem_adiciona_cliente").style = "display:none;"
+        }
+    }
+</script>
+<script>
+    function preenche_fornecedores(){
+        var os_fornecedores_flexo = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","flexografia"]).results
+        
+        clearTable(document.getElementById("tabela_fornecedores_flexo"))
+          
+          
+         var table = document.getElementById("tabela_fornecedores_flexo")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_fornecedores_flexo.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_fornecedores_flexo[i].nome+'</div>'
+            cell2.innerHTML = '<div><img id="'+os_fornecedores_flexo[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editarFornecedor()" style="cursor: pointer;"></div>'
+            
+            cell3.innerHTML = '<div><img id="'+os_fornecedores_flexo[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagarFornecedor()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagarFornecedor(){
+    if (confirm("Deseja mesmo apagar esse fornecedor?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_Fornecedores",linha)
+    preenche_fornecedores()    
+    }
+     }
+    
+     function editarFornecedor(){
+     var linha = event.srcElement.id
+     document.getElementById("id_flexo").innerText = linha
+    var busca_fornecedor = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["_id","equal to",linha]).results[0]
+     var icone = document.getElementById("novoArrow")
+        icone.classList.toggle("fa-chevron-down")
+       
+    document.getElementById("info_novo").style = "display: inline-block; width: 100%;"
+    
+    document.getElementById("nome_fornecedor").value = busca_fornecedor.nome
+    os_materiais = busca_fornecedor.produto.cliche
+    as_espessuras = busca_fornecedor.produto.espessura
+    os_contatos = busca_fornecedor.contatos
+   
+        
+        
+        clearTable(document.getElementById("tabela_espessura"))
+          
+          
+         var table = document.getElementById("tabela_espessura")
+        var qtasrow = table.rows.length
+       
+            
+        for (i=0;i<as_espessuras.length;i++){
+           
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_espessuras[i]+'</div>'
+            
+            cell2.innerHTML = '<div><img id="'+i+'" src="Icons/delete.png" height="30px" onclick="apagarEspessura()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+            
+              
+            
+        }
+        
+        
+         clearTable(document.getElementById("tabela_materiais"))
+          
+          
+         var table = document.getElementById("tabela_materiais")
+        var qtasrow = table.rows.length
+       
+            
+        for (i=0;i<os_materiais.length;i++){
+           
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_materiais[i]+'</div>'
+            
+            cell2.innerHTML = '<div><img id="'+i+'" src="Icons/delete.png" height="30px" onclick="apagarMaterial()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+            
+        }
+    
+    if (os_contatos != undefined){
+        
+       contatos = os_contatos
+       
+        var tabela2 = document.getElementById("tabela_contatos");
+      clearTable(tabela2)
+      
+      if (contatos.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos[i])
+       if (contatos[i].departamento == "Representante" && contatos[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].email+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].email+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+        
+    }
+    
+    
+    }
+    
+    
+      
+</script>
+<script>
+     function preenche_fornecedores_roto(){
+        var os_fornecedores_roto = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","rotogravura"]).results
+        
+        clearTable(document.getElementById("tabela_fornecedores_roto"))
+          
+          
+         var table = document.getElementById("tabela_fornecedores_roto")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_fornecedores_roto.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_fornecedores_roto[i].nome+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_fornecedores_roto[i].local_gravacao+'</div>'
+            
+            cell3.innerHTML = '<div><img id="'+os_fornecedores_roto[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editarFornecedor_roto()" style="cursor: pointer;"></div>'
+            
+            cell4.innerHTML = '<div><img id="'+os_fornecedores_roto[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagarFornecedor_roto()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+function apagarFornecedor_roto(){
+    if (confirm("Deseja mesmo apagar esse fornecedor?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_Fornecedores",linha)
+    preenche_fornecedores_roto()    
+    }
+     }
+     
+ function editarFornecedor_roto(){
+     var linha = event.srcElement.id
+     document.getElementById("id_roto").innerText = linha
+      var icone = document.getElementById("novo2Arrow")
+        icone.classList.toggle("fa-chevron-down")
+    var busca_fornecedor = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_novo2").style = "display: inline-block; width: 100%;"
+    document.getElementById("nome_fornecedor_roto").value = busca_fornecedor.nome
+    document.getElementById("local_gravacao").value = busca_fornecedor.local_gravacao
+    os_contatos = busca_fornecedor.contatos
+   
+        
+        
+        
+        
+        
+    
+    if (os_contatos != undefined){
+        
+       contatos = os_contatos
+       
+        var tabela2 = document.getElementById("tabela_contatos_roto");
+      clearTable(tabela2)
+      
+      if (contatos.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos[i])
+       if (contatos[i].departamento == "Representante" && contatos[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].nome+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato_roto()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].nome+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato_roto()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+        
+    }
+    
+    
+    }
+</script>
+
+<script>
+     function preenche_fornecedores_prepress(){
+        var os_fornecedores_prepress = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","prepress"]).results
+        
+        clearTable(document.getElementById("tabela_fornecedores_prepress"))
+          
+          
+         var table = document.getElementById("tabela_fornecedores_prepress")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_fornecedores_prepress.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_fornecedores_prepress[i].nome+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_fornecedores_prepress[i].servico_oferecido+'</div>'
+            
+            cell3.innerHTML = '<div><img id="'+os_fornecedores_prepress[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editarFornecedor_prepress()" style="cursor: pointer;"></div>'
+            
+            cell4.innerHTML = '<div><img id="'+os_fornecedores_prepress[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagarFornecedor_prepress()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+function apagarFornecedor_prepress(){
+    if (confirm("Deseja mesmo apagar esse fornecedor?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_Fornecedores",linha)
+    preenche_fornecedores_prepress()    
+    }
+     }
+     
+ function editarFornecedor_prepress(){
+     var linha = event.srcElement.id
+     document.getElementById("id_prepress").innerText = linha
+      var icone = document.getElementById("novo3Arrow")
+        icone.classList.toggle("fa-chevron-down")
+    var busca_fornecedor = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("info_novo3").style = "display: inline-block; width: 100%;"
+    document.getElementById("nome_fornecedor_prepress").value = busca_fornecedor.nome
+    document.getElementById("o_prepress_tipo").value = busca_fornecedor.servico_oferecido
+    
+    var array_servico = busca_fornecedor.servico_oferecido.split(", ")
+    
+    for (i=0;i<array_servico.length;i++){
+        var div_check = "servico_"+array_servico[i]
+        document.getElementById(div_check).checked = true
+    }
+   
+    os_contatos = busca_fornecedor.contatos
+   
+        
+        
+        
+        
+        
+    
+    if (os_contatos != undefined){
+        
+       contatos_prepress = os_contatos
+       
+        var tabela2 = document.getElementById("tabela_contatos_prepress");
+      clearTable(tabela2)
+      
+      if (contatos_prepress.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos_prepress.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos_prepress[i])
+       if (contatos_prepress[i].departamento == "Representante" && contatos_prepress[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_prepress[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_prepress[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_prepress[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_prepress[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos_prepress[i].nome+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato_prepress()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos_prepress[i].nome+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato_prepress()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+        
+    }
+    
+    
+    }
+</script>
+
+<script>
+    
+    
+     function preenche_fornecedores_anilox(){
+        var os_fornecedores_anilox = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","anilox"]).results
+        
+        clearTable(document.getElementById("tabela_fornecedores_anilox"))
+          
+          
+         var table = document.getElementById("tabela_fornecedores_anilox")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_fornecedores_anilox.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_fornecedores_anilox[i].nome+'</div>'
+            
+            cell2.innerHTML = '<div><img id="'+os_fornecedores_anilox[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editarFornecedor_anilox()" style="cursor: pointer;"></div>'
+            
+            cell3.innerHTML = '<div><img id="'+os_fornecedores_anilox[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagarFornecedor_anilox()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+function apagarFornecedor_anilox(){
+    if (confirm("Deseja mesmo apagar esse fornecedor?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_Fornecedores",linha)
+    preenche_fornecedores_anilox()    
+    }
+     }
+     
+ function editarFornecedor_anilox(){
+     var linha = event.srcElement.id
+     document.getElementById("id_anilox").innerText = linha
+      var icone = document.getElementById("novo4Arrow")
+        icone.classList.toggle("fa-chevron-down")
+       
+    var busca_fornecedor = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["_id","equal to",linha]).results[0]
+    console.log(busca_fornecedor)
+    document.getElementById("info_novo4").style = "display: inline-block; width: 100%;"
+    document.getElementById("nome_fornecedor_anilox").value = busca_fornecedor.nome
+    contatos_anilox = busca_fornecedor.contatos
+        
+        
+        
+        
+        
+    
+    if (contatos_anilox != undefined){
+        
+       contatos = contatos_anilox
+       
+        var tabela2 = document.getElementById("tabela_contatos_anilox");
+      clearTable(tabela2)
+      
+      if (contatos.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos[i])
+       if (contatos[i].departamento == "Representante" && contatos[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].nome+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato_anilox()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].nome+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato_anilox()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+        
+    }
+    
+    
+    }
+</script>
+
+
+
+<script>
+    function reply_delete_contato_roto(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos_roto.length;i++){
+        console.log(contatos_roto[i].nome)
+        if (contatos_roto[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos_roto.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos_roto()
+    }
+    
+     function reply_delete_contato_prepress(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos_prepress.length;i++){
+        console.log(contatos_prepress[i].nome)
+        if (contatos_prepress[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos_prepress.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos_prepress()
+    }
+</script>
+
+
+ 
+    
+    
+    <script>
+      function filtro_grupoferramenta() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("input_grupoferramenta");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_ferramentas");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+    
+    </script>
+
+<script>
+      function mostraNovo(){
+         
+        var div_cliente = document.getElementById("info_novo")
+        var icone = document.getElementById("novoArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+             
+            } else {
+                div_cliente.style.display = "none";
+            }
+       
+      }
+      function mostraNovo2(){
+         
+        var div_cliente = document.getElementById("info_novo2")
+        var icone = document.getElementById("novo2Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+       
+      }
+      
+       function mostraNovo3(){
+         
+        var div_cliente = document.getElementById("info_novo3")
+        var icone = document.getElementById("novo3Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+       
+      }
+      
+      function mostraNovo4(){
+         
+        var div_cliente = document.getElementById("info_novo4")
+        var icone = document.getElementById("novo4Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+       
+      }
+      
+       function mostraNovo5(){
+         
+        var div_cliente = document.getElementById("info_novo5")
+        var icone = document.getElementById("novo5Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+       
+      }
+  </script>
+<script>
+    
+    
+     function preenche_fornecedores_portacliche(){
+        var os_fornecedores_portacliche = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","portacliche"]).results
+        
+        clearTable(document.getElementById("tabela_fornecedores_portacliche"))
+          
+          
+         var table = document.getElementById("tabela_fornecedores_portacliche")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_fornecedores_portacliche.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+          
+           
+             
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer">'+os_fornecedores_portacliche[i].nome+'</div>'
+            
+            cell2.innerHTML = '<div><img id="'+os_fornecedores_portacliche[i]._id+'" src="Icons/Edit.png" height="30px" onclick="editarFornecedor_portacliche()" style="cursor: pointer;"></div>'
+            
+            cell3.innerHTML = '<div><img id="'+os_fornecedores_portacliche[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagarFornecedor_portacliche()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+function apagarFornecedor_portacliche(){
+    if (confirm("Deseja mesmo apagar esse fornecedor?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_Fornecedores",linha)
+    preenche_fornecedores_portacliche()    
+    }
+     }
+     
+ function editarFornecedor_portacliche(){
+     var linha = event.srcElement.id
+     document.getElementById("id_portacliche").innerText = linha
+      var icone = document.getElementById("novo5Arrow")
+        icone.classList.toggle("fa-chevron-down")
+       
+    var busca_fornecedor = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["_id","equal to",linha]).results[0]
+   // console.log(busca_fornecedor)
+    document.getElementById("info_novo5").style = "display: inline-block; width: 100%;"
+    document.getElementById("nome_fornecedor_portacliche").value = busca_fornecedor.nome
+    contatos_portacliche = busca_fornecedor.contatos
+        
+        
+        
+        
+        
+    
+    if (contatos_portacliche != undefined){
+        
+       contatos = contatos_portacliche
+       
+        var tabela2 = document.getElementById("tabela_contatos_portacliche");
+      clearTable(tabela2)
+      
+      if (contatos.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos[i])
+       if (contatos[i].departamento == "Representante" && contatos[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].nome+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato_anilox()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].nome+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato_anilox()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+        
+    }
+    
+    
+    }
+</script>
+<script>
+function cancelar_forn_flexo(){
+    document.getElementById("nome_fornecedor").value = ""
+    clearTable(document.getElementById("tabela_materiais"))
+    clearTable(document.getElementById("tabela_espessura"))
+    clearTable(document.getElementById("tabela_contatos"))
+    setTimeout(function(){mostraNovo()},1000)
+    
+}
+
+function cancelar_forn_anilox(){
+    document.getElementById("nome_fornecedor_anilox").value = ""
+    clearTable(document.getElementById("tabela_contatos_anilox"))
+    setTimeout(function(){mostraNovo4()},1000)
+    
+}
+
+    function salvar_fornecedor_flexo(){
+      
+        var data = {}
+        data["nome"] = document.getElementById("nome_fornecedor").value
+        var info_produto = {}
+        info_produto["cliche"] = os_materiais
+        info_produto["espessura"] = as_espessuras
+        data["produto"] = info_produto
+        data["contatos"] = contatos
+        data["tipo"] = "flexografia"
+        grava_base_fornecedores(data)
+        
+    }
+    
+    function salvar_fornecedor_roto(){
+          var data = {}
+            data["nome"] = document.getElementById("nome_fornecedor_roto").value
+            data["local_gravacao"] = document.getElementById("local_gravacao").value
+            data["contatos"] = contatos_roto
+            data["tipo"] = "rotogravura"
+            grava_base_fornecedores(data)
+    }
+    
+   
+    function salvar_fornecedor_prepress(){
+      var data = {}
+      
+            data["nome"] = document.getElementById("nome_fornecedor_prepress").value
+            data["servico_oferecido"] = document.getElementById("o_prepress_tipo").value
+            data["tipo"] = "prepress"
+            data["contatos"] = contatos_prepress
+            grava_base_fornecedores(data)
+            }
+        
+    
+    function salvar_fornecedor_anilox(){
+             var data = {}
+            data["nome"] = document.getElementById("nome_fornecedor_anilox").value
+            data["servico_oferecido"] = ""
+            data["tipo"] = "anilox"
+            data["contatos"] = contatos_anilox
+            grava_base_fornecedores(data)
+            } 
+            
+      function salvar_fornecedor_portacliche(){
+             var data = {}
+            data["nome"] = document.getElementById("nome_fornecedor_portacliche").value
+            data["tipo"] = "portacliche"
+            data["contatos"] = contatos_portacliche
+            grava_base_fornecedores(data)
+            } 
+        
+    function grava_base_fornecedores(info){    
+       
+      
+       if (info.tipo == "flexografia"){
+       var theID = document.getElementById("id_flexo").innerText
+       }
+       if (info.tipo == "rotogravura"){
+       var theID = document.getElementById("id_roto").innerText
+       }
+       if (info.tipo == "prepress"){
+       var theID = document.getElementById("id_prepress").innerText
+       }
+       if (info.tipo == "anilox"){
+       var theID = document.getElementById("id_anilox").innerText
+       }
+       if (info.tipo == "portacliche"){
+       var theID = document.getElementById("id_portacliche").innerText
+       }
+       
+       
+       var query = []
+       if (theID != ""){
+       api.custom_objects.set_keys("BR-VALFI_Fornecedores",theID,info)
+       } else {
+       
+            api.custom_objects.create("BR-VALFI_Fornecedores",info)
+        } 
+        
+        document.getElementById("id_roto").innerText = ""
+        document.getElementById("id_flexo").innerText = ""
+        document.getElementById("id_prepress").innerText = ""
+        document.getElementById("id_anilox").innerText = ""
+        document.getElementById("id_portacliche").innerText = ""
+        
+        if (info.tipo== "flexografia"){
+            clearTable(document.getElementById("tabela_contatos"))
+            clearTable(document.getElementById("tabela_materiais"))
+            clearTable(document.getElementById("tabela_espessura"))
+             setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo")
+        var icone = document.getElementById("novoArrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores()
+            },1000)
+            
+          
+        } 
+        
+        if (info.tipo== "rotogravura"){
+            clearTable(document.getElementById("tabela_contatos_roto"))
+          document.getElementById("local_gravacao").value = "undefined"
+          document.getElementById("nome_fornecedor_roto").value = ""
+             setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo2")
+        var icone = document.getElementById("novo2Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_roto()
+            },1000)
+            
+          
+        } 
+    
+    if (info.tipo== "prepress"){
+            clearTable(document.getElementById("tabela_contatos_prepress"))
+            document.getElementById("nome_fornecedor_prepress").value = ""
+            document.getElementById("o_prepress_tipo").value = ""
+            document.getElementById("servico_PREPRESS").checked = false
+            document.getElementById("servico_ROTOGRAVURA").checked = false
+            document.getElementById("servico_FLEXOGRAFIA").checked = false
+             setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo3")
+        var icone = document.getElementById("novo3Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_prepress()
+            },1000)
+            
+          
+        } 
+        
+        
+        if (info.tipo == "anilox"){
+            document.getElementById("nome_fornecedor_anilox").value = ""
+            clearTable(document.getElementById("tabela_contatos_anilox"))
+            setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo4")
+        var icone = document.getElementById("novo4Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_anilox()
+            },1000)
+            
+            
+        }
+        
+        if (info.tipo == "portacliche"){
+            document.getElementById("nome_fornecedor_portacliche").value = ""
+            clearTable(document.getElementById("tabela_contatos_portacliche"))
+            setTimeout(function(){
+                 var div_cliente = document.getElementById("info_novo5")
+        var icone = document.getElementById("novo5Arrow")
+        icone.classList.toggle("fa-chevron-down")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+              
+            } else {
+                div_cliente.style.display = "none";
+            }
+            preenche_fornecedores_portacliche()
+            },1000)
+            
+            
+        }
+        
+    }
+        
+        
+    
+</script>
+<script>
+ var contatos = []
+ var contatos_roto = []
+ var contatos_prepress = []
+  var contatos_anilox = []
+   var contatos_portacliche = []
+          function adiciona_contato_flexo(){
+              
+             if (document.getElementById("altera_contato").innerText == "99"){
+                 console.log("estou no 99")
+              if (document.getElementById("departamento").value != "undefined"){
+              console.log("Estou dentro")
+                  document.getElementById("tabela_contatos").style = "display: inline-block;"
+                  var info_contato = {}
+                  info_contato["nome"] = document.getElementById("contato").value
+                  info_contato["telefone"] = document.getElementById("telefone_contato").value
+                  info_contato["email"] = document.getElementById("email_contato").value
+                  info_contato["departamento"] = document.getElementById("departamento").value
+                 contatos.push(info_contato)
+                 
+                  document.getElementById("contato").value = ""
+                 document.getElementById("telefone_contato").value = ""
+                 document.getElementById("email_contato").value = ""
+                 document.getElementById("departamento").value = "undefined"
+
+                preenche_tabela_contatos() 
+                
+              } else {
+                  alert("Por favor, selecione o setor do contato!")
+              }
+               
+             } else {
+                 console.log("Estou no altera")
+               
+                     var numero = parseInt(document.getElementById("altera_contato").innerText)
+                   console.log(numero)
+                     console.log(valores)
+                       
+                         contatos[numero].nome = document.getElementById("contato").value
+                         contatos[numero].telefone = document.getElementById("telefone_contato").value
+                         contatos[numero].email = document.getElementById("email_contato").value
+                         contatos[numero].departamento = document.getElementById("departamento").value
+                    
+                         
+                     
+                     document.getElementById("altera_contato").innerText == "99"
+                     document.getElementById("contato").value = ""
+                 document.getElementById("telefone_contato").value = ""
+                 document.getElementById("email_contato").value = ""
+                 document.getElementById("departamento").value = "undefined"
+                    preenche_tabela_contatos() 
+                 }
+          }
+          
+          
+          
+          function adiciona_contato_roto(){
+            if (document.getElementById("altera_contato_roto").innerText == "99"){
+              if (document.getElementById("departamento_roto").value != "undefined"){
+              console.log("Estou dentro")
+                  document.getElementById("tabela_contatos_roto").style = "display: inline-block;"
+                  var info_contato = {}
+                  info_contato["nome"] = document.getElementById("contato_roto").value
+                  info_contato["telefone"] = document.getElementById("telefone_contato_roto").value
+                  info_contato["email"] = document.getElementById("email_contato_roto").value
+                  info_contato["departamento"] = document.getElementById("departamento_roto").value
+                 contatos_roto.push(info_contato)
+                 
+                 document.getElementById("contato_roto").value = ""
+                 document.getElementById("telefone_contato_roto").value = ""
+                 document.getElementById("email_contato_roto").value = ""
+                 document.getElementById("departamento_roto").value = "undefined"
+                
+              
+                preenche_tabela_contatos_roto() 
+              } else {
+                  alert("Por favor, selecione o setor do contato!")
+              }
+               
+             } else {
+                 
+                     var numero = parseInt(document.getElementById("altera_contato_roto").innerText)
+                   
+                   
+                         contatos_roto[numero]["nome"] = document.getElementById("contato_roto").value
+                         contatos_roto[numero]["telefone"] = document.getElementById("telefone_contato_roto").value
+                         contatos_roto[numero]["email"] = document.getElementById("email_contato_roto").value
+                         contatos_roto[numero]["departamento"] = document.getElementById("departamento_roto").value
+                    
+                   
+                     
+                       document.getElementById("altera_contato_roto").innerText == "99"
+                       document.getElementById("contato_roto").value = ""
+                 document.getElementById("telefone_contato_roto").value = ""
+                 document.getElementById("email_contato_roto").value = ""
+                 document.getElementById("departamento_roto").value = "undefined"
+                    preenche_tabela_contatos_roto() 
+                 }
+          }
+          
+          function adiciona_contato_prepress(){
+                
+                 
+             if (document.getElementById("altera_contato_prepress").innerText == "99"){
+              if (document.getElementById("departamento_prepress").value != "undefined"){
+              console.log("Estou dentro")
+                  document.getElementById("tabela_contatos_prepress").style = "display: inline-block;"
+                  var info_contato = {}
+                  info_contato["nome"] = document.getElementById("contato_prepress").value
+                  info_contato["telefone"] = document.getElementById("telefone_contato_prepress").value
+                  info_contato["email"] = document.getElementById("email_contato_prepress").value
+                  info_contato["departamento"] = document.getElementById("departamento_prepress").value
+                 contatos_prepress.push(info_contato)
+                 
+                  document.getElementById("contato_prepress").value = ""
+                 document.getElementById("telefone_contato_prepress").value = ""
+                 document.getElementById("email_contato_prepress").value = ""
+                 document.getElementById("departamento_prepress").value = "undefined"
+              
+                preenche_tabela_contatos_prepress() 
+              } else {
+                  alert("Por favor, selecione o setor do contato!")
+              }
+               
+             }
+             else {
+                 
+                     var numero = parseInt(document.getElementById("altera_contato_prepress").innerText)
+                   
+                         contatos_prepress[numero]["nome"] = document.getElementById("contato_prepress").value
+                         contatos_prepress[numero]["telefone"] = document.getElementById("telefone_contato_prepress").value
+                         contatos_prepress[numero]["email"] = document.getElementById("email_contato_prepress").value
+                         contatos_prepress[numero]["departamento"] = document.getElementById("departamento_prepress").value
+                    
+                        
+                     document.getElementById("altera_contato_prepress").innerText == "99"
+                     document.getElementById("contato_prepress").value = ""
+                 document.getElementById("telefone_contato_prepress").value = ""
+                 document.getElementById("email_contato_prepress").value = ""
+                 document.getElementById("departamento_prepress").value = "undefined"
+                    preenche_tabela_contatos_prepress() 
+                 } 
+                 
+                 
+          }   
+             
+          function adiciona_contato_anilox(){      
+             if (document.getElementById("altera_contato_anilox").innerText == "99"){
+              if (document.getElementById("departamento_anilox").value != "undefined"){
+              console.log("Estou dentro")
+                  document.getElementById("tabela_contatos_anilox").style = "display: inline-block;"
+                  var info_contato = {}
+                  info_contato["nome"] = document.getElementById("contato_anilox").value
+                  info_contato["telefone"] = document.getElementById("telefone_contato_anilox").value
+                  info_contato["email"] = document.getElementById("email_contato_anilox").value
+                  info_contato["departamento"] = document.getElementById("departamento_anilox").value
+                  contatos_anilox.push(info_contato)
+                 
+                  document.getElementById("contato_anilox").value = ""
+                 document.getElementById("telefone_contato_anilox").value = ""
+                 document.getElementById("email_contato_anilox").value = ""
+                 document.getElementById("departamento_anilox").value = "undefined"
+              
+                preenche_tabela_contatos_anilox() 
+              } else {
+                  alert("Por favor, selecione o setor do contato!")
+              }
+               
+             }
+             else {
+                 
+                     var numero = parseInt(document.getElementById("altera_contato_anilox").innerText)
+                   
+                         contatos_anilox[numero]["nome"] = document.getElementById("contato_anilox").value
+                         contatos_anilox[numero]["telefone"] = document.getElementById("telefone_contato_anilox").value
+                         contatos_anilox[numero]["email"] = document.getElementById("email_contato_anilox").value
+                         contatos_anilox[numero]["departamento"] = document.getElementById("departamento_anilox").value
+                    
+                        
+                     document.getElementById("altera_contato_anilox").innerText == "99"
+                     document.getElementById("contato_anilox").value = ""
+                 document.getElementById("telefone_contato_anilox").value = ""
+                 document.getElementById("email_contato_anilox").value = ""
+                 document.getElementById("departamento_anilox").value = "undefined"
+                    preenche_tabela_contatos_anilox() 
+                 } 
+                 
+                 
+                 
+             }
+         
+         
+          function adiciona_contato_portacliche(){      
+             if (document.getElementById("altera_contato_portacliche").innerText == "99"){
+              if (document.getElementById("departamento_portacliche").value != "undefined"){
+              console.log("Estou dentro")
+                  document.getElementById("tabela_contatos_portacliche").style = "display: inline-block;"
+                  var info_contato = {}
+                  info_contato["nome"] = document.getElementById("contato_portacliche").value
+                  info_contato["telefone"] = document.getElementById("telefone_contato_portacliche").value
+                  info_contato["email"] = document.getElementById("email_contato_portacliche").value
+                  info_contato["departamento"] = document.getElementById("departamento_portacliche").value
+                  contatos_anilox.push(info_contato)
+                 
+                  document.getElementById("contato_portacliche").value = ""
+                 document.getElementById("telefone_contato_portacliche").value = ""
+                 document.getElementById("email_contato_portacliche").value = ""
+                 document.getElementById("departamento_portacliche").value = "undefined"
+              
+                preenche_tabela_contatos_portacliche() 
+              } else {
+                  alert("Por favor, selecione o setor do contato!")
+              }
+               
+             }
+             else {
+                 
+                     var numero = parseInt(document.getElementById("altera_contato_portacliche").innerText)
+                   
+                         contatos_anilox[numero]["nome"] = document.getElementById("contato_portacliche").value
+                         contatos_anilox[numero]["telefone"] = document.getElementById("telefone_contato_portacliche").value
+                         contatos_anilox[numero]["email"] = document.getElementById("email_contato_portacliche").value
+                         contatos_anilox[numero]["departamento"] = document.getElementById("departamento_portacliche").value
+                    
+                        
+                     document.getElementById("altera_contato_portacliche").innerText == "99"
+                     document.getElementById("contato_portacliche").value = ""
+                 document.getElementById("telefone_contato_portacliche").value = ""
+                 document.getElementById("email_contato_portacliche").value = ""
+                 document.getElementById("departamento_portacliche").value = "undefined"
+                    preenche_tabela_contatos_portacliche() 
+                 } 
+                 
+                 
+                 
+             }
+              
+          
+          
+          
+   
+          function preenche_tabela_contatos(){
+         var tabela2 = document.getElementById("tabela_contatos");
+      clearTable(tabela2)
+      
+      if (contatos.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos[i])
+       if (contatos[i].departamento == "Representante" && contatos[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].email+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato2()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].email+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato2()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+          
+          
+     function preenche_tabela_contatos_roto(){
+      var tabela2 = document.getElementById("tabela_contatos_roto");
+      clearTable(tabela2)
+      
+      if (contatos_roto.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos_roto.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos_roto[i])
+       if (contatos_roto[i].departamento == "Representante" && contatos_roto[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_roto[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_roto[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_roto[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_roto[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos_roto[i].nome+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato_roto()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos_roto[i].nome+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato_roto()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+          
+          function preenche_tabela_contatos_prepress(){
+       var tabela2 = document.getElementById("tabela_contatos_prepress");
+      clearTable(tabela2)
+      
+      if (contatos_prepress.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos_prepress.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos_prepress[i])
+       if (contatos_prepress[i].departamento == "Representante" && contatos_prepress[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_prepress[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_prepress[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_prepress[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_prepress[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos_prepress[i].email+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato_prepress()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos_prepress[i].email+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato_prepress()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+
+
+ function preenche_tabela_contatos_anilox(){
+      var tabela2 = document.getElementById("tabela_contatos_anilox");
+      clearTable(tabela2)
+      
+      if (contatos_anilox.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos_anilox.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos_anilox[i])
+       if (contatos_anilox[i].departamento == "Representante" && contatos_anilox[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_anilox[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_anilox[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_anilox[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_anilox[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos_anilox[i].nome+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato_anilox()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos_anilox[i].nome+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato_anilox()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+          
+   function preenche_tabela_contatos_portacliche(){
+      var tabela2 = document.getElementById("tabela_contatos_portacliche");
+      clearTable(tabela2)
+      
+      if (contatos_portacliche.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos_anilox.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos_portacliche[i])
+       if (contatos_portacliche[i].departamento == "Representante" && contatos_portacliche[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_portacliche[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_portacliche[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_portacliche[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos_portacliche[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos_portacliche[i].nome+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato_portacliche()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos_portacliche[i].nome+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato_portacliche()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+             
+          
+      </script>
+      <script>
+    function reply_edit_contato2(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].email)
+        if (contatos[i].email == linha){
+            document.getElementById("altera_contato").innerText = i
+            document.getElementById("contato").value = contatos[i].nome
+            document.getElementById("email_contato").value = contatos[i].email
+            document.getElementById("telefone_contato").value = contatos[i].telefone
+            var busca_select = document.getElementById("departamento")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+    
+      function reply_edit_contato_roto(){
+    var linha = event.srcElement.id
+    for (i=0;i<contatos_roto.length;i++){
+        if (contatos_roto[i].nome == linha){
+            document.getElementById("altera_contato_roto").innerText = i
+            document.getElementById("contato_roto").value = contatos_roto[i].nome
+            document.getElementById("email_contato_roto").value = contatos_roto[i].email
+            document.getElementById("telefone_contato_roto").value = contatos_roto[i].telefone
+            var busca_select = document.getElementById("departamento_roto")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos_roto[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+    
+    
+    
+      function reply_edit_contato_prepress(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    console.log(contatos_prepress.length)
+    for (i=0;i<contatos_prepress.length;i++){
+        console.log(linha)
+        console.log(contatos_prepress[i].email)
+        if (contatos_prepress[i].nome == linha){
+            document.getElementById("altera_contato_prepress").innerText = i
+            document.getElementById("contato_prepress").value = contatos_prepress[i].nome
+            document.getElementById("email_contato_prepress").value = contatos_prepress[i].email
+            document.getElementById("telefone_contato_prepress").value = contatos_prepress[i].telefone
+            var busca_select = document.getElementById("departamento_prepress")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos_prepress[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+    
+     function reply_edit_contato_anilox(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    console.log(contatos_anilox.length)
+    for (i=0;i<contatos_anilox.length;i++){
+        console.log(linha)
+        console.log(contatos_anilox[i].email)
+        if (contatos_anilox[i].nome == linha){
+            document.getElementById("altera_contato_anilox").innerText = i
+            document.getElementById("contato_anilox").value = contatos_anilox[i].nome
+            document.getElementById("email_contato_anilox").value = contatos_anilox[i].email
+            document.getElementById("telefone_contato_anilox").value = contatos_anilox[i].telefone
+            var busca_select = document.getElementById("departamento_anilox")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos_anilox[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+    
+    
+    
+     function reply_edit_contato_portacliche(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    console.log(contatos_anilox.length)
+    for (i=0;i<contatos_anilox.length;i++){
+        console.log(linha)
+        console.log(contatos_portacliche[i].email)
+        if (contatos_portacliche[i].nome == linha){
+            document.getElementById("altera_contato_portacliche").innerText = i
+            document.getElementById("contato_portacliche").value = contatos_anilox[i].nome
+            document.getElementById("email_contato_portacliche").value = contatos_anilox[i].email
+            document.getElementById("telefone_contato_portacliche").value = contatos_anilox[i].telefone
+            var busca_select = document.getElementById("departamento_portacliche")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos_portacliche[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+</script>
+<script>
+    function reply_delete_contato2(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].email)
+        if (contatos[i].email == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos()
+    }
+    
+     function reply_delete_contato_anilox(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos_anilox.length;i++){
+        console.log(contatos_anilox[i].nome)
+        if (contatos_anilox[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos_anilox.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos_anilox()
+    }
+    
+     function reply_delete_contato_portacliche(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos_anilox.length;i++){
+        console.log(contatos_portacliche[i].nome)
+        if (contatos_portacliche[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos_portacliche.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos_portacliche()
+    }
+</script>
+   
+<script>
+ 
+    function adiciona_prepress(){
+        var linha = event.srcElement.id
+        var div_planta = linha.replace("img-","")
+        var qual_planta = document.getElementById(div_planta).value
+        var div_resultado = linha.replace("img-","o_")
+        var info_resultado = document.getElementById(div_resultado).value
+        
+        if (info_resultado.indexOf(qual_planta) === -1){
+            if (info_resultado == ""){
+                info_resultado = qual_planta
+            } else {
+                info_resultado = info_resultado+", "+qual_planta
+            }
+        }
+        document.getElementById(div_resultado).value = info_resultado
+        
+    }
+    
+     function remove_planta(){
+        var linha = event.srcElement.id
+        var div_planta = linha.replace("img-","").replace("_menos","")
+        var qual_planta = document.getElementById(div_planta).value
+        console.log(qual_planta)
+        var div_resultado = linha.replace("img-","o_").replace("_menos","")
+        var info_resultado = document.getElementById(div_resultado).value
+        console.log(info_resultado)
+        console.log(info_resultado.indexOf(qual_planta))
+       
+           info_resultado = info_resultado.replace(qual_planta,"")
+            info_resultado = info_resultado.replace(",,",",")
+            if (info_resultado.indexOf(",") === 0){
+                info_resultado = info_resultado.substring(2,info_resultado.length)
+            }
+            if (info_resultado.substring(info_resultado.length-1,info_resultado.length) == ","){
+               info_resultado = info_resultado.substring(0,info_resultado.length-1) 
+            }
+        
+        document.getElementById(div_resultado).value = info_resultado
+        
+    }
+    
+</script>
+
+
+
+
+    </body>
+
+</html>

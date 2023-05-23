@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Lista Fluxos - Finepack</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload-controller.js'></script>
+        <script src="js/popper.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+          function logout() {
+               $.cookie('user_id', '', { expires: -1, path: '/' });
+               $.cookie('user_hash', '', { expires: -1, path: '/' });
+               $.cookie('expiration_date', '', { expires: -1, path: '/' });
+               $.cookie('customer_id', '', { expires: -1, path: '/' });
+               $.cookie('customer_name', '', { expires: -1, path: '/' });
+               $.cookie('username', '', { expires: -1, path: '/' });
+               $.cookie('scope', '', { expires: -1, path: '/' });
+               var lSession = api_sync.auth.create_session('', ''); // fecha sessao do CloudFlow
+               var l_url = '/portal.cgi/PP_FILE_STORE/Public/Login/login.html'
+               window.location.href = l_url;
+               //window.location.href = '?upload=done';
+          }
+             
+           
+       </script>
+
+<script>
+        
+  function limpa_formulário_cep() {
+      //Limpa valores do formulário de cep.
+      document.getElementById('rua').value=("");
+      document.getElementById('bairro').value=("");
+      document.getElementById('cidade').value=("");
+      document.getElementById('uf').value=("");
+}
+
+function meu_callback(conteudo) {
+  if (!("erro" in conteudo)) {
+      //Atualiza os campos com os valores.
+      document.getElementById('rua').value=(conteudo.logradouro);
+      document.getElementById('bairro').value=(conteudo.bairro);
+      document.getElementById('cidade').value=(conteudo.localidade);
+      document.getElementById('uf').value=(conteudo.uf);
+  } //end if.
+  else {
+      //CEP não Encontrado.
+      limpa_formulário_cep();
+      alert("CEP não encontrado.");
+  }
+}
+  
+      function pesquisacep(valor) {
+
+  //Nova variável "cep" somente com dígitos.
+  var cep = valor.replace(/\D/g, '');
+
+  //Verifica se campo cep possui valor informado.
+  if (cep != "") {
+
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
+
+      //Valida o formato do CEP.
+      if(validacep.test(cep)) {
+
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="...";
+          document.getElementById('bairro').value="...";
+          document.getElementById('cidade').value="...";
+          document.getElementById('uf').value="...";
+
+          //Cria um elemento javascript.
+          var script = document.createElement('script');
+
+          //Sincroniza com o callback.
+          script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+          //Insere script no documento e carrega o conteúdo.
+          document.body.appendChild(script);
+
+      } //end if.
+      else {
+          //cep é inválido.
+          limpa_formulário_cep();
+          alert("Formato de CEP inválido.");
+      }
+  } //end if.
+  else {
+      //cep sem valor, limpa formulário.
+      limpa_formulário_cep();
+  }
+};
+
+</script>
+    </head>
+
+
+    <body onload="preencheLista()">
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/finepack.png" style="width: 70%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Vinculo
+                  <ul>
+                  <li style="list-style-type: none">
+                     <a href="Upload_Interno.html"><i class="fas fa-file-upload" style="margin-right: 5px"></i>Novo Upload</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="uploads.html"><i class="fas fa-satellite-dish" style="margin-right: 5px"></i>Uploads</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="artes.html"><i class="fas fa-paint-brush" style="margin-right: 5px"></i>Artes</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="vinculos.html"><i class="fas fa-link" style="margin-right: 5px"></i>Vinculos</a>
+                    </li>
+                    </ul>
+                    </li>
+                    
+                    <li style="color: #004b93;list-style-type: none">OP
+                    <ul>
+                    <li style="list-style-type: none">
+                      <a href="skus.html"><i class="fas fa-search" style="margin-right: 5px"></i>Busca SKUs</a>
+                    </li>
+                    <li style="list-style-type: none">
+                    <a href="OP_Abertas.html"><i class="fas fa-tools" style="margin-right: 5px"></i>OPs Abertas</a>
+                  </li>
+                  </ul>
+                  </li>
+                  <li style="color: #004b93;list-style-type: none">Clientes
+                    <ul>
+                    <li style="list-style-type: none">
+                      <a href="fluxos.html"><i class="fas fa-thumbs-up" style="margin-right: 5px"></i>Cadastro Fluxos Aprovação</a>
+                    </li>
+                    <li class="active" style="list-style-type: none">
+                      <a href="clientes.html"><i class="fas fa-user-friends" style="margin-right: 5px"></i>Cadastro Clientes</a>
+                    </li>
+                    </ul>
+                    </li>
+          <!--<li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Paginas Administrativas</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="artes.html">Artes</a>
+                </li>
+              </ul>
+            </li>-->
+          </ul>
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+             <div class="col-md-5" id="bemvindo"></div>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2>Lista Clientes</h2>
+        <div>
+        <div class="form-group col-md-3" style="display:inline-block;">
+          <label for="desc">Codigo</label>
+          <input type="text" onkeyup="filtro()" class="form-control" id="desc" name="desc">
+          </div>
+          <div class="form-group col-md-3" style="display:inline-block;">
+            <label for="fluxo">Cliente</label>
+            <input type="text" onkeyup="filtro2()" class="form-control" id="fluxo" name="fluxo">
+            </div>
+            <section class="form-group col-md-4" style="display:inline-block"></section>
+
+        <button onclick="cadastrarCliente()" class="btn-primary">Novo Cliente</button>
+        <br>
+        <div id="acaoUpload" style="color: red;"></div><div id="idatual" style="display: none">1</div>
+        </div>
+        <br>
+          
+        <div class="form-group col-md-10" id="formulario" style="display:none;">
+          
+         <form id="formularioUser">
+          <div class="form-group col-md-2" style="display:inline-block;">
+            <label for="cod_Cliente">Código Cliente</label>
+            <input type="text" onchange="procuraCodigo()" class="form-control" id="cod_Cliente" name="cod_Cliente">
+            </div>
+            <div class="form-group col-md-4" style="display:inline-block;">
+              <label for="nome_Cliente">Nome Cliente</label>
+              <input type="text" class="form-control" onchange="procuraCliente()" id="nome_Cliente" name="nome_Cliente">
+              </div>
+                <hr>
+                
+               
+            
+          </form>                
+           
+                <button id="botaoSalvar" class="btn-primary" onclick="salvaFluxo()">Criar Cliente</button>
+                <br>
+           <br>
+           <hr>
+           </div>
+           <br>
+      <div class="form-group col-md-5" style="display:inline-block;">    
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th class="th-sm" style="width:10%">Codigo
+        </th>
+        <th class="th-sm" style="width:40%">Nome
+        </th>
+        <th class="th-sm" style="width:5%">Usuarios
+        </th>
+        <th class="th-sm" style="width:5%">Apagar
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+ </div>
+ <div class="form-group col-md-6" style="display:inline-block; vertical-align: top;">
+  <div id="existeUser" style="display:none;">
+  <h4 id="titulo">Usuarios do Cliente</h4>    
+  <table id="dtBasicExample2" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+<thead>
+<tr>
+  <th class="th-sm" style="width:20%">Nome de Usuario
+  </th>
+  <th class="th-sm" style="width:30%">Nome Completo
+  </th>
+  <th class="th-sm" style="width:30%">e-mail
+  </th>
+  <th class="th-sm" style="width:5%">Apagar
+  </th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<hr>
+</div>
+<br>
+<div id="adicionaUser" style="display: none">
+  <h5 id="adiciona_who"></h5>
+<div class="form-group col-md-11" style="display:inline-block;">
+  <label for="nome_usuario">Nome Completo</label>
+  <input type="text" class="form-control" id="nome_usuario" name="nome_usuario">
+  </div>
+  <div class="form-group col-md-11" style="display:inline-block;">
+  <label for="email_usuario">e-mail</label>
+  <input type="text" class="form-control" id="email_usuario" name="email_usuario">
+  </div>
+  <br>
+  <button class="btn btn-primary" onclick="criarUsuario()">Criar Usuario</button>
+</div>
+</div>
+        </div>
+  		</div>
+
+      <script>
+        function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+      </script>
+
+
+      <script>
+         function preencheLista(){
+         clearTable(document.getElementById("dtBasicExample"));
+      var tabela = document.getElementById("dtBasicExample");
+      var qtasrow = tabela.rows.length;
+      var a_lista = api.custom_objects.list_with_options("BR-FINEPACK_Clientes",[],["codigo","ascending"]).results
+      for (i=0;i<a_lista.length;i++){
+          
+         
+          
+        var row =  tabela.insertRow(qtasrow);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        
+
+        cell1.innerHTML = '<div onclick="mostraUsers()" id="users_'+a_lista[i]._id+'" style="vertical-align: middle;">'+a_lista[i].codigo+'</div>';
+        cell2.innerHTML = '<div onclick="mostraUsers()" id="users_'+a_lista[i]._id+'" style="vertical-align: middle;">'+a_lista[i].nome+'</div>';
+        cell3.innerHTML = '<div><img onclick="mostraUsers()" id="users_'+a_lista[i]._id+'" src="./Icons/users.png" width="50px"></div>';
+        cell4.innerHTML = '<div><img onclick="reply_click()" id="apagaUpload_'+a_lista[i]._id+'" src="./Icons/delete.png" width="50px"></div>';
+                 
+        qtasrow = qtasrow+1
+      }
+         }
+
+
+      </script>
+       <script>
+    var usuario = api.auth.get_current_user()
+    var texto = "Bem vindo, "+usuario.fullname
+    document.getElementById("bemvindo").innerText = texto
+</script>
+<script>
+function reply_click()
+{
+  
+    var linha = event.srcElement.id
+    //console.log(linha)
+    var linha_2 = linha.split("_")
+    console.log("A Linha 2 "+linha_2[1])
+    //console.log(linha_2[1])
+    api.custom_objects.delete("BR-FINEPACK_Clientes",linha_2[1])
+
+   $('#acaoUpload').text('O cliente esta sendo eliminado da base de dados e os arquivos sendo apagados da pasta')
+    setTimeout(() => { $('#acaoUpload').text();preencheLista() }, 1000);
+
+}
+</script>
+<script>
+  function mostraUsers()
+  {
+      
+      var linha = event.srcElement.id
+    console.log("A linha "+linha.toString())
+      //console.log(linha)
+      var linha_2 = linha.split("_")
+      console.log("A Linha 2 "+linha_2[1])
+      document.getElementById("idatual").innerText = linha_2[1]
+      var ofluxo = api.custom_objects.list_with_options("BR-FINEPACK_Clientes",["_id","equal to",linha_2[1]]).results[0]
+    var osusuarios = ofluxo.usuarios
+    document.getElementById("adicionaUser").style = "display:inline-block;"
+    if (osusuarios.length > 0){
+      document.getElementById("existeUser").style= "display: inline-block;"
+    } else {
+      document.getElementById("adiciona_who").innerText = "Adicionar usuarios para "+ofluxo.nome
+    
+    }
+
+  }
+  </script>
+  
+<script>
+  function filtro() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("desc");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+function filtro2() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("fluxo");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<script>
+  function cadastrarCliente(){
+    $( '#formularioUser' ).each(function(){
+    this.reset();
+});
+    document.getElementById("formulario").style = "display: inline-block;"
+    document.getElementById("botaoSalvar").style = "background-color: #007bff; border-color: #007bff;"
+    document.getElementById("botaoSalvar").innerText = "Criar Cliente"
+    document.getElementById("idatual").innerText = "1"
+    document.getElementById("cod_Cliente").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("nome_Cliente").style = "border-color: #007BFF; background-color: #a8d2ff"
+    
+   
+  
+  }
+</script>
+<script>
+function procuraCodigo() {
+    var ocodigo = document.getElementById("cod_Cliente").value
+    var buscacliente = api.custom_objects.list_with_options("BR-FINEPACK_Clientes",["codigo","equal to",ocodigo]).results 
+    if (buscacliente.length > 0){
+      document.getElementById("acaoUpload").innerText = "O codigo "+ocodigo+" ja esta cadastrado no sistema"
+      document.getElementById("botaoSalvar").disable = true
+      document.getElementById("botaoSalvar").style = "background-color: gray";
+
+    } else {
+      document.getElementById("acaoUpload").innerText = "" 
+      document.getElementById("botaoSalvar").disable = false
+      document.getElementById("botaoSalvar").style = "background-color: #007bff";
+
+    }
+    
+   }
+   function procuraCliente() {
+    var ocodigo = document.getElementById("nome_Cliente").value
+    var buscacliente = api.custom_objects.list_with_options("BR-FINEPACK_Clientes",["nome","equal to",ocodigo]).results 
+    if (buscacliente.length > 0){
+      document.getElementById("acaoUpload").innerText = "Um cliente com o nome "+ocodigo+" ja esta cadastrado no sistema"
+      document.getElementById("botaoSalvar").disable = true
+      document.getElementById("botaoSalvar").style = "background-color: gray";
+
+    } else {
+      document.getElementById("acaoUpload").innerText = "" 
+      document.getElementById("botaoSalvar").disable = false
+      document.getElementById("botaoSalvar").style = "background-color: #007bff";
+
+    }
+    
+   }
+</script>
+<script>
+  function criarUsuario(){
+    var usuario = document.getElementById("nome_usuario").value
+    var email = document.getElementById("email_usuario").value
+    var quebra_nome = usuario.split(" ")
+    if (quebra_nome.length > 1){
+    var username = quebra_nome[0]+quebra_nome[1].substring(0,1)
+    } else {
+      var username = quebra_nome[0]+"_"
+    }
+    var data = {}
+    data["fullname"] = usuario
+    data["email"] = email
+    data["username"] = username
+    api.hub.start_from_whitepaper_with_variables("BR-FINEP_Users",)
+
+  }
+</script>
+<script>
+  function salvaFluxo(){
+    var codigo_novo = document.getElementById("cod_Cliente").value
+    var nome_novo = document.getElementById("nome_Cliente").value
+  
+    api.hub.start_from_whitepaper_with_files_and_variables("BR-FINEP_Users","criaUsuario",[],{"codigo":codigo_novo,"pasta":nome_novo})
+    document.getElementById("formulario").style = "display: none;"
+    setTimeout(() => { preencheLista() }, 500);
+
+  }
+</script>
+</body>
+
+</html>

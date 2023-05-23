@@ -1,0 +1,849 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Cadastro Emails Reunião DG - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+       <script>
+        
+    
+    var usuario = api.auth.get_current_user()
+    
+     </script>
+     <script>
+         function logout () {
+        $.cookie('user_id', '', { expires: -1, path: '/' });
+        $.cookie('user_hash', '', { expires: -1, path: '/' });
+        $.cookie('expiration_date', '', { expires: -1, path: '/' });
+        $.cookie('customer_id', '', { expires: -1, path: '/' });
+        $.cookie('customer_name', '', { expires: -1, path: '/' });
+        $.cookie('username', '', { expires: -1, path: '/' });
+        $.cookie('scope', '', { expires: -1, path: '/' });
+        var lSession = api_sync.auth.create_session('', ''); // fecha sessao do CloudFlow
+        var l_url = '/portal.cgi/PP_FILE_STORE/Public/Login/login.html'
+        window.location.href = l_url;
+        //window.location.href = '?upload=done';
+      
+    }
+     </script>
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+              	    <ul class="active components mb-5">
+              <li  class="active" style="list-style-type: none">
+               <a href="ticket_dashboard_mg4.html"><img src="./Icons/ticket_dg.png" width="30px" style="margin-right: 5px;">Dashboard Ticket</a>
+              </li>
+                   <li  style="list-style-type: none">
+               <a href="aberturaticket_mg4.html"><img src="./Icons/entrada_ticket.png" width="30px" style="margin-right: 5px;">Novo Ticket</a>
+              </li>
+             
+            
+            <li>
+           <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/fornecedores.png" width="30px" style="margin-right: 10px">Reunião DG</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+               <li style="list-style-type: none">
+               <a href="reuniao_dg_mg4.html"><img src="./Icons/liberado_reuniao.png" width="20px" style="margin-right: 5px;">Pauta</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastro_email_reuniaoDG.html"><img src="./Icons/cadastroemailreuniao.png" width="20px" style="margin-right: 5px;">Cadastro de E-mails</a>
+          </li>
+          
+        </ul>
+        </li>
+        
+                </ul>
+                
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item">
+                  <div class="input-icons">
+                     <i class="fa fa-search icon"></i>
+                    <input id="filtrarTabela" class="input-field form-control" onkeyup="filtro_tabela()" style="width: 400px;border-top-left-radius: 40px;border-top-right-radius: 40px;border-bottom-left-radius: 40px;border-bottom-right-radius: 40px;" type="text"> 
+                    </div>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" style="cursor: pointer" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+       
+       
+        
+       
+        
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+       
+           
+            
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+        <div id="id_cliente" style="display: none"></div>
+            
+    
+  
+       
+            
+            <!-- termina mostra ferramentas e começa locais -->
+            
+             
+              <h5 id="a_div_cliente"><i id="clienteArrow" class="fas fa-plus-square" onclick="mostraCliente()" style="margin-right: 5px; cursor:pointer;"></i>Novo E-mail Reunião DG</h5>
+                 <div id="info_cliente" class="form-group" style="display: none">
+                <div class="form-group col-md-6" style="display:inline-block; vertical-align: top;">
+                <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                  <label for="nome_grupo">Nome Grupo</label>
+                  <input type="text" class="form-control"  id="nome_grupo" name="nome_grupo">
+                  </div>
+               
+                 <div class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+                  <label for="e-mail">Adicionar email</label><br>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toLowerCase(); limpa_estilo()" id="e-mail" style="width: 80%; display:inline-block;" name="e-mail">
+                  <img   src="./Icons/icone_mais.png" width="30px"  style="cursor: pointer; display: inline-block;" onclick="adiciona_contato()">
+                  </div>
+                  <div id="msg_erro_email" style="color: red" class="error"></div>
+                    <table id="tabela_contatos" class="table custom-table"  style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              
+              <th class="th-sm" style="width:300px">E-mail
+              </th>
+              <th class="th-sm" style="width:50px">Apagar
+              </th>
+             
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+                <button class="btn btn-primary" onclick="salvar_email()" style="cursor: pointer">Salvar Grupo</button>
+                  <button class="btn btn-secondary" onclick="cancelar_email()" style="cursor: pointer">Cancelar</button>
+           </div>   
+                <div id="info_salvar_cliente" style="color: red"></div>
+                 
+           </div>
+       
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_clientes" class="table custom-table"  style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              
+              <th class="th-sm" style="width:30%">Grupo
+              </th>
+              <th class="th-sm" style="width:64%">Participantes
+              </th>
+              <th class="th-sm" style="width:6%">Apagar
+              </th>
+             
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+       
+        
+                
+                
+                
+        
+        
+            
+             
+          
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  
+              
+            </div>
+        
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+  
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+  	</script>
+  	
+  	<script>
+  	
+    
+    </script>
+  	
+  	
+  
+  
+<script>
+    function reply_delete_contato(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].nome)
+        if (contatos[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos()
+    }
+    
+    function adiciona_opcao(){
+         var linha = event.srcElement.id
+         
+         
+         // verifica se é um email valido
+         
+        
+    {
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElemen.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+         
+         
+         
+         
+         console.log(linha)
+         var linha_array = linha.split("_")
+         console.log(linha_array[0])
+         console.log(linha_array[1])
+         for (i=0;i<clientes.length;i++){
+             console.log(clientes[i]._id)
+              console.log(linha_array[0])
+             if (clientes[i]._id == linha_array[0]){
+                console.log("achei o cliente")
+                 clientes[i][linha_array[1]] = document.getElementById(linha).checked
+                 var div_mg4 = linha_array[0]+"_mg4"
+                 var div_mg1 = linha_array[0]+"_mg1"
+                 var div_am1 = linha_array[0]+"_am1"
+                 var div_ffs = linha_array[0]+"_ffs"
+                 var div_ad = linha_array[0]+"_altadensidade"
+                var atualiza =  api.custom_objects.set_keys("BR-VALFI_emails_reuniaoDG",
+                                                            clientes[i]._id,
+                                                            {"mg4":document.getElementById(div_mg4).checked,
+                                                             "mg1":document.getElementById(div_mg1).checked,
+                                                             "am1":document.getElementById(div_am1).checked,
+                                                             "ffs":document.getElementById(div_ffs).checked,
+                                                             "altadensidade":document.getElementById(div_ad).checked,
+                                                             "scope":["6274f4d42b53614e6a5e4503","6274f4df051de20c12216693","627e9c39fa237e0b07257813","6267df8176515c55ea373fd3","6274f4e6b2e5fc77ae7864f3"]
+                                                            })
+                console.log(atualiza)
+             }
+         }
+         preenche_clientes()
+    }
+</script>
+     
+
+      
+ 
+
+<script>
+
+  
+      var clientes = api.custom_objects.list_with_options("BR-VALFI_emails_reuniaoDG",[]).results
+     
+    function preenche_clientes(){
+       
+        clearTable(document.getElementById("tabela_clientes"))
+          
+          console.log(clientes.length)
+         var table = document.getElementById("tabela_clientes")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<clientes.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+          
+           var theemails = clientes[i].emails
+           var nomes_email = ""
+           for (j=0;j<theemails.length;j++){
+               nomes_email += theemails[j].email+'<br>'
+           }
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em;">'+clientes[i].grupo+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em;">'+nomes_email.toString()+'</div>'
+           
+            cell3.innerHTML = '<div><img id="'+clientes[i]._id+'" src="Icons/delete.png" height="25px" onclick="apagar_cliente()" style="cursor: pointer;"></div>'
+           
+            
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+ 
+    }
+    
+     function apagar_cliente(){
+         
+    var linha = event.srcElement.id
+    var nome_cliente = ""
+    for (i=0;i<clientes.length;i++){
+        if (clientes[i]._id === linha){
+            nome_cliente = clientes[i].grupo
+        }
+    }
+    if (confirm("Deseja mesmo apagar o email "+nome_cliente+"?") === true){
+    api.custom_objects.delete("BR-VALFI_emails_reuniaoDG",linha)
+    
+    for (i=0;i<clientes.length;i++){
+        if (clientes[i]._id === linha){
+            var tira =  clientes.splice(i,1)
+        }
+    }
+     preenche_clientes()  
+    }
+    
+     
+    }
+     
+    
+     function editar_cliente(){
+     var linha = event.srcElement.id
+     document.getElementById("id_cliente").innerText = linha
+      var icone = document.getElementById("clienteArrow")
+        icone.classList.toggle("fa-minus-square")
+    
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_clientes",["_id","equal to",linha]).results[0]
+    console.log(busca_tipo)
+    document.getElementById("info_cliente").style = "display: inline-block; width: 100%;"
+    
+   //document.getElementById("codigo").value = busca_tipo.codigo
+       document.getElementById("fantasia").value = busca_tipo.fantasia
+        document.getElementById("razao_social").value = busca_tipo.razao_social
+     //    document.getElementById("segmento").value = busca_tipo.segmento
+       console.log(busca_tipo.endereco.pais) 
+       var data_att = dateFormat(busca_tipo.atualizado_em,"yyyy-mm-dd")
+        document.getElementById("data_alteracao").value = data_att
+        document.getElementById("cep").value = busca_tipo.endereco.CEP
+        document.getElementById("rua").value = busca_tipo.endereco.rua
+        document.getElementById("numero").value = busca_tipo.endereco.numero
+        document.getElementById("bairro").value = busca_tipo.endereco.bairro
+        document.getElementById("cidade").value = busca_tipo.endereco.cidade
+        document.getElementById("uf").value = busca_tipo.endereco.estado
+        document.getElementById("pais").value = busca_tipo.endereco.pais
+        document.getElementById("pasta_artes").value = busca_tipo.customer_folder._id
+        if (busca_tipo.cnpj != undefined){
+           document.getElementById("cnpj").value = busca_tipo.cnpj 
+        }
+        contatos = busca_tipo.contatos
+        
+        preenche_tabela_contatos()
+    
+    
+    
+    
+    }
+    
+    
+      
+</script>
+
+
+
+
+
+
+
+ 
+    
+    
+    <script>
+     function filtro_tabela() {
+      var input, filter, table, tr, td, td2, i, txtValue;
+      input = document.getElementById("filtrarTabela");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_clientes");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        td2 = tr[i].getElementsByTagName("td")[1];
+        if (td || td2) {
+          txtValue = td.textContent || td.innerText;
+          txtValue2 = td2.textContent || td2.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    
+  
+  
+    
+    </script>
+
+<script>
+      function mostraCliente(){
+         
+        var div_cliente = document.getElementById("info_cliente")
+        var icone = document.getElementById("clienteArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+           
+            } else {
+                div_cliente.style.display = "none";
+            }
+             preenche_clientes()
+      }
+      
+      
+  </script>
+<script>
+  
+</script>
+<script>
+    function salvar_email(){
+        document.getElementById("info_salvar_cliente").innerText = ""
+        
+        if (contatos.length > 0){
+        var data ={}
+        data["grupo"] = document.getElementById("nome_grupo").value
+        data["emails"] = contatos
+        
+        
+        
+      
+        var existe = false
+        for (i=0;i<clientes.length;i++){
+            if (clientes[i].grupo == data.grupo){
+                existe = true
+            }
+        }
+        document.getElementById("nome_grupo").value = ""
+       
+        
+         console.log(clientes)
+         if (existe === false){
+             var cria = api.custom_objects.create("BR-VALFI_emails_reuniaoDG",data)
+             data["_id"] = cria._id
+             api.custom_objects.set_keys("BR-VALFI_emails_reuniaoDG",cria._id,{"scope":["6274f4d42b53614e6a5e4503","6274f4df051de20c12216693","627e9c39fa237e0b07257813","6267df8176515c55ea373fd3","6274f4e6b2e5fc77ae7864f3"]})
+             clientes = api.custom_objects.list_with_options("BR-VALFI_emails_reuniaoDG",[]).results
+             clearTable(document.getElementById("tabela_contatos"))
+           mostraCliente()
+       
+         }
+        } else {
+            alert("Não é possível salvar um grupo sem emails cadastrados!")
+        }
+        
+        
+        
+       
+    }
+    
+    function cancelar(){
+       //  document.getElementById("codigo").value = ""
+       document.getElementById("fantasia").value =""
+        document.getElementById("razao_social").value = ""
+    //     document.getElementById("segmento").value = ""
+        document.getElementById("data_alteracao").value - ""
+        document.getElementById("cep").value = ""
+        document.getElementById("rua").value = ""
+        document.getElementById("numero").value = ""
+        document.getElementById("bairro").value = ""
+        document.getElementById("cidade").value = ""
+        document.getElementById("uf").value = ""
+        document.getElementById("pais").value = ""
+        document.getElementById("cnpj").value = ""
+        document.getElementById("pasta_artes").value = "undefined"
+        contatos = []
+        setTimeout(function(){mostraCliente()},1000)
+    }
+</script>
+
+ <script>
+ var contatos = []
+          function adiciona_contato(){
+           
+           var ehValido = true   
+       const re =
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    var ehemailvalido = new RegExp(re)
+        
+        if (ehemailvalido.test(document.getElementById("e-mail").value) != true){
+                console.log("estou no valido")
+                ehValido = false
+             }
+            
+            console.log(ehValido)
+            
+            if (ehValido === true){
+              
+                  document.getElementById("tabela_contatos").style = "display: inline-block;"
+                  var info_contato = {}
+                  info_contato["email"] = document.getElementById("e-mail").value
+                  contatos.push(info_contato)
+                 document.getElementById("e-mail").value = ""
+                 
+                preenche_tabela_contatos() 
+            } else {
+                document.getElementById("msg_erro_email").innerText = "Digite um endereço de e-mail válido"
+                document.getElementById("e-mail").style.borderColor = "red"
+            }
+               
+          }
+          
+          function limpa_estilo(){
+              
+              document.getElementById("e-mail").style.borderColor = "#236423"
+              document.getElementById("msg_erro_email").innerText = ""
+          }
+          
+   
+          function preenche_tabela_contatos(){
+          console.log("Vou executar a função")
+          console.log(contatos)
+      var tabela2 = document.getElementById("tabela_contatos");
+      clearTable(tabela2)
+      
+      
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+       
+       
+     
+     
+      
+        cell1.innerHTML = '<div style="vertical-align: middle;">'+contatos[i].email+'</div>'
+     
+        cell2.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].email+'" src="Icons/delete.png" height="25px" onclick="reply_delete_contato()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+
+             
+          
+      </script>
+      <script>
+    function reply_edit_contato(){
+    var linha = event.srcElement.id
+    for (i=0;i<contatos.length;i++){
+        if (contatos[i].email == linha){
+            document.getElementById("altera_contato").innerText = i
+            document.getElementById("contato").value = contatos[i].nome
+            document.getElementById("email_contato").value = contatos[i].email
+            document.getElementById("telefone_contato").value = contatos[i].telefone
+            var busca_select = document.getElementById("departamento")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+</script>
+<script>
+    function reply_delete_contato(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].email)
+        if (contatos[i].email == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos()
+    }
+</script>
+<script>
+    function verifica_segmento(){
+        if (document.getElementById("segmento").value != ""){
+         var existe_segmento = api.custom_objects.list_with_options("BR-VALFI_segmentos",["nome","equal to",document.getElementById("segmento").value]).results
+        
+        if (existe_segmento.length === 0){
+            document.getElementById("adiciona_segmento").style = "display: inline-block; vertical-align: top; margin-right: 5px;"
+            document.getElementById("error_segmento").innerText = "Adicionar Segmento a base?"
+        } else {
+           document.getElementById("adiciona_segmento").style = "display: none;"
+            document.getElementById("error_segmento").innerText = "" 
+        }
+        }
+        
+    }
+    function adiciona_segmento(){
+        api.custom_objects.create("BR-VALFI_segmentos",{"nome":document.getElementById("segmento").value})
+        document.getElementById("adiciona_segmento").style = "display: none;"
+            document.getElementById("error_segmento").innerText = "" 
+        
+    }
+    
+    preenche_clientes()
+</script>
+<script>
+    function verifica_email() 
+{
+    var email = document.getElementById("email_contato").value
+   let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');  
+    if (email != ""){
+ if (regex.test(email) == true)
+  {
+    document.getElementById("error-email").innerText = ""
+  } else{
+     document.getElementById("error-email").innerText = "email não válido"
+    }
+    }
+}
+</script>
+<script>
+
+    var customer_folder = ""
+    function cria_pasta_arte(){
+        if (document.getElementById("pasta_artes").value == "new"){
+            document.getElementById("div_nome_pasta_artes").style = "display: inline-block; vertical-align: top;"
+            
+            document.getElementById("div_botao_nome").style = "display: inline-block; vertical-align: top;"
+        } else {
+         if (document.getElementById("pasta_artes").value != "undefined"){
+           customer_folder = api.folder.list_with_options(["_id","equal to",document.getElementById("pasta_artes").value],[],["name"]).results[0]
+         }
+           document.getElementById("div_nome_pasta_artes").style = "display: none;"
+            
+            document.getElementById("div_botao_nome").style = "display: none;" 
+        }
+        
+    }
+    
+    function cria_pasta_nova(){
+        if (document.getElementById("nome_pasta_novo").value != ""){
+            document.getElementById("error_pasta").innerText = ""
+            
+            var busca_pasta = api.folder.list_with_options(["name","equal to",document.getElementById("nome_pasta_novo").value,"and","path.0","equal to","MG4","and","depth","equal to",1]).results
+            if (busca_pasta.length === 0){
+           
+            api.file.create_folder("cloudflow://MG4/",document.getElementById("nome_pasta_novo").value)
+            
+             document.getElementById("div_nome_pasta_artes").style = "display: none;"
+            
+            document.getElementById("div_botao_nome").style = "display: none;" 
+            var selectPasta = document.getElementById("pasta_artes")
+            var opt = document.createElement('option');
+            
+             opt.value = "recently created";
+             opt.innerHTML = "--- CRIADO RECENTEMENTE --- ";
+             opt.disabled = "disabled" 
+             selectPasta.appendChild(opt);
+            
+             var opt = document.createElement('option');
+             opt.value = document.getElementById("nome_pasta_novo").value;
+             opt.innerHTML = document.getElementById("nome_pasta_novo").value;
+             selectPasta.appendChild(opt);
+             document.getElementById("nome_pasta_novo").value = ""
+             } else {
+                 document.getElementById("error_pasta").innerText = "Uma pasta com esse nome já existe. Por favor selecione a pasta da lista."
+             }
+        } else {
+             document.getElementById("error_pasta").innerText = "Não é possível criar uma pasta sem nome!"
+           
+        }   
+
+        }
+    
+</script>
+
+
+
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,342 @@
+/*********************************************************************/
+/* NiXPS Configuration Component CSS                                 */
+/*                                                                   */
+/* Copyright 2012, NiXPS (www.nixps.com)                             */
+/*********************************************************************/
+
+#nixps_mask
+{
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    z-index:9000;
+    background-color:rgba(0,0,0,0.7);
+    display:none;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#nixps_dialog
+{
+    position:fixed;
+    width:440px;
+    display:none;
+    z-index:9999;
+    padding:20px;
+
+    background: #FFF;
+    color: #3c4449;
+    border: 3pt solid #0080BF;
+    border-radius: 5px;
+
+}
+
+#nixps_dialog #new_user_table .header
+{
+    color: #3c4449;
+    font-size: 125%;
+    border-bottom: 1pt solid;
+}
+
+#login_dialog
+{
+    display:inline-block;
+    background: rgb(242,247,250);
+    border: 1px solid rgb(183,191,198);
+    border-radius: 5px;
+    font-size: 14px;
+    padding:20px;
+    margin-top:130px;
+    margin-left:auto;
+    margin-right:auto;
+    z-index:9999;
+}
+
+
+#user_dlg_error
+{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: small;
+    font-color: red;
+}
+
+#send-test-mail
+{
+    margin-left: 5px;
+}
+
+#send-test-mail-loading
+{
+    display: none;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    vertical-align: middle;
+}
+
+#check-file-store
+{
+    margin-left: 5px;
+}
+
+#check-file-store-loading
+{
+    display: none;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    vertical-align: middle;
+}
+
+/*********************************************************************/
+/*  CONFIG TABLE STYLE                                               */
+/*********************************************************************/
+
+table.tsw-table
+{
+    /*font-family: futura;
+    font-size: small;*/
+    border-spacing: 0;
+}
+
+table.tsw-table td.nobot
+{
+    border-bottom: none;
+}
+
+table.tsw-table td
+{
+    padding: 0px;
+}
+
+table.tsw-table td.running
+{
+    border-right: rgba(255,255,255,0.2) 1px solid;
+    background-color: rgba(255,255,255,0.1);
+    white-space: nowrap;
+}
+
+table.tsw-table tr.ws_entry td.running
+{
+    background: none;
+}
+
+#config-tabs table.tsw-table tr:not(.ws_entry) {
+    background: #F2F7FA;
+}
+
+table.tsw-table td img
+{
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+table.tsw-table tr.ws_entry td
+{
+    padding-top: 20px;
+}
+
+table.tsw-table td.header
+{
+
+}
+
+table.tsw-table td.name
+{
+	white-space: nowrap;
+}
+
+table.tsw-table td.description
+{
+    padding-left: 6px;
+
+   /* background: -moz-linear-gradient(left,  rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.1)), color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(left,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(left,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#00ffffff',GradientType=1 );*/
+}
+
+table.tsw-table td.description_header
+{
+    padding-left: 6px;
+    color: #bbb !important;
+}
+
+table.tsw-table td.buttons
+{
+    padding-left: 15px;
+    padding-bottom: 6px;
+    color: #bbb;
+}
+#resources-pref-table,
+#patchplanner-pref-table {
+    border-collapse: collapse;
+}
+
+#resources-pref-table table.results {
+    margin-left: 56px;
+}
+
+#resources-pref-table tr:not(.meta-row) {
+    border-top: 12px solid#fff;
+}
+
+#resources-pref-table td.fullpath {
+    padding-left: 15px;
+}
+
+#resources-pref-table .fullpathtitle,
+#resources-pref-table .results .yesno {
+    border: none;
+    background: none;
+    width: 90px;
+    padding-left: 30px;
+    text-transform: uppercase;
+}
+
+#resources-pref-table .results .yesno.yes {
+    color: green;
+}
+#resources-pref-table .results .yesno.no {
+	color: red;
+}
+
+#patchplanner-pref-table > tbody > tr > .description {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#patchplanner-pref-table > tbody > tr > .description .install_button,
+#patchplanner-pref-table > tbody > tr > .description .recheck_button {
+    vertical-align: middle;
+}
+
+#patchplanner-pref-table > tbody > tr > .description > h1 {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#patchplanner-pref-table > tbody > tr > .description > h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#patchplanner-pref-table > tbody > tr > .description > .row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+#patchplanner-pref-table > tbody > tr > .description > .row > label:not(.unit) {
+    width: 150px;
+    text-align: right;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+
+#patchplanner-pref-table > tbody > tr > .description > .row > label:not(.unit):after {
+    content: ':';
+}
+
+#tabs-work-servers tr:not(:first-child):not(:last-child) .running { /* select all except the first and last one */
+    padding-top: 2px;
+}
+
+#tabs-work-servers tr.wk_entry[ws_name]:hover td {
+    background: #EDF2F5;/* #F2F7FA;*/
+}
+
+#tabs-work-servers .switchButton {
+    display: inline-block;
+    top: 3px;
+    position: relative;
+}
+
+#tabs-work-servers .wk_log_button {
+    margin-bottom: 3px;
+}
+
+#tabs-work-servers .wk_edit,
+#tabs-work-servers .ws_edit {
+    margin-right: 8px;
+}
+
+#tabs-work-servers .switchButton,
+#tabs-work-servers .wk_activate,
+#tabs-work-servers .ws_activate {
+    margin-right: 5px;
+    display: inline-block;
+}
+
+
+#tabs-work-servers .switchButton svg,
+#tabs-work-servers .wk_activate svg,
+#tabs-work-servers .ws_activate svg {
+    width: 32px;
+    height: 20.156px;
+}
+#tabs-work-servers .switchButton svg .cls-1,
+#tabs-work-servers .wk_activate svg .cls-1,
+#tabs-work-servers .ws_activate svg .cls-1 {
+    fill: #0080BF;
+}
+
+#fs-table .errorMessage td {
+    padding-left: 25px;
+    font-size: 110%;
+    color: red;
+}
+/** change own passowrd css **/
+.nixps-config-user-preferences table.tsw-table .password .editrow {
+    margin-bottom: 4px;
+}
+.nixps-config-user-preferences table.tsw-table .password .editrow label {
+    display: inline-block;
+    min-width: 126px;
+}
+.nixps-config-user-preferences table.tsw-table .password .editrow label:after {
+    content: ":";
+}
+
+.nixps-config-user-preferences table.tsw-table .messagePanel {
+
+}
+.nixps-config-user-preferences table.tsw-table .messagePanel .errorMessage {
+    color: red;
+}
+.nixps-config-user-preferences table.tsw-table .messagePanel .doneMessage {
+    color: green;
+}
+
+.nixps-config-user-preferences table.tsw-table .password.actionPanel button {
+    font-size: 13px;
+    margin-top: 7px;
+}
+.nixps-config-user-preferences table.tsw-table .password.actionPanel button.cancelAction {
+    color: #747C83;
+    background-color: rgb(243, 243, 243);
+    border-color: #747C83;
+    border-width: 1px;
+    border-radius: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.nixps-config-user-preferences table.tsw-table .password.actionPanel button.cancelAction:hover {
+    background-color: #747C83;
+    color: rgb(243, 243, 243);
+}
+
+#pref-table .deepZoom {
+    display: none;
+}
+
+#pref-table .deepZoom.deepZoomEnabled {
+    display: table-row;
+}

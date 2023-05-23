@@ -1,0 +1,86 @@
+#panzer_upload_dialog {
+	text-align: center;
+	padding: 20px;
+}
+
+#panzer_wait_dialog div.panzer_dialog_header,
+#panzer_upload_dialog div.panzer_dialog_header {
+	margin-top: 100px;
+	color: #fff;
+	height: 3em;
+	width: 100%;
+	font-size: 2em;
+	text-align: center;
+}
+
+#panzer_wait_dialog .spinner {
+	margin-top: 100px;
+}
+
+#panzer_wait_dialog .spinner_text {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 225px;
+	text-align: center;
+}
+
+#panzer_upload_dialog div.panzer_uploaddiv_msie {
+	margin-top: 100px;
+}
+
+#panzer_upload_dialog input.panzer_addfilebutton-files {
+	height: 24px;
+	margin-right: 15px;
+}
+
+#panzer_upload_dialog #panzer_cancel_button {
+	margin-left: 5px;
+}
+
+#panzer_upload_dialog div.vertical_spacer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+div.panzer_upload_dialog div.panzer_dialog_header {
+	color: #777;
+	height: 26px;
+	width: 100%;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+div.panzer_upload_dialog div.panzer_dialog_buttons {
+	width: 700px;
+	text-align: center;
+	position: absolute;
+	bottom: 10px;
+	padding-top: 5px;
+	border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+#panzer_upload_dialog_dropzone {
+	width: 500px;
+	height: 200px;
+	border: 2px dashed #f00;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 25px;
+	line-height: 185px;
+	font-size: 2em;
+	text-align: center;
+}
+
+#panzer_upload_dialog_dropzone.in,
+#panzer_upload_dialog_dropzone.hover {
+	color: #fa2;
+	font-size: 2.5em;
+}
+
+#panzer_upload_dialog_dropzone.fade {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    opacity: 1;
+}

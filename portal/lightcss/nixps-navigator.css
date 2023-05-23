@@ -1,0 +1,56 @@
+/*********************************************************************/
+/*  NAVIGATOR                                                        */
+/*********************************************************************/
+
+div.prev_page
+{
+	text-align: center;
+	position: absolute;
+	left: 1px;
+	width: 17px;
+	padding: 2px;
+	background-color: rgba(0,0,0,0.5);
+	opacity: 0.8;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+div.next_page
+{
+	text-align: center;
+	position: absolute;
+	right: 0px;
+	width: 17px;
+	padding: 2px;
+	background-color: rgba(0,0,0,0.5);
+	opacity: 0.8;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+div.cur_page
+{
+	text-align: center;
+	position: absolute;
+	padding: 2px;
+	background-color: rgba(0,0,0,0.5);
+	opacity: 0.8;
+	left: 22px;
+	right: 22px;
+}
+
+div.filethumb
+{
+    width: 110px;
+    height: 100px;
+    overflow: hidden;
+    float:left;
+    margin: 5px;
+    color: white;
+}
+
+#filelist a
+{
+    color: white;
+	text-decoration:  none;
+}

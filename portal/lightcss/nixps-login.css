@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 1, 2016, 2:34:53 PM
+    Author     : guillaume
+*/
+/* title on top */
+#portal-bar.top-pane {
+    top: 0px;
+    background: #0080BF;
+    color: #FFF;
+    font-size: 140%;
+    padding-bottom: 4px;
+}
+#portal-bar.top-pane .top-title { /* title text */
+    color: #FFF; 
+}
+/* login panel title */
+#login_table tr:first-child {
+    font-weight: bolder;
+    font-size: 15px;
+}
+/* submit button */
+#login_dialog center .login_action {
+    padding: 1px 9px 1px 9px;
+    border-width: 1px;
+    border-color: #0080BF;
+    color: #0080BF;
+    background: #F8F8FF;
+    font-size: 14px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#login_dialog .login_action[disabled]{
+    color: #d4d4d4;
+    border-color: #d4d4d4;
+    cursor: not-allowed;
+}

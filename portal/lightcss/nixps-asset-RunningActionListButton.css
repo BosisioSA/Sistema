@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 30, 2017, 11:58:45 AM
+    Author     : guillaume
+*/
+.nixps-asset-RunningActionListButton {
+
+}
+.nixps-asset-RunningActionListButton .runningListActionButton_mainbutton {
+    color: #747C83;
+}
+
+.nixps-asset-RunningActionListButton .runningListActionButton_mainbutton:not(.runningListActionButton_sleep) {
+    cursor: pointer;
+}
+.nixps-asset-RunningActionListButton .runningListActionButton_closebutton {
+    position:absolute;
+    top: 0px;
+    right: 0px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    color: #747C83;
+    border: 1px solid #747C83;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 1.2;
+    text-align: center;
+}

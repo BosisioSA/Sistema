@@ -1,0 +1,1896 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Abertura Ticket</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+      
+       
+     <script>
+            var queryString = window.location.search;
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+        </script>
+          
+   
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  		
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item" id="div_mostra_liberar" style="margin-right: 10px; display: none">
+                      <button class="btn btn-primary" onclick="liberar_ticket()" style="background-color: #50C878; border-color: #4F7942">Ver Ticket</button>
+                  </li>
+                 
+                 <li class="nav-item" id="div_mostra_pausar" style="margin-right: 10px; display: inline-block;">
+                      <button class="btn btn-primary" onclick="pausar_ticket()" style="background-color: #F28C28; border-color: #CC5500">Pausar</button>
+                  </li>
+                 <li class="nav-item" id="div_mostra_editar" style="margin-right: 10px; display: inline-block;">
+                      <button class="btn btn-primary" onclick="editar_ticket()">Editar</button>
+                  </li>
+                  <li class="nav-item">
+                      <button class="btn btn-secondary" onclick="cancelar()">Cancelar</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+  
+  
+ 
+</div>
+
+<!-- SUBFILTROS -->
+
+
+
+
+              
+          
+              <form id="myform" style="padding-left: 10%; padding-right: 10%">
+        
+        
+        
+        <h5 id="a_div_testform">Ticket</h5>
+        <div id="info_gravacao" style="color: green"></div>
+        <div id="div_mostra_pausa"  class="form-group" style="display:none; width: 100%">
+                <label for="pausa_justificativa">Justificativa da Pausa</label><textarea class="form-control" id="pausa_justificativa" name="pausa_justificativa" rows="4"></textarea>
+        </div>
+        <div id="info_testform" class="form-group" style="display: inline-block">
+        
+      
+   
+    
+       <div id="mostrar_ticket_referencia" class="form-group" style="display:inline-block; vertical-align: top; width: 30%">
+                <label for="ticket_referencia">Importar Ticket Anterior?</label>
+                   <input type="text" class="form-control" style="width: 80%; display:inline-block; margin-right: 5px;" id="ticket_referencia"  name="ticket_referencia">
+                   <span style="style: inline-block; cursor: pointer;" onclick="busca_ticket_antigo()"><img src="./Icons/buscaticket.png" width="30px"></span>
+                   <span class="error" id="erro_busca_ticket"><i>Reciclar dados de um ticket já aberto</i></span>
+        </div>
+     <div  class="form-group" style="display:inline-block; vertical-align: top; width:25%; margin-left: 1%">
+        <label for="cliente">Cliente</label>
+                   <input type="text" class="form-control" id="cliente"  onkeyup="this.value=this.value.toUpperCase()" name="cliente" list="os_clientes">
+                   <datalist id="os_clientes"></datalist>
+        </div>
+        <div  class="form-group " style="display:inline-block; vertical-align: top; width: 24.5%; margin-left: 2%">
+    <label>Tipo de Trabalho</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipo_trabalho" onclick="seleciona_tipo_trabalho()"  id="inlineRadio24" value="Novo">
+        <label class="form-check-label" for="inlineRadio24">Novo</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipo_trabalho" onclick="seleciona_tipo_trabalho()" id="inlineRadio23" value="Alteração" checked>
+        <label class="form-check-label" for="inlineRadio23">Alteração</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipo_trabalho" onclick="seleciona_tipo_trabalho()"  id="inlineRadio26" value="Sem Pedido">
+        <label class="form-check-label" for="inlineRadio26">Arte sem Pedido</label>
+    </div><br> 
+     <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipo_trabalho" onclick="seleciona_tipo_trabalho()"  id="inlineRadio25" value="Regravação">
+        <label class="form-check-label" for="inlineRadio25">Regravação</label>
+    </div>
+   
+     <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="tipo_trabalho" onclick="seleciona_tipo_trabalho()"  id="inlineRadio261" value="Duplicação">
+        <label class="form-check-label" for="inlineRadio261">Duplicar Item</label>
+    </div>
+    </div>
+ 
+     
+     <div id="mostrar_selecionar_amostra"  class="form-group" style="display:inline-block; vertical-align: top; width: 12%; margin-left: 1%">
+    <label>Amostra?</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="amostra" onclick="seleciona_amostra()" id="inlineRadio15" value="Sim">
+        <label class="form-check-label" for="inlineRadio15">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="amostra" onclick="seleciona_amostra()"  id="inlineRadio16" value="Não" checked>
+        <label class="form-check-label" for="inlineRadio16">Não</label>
+    </div>
+    </div>
+        
+    <div id="mostrar_novos_projetos" class="form-group" style="display:inline-block; vertical-align: top; width: 14%;">
+    <label>Envolve Área de Novos Projetos</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="novos_projetos" onclick="seleciona_novoprojeto()" id="inlineRadio4" value="Sim">
+        <label class="form-check-label" for="inlineRadio4">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="novos_projetos" onclick="seleciona_novoprojeto()"  id="inlineRadio5" value="Não" checked>
+        <label class="form-check-label" for="inlineRadio5">Não</label>
+    </div>
+    </div>
+     
+         
+         <div  class="form-group" style="display:inline-block; width: 82.8%; margin-left: 1%">
+             <div id="mostra_item" class="form-group" style="display:inline-block; width: 28%; margin-right: 10px;">
+                <label for="item">Item</label>
+                   <input type="text" class="form-control" id="item" onkeyup="this.value=this.value.toUpperCase()" name="item">
+            </div>
+             <div  class="form-group" style="display:inline-block; width: 70%;">
+                <label for="descricao">Descrição do Item</label>
+                   <input type="text" class="form-control" id="descricao" onkeyup="this.value=this.value.toUpperCase()" name="descricao">
+            </div>
+                
+             
+            
+        </div>
+        <div  class="form-group" style="display:inline-block; vertical-align: top; width: 14%;">
+    <label>Usar Referência</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="usar_referencia" onclick="seleciona_referencia()" id="inlineRadio6" value="Sim">
+        <label class="form-check-label" for="inlineRadio6">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="usar_referencia" onclick="seleciona_referencia()"  id="inlineRadio7" value="Não" checked>
+        <label class="form-check-label" for="inlineRadio7">Não</label>
+    </div>
+    </div>
+    <div id="mostrar_que_referencia" class="form-group" style="display:none; vertical-align: top; width: 73%; margin-left: 1%;">
+                <label for="que_referencia">Item de Referência</label>
+                   <input type="text" class="form-control" id="que_referencia" onkeyup="this.value=this.value.toUpperCase()"  name="que_referencia">
+        </div>
+        
+     
+    <div  class="form-group" style="display:inline-block; width: 100%">
+                <label for="observacoes">Observações Pertinentes</label><textarea class="form-control" id="observacoes" name="observacoes" rows="4"></textarea>
+            </div>
+       
+    
+                 
+               
+                 
+                 
+                 
+                 <hr>
+                 <h6>Informações Comerciais</h6>
+                  <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="data_abertura">Data de Abertura</label>
+                   <input type="date" class="form-control" id="data_abertura"  name="data_abertura" readonly>
+        </div>
+          <div id="mostrar_cobrar_cilindros" class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+    <label>Cobrar Cilindros ou Clichês?</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="cobrar_cilindros"  id="inlineRadio8" value="Sim">
+        <label class="form-check-label" for="inlineRadio8">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="cobrar_cilindros"   id="inlineRadio9" value="Não" checked>
+        <label class="form-check-label" for="inlineRadio9">Não</label>
+    </div>
+    </div>
+     <div  class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+    <label>Processo</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="processo"  id="inlineRadio10" value="Rotogravura" checked>
+        <label class="form-check-label" for="inlineRadio10">Rotogravura</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="processo"   id="inlineRadio11" value="Flexografia">
+        <label class="form-check-label" for="inlineRadio11">Flexografia</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="processo"   id="inlineRadio12" value="Sem Impressão">
+        <label class="form-check-label" for="inlineRadio12">Sem Impressão</label>
+    </div>
+    </div>
+    <br>
+    <div id="mostrar_prazo_entrega"  class="form-group col-md-3" style="display:inline-block;">
+                <label for="data_entrega">Prazo de Entrega</label>
+                   <input type="date" class="form-control" id="data_entrega"  name="data_entrega">
+        </div>
+        <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="versao_arte">Versão da Arte</label>
+                   <input type="text" class="form-control" id="versao_arte"  name="versao_arte">
+        </div>
+        <div  class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+    <label>Utilização de Logo Valgroup</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="logo_valgroup"  id="inlineRadio13" value="Sim" checked>
+        <label class="form-check-label" for="inlineRadio13">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="logo_valgroup"   id="inlineRadio14" value="Não">
+        <label class="form-check-label" for="inlineRadio14">Não</label>
+    </div>
+    
+    </div>
+                 
+                    <hr>
+    <div id="mostrar_amostra" style="display: none;">
+     <h6>Informações Amostra</h6>
+      <div  class="form-group col-md-6" style="display:inline-block; vertical-align: top;">
+      <div  class="form-group col-md-6" style="display:inline-block;">
+                <label for="contato_cliente">Nome do Contato</label>
+                   <input type="text" class="form-control" id="contato_cliente"  name="contato_cliente">
+        </div>
+        <div  class="form-group col-md-5" style="display:inline-block;">
+                <label for="emailcontato_cliente">E-mail do Contato</label>
+                   <input type="text" class="form-control" id="emailcontato_cliente"  name="emailcontato_cliente">
+        </div>
+        <div  class="form-group col-md-6" style="display:inline-block;">
+                <label for="telcontato_cliente">Tel. do Contato</label>
+                   <input type="text" class="form-control" id="telcontato_cliente"  name="telcontato_cliente">
+        </div>
+        <div  class="form-group col-md-5" style="display:inline-block;">
+                <label for="setorcontato_cliente">Setor do Contato</label>
+                   <input type="text" class="form-control" id="setorcontato_cliente"  name="setorcontato_cliente">
+        </div>
+    </div>
+    <div  class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+         <div  class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+    <label>Há um projeto semelhante?</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="projeto_semelhante" onclick="seleciona_produto_semelhante()"  id="inlineRadio17" value="Sim">
+        <label class="form-check-label" for="inlineRadio17">Sim</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="projeto_semelhante" onclick="seleciona_produto_semelhante()"  id="inlineRadio18" value="Não" checked>
+        <label class="form-check-label" for="inlineRadio18">Não</label>
+    </div>
+    
+    </div>
+    <div id="mostrar_produto_semelhante" class="form-group col-md-11" style="display:none;">
+                <label for="produto_semelhante">Produto Semelhante</label>
+                   <input type="text" class="form-control" id="produto_semelhante"  name="produto_semelhante">
+        </div>
+    </div>
+     <div  class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+    <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="estrutura_atual">Estrutura Atual</label>
+                   <input type="text"  class="form-control" id="estrutura_atual"  name="estrutura_atual">
+                      
+        </div>
+        <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="estrutura_solicitada">Estrutura Solicitada</label>
+                   <input type="text"  class="form-control" id="estrutura_solicitada"  name="estrutura_solicitada">
+                     
+        </div>
+    </div>
+     <div  class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+        <div  class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+    <label>Unidade de Medida</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="amostra_unidade" onclick="seleciona_unidade_medida()" id="inlineRadio27" value="Milheiro" checked>
+        <label class="form-check-label" for="inlineRadio27">Milheiro</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="amostra_unidade" onclick="seleciona_unidade_medida()"  id="inlineRadio28" value="Kilos">
+        <label class="form-check-label" for="inlineRadio28">Kg</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="amostra_unidade"  onclick="seleciona_unidade_medida()" id="inlineRadio29" value="Outro">
+        <label class="form-check-label" for="inlineRadio29">Outro</label>
+    </div>
+    
+    </div>
+    <div id="mostrar_outra_unidade" class="form-group col-md-11" style="display:none;">
+                <label for="outra_unidade">Outra unidade</label>
+                   <input type="text" class="form-control" id="outra_unidade"  name="outra_unidade">
+        </div>
+    </div>
+     <div  class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+       <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="quantidade_solicitada">Qtde Solicitada</label>
+                   <input type="text" class="form-control" id="quantidade_solicitada"  name="quantidade_solicitada">
+        </div> 
+        <div  class="form-group col-md-11" style="display:inline-block;">
+                <label for="volume_previsto">Volume Previsto em Toneladas</label>
+                   <input type="number" class="form-control" id="volume_previsto"  name="volume_previsto" value="0">
+        </div> 
+    </div>
+         <div  class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+            <label>Tipo do Produto</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amostra_tipo_produto"  id="inlineRadio19" value="Inovação">
+                <label class="form-check-label" for="inlineRadio19">Inovação</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amostra_tipo_produto"  id="inlineRadio20" value="Maquinabilidade">
+                <label class="form-check-label" for="inlineRadio20">Maquinabilidade</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amostra_tipo_produto"  id="inlineRadio21" value="Melhoria">
+                <label class="form-check-label" for="inlineRadio21">Melhoria</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amostra_tipo_produto"  id="inlineRadio22" value="Novo Produto" checked>
+                <label class="form-check-label" for="inlineRadio22">Novo Produto</label>
+            </div>
+            
+            
+            
+    </div>
+    
+        
+        <div  class="form-group col-md-5" style="display:inline-block; vertical-align: top;">
+            <label>Tipo de Arte</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipo_arte"  id="inlineRadio30" value="Completa" checked>
+                <label class="form-check-label" for="inlineRadio30">Completa</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipo_arte"  id="inlineRadio31" value="PB">
+                <label class="form-check-label" for="inlineRadio31">P/B</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="tipo_arte"  id="inlineRadio32" value="Sem Impressõa">
+                <label class="form-check-label" for="inlineRadio32">Sem Impressão</label>
+            </div>
+            
+    </div>
+
+    <hr>
+    </div>
+    
+ </div>
+    <div id="info_ticket">``</div>
+    
+   
+    
+    <br>
+  
+        
+                
+              
+         
+        </form>
+         <div style="padding-left: 10%; width: 100%">
+        <button id="div_mostra_salvar" class="btn btn-primary" onclick="verifica_campos()" style="display: none;">Salvar Ticket</button> 
+     </div>
+        <br>
+        
+       
+        <br>
+        
+        
+                 
+                 
+       
+            
+             
+            
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+               
+              
+            </div>
+        
+       </div>
+  	 <script src="js/popper.js"></script>
+  <script src="js/main.js"></script>
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	    function padWithZero(num, targetLength) {
+  return String(num).padStart(targetLength, '0')
+}
+  	    
+  	    var usuario = api.auth.get_current_user()
+  	    
+  	    document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname
+  	 //   document.getElementById("data_entrega").value = "02:00"
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+// preenche dados se existe ordem
+
+if (usuario.scope_name != undefined){
+    var nome_scope = usuario.scope_name[0].split("_")
+   
+}
+
+
+
+
+// preenche Selects
+
+
+// selectAnilox = document.getElementById('o_anilox_flexo');
+ //   var tiposTipo = api.custom_objects.list_with_options("BR-VALFI_anilox",["situacao","not equal to","BLOQUEADO"]).results
+  //  for (var i = 0; i<tiposTipo.length; i++){
+//        var opt = document.createElement('option');
+ //       opt.value = tiposTipo[i].numero;
+  //      opt.innerHTML = tiposTipo[i].numero;
+//        selectAnilox.appendChild(opt);
+ //   }
+    
+  
+    
+   
+   
+    
+   
+    
+    // preenche Datalist
+    
+     var listaCodigo2 = api.custom_objects.list_with_options("BR-VALFI_clientes",[],["fantasia","ascending"],["fantasia"]).results;
+          var options=''; // variable to store the options
+          for(var i = 0; i < listaCodigo2.length; i++){
+              
+          options += '<option value="'+listaCodigo2[i].fantasia+'" />';
+  
+          }
+           document.getElementById('os_clientes').innerHTML = options;
+           
+ //function carrega_pantones(){          
+  //var as_tintas = api.custom_objects.list_with_options("PantoneColor",[],[],["nome"]).results
+        
+        
+    //     var options=''; // variable to store the options
+     //   for(var i = 0; i < as_tintas.length; i++){
+            
+      //  options += '<option value="'+as_tintas[i].nome+'" />';
+
+    //    }
+      //   document.getElementById('as_cores').innerHTML = options;
+ //}
+         
+
+
+var hoje = new Date()
+
+  	</script>
+  	
+  	<script>
+  	    
+  	    // carrega informações do ticket para edição
+  	    
+  	    var busca_ticket = api.custom_objects.list("BR-TECNO_Tickets",["_id","equal to",ordem]).results[0]
+  	    
+  	    if (busca_ticket.pausado === true){
+  	        
+  	    document.getElementById("div_mostra_editar").style.display = "none"
+        document.getElementById("div_mostra_pausar").style.display = "none"
+        document.getElementById("div_mostra_liberar").style.display = "inline-block"
+        document.getElementById("info_testform").style.display = "none"
+        document.getElementById("div_mostra_pausa").style.display = "inline-block"
+        document.getElementById("pausa_justificativa").value = busca_ticket.info_pausa[busca_ticket.info_pausa.length-1]["motivo"]
+      
+  	        
+  	        
+  	    }
+  	    
+  	    document.getElementById("a_div_testform").innerHTML = "Ticket n<sup>o</sup> "+busca_ticket.numero_ticket
+  	    document.getElementById("ticket_referencia").value = busca_ticket.ticket_referencia
+  	    document.getElementById("cliente").value = busca_ticket.cliente
+  	    
+  	    var tipo_trabalho_campos = busca_ticket.tipo_trabalho.campos
+  	    var chaves_trabalho = Object.keys(tipo_trabalho_campos)
+  	    for (i=0;i<chaves_trabalho.length;i++){
+  	        var nome_chave = chaves_trabalho[i]
+  	        document.getElementById(chaves_trabalho[i]).checked = busca_ticket.tipo_trabalho.campos[nome_chave]
+  	    }
+  	    
+  	    var amostra_campos = busca_ticket.amostra.campos
+  	    var chaves_amostra = Object.keys(amostra_campos)
+  	    for (i=0;i<chaves_amostra.length;i++){
+  	        nome_chave = chaves_amostra[i]
+  	        document.getElementById(chaves_amostra[i]).checked = busca_ticket.amostra.campos[nome_chave]
+  	    }
+  	    
+  	    var novos_projetos_campos = busca_ticket.novos_projetos.campos
+  	    var chaves_novos_projetos = Object.keys(novos_projetos_campos)
+  	    for (i=0;i<chaves_novos_projetos.length;i++){
+  	        nome_chave = chaves_novos_projetos[i]
+  	       
+  	        document.getElementById(chaves_novos_projetos[i]).checked = busca_ticket.novos_projetos.campos[nome_chave]
+  	    }
+  	    
+  	    
+  	     document.getElementById("item").value = busca_ticket.item
+  	     document.getElementById("descricao").value = busca_ticket.descricao
+  	     
+  	      var usar_referencia_campos = busca_ticket.usar_referencia.campos
+  	    var chaves_usar_referencia = Object.keys(usar_referencia_campos)
+  	    for (i=0;i<chaves_usar_referencia.length;i++){
+  	         nome_chave = chaves_usar_referencia[i]
+  	       
+  	        document.getElementById(chaves_usar_referencia[i]).checked = busca_ticket.usar_referencia.campos[nome_chave]
+  	    }
+  	    
+  	    if (busca_ticket.usar_referencia.valor == "Sim"){
+  	        document.getElementById("mostrar_que_referencia").style.display = "inline-block"
+  	        document.getElementById("que_referencia").value = busca_ticket.que_referencia
+  	    }
+  	    
+  	      document.getElementById("observacoes").value = busca_ticket.observacoes
+  	      document.getElementById("data_abertura").value = dateFormat(new Date(busca_ticket.entrada_em),"yyyy-mm-dd")
+  	      
+  	     var cobrar_cilindros_campos = busca_ticket.cobrar_cilindros.campos
+  	    var chaves_cobrar_cilindros = Object.keys(cobrar_cilindros_campos)
+  	    for (i=0;i<chaves_cobrar_cilindros.length;i++){
+  	        nome_chave = chaves_cobrar_cilindros[i]
+  	        document.getElementById(chaves_cobrar_cilindros[i]).checked = busca_ticket.cobrar_cilindros.campos[nome_chave]
+  	    }
+  	    
+  	      var processo_campos = busca_ticket.processo.campos
+  	    var chaves_processo = Object.keys(processo_campos)
+  	    for (i=0;i<chaves_processo.length;i++){
+  	        nome_chave = chaves_processo[i]
+  	        document.getElementById(chaves_processo[i]).checked = busca_ticket.processo.campos[nome_chave]
+  	    }
+  	    
+  	       var unidadeamostra_campos = busca_ticket.amostra_unidade.campos
+  	    var chaves_unidadeamostra = Object.keys(unidadeamostra_campos)
+  	    for (i=0;i<chaves_unidadeamostra.length;i++){
+  	        nome_chave = chaves_unidadeamostra[i]
+  	        document.getElementById(chaves_unidadeamostra[i]).checked = busca_ticket.amostra_unidade.campos[nome_chave]
+  	    }
+  	    
+  	       var amostratipoarte_campos = busca_ticket.amostra_tipo_arte.tipo_arte.campos
+  	    var chaves_amostratipoarte = Object.keys(amostratipoarte_campos)
+  	    for (i=0;i<chaves_amostratipoarte.length;i++){
+  	        nome_chave = chaves_amostratipoarte[i]
+  	        document.getElementById(chaves_amostratipoarte[i]).checked = busca_ticket.amostra_tipo_arte.tipo_arte.campos[nome_chave]
+  	    }
+  	    
+  	    if (busca_ticket.entrega_em != ""){
+  	      document.getElementById("data_entrega").value = dateFormat(new Date(busca_ticket.entrega_em),"yyyy-mm-dd")  
+  	    }
+  	    
+  	     document.getElementById("versao_arte").value = busca_ticket.versao_arte
+  	     
+  	       var logo_valgroup_campos = busca_ticket.logo_valgroup.campos
+  	    var chaves_logo_valgroup = Object.keys(logo_valgroup_campos)
+  	    for (i=0;i<chaves_logo_valgroup.length;i++){
+  	        nome_chave = chaves_logo_valgroup[i]
+  	        document.getElementById(chaves_logo_valgroup[i]).checked = busca_ticket.logo_valgroup.campos[nome_chave]
+  	    }
+  	    if (busca_ticket.campos_alterados != undefined){
+  	    for (i=0;i<busca_ticket.campos_alterados.length;i++){
+  	        document.getElementById(busca_ticket.campos_alterados[i]).style.borderColor = "darkorange"
+  	        document.getElementById(busca_ticket.campos_alterados[i]).style.borderWidth = "2px"
+  	    }
+  	    }
+  	    
+  	    if (busca_ticket.amostra.valor === "Sim"){
+  	        document.getElementById("mostrar_amostra").style.display = "inline-block"
+  	    }
+  	    
+  	</script>
+  	
+  	
+   <script>
+       function salva_ticket(){
+           var data = {}
+            data["tipo_trabalho"] = document.getElementById("tipo_trabalho").value
+            data["criado_em"] = new Date()
+            data["criado_por"] = usuario
+            var info_arte = {}
+            info_arte["codigo"] = document.getElementById("codigo_arte").value
+            info_arte["revisao"] = document.getElementById("arte_revisao").value
+            info_arte["evolucao"] = document.getElementById("arte_evolucao").value
+            data["info_arte"] = info_arte
+            data["cliente"] = document.getElementById("cliente").value
+            data["responsavel_comercial"] = document.getElementById("responsavel_comercial").value
+            data["descricao"] = document.getElementById("descricao").value
+            data["item"] = document.getElementById("item").value
+            data["que_referencia"] = document.getElementById("que_referencia").value
+            data["priorizado"] = false
+            data["arte_iniciado"] = false
+            data["arte_finalizado"] = false
+            data["ticket_dg"] = document.getElementById("numero_ticket").value
+            var info_checklist = {}
+            info_checklist["Arte OK"] = document.getElementById("Arte OK").checked
+            info_checklist["Referencia de Cor"] = document.getElementById("Referencia de Cor").checked
+            info_checklist["Especificacao"] = document.getElementById("Especificacao").checked
+            data["checklist_entrada"] = info_checklist
+            console.log(data)
+            var info_observa = {}
+            info_observa["quem"] = usuario
+            info_observa["quando"] = new Date()
+            info_observa["texto"] = document.getElementById("observacoes").value
+            var as_observacoes = []
+            as_observacoes.push(info_observa)
+            data["observacoes"] = as_observacoes
+            
+            
+            //api.custom_objects.create("BR-VALFI_Tickets",data)
+           
+           // document.getElementById("info_ticket").innerText = "Ticket criado com sucesso!"
+            
+           setTimeout(function(){document.getElementById("info_ticket").innerText = ""}, 3000);
+       }
+       
+      
+   </script>
+   <script>
+    var tintas_flexo = []
+    function adicionar_tinta_flexo(){
+       var valor_hex = chroma(document.getElementById("acor").style.backgroundColor).hex()
+         
+        if (document.getElementById("altera_tinta").innerText == "99"){
+        var info_tinta = {}
+        info_tinta["cor"] = document.getElementById("nome").value
+        info_tinta["referencia_cor"] = document.getElementById("nome_referencia").value
+    //    info_tinta["referencia_fisica"] = document.getElementById("referencia_fisica_valor").value
+    
+        
+        info_tinta["referencia_tinta"] = document.getElementById("referencia_tinta").value
+        info_tinta["lineatura"] = document.getElementById("a_lineatura_flexo").value
+        info_tinta["angulo"] = document.getElementById("o_angulo_flexo").value
+        info_tinta["diamante"] = document.getElementById("o_diamante_flexo").value
+        info_tinta["rugosidade_minima"] = document.getElementById("rugosidade_minima").value
+        info_tinta["rugosidade_maxima"] = document.getElementById("rugosidade_maxima").value
+        info_tinta["anilox"] = document.getElementById("o_anilox_flexo").value
+        info_tinta["dupla_face"] = document.getElementById("a_dupla_flexo").value
+        if (document.getElementById("inlineRadio1").checked === true){
+        var busca_anilox = api.custom_objects.list_with_options("BR-VALFI_anilox",["numero","equal to",info_tinta.anilox]).results[0]
+        info_tinta["bcm"] = busca_anilox.alteracoes_bcm[busca_anilox.alteracoes_bcm.length-1].atual
+        } else {
+        info_tinta["bcm"] = ""    
+            
+        }
+        info_tinta["cameron"] = false
+        info_tinta["fotocelula"] = false
+        info_tinta["ref_kit"] = document.getElementById("ref_kit").value
+        var info_cor = {}
+        info_cor["L"] = document.getElementById("valor_L").value
+        info_cor["a"] = document.getElementById("valor_A").value
+        info_cor["b"] = document.getElementById("valor_B").value
+        info_tinta["Lab"] = info_cor
+        info_tinta["hex"] = valor_hex
+        info_tinta["observacoes"] = document.getElementById("observacoes").value
+        tintas_flexo.push(info_tinta)
+          document.getElementById("error_tinta").style = "color: green"
+         document.getElementById("error_tinta").innerText = "A cor foi criada com sucesso"
+         setTimeout(document.getElementById("error_tinta").innerText = "", 3000)
+        
+        } else {
+            var qual_tinta = parseInt(document.getElementById("altera_tinta").innerText)
+            
+            tintas_flexo[qual_tinta]["cor"] = document.getElementById("nome").value
+            tintas_flexo[qual_tinta]["referencia_tinta"] = document.getElementById("referencia_tinta").value
+            tintas_flexo[qual_tinta]["referencia_cor"] = document.getElementById("nome_referencia").value
+          //  tintas_flexo[qual_tinta]["referencia_fisica"] = document.getElementById("referencia_fisica_valor").value
+    
+            tintas_flexo[qual_tinta]["lineatura"] = document.getElementById("a_lineatura_flexo").value
+            tintas_flexo[qual_tinta]["angulo"] = document.getElementById("o_angulo_flexo").value
+            tintas_flexo[qual_tinta]["diamante"] = document.getElementById("o_diamante_flexo").value
+            tintas_flexo[qual_tinta]["anilox"] = document.getElementById("o_anilox_flexo").value
+            tintas_flexo[qual_tinta]["rugosidade_minima"] = document.getElementById("rugosidade_minima").value
+            tintas_flexo[qual_tinta]["rugosidade_maxima"] = document.getElementById("rugosidade_maxima").value
+        
+            
+            tintas_flexo[qual_tinta]["dupla_face"] = document.getElementById("a_dupla_flexo").value
+            tintas_flexo[qual_tinta]["ref_kit"] = document.getElementById("ref_kit").value
+             var busca_anilox = api.custom_objects.list_with_options("BR-VALFI_anilox",["numero","equal to",document.getElementById("o_anilox_flexo").value]).results[0]
+            tintas_flexo[qual_tinta]["bcm"] = busca_anilox.alteracoes_bcm[busca_anilox.alteracoes_bcm.length-1].atual
+            var info_cor = {}
+            info_cor["L"] = document.getElementById("valor_L").value
+            info_cor["a"] = document.getElementById("valor_A").value
+            info_cor["b"] = document.getElementById("valor_B").value
+            tintas_flexo[qual_tinta]["Lab"] = info_cor
+            tintas_flexo[qual_tinta]["hex"] = valor_hex
+            tintas_flexo[qual_tinta]["observacoes"] = document.getElementById("observacoes").value
+           
+            document.getElementById("error_tinta").style = "color: green"
+         document.getElementById("error_tinta").innerText = "A cor foi alterada com sucesso"
+         setTimeout(document.getElementById("error_tinta").innerText = "", 3000)
+           
+        }
+        
+        document.getElementById("nome").value = ""
+        document.getElementById("nome_referencia").value = ""
+        document.getElementById("referencia_tinta").value = ""
+        document.getElementById("a_dupla_flexo").value = "undefined"
+        document.getElementById("ref_kit").value = ""
+        document.getElementById("valor_L").value = ""
+        document.getElementById("valor_A").value = ""
+        document.getElementById("valor_B").value = ""
+        document.getElementById("observacoes").value = ""
+        document.getElementById("rugosidade_minima").value = ""
+        document.getElementById("rugosidade_maxima").value = ""
+        document.getElementById("o_angulo_flexo").value = ""
+        document.getElementById("o_diamante_flexo").value = ""
+        document.getElementById("a_lineatura_flexo").value = ""
+        document.getElementById("o_anilox_flexo").value = ""
+        document.getElementById("observacoes").value = ""
+        document.getElementById("acor").style = "background-color: rgb(255, 255, 255); width: 30px; border: none; display: inline-block;"
+        document.getElementById("altera_tinta").innerText = "99"
+        
+        
+        
+        
+        
+       
+        
+        preenche_tabela_receita()
+      
+        
+    }
+    
+    function adiciona_cor_vazia(){
+         var info_tinta = {}
+        info_tinta["cor"] = "SEM USO"
+    
+        
+        info_tinta["referencia_tinta"] = ""
+        info_tinta["lineatura"] = ""
+        info_tinta["anilox"] = ""
+        info_tinta["angulo"] = ""
+        info_tinta["diamante"] = ""
+        info_tinta["ref_kit"] = ""
+        info_tinta["referencia_cor"] = ""
+        info_tinta["rugosidade_minima"] = "N"
+        info_tinta["rugosidade_maxima"] = "A"
+        info_tinta["bcm"] = ""
+        info_tinta["dupla_face"] = ""
+        info_tinta["cameron"] = false
+        info_tinta["fotocelula"] = false
+        info_tinta["Lab"] = ""
+        info_tinta["hex"] = "#CCC"
+        info_tinta["observacoes"] = ""
+        tintas_flexo.push(info_tinta)
+        
+        preenche_tabela_receita()
+    }
+</script>
+<script>
+    function preenche_tabela_receita(){
+       
+        
+        
+        clearTable(document.getElementById("tabela_receitas_flexo"))
+          
+          
+         var table = document.getElementById("tabela_receitas_flexo")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<tintas_flexo.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            var cell9 = row.insertCell(8);
+            var cell10 = row.insertCell(9);
+            var cell11 = row.insertCell(10);
+           
+           
+           var numero_cilindro = i+1
+           
+           cell1.style = "background-color: lightgray; padding: 5px; border: 2px solid #FAFAFA;"
+           cell3.style = "background-color: lightgray; padding: 5px; border: 2px solid #FAFAFA;"
+           cell5.style = "background-color: lightgray; padding: 5px; border: 2px solid #FAFAFA;"
+           cell7.style = "background-color: lightgray; padding: 5px; border: 2px solid #FAFAFA;"
+           cell9.style = "background-color: lightgray; padding: 5px; border: 2px solid #FAFAFA;"
+           cell11.style = "background-color: lightgray; padding: 5px; border: 2px solid #FAFAFA;"
+           cell2.style = "padding: 5px; border: 2px solid lightgray;"
+           cell4.style = "padding: 5px; border: 2px solid lightgray;"
+           cell6.style = "padding: 5px; border: 2px solid lightgray;"
+           cell8.style = "padding: 5px; border: 2px solid lightgray;"
+           cell10.style = "padding: 5px; border: 2px solid lightgray;"
+            
+           cell1.innerHTML = '<div style="font-size: 0.8em; display: inline-block;"><input type="checkbox" id="batch_'+tintas_flexo[i].cor+'" onclick="batch_tintas()"><div style="display:inline-block; margin-left: 3px"><i onclick="move_acima()" id="'+i+'" class="fas fa-arrow-up" style="margin-right: 5px; cursor: pointer;"></i><i  onclick="move_abaixo()" id="'+i+'" class="fas fa-arrow-down" style="margin-right: 5px;cursor: pointer;"></i><span style="margin-top:5px;height:20px;width:20px;background-color:'+tintas_flexo[i].hex+';border-radius:50%;display:inline-block"></span></div><span style="display: inline-block;"></span></div><strong> '+numero_cilindro+' - '+tintas_flexo[i].cor+'</strong></div>'
+           cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+tintas_flexo[i].referencia_tinta+'</div>'
+           cell3.innerHTML = '<div style="font-size:1em; cursor: pointer">'+tintas_flexo[i].lineatura+'</div>'
+           cell4.innerHTML = '<div style="font-size:1em; cursor: pointer">'+tintas_flexo[i].anilox+'</div>'
+            cell5.innerHTML = '<div style="font-size:1em; cursor: pointer">'+tintas_flexo[i].bcm+'</div>'
+           cell6.innerHTML = '<div style="font-size:1em; cursor: pointer">'+tintas_flexo[i].dupla_face+'</div>'
+         
+          if (tintas_flexo[i].cameron === false){
+           cell7.innerHTML = '<div style="font-size:1em; cursor: pointer"><input type="checkbox" id="'+tintas_flexo[i].cor+'" onchange="coloca_cameron()"></div>'
+          } else {
+             cell7.innerHTML = '<div style="font-size:1em; cursor: pointer"><input type="checkbox" id="'+tintas_flexo[i].cor+'" onchange="coloca_cameron()" checked></div>' 
+          }
+            if (tintas_flexo[i].fotocelula === false){
+           cell8.innerHTML = '<div style="font-size:1em; cursor: pointer"><input type="checkbox" id="'+tintas_flexo[i].cor+'" onchange="coloca_fotocelula()"></div>'
+            } else {
+              cell8.innerHTML = '<div style="font-size:1em; cursor: pointer"><input type="checkbox" id="'+tintas_flexo[i].cor+'" onchange="coloca_fotocelula()" checked></div>'
+             
+            }
+              cell9.innerHTML = '<div style="font-size:1em; cursor: pointer">'+tintas_flexo[i].ref_kit+'</div>'
+        
+            cell10.innerHTML = '<div><img id="'+tintas_flexo[i].cor+'" src="Icons/Edit.png" height="30px" onclick="editarTinta()" style="cursor: pointer;"></div>'
+            
+            cell11.innerHTML = '<div><img id="'+tintas_flexo[i].cor+'" src="Icons/delete.png" height="30px" onclick="apagarTinta()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+            }
+    }
+    var tintas_batch = []
+    function batch_tintas(){
+      var linha = event.srcElement.id
+      var linha_array = linha.split("_")
+      var qual_apagar = linha_array[1]
+      if (document.getElementById(linha).checked === true){
+          tintas_batch.push(qual_apagar)
+      } else {
+          
+          for (i=0;i<tintas_batch.length;i++){
+              if (tintas_batch[i] == qual_apagar){
+                  var tira = tintas_batch.splice(i,1)
+              }
+          }
+      }
+      if (tintas_batch.length === 0){
+          document.getElementById("botao_batch").style = "display: none"
+      } else {
+          
+          document.getElementById("botao_batch").style = "cursor:pointer;display: inline-block; margin-left: 55%; background-color: red; border-color; firebrick;"
+      }
+      
+      
+        
+    }
+    
+    function apagar_em_batch(){
+        for (i=0;i<tintas_batch.length;i++){
+            var nome_tinta = tintas_batch[i]
+            for (j=0;j<tintas_flexo.length;j++){
+                if (tintas_flexo[j].cor == nome_tinta){
+                    var tira = tintas_flexo.splice(j,1)
+                }
+                
+            }
+        }
+        
+        preenche_tabela_receita()
+        
+    }
+    
+    function move_acima(){
+       var linha = parseInt(event.srcElement.id)
+     //  console.log(linha)
+     
+       
+      
+        if (linha > 0){
+       array_move(tintas_flexo,linha,linha-1)
+        }
+
+       preenche_tabela_receita()
+ 
+        
+    }
+        
+        function move_abaixo(){
+          var linha = parseInt(event.srcElement.id)
+    //   console.log(linha)
+       if (linha < tintas_flexo.length-1){
+           array_move(tintas_flexo,linha,linha+1)
+       }
+       
+       preenche_tabela_receita()
+ 
+       }
+       
+       function coloca_cameron(){
+           var linha = event.srcElement.id
+           
+           for (i=0;i<tintas_flexo.length;i++){
+               if (tintas_flexo[i].cor === linha){
+                   tintas_flexo[i].cameron = document.getElementById(linha).checked
+               }
+           }
+       }
+       
+       function coloca_fotocelula(){
+           var linha = event.srcElement.id
+           
+           for (i=0;i<tintas_flexo.length;i++){
+               if (tintas_flexo[i].cor === linha){
+                   
+                   tintas_flexo[i].fotocelula = document.getElementById(linha).checked
+               }
+           }
+       }
+      
+        
+    
+    
+    
+    
+    
+    
+    
+     function apagarTinta(){
+    if (confirm("Deseja mesmo apagar essa tinta?") === true){     
+    var linha = event.srcElement.id
+    for (i=0;i<tintas_flexo.length;i++){
+        if (tintas_flexo[i].cor === linha){
+            var tira = tintas_flexo.splice(i,1)
+        }
+    }
+    preenche_tabela_receita()    
+    }
+     }
+    
+     function editarTinta(){
+     var linha = event.srcElement.id
+   for (i=0;i<tintas_flexo.length;i++){
+       if (tintas_flexo[i].cor === linha){
+           document.getElementById("altera_tinta").innerText = i
+           
+         document.getElementById("nome").value = tintas_flexo[i].cor
+          document.getElementById("nome_referencia").value = tintas_flexo[i].referencia_cor
+      //    document.getElementById("referencia_fisica_valor").value = tintas_flexo[i].referencia_fisica
+         
+        document.getElementById("referencia_tinta").value = tintas_flexo[i].referencia_tinta
+        document.getElementById("o_angulo_flexo").value = tintas_flexo[i].angulo
+        document.getElementById("o_diamante_flexo").value = tintas_flexo[i].diamante
+        document.getElementById("rugosidade_minima").value = tintas_flexo[i].rugosidade_minima
+        document.getElementById("rugosidade_maxima").value = tintas_flexo[i].rugosidade_maxima
+        
+        document.getElementById("a_lineatura_flexo").value = tintas_flexo[i].lineatura
+        document.getElementById("o_anilox_flexo").value = tintas_flexo[i].anilox
+         document.getElementById("a_dupla_flexo").value = tintas_flexo[i].dupla_face
+          document.getElementById("observacoes").value = tintas_flexo[i].observacoes
+        document.getElementById("valor_L").value = tintas_flexo[i].Lab.L
+        document.getElementById("valor_A").value = tintas_flexo[i].Lab.a
+        document.getElementById("valor_B").value = tintas_flexo[i].Lab.b
+        
+       document.getElementById("acor").style=  "background-color: "+tintas_flexo[i].hex+"; width: 30px; border: none; display: inline-block;"
+       
+           
+       }
+   }
+    
+    
+    
+    }
+    
+  </script>
+  <script>
+        function muda_cor(){
+      var o_L = parseInt(document.getElementById("valor_L").value)
+       var o_A = parseInt(document.getElementById("valor_A").value)
+        var o_B = parseInt(document.getElementById("valor_B").value)
+        
+    var resultado = chroma.lab(o_L,o_A,o_B)
+     var valores_reg = resultado._rgb 
+     var hex = rgbToHex(parseInt(valores_reg[0]),parseInt(valores_reg[1]),parseInt(valores_reg[2]))
+     //console.log(hex)
+     document.getElementById("acor").style = "background-color: "+hex+"; width: 30px; border: none; display: inline-block;"
+     document.getElementById("nome_cor").innerText = hex
+  }
+  
+    function seleciona_pantone(){
+        var busca_tinta = api.custom_objects.list_with_options("PantoneColor",["nome","equal to",document.getElementById("nome_referencia").value]).results
+        
+        if (busca_tinta.length > 0){
+            
+            
+             document.getElementById("acor").style = "background-color: "+busca_tinta[0].cor+"; width: 30px; border: none; display: inline-block;"
+            var valor_lab = chroma(busca_tinta[0].cor).lab()
+            document.getElementById("valor_L").value = valor_lab[0].toFixed(2)
+            document.getElementById("valor_A").value = valor_lab[1].toFixed(2)
+            document.getElementById("valor_B").value = valor_lab[2].toFixed(2)
+           // document.getElementById("nome_cor").innerText = busca_tinta[0].cor
+            
+        }
+    }
+    
+    
+     function mostrar_referencia_fisica(){
+        if (document.getElementById("referencia_fisica").checked === true){
+            
+           document.getElementById("div_referencia_fisica").style = "display:inline-block; vertical-align: top;"
+            
+        } else {
+            
+          
+           document.getElementById("div_referencia_fisica").style = "display:none;"
+        }
+        
+    }
+  
+  
+    </script>
+    <script>
+  var tarefas = []
+    function adicionar_tarefa(){
+         
+        if (document.getElementById("altera_tarefa").innerText == "99"){
+        var info_tarefa = {}
+        info_tarefa["quem_cria"] = usuario
+        info_tarefa["data_criacao"] = new Date()
+        info_tarefa["departamento"] = document.getElementById("tarefa_responsavel").value
+        info_tarefa["tarefa"] = document.getElementById("descricao_tarefa").value
+        info_tarefa["status"] = "nova"
+        tarefas.push(info_tarefa)
+        
+          document.getElementById("error_tarefa").style = "color: green"
+         document.getElementById("error_tarefa").innerText = "A tarefa foi criada com sucesso!"
+         setTimeout(document.getElementById("error_tarefa").innerText = "", 3000)
+        
+        } else {
+            var qual_tarefa = parseInt(document.getElementById("altera_tarefa").innerText)
+            
+        info_tarefa[qual_tarefa]["quem_cria"] = usuario
+        info_tarefa[qual_tarefa]["data_criacao"] = new Date()
+        info_tarefa[qual_tarefa]["departamento"] = document.getElementById("tarefa_responsavel").value
+        info_tarefa[qual_tarefa]["tarefa"] = document.getElementById("descricao_tarefa").value
+        info_tarefa[qual_tarefa]["status"] = "nova"
+           
+            document.getElementById("error_tarefa").style = "color: green"
+         document.getElementById("error_tarefa").innerText = "A tarefa foi alterada com sucesso"
+         setTimeout(document.getElementById("error_tarefa").innerText = "", 3000)
+           
+        }
+        
+        document.getElementById("tarefa_responsavel").value = "undefined"
+        document.getElementById("descricao_tarefa").value = ""
+        document.getElementById("altera_tarefa").innerText = "99"
+        
+        
+        
+        
+        
+       
+        
+        preenche_tabela_tarefas()
+      
+        
+    }
+    
+    </script>
+  	
+<script>
+    function muda_tipo_trabalho(){
+        if (document.getElementById("tipo_trabalho").value == "TESTE DG"){
+            document.getElementById("mostrar_tipo_teste").style = "display:inline-block; vertical-align: top;"
+            document.getElementById("inlineRadio1").checked = true
+            document.getElementById("inlineRadio2").checked = false
+            document.getElementById("inlineRadio3").checked = false
+            document.getElementById("mostrar_teste_em_maquina").style = "display:inline-block; width: 100%;"
+            document.getElementById("mostrar_sequencia_tinta").style = "display:inline-block; width: 100%;"
+            document.getElementById("mostrar_processos").style = "display:inline-block; width: 100%;"
+            document.getElementById("mostrar_codigo_arte").style = "display:none;"
+            document.getElementById("mostrar_item").style = "display:none;"
+            document.getElementById("mostrar_referencia").style = "display:none;"
+            document.getElementById("mostrar_teste_anterior").style = "display:none;"
+            document.getElementById("mostrar_checklist").style = "display:none;"
+            
+        } else {
+            document.getElementById("mostrar_tipo_teste").style = "display:none;" 
+             document.getElementById("mostrar_teste_em_maquina").style = "display:none;"
+             document.getElementById("mostrar_sequencia_tinta").style = "display:none;"
+             document.getElementById("mostrar_processos").style = "display:none"
+              document.getElementById("mostrar_codigo_arte").style = "display:inline-block;"
+            document.getElementById("mostrar_item").style = "display:inline-block;"
+            document.getElementById("mostrar_referencia").style = "display:inline-block;"
+            document.getElementById("mostrar_teste_anterior").style = "display:inline-block;"
+            document.getElementById("mostrar_checklist").style = "display:inline-block;"
+             
+             
+        }
+    }
+    
+    function seleciona_teste_maquina(){
+     if (document.getElementById("inlineRadio1").checked === true){
+          document.getElementById("mostrar_teste_em_maquina").style = "display:inline-block; width: 100%;"
+          document.getElementById("mostrar_sequencia_tinta").style = "display:inline-block; width: 100%;"
+           document.getElementById("mostrar_step_cor").style = "display:none;"
+           
+          document.getElementById("mostrar_mockup").style = "display:none"
+         
+        }
+        if (document.getElementById("inlineRadio2").checked === true){
+          document.getElementById("mostrar_teste_em_maquina").style = "display:none;"
+          document.getElementById("mostrar_step_cor").style = "display:inline-block; width: 100%;" 
+          document.getElementById("mostrar_sequencia_tinta").style = "display:inline-block; width: 100%;" 
+          
+          document.getElementById("mostrar_mockup").style = "display:none;"
+         
+        }
+        if (document.getElementById("inlineRadio3").checked === true){
+          document.getElementById("mostrar_teste_em_maquina").style = "display:none;"
+          document.getElementById("mostrar_mockup").style = "display:inline-block; width: 100%"
+          document.getElementById("mostrar_step_cor").style = "display:none;"
+          document.getElementById("mostrar_sequencia_tinta").style = "display:none;" 
+         
+        }
+    }
+</script>
+  
+ 
+<script>
+    function preencheresp_comercial(){
+        console.log("estou aqui")
+        var qual_cliente = api.custom_objects.list_with_options("BR-VALFI_clientes",["fantasia","equal to",document.getElementById("cliente").value],[],["contatos"]).results
+      var selectResp = document.getElementById('responsavel_comercial');
+    for (var i = 0; i<qual_cliente[0].contatos.length; i++){
+        if (qual_cliente[0].contatos[i].departamento == "Resp. Comercial"){
+        var opt = document.createElement('option');
+        opt.value = qual_cliente[0].contatos[i].nome;
+        opt.innerHTML = qual_cliente[0].contatos[i].nome;
+        selectResp.appendChild(opt);
+        }
+    }
+    }
+</script>
+<script>
+    var checklist_entrada = []
+    function adiciona_check(){
+     var linha = event.srcElement.id
+     if (document.getElementById(linha).checked == true){
+         checklist_entrada.push(linha)
+     } else {
+         for (i=0;i<checklist_entrada.length;i++){
+             if (checklist_entrada[i] === linha){
+                 var tira = checklist_entrada.splice(i,1)
+             }
+         }
+     }
+        
+        
+    }
+</script>
+<script>
+    function select_tecnologia(){
+        
+var selectTecnologia = document.getElementById('testemaquina_tecnologia');
+        for (i=0;i<tiposTipo4.length;i++){
+            if (tiposTipo4[i].nome == document.getElementById("testemaquina_fornecedor").value){
+             var tiposTipo5 = tiposTipo4[i].produto.cliche
+            for (var i = 0; i<tiposTipo5.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo5[i];
+        opt.innerHTML = tiposTipo5[i];
+        selectTecnologia.appendChild(opt);
+    }   
+            }
+        }
+    }
+    
+    
+      var data_inicio_ticket = ""
+      function mostraTestforms(){
+         
+        var div_cliente = document.getElementById("info_testform")
+        var icone = document.getElementById("testformArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            data_inicio_ticket = new Date()
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+       
+      }
+</script>
+
+
+
+<script>
+// começam funções copiadas da outra pagina 
+
+ function seleciona_referencia(){
+  	        if (document.getElementById("inlineRadio6").checked === true){
+  	            document.getElementById("mostrar_que_referencia").style.display = "inline-block"
+  	          //   document.getElementById("mostrar_ticket_referencia").style.display = "inline-block"
+  	        } else {
+  	           document.getElementById("mostrar_que_referencia").style.display = "none"
+  	          //  document.getElementById("mostrar_ticket_referencia").style.display = "none"
+  	        }
+  	        
+  	    }
+  
+    	    function seleciona_tipo_trabalho(){
+  	        if (document.getElementById("inlineRadio26").checked === true){
+  	            document.getElementById("mostrar_amostra").style = "display: none;"
+  	            document.getElementById("mostrar_selecionar_amostra").style = "display: none;"
+  	            document.getElementById("mostrar_novos_projetos").style = "display: none;"
+  	            document.getElementById("mostrar_cobrar_cilindros").style = "display: none;"
+  	            document.getElementById("mostrar_prazo_entrega").style = "display: inline-block;"
+  	        } else {
+  	           document.getElementById("mostrar_amostra").style = "display: none;"
+  	            document.getElementById("mostrar_selecionar_amostra").style = "display: inline-block;"
+  	            document.getElementById("mostrar_novos_projetos").style = "display: inline-block; vertical-align: top;"
+  	            document.getElementById("mostrar_cobrar_cilindros").style = "display: inline-block; vertical-align: top;"
+  	            document.getElementById("mostrar_prazo_entrega").style = "display: inline-block;"
+  	            document.getElementById("inlineRadio16").checked = true
+  	            document.getElementById("inlineRadio5").checked = true
+  	             document.getElementById("inlineRadio9").checked = true
+  	        }
+  	        if (document.getElementById("inlineRadio23").checked === true){
+  	            document.getElementById("mostra_item").style.display = "inline-block"
+  	        }
+  	         if (document.getElementById("inlineRadio25").checked === true){
+  	            document.getElementById("mostra_item").style.display = "inline-block"
+  	        }
+  	         if (document.getElementById("inlineRadio24").checked === true){
+  	            document.getElementById("mostra_item").style.display = "none"
+  	            document.getElementById("item").value = ""
+  	        }
+  	         if (document.getElementById("inlineRadio26").checked === true){
+  	            document.getElementById("mostra_item").style.display = "none"
+  	             document.getElementById("item").value = ""
+  	        }
+  	        
+  	        
+  	        
+  	    }
+  	    
+  	     function seleciona_amostra(){
+  	        if (document.getElementById("inlineRadio15").checked === true){
+  	            document.getElementById("mostrar_amostra").style = "display: inline-block;"
+  	        } else {
+  	           document.getElementById("mostrar_amostra").style = "display: none;" 
+  	        }
+  	        
+  	    }
+  	 
+  	    function seleciona_produto_semelhante(){
+  	        if (document.getElementById("inlineRadio17").checked === true){
+  	            document.getElementById("mostrar_produto_semelhante").style = "display: inline-block;"
+  	        } else {
+  	           document.getElementById("mostrar_produto_semelhante").style = "display: none;" 
+  	        }
+  	        
+  	    }
+  	    
+  	     function seleciona_unidade_medida(){
+  	        if (document.getElementById("inlineRadio29").checked === true){
+  	            document.getElementById("mostrar_outra_unidade").style = "display: inline-block;"
+  	        } else {
+  	           document.getElementById("mostrar_outra_unidade").style = "display: none;" 
+  	        }
+  	        
+  	    }
+  	    
+  	function verifica_campos(){
+  	    
+  	    busca_ticket = api.custom_objects.list("BR-TECNO_Tickets",["_id","equal to",ordem]).results[0]
+  	 
+  	 document.getElementById("info_gravacao").innerText = "Ticket Atualizado com sucesso!"
+  	    
+document
+    .querySelectorAll("input")
+    .forEach((elem) => elem.removeEventListener("focusout", calcula_mudanca));
+    
+
+    
+document
+    .querySelectorAll("textarea")
+    .forEach((elem) => elem.removeEventListener("focusout", calcula_mudanca));
+    
+   var pausas_atuais = busca_ticket.info_pausa
+  if (pausas_atuais != undefined){ 
+   pausas_atuais[pausas_atuais.length-1]["motivo"] = document.getElementById("pausa_justificativa").value
+   busca_ticket["info_pausa"] = pausas_atuais
+  }
+    busca_ticket["alterado_por"] = usuario.fullname
+    busca_ticket["alterado_em"] = new Date()
+    
+    api.hub.start_from_whitepaper_with_variables("BR-TECNO_tickets","altera_ticket",{"dados":busca_ticket,"campos_alterados": campos_alterados})
+   
+   
+    setTimeout(function(){document.getElementById("info_gravacao").innerText = ""; bloqueia_campos("inicial")},3000)
+              
+  	   
+  	   
+  	    }
+  	
+  	
+      
+     
+    function select_etapa(){
+     var etapas = ["global","bureau","prepress","provaprint","fotopolimero","pregravacao","galvano","gravacao","analise","liberacao"]
+      
+         var linha = event.srcElement.id
+        console.log(linha)
+        var linha_array = linha.split("_")
+        var div_img = "img_"+linha_array[1]
+         var div_mostra = "mostrafiltros_"+linha_array[1]
+        var imagem_atual = document.getElementById(div_img).src
+        if (imagem_atual.indexOf("_off") > -1){
+        var nova_imagem = imagem_atual.replace("_off","_on")
+        
+        
+        var tira = etapas.splice(etapas.indexOf(linha_array[1]),1)
+        
+        
+        for (i=0;i<etapas.length;i++){
+                var div_outras = "img_"+etapas[i]
+                var imagem_atual2 = document.getElementById(div_outras).src
+                
+                var nova_imagem2 = imagem_atual2.replace("_on","_off")
+                document.getElementById(div_outras).src = nova_imagem2
+            
+        }
+       if (linha_array[1] == "bureau" || linha_array[1] == "prepress" || linha_array[1] == "provaprint"){
+        document.getElementById(div_mostra).style = "display: inline-block; width: 100%;"
+       }
+        if (linha_array[1] != "bureau"){
+          document.getElementById("mostrafiltros_bureau").style = "display: none"
+        }
+        if (linha_array[1] != "prepress"){
+          document.getElementById("mostrafiltros_prepress").style = "display: none"
+        }
+        if (linha_array[1] != "provaprint"){
+          document.getElementById("mostrafiltros_provaprint").style = "display: none"
+        }
+          document.getElementById(div_img).src = nova_imagem
+        
+        } else {
+        
+        
+        if (linha_array[1] != "bureau" && linha_array[1] != "prepress" && linha_array[1] != "provaprint"){
+          document.getElementById(div_mostra).style = "display: none"
+        }
+          
+        }
+       
+        
+    }
+
+</script>
+
+<script>
+  //  document.getElementById("data_abertura").value = dateFormat(new Date(hoje),"yyyy-mm-dd")
+
+</script>
+<script>
+    function busca_ticket_antigo(){
+        var qualticket = parseInt(document.getElementById("ticket_referencia").value)
+        var codigo_ticket = padWithZero(qualticket,5)
+        var busca_ticket = api.custom_objects.list("BR-TECNO_Tickets",["numero_ticket","equal to",codigo_ticket]).results
+        if (busca_ticket.length === 0){
+            document.getElementById("erro_busca_ticket").innerText = "Numero de Ticket não encontrado!"
+            setTimeout(function(){document.getElementById("erro_busca_ticket").innerText = ""},2000)
+        } else {
+          document.getElementById("erro_busca_ticket").innerText = ""
+    document.getElementById("item").value = busca_ticket[0].item
+    document.getElementById("inlineRadio15").checked = busca_ticket[0].amostra.campos.inlineRadio15
+    document.getElementById("inlineRadio16").checked = busca_ticket[0].amostra.campos.inlineRadio16
+    document.getElementById("cliente").value = busca_ticket[0].cliente
+    
+    document.getElementById("inlineRadio23").checked = busca_ticket[0].tipo_trabalho.campos.inlineRadio23
+    document.getElementById("inlineRadio24").checked = busca_ticket[0].tipo_trabalho.campos.inlineRadio24
+    document.getElementById("inlineRadio25").checked = busca_ticket[0].tipo_trabalho.campos.inlineRadio25
+    document.getElementById("inlineRadio26").checked = busca_ticket[0].tipo_trabalho.campos.inlineRadio26
+    document.getElementById("inlineRadio261").checked = busca_ticket[0].tipo_trabalho.campos.inlineRadio261
+    
+  	document.getElementById("inlineRadio4").checked = busca_ticket[0].novos_projetos.campos.inlineRadio4
+    document.getElementById("inlineRadio5").checked = busca_ticket[0].novos_projetos.campos.inlineRadio5
+  	
+  	document.getElementById("inlineRadio6").checked = busca_ticket[0].usar_referencia.campos.inlineRadio6
+  	document.getElementById("inlineRadio7").checked = busca_ticket[0].usar_referencia.campos.inlineRadio7
+  
+    
+    document.getElementById("descricao").value = busca_ticket[0].descricao
+    document.getElementById("que_referencia").value = busca_ticket[0].que_referencia
+    document.getElementById("observacoes").value = busca_ticket[0].observacoes
+    document.getElementById("data_entrega").value = dateFormat(new Date(busca_ticket[0].entrega_em),"yyyy-mm-dd")
+    
+    document.getElementById("inlineRadio8").checked = busca_ticket[0].cobrar_cilindros.campos.inlineRadio8
+    document.getElementById("inlineRadio9").checked = busca_ticket[0].cobrar_cilindros.campos.inlineRadio9
+    
+    document.getElementById("inlineRadio10").checked = busca_ticket[0].processo.campos.inlineRadio10
+    document.getElementById("inlineRadio11").checked = busca_ticket[0].processo.campos.inlineRadio11
+    document.getElementById("inlineRadio12").checked = busca_ticket[0].processo.campos.inlineRadio12
+    
+   
+    
+    document.getElementById("versao_arte").value = busca_ticket[0].versao_arte
+    
+    document.getElementById("inlineRadio13").checked = busca_ticket[0].logo_valgroup.campos.inlineRadio13
+    document.getElementById("inlineRadio14").checked = busca_ticket[0].logo_valgroup.campos.inlineRadio14
+    
+    document.getElementById("contato_cliente").value = busca_ticket[0].amostra_tipo_arte.contato.contato
+    document.getElementById("emailcontato_cliente").value = busca_ticket[0].amostra_tipo_arte.contato.email
+    document.getElementById("telcontato_cliente").value = busca_ticket[0].amostra_tipo_arte.contato.telefone
+    document.getElementById("setorcontato_cliente").value = busca_ticket[0].amostra_tipo_arte.contato.setor
+    
+    document.getElementById("inlineRadio17").checked = busca_ticket[0].amostra_tipo_arte.projeto_semelhante.campos.inlineRadio17
+    document.getElementById("inlineRadio18").checked = busca_ticket[0].amostra_tipo_arte.projeto_semelhante.campos.inlineRadio18
+    
+    document.getElementById("estrutura_atual").value = busca_ticket[0].amostra_estrutura.atual
+    document.getElementById("estrutura_solicitada").value = busca_ticket[0].amostra_estrutura.solicitada
+    
+    
+    document.getElementById("inlineRadio27").checked = busca_ticket[0].amostra_unidade.campos.inlineRadio27
+    document.getElementById("inlineRadio28").checked = busca_ticket[0].amostra_unidade.campos.inlineRadio28
+    document.getElementById("inlineRadio29").checked = busca_ticket[0].amostra_unidade.campos.inlineRadio29
+
+ 
+    document.getElementById("quantidade_solicitada").value = busca_ticket[0].amostra_quantidade.solicitada
+    document.getElementById("volume_previsto").value =  busca_ticket[0].amostra_quantidade.volume_previsto
+    
+    document.getElementById("inlineRadio19").checked = busca_ticket[0].amostra_tipo_produto.campos.inlineRadio19
+    document.getElementById("inlineRadio20").checked = busca_ticket[0].amostra_tipo_produto.campos.inlineRadio20
+    document.getElementById("inlineRadio21").checked = busca_ticket[0].amostra_tipo_produto.campos.inlineRadio21
+    document.getElementById("inlineRadio22").checked = busca_ticket[0].amostra_tipo_produto.campos.inlineRadio22
+   
+    
+    document.getElementById("inlineRadio30").checked = busca_ticket[0].amostra_tipo_arte.tipo_arte.campos.inlineRadio30
+    document.getElementById("inlineRadio31").checked = busca_ticket[0].amostra_tipo_arte.tipo_arte.campos.inlineRadio31
+    document.getElementById("inlineRadio32").checked = busca_ticket[0].amostra_tipo_arte.tipo_arte.campos.inlineRadio32
+    
+          
+     // executa novamente as funções para desaparrecer campos
+     
+     // tipo de trabalho
+     
+      if (document.getElementById("inlineRadio26").checked === true){
+  	            document.getElementById("mostrar_amostra").style = "display: none;"
+  	            document.getElementById("mostrar_selecionar_amostra").style = "display: none;"
+  	            document.getElementById("mostrar_novos_projetos").style = "display: none;"
+  	            document.getElementById("mostrar_cobrar_cilindros").style = "display: none;"
+  	            document.getElementById("mostrar_prazo_entrega").style = "display: inline-block;"
+  	        } else {
+  	           document.getElementById("mostrar_amostra").style = "display: none;"
+  	            document.getElementById("mostrar_selecionar_amostra").style = "display: inline-block;"
+  	            document.getElementById("mostrar_novos_projetos").style = "display: inline-block; vertical-align: top;"
+  	            document.getElementById("mostrar_cobrar_cilindros").style = "display: inline-block; vertical-align: top;"
+  	            document.getElementById("mostrar_prazo_entrega").style = "display: inline-block;"
+  	            document.getElementById("inlineRadio16").checked = true
+  	            document.getElementById("inlineRadio5").checked = true
+  	             document.getElementById("inlineRadio9").checked = true
+  	        }
+  	        if (document.getElementById("inlineRadio23").checked === true){
+  	            document.getElementById("mostra_item").style.display = "inline-block"
+  	        }
+  	         if (document.getElementById("inlineRadio25").checked === true){
+  	            document.getElementById("mostra_item").style.display = "inline-block"
+  	        }
+  	         if (document.getElementById("inlineRadio24").checked === true){
+  	            document.getElementById("mostra_item").style.display = "none"
+  	        }
+  	         if (document.getElementById("inlineRadio26").checked === true){
+  	            document.getElementById("mostra_item").style.display = "none"
+  	        }
+  	        
+  	     // referencia
+  	     
+  	     if (document.getElementById("inlineRadio6").checked === true){
+  	            document.getElementById("mostrar_que_referencia").style.display = "inline-block"
+  	             document.getElementById("mostrar_ticket_referencia").style.display = "inline-block"
+  	        } else {
+  	           document.getElementById("mostrar_que_referencia").style.display = "none"
+  	            document.getElementById("mostrar_ticket_referencia").style.display = "none"
+  	        }
+  	        
+  	        
+  	        // amostra
+          
+          if (document.getElementById("inlineRadio15").checked === true){
+  	            document.getElementById("mostrar_amostra").style = "display: inline-block;"
+  	        } else {
+  	           document.getElementById("mostrar_amostra").style = "display: none;" 
+  	        }
+  	        
+  	        
+  	        // produto semelhante
+  	        
+  	        if (document.getElementById("inlineRadio17").checked === true){
+  	            document.getElementById("mostrar_produto_semelhante").style = "display: inline-block;"
+  	        } else {
+  	           document.getElementById("mostrar_produto_semelhante").style = "display: none;" 
+  	        }
+  	        
+  	        // unidade de medida
+  	        
+  	        if (document.getElementById("inlineRadio29").checked === true){
+  	            document.getElementById("mostrar_outra_unidade").style = "display: inline-block;"
+  	        } else {
+  	           document.getElementById("mostrar_outra_unidade").style = "display: none;" 
+  	        }
+          
+        }
+    }
+</script>
+<script>
+    function bloqueia_campos(que_fazer){
+   
+    $('#myform input').attr('readonly', 'readonly');
+  	  
+  	
+    // var sel7 = document.getElementById("opcao_logovalgroup")
+  	  
+  	 // for (i=0;i<sel7.options.length;i++){
+       //     sel7.options[i].disabled = true
+    //    }
+        
+    
+    //sel7.style.backgroundColor = "#e9ecef"
+    
+   // document.getElementById("Arte").disabled = true
+    //document.getElementById("Referência de Cor").disabled = true
+//    document.getElementById("Especificação").disabled = true
+  //  document.getElementById("customSwitch1").disabled = true
+    $('#myform textarea').attr('readonly', 'readonly');
+   
+   // document.getElementById("inlineRadio1").setAttribute("disabled","disabled")
+    // document.getElementById("inlineRadio2").setAttribute("disabled","disabled")
+     // document.getElementById("inlineRadio3").setAttribute("disabled","disabled")
+       document.getElementById("inlineRadio4").setAttribute("disabled","disabled")
+        document.getElementById("inlineRadio5").setAttribute("disabled","disabled")
+         document.getElementById("inlineRadio6").setAttribute("disabled","disabled")
+          document.getElementById("inlineRadio7").setAttribute("disabled","disabled")
+           document.getElementById("inlineRadio8").setAttribute("disabled","disabled")
+            document.getElementById("inlineRadio9").setAttribute("disabled","disabled")
+             document.getElementById("inlineRadio10").setAttribute("disabled","disabled")
+              document.getElementById("inlineRadio11").setAttribute("disabled","disabled")
+               document.getElementById("inlineRadio12").setAttribute("disabled","disabled")
+                document.getElementById("inlineRadio13").setAttribute("disabled","disabled")
+                 document.getElementById("inlineRadio14").setAttribute("disabled","disabled")
+                  document.getElementById("inlineRadio15").setAttribute("disabled","disabled")
+                   document.getElementById("inlineRadio16").setAttribute("disabled","disabled")
+                    document.getElementById("inlineRadio17").setAttribute("disabled","disabled")
+                     document.getElementById("inlineRadio18").setAttribute("disabled","disabled")
+                      document.getElementById("inlineRadio19").setAttribute("disabled","disabled")
+                       document.getElementById("inlineRadio20").setAttribute("disabled","disabled")
+                        document.getElementById("inlineRadio21").setAttribute("disabled","disabled")
+                         document.getElementById("inlineRadio22").setAttribute("disabled","disabled")
+                          document.getElementById("inlineRadio23").setAttribute("disabled","disabled")
+                           document.getElementById("inlineRadio24").setAttribute("disabled","disabled")
+                            document.getElementById("inlineRadio25").setAttribute("disabled","disabled")
+                             document.getElementById("inlineRadio26").setAttribute("disabled","disabled")
+                              document.getElementById("inlineRadio261").setAttribute("disabled","disabled")
+                              
+                              if (que_fazer === "inicial"){
+                                  window.open("aberturaticket_sp1.html","_self")
+                              }
+                        
+    
+    }
+
+bloqueia_campos()
+</script>
+<script>
+    var info_pausa = {}
+    function pausar_ticket(){
+        document.getElementById("div_mostra_editar").style.display = "none"
+        document.getElementById("div_mostra_pausar").style.display = "none"
+        document.getElementById("div_mostra_liberar").style.display = "inline-block"
+        document.getElementById("info_testform").style.display = "none"
+        document.getElementById("div_mostra_pausa").style.display = "inline-block"
+        document.getElementById("div_mostra_salvar").style.display = "inline-block"
+        
+        info_pausa["pausado_por"] = usuario.fullname
+        info_pausa["inicio"] = new Date()
+        info_pausa["motivo"] = document.getElementById("pausa_justificativa").value
+        if (info_pausa.final != undefined){
+            delete info_pausa.final
+            delete info_pausa.liberado_por
+        }
+        if (busca_ticket.info_pausa === undefined){
+            var as_pausas = []
+        } else {
+           var as_pausas = busca_ticket.info_pausa  
+        }
+        as_pausas.push(info_pausa)
+        api.custom_objects.set_keys("BR-TECNO_Tickets",ordem,{"info_pausa":as_pausas,"pausado": true})
+        document.getElementById('pausa_justificativa').readOnly = false
+        
+    }
+    
+    function liberar_ticket(){
+        document.getElementById("div_mostra_editar").style.display = "inline-block"
+        document.getElementById("div_mostra_pausar").style.display = "inline-block"
+        document.getElementById("div_mostra_liberar").style.display = "none"
+        document.getElementById("info_testform").style.display = "inline-block"
+        document.getElementById("div_mostra_pausa").style.display = "none"
+        document.getElementById("pausa_justificativa").value = ""
+        document.getElementById("div_mostra_salvar").style.display = "none"
+        if (busca_ticket.info_pausa[busca_ticket.info_pausa.length-1]["final"] === undefined){
+            busca_ticket.info_pausa[busca_ticket.info_pausa.length-1]["final"] = new Date()
+            busca_ticket.info_pausa[busca_ticket.info_pausa.length-1]["liberado_por"] = usuario.fullname
+            api.custom_objects.set_keys("BR-TECNO_Tickets",ordem,{"info_pausa":busca_ticket.info_pausa, "pausado": false})
+        }
+        
+    }
+    
+    function editar_ticket(){
+         var busca_ticket = api.custom_objects.list_with_options("BR-TECNO_Tickets",["_id","equal to", ordem],[],["usage"]).results[0]
+  	     api.custom_objects.set_keys("BR-TECNO_Tickets",ordem,{"pausado": false})
+         if (busca_ticket.usage.locked === false || busca_ticket.usage.by_who == usuario.fullname){
+        document.getElementById("div_mostra_salvar").style.display = "inline-block"
+        $('#myform input').removeAttr('readonly');
+        $('#myform textarea').removeAttr('readonly');
+        $("#inlineRadio4").removeAttr('disabled')
+        $("#inlineRadio5").removeAttr('disabled')
+        $("#inlineRadio6").removeAttr('disabled')
+        $("#inlineRadio7").removeAttr('disabled')
+        $("#inlineRadio8").removeAttr('disabled')
+        $("#inlineRadio9").removeAttr('disabled')
+        $("#inlineRadio10").removeAttr('disabled')
+        $("#inlineRadio11").removeAttr('disabled')
+        $("#inlineRadio12").removeAttr('disabled')
+        $("#inlineRadio13").removeAttr('disabled')
+        $("#inlineRadio14").removeAttr('disabled')
+        $("#inlineRadio15").removeAttr('disabled')
+        $("#inlineRadio16").removeAttr('disabled')
+        $("#inlineRadio17").removeAttr('disabled')
+        $("#inlineRadio18").removeAttr('disabled')
+        $("#inlineRadio19").removeAttr('disabled')
+        $("#inlineRadio20").removeAttr('disabled')
+        $("#inlineRadio21").removeAttr('disabled')
+        $("#inlineRadio22").removeAttr('disabled')
+        $("#inlineRadio23").removeAttr('disabled')
+        $("#inlineRadio24").removeAttr('disabled')
+        $("#inlineRadio25").removeAttr('disabled')
+        $("#inlineRadio26").removeAttr('disabled')
+        $("#inlineRadio261").removeAttr('disabled')
+        $('#data_abertura').attr('readonly')
+        
+document
+  .querySelectorAll("input")
+  .forEach((elem) => elem.addEventListener("focusout", calcula_mudanca));
+    
+document
+    .querySelectorAll("textarea")
+    .forEach((elem) => elem.addEventListener("focusout", calcula_mudanca));
+      
+       api.hub.start_from_whitepaper_with_variables("BR-TECNO_tickets","bloqueio_edicao",{"ordem":ordem,"user":usuario})
+        
+         } else {
+             
+          alert("Este Ticket está sendo editado por "+busca_ticket.usage.by_who)   
+         }
+        
+    }
+</script>
+<script>
+var campos_alterados = []
+    function calcula_mudanca(){
+     var linha = event.srcElement.id
+     var valor_atual = document.getElementById(linha).value
+    console.log(linha)
+    console.log(valor_atual)
+    var checa_inline = new RegExp("inline.*") 
+    
+    if (checa_inline.test(linha) === false){
+        console.log("não é inline")
+        if (linha != "data_entrega"){
+        if (valor_atual != ""){
+            if (valor_atual != busca_ticket[linha]){
+                busca_ticket[linha] = valor_atual
+                campos_alterados.push(linha)
+            }
+        }
+        } else {
+            if (valor_atual != ""){
+            var nova_data = new Date(valor_atual)
+            var data_base = new Date(busca_ticket["data_entrega"])
+            if (nova_data.getTime() != data_base.getTime()){
+                campos_alterados.push(linha)
+                busca_ticket.data_entrega = new Date(valor_atual)
+            }
+            
+            
+            }
+            
+            
+        }
+        
+    } else {
+        console.log("é inline")
+        var nome_inline = document.getElementById(linha).name
+        var busca_os_mesmos = document.getElementsByName(nome_inline)
+        var thefields = []
+        var thevalue = ""
+        var campos = {}
+        for (i=0;i<busca_os_mesmos.length;i++){
+            
+            var nome = busca_os_mesmos[i].id
+            var valor = busca_os_mesmos[i].checked
+            campos[nome] = valor
+            if (valor === true){
+               thevalue = busca_os_mesmos[i].value
+            }
+        }
+        
+        if (nome_inline != "tipo_arte" && nome_inline != "projeto_semelhante"){
+        console.log(campos)
+        if (thevalue !=  busca_ticket[nome_inline].valor){
+            campos_alterados.push(nome_inline)
+            busca_ticket[nome_inline]["campos"] = campos
+            busca_ticket[nome_inline]["valor"] = thevalue
+           
+        } 
+        } else {
+            if (thevalue !=  busca_ticket["amostra_tipo_arte"][nome_inline].valor){
+       
+            busca_ticket["amostra_tipo_arte"][nome_inline]["campos"] = campos
+            busca_ticket["amostra_tipo_arte"][nome_inline]["valor"] = thevalue 
+            campos_alterados.push(nome_inline)
+            
+        }
+    }
+    
+      
+      
+    
+    
+    
+    
+     
+     
+}
+}
+</script>
+<script>
+    function cancelar(){
+        window.open("aberturaticket_sp1.html","_self")
+    }
+</script>
+
+
+
+    </body>
+
+</html>

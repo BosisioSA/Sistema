@@ -1,0 +1,1094 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Pedido Roto</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+         <script>
+            var queryString = window.location.search;
+            //console.log(queryString);
+            //var ordem2 = queryString.substring(7)
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+            console.log(ordem)
+        </script>
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./assets/img/rotocrom.jpg" style="width: 70%; margin-bottom: 50px;">
+               <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Pedidos
+                  <ul>
+                  <li class="active" style="list-style-type: none">
+                     <a href="wizard_pedido.html?ordem="><i class="fas fa-cart-plus" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                    <li    style="list-style-type: none">
+                     <a href="lista_pedidos.html"><i class="fas fa-tags" style="margin-right: 5px"></i>Meus Pedidos</a>
+                    </li>
+                   
+                    </ul>
+                    </li>
+                    
+                  
+                    </ul>
+                    
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <!--<li class="nav-item">
+                      <a class="nav-link" href="solicitacaoArtes.html">Nova Solicitação</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="DashBoard_aprovacoes.html">Dashboard</a>
+                  </li>-->
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h3 id="titulo" style="display:inline-block;"></h3>
+        <h5 id="subtitulo" style="display:inline-block;"></h5>
+        <!--<div class="form-group col-md-2" style="display:inline-block;">
+          <label for="data-inicio">A partir de</label>
+          <input type="date"  onchange="preencheLista()" class="form-control" id="data-inicio" name="data-inicio">
+        </div>
+        <div class="form-group col-md-2" style="display:inline-block;">
+          <label for="data-final">Ate</label>
+          <input type="date"  onchange="preencheLista()" class="form-control" id="data-final" name="data-final">
+        </div>-->
+        
+        <br>
+        
+        <div  class="form-group col-md-11" style="display:inline-block; margin-top: 10px;">
+       
+       
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_cliente" style="display:none"></div>
+        <h5>Especificações Técnicas</h5>
+            
+           
+            
+            <div class="form-group col-md-3" style="display:inline-block; vertical-align: top; width: 24%">
+                <label for="largura_material">Largura Material</label>
+                  <input type="number" class="form-control" id="largura_material" name="largura_material">
+                  </div>
+            
+            <div class="form-group col-md-3" style="display:inline-block; width: 24%;vertical-align: top;">
+                <label for="especifica_ladoImpressao">Lado Impressão</label>
+                <select  class="form-control" id="especifica_ladoImpressao" onchange="mudalado_impressao()" name="especifica_ladoImpressao">
+                    <option value="undefined">Selecionar...</option>
+                    <option value="POR DENTRO">POR DENTRO</option>
+                    <option value="POR FORA">POR FORA</option>
+                    </select>
+            </div>
+             <div id="mostra_tipo_impressao" class="form-group col-md-3" style="display:none">
+                <label for="tipo_impressao">Tipo Impressão</label>
+                <select  class="form-control" id="tipo_impressao"  name="tipo_impressao">
+                    <option value="undefined">Selecionar...</option>
+                    <option value="DIRETA">DIRETA</option>
+                    <option value="INDIRETA">INDIRETA</option>
+                    </select>
+            </div>
+<br>
+        
+        <div class="form-group col-md-2" style="display:inline-block; vertical-align: top;  width: 20% ;">
+                <label for="faixas">Faixas</label>
+                  <input type="number" class="form-control" onkeypress="return onlyNumberKey(event)" onchange="calcula_largura()" id="faixas" name="faixas" value="0">
+                  </div>
+                   <div class="form-group col-md-3" style="display:inline-block; vertical-align: top;  width: 20% ;">
+                <label for="medida_faixa">Medida Faixa</label>
+                  <input type="number" class="form-control" onchange="calcula_largura()" id="medida_faixa" name="medida_faixa" value="0.0">
+                  </div>
+                  <div class="form-group col-md-3" style="display:inline-block; vertical-align: top;  width: 20% ;">
+                <label for="entre_faixa">Entre Faixas</label>
+                  <input type="number" class="form-control" onchange="calcula_largura()" id="entre_faixa" name="entre_faixa" value="0.0">
+                  </div>
+                  <div class="form-group col-md-3" style="display:inline-block; vertical-align: top;  width: 25% ;">
+                   <label for="largura_total">Total</label>
+                  <input type="text" class="form-control" id="largura_total" name="largura_total" readonly>
+                   <span class="error"><p id="error_largura_total" style="color:orange"></p></span>
+                  </div>
+            
+                <hr>
+       <h4>Cilindros</h4>
+        <br>
+        <span style="display: inline-block; cursor: pointer;" onclick="adiciona_tinta()">
+                 <img src="./Icons/icone_mais.png" width="30px">
+                </span>
+        <div class="form-group" style="display:inline-block; width: 15%">
+            <label for="cor">Cor</label>
+            <input type="text" class="form-control" id="cor" name="cor" list="as_cores">
+            <datalist id="as_cores"></datalist>
+        </div>
+        <div class="form-group" style="display:inline-block; width: 8%; margin-left: 17px;">
+            <label for="numero">Número</label>
+            <input type="text" class="form-control" id="numero" name="numero" onchange="preencheDadosCilindro()" list="codigos_cilindro">
+            <datalist id="codigos_cilindro"></datalist>
+        </div>
+        <div class="form-group" style="display:inline-block; width: 8%; margin-left: 5px;">
+            <label for="corpo">Corpo</label>
+            <input type="number" class="form-control" id="corpo" name="corpo">
+        </div>
+        <div class="form-group" style="display:inline-block; width: 8%; margin-left: 14px;">
+            <label for="perimetro">Perímetro</label>
+            <input type="number" class="form-control" id="perimetro" name="perimetro">
+        </div>
+        
+        <div class="form-group" style="display:inline-block; width: 12%; margin-left: 14px;">
+            <label for="gravacao">Gravação</label>
+            <select  class="form-control" id="gravacao" onchange="muda_gravacao()" name="gravacao">
+                <option>Selecionar...</option>
+                <option>ELETROMECÂNICA</option>
+                <option>LASER</option>
+                <option>MECÂNICA</option>
+                </select>
+        </div>
+        <div id="mostra_profundidade" class="form-group" style="display:none">
+            <label for="profundidade">Profundidade</label>
+            <input type="number" class="form-control" id="profundidade" name="profundidade">
+        </div>
+        <div class="form-group" style="display:inline-block; width: 15%">
+            <label for="tipo">Tipo</label>
+            <select  class="form-control" id="tipo" name="tipo">
+                <option>Selecionar...</option>
+                <option value="CIC">Cilindro de Cobre</option>
+                <option value="CIF">Cilindro de Ferro</option>
+                <option value="CIM">Cilindro Mandril</option>
+                <option value="CIB">Cilindro de Borracha</option>
+                <option value="CAB">Camisa de Borracha</option>
+                <option value="CAN">Camisa de Niquel</option>
+                </select>
+        </div>
+         <span class="error"><p id="error_tabela_cilindros" style="color:orange"></p></span>
+        <div id="mostra_tabela_cilindros" class="form-group col-md-11" style="display:inline-block; vertical-align: top;">
+        <table id="tabelaCilindros" class="table table-sm" cellspacing="0" width="100%" style="display:inline-block;">
+                <thead>
+                  
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                    <th style="width: 25%">Cor
+                    </th>
+                    <th style="width: 8%">Numero
+                    </th>
+                     <th style="width: 9%">Corpo
+                    </th>
+                     <th style="width: 10%">Perímetro
+                    </th>
+                    <th style="width: 12%">Gravação
+                    </th>
+                     <th style="width: 10%">Profundidade
+                    </th>
+                    <th style="width: 5%">Tipo
+                    </th>
+                    <th style="width: 3%">Duplicar
+                    </th>
+                    <th style="width: 3%">Editar
+                    </th>
+                    <th style="width: 3%">Apagar
+                    </th>
+                    
+                  </tr></tbody>
+                </table>   
+            
+            
+        </div>
+        
+            
+            
+            
+               
+                <br>
+            
+       
+                <br>
+                <section class="form-group col-md-8" style="display: inline-block;"></section>
+                <div  class="form-group col-md-1" style="display:inline-block; vertical-align: top;">
+                <button id="salva_cliente" class="btn btn-primary" onclick="grava_pedido2()" style="cursor: pointer; display: inline-block;">Anterior</button>
+                 </div> <div  class="form-group col-md-1" style="display:inline-block; vertical-align: top;">
+                 <button id="salva_cliente" class="btn btn-primary" onclick="grava_pedido()" style="cursor: pointer;display: inline-block;">Próximo</button>
+                 </div>
+               
+                 <div id="info_update" style="color: green"></div>
+                 
+              
+            </div>
+        
+       
+       
+     <script>
+     
+     
+     function array_move(arr, old_index, new_index) {
+    if (new_index >= arr.length) {
+        var k = new_index - arr.length + 1;
+        while (k--) {
+            arr.push(undefined);
+        }
+    }
+    arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+    return arr; // for testing
+};
+
+var numero_cilindro = 0
+
+            function preencheTabelaCilindros(){
+         
+         var table = document.getElementById("tabelaCilindros")
+        clearTable(table)
+        var qtasrow = table.rows.length
+      
+       
+        
+            
+        for (i=0;i<os_cilindros.length;i++){
+           
+            // preenche as cores da fotocelula
+            
+          
+            
+            
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            var cell9 = row.insertCell(8);
+            var cell10 = row.insertCell(9);
+            
+            if (os_cilindros[i].profundidade == ""){
+                os_cilindros[i].profundidade = "N/A"
+            }
+         
+          if (os_cilindros[i].mesmo_cilindro == true){
+              numero_cilindro = numero_cilindro
+          } else {
+              numero_cilindro = numero_cilindro+1
+          }
+            
+            if (os_cilindros[i].mesmo_cilindro == false){
+            cell1.innerHTML = '<div style="font-size: 1em; display: inline-block;"><div style="display:inline-block"><i onclick="move_acima()" id="'+i+'" class="fas fa-arrow-up" style="margin-right: 5px; cursor: pointer;"></i><i  onclick="move_abaixo()" id="'+i+'" class="fas fa-arrow-down" style="margin-right: 5px;cursor: pointer;"></i><span style="margin-top:5px;height:20px;width:20px;background-color:'+os_cilindros[i].hex+';border-radius:50%;display:inline-block"></span></div><span style="display: inline-block;"></span></div><strong> '+numero_cilindro+' - '+os_cilindros[i].cor+'</strong></div>'
+            } else {
+             cell1.innerHTML = '<div style="font-size: 1em; display: inline-block;"><div style="display:inline-block"><i  id="'+i+'" class="fas fa-times-circle" style="margin-right: 5px;"></i><i  id="'+i+'" class="fas fa-times-circle" style="margin-right: 5px;"></i><span style="margin-top:5px;height:20px;width:20px;background-color:'+os_cilindros[i].hex+';border-radius:50%;display:inline-block"></span></div><span style="display: inline-block;"></span></div><strong> '+numero_cilindro+' - '+os_cilindros[i].cor+'</strong></div>'
+                
+            }
+            cell2.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].numero+'</div>'
+            cell3.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].corpo+'</div>'
+            cell4.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].perimetro+'</div>'
+            cell5.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].gravacao+'</div>'
+            cell6.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].profundidade+'</div>'
+            cell7.innerHTML = '<div style="font-size: 1em; display: inline-block;" >'+os_cilindros[i].tipo+'</div>'
+            cell8.innerHTML = '<div style="font-size: 1em; display: inline-block; cursor: pointer;"  ><img id="'+i+'" src="./Icons/duplicar.png" width="30px" onclick="duplicar_cilindro()"></div>'
+            cell9.innerHTML = '<div style="font-size: 1em; display: inline-block; cursor: pointer;"  ><img id="'+os_cilindros[i].cor+'" src="./Icons/Edit.png" width="30px" onclick="editar_cilindro()"></div>'
+            cell10.innerHTML = '<div style="font-size: 1em; display: inline-block; cursor: pointer;" ><img id="'+os_cilindros[i].cor+'" src="./Icons/delete.png" width="30px" onclick="apagar_cilindro()"></div>'
+         
+            qtasrow = qtasrow +1
+         
+        }    
+           
+         numero_cilindro = 0
+        }
+        
+      function move_acima(){
+             var linha = parseInt(event.srcElement.id)
+       console.log(linha)
+        var mover = []
+       var outras = []
+       
+       if (os_cilindros[linha].mesmo_cilindro === false){
+       var nome_cor = os_cilindros[linha].cor
+       var eh_igual = new RegExp(".*"+nome_cor+".*")
+       for (i=linha;i<os_cilindros.length;i++){
+           if (eh_igual.test(os_cilindros[i].cor) === true){
+               mover.push([os_cilindros[i],i])
+           } 
+           
+       }
+       for (i=0;i<linha;i++){
+           
+               outras.push([os_cilindros[i],i])
+           
+           
+       }
+       }
+       
+       outras = outras.reverse()
+       
+       var encontra_proxima = []
+       
+       for (i=0;i<outras.length;i++){
+           if (outras[i][0].mesmo_cilindro === false){
+               encontra_proxima.push(outras[i])
+           }
+       }
+       
+       var busca_ultima = encontra_proxima[0][1]
+       
+       
+       for (i=0;i<mover.length;i++){
+        if (linha > 0){
+   
+            var linha_final = busca_ultima+i
+            console.log("Mover de "+mover[i][1]+" para "+linha_final)
+       array_move(os_cilindros,mover[i][1],linha_final)
+             
+             
+        }
+       }
+       
+       
+       
+      // var linha_destino = linha-1
+      // if (linha > 0){
+      // array_move(os_cilindros,linha,linha_destino)
+       
+       
+       preencheTabelaCilindros()
+      // }
+      
+        }
+        
+        function move_abaixo(){
+             var linha = parseInt(event.srcElement.id)
+       console.log(linha)
+       var mover = []
+       var outras = []
+       if (os_cilindros[linha].mesmo_cilindro === false){
+       var nome_cor = os_cilindros[linha].cor
+       var eh_igual = new RegExp(".*"+nome_cor+".*")
+       for (i=linha;i<os_cilindros.length;i++){
+           if (eh_igual.test(os_cilindros[i].cor) === true){
+               mover.push([os_cilindros[i],i])
+           } else {
+               outras.push([os_cilindros[i],i])
+           }
+           
+           
+       }
+       var busca_ultima = outras[0][0].cor
+       var eh_proxima = new RegExp(".*"+busca_ultima+".*")
+       var proxima_cor = []
+       for (i=outras[0][1];i<os_cilindros.length;i++){
+           if (eh_proxima.test(os_cilindros[i].cor) === true){
+               proxima_cor.push(os_cilindros[i])
+           }
+       }
+       
+       
+       mover = mover.reverse()
+       //console.log(mover)
+       console.log("A proxima cor")
+       console.log(proxima_cor.length)
+      for (i=0;i<mover.length;i++){
+       // if (posicao_ultimo < os_cilindros.length-1){
+   
+            var linha_final = mover[i][1]+proxima_cor.length
+            console.log("Mover de "+mover[i][1]+" para "+linha_final)
+        array_move(os_cilindros,mover[i][1],linha_final)
+             
+             
+        }
+    //   }
+      //var linha_destino = linha+1
+      // if (linha < os_cilindros.length-1){
+      // array_move(os_cilindros,linha,linha_destino)
+       
+       
+       preencheTabelaCilindros()
+      // }
+       }
+      
+        }
+        
+        function preencheDadosCilindro(){
+           
+            var qual_cilindro = document.getElementById("numero").value
+           var cilindro_caracteristica =  api.custom_objects.list_with_options("BR-ROTOC_romaneio",["CLIENTE","equal to",document.getElementById("id_cliente").innerText,"and","detalhes_romaneio.NR_CILINDRO","contains",qual_cilindro]).results
+            
+            document.getElementById("perimetro").value = cilindro_caracteristica[0].PERIMETRO
+            document.getElementById("corpo").value = cilindro_caracteristica[0].CORPO
+            var os_detalhes_romaneio = cilindro_caracteristica[0].detalhes_romaneio
+            
+            for (i=0;i<os_detalhes_romaneio.length;i++){
+                if (os_detalhes_romaneio[i].NR_CILINDRO == qual_cilindro){
+                    console.log(os_detalhes_romaneio[i].TPCILINDRO)
+                    if (os_detalhes_romaneio[i].TPCILINDRO == "COBRE"){
+                        document.getElementById("tipo").value = "CIC"
+                    }
+                     if (os_detalhes_romaneio[i].TPCILINDRO == "MANDRIL"){
+                        document.getElementById("tipo").value = "CIM"
+                    }
+                    if (os_detalhes_romaneio[i].TPCILINDRO == "FERRO"){
+                        document.getElementById("tipo").value = "CIF"
+                    }
+                    if (os_detalhes_romaneio[i].TPCILINDRO == "BORRACHA"){
+                        document.getElementById("tipo").value = "CIB"
+                    }
+                     if (os_detalhes_romaneio[i].TPCILINDRO == "CIL.BORR."){
+                        document.getElementById("tipo").value = "CIB"
+                    }
+                }
+            }
+
+        }
+     </script>  
+  	
+  		
+  	<script>
+  	// funcoes auxiliares
+  	
+    function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}	
+  	
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+  	   
+  
+  	    
+  	</script>
+  	
+  	<script>
+  	    // preenche dados do pedido
+  	    
+  	   var variaveis = api.workable.get_merged_variables(ordem)
+  	   
+  	   var data_pagina = variaveis.variables.data.value
+  	   
+  	   document.getElementById("titulo").innerText = "Pedido de Rotogravura"
+  	   document.getElementById("subtitulo").innerHTML = " do serviço <strong> "+data_pagina.info_step1.servico+" </strong>, para o cliente <strong> "+data_pagina.info_step1.nome_cliente.FANTASIA+"</strong>" 
+    
+             if (data_pagina.info_step1.op_anterior != ""){
+            
+             var busca_OP_anterior = api.custom_objects.list_with_options("OrdemProducao",["OP","equal to",parseInt(data_pagina.info_step1.op_anterior)],[],[]).results
+             
+             if (busca_OP_anterior.length > 0){
+                 console.log("estou na OP anterior")
+                 document.getElementById("largura_material").value = parseInt(busca_OP_anterior[0].informacao_embalagem.largura_material)
+                 
+                 var selectLado_original = document.getElementById("especifica_ladoImpressao")
+                 
+                 for (i=0;i<selectLado_original.options.length;i++){
+               if (selectLado_original.options[i].value == busca_OP_anterior[0].info_produto.lado_impressao){
+                   selectLado_original.selectedIndex = i
+               }
+                 
+                  document.getElementById("faixas").value = parseInt(busca_OP_anterior[0].informacao_embalagem.qtde_faixas)
+                  document.getElementById("medida_faixa").value = parseInt(busca_OP_anterior[0].informacao_embalagem.medida_faixa)
+                  document.getElementById("largura_total").value = (parseInt(busca_OP_anterior[0].informacao_embalagem.qtde_faixas))*(parseInt(busca_OP_anterior[0].informacao_embalagem.medida_faixa))
+                 
+                 
+             }
+
+        }
+    
+            
+             }  
+    
+    
+       
+    
+        if (data_pagina.info_step2 != undefined){
+        
+           document.getElementById("largura_material").value =  data_pagina.info_step2.largura_material
+        
+         
+           var selectLado = document.getElementById("especifica_ladoImpressao")
+           for (i=0;i<selectLado.options.length;i++){
+               if (selectLado.options[i].value == data_pagina.info_step2.especifica_ladoImpressao){
+                   selectLado.selectedIndex = i
+               }
+           }
+            if ( data_pagina.info_step2.especifica_ladoImpressao == "POR FORA"){
+                
+                document.getElementById("mostra_tipo_impressao").style = "display:inline-block; width: 24%;vertical-align: top;"
+            }
+           
+            var selectTipoImpressao = document.getElementById("tipo_impressao")
+           for (i=0;i<selectTipoImpressao.options.length;i++){
+               if (selectTipoImpressao.options[i].value == data_pagina.info_step2.tipo_impressao){
+                   selectTipoImpressao.selectedIndex = i
+               }
+           }
+          
+        
+        
+           document.getElementById("faixas").value =  data_pagina.info_step2.faixas
+        
+           document.getElementById("medida_faixa").value =  data_pagina.info_step2.medida_faixa
+            document.getElementById("entre_faixa").value =  data_pagina.info_step2.entre_faixa
+       
+           document.getElementById("largura_total").value =  data_pagina.info_step2.largura_total
+            if (data_pagina.info_step2.cilindros != undefined){
+             if (data_pagina.info_step2.cilindros.length > 0){
+                var os_cilindros = data_pagina.info_step2.cilindros
+                preencheTabelaCilindros()
+             } else {
+                  var os_cilindros = []
+                 
+             }
+            } else {
+                 var os_cilindros = []
+            }
+        } else {
+            
+             
+            
+            var os_cilindros = []
+        }
+        
+  	    
+  	</script>
+  <script>
+  	        
+  	        function seleciona_cilindro(){
+  	            var qual_cilindro = document.getElementById("tipo_produto").value
+  	            
+  	            if(qual_cilindro != "undefined"){
+  	                
+  	                $('#tipo_gravacao option:not(:first)').remove();
+
+  	                document.getElementById("mostra_tipo_gravacao").style = "display: inline-block;"
+  	                var busca_cilindros = api.custom_objects.list_with_options("BR-ROTOC_tiposGravacao",["tipo","equal to",qual_cilindro]).results
+  	                
+  	                 selectTipoGravacao = document.getElementById('tipo_gravacao');
+                 
+                     var nomes_gravacao = new Array()
+    
+                    for (i=0;i<busca_cilindros.length;i++){
+                        nomes_gravacao.push(busca_cilindros[i].subtipo)
+                    }
+    
+                    for (var i = 0; i<nomes_gravacao.length; i++){
+                        var opt = document.createElement('option');
+                        opt.value = nomes_gravacao[i];
+                        opt.innerHTML = nomes_gravacao[i];
+                        selectTipoGravacao.appendChild(opt);
+                    }
+                  	                
+  	            } else {
+  	               document.getElementById("mostra_tipo_gravacao").style = "display: none;" 
+  	            }
+  	            
+  	            
+  	        }
+  	    
+  	</script>
+  
+  		  
+  
+
+      <script>
+      
+      
+      var usuario = api.auth.get_current_user()
+      var nome_user = "Bem vindo, "+usuario.fullname
+      document.getElementById("bemvindo").innerText = nome_user
+      </script>
+      <script>
+      //Preenche lista de Drafts
+
+      
+      </script>
+    <script>
+    
+    var tintas = api.custom_objects.list_with_options("PantoneColor",[],["nome","ascending"],["nome"]).results;
+        var options2=''; // variable to store the options
+        for(var i = 0; i < tintas.length; i++){
+            
+        options2 += '<option value="'+tintas[i].nome+'" />';
+
+        }
+         document.getElementById('as_cores').innerHTML = options2;
+         
+         
+   
+
+    
+   
+        
+    
+    
+    
+        function adiciona_tinta(){
+            var busca_tinta = api.custom_objects.list_with_options("PantoneColor",["nome","equal to",document.getElementById("cor").value]).results
+            if (busca_tinta.length == 0){
+                var acor_hex = "#EEEEEE"
+            } else {
+                var acor_hex = busca_tinta[0].cor
+            }
+            
+            // verifica se o cilindro é maior que a largura total das faixas
+            
+             if (parseFloat(document.getElementById("largura_total").value) > 0){   
+            if (parseFloat(document.getElementById("corpo").value) < parseFloat(document.getElementById("largura_total").value)){
+                document.getElementById("error_largura_total").style = "color: red"
+                document.getElementById("error_largura_total").innerText = "A largura total é maior que o corpo do cilindro selecionado"
+                document.getElementById("largura_total").style = "border-color: red; background-color: black; color: white;"
+            } else {
+               document.getElementById("error_largura_total").innerText = ""
+               document.getElementById("largura_total").style = "border-color: #ced4da; background-color: #e9ecef; color: black;"
+            }
+            }
+            
+            // cria variavel
+            
+            var data = {}
+            data["numero"] = document.getElementById("numero").value
+            data["cor"] = document.getElementById("cor").value
+            data["hex"] = acor_hex
+            data["lineatura"] = 0
+            data["angulo"] = 0
+            data["corpo"] = document.getElementById("corpo").value
+            data["perimetro"] = document.getElementById("perimetro").value
+            data["profundidade"] = document.getElementById("profundidade").value
+            data["gravacao"] = document.getElementById("gravacao").value
+            data["tipo"] = document.getElementById("tipo").value
+            data["fotocelula"] = false
+            data["pct_fotocelula"] = 100
+            data["tarja"] = false
+            data["mesmo_cilindro"] = false
+            
+            if (data["gravacao"] == "Selecionar..."){
+                document.getElementById("error_tabela_cilindros").innerText = "Selecione um tipo de gravação!"
+            } else {
+                var existe = false
+                document.getElementById("error_tabela_cilindros").innerText = ""
+                
+                for (i=0;i<os_cilindros.length;i++){
+                    console.log("Compararand")
+                    console.log(data["cor"])
+                    console.log("com")
+                    console.log(os_cilindros[i].cor)
+                    if (data["cor"] == os_cilindros[i].cor){
+                        console.log()
+                        existe = true
+                        var indice = i
+                    }
+                }
+                console.log("Existe "+existe)
+                if (existe === false){
+                os_cilindros.push(data)
+                }
+                else {
+                    os_cilindros[indice].numero = document.getElementById("numero").value
+                    os_cilindros[indice].lineatura = 0
+                    os_cilindros[indice].angulo = 0
+                    os_cilindros[indice].corpo = document.getElementById("corpo").value
+                    os_cilindros[indice].perimetro = document.getElementById("perimetro").value
+                    os_cilindros[indice].gravacao = document.getElementById("gravacao").value
+                    os_cilindros[indice].profundidade = document.getElementById("profundidade").value
+                    os_cilindros[indice].tipo = document.getElementById("tipo").value
+                }
+            }
+            
+            
+            
+               var chaves = Object.keys(data)
+               
+               for (k=0;k<chaves.length;k++){
+                   if (chaves[k] == "hex"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "fotocelula"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "pct_fotocelula"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "tarja"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "lineatura"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "angulo"){
+                       var tira = chaves.splice(k,1)
+                   }
+                   if (chaves[k] == "mesmo_cilindro"){
+                       var tira = chaves.splice(k,1) 
+                   }
+               }
+               
+               if (data["gravacao"] != "Selecionar..."){
+               console.log(chaves.toString())
+               for (j=0;j<chaves.length;j++){
+                   
+                       if (chaves[j] != "gravacao" || chaves[j] != "tipo"){
+                   document.getElementById(chaves[j]).style = "border-color:#ced4da ; background-color: white;"
+              document.getElementById(chaves[j]).value = ""
+                       }
+                      else {
+                           document.getElementById(chaves[j]).style = "border-color:#ced4da ; background-color: white;"
+              document.getElementById(chaves[j]).value = "Selecionar..." 
+                       }
+                   }
+               }
+                   
+     
+           
+             
+           
+            preencheTabelaCilindros()
+            
+            
+        }
+        
+      
+        
+        
+    </script>  
+      
+  <script>
+      
+      // verifica se o cliente existe e busca os cilindros desse cliente
+      
+          
+          var busca_codigo = api.custom_objects.list_with_options("BR-ROTOC_customers",["FANTASIA","equal to",data_pagina.info_step1.nome_cliente.FANTASIA],[],["CODIGO"]).results
+          
+          if (busca_codigo.length > 0){
+              
+              // verifica se o cliente possui codigo na base
+              
+              
+              if (busca_codigo[0].CODIGO != undefined){
+              document.getElementById("id_cliente").innerText = busca_codigo[0].CODIGO
+              
+              var busca_romaneio = api.custom_objects.list_with_options("BR-ROTOC_romaneio",["CLIENTE","equal to", busca_codigo[0].CODIGO.toString()],[],["PERIMETRO","CORPO","detalhes_romaneio"]).results
+            var detalhes_cilindro = []
+            for (i=0;i<busca_romaneio.length;i++){
+    var os_romaneios = busca_romaneio[i].detalhes_romaneio
+    for (j=0;j<os_romaneios.length;j++){
+        detalhes_cilindro.push(os_romaneios[j].NR_CILINDRO)
+    }
+            }
+        var unicos_cilindros = detalhes_cilindro.filter(onlyUnique)
+        var options5=''; // variable to store the options
+        for(var i = 0; i < unicos_cilindros.length; i++){
+          if (unicos_cilindros[i] != ""){  
+        options5 += '<option value="'+unicos_cilindros[i]+'" />';
+          }
+        }
+          document.getElementById('codigos_cilindro').innerHTML = options5;
+
+        
+          }
+          }
+          else {
+          }
+         
+    
+
+
+  </script>
+  
+  <script>
+      function editar_cilindro(){
+          
+       var linha = event.srcElement.id
+      // console.log(linha)
+       for (i=0;i<os_cilindros.length;i++){
+           if (os_cilindros[i].cor == linha){
+               var chaves = Object.keys(os_cilindros[i])
+               
+               for (j=0;j<chaves.length;j++){
+                  
+                   if (chaves[j] != "hex" && chaves[j] != "fotocelula" && chaves[j] != "pct_fotocelula" && chaves[j] != "angulo" && chaves[j] != "lineatura" && chaves[j] != "mesmo_cilindro" && chaves[j] != "tarja"){
+                    console.log("Nao sou igual")
+                    console.log(chaves[j])
+                   document.getElementById(chaves[j]).style = "border-color: orange; background-color: floralwhite;"
+              document.getElementById(chaves[j]).value = os_cilindros[i][chaves[j]]
+                   }
+               }
+              
+              
+           }
+       }
+      }
+      
+      function duplicar_cilindro(){
+           var linha = parseInt(event.srcElement.id)
+          console.log(linha)
+          var para_duplicar = os_cilindros[linha]
+          var outro = os_cilindros[linha]
+          var nome_cor = para_duplicar.cor.replace(" 2x","").replace(" 3x","").replace(" 4x","").replace(" 5x","")
+          var busca_outras = new RegExp(".*"+nome_cor+".*")
+          var existem = 0
+          for (i=0;i<os_cilindros.length;i++){
+              if (busca_outras.test(os_cilindros[i].cor) === true){
+                  existem = existem+1
+              }
+          }
+          var total = existem+1
+          var numero = total+"x"
+           var info_cilindro = {}
+           info_cilindro["cor"] = nome_cor+" "+numero
+           info_cilindro["hex"] = para_duplicar.hex
+           info_cilindro["angulo"] =para_duplicar.angulo
+           info_cilindro["corpo"] =para_duplicar.corpo
+           info_cilindro["fotocelula"] =false
+            info_cilindro["gravacao"] = para_duplicar.gravacao
+             info_cilindro["lineatura"] = para_duplicar.lineatura
+              info_cilindro["numero"] = para_duplicar.numero
+               info_cilindro["pct_fotocelula"] = 0
+               info_cilindro["perimetro"] = para_duplicar.perimetro
+               info_cilindro["profundidade"] = para_duplicar.profundidade
+               info_cilindro["tarja"] = false
+               info_cilindro["tipo"] = para_duplicar.tipo
+               info_cilindro["mesmo_cilindro"] = true
+
+         
+          
+          os_cilindros.splice(linha+1, 0, info_cilindro)
+          
+          preencheTabelaCilindros()
+      }
+      
+      function apagar_cilindro(){
+          if (confirm("Deseja mesmo apagar esse cilindro?") === true){
+            var linha = event.srcElement.id
+            
+          
+            
+            
+            for (i=0;i<os_cilindros.length;i++){
+                var numero = i+1
+                if (os_cilindros[i].cor == linha){
+                    var tira = os_cilindros.splice(i,1)
+                    var indice_tira = i
+                }
+            
+                
+            }
+                    
+                    preencheTabelaCilindros()
+                }
+      }
+            
+    
+  </script>
+  <script>
+      function muda_gravacao(){
+          if (document.getElementById("gravacao").value != "undefined"){
+              if (document.getElementById("gravacao").value == "ELETROMECÂNICA"){
+                  document.getElementById("mostra_profundidade").style = "display: none;"
+              } else {
+                 document.getElementById("mostra_profundidade").style = "display: inline-block;" 
+              }
+          } else {
+             document.getElementById("mostra_profundidade").style = "display: none;" 
+          }
+          
+      }
+  </script>
+  <script>
+      function calcula_largura(){
+          
+          
+          var num_faixas = parseInt(document.getElementById("faixas").value)
+          var larg_faixa = parseFloat(document.getElementById("medida_faixa").value)
+          var entre_faixa = parseFloat(document.getElementById("entre_faixa").value)
+         document.getElementById("largura_total").value = ((num_faixas*(larg_faixa+entre_faixa))-entre_faixa).toFixed(3)
+          
+      }
+      
+      function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+      
+      
+      
+  </script>
+  <script>
+      function grava_pedido2(){
+          
+        
+         
+            var info_step2 = {}
+            info_step2["largura_material"] = document.getElementById("largura_material").value
+            info_step2["especifica_ladoImpressao"] = document.getElementById("especifica_ladoImpressao").value
+            info_step2["faixas"] = document.getElementById("faixas").value
+            info_step2["medida_faixa"] = document.getElementById("medida_faixa").value
+            info_step2["largura_total"] = document.getElementById("largura_total").value
+            info_step2["entre_faixa"] = document.getElementById("entre_faixa").value
+            info_step2["cilindros"] = os_cilindros
+            data_pagina["info_step2"] = info_step2
+            
+            
+                         var inicia_wizard = api_sync.hub.start_from_whitepaper_with_files_and_variables("CADOP_v2","wizard_passo_1", [] ,{"data":data_pagina,"usuario":usuario});
+       
+       
+        var workable_id = inicia_wizard.workable_id
+        var workableConsoleLog = function ()  // a cada 30s roda isso e atualiza a variavel form...
+          {
+            var variaveis = api.workable.get_merged_variables(workable_id)
+           if (variaveis.variables.state.value == "finalizado"){
+                console.log("Achei! "+workable_id)
+                
+                  myStopFunction(workable_id);
+              }
+        }
+	   var workflowTimeout = setInterval(workableConsoleLog, 500);
+        function myStopFunction(theID) {
+                    clearInterval(workflowTimeout);
+                    window.open("wizard_pedido.html?ordem="+theID,"_self")
+                    }
+
+            
+          
+          
+      }
+      
+       function grava_pedido(){
+          
+        
+         
+             var info_step2 = {}
+            info_step2["largura_material"] = document.getElementById("largura_material").value
+            info_step2["especifica_ladoImpressao"] = document.getElementById("especifica_ladoImpressao").value
+            info_step2["tipo_impressao"] = document.getElementById("tipo_impressao").value
+            info_step2["faixas"] = document.getElementById("faixas").value
+            info_step2["medida_faixa"] = document.getElementById("medida_faixa").value
+            info_step2["entre_faixa"] = document.getElementById("entre_faixa").value
+            info_step2["largura_total"] = document.getElementById("largura_total").value
+            info_step2["cilindros"] = os_cilindros
+            data_pagina["info_step2"] = info_step2
+            
+            
+            var inicia_wizard = api_sync.hub.start_from_whitepaper_with_files_and_variables("CADOP_v2","wizard_passo_1", [] ,{"data":data_pagina,"usuario":usuario});
+       
+       
+        var workable_id = inicia_wizard.workable_id
+        var workableConsoleLog = function ()  // a cada 30s roda isso e atualiza a variavel form...
+          {
+            var variaveis = api.workable.get_merged_variables(workable_id)
+           if (variaveis.variables.state.value == "finalizado"){
+                console.log("Achei! "+workable_id)
+                
+                  myStopFunction(workable_id);
+              }
+        }
+	   var workflowTimeout = setInterval(workableConsoleLog, 500);
+        function myStopFunction(theID) {
+                    clearInterval(workflowTimeout);
+                    window.open("wizard_roto_step2.html?ordem="+theID,"_self")
+                    }
+
+            
+          
+          
+      }
+  </script>
+  <script>
+      function mudalado_impressao(){
+         if (document.getElementById("especifica_ladoImpressao").value === "POR FORA"){ 
+          document.getElementById("mostra_tipo_impressao").style = "display: inline-block; width: 24%;vertical-align: top;"
+         } else {
+            document.getElementById("mostra_tipo_impressao").style = "display: none;" 
+         }
+      }
+  </script>
+ 
+  
+ 
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

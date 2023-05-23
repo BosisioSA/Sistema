@@ -1,0 +1,300 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cloudflow Demo - Detalhes Upload</title>
+        <meta name="description" content="Versioning">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/table.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/main.js"></script>
+
+        <script src="http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.appear-1.1.1.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/upload/js/upload.js'></script>
+        <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/3rdParty/jquery.i18n.js'></script>
+        <script type='text/javascript' src='http://127.0.0.1:9090/portal.cgi/PP_FILE_STORE/Customer_Tests/Pavao/upload/js/upload-controller.js'></script>
+        <script>
+            var queryString = window.location.search;
+            //console.log(queryString);
+            //var ordem2 = queryString.substring(7)
+            var ordem = decodeURI(queryString.substring(6,queryString.length))
+            console.log(ordem)
+        </script>
+        <script>
+		var trans = {'nixps-cloudflow-upload.button_text_browse': "Selecionar Arquivo..."};
+		$.i18n.setDictionary(trans);
+		$.get("/cloudflow_pt.json").then(function(pTranslations) {
+                  $.i18n.setDictionary(pTranslations);
+                }).fail(function(pError){
+                  console.log(pError);
+                });
+
+	        var ts ='';
+		var lSession=api_sync.auth.create_session('admin','Oicu812!');
+
+	        function getUrlVars() {
+    		  var vars = {};
+		  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        	    vars[key] = value;
+    		  });
+		  return vars;
+		}
+
+		function init() {
+	          var upload = getUrlVars()['upload'];
+		  if (upload=='done') $('#message').html('File uploaded! Deliver a new file...');
+		  $('#uploadstamp').val(ts);
+
+		  api_sync.m_session=lSession;
+		  var lData=api_sync.file.create_folder('cloudflow://PP_FILE_STORE/','entrada');
+
+		  $( "#logout" ).on( "click", function () {
+        	$.cookie('user_id','', { expires: -1, path: '/' });
+        	$.cookie('user_hash','', { expires: -1, path: '/' });
+        	$.cookie('expiration_date','', { expires: -1, path: '/' });
+        	$.cookie('customer_id','', { expires: -1, path: '/' });
+        	$.cookie('customer_name', '', { expires: -1 , path: '/' });
+       		$.cookie('username', '', { expires: -1 , path: '/' });
+        	$.cookie('scope', '', { expires: -1 , path: '/' });
+        	window.location = '.';
+    	  });
+		}
+
+		// this handler is executed when we click on the button
+		$(document).ready(function() {
+			var g_files = [];
+			 function checkRequiredFields() {
+                    var l_result = true;
+                    var l_fields = ['sku', 'articleid'];
+
+                    for(var i in l_fields) {
+                        var l_name = l_fields[i];
+                        var l_inputfield = $('[customer='+l_name+']');
+                        var l_value = l_inputfield.val();
+                    }
+
+					if (g_files.length == 0)
+					{
+						$('.xeikon_file_uploader').addClass('fillin');
+					}
+					else
+					{
+						$('.xeikon_file_uploader').removeClass('fillin');
+					}
+                    return l_result;
+                }
+
+			var lSession=api_sync.auth.create_session('admin','Oicu812!');
+			$.cookie('session',lSession.session,{ expires:2, path:'/'});
+
+			var l_div=$(".xeikon_file_uploader");
+		        ts = ''+parseInt(new Date().getTime()/1000);
+			var l_uploader=upload.setup_ui(
+				l_div,
+				{
+					url:'/?url='+encodeURIComponent("cloudflow://PP_FILE_STORE/"),
+					multiple:false,
+					only_upload:true,
+					got_files_cb: function(p_file, p_url) { g_files.push(p_url); },
+					//*  Only PDF files:
+ 				    check_file_cb: function (p_filename, p_size, p_type)
+    					{
+							var ok = (p_filename.length > 4);
+						if (!ok || (p_filename.toLowerCase().substr(p_filename.length - 4) !== '.pdf'))
+					 {
+					 l_uploader.add_failed_entry(p_filename, 'Not a PDF file');
+					 return false;
+					}
+					return true;
+					}
+				});
+			$('#registerButton').on('click',function ()
+			{
+				// log into the system, and use it to set the cookie
+				var lSession=api_sync.auth.create_session('admin','Oicu812!');
+
+				api_sync.m_session=lSession;
+
+				gInput="register";
+
+				var lData=api_sync.ui.convert_form_to_json($('#registerForm'));
+
+				lData.references={
+					files: g_files
+					//folder_name: gfoldername
+				};
+
+                var l_values = {
+                 customer:'', articleid:''
+                 };
+                    $('#registerForm').find('input').each(function (p_index, p_child)
+                   {
+					l_values[$(p_child).attr('name')] = $(p_child).val();
+                    });
+                    $('#registerForm').find('textarea').each(function (p_index, p_child)
+                    {
+					l_values[$(p_child).attr('name')] = $(p_child).val();
+                    });
+
+
+				// submit the data to Cloudflow
+		    var lResult=api_sync.hub.start_from_whitepaper_with_files_and_variables("BR-DEMO-StartPrepress","Input_Name", g_files , lData.variables);
+		    console.log(lResult);
+	            // Go to Done page
+		var l_customername = $('#sku').val();
+		var l_articleid = $('#linhaProduto').val();
+		
+		var infoOS2 = api.custom_objects.list("CloudflowDemo_Upload",["dataUpload","equal to",ordem],[]).results;
+		var obotao = document.getElementById("registerButton")
+		
+		if (infoOS2[0].status == "prepressIniciado"){
+		    obotao.innerText = "Iniciar Aprovacao"
+		}
+		
+
+		var l_url = 'http://127.0.0.1:9090/portal.cgi?quantum=' + lResult._id + '&workable=' + lResult._id;
+                //window.location.href = l_url;
+		window.location.href = '?data='+ordem;
+		console.log(lResult);
+			});
+			});
+     </script>
+
+    </head>
+
+
+    <body onload="init();">
+
+
+      <div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_Hybrid.jpg" style="width: 70%; margin-bottom: 50px;">
+            <ul class="active components mb-5">
+              <li>
+  	              <a href="listaOS.html">OSs Ativas</a>
+  	          </li>
+              <!--<li>
+  	              <a href="Producao_Alpha.html">Ordens em Produção</a>
+  	          </li>
+              <li>
+  	              <a href="Finalizados_Alpha.html">Ordens em Produção</a>
+  	          </li>-->
+  	        </ul>
+
+  	        <div class="footer">
+  	        	<p style="font-size: 6pt; margin-top:380px">Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						  Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="listaOS.html">OSs ativas</a>
+                  </li>
+                  <!--<li class="nav-item">
+                      <a class="nav-link" href="Producao_Alpha.html">Produção</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="Finalizados_Alpha.html">Finalizadas</a>
+                  </li>-->
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <h2>Demo Prepress</h2>
+        <form id="registerForm">
+          <div class="form-group col-md-5" style="display:inline-block;">
+            <label for="nomeProduto">Nome Produto</label>
+            <input type="text" class="form-control" id="nomeProduto" name="nomeProduto" readonly>
+          </div>
+          <div class="form-group col-md-3" style="display:inline-block;">
+            <label for="codOS">Cliente</label>
+            <input type="text" class="form-control" id="codOS" name="codOS" readonly>
+          </div>
+          <div class="form-group col-md-3" style="display:inline-block;">
+            <label for="codNP">Status</label>
+            <input type="text" class="form-control" id="codNP" name="codNP" readonly>
+          </div>
+
+
+
+                      <hr style="margin: 20px 100px 5px 0px;">
+                        <br>
+                    </form>
+                    <!--<div class="xeikon_file_uploader" style="position: relative; width:100%; height:200px; border-width:1px; border-radius:5px; border-style:solid; border-color:#e5e5e5;">
+                    </div>-->
+                    <button class="button registerButton clearfix" id='registerButton' >Iniciar Prepress</button>
+                </div>
+                </div>
+
+
+        <div style="clear:both"></div>
+
+
+    <script>
+    var infoOS = api.custom_objects.list("CloudflowDemo_Upload",["dataUpload","equal to",ordem],[]).results;
+    console.log(infoOS[0].cliente)
+    var oStatus = ""
+    if (infoOS[0].status == "novoUpload"){
+        oStatus = "Novo Arquivo"
+    }
+    
+    document.getElementById("nomeProduto").value = infoOS[0].produto;
+    document.getElementById("codOS").value = infoOS[0].cliente;
+    document.getElementById("codNP").value = oStatus;
+    </script>
+
+    </body>
+
+</html>

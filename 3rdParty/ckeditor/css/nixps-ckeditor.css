@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-dec-2015, 9:01:39
+    Author     : guillaume
+    description: default rulings to overwrite the initial rulings 
+*/
+
+
+body
+{
+    font-family: Helvetica, arial;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.cke_editable p
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.cke_toolgroup a.cke_button:last-child:after, 
+.cke_toolgroup a.cke_button.cke_button_disabled:hover:last-child:after {
+    height: 0;
+    width: 0;
+}

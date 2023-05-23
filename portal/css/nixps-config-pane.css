@@ -1,0 +1,57 @@
+/*********************************************************************/
+/*  CONFIG PANE                                                      */
+/*********************************************************************/
+
+div.config-pane
+{
+	position: absolute;
+	top: 47px;
+	left: 15px;
+	bottom: 15px;
+	right: 15px;
+	display: none;
+}
+
+div.config-main-buttons
+{
+	font-weight: bold;
+	opacity: 1;
+	color: #ffffff;
+	text-align: center;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+    width: 138px;
+    bottom: 5px;
+    right: 0px;
+}
+
+div.config-content
+{
+	position: absolute;
+	font-size: 13px;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+}
+
+div.config-button
+{
+	font-weight: bold;
+	opacity: 1;
+	color: #ffffff;
+	text-align: center;
+	background-color: #6f6f6f;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+    width: 138px;
+}
+
+div.config-button-label
+{
+	top: -10px;
+}

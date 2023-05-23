@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+	<script src="/okilms/3rdParty/jquery-1.7.2.js"></script>
+	<script src="/portal/js/nixps-cloudflow_path.js"></script>
+
+	<!-- Setup the unit test -->
+	<script src="/okilms/tests/3rdParty/mocha.js"></script>
+    <script src="/okilms/tests/3rdParty/should.js"></script>
+	<link type="text/css" href="/okilms/tests/css/mocha.css" rel="stylesheet" />
+    <script>mocha.setup('bdd')</script>
+
+
+	<script type="text/javascript">
+		$(function() {
+			describe("cloudflow_path", function() {
+				describe('construction', function() {
+					it("should throw when invalid parameters are supplied", function() {
+						(function() {
+							var l_invalid = new cloudflow_path();
+						}).should.throw();
+
+						(function() {
+							var l_invalid = new cloudflow_path(null);
+						}).should.throw();
+
+						(function() {
+							var l_invalid = new cloudflow_path("http://djfk/fjkdlsf/");
+						}).should.throw();
+
+						(function() {
+							var l_invalid = new cloudflow_path("");
+						}).should.throw();
+					});
+
+					it("should accept a cloudflow path", function() {
+						(function() {
+							var l_valid = new cloudflow_path("cloudflow://PP_FILE_STORE/jdklfs");
+							l_valid.is_directory().should.eql(false);
+						}).should.not.throw();
+
+						(function() {
+							var l_valid = new cloudflow_path("cloudflow://PP_FILE_STORE/jdklfs/");
+							l_valid.is_directory().should.eql(true);
+						}).should.not.throw();
+					});
+				});
+
+				describe('navigation', function() {
+					var l_path;
+
+					before(function() {
+						l_path = new cloudflow_path("cloudflow://PP_FILE_STORE/hello/world/test.pdf");
+					});
+
+					describe('to_parent_path', function() {
+						it("should go to the parent path", function() {
+							var l_parent = l_path.to_parent_path();
+							l_parent.get_full_path().should.eql("cloudflow://PP_FILE_STORE/hello/world/");
+						});
+
+						it("should not go further to the parent than the root", function() {
+							var l_parent = l_path.to_parent_path().to_parent_path().to_parent_path().to_parent_path().to_parent_path();
+							l_parent.get_full_path().should.eql("cloudflow://");
+						});
+					})
+
+					describe('to_file', function() {
+						it("should not accept invalid parameters", function() {
+							(function() {
+								l_path.to_file(null);
+							}).should.throw();
+
+							(function() {
+								l_path.to_file(undefined);
+							}).should.throw();
+
+							(function() {
+								l_path.to_file("");
+							}).should.throw();
+
+							(function() {
+								l_path.to_file("hello/");
+							}).should.throw();
+						});
+
+						it("should go the a filename", function() {
+							var l_path = new cloudflow_path("cloudflow://PP_FILE_STORE/hello/world/");
+							var l_file = l_path.to_file("myfile.pdf");
+							l_file.get_full_path().should.eql("cloudflow://PP_FILE_STORE/hello/world/myfile.pdf");
+							l_file.is_directory().should.eql(false);
+						});
+					});
+
+					describe('to_path', function() {
+						it("should not accept invalid parameters", function() {
+							(function() {
+								l_path.to_path(null);
+							}).should.throw();
+
+							(function() {
+								l_path.to_path(undefined);
+							}).should.throw();
+
+							(function() {
+								l_path.to_path("");
+							}).should.throw();
+						});
+						
+						it("should go to the path not ending with /",  function() {
+							var l_path = new cloudflow_path("cloudflow://PP_FILE_STORE/hello/world/");
+							var l_path2 = l_path.to_path("test");
+							l_path2.get_full_path().should.eql("cloudflow://PP_FILE_STORE/hello/world/test/");
+						});
+
+						it("should go to the path ending with /",  function() {
+							var l_path = new cloudflow_path("cloudflow://PP_FILE_STORE/hello/world/");
+							var l_path2 = l_path.to_path("test/");
+							l_path2.get_full_path().should.eql("cloudflow://PP_FILE_STORE/hello/world/test/");
+						});
+
+						it("should not accept to go to a path if it is not a directory",  function() {
+							(function() {
+								l_path.to_path("hello");
+							}).should.throw();
+						});
+					});
+
+					describe('get_name', function() {
+						it("return the name of the last element of the path", function() {
+							l_path.get_name().should.eql("test.pdf");
+							l_path.to_parent_path().get_name().should.eql("world");
+						});
+
+						it("should return a '/' if reached root folder", function() {
+							var l_path = new cloudflow_path("cloudflow://");
+							l_path.get_name().should.eql("/");
+						});
+					});
+
+					describe('get_full_path', function() {
+						it("should return the full path", function() {
+							l_path.get_full_path().should.eql("cloudflow://PP_FILE_STORE/hello/world/test.pdf");
+						})
+					});
+				});
+			});
+
+			mocha.run();
+		});
+	</script>
+</head>
+<body>
+	<div id="mocha"></div>
+</body>
+</html>

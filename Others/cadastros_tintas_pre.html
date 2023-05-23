@@ -1,0 +1,629 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Lista Cores - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+       
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+         <ul class="active components mb-5">
+                   <li  class="active" style="list-style-type: none">
+                    <a href="prepress_dash_sp1.html"><img src="./Icons/global_on.png" width="30px" style="margin-right: 10px;"><span  style="color: black; font-size: 1em">Dashboard</span></a>
+                    </li>
+                    <li  style="list-style-type: none">
+                    <a href="lista_premeet_prepress.html"><img src="./Icons/premeet.png" width="30px" style="margin-right: 10px;"><span  style="color: black; font-size: 1em">Lista Pré Meet</span></a>
+                    </li>
+        <li id="mostra_upload_menu" style="display: none;">
+              <a href="#homeSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/uploadedownload.png" width="26px" style="margin-right: 10px">Servidor de Arquivos</a>
+           <li  style="list-style-type: none;">
+               <ul class="collapse list-unstyled" id="homeSubmenu4">
+               <li  style="list-style-type: none">
+               <a href="upload_artes.html"><img src="./Icons/upload.png" width="22px" style="margin-right: 10px">Upload Artes</a>
+          </li> 
+          <li  style="list-style-type: none">
+               <a href="download_artes.html"><img src="./Icons/download.png" width="22px" style="margin-right: 10px">Download Artes</a>
+          </li> 
+          <li  style="list-style-type: none">
+               <a href="http://35.232.192.44:9090/portal.cgi?asset=X"><img src="./Icons/assets.png" width="22px" style="margin-right: 10px">Assets</a>
+          </li> 
+        </ul>
+        </li>
+                     
+                <li>
+              <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/fornecedores.png" width="30px" style="margin-right: 10px">Fornecedores</a>
+           <li  style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+               <li class="active" style="list-style-type: none">
+               <a href="cadastros_fornecedores_flexo_pre.html"><img src="./Icons/flexo.png" width="20px" style="margin-right: 10px">Flexo</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_roto_pre.html"><img src="./Icons/roto.png" width="20px" style="margin-right: 10px">Roto</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_anilox_pre.html"><img src="./Icons/anilox.png" width="20px" style="margin-right: 10px">Anilox</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_pc_pre.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_prepress_pre.html"><img src="./Icons/prepress.png" width="20px" style="margin-right: 10px">Prepress</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_materiaprima_pre.html"><img src="./Icons/material.png" width="20px" style="margin-right: 10px">Matéria Prima</a>
+          </li>
+          </ul>
+          
+          <li >
+              <a  href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/tecnicos.png" width="30px" style="margin-right: 10px">Cadastros Técnicos</a>
+           <li style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu3">
+              
+          <li  style="list-style-type: none">
+               <a href="cadastros_tecnicos_unidades_pre.html"><img src="./Icons/unidades.png" width="20px" style="margin-right: 10px">Unidades</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_tipotrabalho_pre.html"><img src="./Icons/tipo_trabalho.png" width="20px" style="margin-right: 10px">Tipo de Trabalho</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_finalidade_pre.html"><img src="./Icons/finalidade.png" width="20px" style="margin-right: 10px">Finalidade</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_segmentos_pre.html"><img src="./Icons/segmentos.png" width="20px" style="margin-right: 10px">Segmentos</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_testform_pre.html"><img src="./Icons/testform.png" width="20px" style="margin-right: 10px">Test Form</a>
+          </li>
+          </ul>
+          
+              
+                <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/sequencia.png" width="30px" style="margin-right: 10px">Sequência Padrão</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li  style="list-style-type: none">
+               <a href="receita_tintas_pre.html"><img src="./Icons/contagotas.png" width="20px" style="margin-right: 10px">Criar Sequência</a>
+              </li>
+              <li  style="list-style-type: none">
+               <a href="lista_receitas_pre.html"><img src="./Icons/listasequencia.png" width="20px" style="margin-right: 10px">Lista Sequências</a>
+              </li>
+              <li style="list-style-type: none">
+               <a href="cadastros_tintas_pre.html"><img src="./Icons/novasequencia.png" width="20px" style="margin-right: 10px">Lista de Cores</a>
+              </li>
+              </ul>
+          </li>
+              </ul> 
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+               <div id="bemvindo" style="margin-left: 10px;"></div>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item">
+                  <div class="input-icons">
+                     <i class="fa fa-search icon"></i>
+                    <input id="filtrarTabela" class="input-field form-control" onkeyup="filtro_tabela()" style="width: 400px;border-top-left-radius: 40px;border-top-right-radius: 40px;border-bottom-left-radius: 40px;border-bottom-right-radius: 40px;" type="text"> 
+                    </div>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                   <li class="nav-item">
+                      <div class="nav-link" onclick="logout()" style="cursor: pointer">Logout</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        
+       
+       
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+       
+       
+            <div id="id_tinta" style="display:none"></div>
+            <div id="nome_cor" style="display:none"></div>
+            
+        <h4 id="que_estou_fazendo"></h4>
+       
+
+           
+                   
+                 <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+                     
+                 
+                 
+                 <div id="info_grava_tinta"></div>
+               
+ 
+         
+        
+          <table id="tabela_tintas" class="table custom-table" style="display: inline-block">
+          <thead>
+            <tr>
+            
+             
+              <th class="th-sm" style="width:200px">Cor
+              </th>
+              <th class="th-sm" style="width:200px">Referência
+              </th>
+               
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                
+                
+                
+        
+           <hr> 
+            
+             
+            </div>
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	      var usuario = api.auth.get_current_user()  
+ document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname
+ 
+ 
+ if (usuario.scope_name != undefined){
+    var nome_scope = usuario.scope_name[0].split("_")
+   
+}
+
+
+if (usuario.active_scope_name == "prepress_sp1"){
+    document.getElementById("mostra_upload_menu").style.display = "block"
+    
+
+}
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+
+  	</script>
+  	
+  	<script>
+  	
+  function muda_cor(){
+      var o_L = parseInt(document.getElementById("valor_L").value)
+       var o_A = parseInt(document.getElementById("valor_A").value)
+        var o_B = parseInt(document.getElementById("valor_B").value)
+        
+    var resultado = chroma.lab(o_L,o_A,o_B)
+     var valores_reg = resultado._rgb 
+     var hex = rgbToHex(parseInt(valores_reg[0]),parseInt(valores_reg[1]),parseInt(valores_reg[2]))
+     console.log(hex)
+     document.getElementById("acor").style = "background-color: "+hex+"; width: 30px; border: none; display: inline-block;"
+     document.getElementById("nome_cor").innerText = hex
+  }
+    
+    </script>
+  	
+  
+<script>
+    function preenche_tinta(){
+        var as_tintas = api.custom_objects.list("PantoneColor").results
+        
+        
+       
+        clearTable(document.getElementById("tabela_tintas"))
+          
+          
+         var table = document.getElementById("tabela_tintas")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_tintas.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+          
+          
+            var string_cor = as_tintas[i].cor
+           if (i === 0){
+             console.log(string_cor)
+           }
+        
+        var valor_lab = chroma(as_tintas[i].cor).lab()
+      //  console.log(valor_lab)
+        var string_title = "Lab:"+valor_lab[0].toFixed(2)+" , "+valor_lab[1].toFixed(2)+" , "+valor_lab[2].toFixed(2)
+    //    console.log(string_title)
+     //   console.log(as_tintas[i].nome)   
+            
+            cell1.innerHTML = '<span style="margin-top:5px;height:20px;width:20px;background-color:'+string_cor+';border-radius:50%;display:inline-block" data-toggle="tooltip" data-placement="top" title="'+string_title+'" ></span><div style="font-size:1em; display: inline-block; margin-left: 5px;">'+as_tintas[i].nome+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_tintas[i].referencia+'</div>'
+           
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagarTinta(){
+    if (confirm("Deseja mesmo apagar essa tinta?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("PantoneColor",linha)
+    preenche_tinta()    
+    }
+     }
+    
+     function editarTinta(){
+     var linha = event.srcElement.id
+     document.getElementById("id_tinta").innerText = linha
+    var busca_tipo = api.custom_objects.list_with_options("PantoneColor",["_id","equal to",linha]).results[0]
+    
+    document.getElementById("nome").value = busca_tipo.nome
+    
+    if (busca_tipo.nome != busca_tipo.referencia){
+       document.getElementById("div_L").style = "display:none;"
+           document.getElementById("div_A").style = "display:none;"
+           document.getElementById("div_B").style = "display:none;"
+           document.getElementById("div_referencia").style = "display:inline-block; width: 240px;"
+          
+           
+            
+    } else {
+        document.getElementById("div_L").style = "display:inline-block;width: 80px;"
+           document.getElementById("div_A").style = "display:inline-block;width: 80px;"
+           document.getElementById("div_B").style = "display:inline-block;width: 80px;"
+           document.getElementById("div_referencia").style = "display:none;"
+          
+       
+    }
+             document.getElementById("acor").style = "background-color: "+busca_tipo.cor+"; width: 30px; border: none; display: inline-block;"
+   
+             document.getElementById("nome_referencia").value = busca_tipo.referencia
+            document.getElementById("nome_cor").innerText = busca_tipo.cor
+            document.getElementById("referencia_fisica_valor").value = busca_tipo.referencia_fisica
+            var valor_lab = chroma(busca_tipo.cor).lab()
+            document.getElementById("valor_L").value = valor_lab[0].toFixed(1)
+            document.getElementById("valor_A").value = valor_lab[1].toFixed(1)
+            document.getElementById("valor_B").value = valor_lab[2].toFixed(1)
+    
+    
+    
+    }
+    
+  </script>
+
+
+ 
+    
+    
+    <script>
+      function filtro_nomecor() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("input_nomecor");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_tintas");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    
+       function filtro_referencia() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("input_nomereferencia");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_tintas");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+    
+    </script>
+
+
+<script>
+    function salvar_tinta(){
+        var existe_id = document.getElementById("id_tinta").innerText
+        var data ={}
+        data["nome"] = document.getElementById("nome").value
+        if (document.getElementById("referencia").checked === true){
+        data["referencia"] =  document.getElementById("nome_referencia").value   
+        } else {
+         data["referencia"] =  document.getElementById("nome").value  
+        }
+        data["cor"] = document.getElementById("nome_cor").innerText
+        if (existe_id == ""){
+            //api.custom_objects.create("PantoneColor",data)
+        } else {
+            data["_id"] = existe_id
+            //api.custom_objects.update("PantoneColor",data)
+        }
+        data["referencia_fisica"] = document.getElementById("referencia_fisica_valor").value.trim()
+        var cria = api.hub.start_from_whitepaper_with_files_and_variables("[TINTAS e RECEITAS]","cria_tinta",[] , {"data_pagina":data});
+        document.getElementById("info_grava_tinta").innerText = "A tinta foi gravada com sucesso!"
+         console.log(cria)
+       
+        setTimeout(function(){document.getElementById("info_grava_tinta").innerText = "";
+                    document.getElementById("nome").value = "";
+                    document.getElementById("valor_L").value = "";
+                    document.getElementById("valor_A").value = "";
+                    document.getElementById("valor_B").value = "";
+                    document.getElementById("nome_referencia").value = "";
+                    document.getElementById("acor").style.backgroundColor = "white";
+                     document.getElementById("referencia").checked = false;
+                     document.getElementById("referencia_fisica").checked = false;
+                     document.getElementById("div_referencia_fisica").style = "display: none;";
+                     document.getElementById("referencia_fisica_valor").value = "";
+                     preenche_tinta()
+        }, 2000);
+       
+    }
+</script>
+<script>
+    function mostrar_referencia(){
+        if (document.getElementById("referencia").checked === true){
+            document.getElementById("div_L").style = "display:none;"
+           document.getElementById("div_A").style = "display:none;"
+           document.getElementById("div_B").style = "display:none;"
+           document.getElementById("div_referencia").style = "display:inline-block; width: 240px;"
+            
+        } else {
+            
+           document.getElementById("div_L").style = "display:inline-block; width: 80px;"
+           document.getElementById("div_A").style = "display:inline-block; width: 80px;"
+           document.getElementById("div_B").style = "display:inline-block; width: 80px;"
+           document.getElementById("div_referencia").style = "display:none;"
+        }
+        
+    }
+    
+     function mostrar_referencia_fisica(){
+        if (document.getElementById("referencia_fisica").checked === true){
+            
+           document.getElementById("div_referencia_fisica").style = "display:inline-block;"
+            
+        } else {
+            
+          
+           document.getElementById("div_referencia_fisica").style = "display:none;"
+        }
+        
+    }
+    
+    preenche_tinta()
+</script>
+<script>
+    function seleciona_pantone(){
+        var busca_tinta = api.custom_objects.list_with_options("PantoneColor",["nome","equal to",document.getElementById("nome_referencia").value]).results
+        
+        if (busca_tinta.length > 0){
+             document.getElementById("acor").style = "background-color: "+busca_tinta[0].cor+"; width: 30px; border: none; display: inline-block;"
+             var valor_lab = chroma(busca_tinta[0].cor).lab()
+             document.getElementById("valor_L").value = valor_lab[0].toFixed(1)
+            document.getElementById("valor_A").value = valor_lab[1].toFixed(1)
+            document.getElementById("valor_B").value = valor_lab[2].toFixed(1)
+            document.getElementById("nome_cor").innerText = busca_tinta[0].cor
+            
+        }
+    }
+</script>
+
+    <script>
+      function filtro_tabela() {
+      var input, filter, table, tr, td, td2, i, txtValue;
+      input = document.getElementById("filtrarTabela");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_tintas");
+      tr = table.getElementsByTagName("tr");
+      tr2 = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        td2 = tr2[i].getElementsByTagName("td")[1];
+        if (td || td2) {
+          txtValue = td.textContent || td.innerText;
+          txtValue2 = td2.textContent || td2.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1 ) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+
+</script>
+
+
+
+
+    </body>
+
+</html>

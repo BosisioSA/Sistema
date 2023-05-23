@@ -1,0 +1,1044 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Cadastro Clientes - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+       <script>
+          function pesquisacep(valor,campo) {
+console.log(campo)
+console.log(valor)
+  //Nova variável "cep" somente com dígitos.
+  var cep = valor.replace(/\D/g, '');
+
+  //Verifica se campo cep possui valor informado.
+  if (cep != "") {
+
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
+
+      //Valida o formato do CEP.
+      if(validacep.test(cep)) {
+
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="Buscando...";
+          document.getElementById('bairro').value="Buscando...";
+          document.getElementById('cidade').value="Buscando...";
+          document.getElementById('uf').value="Buscando...";
+      
+        var url_busca = "https://viacep.com.br/ws/"+cep+"/json/?"
+        var busca_o_cep = api_sync.hub.start_from_whitepaper_with_files_and_variables("BUSCA_CEP","busca_cep", [] ,{"url":url_busca});
+       
+       
+        var workable_id = busca_o_cep.workable_id
+        var workableConsoleLog = function ()  // a cada 30s roda isso e atualiza a variavel form...
+          {
+            var variaveis = api.workable.get_merged_variables(workable_id)
+           if (variaveis.variables.state.value == "buscando"){
+      
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="Buscando...";
+          document.getElementById('bairro').value="Buscando...";
+          document.getElementById('cidade').value="Buscando...";
+          document.getElementById('uf').value="Buscando...";
+        
+               
+           } else {
+              
+          document.getElementById('rua').value=variaveis.variables.resultado.value.logradouro.toUpperCase()
+          document.getElementById('bairro').value=variaveis.variables.resultado.value.bairro.toUpperCase()
+          document.getElementById('cidade').value=variaveis.variables.resultado.value.localidade.toUpperCase()
+          document.getElementById('uf').value=variaveis.variables.resultado.value.uf.toUpperCase()
+           
+                  myStopFunction();
+              }
+        }
+	   var workflowTimeout = setInterval(workableConsoleLog, 500);
+        function myStopFunction() {
+                    clearInterval(workflowTimeout);
+                    }
+        
+       
+        
+          
+        }
+  }
+      }
+    
+    var usuario = api.auth.get_current_user()
+    
+     </script>
+     <script>
+    function logout() {
+      $.cookie('user_id', '', { expires: -1, path: '/' });
+      $.cookie('user_hash', '', { expires: -1, path: '/' });
+      $.cookie('expiration_date', '', { expires: -1, path: '/' });
+      $.cookie('customer_id', '', { expires: -1, path: '/' });
+      $.cookie('customer_name', '', { expires: -1, path: '/' });
+      $.cookie('username', '', { expires: -1, path: '/' });
+      $.cookie('scope', '', { expires: -1, path: '/' });
+      var lSession = api_sync.auth.create_session('', ''); // fecha sessao do CloudFlow
+      var l_url = '/portal.cgi/PP_FILE_STORE/Public/Login/login.html'
+      window.location.href = l_url;
+      //window.location.href = '?upload=done';
+    }
+
+
+  </script>
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+           <ul class="active components mb-5">
+                   <li  class="active" style="list-style-type: none; margin-bottom: 10px;">
+                    <img src="./Icons/comercial.png" width="25px" style="margin-right: 10px; display: inline-block"><span style="color: black; font-size: 1em; display: inline-block;"><a href="aberturaticket_sp1.html">Abertura Ticket</a></span>
+                    </li>
+                  
+                   <li  class="active" style="list-style-type: none">
+                    <img src="./Icons/clientes.png" width="25px" style="margin-right: 10px;display: inline-block"><span  style="color: black; font-size: 1em;display: inline-block;"><a href="cadastros_clientes_sp1.html">Cadastro Cliente</a></span>
+                    </li>
+                     
+                    
+                </ul>
+                
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item">
+                  <div class="input-icons">
+                     <i class="fa fa-search icon"></i>
+                    <input id="filtrarTabela" class="input-field form-control" onkeyup="filtro_tabela()" style="width: 400px;border-top-left-radius: 40px;border-top-right-radius: 40px;border-bottom-left-radius: 40px;border-bottom-right-radius: 40px;" type="text"> 
+                    </div>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+       
+       
+        
+       
+        
+        
+        <div  class="form-group" style="display:inline-block; width: 100%;">
+       
+           
+            
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+        <div id="id_cliente" style="display: none"></div>
+            
+    
+  
+       
+            
+            <!-- termina mostra ferramentas e começa locais -->
+            
+             
+              <h5 id="a_div_cliente"><i id="clienteArrow" class="fas fa-plus-square" onclick="mostraCliente()" style="margin-right: 5px; cursor:pointer;"></i>Novo Cliente</h5>
+                 <div id="info_cliente" class="form-group" style="display: none">
+                <div class="form-group col-md-2" style="display:inline-block; vertical-align: top;">
+                <label for="pais">País</label>
+                  <select class="form-control" id="pais" name="pais">
+                      <option value="Brasil">Brasil</option>
+                      <option disabled>------</option>
+                      </select>
+                </div>
+                
+                <!--<div class="form-group col-md-2" style="display:inline-block;vertical-align: top;">
+                <label for="codigo">Código</label>
+                  <input type="text" class="form-control" id="codigo" name="codigo">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;vertical-align: top;">
+                <span id="adiciona_segmento" style="display: none;"><img src="./Icons/icone_mais.png" width="20px" style="cursor: pointer" onclick="adiciona_segmento()"></span><label for="segmento">Segmento</label>
+                  <input type="text" class="form-control" onfocusout="verifica_segmento()" onkeyup="this.value=this.value.toUpperCase()" id="segmento" name="segmento" list="os_segmentos">
+                  <datalist id="os_segmentos"></datalist>
+                  <span id="error_segmento" class="error"></span>
+                </div>-->
+                
+                 <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="fantasia">Nome Fantasia</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="fantasia" name="fantasia">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;vertical-align: top;">
+                <label for="data_alteracao">Atualizado em</label>
+                  <input type="date" class="form-control" id="data_alteracao" name="data_alteracao">
+                </div>
+                 <div class="form-group col-md-7" style="display:inline-block;">
+                <label for="razao_social">Razão Social</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="razao_social" name="razao_social">
+                </div>
+                <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="cnpj">CNPJ</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9./_-]/g, '')"   id="cnpj" name="cnpj">
+                </div>
+                
+                <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="cep">CEP</label>
+                  <input type="text" class="form-control" id="cep" name="cep" value="" size="10" maxlength="9"
+                 onblur="pesquisacep(this.value,'entrega');" onkeyup="this.value=this.value.replace(/[^0-9-]/g, '')" placeholder="00000-000">
+                </div>
+                
+                <div class="form-group col-md-6" style="display:inline-block;">
+                  <label for="rua">Rua</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="rua" name="rua">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="numero">Numero</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9]/g, '')" id="numero" name="numero">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="bairro">Bairro</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="bairro" name="bairro">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="cidade">Cidade</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="cidade" name="cidade">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="uf">Estado</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()" id="uf" name="uf">
+                </div>
+               <br>
+               <div style="display: none;">                
+               <h6>Local dos Arquivos</h6>
+                <div class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+                <label for="pasta_artes">Pasta Artes</label>
+                  <select class="form-control" onchange="cria_pasta_arte()" id="pasta_artes" name="pasta_artes">
+                      <option value="undefined">Selecionar</option>
+                      <option value="new">Nova Pasta</option>
+                      <option disabled="disabled">---------</option>
+                      </select>
+                </div>
+                <div id="div_nome_pasta_artes" class="form-group col-md-4" style="display:none;">
+                  <label for="nome_pasta_novo">Nome da Pasta</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^aA-zZ 0-9-_ ]/g, '').replace(/\//g, '').toUpperCase()" id="nome_pasta_novo" name="nome_pasta_novo" maxlength="24">
+                  <span class="error" id="error_pasta" style="color: red"></span>
+                </div>
+                <div id="div_botao_nome" class="form-group col-md-2" style="display:none;">
+                 <button class="btn btn-primary" onclick="cria_pasta_nova()">Criar Nova Pasta</button>
+                 </div>
+             
+                <br>
+                </div>
+                <div id="altera_contato" style="display:none">99</div>
+                <div class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+                  <label for="contato">Contato</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()" id="contato" name="contato" list="os_representantes">
+                   <datalist id="os_representantes"></datalist>
+                    <span class="error"><p id="error_busca_representante" style="color:orange"></p></span>
+                 
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block; vertical-align: top;">
+                  <label for="telefone_contato">Telefone Contato</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.replace(/[^0-9()+-]/g, '')" id="telefone_contato" name="telefone_contato">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+                  <label for="email_contato">e-mail Contato</label>
+                  <input type="text" class="form-control" onfocusout="verifica_email()" id="email_contato" name="email_contato">
+                  <error class="error" id="error-email" style="color: red"></error>
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block; vertical-align: base-line;">
+                  <label for="departamento">Comercial</label>
+                  <select  class="form-control" id="departamento" name="departamento">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Analista</option>
+                      <option>Assistente</option>
+                      <option>Exc. Comercial</option>
+                      <option>Representante</option>
+                      <option>Resp. Comercial</option>
+                    </select>
+                </div>
+                 <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_contato()" src="./Icons/icone_mais.png" width="30px"></div> 
+               
+                
+                <table id="tabela_contatos" class="table custom-table"  style="display: none">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:25%">Nome
+              </th>
+              <th class="th-sm" style="width:30%">E-mail
+              </th>
+              <th class="th-sm" style="width:15%">Telefone
+              </th>
+              <th class="th-sm" style="width:20%">Departamento
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                <br>
+                 <button class="btn btn-primary" onclick="salvar_cliente()" style="cursor: pointer">Salvar Cliente</button>
+                  <button class="btn btn-secondary" onclick="cancelar()" style="cursor: pointer">Cancelar</button>
+                <div id="info_salvar_cliente" style="color: red"></div>
+                 
+           </div>
+       
+            <div class="form-group"  style="display:inline-block; vertical-align: top; width: 100%;">
+            
+            <table id="tabela_clientes" class="table custom-table"  style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:15%; vertical-align: top;">Atualizado em<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:55%">Cliente
+              </th>
+              <!--<th class="th-sm" style="width:20%">Segmento<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top; width: 100%;"><input id="input_segmento" type="text" onkeyup="filtro_segmento()" style="width: 90%;"></span>
+              </th>-->
+              <th class="th-sm" style="width:5%; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:5%; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        </div>
+       
+        
+                
+                
+                
+        
+        
+            
+             
+          
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  
+              
+            </div>
+        
+       
+  	</div>
+  	 <script src="js/popper.js"></script>
+  <script src="js/main.js"></script>	
+  	
+  	<script>
+  	    // funcoes de apoio
+  	 document.getElementById("bemvindo").innerText = "Bem vindo, "+usuario.fullname   
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+// preenche Selects
+
+ selectTipo = document.getElementById('pais');
+    var tiposTipo = api.custom_objects.list_with_options("ListaPaises",["nome_pais","not equal to","Brasil"]).results
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome_pais;
+        opt.innerHTML = tiposTipo[i].nome_pais;
+        selectTipo.appendChild(opt);
+    }
+    
+var selectPasta = document.getElementById("pasta_artes")
+var tiposTipo2 = api.folder.list_with_options(["path.0","equal to","MG4","and","depth","equal to",1],["name","ascending"],["name"]).results
+for (var i = 0; i<tiposTipo2.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo2[i]._id;
+        opt.innerHTML = tiposTipo2[i].name;
+        selectPasta.appendChild(opt);
+    }
+// preenche Datalist
+
+ //var segmentos = api.custom_objects.list("BR-VALFI_segmentos").results;
+   //     var options=''; // variable to store the options
+     //   for(var i = 0; i < segmentos.length; i++){
+            
+      //  options += '<option value="'+segmentos[i].nome+'" />';
+
+    //    }
+      //   document.getElementById('os_segmentos').innerHTML = options;
+  	</script>
+  	
+  	<script>
+  	
+  var hoje = new Date()
+  document.getElementById("data_alteracao").value = dateFormat(hoje,"yyyy-mm-dd")
+    
+    </script>
+  	
+  	
+  
+  
+<script>
+    function reply_delete_contato(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].nome)
+        if (contatos[i].nome == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos()
+    }
+</script>
+     
+
+      
+ 
+<script>
+    function verifica_cliente(){
+        var codigo_pedido = document.getElementById("busca_cliente").value
+        var existe_codigo = api.custom_objects.list_with_options("BR-ROTOC_customers",["FANTASIA","equal to",codigo_pedido]).results
+        if (existe_codigo.length === 0){
+            document.getElementById("error_busca_cliente").innerText = "Para adicinar um novo cleinte, clique no icone ao lado"
+            document.getElementById("imagem_adiciona_cliente").style = "display:inline-block; cursor: pointer; margin-top: 38px"
+        } else {
+            document.getElementById("error_busca_cliente").innerText = ""
+            document.getElementById("imagem_adiciona_cliente").style = "display:none;"
+        }
+    }
+</script>
+<script>
+
+  
+      var clientes = []
+     
+    function preenche_clientes(){
+        clientes = api.custom_objects.list_with_options("BR-VALFI_clientes",[],["fantasia","ascending"],["codigo","fantasia","atualizado_em","segmento"]).results
+    
+        clearTable(document.getElementById("tabela_clientes"))
+          
+          
+         var table = document.getElementById("tabela_clientes")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<clientes.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+           
+           var ultima_atualizacao = dateFormat(clientes[i].atualizado_em,"dd/mm/yyyy")
+            
+           
+            
+            cell1.innerHTML = '<div style="font-size:1em;">'+ultima_atualizacao+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em;">'+clientes[i].fantasia+'</div>'
+            cell3.innerHTML = '<div><img id="'+clientes[i]._id+'" src="Icons/edit.png" height="25px" onclick="editar_cliente()" style="cursor: pointer;"></div>'
+            cell4.innerHTML = '<div><img id="'+clientes[i]._id+'" src="Icons/delete.png" height="25px" onclick="apagar_cliente()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+  
+    preenche_tabela_contatos()
+    }
+    
+     function apagar_cliente(){
+         
+    var linha = event.srcElement.id
+    var nome_cliente = ""
+    for (i=0;i<clientes.length;i++){
+        if (clientes[i]._id === linha){
+            nome_cliente = clientes[i].fantasia
+        }
+    }
+    if (confirm("Deseja mesmo apagar o cliente "+nome_cliente+"?") === true){
+    api.custom_objects.delete("BR-VALFI_clientes",linha)
+    preenche_clientes()    
+    }
+     }
+    
+     function editar_cliente(){
+     var linha = event.srcElement.id
+     document.getElementById("id_cliente").innerText = linha
+      var icone = document.getElementById("clienteArrow")
+        icone.classList.toggle("fa-chevron-down")
+    
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_clientes",["_id","equal to",linha]).results[0]
+    console.log(busca_tipo)
+    document.getElementById("info_cliente").style = "display: inline-block; width: 100%;"
+    
+   //document.getElementById("codigo").value = busca_tipo.codigo
+       document.getElementById("fantasia").value = busca_tipo.fantasia
+        document.getElementById("razao_social").value = busca_tipo.razao_social
+     //    document.getElementById("segmento").value = busca_tipo.segmento
+       console.log(busca_tipo.endereco.pais) 
+       var data_att = dateFormat(busca_tipo.atualizado_em,"yyyy-mm-dd")
+        document.getElementById("data_alteracao").value = data_att
+        document.getElementById("cep").value = busca_tipo.endereco.CEP
+        document.getElementById("rua").value = busca_tipo.endereco.rua
+        document.getElementById("numero").value = busca_tipo.endereco.numero
+        document.getElementById("bairro").value = busca_tipo.endereco.bairro
+        document.getElementById("cidade").value = busca_tipo.endereco.cidade
+        document.getElementById("uf").value = busca_tipo.endereco.estado
+        document.getElementById("pais").value = busca_tipo.endereco.pais
+      //  document.getElementById("pasta_artes").value = busca_tipo.customer_folder._id
+        if (busca_tipo.cnpj != undefined){
+           document.getElementById("cnpj").value = busca_tipo.cnpj 
+        }
+        contatos = busca_tipo.contatos
+        
+        preenche_tabela_contatos()
+    
+    
+    
+    
+    }
+    
+    
+      
+</script>
+
+
+
+
+
+
+
+ 
+    
+    
+    <script>
+     function filtro_tabela() {
+      var input, filter, table, tr, td, td2, i, txtValue;
+      input = document.getElementById("filtrarTabela");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_clientes");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        td2 = tr[i].getElementsByTagName("td")[1];
+        if (td || td2) {
+          txtValue = td.textContent || td.innerText;
+          txtValue2 = td2.textContent || td2.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    
+    function filtro_segmento() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("input_segmento");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_clientes");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+    
+    </script>
+
+<script>
+      function mostraCliente(){
+         
+        var div_cliente = document.getElementById("info_cliente")
+        var icone = document.getElementById("clienteArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            preenche_clientes()
+            } else {
+                div_cliente.style.display = "none";
+            }
+      }
+      
+      
+  </script>
+<script>
+  
+</script>
+<script>
+    function salvar_cliente(){
+        document.getElementById("info_salvar_cliente").innerText = ""
+        if (document.getElementById("pasta_artes").value != "undefined" && document.getElementById("pasta_artes").value != "new"){
+        var existe_id = document.getElementById("id_cliente").innerText
+        var data ={}
+       // data["codigo"] = document.getElementById("codigo").value
+        data["fantasia"] = document.getElementById("fantasia").value
+        data["razao_social"] = document.getElementById("razao_social").value
+        data["cnpj"] = document.getElementById("cnpj").value
+       // data["segmento"] = document.getElementById("segmento").value
+        
+       
+        data["atualizado_em"] = new Date()
+        var info_endereco = {}
+        info_endereco["CEP"] = document.getElementById("cep").value
+        info_endereco["rua"] = document.getElementById("rua").value.toUpperCase()
+        info_endereco["numero"] = document.getElementById("numero").value.toUpperCase()
+        info_endereco["bairro"] = document.getElementById("bairro").value.toUpperCase()
+        info_endereco["cidade"] = document.getElementById("cidade").value.toUpperCase()
+        info_endereco["estado"] = document.getElementById("uf").value.toUpperCase()
+        info_endereco["pais"] = document.getElementById("pais").value
+        data["endereco"] = info_endereco
+        data["contatos"] = contatos
+        
+       data["customer_folder"] ="N/A"
+        data["customer_folder_number"] = "N/A"
+        
+        if (existe_id == ""){
+        var cria_cliente = api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","cliente_Criar",{"info":data,"usuario":usuario})
+        console.log(cria_cliente)   
+            } else {
+            data["_id"] = existe_id
+            var atualiza_cliente = api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","cliente_Alterar",{"info":data,"usuario":usuario})
+           console.log(atualiza_cliente)
+        }
+        
+         document.getElementById("info_cliente").style = "display: none;"
+    
+ //  document.getElementById("codigo").value = ""
+       document.getElementById("fantasia").value =""
+        document.getElementById("razao_social").value = ""
+      //   document.getElementById("segmento").value = ""
+        document.getElementById("data_alteracao").value = dateFormat(hoje,"yyyy-mm-dd") 
+        document.getElementById("cep").value = ""
+        document.getElementById("rua").value = ""
+        document.getElementById("numero").value = ""
+        document.getElementById("bairro").value = ""
+        document.getElementById("cidade").value = ""
+        document.getElementById("uf").value = ""
+        document.getElementById("pais").value = ""
+        document.getElementById("cnpj").value = ""
+        document.getElementById("contato").value = ""
+        document.getElementById("telefone_contato").value = ""
+        document.getElementById("email_contato").value = ""
+        document.getElementById("pasta_artes").value = "undefined"
+        document.getElementById("departamento").value = "undefined"
+        contatos = []
+        
+        preenche_clientes()
+        
+        } else {
+            document.getElementById("info_salvar_cliente").innerText = "Selecione uma pasta para o cliente."
+        }
+        
+       setTimeout(function(){mostraCliente()},1000) 
+       
+    }
+    
+    function cancelar(){
+       //  document.getElementById("codigo").value = ""
+       document.getElementById("fantasia").value =""
+        document.getElementById("razao_social").value = ""
+    //     document.getElementById("segmento").value = ""
+        document.getElementById("data_alteracao").value - ""
+        document.getElementById("cep").value = ""
+        document.getElementById("rua").value = ""
+        document.getElementById("numero").value = ""
+        document.getElementById("bairro").value = ""
+        document.getElementById("cidade").value = ""
+        document.getElementById("uf").value = ""
+        document.getElementById("pais").value = ""
+        document.getElementById("cnpj").value = ""
+        document.getElementById("pasta_artes").value = "undefined"
+        contatos = []
+        setTimeout(function(){mostraCliente()},1000)
+    }
+</script>
+
+ <script>
+ var contatos = []
+          function adiciona_contato(){
+              
+              
+             if (document.getElementById("altera_contato").innerText == "99"){
+              if (document.getElementById("departamento").value != "undefined"){
+              console.log("Estou dentro")
+                  document.getElementById("tabela_contatos").style = "display: inline-block;"
+                  var info_contato = {}
+                  info_contato["nome"] = document.getElementById("contato").value
+                  info_contato["telefone"] = document.getElementById("telefone_contato").value
+                  info_contato["email"] = document.getElementById("email_contato").value
+                  info_contato["departamento"] = document.getElementById("departamento").value
+                 contatos.push(info_contato)
+                 
+                  
+              
+                preenche_tabela_contatos() 
+              } else {
+                  alert("Por favor, selecione o setor do contato!")
+              }
+               
+             } else {
+                 for (i=0;i<contatos.length;i++){
+                     var numero = parseInt(document.getElementById("altera_contato").innerText)
+                   
+                     var valores = contatos[i]
+                       console.log(valores)
+                         valores["nome"] = document.getElementById("contato").value
+                         valores["telefone"] = document.getElementById("telefone_contato").value
+                         valores["email"] = document.getElementById("email_contato").value
+                         valores["departamento"] = document.getElementById("departamento").value
+                    
+                         contato[i] = valores
+                     }
+                    preenche_tabela_contatos() 
+                 }
+              
+          }
+          
+   
+          function preenche_tabela_contatos(){
+          console.log("Vou executar a função")
+          console.log(contatos)
+      var tabela2 = document.getElementById("tabela_contatos");
+      clearTable(tabela2)
+      
+      if (contatos.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+       
+       var color = "black"
+   
+       console.log(contatos[i])
+       if (contatos[i].departamento == "Representante" && contatos[i].id === undefined){
+          color = "blue"
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].email+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].telefone+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle; color:'+color+';">'+contatos[i].departamento+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].email+'" src="Icons/edit.png" height="25px" onclick="reply_edit_contato()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].email+'" src="Icons/delete.png" height="25px" onclick="reply_delete_contato()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+
+             
+          
+      </script>
+      <script>
+    function reply_edit_contato(){
+    var linha = event.srcElement.id
+    for (i=0;i<contatos.length;i++){
+        if (contatos[i].email == linha){
+            document.getElementById("altera_contato").innerText = i
+            document.getElementById("contato").value = contatos[i].nome
+            document.getElementById("email_contato").value = contatos[i].email
+            document.getElementById("telefone_contato").value = contatos[i].telefone
+            var busca_select = document.getElementById("departamento")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+</script>
+<script>
+    function reply_delete_contato(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].email)
+        if (contatos[i].email == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+      preenche_tabela_contatos()
+    }
+</script>
+<script>
+    function verifica_segmento(){
+        if (document.getElementById("segmento").value != ""){
+         var existe_segmento = api.custom_objects.list_with_options("BR-VALFI_segmentos",["nome","equal to",document.getElementById("segmento").value]).results
+        
+        if (existe_segmento.length === 0){
+            document.getElementById("adiciona_segmento").style = "display: inline-block; vertical-align: top; margin-right: 5px;"
+            document.getElementById("error_segmento").innerText = "Adicionar Segmento a base?"
+        } else {
+           document.getElementById("adiciona_segmento").style = "display: none;"
+            document.getElementById("error_segmento").innerText = "" 
+        }
+        }
+        
+    }
+    function adiciona_segmento(){
+        api.custom_objects.create("BR-VALFI_segmentos",{"nome":document.getElementById("segmento").value})
+        document.getElementById("adiciona_segmento").style = "display: none;"
+            document.getElementById("error_segmento").innerText = "" 
+        
+    }
+    
+    preenche_clientes()
+</script>
+<script>
+    function verifica_email() 
+{
+    var email = document.getElementById("email_contato").value
+   let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');  
+    if (email != ""){
+ if (regex.test(email) == true)
+  {
+    document.getElementById("error-email").innerText = ""
+  } else{
+     document.getElementById("error-email").innerText = "email não válido"
+    }
+    }
+}
+</script>
+<script>
+
+    var customer_folder = ""
+    function cria_pasta_arte(){
+        if (document.getElementById("pasta_artes").value == "new"){
+            document.getElementById("div_nome_pasta_artes").style = "display: inline-block; vertical-align: top;"
+            
+            document.getElementById("div_botao_nome").style = "display: inline-block; vertical-align: top;"
+        } else {
+         if (document.getElementById("pasta_artes").value != "undefined"){
+           customer_folder = api.folder.list_with_options(["_id","equal to",document.getElementById("pasta_artes").value],[],["name"]).results[0]
+         }
+           document.getElementById("div_nome_pasta_artes").style = "display: none;"
+            
+            document.getElementById("div_botao_nome").style = "display: none;" 
+        }
+        
+    }
+    
+    function cria_pasta_nova(){
+        if (document.getElementById("nome_pasta_novo").value != ""){
+            document.getElementById("error_pasta").innerText = ""
+            
+            var busca_pasta = api.folder.list_with_options(["name","equal to",document.getElementById("nome_pasta_novo").value,"and","path.0","equal to","MG4","and","depth","equal to",1]).results
+            if (busca_pasta.length === 0){
+           
+            api.file.create_folder("cloudflow://MG4/",document.getElementById("nome_pasta_novo").value)
+            
+             document.getElementById("div_nome_pasta_artes").style = "display: none;"
+            
+            document.getElementById("div_botao_nome").style = "display: none;" 
+            var selectPasta = document.getElementById("pasta_artes")
+            var opt = document.createElement('option');
+            
+             opt.value = "recently created";
+             opt.innerHTML = "--- CRIADO RECENTEMENTE --- ";
+             opt.disabled = "disabled" 
+             selectPasta.appendChild(opt);
+            
+             var opt = document.createElement('option');
+             opt.value = document.getElementById("nome_pasta_novo").value;
+             opt.innerHTML = document.getElementById("nome_pasta_novo").value;
+             selectPasta.appendChild(opt);
+             document.getElementById("nome_pasta_novo").value = ""
+             } else {
+                 document.getElementById("error_pasta").innerText = "Uma pasta com esse nome já existe. Por favor selecione a pasta da lista."
+             }
+        } else {
+             document.getElementById("error_pasta").innerText = "Não é possível criar uma pasta sem nome!"
+           
+        }   
+
+        }
+    
+</script>
+
+
+
+
+
+
+    </body>
+
+</html>

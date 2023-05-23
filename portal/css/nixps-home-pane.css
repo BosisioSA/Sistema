@@ -1,0 +1,67 @@
+/*********************************************************************/
+/*  HOME PANE                                                        */
+/*********************************************************************/
+
+div.home-pane
+{
+	position: absolute;
+	top: 47px;
+	left: 15px;
+	bottom: 15px;
+	right: 15px;
+	display: none;
+}
+
+div.nixps-widget
+{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+div.nixps-widget-title
+{
+	color: #777;
+	font-size: medium;
+	padding: 15px;
+}
+
+div.nixps-widget-content
+{
+	padding: 15px;
+	overflow: auto;
+}
+
+div#home-widgets
+{
+    margin-top: 30px;
+}
+
+div#home-welcome
+{
+    margin-bottom: 0px;
+}
+
+div#home-welcome a:link
+{
+    color:white
+}
+
+div#home-welcome a:visited
+{
+    color:white
+}
+
+div#home-welcome a:hover
+{
+    color:white
+}
+
+div#home-welcome a:active
+{
+    color:white
+}
+

@@ -1,0 +1,905 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Máquinas Impressoras - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+          <link rel="stylesheet" type="text/css" href="css/example-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/demo-styles.css">
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+       
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+           	   <ul class="active components mb-5">
+           
+          <li  style="list-style-type: none">
+               <a href="cadastros_clientes.html"><img src="./Icons/clientes.png" width="30px" style="margin-right: 10px">Clientes</a>
+              </li>
+          <li>
+              <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/fornecedores.png" width="30px" style="margin-right: 10px">Fornecedores</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+               <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_flexo.html"><img src="./Icons/flexo.png" width="20px" style="margin-right: 10px">Flexo</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_roto.html"><img src="./Icons/roto.png" width="20px" style="margin-right: 10px">Roto</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_anilox.html"><img src="./Icons/anilox.png" width="20px" style="margin-right: 10px">Anilox</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindro Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_prepress.html"><img src="./Icons/prepress.png" width="20px" style="margin-right: 10px">Prepress</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_materiaprima.html"><img src="./Icons/material.png" width="20px" style="margin-right: 10px">Matéria Prima</a>
+          </li>
+         
+          </ul>
+          
+          <li class="active">
+              <a  href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/tecnicos.png" width="30px" style="margin-right: 10px">Cadastros Técnicos</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu3">
+              
+          <li  style="list-style-type: none">
+               <a href="cadastros_tecnicos_unidades.html"><img src="./Icons/unidades.png" width="20px" style="margin-right: 10px">Unidades</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_tipotrabalho.html"><img src="./Icons/tipo_trabalho.png" width="20px" style="margin-right: 10px">Tipo de Trabalho</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_finalidade.html"><img src="./Icons/finalidade.png" width="20px" style="margin-right: 10px">Finalidade</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_substratos.html"><img src="./Icons/substratos.png" width="20px" style="margin-right: 10px">Substratos</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_duplaface.html"><img src="./Icons/dupla_face.png" width="20px" style="margin-right: 10px">Dupla Face</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_estruturas.html"><img src="./Icons/estruturas.png" width="20px" style="margin-right: 10px">Estruturas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_tintas.html"><img src="./Icons/tintas.png" width="20px" style="margin-right: 10px">Tintas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_situacaoanilox.html"><img src="./Icons/situacao_anilox.png" width="20px" style="margin-right: 10px">Situação de Anilox</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindros Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_lavagemanilox.html"><img src="./Icons/lavagem_anilox.png" width="20px" style="margin-right: 10px">Anilox (tipo de lavagem)</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_segmentos.html"><img src="./Icons/segmentos.png" width="20px" style="margin-right: 10px">Segmentos</a>
+          </li>
+          <li  class="active" style="list-style-type: none">
+               <a href="cadastros_tecnicos_maquinas.html"><img src="./Icons/impressoras.png" width="20px" style="margin-right: 10px">Máquinas</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_tecnicos_testform.html"><img src="./Icons/testform.png" width="20px" style="margin-right: 10px">Test Form</a>
+          </li>
+          </ul>
+          
+              
+                <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/sequencia.png" width="30px" style="margin-right: 10px">Sequência Padrão</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li class="active" style="list-style-type: none">
+               <a href="receita_tintas.html"><img src="./Icons/contagotas.png" width="20px" style="margin-right: 10px">Criar Sequência</a>
+              </li>
+              <li  style="list-style-type: none">
+               <a href="lista_receitas.html"><img src="./Icons/listasequencia.png" width="20px" style="margin-right: 10px">Lista Sequências</a>
+              </li>
+              <li style="list-style-type: none">
+               <a href="cadastros_tintas.html"><img src="./Icons/novasequencia.png" width="20px" style="margin-right: 10px">Lista de Cores</a>
+              </li>
+              </ul>
+          </li>
+              </ul>
+          
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item">
+                  <div class="input-icons">
+                     <i class="fa fa-search icon"></i>
+                    <input id="filtrarTabela" class="input-field form-control" onkeyup="filtro_tabela()" style="width: 400px;border-top-left-radius: 40px;border-top-right-radius: 40px;border-bottom-left-radius: 40px;border-bottom-right-radius: 40px;" type="text"> 
+                    </div>
+                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+      
+        <div  class="form-group col-md-11" style="display:inline-block;">
+      
+       
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_tipo_trabalho" style="display:none"></div>
+            <div id="id_finalidade" style="display:none"></div>
+            <div id="id_substrato" style="display:none"></div>
+             <div id="id_detalhe" style="display:none"></div>
+             <div id="id_situacaoanilox" style="display:none"></div>
+             <div id="id_portacliche" style="display:none"></div>
+             <div id="qual_cilindro" style="display:none"></div>
+             <div id="id_lavagemanilox" style="display:none"></div>
+             
+             <div id="id_segmento" style="display:none"></div>
+             <div id="id_planta" style="display:none"></div>
+             <div id="id_dupla" style="display:none"></div>
+             <div id="id_maquina" style="display:none"></div>
+             <div id="id_tinta" style="display:none"></div>
+             <div id="id_estrutura" style="display:none"></div>
+            <div id="id_familia" style="display:none"></div>
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+            
+    
+  
+       
+            
+       
+       
+     
+        
+        
+        <h5 id="a_div_maquinas"><i id="maquinasArrow" class="fas fa-plus-square" onclick="mostraMaquinas()" style="margin-right: 5px; cursor:pointer;"></i>Máquinas</h5>
+                <p><i>Cadastro das impressoras e quantidade de cores que cada uma suporta</i></p>
+                 <div id="info_maquinas" class="form-group" style="display: none">
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="maquina">Maquina</label>
+                  <input type="text" class="form-control"  onkeyup="this.value=this.value.toUpperCase()"  id="maquina" name="maquina">
+                 </div>
+                 <div id="mostra_tipo_maquina" class="form-group col-md-3" style="display:none;">
+                <label for="maquina_nome">Tipo de Máquina</label>
+                  <select class="form-control"  id="maquina_nome"  name="maquina_nome">
+                      <option value="undefined">Selecionar...</option>
+                      <option>MIRAFLEX</option>
+                      <option>CMF</option>
+                      <option>FFS</option>
+                      <option>NOVOFLEX</option>
+                    </select>
+                 </div>
+                  <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="maquina_tipo_impressao">Segmento de Máquina</label>
+                  <select class="form-control"  id="maquina_tipo_impressao" onchange="seleciona_impressao_maquina()" name="maquina_tipo_impressao">
+                      <option value="undefined">Selecionar...</option>
+                      <option>FLEXO</option>
+                      <option>ROTO</option>
+                      <option>REBOBINADEIRA</option>
+                      <option>LAMINADORA</option>
+                    </select>
+                 </div>
+                 
+                 <div id="mostra_qtd_cores" class="form-group col-md-2" style="display:inline-block;">
+                <label for="maquina_qtde_cores">Qtde Cores</label>
+                  <select class="form-control"  id="maquina_qtde_cores"  name="maquina_qtde_cores">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                 </div>
+                 <div id="mostra_laminacao" class="form-group col-md-3" style="display:none;">
+                <label for="maquina_laminacao">Laminação em Linha</label>
+                  <select class="form-control"  id="maquina_laminacao"  name="maquina_laminacao">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Sim</option>
+                      <option>Não</option>
+                    </select>
+                 </div>
+                 
+                 <br>
+                 <div style="display: none;">
+                 <span><img id="img-planta_maquina" src="./Icons/icone_mais.png" width="20px" style="cursor: pointer;" onclick="adiciona_planta()"></span><span><img id="img-planta_maquina_menos" src="./Icons/icone_menos.png" width="20px" style="cursor: pointer;" onclick="remove_planta()"></span>
+                 
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="planta_maquina">Unidade</label>
+                  <select class="form-control"  id="planta_maquina" name="planta_maquina">
+                    </select>
+                 </div>
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                  <input type="text" class="form-control"  id="as_planta_maquina" name="as_planta_maquina">
+                  <span id="error_planta_maquina" class="error" style="color: red"></span>
+                 </div>
+                 </div>
+               
+                 
+                 
+                 
+                
+                 
+                 <div id="div_mostra_cilindros" class="form-group col-md-11" style="display:none;">
+                 
+                  <div id="altera_cilindro" style="display:none">99</div>
+          
+                  
+                 <div  class="form-group" style="display:inline-block; width: 54%">
+                <label for="os_pc">PC</label>
+                    <select class="form-control"  id="os_pc"  name="os_pc" multiple>
+                        <option value="undefined">Selecionar</option>
+                    </select>
+                 </div>
+                 
+               
+                  <div style="display:none;"><img style="cursor: pointer" onclick="adiciona_cilindro()" src="./Icons/icone_mais.png" width="30px"></div> 
+              
+                 
+                 
+                 <br>
+               
+        </div>
+                 
+                
+                
+                 <button class="btn btn-primary" onclick="salvar_maquina()" style="cursor: pointer">Salvar Máquina</button>
+                
+                 <button class="btn btn-secondary" onclick="cancelar_maquina()" style="cursor: pointer">Cancelar</button>
+                
+               </div>
+                 
+           
+            <div class="form-group col-md-11"  style="display:inline-block; vertical-align: top;">
+            
+            <table id="tabela_maquinas" class="table custom-table" cellspacing="0" width="100%" style="display: inline-block">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:30px;text-align: center;">Impressao<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:140px;text-align: center;">Maquina<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:100px;text-align: center;">Cores<!--<br><span  style="margin-left: 5px; display: inline-block; vertical-align: top;"><input id="input_nomelocal" type="text" onkeyup="filtro_localtarja()"></span>-->
+              </th>
+              <th class="th-sm" style="width:40px; vertical-align: top;">Editar
+            </th>
+              <th class="th-sm" style="width:40px; vertical-align: top;">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+        
+        
+                
+                
+                
+            
+             
+          
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+var usuario = api.auth.get_current_user()
+
+if (usuario.username != "admin"){
+    if (usuario.scope_name[0].indexOf("_") != -1){
+        var scopo =  usuario.scope_name[0]
+        var scopo_array = scopo.split("_")
+        var planta = (scopo_array[scopo_array.length-1]).toUpperCase()
+        
+        document.getElementById("as_planta_maquina").value = planta
+    } 
+}
+
+if (planta == "MG4" || usuario.username == "admin"){
+    document.getElementById("mostra_tipo_maquina").style.display = "inline-block"
+}
+
+  	</script>
+  	
+  	<script>
+  	
+  // preenche selects
+  
+  selectTipo = document.getElementById('os_pc');
+    var tiposTipo = api.custom_objects.list_with_options("BR-VALFI_portacliche").results
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nomenclatura;
+        opt.innerHTML = tiposTipo[i].nomenclatura;
+        selectTipo.appendChild(opt);
+    }
+  
+  function preenchePasso(){
+      
+      for (i=0;i<tiposTipo.length;i++){
+          if (document.getElementById("os_pc").value == tiposTipo[i].nomenclatura){
+              document.getElementById("passo").value = tiposTipo[i].passo
+          }
+      }
+      
+  }
+    
+   
+    
+    </script>
+  	
+  	
+  
+  
+
+
+
+
+
+
+
+
+<script>
+
+
+    function seleciona_impressao_maquina(){
+        if (document.getElementById("maquina_tipo_impressao").value == "ROTO"){
+            document.getElementById("mostra_laminacao").style = "display: inline-block;"
+            document.getElementById("div_mostra_cilindros").style = "display: none;"
+            document.getElementById("mostra_qtd_cores").style.display = "inline-block"
+        }
+        if (document.getElementById("maquina_tipo_impressao").value == "FLEXO"){
+            document.getElementById("mostra_laminacao").style = "display: none;"
+            document.getElementById("div_mostra_cilindros").style = "display: inline-block;"
+            document.getElementById("mostra_qtd_cores").style.display = "inline-block"
+        } 
+        if (document.getElementById("maquina_tipo_impressao").value == "REBOBINADEIRA" || document.getElementById("maquina_tipo_impressao").value == "LAMINADORA"){
+           document.getElementById("mostra_qtd_cores").style.display = "none" 
+            document.getElementById("div_mostra_cilindros").style = "display: none;"
+            document.getElementById("mostra_laminacao").style = "display: none;"
+        }
+    }
+  
+       
+     
+    function preenche_maquinas(){
+         var as_maquinas = api.custom_objects.list_with_options("BR-VALFI_maquina").results
+    
+        clearTable(document.getElementById("tabela_maquinas"))
+          
+          
+         var table = document.getElementById("tabela_maquinas")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<as_maquinas.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+             
+            if (as_maquinas[i].cilindros === undefined){
+                var thecils = "N/A"
+            } else {
+                var thecils = as_maquinas[i].cilindros.length
+            }
+           
+           if (as_maquinas[i].impressao == "ROTO"){
+               var icone_maq = "./Icons/maq_roto.png"
+           } else {
+              var icone_maq = "./Icons/maq_flexo.png" 
+           }
+            
+            cell1.innerHTML = '<div style="font-size:1em; cursor: pointer"><img src="'+icone_maq+'" width="30px"></div>'
+            cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_maquinas[i].nome.toUpperCase()+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; cursor: pointer">'+as_maquinas[i].cores+'</div>'
+            
+            cell4.innerHTML = '<div><img id="'+as_maquinas[i]._id+'" src="Icons/edit.png" height="30px" onclick="editar_maquina()" style="cursor: pointer;"></div>'
+            cell5.innerHTML = '<div><img id="'+as_maquinas[i]._id+'" src="Icons/delete.png" height="30px" onclick="apagar_maquina()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+      
+      
+        
+        
+    }
+    }
+    
+     function apagar_maquina(){
+    if (confirm("Deseja mesmo apagar essa maquina?") === true){     
+    var linha = event.srcElement.id
+    api.custom_objects.delete("BR-VALFI_maquina",linha)
+    preenche_maquinas()    
+    }
+     }
+    
+    
+    var themachineid = ""
+    
+    
+     function editar_maquina(){
+     var linha = event.srcElement.id
+     themachineid = linha
+    
+    
+   
+    var div_cliente = document.getElementById("info_maquinas")
+        var icone = document.getElementById("maquinasArrow")
+       
+        
+       
+   
+    
+    
+     document.getElementById("id_maquina").innerText = linha
+     console.log("ID MAQUINA")
+     console.log(document.getElementById("id_maquina").innerText)
+    var busca_tipo = api.custom_objects.list_with_options("BR-VALFI_maquina",["_id","equal to",linha]).results[0]
+    
+    console.log("nome da maquina")
+    console.log(busca_tipo.nome)
+    console.log("tipo impressao")
+    console.log(busca_tipo.impressao)
+    document.getElementById("maquina").value = busca_tipo.nome
+    document.getElementById("maquina_tipo_impressao").value = busca_tipo.impressao
+    document.getElementById("maquina_qtde_cores").value = busca_tipo.cores
+    if (busca_tipo.impressao == "FLEXO"){
+    document.getElementById("div_mostra_cilindros").style = "display: inline-block;"
+    document.getElementById("mostra_laminacao").style = "display: none;"
+    document.getElementById("maquina_nome").value = busca_tipo.tipo_maquina
+    contatos = busca_tipo.cilindros
+    var the_pcs = document.getElementsByClassName("multi-select-menuitem")
+    var nomes_legenda = "" 
+    for (i=0;i<contatos.length;i++){
+        var valor_cilindro = contatos[i].pc
+        for (j=0;j<the_pcs.length;j++){
+            if (the_pcs[j].childNodes[0].value == valor_cilindro){
+                the_pcs[j].childNodes[0].checked = true
+                nomes_legenda = nomes_legenda+valor_cilindro+","
+            }
+        }
+    }
+    document.getElementsByClassName("multi-select-button")[0].innerText = nomes_legenda.substring(0,nomes_legenda.length-1)
+    }
+    if (busca_tipo.impressao == "ROTO"){
+    document.getElementById("div_mostra_cilindros").style = "display: none;"
+    document.getElementById("mostra_laminacao").style = "display: inline-block;"
+    document.getElementById("maquina_laminacao").value = busca_tipo.laminacao_em_linha
+    
+    }
+    
+     if (busca_tipo.impressao == "REBOBINADEIRA" || busca_tipo.impressao == "LAMINADORA" ){
+    document.getElementById("div_mostra_cilindros").style = "display: none;"
+    document.getElementById("mostra_laminacao").style = "display: none;"
+    document.getElementById("mostra_qtd_cores").style = "display: none;"
+    
+     
+    }
+  console.log("ID MAQUINA")
+     console.log(document.getElementById("id_maquina").innerText)
+     if (div_cliente.style.display == "none" ){
+            mostraMaquinas()
+        }
+      
+    
+    }
+    
+    function cancelar_maquina(){
+      document.getElementById("maquina").value = ""
+    document.getElementById("maquina_tipo_impressao").value = "undefined"
+    document.getElementById("os_pc").value = "undefined"
+    document.getElementById("maquina_qtde_cores").value = "1" 
+    document.getElementById("maquina_laminacao").value = "undefined"
+    mostraMaquinas()
+        
+    }
+      
+</script>
+
+
+
+
+ 
+    
+    
+   <script>
+      function filtro_tabela() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("filtrarTabela");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabela_maquinas");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td || td2) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  
+    
+    </script>
+  	
+
+<script>
+
+      
+      
+      
+      
+      function mostraMaquinas(){
+         
+        var div_cliente = document.getElementById("info_maquinas")
+        var icone = document.getElementById("maquinasArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            } else {
+                div_cliente.style.display = "none";
+            }
+      console.log("ID MAQUINA")
+     console.log(document.getElementById("id_maquina").innerText)
+      if (document.getElementById("id_maquina").innerText = ""){
+      document.getElementById("maquina").value = ""
+      document.getElementById("os_pc").value = "undefined"
+      document.getElementById("passo").value = ""
+      contatos = []
+      }
+      
+      }
+      
+      
+        
+  </script>
+  
+
+
+<script>
+    function salvar_maquina(){
+        var existe_id = document.getElementById("id_maquina").innerText
+         
+        console.log(themachineid)
+        var data ={}
+        data["nome"] = document.getElementById("maquina").value
+        data["impressao"] = document.getElementById("maquina_tipo_impressao").value
+        data["cores"] = parseInt(document.getElementById("maquina_qtde_cores").value)
+        if ( document.getElementById("as_planta_maquina").value != ""){
+       data["planta"] = document.getElementById("as_planta_maquina").value
+        } else {
+            data["planta"] = "MG4"
+        }
+       data["laminacao_em_linha"] = document.getElementById("maquina_laminacao").value
+       data["tipo_maquina"] = document.getElementById("maquina_nome").value
+       
+       var the_pcs = document.getElementsByClassName("multi-select-menuitem")
+       var thecils = []
+       for (i=0;i<the_pcs.length;i++){
+           if (the_pcs[i].childNodes[0].checked === true){
+               var valorcil =  the_pcs[i].childNodes[0].value
+               for (j=0;j<tiposTipo.length;j++){
+                   if (tiposTipo[j].nomenclatura == valorcil){
+                       var info_cil = {}
+                       info_cil["pc"] = valorcil
+                       info_cil["distorcao"] = tiposTipo[j].cilindros[0].distorcido
+                       info_cil["passo"] = tiposTipo[j].passo
+                       thecils.push(info_cil)
+                   }
+               }
+           }
+       }
+       
+       data["cilindros"] = thecils
+       console.log(data)
+       if (data.planta == ""){
+           document.getElementById("error_planta_maquina").innerText = "Adicionar ao menos uma unidade."
+       } else {
+             document.getElementById("error_planta_maquina").innerText = ""
+        //if (existe_id == ""){
+        if (themachineid == ""){
+         api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","maquinas_Criar",data)
+        } else {
+            //data["_id"] = existe_id
+            data["_id"] = themachineid
+          api.hub.start_from_whitepaper_with_variables("[CADASTRO TECNICOS]","maquinas_Alterar",data) 
+        }
+       setTimeout(function(){document.getElementById("id_maquina").innerText="";
+                            document.getElementById("maquina").value="";
+                            document.getElementById("maquina_tipo_impressao").value = "undefined"
+                            document.getElementById("maquina_nome").value = "undefined"
+                            document.getElementById("maquina_qtde_cores").value = "1";
+                            document.getElementById("planta_maquina").value = "";
+                            for (i=0;i<the_pcs.length;i++){
+                             the_pcs[i].childNodes[0].checked = false
+                            }
+                            document.getElementsByClassName("multi-select-button")[0].innerText = "-- Select --"
+                            preenche_maquinas()},1000)
+       }
+       alert("Maquina Salva..")
+       mostraMaquinas()
+    }
+</script>
+
+<script>
+var contatos = []
+          function adiciona_cilindro(){
+              
+              
+              var jaexiste = false
+              
+              for (i=0;i<contatos.length;i++){
+                  if (contatos[i].pc == document.getElementById("os_pc").value){
+                      jaexiste = true
+                  }
+              }
+             
+             
+             if (document.getElementById("altera_cilindro").innerText == "99"){
+              
+              if (jaexiste === false){
+              console.log("Estou dentro")
+                  var info_contato = {}
+                  
+                  info_contato["pc"] = document.getElementById("os_pc").value
+                  info_contato["distorcao"] = ""
+                  info_contato["passo"] = document.getElementById("passo").value
+                  contatos.push(info_contato)
+                  
+                 
+                  
+              
+              } else {
+                  alert("Cilindro já adicionado!")
+              }
+               
+             } else {
+                 for (i=0;i<contatos.length;i++){
+                     var numero = parseInt(document.getElementById("altera_contato").innerText)
+                   
+                     var valores = contatos[i]
+                       console.log(valores)
+                         valores["pc"] = document.getElementById("os_pc").value
+                         valores["distorcao"] = ""
+                         valores["passo"] = document.getElementById("passo").value
+                        
+                         contato[i] = valores
+                     }
+                 }
+              
+          }
+         
+          function preenche_tabela_cilindros(){
+          
+      var tabela2 = document.getElementById("tabela_cilindros");
+      clearTable(tabela2)
+      
+      
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+       
+       
+      
+        cell1.innerHTML = '<div style="vertical-align: middle; text-align: center;">'+contatos[i].pc+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle;text-align: center;">'+contatos[i].passo+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].pc+'" src="Icons/delete.png" width="20px" onclick="reply_delete_cilindro()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+          }
+
+</script>
+
+<script>
+    function reply_delete_cilindro(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        console.log(contatos[i].pc)
+        if (contatos[i].pc == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+    document.getElementById("os_pc").value = "undefined"
+    document.getElementById("passo").value = ""
+    document.getElementById("altera_cilindro").innerText = "99"
+    }
+    
+preenche_maquinas()
+</script>
+
+     <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.multi-select.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $('#os_pc').multiSelect();
+       
+    });
+    </script>
+
+
+
+    </body>
+
+</html>

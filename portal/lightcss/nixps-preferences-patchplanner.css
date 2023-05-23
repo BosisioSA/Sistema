@@ -1,0 +1,34 @@
+#patchplanner-pref-table .results {
+	padding-left: 20px;
+	width: 100%;
+}
+
+#patchplanner-pref-table .checkimage {
+	margin-right: 10px;
+}
+
+#patchplanner-pref-table .results .description {
+	border: none;
+	background: none;
+}
+
+#patchplanner-pref-table .results .yesno {
+	border: none;
+	background: none;
+	width: 2em;
+	max-width: 2em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#patchplanner-pref-table .results .yesno.yes {
+	color: green;
+}
+
+#patchplanner-pref-table .results .yesno.no {
+	color: red;
+}
+
+#patchplanner-pref-table .installationText {
+	
+}

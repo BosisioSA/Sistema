@@ -1,0 +1,922 @@
+/**
+ * We don't like outlines
+ */
+* {
+    outline: none;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nixps-cloudflow-ActivityBar .goBackButton {
+    margin-top: -2px;
+}
+
+.nixps-cloudflow-ActivityBar .goBackButton .goBackArrow {
+    padding-top: 9px;
+}
+
+#layout.patchplanner
+{
+    font-family: futura, Arial, sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 119px;
+}
+
+/**
+ * Override freeze layer so that the project bar stays visible
+ */
+#layout.patchplanner .freezeLayer {
+	top: 32px;
+	width: 0 !important; /** < remove this once panzer is ok for avflexo */
+	height: 0 !important; /** < remove this once panzer is ok for avflexo */
+}
+
+
+#layout.patchplanner .horizontalruler,
+#layout.patchplanner .verticalruler {
+	z-index: auto;
+}
+
+#layout.patchplanner .edittoolbar,
+#layout.patchplanner .filelisttoolbar {
+	z-index: 100;
+}
+
+
+/**
+ * jQueryUI customization
+ */
+#layout.patchplanner .ui-progressbar {
+	height: 0.8em;
+	border-radius: 1em;
+}
+
+#layout.patchplanner .group.right {
+	margin-right: 0;
+}
+
+#layout.patchplanner .group.right .ui-buttonset {
+	margin-right: 3px;
+}
+
+#layout .horizontalruler div.rangecursor.cursor {
+    border-left: 1px solid #0080BF;
+    border-right: 1px solid #0080BF;
+    background-color: rgba(0, 128, 191, 0.3);
+}
+#layout .verticalruler div.rangecursor.cursor {
+    border-top: 1px solid #0080BF;
+    border-bottom: 1px solid #0080BF;
+    background-color: rgba(0, 128, 191, 0.3);
+}
+#layout .edittoolbar .ui-state-default label {
+    color: #888585;
+}
+#layout .edittoolbar .ui-state-active.ui-button {
+    box-shadow: none;
+}
+#layout .edittoolbar .ui-button:hover {
+    border-radius: 3px;
+}
+#layout .edittoolbar .ui-state-active.ui-button:hover {
+    box-shadow: none;
+}
+#layout .edittoolbar .ui-state-active label {
+    background-color: #888585;
+    border-color: transparent;
+    box-shadow: none;
+    color: #FFF;
+}
+/*********************************************************************************************/
+/* Project bar
+/*********************************************************************************************/
+
+#project
+{
+	/*position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	background-color:  #FFF;*/
+    height: 61px;
+}
+
+#project .apptitle
+{
+	font-weight: bold;
+	font-size: 1.1em;
+	margin-left: 5px;
+	margin-right: 20px;
+	line-height: 32px;
+}
+
+#project .projectname
+{
+	float: right;
+	font-weight: 600;
+	color: #FFF;
+	font-size: 1.4em;
+	line-height: 32px;
+	font-family: Futura, Arial, sans-serif;
+	margin-right: 12px;
+    line-height: 55px;
+}
+
+#project .momexported
+{
+	float: right;
+	font-weight: 600;
+	color: #85CD8C;
+	font-size: 1.2em;
+	line-height: 32px;
+	font-family: 'Montserrat', sans-serif;
+	margin-right: 36px;
+    line-height: 58px;
+}
+
+#project .ui-button {
+    color: #FFF;
+	display: inline-block;
+	background: transparent;
+	border: 1px solid transparent;
+    font-size: 1.4em;
+    height: 60px;
+	line-height:14px;
+	margin-bottom: 4px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#project .ui-button-text
+{
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: none;
+    color: inherit;
+    line-height: inherit;
+}
+
+#project .ui-button-disabled:hover .ui-button-text,
+#project .ui-button-disabled .ui-button-text
+{
+    text-shadow: none;
+    color: #65A5C4;
+    line-height: inherit;
+}
+
+
+#project .ui-button:not(.ui-button-disabled):hover
+{
+	background-color: #0070AD;
+	background-clip: padding-box;
+}
+
+
+/*********************************************************************************************/
+/* Filelist toolbar
+/*********************************************************************************************/
+
+#layout.patchplanner .filelisttoolbar
+{
+	padding-left: 3px;
+}
+
+#layout .filelist .element .content .infoicon.ui-icon-info{
+    opacity: 1;
+    background-image: url(/3rdParty/lightcss/nixps-light/images/ui-icons_0080BF_256x240.png);
+}
+
+#layout.patchplanner .filelisttoolbar .ui-button
+{
+	padding-left: 4px;
+	padding-right: 4px;
+	color: rgba(0,0,0,0.6);
+	font-family: futura, Arial, sans-serif;
+	font-size: 14px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+#layout.patchplanner .filelisttoolbar .ui-button:hover,
+#layout.patchplanner .filelisttoolbar .ui-state-active
+{
+	color: rgba(0,0,0,0.8);
+    background-color: hsla(0,0%,12%,.12);
+    border-color: hsla(0,0%,12%,.12);
+    box-shadow: none;
+    outline-color: hsla(0,0%,12%,.12);
+    outline-width: 3px;
+    outline-style: solid;
+}
+
+#layout.patchplanner .filelisttoolbar .icon-add-job
+{
+	background-image: url(patchplanner_images/add_job.png) !important;
+	background-position: -3px -3px;
+}
+
+#layout.patchplanner .filelisttoolbar .icon-remove-job
+{
+	background-image: url(patchplanner_images/remove_job.png) !important;
+	background-position: -2px -2px;
+}
+
+#layout.patchplanner .filelisttoolbar .ui-button-text {
+	font-size: 1em;
+	padding-top: 2px;
+}
+
+#layout.patchplanner .filelisttoolbar .ui-button-text-icon-primary .ui-button-text {
+	padding: .2em 0.5em .4em 1.6em;
+}
+
+
+/*********************************************************************************************/
+/* Upload dialog
+/*********************************************************************************************/
+
+/**
+ * The jqueryui modal dialog overlay
+ */
+.ui-widget-overlay.ui-front {
+	background: rgba(0,0,0,0.6);
+	opacity: 1.0;
+}
+
+
+/**
+ * Gray overlay to freeze the application
+ */
+ #layout.patchplanner .overlay
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	color: white;
+	background-color: rgba(0,0,0, 0.6);
+	display: none;
+}
+
+/**
+ * The upload overlay (dialog)
+ */
+#layout.patchplanner .upload_overlay
+{
+	position: relative;
+	width: 60%;
+	height: 300px;
+	background-color: #0080BF;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 120px;
+	border: 1px solid #0080BF;
+	border-radius: 4px;
+}
+
+
+/**
+ * The title in the overlay
+ */
+#layout.patchplanner .upload_overlay .title
+{
+	height: 36px;
+	line-height: 2.3em;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding-left: 15px;
+	border-bottom: 1px solid darkgray;
+}
+
+/**
+ * The contents of the overlay (where we will instantiate the upload component)
+ */
+#layout.patchplanner .upload_overlay .contents
+{
+	position: absolute;
+	top: 37px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/**
+ * The close button of the upload overlay
+ */
+#layout.patchplanner .upload_overlay .contents .close_button
+{
+	float: right;
+}
+#layout.patchplanner .upload_overlay .contents .close_button,
+#layout.patchplanner .upload_overlay .contents .upload_button {
+    padding: 4px 7px;
+    color: #0080bf;
+    background: #FFF;
+    border-color: #FFF;
+    margin-top: 3px;
+}
+#layout.patchplanner .upload_overlay .contents .close_button:hover,
+#layout.patchplanner .upload_overlay .contents .upload_button:hover {
+    color: #FFF;
+    background: #0080BF;
+}
+/**
+ * Needed for rendering the filelist correctly in the upload component
+ */
+#layout .upload .filescroll .filelist {
+    left:0;right:0;
+    top: 0;bottom:0;
+    color: #333;
+}
+
+.nixps-patchplanner-editor_label .marker {
+	background-image: url('patchplanner-reg_mark.gif');
+	background-size: contain;
+}
+
+.settings-dialog h1:first-child {
+	margin-top: 0;
+}
+
+.settings-dialog h1,
+.patch-sheet-size-dialog h1 {
+	font-size: 14pt;
+	margin-bottom: 16px;
+	margin-top: 16px;
+}
+
+.settings-dialog .row,
+.patch-sheet-size-dialog .row {
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+.settings-dialog .row label,
+.patch-sheet-size-dialog .row label {
+	width: 120px;
+	display: inline-block;
+	text-align: right;
+}
+
+.settings-dialog .row label:after,
+.patch-sheet-size-dialog .row label:after {
+	content: ':';
+}
+
+.settings-dialog .row label.unit,
+.patch-sheet-size-dialog .row label.unit {
+	width: 20px;
+	display: inline-block;
+}
+
+.settings-dialog .row label.unit:after,
+.patch-sheet-size-dialog .row label.unit:after
+{
+	content: none;
+}
+
+.settings-dialog .row input,
+.patch-sheet-size-dialog .row input {
+}
+
+
+#layout.patchplanner .filelist .element.patch .content .infoiconholder {
+	display: none;
+}
+
+
+.nixps-patchplanner-job_settings {
+	padding: 10px;
+	background-color: #ececec;
+	color: #222;
+    top: 119px;
+    box-shadow: 0px 0px 6px;
+}
+
+.nixps-patchplanner-job_settings h1 {
+	margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.nixps-patchplanner-job_settings h2 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.nixps-patchplanner-job_settings .momerror {
+	color: red;
+	font-weight: bold;
+}
+
+.nixps-patchplanner-job_settings label:after {
+	content: ':';
+}
+
+.nixps-patchplanner-job_settings input[readonly] {
+    cursor: not-allowed;
+    color: #a5a4a4;
+}
+
+.nixps-patchplanner-markslistview .item {
+	cursor: pointer;
+}
+
+.nixps-patchplanner-markslistview .item.selected {
+    background-color: #e7ecef;
+}
+
+.nixps-patchplanner-markslistview .item label {
+    cursor: pointer;
+}
+
+.nixps-patchplanner-job_settings .nixps-patchplanner-markslistview {
+	border: 1px solid #b7b7b7;
+	background-color: white;
+}
+
+.nixps-patchplanner-job_settings .nixps-patchplanner-markslistview.readonlyMode {
+    cursor: not-allowed;
+    color: #a5a4a4;
+}
+.nixps-patchplanner-job_settings .nixps-patchplanner-markslistview .item.selected {
+	background-color: #0080BF;
+    color: #FFF;
+}
+
+.nixps-patchplanner-job_settings .nixps-patchplanner-markslistview .item {
+	background-color: transparent;
+	font-size: 11px;
+	font-weight: normal;
+	margin: 0 !important;
+}
+
+.nixps-patchplanner-job_settings .nixps-patchplanner-markslistview label:after {
+	content: none;
+}
+
+.nixps-patchplanner-job_settings button.markseditorbutton,
+.nixps-patchplanner-job_settings button.viewfilebutton {
+    border-radius: 3px;
+    color: #3f3f3f;
+    font-size: 13px;
+    background: transparent;
+    font-weight: bolder;
+}
+
+.nixps-patchplanner-job_settings button.markseditorbutton:hover,
+.nixps-patchplanner-job_settings button.viewfilebutton:hover {
+    background: #757575;
+    color: #ececec;
+}
+
+.layoutcontent .freezePanel {
+	position: absolute;
+	background-color: rgba(2,2,2,0.5);
+	z-index: 20000;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#layout.patchplanner .nixps-patchplanner-filelist_item .overlay {
+	position: absolute;
+	background-color: rgba(2,2,2,0.5);
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#layout.patchplanner .nixps-patchplanner-filelist_item .distortion {
+	position: absolute;
+	top: -0.5em;
+	right: -0.5em;
+	border: 2px solid white;
+	box-shadow: 0px 0px 5px #888;
+	border-radius: 1em;
+	color: white;
+	padding: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: smaller;
+}
+
+#layout.patchplanner .nixps-patchplanner-filelist_item .distortion.invalid {
+	background-color: red;
+}
+
+#layout.patchplanner .nixps-patchplanner-filelist_item .distortion.valid {
+	background-color: green;
+}
+
+#layout.patchplanner .nixps-patchplanner-filelist_item .markbadge {
+	top: -0.5em;
+	right: -0.5em;
+	border: 2px solid white;
+	box-shadow: 0px 0px 5px #888;
+	border-radius: 1em;
+	font-size: smaller;
+}
+
+#layout.patchplanner .nixps-patchplanner-filelist_item .markbadge.invalid {
+	background-color: red;
+}
+
+#layout.patchplanner .nixps-patchplanner-filelist_item .markbadge.valid {
+	background-color: green;
+}
+
+
+.settings-dialog .upload_container {
+	position: relative;
+	border: 1px solid #0080BF;
+}
+
+.settings-dialog .upload_container .mark_upload {
+	height: 100px;
+}
+
+.settings-dialog .marks_container {
+	border: 1px solid #0080BF;
+	height: 200px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.marks_editor_dialog {
+	left: 40px !important;
+	right: 40px !important;
+	top: 80px !important;
+	bottom: 40px !important;
+	width: auto !important;
+	height: auto !important;
+	z-index: 1000;
+}
+
+.marks_editor {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+}
+
+.marks_toolbar {
+	background-color: gray;
+}
+
+.marks_toolbar .ui-button {
+	height: 20px !important;
+	vertical-align: baseline;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.marks_toolbar .icon-add-mark {
+	background-image: url(patchplanner_images/add_mark.png) !important;
+	background-position: -1px 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10.5px;
+}
+
+.marks_toolbar .icon-add-main-mark {
+	background-image: url(patchplanner_images/add_main_mark.png) !important;
+	background-position: -1px 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10.5px;
+}
+
+.marks_toolbar .icon-delete-mark {
+	background-image: url(patchplanner_images/delete_mark.png) !important;
+	background-position: -1px 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10.5px;
+}
+
+.marks_toolbar .ui-button-icons-only {
+	width: 30px;
+}
+
+.marks_toolbar .zoom {
+	float: right;
+	margin-right: 12px;
+}
+
+.sheet .background {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.sheet .decorations .margin {
+	border: 1px dashed #999;
+}
+
+/**
+ * Patchplanner edit toolbar icons
+ */
+#layout.patchplanner .edittoolbar .ui-button {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+#layout.patchplanner .edittoolbar .icon-rotate {
+	background-image: url(patchplanner_images/rotate_patch.png) !important;
+	background-position: -1px 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10.5px;
+}
+
+#layout.patchplanner .edittoolbar .icon-remove {
+	background-image: url(patchplanner_images/delete_patch.png) !important;
+	background-position: -1px 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10.5px;
+}
+
+#layout.patchplanner .edittoolbar .icon-snap {
+	background-image: url(patchplanner_images/snap_grid.png) !important;
+	background-position: -1px 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -11px;
+	margin-left: -10.5px;
+}
+
+#layout.patchplanner .edittoolbar .icon-edit-marks {
+	background-image: url(patchplanner_images/marks_editor.png) !important;
+	background-position: -1px 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10px;
+}
+
+#layout.patchplanner .edittoolbar .icon-clear-sheet {
+	background-image: url(patchplanner_images/clear_sheet.png) !important;
+	background-position: -1px 0px;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10px;
+}
+
+#layout.patchplanner .edittoolbar .zoomlevel {
+	margin-top: 4px;
+}
+
+
+.nixps-patchplanner-JobList .joblist {
+	font-size: 14px;
+	padding: 5px;
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	top: 32px;
+	bottom: 35px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.nixps-patchplanner-SheetList > div,
+.nixps-patchplanner-JobList > div {
+    margin-top: 6px;
+}
+
+.nixps-patchplanner-JobList .search {
+    border-radius: 1em;
+    border: 1px solid #8c8b8b;
+    outline: none;
+}
+
+
+.nixps-patchplanner-JobList .joblist tr {
+   list-style-type: none;
+   display: block;
+   margin: 5px;
+   padding: 4px;
+   cursor: pointer;
+}
+
+
+.nixps-patchplanner-JobList .joblist tr:hover {
+	background-color: #e7ecef;
+}
+
+
+.nixps-patchplanner-JobList .joblist tr.selected {
+	background-color: #0080BF;
+    color: #FFF;
+}
+
+.nixps-patchplanner-JobList .joblist tr.selected .remove {
+    color: #e7ecef;
+}
+
+.nixps-patchplanner-AddJobDialog .buttons {
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	bottom: 3px;
+	text-align: center;
+}
+
+.nixps-patchplanner-AddJobDialog .buttons button {
+	display: inline-block;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+
+.nixps-patchplanner-OpenDialog .ui-tabs {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	right: 3px;
+	bottom: 3px;
+}
+
+
+.nixps-patchplanner-OpenDialog .buttons {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 10px;
+	text-align: center;
+}
+
+
+.nixps-patchplanner-OpenDialog .remove {
+	color: gray;
+}
+
+.nixps-patchplanner-OpenDialog .remove:hover {
+	color: white;
+}
+
+
+.nixps-patchplanner-OpenDialog .buttons button {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.nixps-patchplanner-SheetList .search {
+    border-radius: 1em;
+    border: 1px solid #8c8b8b;
+    outline: none;
+}
+
+.nixps-patchplanner-SheetList .sheetlist {
+	font-size: 14px;
+	padding: 5px;
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	top: 23px;
+	bottom: 35px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.nixps-patchplanner-SheetList .sheetlist tr {
+   list-style-type: none;
+   display: block;
+   margin: 5px;
+   padding: 4px;
+   cursor: pointer;
+}
+
+
+.nixps-patchplanner-SheetList .sheetlist tr:hover {
+	background-color: #333;
+}
+
+
+.nixps-patchplanner-SheetList .sheetlist tr.selected {
+	background-color: #555;
+}
+
+
+#layout .filelist .element .content .fileicon .thumb {
+	text-align: center;
+	position: relative;
+}
+
+#layout .filelist .element .content .separator {
+    border-left: 1px solid gray;
+}
+
+#layout .filelist .element .content .fileicon .thumb .sheetName {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	z-index: 10000;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.2);
+	text-shadow: 0 0 1px black;
+}
+
+#layout .nixps-patchplanner-editor_sheet_decorator_width,
+#layout .nixps-patchplanner-editor_sheet_decorator_height {
+    background-color: #FFF;
+    color: #0080BF;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+    border-bottom: 0pt;
+}
+
+/** all layout in dialogs **/
+.ui-dialog {
+	z-index: 1000000 !important ;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    background: #0080BF;
+    border-color: #0080BF;
+    font-size: 1.3em;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    background: #0080BF;
+    border-color: transparent;
+}
+/* tabs */
+.ui-dialog .ui-tabs .ui-tabs-nav {
+    background: #FFF;
+    border-color: #0080BF;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.ui-dialog .ui-tabs .ui-tabs-nav li {
+    background: #FFF;
+    color: #0080bf;
+    font-size: 13px;
+    border-color: #0080BF;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.ui-dialog .ui-tabs .ui-tabs-nav li > a {
+    color: #0080BF;
+    font-size: 1em;
+}
+.ui-dialog .ui-tabs .ui-tabs-nav .ui-tabs-active.ui-state-active {
+    background: #0080bf;
+    color: #FFF;
+}
+.ui-dialog .ui-tabs .ui-tabs-nav .ui-tabs-active.ui-state-active > a {
+    color: #FFF;
+}
+/* butons */
+.ui-dialog .ui-dialog-buttonset button,
+.ui-dialog .buttons button {
+    border: 1px solid #0080BF;
+    border-radius: 3px;
+    background: #FFF;
+    color: #0080BF;
+    font-size: 110%;
+}
+
+.ui-dialog .ui-dialog-buttonset button:hover,
+.ui-dialog .buttons button:hover {
+    background: #0080BF;
+    color: #FFF;
+}
+
+.ui-dialog .ui-dialog-buttonset button .ui-button-text,
+.ui-dialog .buttons button .ui-button-text {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}

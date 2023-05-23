@@ -1,0 +1,300 @@
+/*********************************************************************/
+/* NiXPS Dashboard Component CSS                                     */
+/*                                                                   */
+/* Copyright 2012, NiXPS (www.nixps.com)                             */
+/*********************************************************************/
+
+div.dashboard-pane
+{
+	position: absolute;
+	top: 47px;
+	left: 15px;
+	bottom: 10px;
+	right: 15px;
+	display: none;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 10px;
+	padding: 15px;
+	overflow-y: auto;
+}
+
+table.ds-table
+{
+    padding-top: 20px;
+	width: 100%;
+}
+
+table.ds-table tr.header td
+{
+    color: #777;
+    font-size: medium;
+    border-bottom: 1px solid;
+}
+
+table tr.meta-row td
+{
+    border-left: 1px rgba(255, 255, 255, 0.2) solid;
+    border-right: 1px rgba(255, 255, 255, 0.2) solid;
+}
+
+div.meta-arrow
+{
+    position: relative;
+    display: none;
+    padding: 8px;
+    margin-left: 20px;
+}
+
+img.meta-arrow-image
+{
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    display: none;
+}
+
+
+#PP_WORK_SERVER_table tr:hover td {
+    background-color: #fefefe;
+}
+
+#PP_WORK_SERVER_table tr.meta-row:hover td {
+    background-color: inherit;
+}
+
+td.dashboard_cpu
+{
+	text-align: right;
+	padding: 5px !important;
+	min-width: 50px;
+	width: 50px;
+}
+
+td.dashboard_mem
+{
+	text-align: right;
+	padding: 5px 20px 5px 5px !important;
+	min-width: 75px;
+	width: 75px;
+}
+
+td.dashboard_pending
+{
+	text-align: right;
+	padding: 5px 20px 5px 5px !important;
+	min-width: 75px;
+	width: 75px;
+	border-right: rgba(255, 255, 255, 0.199219) 1px solid;
+}
+
+td.description
+{
+    padding-left: 15px !important;
+	min-width: 300px;
+	width: 300px;
+	min-height: 40px;
+	height: 40px;
+    word-break: break-all;
+}
+
+td.name
+{
+	min-width: 100px;
+	width: 100px;
+    cursor: pointer;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+td.icon
+{
+	min-width: 50px;
+	width: 50px;
+}
+
+td.running
+{
+	min-width: 50px;
+	width: 50px;
+}
+
+td.active_file
+{
+	white-space: nowrap;
+}
+
+/*********************************************************************/
+/*  LOGGING PANE                                                     */
+/*********************************************************************/
+
+div.logging-pane
+{
+	position: absolute;
+	top: 85px;
+	left: 15px;
+	bottom: 10px;
+	right: 15px;
+	display: none;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 10px;
+	padding: 15px;
+	overflow-y: auto;
+}
+
+#log-table
+{
+    font-size: smaller;
+}
+
+/*********************************************************************/
+/*  NEW DASHBOARD                                                    */
+/*********************************************************************/
+
+.dashboard-section
+{
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: #F2F7FA;
+}
+
+.dashboard-section .header
+{
+    height: 20px;
+    font-size: 16px;
+    padding-bottom: 4px;
+}
+
+.dashboard-section .header .title
+{
+    float: left;
+    cursor: pointer;
+}
+
+.dashboard-section .header .toggle:not(.expand)
+{
+    margin-right: 5px;
+}
+
+.dashboard-section .header .summary
+{
+    float: right;
+}
+
+.dashboard-section .header .summary img
+{
+    vertical-align: top;
+}
+/*********************************************************************/
+/*  DATABASE SECTION                                                 */
+/*********************************************************************/
+
+#dashboard-messages-section
+{
+	background-color: rgba(225,27,27,1);
+	display: none;
+}
+
+#dashboard-database-section .details-layout tr
+{
+    vertical-align: top;
+}
+
+#dashboard-database-section .collections
+{
+    border: 0px;
+    padding-left: 20px;
+    left: 0px !important;
+}
+
+#dashboard-database-section .collections-title
+{
+    font-size: 14px;
+}
+
+#dashboard-database-section .collections
+{
+    font-size: 13px;
+}
+
+#dashboard-database-section .collections .collection-name
+{
+}
+
+#dashboard-database-section .collections .collection-size
+{
+    text-align: right;
+    width: 100px;
+    min-width: 100px;
+}
+
+#dashboard-database-section .overview
+{
+    padding-left: 40px;
+}
+
+#dashboard-database-section .overview-title
+{
+    font-size: 14px;
+}
+
+#dashboard-database-section .overview-value
+{
+    text-align: right;
+    width: 100px;
+    min-width: 100px;
+}
+
+/*********************************************************************/
+/*  USERS SECTION                                                    */
+/*********************************************************************/
+
+#dashboard-users-section .users
+{
+    border: 0px;
+    padding-left: 20px;
+    left: 0px !important;
+    font-size: 13px;
+}
+
+#dashboard-users-section .users-name-title
+{
+    font-size: 14px;
+}
+
+#dashboard-users-section .users-fullname-title
+{
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+#dashboard-users-section .users-login-title
+{
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+#dashboard-users-section .users-access-title
+{
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+#dashboard-users-section .users-fullname
+{
+    padding-left: 40px;
+}
+
+#dashboard-users-section .users-login
+{
+    padding-left: 40px;
+}
+
+#dashboard-users-section .users-access
+{
+    padding-left: 40px;
+}

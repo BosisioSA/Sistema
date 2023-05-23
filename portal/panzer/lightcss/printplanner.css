@@ -1,0 +1,33 @@
+.nixps-printplanner-margins_dialog {
+
+}
+
+.nixps-printplanner-margins_dialog .image {
+	float: left;
+}
+
+.nixps-printplanner-margins_dialog .settings {
+	float: left;
+	margin-right: 40px;
+}
+
+.nixps-printplanner-margins_dialog .settings h1 {
+	font-size: 16px;
+	margin-bottom: 16px;
+	margin-top: 16px;
+}
+
+.nixps-printplanner-margins_dialog .settings .row {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.nixps-printplanner-margins_dialog .settings  .row .fieldname {
+	display: inline-block;
+	width: 130px;
+	text-align: right;
+}
+
+.nixps-printplanner-margins_dialog .settings .row .fieldname:after {
+	content: ':';
+}

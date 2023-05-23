@@ -1,0 +1,1483 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ordem Producao - Finepack</title>
+        <meta name="description" content="Versioning">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/table.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/main.js"></script>
+
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.appear-1.1.1.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+      <script src="js/jscolor.js"></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script>
+            var queryString = window.location.search;
+            //console.log(queryString);
+            //var ordem2 = queryString.substring(7)
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+            console.log(ordem)
+        </script>
+    
+         <script>
+          function logout() {
+               $.cookie('user_id', '', { expires: -1, path: '/' });
+               $.cookie('user_hash', '', { expires: -1, path: '/' });
+               $.cookie('expiration_date', '', { expires: -1, path: '/' });
+               $.cookie('customer_id', '', { expires: -1, path: '/' });
+               $.cookie('customer_name', '', { expires: -1, path: '/' });
+               $.cookie('username', '', { expires: -1, path: '/' });
+               $.cookie('scope', '', { expires: -1, path: '/' });
+               var lSession = api_sync.auth.create_session('', ''); // fecha sessao do CloudFlow
+               var l_url = '/portal.cgi/PP_FILE_STORE/Public/Login/login.html'
+               window.location.href = l_url;
+               //window.location.href = '?upload=done';
+          }
+             
+           
+       </script>
+
+    </head>
+
+
+    <body>
+
+
+      <div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  	<img src="./logo/finepack.png" style="width: 70%; margin-bottom: 50px;">
+  	        
+  	        <div style="width: 100%"><a id="link_proofscope" href="#" target="_blank"><img id="preview" width="100%"></a></div>
+
+  	        <div class="footer">
+  	        	<p style="font-size: 6pt; margin-top:380px">Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						  Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+               <div class="col-md-5" id="bemvindo"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <div class="col-md-11" style="display: inline-block;">  
+        <h2 id="cabeca"></h2>
+        </div>
+        
+          
+          <div class="form-group col-md-1" style="display:inline-block; padding-right: 8px;">
+            <label for="dataOP">Data Criacao</label>
+            <input type="text" class="form-control" id="dataOP" name="dataOP" readonly>
+          </div>
+          <div class="form-group col-md-1" style="display:inline-block;">
+            <label for="codigoCliente">Cod. Cliente</label>
+            <input type="text" class="form-control" id="codigoCliente" name="codigoCliente" readonly>
+          </div>
+          <div class="form-group col-md-3" style="display:inline-block;">
+            <label for="nomeCliente">Nome Cliente</label>
+            <input type="text" class="form-control" id="nomeCliente" name="nomeoCliente" readonly>
+          </div>
+          <div class="form-group col-md-3" style="display:inline-block;">
+            <label for="status">Status</label>
+            <input type="text" class="form-control" id="status" name="status" readonly>
+          </div>
+          <div class="form-group col-md-3" style="display:inline-block;">
+            <label for="tipo">Tipo OP</label>
+            <input type="text" class="form-control" id="tipo" name="tipo" readonly>
+          </div>
+          <hr>
+          <div class="form-group col-md-2" style="display:inline-block; border-right: 1px solid lightgray;">
+          <h4> Repeticao</h4>
+          <div class="form-group col-md-11" style="display:inline-block;">
+            <label for="largura">Largura</label>
+            <input type="text" class="form-control" id="largura" name="largura" readonly>
+          </div>
+          <div class="form-group col-md-11" style="display:inline-block;">
+            <label for="comprimento">Comprimento</label>
+            <input type="text" class="form-control" id="comprimento" name="comprimento" readonly>
+          </div>
+          </div>
+          <div class="form-group col-md-2" style="vertical-align: top; display:inline-block; border-right: 1px solid lightgray;">
+            <h4>Fotocelula</h4>
+            <div class="form-group col-md-11" style="display:inline-block;">
+              <label for="fotocelula">Adicionar Fotocelula</label>
+              <input type="text" class="form-control" id="fotocelula" name="fotocelula" readonly>
+            </div>
+            <div class="form-group col-md-11" id="a_cor_FC" style="display:none;">
+              <label for="cor_fotocelula">Cor Fotocelula</label>
+              <input type="text" class="form-control" id="cor_fotocelula" name="cor_fotocelula" readonly>
+            </div>
+            </div>
+            <div class="form-group col-md-2" style="vertical-align: top; display:inline-block; border-right: 1px solid lightgray;">
+              <h4>Logotipo</h4>
+              <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="logotipo">Adicionar Logotipo</label>
+                <input type="text" class="form-control" id="logotipo" name="logotipo" readonly>
+              </div>
+              <div class="form-group col-md-11" id="a_cor_Logo" style="display:none;">
+                <label for="cor_logotipo">Cor Logotipo</label>
+                <input type="text" class="form-control" id="cor_logotipo" name="cor_logotipo" readonly>
+              </div>
+              </div>
+              <div class="form-group col-md-2" style="vertical-align: top; display:inline-block; border-right: 1px solid lightgray;">
+                <h4>Codigo de Barras</h4>
+                <div class="form-group col-md-11" style="display:inline-block;">
+                  <label for="codigo_barras">Adicionar Codigo</label>
+                  <input type="text" class="form-control" id="codigo_barras" name="codigo_barras" readonly>
+                </div>
+                <div class="form-group col-md-11" id="a_cor_Codigo" style="display:none;">
+                  <label for="cor_codigo">Cor Codigo</label>
+                  <input type="text" class="form-control" id="cor_codigo" name="cor_codigo" readonly>
+                </div>
+                </div>
+                <div class="form-group col-md-3" style="vertical-align: top; display:inline-block; border-right: 1px solid lightgray;">
+                  <h4>Impressao</h4>
+                  <div class="form-group col-md-11" style="display:inline-block;">
+                    <label for="impressora">Impressora</label>
+                    <input type="text" class="form-control" id="impressora" name="impressora" readonly>
+                  </div>
+                  <div class="form-group col-md-11"  style="display:inline-block;">
+                    <label for="lado">Lado Impressao</label>
+                    <input type="text" class="form-control" id="lado" name="lado" readonly>
+                  </div>
+                  </div>
+                
+          <br>
+          <hr>
+          <h4>Info Producao</h4>
+                  <div class="form-group col-md-2" style="display:inline-block;">
+                    <label for="num_operacoes"># Operacoes</label>
+                    <input type="text" class="form-control" id="num_operacoes" name="num_operacoes" readonly>
+                  </div>
+                  <div class="form-group col-md-3" style="display:inline-block;">
+                    <label for="sentido_puxada">Sentido Puxada</label>
+                    <input type="text" class="form-control" id="sentido_puxada" name="sentido_puxada" readonly>
+                  </div>
+                  <div class="form-group col-md-2" style="display:inline-block;">
+                    <label for="refile">Refile</label>
+                    <input type="text" class="form-control" id="refile" name="refile" readonly>
+                  </div>
+                  <div class="form-group col-md-2" style="display:inline-block;">
+                    <label for="curvas">Curvas</label>
+                    <input type="text" class="form-control" id="curvas" name="curvas" readonly>
+                  </div>
+                  <div class="form-group col-md-2" style="display:inline-block;">
+                    <label for="teste_cut">Teste Cut</label>
+                    <input type="text" class="form-control" id="teste_cut" name="teste_cut" readonly>
+                  </div>
+          <br>
+          <hr>
+          <br>
+          <div class="form-group col-md-4" style="vertical-align: top; display:inline-block; border-right: 1px solid lightgray;">
+            <h4>Montagem</h4>
+            <div class="form-group col-md-11" style="display:inline-block;">
+              <label for="cilindro">Cilindro</label>
+              <input type="text" class="form-control" id="cilindro" name="cilindro" readonly>
+            </div>
+            <div class="form-group col-md-11"  style="display:inline-block;">
+              <label for="largura_subs">Largura Substrato</label>
+              <input type="text" class="form-control" id="largura_subs" name="largura_subs" readonly>
+            </div>
+            </div>
+            <div class="form-group col-md-4" style="vertical-align: bottom; display:inline-block; border-right: 1px solid lightgray;">
+            <div class="form-group col-md-11" style="display:inline-block;">
+              <label for="step">Repeticao Comprimento</label>
+              <input type="text" class="form-control" id="step" name="step" readonly>
+            </div>
+            <div class="form-group col-md-11"  style="display:inline-block;">
+              <label for="repeat">Repeticao Largura</label>
+              <input type="text" class="form-control" id="repeat" name="repeat" readonly>
+            </div>
+            </div>
+           
+            <br>
+            <hr>
+            <br>
+
+          <div class="form-group col-md-11" id="existe_FP" style="display: none">
+            <h4>Vinculos</h4>
+            <table id="vinculos" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th class="th-sm" style="width:2%"></th>
+                  <th class="th-sm" style="width:5%">Preview
+                  </th>
+                  <th class="th-sm" style="width:10%">Codigo Vinculo
+                  </th>
+                  <th class="th-sm" style="width:15%">Cliente
+                  </th>
+                  <th class="th-sm" style="width:20%">Descrição
+                  </th>
+                  <th class="th-sm" style="width:5%">Iniciar
+                  </th>
+                  <th class="th-sm" style="width:5%">Pausar
+                  </th>
+                  <th class="th-sm" style="width:5%">Novo
+                  </th>
+                  <th class="th-sm" style="width:5%">Aprovar
+                  </th>
+                  <th class="th-sm" style="width:5%">Editar
+                </th>
+                  <th class="th-sm" style="width:5%">Localizar
+                </th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            <br>
+            <hr>
+            <br>
+                  
+          <div class="form-group" style="display:inline-block;width: 100%">
+          <h4>Configuracoes de Saida</h4>
+          <div class="form-group" style="vertical-align: top; display:inline-block;width: 45%">
+            <h5>Tintas da OP</h5>
+          <table id="tabelaCores5" style="width: 100%;">
+                <tr>
+                <td class="form-group" style="width: 5%"></td>
+                <td class="form-group"></td>
+                <td class="form-group">Existe nos Arquivos</td>
+                </tr>
+          </table>
+    </div>
+    <div class="form-group" style="vertical-align: top; display:inline-block;width: 45%; margin-left: 5%">
+      <h5>Arquivo</h5>
+      <br>
+      <div class="form-group col-md-5" style="display: inline-block;">
+      <label for="rotacao_arquivo">Rotacao</label>
+      <select class="form-control" onchange="mudaImagemRotacao()" id="rotacao_arquivo" name="rotacao_arquivo">
+        <option value="SEL">Selecionar...</option>
+        <option value="up">0</option>
+        <option value="right">90</option>
+        <option value="down">180</option>
+        <option value="left">-90</option>
+      </select>
+    </div>
+    <div class="form-group col-md-5" style="display: inline-block;">
+      <img id="imagem_rotacao" src="assets/img/A0.png" height="100px">
+    </div>
+      <br>
+      <h5>Cores Filete</h5>
+      <br>
+      
+      <div class="form-group col-md-5" style="display: inline-block;">
+      <input type="checkbox" style="display: inline-block;" class="form-group" name="semfilete" id="semfilete" checked>
+      <label for="semfilete">Sem Filete</label>
+      </div>
+      
+      <div class="form-group col-md-5" style="display: inline-block;">
+      <input type="checkbox" style="display: inline-block;" class="form-group" name="corvazada" id="corvazada" onchange="mostraCores()" checked>
+      <label for="corvazada">Vazada</label>
+      </div><br>
+      <div class="form-group col-md-5" id="filete_entre" style="display: inline-block;">
+        <input type="checkbox" style="display: inline-block;" class="form-group" name="filete_entre_vinculos" id="filete_entre_vinculos" checked>
+        <label for="filete_entre_vinculos">Filete entre Vinculos</label>
+        </div>
+        <div class="form-group col-md-5" id="filete_todos" style="display: inline-block;">
+          <input type="checkbox" style="display: inline-block;" class="form-group" name="todas_repeticoes" id="todas_repeticoes" checked>
+          <label for="todas_repeticoes">Todas Repeticoes</label>
+          </div>
+      <br>      
+      <div style="display:none;" id="qtasTintas">1</div>
+      <div id="mostraFiletes" style="display: none;">
+             
+                <div class="form-group col-md-11" style="display:block; height: 20px;">
+                <section class="form-group col-md-6" style="display: inline-block;"></section>
+                <div class="form-group col-md-5" id="filete_todos" style="display: inline-block; height: 20px;">
+                  <input type="checkbox" style="display: inline-block;" class="form-group" name="filete1_over" id="filete1_over" unchecked>
+                  <label for="filete1_over">over</label>
+                  </div>
+                </div>
+                <span><img src="Icons/icone_mais.png" onclick="adicionaEmail()" height="30px"></span>
+                <div class="form-group col-md-11" style="display:inline-block;">
+                  <div class="form-group col-md-5" id="nome1" style="display:inline-block;">
+                    <label for="nome_1">Tinta</label>
+                    <input type="text" onchange="apagaCorFilete()" class="form-control" id="nome_1" name="nome_1" list="as_tintas_arquivo">
+                    <datalist id="as_tintas_arquivo"></datalist>
+                  </div>
+                <div class="form-group col-md-3" id="pct1" style="display:inline-block;">
+                  <label for="pct_1">%</label>
+                  <input type="number" class="form-control" id="pct_1" name="pct_1">
+                </div>
+                <div class="form-group col-md-3" id="filete1" style="display:inline-block;">
+                  <label for="filete_1">% Over</label>
+                  <input type="number" class="form-control" id="filete_1" name="filete_1">
+                </div>
+                <div class="form-group col-md-5" id="nome2" style="display:none;">
+                  <label for="nome_2">Tinta</label>
+                  <input type="text" onchange="apagaCorFilete()" class="form-control" id="nome_2" name="nome_2" list="as_tintas_arquivo">
+                  <datalist id="as_tintas_arquivo"></datalist>
+                </div>
+              <div class="form-group col-md-3" id="pct2" style="display:none;">
+                <label for="pct_2">%</label>
+                <input type="number" class="form-control" id="pct_2" name="pct_2">
+              </div>
+              <div class="form-group col-md-3" id="filete2" style="display:none;">
+                <label for="filete_2">% Over</label>
+                <input type="number" class="form-control" id="filete_2" name="filete_2">
+              </div>
+              <div class="form-group col-md-5" id="nome3" style="display:none;">
+                <label for="nome_3">Tinta</label>
+                <input type="text" onchange="apagaCorFilete()" class="form-control" id="nome_3" name="nome_3" list="as_tintas_arquivo">
+                <datalist id="as_tintas_arquivo"></datalist>
+              </div>
+            <div class="form-group col-md-3" id="pct3" style="display:none;">
+              <label for="pct_3">%</label>
+              <input type="number" class="form-control" id="pct_3" name="pct_3">
+            </div>
+            <div class="form-group col-md-3" id="filete3" style="display:none;">
+              <label for="filete_3">% Over</label>
+              <input type="number" class="form-control" id="filete_3" name="filete_3">
+            </div>
+            <div class="form-group col-md-5" id="nome4" style="display:none;">
+              <label for="nome_4">Tinta</label>
+              <input type="text" onchange="apagaCorFilete()" class="form-control" id="nome_4" name="nome_4" list="as_tintas_arquivo">
+              <datalist id="as_tintas_arquivo"></datalist>
+            </div>
+          <div class="form-group col-md-3" id="pct4" style="display:none;">
+            <label for="pct_4">%</label>
+            <input type="number" class="form-control" id="pct_4" name="pct_4">
+          </div>
+          <div class="form-group col-md-3" id="filete4" style="display:none;">
+            <label for="filete_4">% Over</label>
+            <input type="number" class="form-control" id="filete_4" name="filete_4">
+          </div>
+          <div class="form-group col-md-5" id="nome5" style="display:none;">
+            <label for="nome_5">Tinta</label>
+            <input type="text" onchange="apagaCorFilete()"  class="form-control" id="nome_5" name="nome_5" list="as_tintas_arquivo">
+            <datalist id="as_tintas_arquivo"></datalist>
+          </div>
+        <div class="form-group col-md-3" id="pct5" style="display:none;">
+          <label for="pct_5">%</label>
+          <input type="number" class="form-control" id="pct_5" name="pct_5">
+        </div>
+        <div class="form-group col-md-3" id="filete5" style="display:none;">
+          <label for="filete_5">% Over</label>
+          <input type="number" class="form-control" id="filete_5" name="filete_5">
+        </div>
+
+          </div>
+                </div>
+
+</div>
+          <!--<div class="form-group" style="vertical-align: top; display:inline-block;width: 30%">
+            <h5>Tintas da OP</h5>
+          <table id="tabelaCores1" style="width: 100%;">
+                <tr>
+                <td class="form-group" style="width: 5%"></td>
+                <td class="form-group"></td>
+                </tr>
+          </table>
+    </div>
+    <div class="form-group" style="vertical-align: top; display:inline-block;width: 29%">
+      <h5>Link</h5>
+    <table id="tabelaCores3" style="width: 100%">
+          <tr>
+            <td class="form-group" style="width:90%;"></td>
+            <td class="form-group" style="width:10%;"></td>
+            </tr>
+    </table>
+</div>
+<div class="form-group" id="check_Cores" style="vertical-align: top; display:inline-block;width: 40%">
+  <h5>Tintas dos Arquivos</h5>
+  <table id="tabelaCores2">
+    <tr>
+    <td class="form-group" style="width: 5%"></td>
+    <td class="form-group" style="width:70%;"></td>
+    <td class="form-group" style="width:10%;"></td>
+    <td class="form-group" style="width:10%;"></td>
+    </tr>
+</table>
+</div>-->
+<hr>
+
+<div id="info-tinta"></div>
+<br>
+</div>
+</div>
+<hr>
+<button class="btn btn-primary" onclick="gravarOP()">Gravar OP</button>
+<button class="btn btn-primary" id='montagemOP' onclick="reply_SR()" style="display: inline-block; margin-left:10px;">Montagem OP</button>
+<button class="btn btn-primary" id='cancelaAcao' onclick="cancelaMudanca()" style="display: inline-block; margin-left:10px;">Cancelar</button>
+    
+                </div>
+                
+                </div>
+
+
+        <div style="clear:both"></div>
+
+
+<script>
+          function corrigeData(serial) {
+   
+   var criaData = new Date(serial)
+   var ano = criaData.getFullYear()
+   var mes = criaData.getMonth()+1
+   var dia = criaData.getDate()
+   if (mes<10){
+     mes = "0"+mes
+   }
+   if (dia < 10){
+     dia = "0"
+   }
+   var datafinal = dia+"/"+mes+"/"+ano
+    return datafinal 
+   }
+  //Preenche os dados da OP
+  var buscaOP = api.custom_objects.list_with_options("BR-FINEP_OPs",["_id","equal to",ordem]).results[0]
+  var datadaOP = corrigeData(buscaOP.Data)
+  document.getElementById("cabeca").innerText = "Informacoes da OP "+buscaOP.OP+" - Produto "+buscaOP.Produto
+  document.getElementById("dataOP").value = datadaOP
+  document.getElementById("codigoCliente").value = buscaOP.Cliente
+  document.getElementById("nomeCliente").value = buscaOP.Nome_Cliente
+  document.getElementById("status").value = buscaOP.Status
+  document.getElementById("tipo").value = buscaOP.Tipo_Op
+  document.getElementById("largura").value = buscaOP.Repeticao_largura
+  document.getElementById("comprimento").value = buscaOP.Repeticao_Comprimento
+  if (buscaOP.Fotocelula == "1-SIM"){
+    document.getElementById("a_cor_FC").style = "display: inline-block;"
+    document.getElementById("fotocelula").value = "Sim"
+    document.getElementById("cor_fotocelula").value = buscaOP.Cor_Fotocelula
+  } else {
+    document.getElementById("fotocelula").value = "Nao"
+  }
+  if (buscaOP.logotipo == "1-SIM"){
+    document.getElementById("a_cor_Logo").style = "display: inline-block;"
+    document.getElementById("logotipo").value = "Sim"
+    document.getElementById("cor_logotipo").value = buscaOP.Cor_logo
+  } else {
+    document.getElementById("logotipo").value = "Nao"
+  }
+  if (buscaOP.CodBarras == "1-SIM"){
+    document.getElementById("a_cor_Codigo").style = "display: inline-block;"
+    document.getElementById("codigo_barras").value = "Sim"
+    document.getElementById("cor_codigo").value = buscaOP.Cor_CodBar
+  } else {
+    document.getElementById("codigo_barras").value = "Nao"
+  }
+  if (buscaOP.Impressora != undefined){
+  document.getElementById("impressora").value = buscaOP.Impressora
+  } else {
+    document.getElementById("impressora").value = "Nao Definida na OP"
+  }
+  document.getElementById("lado").value = buscaOP.Tp_Impressao
+  document.getElementById("num_operacoes").value = buscaOP.Num_Operacoes
+  document.getElementById("sentido_puxada").value = buscaOP.Sent_Puxada
+  document.getElementById("refile").value = buscaOP.Refile
+  document.getElementById("curvas").value = buscaOP.Curvas
+  document.getElementById("teste_cut").value = buscaOP.Teste_Cut
+  document.getElementById("cilindro").value = buscaOP.Cilindro
+  document.getElementById("largura_subs").value = buscaOP.Larg_Substrato
+  document.getElementById("step").value = buscaOP.Montagem_Comprimento
+  document.getElementById("repeat").value = buscaOP.Montagem_Largura
+  if (buscaOP.rotacao_arquivo != undefined){
+    $("#rotacao_arquivo").val(buscaOP.rotacao_arquivo);
+    var info_base_rotacao = buscaOP.rotacao_arquivo
+    if (info_base_rotacao == "up"){
+          document.getElementById("imagem_rotacao").src = "assets/img/A0.png"
+        }
+        if (info_base_rotacao == "right"){
+          document.getElementById("imagem_rotacao").src = "assets/img/A90.png"
+        }
+        if (info_base_rotacao == "down"){
+          document.getElementById("imagem_rotacao").src = "assets/img/A180.png"
+        }
+        if (info_base_rotacao == "left"){
+          document.getElementById("imagem_rotacao").src = "assets/img/A-90.png"
+        }
+
+   // mudaImagemRotacao()
+  }
+
+  if (buscaOP.info_filete != undefined){
+    document.getElementById("corvazada").checked = buscaOP.info_filete.vazado
+    document.getElementById("semfilete").checked = buscaOP.info_filete.filete
+    document.getElementById("filete_entre_vinculos").checked = buscaOP.info_filete.entre_vinculos
+    document.getElementById("todas_repeticoes").checked = buscaOP.info_filete.todas_repeticoes
+    if (buscaOP.info_filete.filete1_over != undefined){
+    document.getElementById("filete1_over").checked = buscaOP.info_filete.filete1_over
+    }
+    if (buscaOP.info_filete.cores.length > 0){
+      document.getElementById("mostraFiletes").style = "display:inline-block"
+      var preenche_cores_filete = buscaOP.info_filete.cores
+      for (i=0;i<preenche_cores_filete.length;i++){
+        var numerodadiv = i+1
+        
+        document.getElementById("nome"+numerodadiv).style="display:inline-block"
+        document.getElementById("nome_"+numerodadiv).value = preenche_cores_filete[i].tinta
+        
+        document.getElementById("pct"+numerodadiv).style="display:inline-block"
+        document.getElementById("pct_"+numerodadiv).value = preenche_cores_filete[i].pct
+        
+        document.getElementById("filete"+numerodadiv).style="display:inline-block"
+        if (preenche_cores_filete[i].filete != undefined){
+        document.getElementById("filete_"+numerodadiv).value = preenche_cores_filete[i].filete
+        }
+      }
+      document.getElementById("qtasTintas").innerText = preenche_cores_filete.length
+    }
+  }
+  var tabela = document.getElementById("vinculos");
+  var qtasrow = tabela.rows.length
+  var tintas = []    
+  if (buscaOP.CONJUGADO.ITEM.length > 0){
+    
+    document.getElementById("existe_FP").style = "display: inline-block;"
+    for (i=0;i<buscaOP.CONJUGADO.ITEM.length;i++){
+     // console.log(buscaOP.CONJUGADO.ITEM[i])
+      var oFP = buscaOP.CONJUGADO.ITEM[i].Codigo_FP.replace(".","-")
+     // console.log(buscaOP.Cliente+"-"+oFP)
+      var buscaVinculo = api.custom_objects.list_with_options("BR-FINEP_Vinculos",["codigo","equal to",buscaOP.Cliente+"-"+oFP]).results
+      console.log(buscaVinculo[0])
+      if (buscaVinculo.length > 0){
+        for (j=0;j<buscaVinculo.length;j++){
+        //console.log("Encontrei o Vinculo")
+          var ascores_doArquivo = buscaVinculo[j].cores_arquivo
+          
+          for (k=0;k<ascores_doArquivo.length;k++){
+          
+              tintas.push(ascores_doArquivo[k])
+          }
+          
+        buscaOP["tintas_arquivos"] = tintas
+        
+        var row =  tabela.insertRow(qtasrow);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+        var cell10 = row.insertCell(9);
+        var cell11 = row.insertCell(10);
+
+
+        var stringRGB = "rgb(0,0,0)"
+
+        if (buscaVinculo[j].status == "1.novo" || buscaVinculo[j].status == "novo"){
+          stringRGB = "rgb(200,200,200)"
+        }
+        if (buscaVinculo[j].status == "0_semarte"){
+          stringRGB = "rgb(200,200,200)"
+        }
+        if (buscaVinculo[j].status == "2_em_execucao"){
+          stringRGB = "rgb(250,180,0)"
+        }
+        if (buscaVinculo[j].status == "3_em_pause"){
+          stringRGB = "rgb(250,250,0)"
+        }
+        if (buscaVinculo[j].status == "4_em_aprovacao"){
+          stringRGB = "rgb(0,0,250)"
+        }
+        if (buscaVinculo[j].status == "5_aprovado"){
+          stringRGB = "rgb(0,250,0)"
+        }
+        if (buscaVinculo[j].status == "6_reprovado"){
+          stringRGB = "rgb(250,0,0)"
+        }
+        if (buscaVinculo[j].status == "7_expirado"){
+          stringRGB = "rgb(100,0,0)"
+        }
+        if (buscaVinculo[j].status == "8_erro_aprovacao"){
+          stringRGB = "rgb(64,34,34)"
+        }
+        
+        //var arquivo = api.asset.list_with_options(["file_name","equal to",buscaVinculo[j].fileinfo.file_name,"and","path.7","equal to","2. Preparacao"]).results[0]
+       //var arquivo = api.asset.list_with_options(["file_name","equal to",buscaVinculo[j].fileinfo.file_name,"and","path.5","equal to","2. Preparacao"]).results[0]
+       var cod_vinc = buscaVinculo[j].codigo
+       var codi = cod_vinc.substring(0, cod_vinc.lastIndexOf("-"))
+       var versao = "V"+cod_vinc.substring(cod_vinc.lastIndexOf("-")+1)
+       var arquivo = api.asset.list_with_options(["cloudflow.enclosing_folder","contains",codi,"and","file_extension","equal to",".pdf","and","path.4","is like",versao,"and","path.5","equal to","2. Preparacao"]).results[0]
+      
+      
+       //console.log("O THUMNAIL "+arquivo.thumb)
+        // var asset = api.asset.get_by_url(arquivo)
+       if (arquivo != undefined && arquivo.thumb != undefined){
+        var thumb = arquivo.thumb
+       } else {
+        var thumb = "/portal.cgi?thumbnail=getJPEG&id=A9CBBF81FB6C520EB3DE7100"
+      } 
+
+      console.log(thumb)
+            
+       // api.custom_objects.set_keys("BR-FINEP_Vinculos",buscaVinculo[j]._id,{"thumbnail":thumb})
+       
+
+        cell1.innerHTML = '<span id="cor_etapa" style="margin-top:5px;height:90px;width:20px;background-color:'+stringRGB+';display:inline-block"></span>'
+        cell2.innerHTML = '<div style="margin: auto"><a href="'+buscaVinculo[j].proofscope.url+'" style="cursor: pointer; margin: 15px 0;" target="_blank"><img src="http://189.112.135.139:9090'+thumb+'" height="100px" width:"100px"></a></div>';
+        cell3.innerHTML = '<div style="vertical-align: middle;">'+buscaVinculo[j].codigo+'</div>';
+        cell4.innerHTML = '<div style="vertical-align: middle;">'+buscaVinculo[j].cliente+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;">'+buscaVinculo[j].descricao+'</div>';
+        cell6.innerHTML = '<div onclick="reply_start()" style="vertical-align: middle;cursor: pointer; margin: 15px 0;"><img id="oID_'+buscaVinculo[j]._id+'" src="./Icons/play.png" width="50px"></div>';
+        cell7.innerHTML = '<div onclick="reply_pause()" style="vertical-align: middle;cursor: pointer; margin: 15px 0;"><img id="oID_'+buscaVinculo[j]._id+'" src="./Icons/pause.png" width="50px"></div>';
+        cell10.innerHTML = '<div><a href="http://189.112.135.139:9090/portal.cgi/PP_FILE_STORE/Sistema/editaVinculo.html?ordem='+buscaVinculo[j]._id+'" target="_blank"><img src="./Icons/Edit.png" width="50px"></a></div>';
+        cell8.innerHTML = '<div><a href="http://189.112.135.139:9090/portal.cgi/PP_FILE_STORE/Sistema/novo_Upload_vinculo.html?ordem='+buscaVinculo[j]._id+'" style="cursor: pointer; margin: 15px 0;" target="_blank"><img src="./Icons/novo_arquivo.png" width="50px"></a></div>';
+      
+        cell9.innerHTML = '<div onclick="reply_approve()" style="vertical-align: middle;cursor: pointer; margin: 15px 0;"><img id="oID_'+buscaVinculo[j]._id+'" src="./Icons/envio_aprovacao.png" width="50px"></div>';
+        cell11.innerHTML = '<div onclick="reply_open()" style="vertical-align: middle;cursor: pointer; margin: 15px 0;"><img id="oID_'+buscaVinculo[j]._id+'" src="./Icons/folder.png" width="50px"></div>';
+
+        qtasrow = qtasrow+1
+        }
+      } else{
+    //    console.log("Nao encontrei o vinculo")
+      }
+    }
+  } else {
+    //console.log("So tem um vinculo!")
+    if (buscaOP.Arte != undefined && buscaOP.Arte != ""){
+    var oFP = buscaOP.Arte.replace(".","-")
+    //var buscaVinculo = api.custom_objects.list_with_options("BR-FINEP_Vinculos",["_id","equal to",buscaOP.Vinculos[0]]).results[0]
+    var buscaVinculo = api.custom_objects.list_with_options("BR-FINEP_Vinculos",["codigo","equal to",buscaOP.Cliente+"-"+oFP]).results
+    //console.log(buscaVinculo[0])
+    for (i=0;i<buscaVinculo[0].cores_arquivo.length;i++){
+      tintas.push(buscaVinculo[0].cores_arquivo[i])
+    }
+    
+    buscaOP["tintas_arquivos"] = tintas
+    document.getElementById("existe_FP").style = "display: inline-block;"
+    var row =  tabela.insertRow(qtasrow);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+        var cell10 = row.insertCell(9);
+        var cell11 = row.insertCell(10);
+
+
+        var stringRGB = "rgb(0,0,0)"
+
+        if (buscaVinculo[0].status == "1.novo" || buscaVinculo[0].status == "novo"){
+          stringRGB = "rgb(200,200,200)"
+        }
+        if (buscaVinculo[0].status == "0_semarte"){
+          stringRGB = "rgb(200,200,200)"
+        }
+        if (buscaVinculo[0].status == "2_em_execucao"){
+          stringRGB = "rgb(250,180,0)"
+        }
+        if (buscaVinculo[0].status == "3_em_pause"){
+          stringRGB = "rgb(250,250,0)"
+        }
+        if (buscaVinculo[0].status == "4_em_aprovacao"){
+          stringRGB = "rgb(0,0,250)"
+        }
+        if (buscaVinculo[0].status == "5_aprovado"){
+          stringRGB = "rgb(0,250,0)"
+        }
+        if (buscaVinculo[0].status == "6_reprovado"){
+          stringRGB = "rgb(250,0,0)"
+        }
+        if (buscaVinculo[0].status == "7_expirado"){
+          stringRGB = "rgb(100,0,0)"
+        }
+        if (buscaVinculo[0].status == "8_erro_aprovacao"){
+          stringRGB = "rgb(64,34,34)"
+        }
+        console.log(buscaVinculo[0].thumbnail)
+        
+        //var arquivo = api.asset.list_with_options(["file_name","equal to",buscaVinculo.fileinfo.file_name,"and","path.7","equal to","2. Preparacao"]).results[0]
+       //var arquivo = api.asset.list_with_options(["file_name","equal to",buscaVinculo[0].fileinfo.file_name,"and","path.5","equal to","2. Preparacao"]).results[0]
+       var cod_vinc = buscaVinculo[0].codigo
+       var codi = cod_vinc.substring(0, cod_vinc.lastIndexOf("-"))
+       var versao = "V"+cod_vinc.substring(cod_vinc.lastIndexOf("-")+1)
+       var arquivo = api.asset.list_with_options(["cloudflow.enclosing_folder","contains",codi,"and","file_extension","equal to",".pdf","and","path.4","is like",versao,"and","path.5","equal to","2. Preparacao"]).results[0]
+      
+       //console.log("O THUMNAIL "+arquivo.thumb)
+        // var asset = api.asset.get_by_url(arquivo)
+        if (arquivo != undefined && arquivo.thumb != undefined){
+        var thumb = arquivo.thumb
+       } else {
+        var thumb = "/portal.cgi?thumbnail=getJPEG&id=A9CBBF81FB6C520EB3DE7100"
+      } 
+
+      console.log(thumb)
+     
+        cell1.innerHTML = '<span id="cor_etapa" style="margin-top:5px;height:90px;width:20px;background-color:'+stringRGB+';display:inline-block"></span>'
+        cell2.innerHTML = '<div style="margin: auto"><a href="'+buscaVinculo[0].proofscope.url+'" style="cursor: pointer; margin: 15px 0;" target="_blank"><img src="http://189.112.135.139:9090'+thumb+'" height="100px" width:"100px"></a></div>';
+        cell3.innerHTML = '<div style="vertical-align: middle;">'+buscaVinculo[0].codigo+'</div>';
+        cell4.innerHTML = '<div style="vertical-align: middle;">'+buscaVinculo[0].cliente+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;">'+buscaVinculo[0].descricao+'</div>';
+        cell6.innerHTML = '<div onclick="reply_start()" style="vertical-align: middle;cursor: pointer; margin: 15px 0;"><img id="oID_'+buscaVinculo[0]._id+'" src="./Icons/play.png" width="50px"></div>';
+        cell7.innerHTML = '<div onclick="reply_pause()" style="vertical-align: middle;cursor: pointer; margin: 15px 0;"><img id="oID_'+buscaVinculo[0]._id+'" src="./Icons/pause.png" width="50px"></div>';
+        cell10.innerHTML = '<div><a href="http://189.112.135.139:9090/portal.cgi/PP_FILE_STORE/Sistema/editaVinculo.html?ordem='+buscaVinculo[0]._id+'" target="_blank"><img src="./Icons/Edit.png" width="50px"></a></div>';
+        cell8.innerHTML = '<div><a href="http://189.112.135.139:9090/portal.cgi/PP_FILE_STORE/Sistema/novo_Upload_vinculo.html?ordem='+buscaVinculo[0]._id+'" style="cursor: pointer; margin: 15px 0;" target="_blank"><img src="./Icons/novo_arquivo.png" width="50px"></a></div>';
+      
+        cell9.innerHTML = '<div onclick="reply_approve()" style="vertical-align: middle;cursor: pointer; margin: 15px 0;"><img id="oID_'+buscaVinculo[0]._id+'" src="./Icons/envio_aprovacao.png" width="50px"></div>';
+        cell11.innerHTML = '<div onclick="reply_open()" style="vertical-align: middle;cursor: pointer; margin: 15px 0;"><img id="oID_'+buscaVinculo[0]._id+'" src="./Icons/folder.png" width="50px"></div>';
+
+
+    
+
+    }
+      
+  }
+
+</script>
+<script>
+  function getUnique(array){
+          var uniqueArray = [];
+
+          // Loop through array values
+          for(d=0; d < array.length;++d){
+              if(uniqueArray.indexOf(array[d]) === -1) {
+                  uniqueArray.push(array[d]);
+              }
+
+
+          }
+          return uniqueArray;
+      }
+
+var tintas_limpa = getUnique(buscaOP.tintas_arquivos,"nome")
+var tintas_link = []
+//console.log("tintas link array vazio "+tintas_link)
+if (buscaOP.separacoes_saida != undefined){
+//console.log(buscaOP.separacoes_saida.length)
+for (i=0;i<buscaOP.separacoes_saida.length;i++){
+tintas_link.push(buscaOP.separacoes_saida[i])
+}
+}
+
+var preenche_cores_base = []
+var tintas_filete = []   
+function preencheCores(){
+ // $("#tabelaCores1").find("tr:gt(0)").remove();
+ //$("#tabelaCores2").find("tr:gt(0)").remove();      
+ //$("#tabelaCores3").find("tr:gt(0)").remove();      
+  
+  var cores = buscaOP.TINTAS.ITEM
+  var table = document.getElementById("tabelaCores5");
+ var qtasrow = table.rows.length
+//var table3 = document.getElementById("tabelaCores3");
+//var table2 = document.getElementById("tabelaCores2");
+  
+        for(i=0;i<cores.length;i++){
+          var a_tinta = {}
+          var sequencia = i+1
+          var nomeCor = cores[i].Nome
+          var nomeCor_busca = nomeCor.replace(" P "," PANTONE ")
+          a_tinta["nome_Totus"] = nomeCor
+          a_tinta["DP_GR"] = cores[i].DP_GR
+          if (cores[i].Angulo == undefined){
+            a_tinta["Angulo"] = ""  
+          } else {
+          a_tinta["Angulo"] = cores[i].Angulo
+          }
+          a_tinta["lpi"] = cores[i].LPI
+          a_tinta["M_Reg"] = cores[i].M_Reg
+          a_tinta["sequencia"] = sequencia
+          //console.log(a_tinta)
+          var stringRGB = "rgb(0,0,0)"
+          var row =  table.insertRow(qtasrow);
+          //var row2 = table3.insertRow(qtasrow);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          //var cell_empty = row2.insertCell(0)
+          row.style = "border-bottom: 1px solid black; height: 39.5px;"
+          //row2.style = "border-bottom: 1px solid black; height: 39.5px;"
+          var numeroTinta = i+1
+          var arquivos = []
+          if (buscaOP.CONJUGADO.ITEM.length > 0){
+            for (k=0;k<buscaOP.CONJUGADO.ITEM.length;k++){
+var codigo_cliente = buscaOP.Cliente
+var codigo_conjugado = (buscaOP.CONJUGADO.ITEM[k].Codigo_FP).replace(".","-")
+var codigo_base = codigo_cliente+"-"+codigo_conjugado
+//console.log(codigo_base)
+              //var codigo_base = buscaOP.Cliente+"-"+(buscaOP.CONJUNGADO.ITEM[k].Codigo_FP).replace(".","-")
+              //console.log(codigo_base)
+var buscaArquivos = api.custom_objects.list_with_options("BR-FINEP_Vinculos",["codigo","equal to",codigo_base]).results
+//console.log(buscaArquivos.length)
+if (buscaArquivos.length> 0){
+             arquivos.push(buscaArquivos[0])
+}
+            }
+             
+          
+          } else {
+            var codigoArte = buscaOP.Arte
+            var codigoArte_split = codigoArte.split(".")
+            if (codigoArte_split.length == 2){
+              var codigo_cliente = buscaOP.Cliente
+              var codigoArte_corrigido = codigoArte.replace(".","-")
+              var codigo_base = codigo_cliente+"-"+codigoArte_corrigido
+              var buscaArquivos = api.custom_objects.list_with_options("BR-FINEP_Vinculos",["codigo","equal to",codigo_base]).results
+//console.log(buscaArquivos.length)
+if (buscaArquivos.length> 0){
+             arquivos.push(buscaArquivos[0])
+}
+}
+
+          }
+          // busca Arquivos da OP para comaprar tintas
+          var tintas_do_arquivo = []
+          for (j=0;j<arquivos.length;j++){
+            //var buscar_pasta = encodeURI(decodeURI(pasta_preflight).substring(0,decodeURI(pasta_preflight).lastIndexOf("1. Original"))+"2. Preparacao/")
+            var ovinculo_cores = api.asset.list_with_options(["cloudflow.enclosing_folder","contains",arquivos[j].codigo.substring(0,arquivos[j].codigo.lastIndexOf("-")),"and","cloudflow.enclosing_folder","contains",arquivos[j].codigo.substring(arquivos[j].codigo.lastIndexOf("-")+1,arquivos[j].codigo.length)+"/2.%20Preparacao"]).results
+            if (ovinculo_cores.length > 0){
+          //    console.log("Encontrei o vinculo para pegar as cores")
+            
+              var cores_vinculo = ovinculo_cores[0].metadata.output_color_space.colorants
+              for (r=0;r<cores_vinculo.length;r++){
+                if (cores_vinculo[r].type != "technical"){
+                  tintas_do_arquivo.push(cores_vinculo[r].name)
+              }
+            }
+            }
+          }
+        
+          
+                            tintas_do_arquivo = getUnique(tintas_do_arquivo)
+          
+                            tintas_filete = tintas_do_arquivo
+          var existe_tinta = "red"
+          var ehPreto = new RegExp("PRETO.*")
+          var ehCyan = new RegExp("CYAN.*")
+         var ehAmarelo =  new RegExp("AMARELO.*")
+         var ehMagenta =  new RegExp("MAGENTA.*")
+         var ehBranco = new RegExp("BRANCO.*")
+        var ehPrimer = new RegExp("PRIMER.*")
+        var ehLaca = new RegExp("LACA.*")
+        var ehVernizMatte = new RegExp("VERNIZ.*")
+         var ehPantone = new RegExp(".*PANTONE.*")
+         var ehCold = new RegExp(".*COLD SEAL.*")
+         var ehHariboGold = new RegExp(".*HARIBO GOLD.*")
+         var ehHariboWhite = new RegExp(".*HARIBO WHITE.*")
+         var ehVerti = new RegExp(".*VERTI.*")
+         var ehSelante = new RegExp(".*SELANTE AQUOSO.*")
+         
+         var testaPantone = ehPantone.test(nomeCor_busca)
+
+         if (testaPantone === true){
+
+          for (p=0;p<tintas_do_arquivo.length;p++){
+          var nome_split = nomeCor_busca.substring(nomeCor_busca.indexOf("PANTONE "),nomeCor_busca.indexOf(" C "))
+      var regexPantone = new RegExp(nome_split)
+
+        var tinta_arquivo = tintas_do_arquivo[p]
+        var testaCor = regexPantone.test(tinta_arquivo.toUpperCase())
+     if (testaCor === true){ 
+       // console.log("deu TRUE para Pantone na cor "+nomeCor)
+        a_tinta["nome"] = tinta_arquivo
+     // console.log("Encontrei a tinta Pantone: "+tinta_arquivo+" para a cor "+nomeCor)
+        existe_tinta = "green"
+     }
+       // var retira = tintas_do_arquivo.splice(p,1)
+      
+      
+   
+  }
+
+  }
+
+    else {
+         
+         var testaPreto = ehPreto.test(nomeCor)
+          if (testaPreto === true){
+        //    console.log("Encontrei o preto")
+            a_tinta["nome"] = "Black"
+            existe_tinta = "green"
+          }
+          var testaCyan = ehCyan.test(nomeCor)
+          if (testaCyan === true){
+        //    console.log("Encontrei o cyan")
+            a_tinta["nome"] = "Cyan"
+            existe_tinta = "green"
+          }
+          var testaMagenta = ehMagenta.test(nomeCor)
+          if (testaMagenta === true){
+        //    console.log("Encontrei o magenta")
+            a_tinta["nome"] = "Magenta"
+            existe_tinta = "green"
+          }
+          var testaAmarelo = ehAmarelo.test(nomeCor)
+          if (testaAmarelo === true){
+        //    console.log("Encontrei o amarelo")
+            a_tinta["nome"] = "Yellow"
+            existe_tinta = "green"
+          }
+          var testaBranco = ehBranco.test(nomeCor)
+          if (testaBranco === true){
+        //    console.log("Encontrei o branco")
+            a_tinta["nome"] = "Branco"
+            existe_tinta = "green"
+          }
+          var testaPrimer = ehPrimer.test(nomeCor)
+          if (testaPrimer === true && cores[i].M_Reg !== "INVR/CHAPADOO"){
+        //    console.log("Encontrei o primer 1")
+            a_tinta["nome"] = "Primer 1"
+            existe_tinta = "green"
+          }
+          var testaPrimer = ehPrimer.test(nomeCor)
+          if (testaPrimer === true && cores[i].M_Reg === "INVR/CHAPADO"){
+        //    console.log("Encontrei o primer")
+            a_tinta["nome"] = "Primer"
+            existe_tinta = "green"
+          }
+          var testaLaca = ehLaca.test(nomeCor)
+          if (testaLaca === true){
+        //    console.log("Encontrei o laca")
+            a_tinta["nome"] = "Laca Over"
+            existe_tinta = "green"
+          }
+
+          var testaCold = ehCold.test(nomeCor)
+          if (testaCold === true){
+        //    console.log("Encontrei o cold")
+            a_tinta["nome"] = "Cold Seal"
+            existe_tinta = "green"
+          }
+          var testaHariboGold = ehHariboGold.test(nomeCor)
+          if (testaHariboGold === true){
+        //    console.log("Encontrei o Haribo Gold")
+            a_tinta["nome"] = "Haribo Gold"
+            existe_tinta = "green"
+          }
+          var testaHariboWhite = ehHariboWhite.test(nomeCor)
+          if (testaHariboWhite === true){
+        //    console.log("Encontrei o Haribo White")
+            a_tinta["nome"] = "Haribo White"
+            existe_tinta = "green"
+          }
+          var testaVerti = ehVerti.test(nomeCor)
+          if (testaVerti === true){
+        //    console.log("Encontrei o Verti")
+            a_tinta["nome"] = "Verti"
+            existe_tinta = "green"
+          }
+          var testaSelante = ehSelante.test(nomeCor)
+          if (testaSelante === true){
+        //    console.log("Encontrei o Selante Aquaso")
+            a_tinta["nome"] = "Cold Seal"
+            existe_tinta = "green"
+          }
+          var testaVernizMatte = ehVernizMatte.test(nomeCor)
+          //console.log("Testei a cor da base "+testaVernizMatte)
+          if (testaVernizMatte === true){
+        for (v=0;v<tintas_do_arquivo.length;v++){
+          var testaCorArquivo = ehVernizMatte.test(tintas_do_arquivo[v].toUpperCase())
+          console.log("teste do verniz "+tintas_do_arquivo[v]+" e o resultado foi "+testaCorArquivo)
+          if (testaCorArquivo === true){
+          a_tinta["nome"] = tintas_do_arquivo[v]
+            existe_tinta = "green"
+          }
+          
+        }  
+       }
+        }
+      //console.log(nomeCor_busca)    
+       
+      var outra_tinta = nomeCor.substring(nomeCor.indexOf(" ")+1,nomeCor.length)
+      //console.log("Outra Tinta "+outra_tinta)
+      for (p=0;p<tintas_do_arquivo.length;p++){
+        if (outra_tinta == tintas_do_arquivo[p].toUpperCase()){
+          a_tinta["nome"] = tintas_do_arquivo[p]
+            existe_tinta = "green"
+          
+        }
+      }
+     
+      
+
+    
+    
+
+//console.log(a_tinta)
+
+//console.log("Encontrei a tinta "+as_basicas)
+          
+
+
+    cell1.innerHTML = '<span style="display:inline-block;">'+numeroTinta+'</span>';
+    cell2.innerHTML = '<span style="width: 100%;">'+nomeCor+'</span>';
+    cell3.innerHTML = '<div style="margin-left:25%;"><span style="margin-top:5px;height:20px;width:20px;background-color:'+existe_tinta+';border-radius:50%;display:inline-block"></span></div>';
+    
+    qtasrow = qtasrow+1
+
+    preenche_cores_base.push(a_tinta)
+               
+              }
+
+              //preenche tintas filete
+              var options = '';
+
+for (var i = 0; i < tintas_filete.length; i++) {
+  options += '<option value="' + tintas_filete[i] + '" />';
+}
+
+document.getElementById('as_tintas_arquivo').innerHTML = options;
+
+  
+   } 
+         
+  
+  </script>
+  
+
+
+
+        <script>
+          function cancelaMudanca(){
+            window.close()
+          }
+        </script>
+        <script>
+          function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+          function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+         
+          
+          function adicionaTinta(){
+            document.getElementById("info-tinta").innerText = "Tintas Adicionadas ao arquivo"
+            var nova_info_tintas = []
+            var tintas_conjugado = buscaOP.TINTAS.ITEM
+            for (i=0;i<tintas_link.length;i++){
+              var a_tinta = tintas_link[i]
+              a_tinta["Angulo"] = tintas_conjugado[i].Angulo
+              a_tinta["codigo"] = tintas_conjugado[i].Cod
+              a_tinta["DP_GR"] = tintas_conjugado[i].DP_GR
+              a_tinta["lpi"] = tintas_conjugado[i].LPI
+              a_tinta["M_Reg"] = tintas_conjugado[i].M_Reg
+              a_tinta["nome_Totus"] = tintas_conjugado[i].Nome
+              a_tinta["sequencia"] = parseInt(tintas_conjugado[i].Seq)
+              nova_info_tintas.push(a_tinta)
+             }
+
+            api.custom_objects.set_keys("BR-FINEP_OPs",buscaOP._id,{"separacoes_saida":nova_info_tintas})
+
+            } 
+        </script>
+      
+<script>
+
+  //busca SKUs desse cliente
+
+  function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+
+
+  
+  </script>
+  
+      <script>
+        function reply_link()
+        {
+          
+            var linha = event.srcElement.id
+            //console.log(linha)
+            var linha_2 = linha.split("/")
+            console.log(linha_2[1])
+            var linha_3 = linha_2[0].split("_")
+            console.log(linha_3[1])
+            //setTimeout(() => { preencheCores() }, 1000);
+            for (i=0;i<tintas_limpa.length;i++){
+              if (tintas_limpa[i].nome == linha_2[1]){
+                var saiu = tintas_limpa.splice(i,1)
+              }
+            }
+            tintas_link.push(saiu[0])
+            preencheCores()
+        
+        }
+        </script>
+         <script>
+          function reply_unlink()
+          {
+            
+              var linha = event.srcElement.id
+              //console.log(linha)
+              var linha_2 = linha.split("/")
+              console.log(linha_2[1])
+              var linha_3 = linha_2[0].split("_")
+              console.log(linha_3[1])
+              //setTimeout(() => { preencheCores() }, 1000);
+              for (i=0;i<tintas_link.length;i++){
+              if (tintas_link[i].nome == linha_2[1]){
+              var saiu = tintas_link.splice(i,1)
+               }
+              }
+              tintas_limpa.push(saiu[0])
+              preencheCores()
+          
+          }
+          </script>
+    
+    <script>
+      function reply_start()
+{
+    var linha = event.srcElement.id
+   // console.log(linha)
+    var linha_2 = linha.split("_")
+   // console.log("A Linha 2 "+linha_2[1])
+    //console.log(linha_2[1])
+    var qualVinculo = api.custom_objects.list_with_options("BR-FINEP_Vinculos",["_id","equal to",linha_2[1]]).results[0]
+    var temposNovos = qualVinculo.tempos
+
+    if (temposNovos.length === 0){
+      var prepress = {}
+      prepress["etapa"] = "vinculo"
+      prepress["start"] = new Date()
+      prepress["finish"] = ""
+      temposNovos.push(prepress)
+      //console.log("Tempos Novos "+temposNovos)
+      api.custom_objects.set_keys("BR-FINEP_Vinculos",linha_2[1],{"tempos":temposNovos,"status":"2_em_execucao"})
+      } else {
+      if (temposNovos[temposNovos.length-1].finish != ""){
+      //console.log("Vou adicionar um tempo")
+      var prepress = {}
+      prepress["etapa"] = "vinculo"
+      prepress["start"] = new Date()
+      prepress["finish"] = ""
+      temposNovos.push(prepress)
+      api.custom_objects.set_keys("BR-FINEP_Vinculos",linha_2[1],{"tempos":temposNovos,"status":"2_em_execucao"})
+      }
+
+
+    }
+
+
+
+}
+
+    </script>
+  
+      <script>
+  function reply_pause()
+  {
+      var linha = event.srcElement.id
+      //console.log(linha)
+      var linha_2 = linha.split("_")
+     // console.log("A Linha 2 "+linha_2[1])
+      //console.log(linha_2[1])
+      var qualVinculo = api.custom_objects.list_with_options("BR-FINEP_Vinculos",["_id","equal to",linha_2[1]]).results[0]
+      var temposNovos = qualVinculo.tempos
+      temposNovos[temposNovos.length-1].finish = new Date()
+      
+      api.custom_objects.set_keys("BR-FINEP_Vinculos",linha_2[1],{"tempos":temposNovos,"status":"3_em_pause"})
+      
+  
+  }
+  </script>
+  <script>
+    function adicionaEmail(){
+      var qtosexistem = document.getElementById("qtasTintas").innerText
+          var num_qtos = parseInt(qtosexistem)
+
+          
+            var item = num_qtos+1
+
+            if (item < 6){
+            var div1 = "nome"+item
+            var div2 = "pct"+item
+            var div3 = "filete"+item
+           
+            document.getElementById(div1).style = "display:inline-block"
+            
+            document.getElementById(div2).style = "display:inline-block"
+            
+            document.getElementById(div3).style = "display:inline-block"
+            
+           
+            document.getElementById("qtasTintas").innerText = item
+            }
+        }
+    
+  </script>
+   <script>
+     function mostraCores(){
+       var estselecionada = document.getElementById("corvazada").checked
+      if (estselecionada === true){
+        document.getElementById("mostraFiletes").style = "display: none;"
+      } else {
+        
+        document.getElementById("mostraFiletes").style = "display: inline-block;"
+      }
+
+     }
+   </script>
+    <script>
+
+      $(document).ready(preencheCores())
+    </script>
+    <script>
+      function gravarOP(){
+        var qtasCores_filete = document.getElementById("qtasTintas").innerText
+        //console.log(qtasCores_filete)
+        var temFilete = document.getElementById("semfilete").checked
+        var ehvazado = document.getElementById("corvazada").checked
+        var filete_entre = document.getElementById("filete_entre_vinculos").checked
+        var filete_todos = document.getElementById("todas_repeticoes").checked
+        var filete1_over = document.getElementById("filete1_over").checked
+        var buscaFilete = parseInt(qtasCores_filete)
+        //console.log(buscaFilete)
+        var data_filete = {}
+        data_filete["vazado"] = ehvazado
+        data_filete["filete"] = temFilete
+        data_filete["entre_vinculos"] = filete_entre
+        data_filete["todas_repeticoes"] = filete_todos
+        data_filete["filete1_over"] = filete1_over
+        var cores_filete = []
+        if (ehvazado === false){
+        if (buscaFilete > 0){
+        for (i=0;i<buscaFilete;i++){
+        if (document.getElementById("nome_"+buscaFilete).value != ""){
+        var cor_filete = {}
+        var numero_cor_filete = 1+i
+        //console.log(numero_cor_filete)
+        var qualCor_filete = "nome_"+numero_cor_filete
+        //console.log(qualCor_filete)
+        var qualpct_filete = "pct_"+numero_cor_filete
+        var qualvalor_filete = "filete_"+numero_cor_filete
+        
+        //console.log(qualpct_filete)
+        cor_filete["tinta"] = document.getElementById(qualCor_filete).value
+        cor_filete["pct"] = document.getElementById(qualpct_filete).value
+        cor_filete["filete"] = document.getElementById(qualvalor_filete).value
+        
+        cores_filete.push(cor_filete)
+        }
+        }
+        }
+      }
+        data_filete["cores"] = cores_filete
+        var gravar_cores_base = []
+        for (i=0;i<preenche_cores_base.length;i++){
+          if (preenche_cores_base[i].nome != undefined){
+            gravar_cores_base.push(preenche_cores_base[i])
+          }
+        }
+        var rotacao_arquivo = document.getElementById("rotacao_arquivo").value
+        if (rotacao_arquivo == "SEL"){
+          alert("Selecionar rotacao do arquivo")
+        } else {
+          console.log(data_filete)
+         api.custom_objects.set_keys("BR-FINEP_OPs",buscaOP._id,{"info_filete":data_filete,"rotacao_arquivo":rotacao_arquivo,"separacoes_saida":gravar_cores_base})
+        }
+        location.reload()
+      }
+      
+    </script>
+    <script>
+      function reply_SR(){
+    //var linha = event.srcElement.id
+    //var linha_2 = linha.split("_")
+    //var qualBuscar = linha_2[1]
+    //console.log(qualBuscar)
+    var buscaOPnaBase = buscaOP//api.custom_objects.list_with_options("BR-FINEP_OPs",["_id","equal to",qualBuscar]).results[0]
+    var numero = buscaOPnaBase.OP
+    var arquivo_xml = numero+".xml"
+    var manda_xml = api.hub.start_from_whitepaper_with_files_and_variables("CriaBase_XML","update_montagem",[arquivo_xml],{"arquivo":arquivo_xml}).workable_id
+//    console.log(manda_xml.workable_id)
+
+    // FUNCAO QUE ESPERA UM FLUXO TERMINAR PARA DISPARAR OUTRO
+
+    var workableConsoleLog = function ()  {
+
+      console.log(manda_xml)
+      var o_estado = api.hub.get_variables_from_workable(manda_xml,["status"]).variables["status"]
+        
+   //   var statusWorkable = api.workable.get_progress(manda_xml)
+      
+      console.log("Finalizou "+o_estado)
+      if (o_estado === "finalizado"){
+        
+        if (buscaOPnaBase.TINTAS.ITEM.length == 0){
+          alert("Nao ha tintas cadastradas na OP")
+      } else {
+      if (buscaOPnaBase.separacoes_saida === undefined){
+          alert("Por favor, Salvar as Tintas da OP "+buscaOPnaBase.OP)
+      } else {
+        if (buscaOPnaBase.separacoes_saida.length == buscaOPnaBase.TINTAS.ITEM.length){
+          if (confirm("Fazer a montagem da OP "+buscaOPnaBase.OP)){
+           
+            var infoFluxo = {}
+            infoFluxo["cilindro"] = parseFloat(buscaOPnaBase.Cilindro.replace(",","."))
+            infoFluxo["cod_cliente"] = buscaOPnaBase.Cliente
+            infoFluxo["nome_cliente"] = buscaOPnaBase.Nome_Cliente
+            infoFluxo["OP"] = buscaOPnaBase.OP
+            infoFluxo["Produto"] = buscaOPnaBase.Produto
+            infoFluxo["largura_arte"] = parseFloat(buscaOPnaBase.Repeticao_largura.replace(",","."))
+            infoFluxo["altura_arte"] = parseFloat(buscaOPnaBase.Repeticao_Comprimento.replace(",","."))
+            infoFluxo["refile"] = buscaOPnaBase.Refile
+            infoFluxo["camada"] = buscaOPnaBase.Tp_Impressao.toLowerCase()
+            if (buscaOPnaBase.Impressora != undefined){
+              infoFluxo["marca"] = buscaOPnaBase.Impressora
+            } else {
+              infoFluxo["marca"] = ""
+            }
+            infoFluxo["largura_substrato"] = parseFloat(buscaOPnaBase.Larg_Substrato.replace(",","."))
+            var os_vinculos = buscaOPnaBase.Vinculos
+            var montagem = []
+            if (buscaOPnaBase.CONJUGADO.ITEM.length > 0){
+              var conjugados = buscaOPnaBase.CONJUGADO.ITEM
+              for (i=0;i<conjugados.length;i++){
+                var info_montagem = {}
+                info_montagem["id_vinculo"] = os_vinculos[i]
+                info_montagem["repeat"] = conjugados[i].Faixas
+                info_montagem["step"] = parseInt(buscaOPnaBase.Montagem_Comprimento)
+                montagem.push(info_montagem)
+              }
+            } 
+            else {
+              var info_montagem = {}
+              info_montagem["id_vinculo"] = os_vinculos[0]
+              info_montagem["repeat"] = parseInt(buscaOPnaBase.Montagem_Largura)
+              info_montagem["step"] = parseInt(buscaOPnaBase.Montagem_Comprimento)
+              montagem.push(info_montagem)
+            }
+            infoFluxo["montagem"] = montagem
+            // console.log(infoFluxo)
+            api.hub.start_from_whitepaper_with_files_and_variables("BR-FINEP_Montagem Vinculo OP","montagem_op",[],infoFluxo)
+            myStopFunction();
+          } 
+          else {
+            myStopFunction();
+          }
+        }
+        else {
+          alert("Nao foi possivel encontrar todas as tintas da OP "+buscaOPnaBase.OP+" nos arquivos!")
+          myStopFunction();
+        }          
+       
+      }
+    }
+		
+  }
+      
+      
+      
+}
+var workflowTimeout = setInterval(workableConsoleLog, 4000);
+		function myStopFunction() {
+     clearInterval(workflowTimeout);
+    }
+
+  }
+    </script>
+    <script>
+      function apagaCorFilete(){
+        var linha = event.srcElement.id
+        //console.log(linha)
+        var linha_split = linha.split("_")
+
+        var quetexto = document.getElementById(linha).value
+        //console.log(quetexto)
+        if (quetexto == ""){
+          //console.log("Estou dentro do IF")
+        if (linha_split[1] == document.getElementById("qtasTintas").innerText){
+          document.getElementById(linha.replace("_","")).style = "display:none"
+        var a_pct = linha.replace("nome","pct")
+        document.getElementById(a_pct).value = ""
+        document.getElementById(a_pct.replace("_","")).style = "display:none"
+        
+        var qtdeAtual = document.getElementById("qtasTintas").innerText
+        var novaqtde = parseInt(qtdeAtual)-1
+        document.getElementById("qtasTintas").innerText = novaqtde
+      }
+    }
+    }
+    </script>
+    <script>
+      function mudaImagemRotacao(){
+        var infoRotacao = document.getElementById("rotacao_arquivo").value
+        if (infoRotacao == "up"){
+          document.getElementById("imagem_rotacao").src = "assets/img/A0.png"
+        }
+        if (infoRotacao == "right"){
+          document.getElementById("imagem_rotacao").src = "assets/img/A90.png"
+        }
+        if (infoRotacao == "down"){
+          document.getElementById("imagem_rotacao").src = "assets/img/A180.png"
+        }
+        if (infoRotacao == "left"){
+          document.getElementById("imagem_rotacao").src = "assets/img/A-90.png"
+        }
+
+
+      }
+    </script>
+</body>
+  
+</html>

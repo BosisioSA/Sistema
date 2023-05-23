@@ -1,0 +1,1795 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Fluxos de Aprovação - Finepack</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/upload/js/upload-controller.js'></script>
+        <script src="js/popper.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+          function logout() {
+               $.cookie('user_id', '', { expires: -1, path: '/' });
+               $.cookie('user_hash', '', { expires: -1, path: '/' });
+               $.cookie('expiration_date', '', { expires: -1, path: '/' });
+               $.cookie('customer_id', '', { expires: -1, path: '/' });
+               $.cookie('customer_name', '', { expires: -1, path: '/' });
+               $.cookie('username', '', { expires: -1, path: '/' });
+               $.cookie('scope', '', { expires: -1, path: '/' });
+               var lSession = api_sync.auth.create_session('', ''); // fecha sessao do CloudFlow
+               var l_url = '/portal.cgi/PP_FILE_STORE/Public/Login/login.html'
+               window.location.href = l_url;
+               //window.location.href = '?upload=done';
+          }
+             
+           
+       </script>
+
+<script>
+        
+  function limpa_formulário_cep() {
+      //Limpa valores do formulário de cep.
+      document.getElementById('rua').value=("");
+      document.getElementById('bairro').value=("");
+      document.getElementById('cidade').value=("");
+      document.getElementById('uf').value=("");
+}
+
+function meu_callback(conteudo) {
+  if (!("erro" in conteudo)) {
+      //Atualiza os campos com os valores.
+      document.getElementById('rua').value=(conteudo.logradouro);
+      document.getElementById('bairro').value=(conteudo.bairro);
+      document.getElementById('cidade').value=(conteudo.localidade);
+      document.getElementById('uf').value=(conteudo.uf);
+  } //end if.
+  else {
+      //CEP não Encontrado.
+      limpa_formulário_cep();
+      alert("CEP não encontrado.");
+  }
+}
+  
+      function pesquisacep(valor) {
+
+  //Nova variável "cep" somente com dígitos.
+  var cep = valor.replace(/\D/g, '');
+
+  //Verifica se campo cep possui valor informado.
+  if (cep != "") {
+
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
+
+      //Valida o formato do CEP.
+      if(validacep.test(cep)) {
+
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="...";
+          document.getElementById('bairro').value="...";
+          document.getElementById('cidade').value="...";
+          document.getElementById('uf').value="...";
+
+          //Cria um elemento javascript.
+          var script = document.createElement('script');
+
+          //Sincroniza com o callback.
+          script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+          //Insere script no documento e carrega o conteúdo.
+          document.body.appendChild(script);
+
+      } //end if.
+      else {
+          //cep é inválido.
+          limpa_formulário_cep();
+          alert("Formato de CEP inválido.");
+      }
+  } //end if.
+  else {
+      //cep sem valor, limpa formulário.
+      limpa_formulário_cep();
+  }
+};
+
+</script>
+    </head>
+
+
+    <body onload="preencheLista()">
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/finepack.png" style="width: 70%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Vinculo
+                  <ul>
+                  <li style="list-style-type: none">
+                     <a href="Upload_Interno.html"><i class="fas fa-file-upload" style="margin-right: 5px"></i>Novo Upload</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="uploads.html"><i class="fas fa-satellite-dish" style="margin-right: 5px"></i>Uploads</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="artes.html"><i class="fas fa-paint-brush" style="margin-right: 5px"></i>Artes</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="vinculos.html"><i class="fas fa-link" style="margin-right: 5px"></i>Vinculos</a>
+                    </li>
+                    </ul>
+                    </li>
+                    
+                    <li style="color: #004b93;list-style-type: none">OP
+                    <ul>
+                    <li style="list-style-type: none">
+                      <a href="skus.html"><i class="fas fa-search" style="margin-right: 5px"></i>Busca SKUs</a>
+                    </li>
+                    <li style="list-style-type: none">
+                    <a href="OP_Abertas.html"><i class="fas fa-tools" style="margin-right: 5px"></i>OPs Abertas</a>
+                  </li>
+                  </ul>
+                  </li>
+                  <li style="color: #004b93;list-style-type: none">Clientes
+                    <ul>
+                    <li class="active" style="list-style-type: none">
+                      <a href="fluxos.html"><i class="fas fa-thumbs-up" style="margin-right: 5px"></i>Cadastro Fluxos Aprovação</a>
+                    </li>
+                    <li style="list-style-type: none">
+                      <a href="clientes.html"><i class="fas fa-user-friends" style="margin-right: 5px"></i>Cadastro Clientes</a>
+                    </li>
+                    </ul>
+                    </li>
+          <!--<li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Paginas Administrativas</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="artes.html">Artes</a>
+                </li>
+              </ul>
+            </li>-->
+          </ul>
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+             <div class="col-md-5" id="bemvindo"></div>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2>Lista Fluxos Aprovacao</h2>
+        <div class="form-group col-md-3" style="display:inline-block;">
+          <label for="desc">Cliente</label>
+          <input type="text" onkeyup="filtro()" class="form-control" id="desc" name="desc">
+          </div>
+          <div class="form-group col-md-3" style="display:inline-block;">
+            <label for="fluxo">Fluxo</label>
+            <input type="text" onkeyup="filtro2()" class="form-control" id="fluxo" name="fluxo">
+            </div>
+            <section class="form-group col-md-4" style="display:inline-block"></section>
+
+        <button onclick="cadastrarFluxo()" class="btn-primary">Criar Novo Fluxo</button>
+        <br>
+        <div id="acaoUpload" style="display: none"></div><div id="idatual" style="display: none">1</div>
+        <br>
+        <div id="formulario" style="display:none;">
+          
+         <form id="formularioUser">
+          <div class="form-group col-md-2" style="display:inline-block;">
+            <label for="cod_Cliente">Código Cliente</label>
+            <input type="text" onchange="procuraNome()" class="form-control" id="cod_Cliente" name="cod_Cliente" list="os_clientes">
+            <datalist id="os_clientes">
+            </datalist>
+            </div>
+            <div class="form-group col-md-4" style="display:inline-block;">
+              <label for="nome_Cliente">Nome Cliente</label>
+              <input type="text" class="form-control" id="nome_Cliente" name="nome_Cliente" readonly>
+              </div>
+              <div class="form-group col-md-5" style="display:inline-block;">
+                <label for="nome_Fluxo">Nome Fluxo</label>
+                <input type="text" class="form-control" id="nome_Fluxo" name="nome_Fluxo">
+                </div>
+              <div class="form-group col-md-3" style="display:none;">
+                <input type="text" class="form-control" id="nome_User" name="nome_User" readonly>
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block; padding-right: 8px;">
+                  <label for="tipoFluxo">Fluxo</label>
+                  <select class="form-control" id="tipoFluxo" name="tipoFluxo">
+                    <option>PDF</option>
+                    <option>PDF-GMG</option>
+                    <option>PDF-GMG-GMS</option>
+                    <option>PDF-GMS</option>
+                    <option>GMG</option>
+                    <option>GMG-GMS</option>
+                    <option>GMS</option>
+                  </select>
+                </div>
+              
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="vias">Vias Prova</label>
+                  <input type="number" class="form-control" id="vias" name="vias" min="0" value="0">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block; padding-right: 8px;">
+                  <label for="logo">Logo</label>
+                  <select class="form-control" id="logo" name="logo">
+                    <option>Selecionar</option>
+                    <option>Sim</option>
+                    <option>Nao</option>
+                    <option>Cliente</option>
+                  </select>
+                </div><br>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="tipo_aprovacao">Tipo de Aprovação</label>
+                  <select class="form-control" id="tipo_aprovacao" onchange="muda_etapas()" name="tipo_aprovacao">
+                    <option value="1">Etapa Unica</option>
+                    <option value="2">Duas Etapas</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label id="label_aprova1" for="apro_etapa1">Aprovação Necessária</label>
+                  <select class="form-control" id="apro_etapa1"  name="apro_etapa1">
+                    <option value="Any">Qualquer Pessoa</option>
+                    <option value="All">Todos</option>
+                  </select>
+                </div>
+                <div id="mostra_segunda_etapa" class="form-group col-md-3" style="display:none; padding-right: 8px;">
+                  <label id="label_aprova2" for="apro_etapa2">Aprovação Etapa 2</label>
+                  <select class="form-control" id="apro_etapa2"  name="apro_etapa2">
+                    <option value="Any">Qualquer Pessoa</option>
+                    <option value="All">Todos</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block; padding-right: 8px;">
+                  <input type="checkbox" id="add_observa" onchange="muda_observa()" name="add_observa">
+                  <label for="add_observa">Com Observadores</label>
+                </div>
+                <hr>
+                <h5>Aprovadores</h5>
+                <br>
+                <div style="display:none;" id="qtosemails">1</div>
+                <span><img src="Icons/icone_mais.png" onclick="adicionaEmail()" height="30px"></span><span style="margin-left: 10px;"><img src="Icons/icone_menos.png" onclick="removeEmail()" height="30px"></span>
+                <div class="form-group col-md-11" style="display:inline-block;">
+                  <div class="form-group col-md-3" id="nome1" style="display:inline-block;">
+                    <label for="nome_1">Nome</label>
+                    <input type="text" class="form-control" id="nome_1" name="nome_1">
+                  </div>
+                <div class="form-group col-md-3" id="email1" style="display:inline-block;">
+                  <label for="email_1">E-mail</label>
+                  <input type="text" class="form-control" id="email_1" name="email_1">
+                </div>
+                <div class="form-group col-md-3" id="setor1" style="display:inline-block;">
+                  <label for="setor_1">Setor</label>
+                  <input type="text" class="form-control" id="setor_1" name="setor_1">
+                </div>
+                <div class="form-group col-md-1" id="etapa11" style="display:none;">
+                  <label for="etapa1_1">1a</label>
+                  <input type="checkbox" id="etapa1_1" name="etapa1_1">
+                </div>
+                <div class="form-group col-md-1" id="etapa21" style="display:none;">
+                  <label for="etapa2_1">2a</label>
+                  <input type="checkbox" id="etapa2_1" name="etapa2_1">
+                </div>
+                <div class="form-group col-md-3" id="nome2" style="display:none;">
+                  <input type="text" class="form-control" id="nome_2" name="nome_2">
+                </div>
+                <div class="form-group col-md-3" id="email2" style="display:none;">
+                  <input type="text" class="form-control" id="email_2" name="email_2">
+                </div>
+                <div class="form-group col-md-3" id="setor2" style="display:none;">
+                  <input type="text" class="form-control" id="setor_2" name="setor_2">
+                </div>
+                <div class="form-group col-md-1" id="etapa12" style="display:none;">
+                  <label for="etapa1_2">1a</label>
+                  <input type="checkbox" id="etapa1_2" name="etapa1_2">
+                </div>
+                <div class="form-group col-md-1" id="etapa22" style="display:none;">
+                  <label for="etapa2_2">2a</label>
+                  <input type="checkbox" id="etapa2_2" name="etapa2_2">
+                </div>
+                <div class="form-group col-md-3" id="nome3" style="display:none;">
+                  <input type="text" class="form-control" id="nome_3" name="nome_3">
+                </div>
+                <div class="form-group col-md-3"  id="email3" style="display:none;">
+                  <input type="text" class="form-control" id="email_3" name="email_3">
+                </div>
+                <div class="form-group col-md-3" id="setor3" style="display:none;">
+                  <input type="text" class="form-control" id="setor_3" name="setor_3">
+                </div>
+                <div class="form-group col-md-1" id="etapa13" style="display:none;">
+                  <label for="etapa1_3">1a</label>
+                  <input type="checkbox" id="etapa1_3" name="etapa1_3">
+                </div>
+                <div class="form-group col-md-1" id="etapa23" style="display:none;">
+                  <label for="etapa2_3">2a</label>
+                  <input type="checkbox" id="etapa2_3" name="etapa2_3">
+                </div>
+                <div class="form-group col-md-3" id="nome4" style="display:none;">
+                  <input type="text" class="form-control" id="nome_4" name="nome_4">
+                </div>
+                <div class="form-group col-md-3" id="email4" style="margin-left:73px; display:none;">
+                  <input type="text" class="form-control" id="email_4" name="email_4">
+                </div>
+                <div class="form-group col-md-3" id="setor4" style="display:none;">
+                  <input type="text" class="form-control" id="setor_4" name="setor_4">
+                </div>
+                <div class="form-group col-md-1" id="etapa14" style="display:none;">
+                  <label for="etapa1_4">1a</label>
+                  <input type="checkbox" id="etapa1_4" name="etapa1_4">
+                </div>
+                <div class="form-group col-md-1" id="etapa24" style="display:none;">
+                  <label for="etapa2_4">2a</label>
+                  <input type="checkbox" id="etapa2_4" name="etapa2_4">
+                </div>
+                <div class="form-group col-md-3" id="nome5" style="display:none;">
+                  <input type="text" class="form-control" id="nome_5" name="nome_5">
+                </div>
+                <div class="form-group col-md-3"  id="email5" style="display:none;">
+                  <input type="text" class="form-control" id="email_5" name="email_5">
+                </div>
+                <div class="form-group col-md-3" id="setor5" style="display:none;">
+                  <input type="text" class="form-control" id="setor_5" name="setor_5">
+                </div>
+                <div class="form-group col-md-1" id="etapa15" style="display:none;">
+                  <label for="etapa1_5">1a</label>
+                  <input type="checkbox" id="etapa1_5" name="etapa1_5">
+                </div>
+                <div class="form-group col-md-1" id="etapa25" style="display:none;">
+                  <label for="etapa2_5">2a</label>
+                  <input type="checkbox" id="etapa2_5" name="etapa2_5">
+                </div>
+                <div class="form-group col-md-3" id="nome6" style="display:none;">
+                  <input type="text" class="form-control" id="nome_6" name="nome_6">
+                </div>
+                <div class="form-group col-md-3" id="email6" style="display:none;">
+                  <input type="text" class="form-control" id="email_6" name="email_6">
+                </div>
+                <div class="form-group col-md-3" id="setor6" style="display:none;">
+                  <input type="text" class="form-control" id="setor_6" name="setor_6">
+                </div>
+                <div class="form-group col-md-1" id="etapa16" style="display:none;">
+                  <label for="etapa1_6">1a</label>
+                  <input type="checkbox" id="etapa1_6" name="etapa1_6">
+                </div>
+                <div class="form-group col-md-1" id="etapa26" style="display:none;">
+                  <label for="etapa2_6">2a</label>
+                  <input type="checkbox" id="etapa2_6" name="etapa2_6">
+                </div>
+                <div class="form-group col-md-3" id="nome7" style="display:none;">
+                  <input type="text" class="form-control" id="nome_7" name="nome_7">
+                </div>
+                <div class="form-group col-md-3" id="email7" style="margin-left:73px; display:none;">
+                  <input type="text" class="form-control" id="email_7" name="email_7">
+                </div>
+                <div class="form-group col-md-3" id="setor7" style="display:none;">
+                  <input type="text" class="form-control" id="setor_7" name="setor_7">
+                </div>
+                <div class="form-group col-md-1" id="etapa17" style="display:none;">
+                  <label for="etapa1_7">1a</label>
+                  <input type="checkbox" id="etapa1_7" name="etapa1_7">
+                </div>
+                <div class="form-group col-md-1" id="etapa27" style="display:none;">
+                  <label for="etapa2_7">2a</label>
+                  <input type="checkbox" id="etapa2_7" name="etapa2_7">
+                </div>
+                <div class="form-group col-md-3" id="nome8" style="display:none;">
+                  <input type="text" class="form-control" id="nome_8" name="nome_8">
+                </div>
+                <div class="form-group col-md-3" id="email8" style="display:none;">
+                  <input type="text" class="form-control" id="email_8" name="email_8">
+                </div>
+                <div class="form-group col-md-3" id="setor8" style="display:none;">
+                  <input type="text" class="form-control" id="setor_8" name="setor_8">
+                </div>
+                <div class="form-group col-md-1" id="etapa18" style="display:none;">
+                  <label for="etapa1_8">1a</label>
+                  <input type="checkbox" id="etapa1_8" name="etapa1_8">
+                </div>
+                <div class="form-group col-md-1" id="etapa28" style="display:none;">
+                  <label for="etapa2_8">2a</label>
+                  <input type="checkbox" id="etapa2_8" name="etapa2_8">
+                </div>
+                <div class="form-group col-md-3" id="nome9" style="display:none;">
+                  <input type="text" class="form-control" id="nome_9" name="nome_9">
+                </div>
+                <div class="form-group col-md-3" id="email9" style="display:none;">
+                  <input type="text" class="form-control" id="email_9" name="email_9">
+                </div>
+                <div class="form-group col-md-3" id="setor9" style="display:none;">
+                  <input type="text" class="form-control" id="setor_9" name="setor_9">
+                </div>
+                <div class="form-group col-md-1" id="etapa19" style="display:none;">
+                  <label for="etapa1_9">1a</label>
+                  <input type="checkbox" id="etapa1_9" name="etapa1_9">
+                </div>
+                <div class="form-group col-md-1" id="etapa29" style="display:none;">
+                  <label for="etapa2_9">2a</label>
+                  <input type="checkbox" id="etapa2_9" name="etapa2_9">
+                </div>
+                </div>
+                
+                <hr>
+                <div id="mostra_observadores" style="display: none;">
+                <h5>Observadores</h5>
+                <br>
+                <div style="display:none;" id="qtosobserva">1</div>
+                <span><img src="Icons/icone_mais.png" onclick="adicionaObserva()" height="30px"></span><span style="margin-left: 10px;"><img src="Icons/icone_menos.png" onclick="removeObserva()" height="30px"></span>
+                <div class="form-group col-md-11" style="display:inline-block;">
+                  <div class="form-group col-md-3" id="nomeobs1" style="display:inline-block;">
+                    <label for="nomeobs_1">Nome</label>
+                    <input type="text" class="form-control" id="nomeobs_1" name="nomeobs_1">
+                  </div>
+                <div class="form-group col-md-3" id="emailobs1" style="display:inline-block;">
+                  <label for="emailobs_1">E-mail</label>
+                  <input type="text" class="form-control" id="emailobs_1" name="emailobs_1">
+                </div>
+                <div class="form-group col-md-3" id="setorobs1" style="display:inline-block;">
+                  <label for="setorobs_1">Setor</label>
+                  <input type="text" class="form-control" id="setorobs_1" name="setorobs_1">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs11" style="display:none;">
+                  <label for="etapaobs1_1">1a</label>
+                  <input type="checkbox" id="etapaobs1_1" name="etapaobs1_1">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs21" style="display:none;">
+                  <label for="etapaobs2_1">2a</label>
+                  <input type="checkbox" id="etapaobs2_1" name="etapaobs2_1">
+                </div>
+                <div class="form-group col-md-3" id="nomeobs2" style="display:none;">
+                  <input type="text" class="form-control" id="nomeobs_2" name="nomeobs_2">
+                </div>
+                <div class="form-group col-md-3" id="emailobs2" style="display:none;">
+                  <input type="text" class="form-control" id="emailobs_2" name="emailobs_2">
+                </div>
+                <div class="form-group col-md-3" id="setorobs2" style="display:none;">
+                  <input type="text" class="form-control" id="setorobs_2" name="setorobs_2">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs12" style="display:none;">
+                  <label for="etapaobs1_2">1a</label>
+                  <input type="checkbox" id="etapaobs1_2" name="etapaobs1_2">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs22" style="display:none;">
+                  <label for="etapaobs2_2">2a</label>
+                  <input type="checkbox" id="etapaobs2_2" name="etapaobs2_2">
+                </div>
+                <div class="form-group col-md-3" id="nomeobs3" style="display:none;">
+                  <input type="text" class="form-control" id="nomeobs_3" name="nomeobs_3">
+                </div>
+                <div class="form-group col-md-3"  id="emailobs3" style="display:none;">
+                  <input type="text" class="form-control" id="emailobs_3" name="emailobs_3">
+                </div>
+                <div class="form-group col-md-3" id="setorobs3" style="display:none;">
+                  <input type="text" class="form-control" id="setorobs_3" name="setorobs_3">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs13" style="display:none;">
+                  <label for="etapaobs1_3">1a</label>
+                  <input type="checkbox" id="etapaobs1_3" name="etapaobs1_3">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs23" style="display:none;">
+                  <label for="etapaobs2_3">2a</label>
+                  <input type="checkbox" id="etapaobs2_3" name="etapaobs2_3">
+                </div>
+                <div class="form-group col-md-3" id="nomeobs4" style="display:none;">
+                  <input type="text" class="form-control" id="nomeobs_4" name="nomeobs_4">
+                </div>
+                <div class="form-group col-md-3" id="emailobs4" style="margin-left:73px; display:none;">
+                  <input type="text" class="form-control" id="emailobs_4" name="emailobs_4">
+                </div>
+                <div class="form-group col-md-3" id="setorobs4" style="display:none;">
+                  <input type="text" class="form-control" id="setorobs_4" name="setorobs_4">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs14" style="display:none;">
+                  <label for="etapaobs1_4">1a</label>
+                  <input type="checkbox" id="etapaobs1_4" name="etapaobs1_4">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs24" style="display:none;">
+                  <label for="etapaobs2_4">2a</label>
+                  <input type="checkbox" id="etapaobs2_4" name="etapaobs2_4">
+                </div>
+                <div class="form-group col-md-3" id="nomeobs5" style="display:none;">
+                  <input type="text" class="form-control" id="nomeobs_5" name="nomeobs_5">
+                </div>
+                <div class="form-group col-md-3"  id="emailobs5" style="display:none;">
+                  <input type="text" class="form-control" id="emailobs_5" name="emailobs_5">
+                </div>
+                <div class="form-group col-md-3" id="setorobs5" style="display:none;">
+                  <input type="text" class="form-control" id="setorobs_5" name="setorobs_5">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs15" style="display:none;">
+                  <label for="etapaobs1_5">1a</label>
+                  <input type="checkbox" id="etapaobs1_5" name="etapaobs1_5">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs25" style="display:none;">
+                  <label for="etapaobs2_5">2a</label>
+                  <input type="checkbox" id="etapaobs2_5" name="etapaobs2_5">
+                </div>
+                <div class="form-group col-md-3" id="nomeobs6" style="display:none;">
+                  <input type="text" class="form-control" id="nomeobs_6" name="nomeobs_6">
+                </div>
+                <div class="form-group col-md-3" id="emailobs6" style="display:none;">
+                  <input type="text" class="form-control" id="emailobs_6" name="emailobs_6">
+                </div>
+                <div class="form-group col-md-3" id="setorobs6" style="display:none;">
+                  <input type="text" class="form-control" id="setorobs_6" name="setorobs_6">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs16" style="display:none;">
+                  <label for="etapaobs1_6">1a</label>
+                  <input type="checkbox" id="etapaobs1_6" name="etapaobs1_6">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs26" style="display:none;">
+                  <label for="etapaobs2_6">2a</label>
+                  <input type="checkbox" id="etapaobs2_6" name="etapaobs2_6">
+                </div>
+                <div class="form-group col-md-3" id="nomeobs7" style="display:none;">
+                  <input type="text" class="form-control" id="nomeobs_7" name="nomeobs_7">
+                </div>
+                <div class="form-group col-md-3" id="emailobs7" style="margin-left:73px; display:none;">
+                  <input type="text" class="form-control" id="emailobs_7" name="emailobs_7">
+                </div>
+                <div class="form-group col-md-3" id="setorobs7" style="display:none;">
+                  <input type="text" class="form-control" id="setorobs_7" name="setorobs_7">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs17" style="display:none;">
+                  <label for="etapaobs1_7">1a</label>
+                  <input type="checkbox" id="etapaobs1_7" name="etapaobs1_7">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs27" style="display:none;">
+                  <label for="etapaobs2_7">2a</label>
+                  <input type="checkbox" id="etapaobs2_7" name="etapaobs2_7">
+                </div>
+                <div class="form-group col-md-3" id="nomeobs8" style="display:none;">
+                  <input type="text" class="form-control" id="nomeobs_8" name="nomeobs_8">
+                </div>
+                <div class="form-group col-md-3" id="emailobs8" style="display:none;">
+                  <input type="text" class="form-control" id="emailobs_8" name="emailobs_8">
+                </div>
+                <div class="form-group col-md-3" id="setorobs8" style="display:none;">
+                  <input type="text" class="form-control" id="setorobs_8" name="setorobs_8">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs18" style="display:none;">
+                  <label for="etapaobs1_8">1a</label>
+                  <input type="checkbox" id="etapaobs1_8" name="etapaobs1_8">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs28" style="display:none;">
+                  <label for="etapaobs2_8">2a</label>
+                  <input type="checkbox" id="etapaobs2_8" name="etapaobs2_8">
+                </div>
+                <div class="form-group col-md-3" id="nomeobs9" style="display:none;">
+                  <input type="text" class="form-control" id="nomeobs_9" name="nomeobs_9">
+                </div>
+                <div class="form-group col-md-3" id="emailobs9" style="display:none;">
+                  <input type="text" class="form-control" id="emailobs_9" name="emailobs_9">
+                </div>
+                <div class="form-group col-md-3" id="setorobs9" style="display:none;">
+                  <input type="text" class="form-control" id="setorobs_9" name="setorobs_9">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs19" style="display:none;">
+                  <label for="etapaobs1_9">1a</label>
+                  <input type="checkbox" id="etapaobs1_9" name="etapaobs1_9">
+                </div>
+                <div class="form-group col-md-1" id="etapaobs29" style="display:none;">
+                  <label for="etapaobs2_9">2a</label>
+                  <input type="checkbox" id="etapaobs2_9" name="etapaobs2_9">
+                </div>
+                </div>
+                </div>
+                
+                <hr>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="cep">CEP</label>
+                  <input type="text" class="form-control" id="cep" name="cep" value="" size="10" maxlength="9"
+                 onblur="pesquisacep(this.value);">
+                </div>
+                <div class="form-group col-md-6" style="display:inline-block;">
+                  <label for="rua">Rua</label>
+                  <input type="text" class="form-control" id="rua" name="rua">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="numero">Numero</label>
+                  <input type="text" class="form-control" id="numero" name="numero">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="bairro">Bairro</label>
+                  <input type="text" class="form-control" id="bairro" name="bairro">
+                </div>
+                <div class="form-group col-md-6" style="display:inline-block;">
+                  <label for="cidade">Cidade</label>
+                  <input type="text" class="form-control" id="cidade" name="cidade">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="uf">Estado</label>
+                  <input type="text" class="form-control" id="uf" name="uf">
+                </div>
+                
+              <hr>
+          
+            
+          </form>                
+           
+                <button id="botaoSalvar" class="btn-primary" onclick="salvaFluxo()">Salvar Fluxo</button>
+                <br>
+           <br>
+           <hr>
+           </div>
+           <br>
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th class="th-sm" style="width:5%">Codigo
+        </th>
+        <th class="th-sm" style="width:10%">Nome
+        </th>
+        <th class="th-sm" style="width:10%">Fluxo
+        </th>
+        <th class="th-sm" style="width:3%">PDF
+        </th>
+        <th class="th-sm" style="width:3%">GMG
+        </th>
+        <th class="th-sm" style="width:3%">GMS
+        </th>
+        <th class="th-sm" style="width:3%">Vias
+        </th>
+        <th class="th-sm" style="width:20%">Aprovadores
+        </th>
+        <th class="th-sm" style="width:5%">Duplicar
+        </th>
+        <th class="th-sm" style="width:5%">Editar
+        </th>
+        <th class="th-sm" style="width:5%">Deletar
+      </th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+        </div>
+  		</div>
+
+      <script>
+        function adicionaEmail(){
+            var qtas_etapas = document.getElementById("tipo_aprovacao").value
+          var qtosexistem = document.getElementById("qtosemails").innerText
+          var num_qtos = parseInt(qtosexistem)
+
+          
+            var item = num_qtos+1
+
+            console.log("Item "+item)
+            var div1 = "nome"+item
+            var div2 = "email"+item
+            var div3 = "setor"+item
+            var div4 = "etapa1"+item
+            var div5 = "etapa2"+item
+
+        
+
+            document.getElementById(div1).style = "display:inline-block"
+            
+            document.getElementById(div2).style = "display:inline-block"
+            
+            document.getElementById(div3).style = "display:inline-block"
+            
+            
+            if (qtas_etapas == "2"){
+                document.getElementById(div4).style = "display:inline-block"
+                document.getElementById(div5).style = "display:inline-block"
+                
+            }
+
+            document.getElementById("qtosemails").innerText = item
+          
+        }
+      
+        
+      </script>
+<script>
+  function removeEmail(){
+    var qtosexistem = document.getElementById("qtosemails").innerText
+    var num_qtos = parseInt(qtosexistem)
+
+    
+      var item = num_qtos-1
+
+      //console.log("Item "+item)
+      var div1 = "nome"+item
+      var div2 = "email"+item
+      var div3 = "setor"+item
+       var div4 = "etapa1"+item
+      var div5 = "etapa2"+item
+      
+
+
+
+      document.getElementById(div1).style = "display:none"
+      
+      document.getElementById(div2).style = "display:none"
+      
+      document.getElementById(div3).style = "display:none"
+       document.getElementById(div4).style = "display:none"
+        document.getElementById(div5).style = "display:none"
+
+      document.getElementById("qtosemails").innerText = item
+    
+  }
+
+  
+</script>
+
+      <script>
+        function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+      </script>
+
+
+      <script>
+         function preencheLista(){
+         clearTable(document.getElementById("dtBasicExample"));
+      var tabela = document.getElementById("dtBasicExample");
+      var qtasrow = tabela.rows.length;
+      var a_lista = api.custom_objects.list_with_options("BR-FINEP_Fluxos",[],["dados_cliente.codigo_cliente","ascending"]).results
+      for (i=0;i<a_lista.length;i++){
+          
+         
+          
+        var row =  tabela.insertRow(qtasrow);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+        var cell10 = row.insertCell(9);
+        var cell11 = row.insertCell(10);
+
+        var aprovadores = a_lista[i].aprovadores
+       // console.log(aprovadores)
+        var nomes = ""
+        //console.log(aprovadores.length)
+        for (j=0;j<aprovadores.length;j++){
+       nomes = nomes+aprovadores[j].nome+"/ "
+        }
+        
+
+        var corPDF = "red"
+        var corGMG = "red"
+        var corGMS = "red"
+        var as_aprovacoes = a_lista[i].enviar_aprovacao
+
+        if (as_aprovacoes.PDF == "sim"){
+          corPDF = "green"
+        }
+        
+        if (as_aprovacoes.GMG == "sim"){
+          corGMG = "green"
+        }
+        
+        if (as_aprovacoes.GMS == "sim"){
+          corGMS = "green"
+        }
+
+        cell1.innerHTML = '<div style="vertical-align: middle;">'+a_lista[i].dados_cliente.codigo_cliente+'</div>';
+        cell2.innerHTML = '<div style="vertical-align: middle;">'+a_lista[i].dados_cliente.nome_cliente+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle;">'+a_lista[i].nome_fluxo+'</div>';
+        cell7.innerHTML = '<div style="vertical-align: middle;">'+a_lista[i].enviar_aprovacao.vias+'</div>';
+        cell4.innerHTML = '<span style="margin-top:5px;height:20px;width:20px;background-color:'+corPDF+';border-radius:50%;display:inline-block"></span>';
+        cell5.innerHTML = '<span style="margin-top:5px;height:20px;width:20px;background-color:'+corGMG+';border-radius:50%;display:inline-block"></span>';
+        cell6.innerHTML = '<span style="margin-top:5px;height:20px;width:20px;background-color:'+corGMS+';border-radius:50%;display:inline-block"></span>';
+        cell8.innerHTML = '<div style="vertical-align: middle;">'+nomes.substring(0,nomes.length-2)+'</div>';
+        cell9.innerHTML = '<div style="cursor: pointer; margin: 15px 0;"><img onclick="reply_click3()" id="duplicaUpload_'+a_lista[i]._id+'" src="./Icons/duplicar.png" width="50px"></div>';
+        cell10.innerHTML = '<div style="cursor: pointer; margin: 15px 0;"><img onclick="reply_click2()" id="editaUpload_'+a_lista[i]._id+'" src="./Icons/Edit.png" width="50px"></div>';
+        cell11.innerHTML = '<div style="cursor: pointer; margin: 15px 0;"><img onclick="reply_click()" id="apagaUpload_'+a_lista[i]._id+'" src="./Icons/delete.png" width="50px"></div>';
+                 
+        qtasrow = qtasrow+1
+      }
+         }
+
+
+      </script>
+       <script>
+    var usuario = api.auth.get_current_user()
+    var texto = "Bem vindo, "+usuario.fullname
+    document.getElementById("bemvindo").innerText = texto
+</script>
+<script>
+function reply_click()
+{
+  
+    var linha = event.srcElement.id
+    //console.log(linha)
+    var linha_2 = linha.split("_")
+    console.log("A Linha 2 "+linha_2[1])
+    //console.log(linha_2[1])
+    api.custom_objects.delete("BR-FINEP_Fluxos",linha_2[1])
+
+   $('#acaoUpload').text('O upload esta sendo eliminado da base de dados e os arquivos sendo apagados da pasta')
+    setTimeout(() => { $('#acaoUpload').text();preencheLista() }, 1000);
+
+}
+</script>
+<script>
+  function reply_click2()
+    {
+    document.getElementById("acaoUpload").innerText = "2"
+    console.log(document.getElementById("acaoUpload").innerText)
+
+    
+    document.getElementById("formulario").style = "display:inline-block;"
+    document.getElementById("botaoSalvar").style = "background-color: #73b181; border-color: #73b181;"
+    document.getElementById("botaoSalvar").innerText = "Alterar Fluxo"
+      
+      var linha = event.srcElement.id
+    console.log("A linha "+linha.toString())
+      //console.log(linha)
+      var linha_2 = linha.split("_")
+      console.log("A Linha 2 "+linha_2[1])
+      document.getElementById("idatual").innerText = linha_2[1]
+      var ofluxo = api.custom_objects.list_with_options("BR-FINEP_Fluxos",["_id","equal to",linha_2[1]]).results[0]
+document.getElementById("nome_Fluxo").value = ofluxo.nome_fluxo
+document.getElementById("nome_User").value = ofluxo.criado_por
+document.getElementById("cod_Cliente").value = ofluxo.dados_cliente.codigo_cliente
+document.getElementById("nome_Cliente").value = ofluxo.dados_cliente.nome_cliente
+document.getElementById("cep").value = ofluxo.dados_cliente.endereco.cep
+document.getElementById("rua").value = ofluxo.dados_cliente.endereco.rua
+document.getElementById("numero").value = ofluxo.dados_cliente.endereco.numero
+document.getElementById("bairro").value = ofluxo.dados_cliente.endereco.bairro
+document.getElementById("cidade").value = ofluxo.dados_cliente.endereco.cidade
+document.getElementById("uf").value = ofluxo.dados_cliente.endereco.estado
+
+
+
+document.getElementById("nome_Fluxo").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("nome_User").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("cod_Cliente").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("nome_Cliente").style = "border-color: #73b181; background-color: #d7dbd8"
+document.getElementById("cep").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("rua").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("numero").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("bairro").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("cidade").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("uf").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("tipoFluxo").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("vias").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("logo").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("tipo_aprovacao").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("apro_etapa1").style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById("apro_etapa2").style = "border-color: #73b181; background-color: #c4f2ce"
+
+$("#apro_etapa1").val(ofluxo.regras.primeira_etapa);
+$("#apro_etapa2").val(ofluxo.regras.segunda_etapa);
+
+var enviar = ofluxo.enviar_aprovacao
+var textoFluxo = []
+if (enviar.PDF == "sim"){
+  textoFluxo.push("PDF")
+}
+if (enviar.GMG == "sim"){
+  textoFluxo.push("GMG")
+}
+if (enviar.GMS == "sim"){
+  textoFluxo.push("GMS")
+}
+
+var texto_ok = ""
+if (textoFluxo.length > 0){
+for (i=0;i<textoFluxo.length;i++){
+  texto_ok = texto_ok+textoFluxo[i]+"-"
+}
+}
+var otexto_final = texto_ok.substring(0,texto_ok.length-1)
+console.log("O texto Final "+otexto_final)
+
+function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+}
+
+selectElement("tipoFluxo",otexto_final)
+
+document.getElementById("vias").value = ofluxo.enviar_aprovacao.vias 
+ 
+var osAprovadores = ofluxo.aprovadores
+
+//rotina para tirar os emails na mudanca de qtde de aprovadores
+
+var  osemails = parseInt(document.getElementById("qtosemails").innerText)
+
+if (osemails > osAprovadores.length){
+for (i=1;i<osemails;i++){
+var indice2 = i+1
+var mostra_nome2 = "nome"+indice2
+var mostra_email2 = "email"+indice2
+var mostra_setor2 = "setor"+indice2
+var mostra_etapa1 = "etapa1"+indice2
+var mostra_etapa2 = "etapa2"+indice2
+document.getElementById(mostra_nome2).style = "display:none"
+document.getElementById(mostra_email2).style = "display:none"
+document.getElementById(mostra_setor2).style = "display:none"
+document.getElementById(mostra_etapa1).style = "display:none"
+document.getElementById(mostra_etapa2).style = "display:none"
+}
+}
+
+// limpa lista de observadores
+var osObservadores = ofluxo.observadores
+
+for (i=0;i<9;i++){
+ var indice4 = i+1
+var valor_nome4 = "nomeobs_"+indice4
+var valor_email4 = "emailobs_"+indice4
+var valor_setor4 = "setorobs_"+indice4
+document.getElementById(valor_nome4).style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById(valor_email4).style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById(valor_setor4).style = "border-color: #73b181; background-color: #c4f2ce"
+}
+
+if (osObservadores.length > 0){
+document.getElementById("mostra_observadores").style = "display: inline-block;"
+var  osemails2 = parseInt(document.getElementById("qtosobserva").innerText)
+
+if (osemails2 > osObservadores.length){
+for (i=1;i<osemails2;i++){
+var indice3 = i+1
+var mostra_nome3 = "nomeobs"+indice3
+var mostra_email3 = "emailobs"+indice3
+var mostra_setor3 = "setorobs"+indice3
+var mostra_etapa13 = "etapa1obs"+indice3
+var mostra_etapa23 = "etapa2obs"+indice3
+document.getElementById(mostra_nome3).style = "display:none"
+document.getElementById(mostra_email3).style = "display:none"
+document.getElementById(mostra_setor3).style = "display:none"
+document.getElementById(mostra_etapa13).style = "display:none"
+document.getElementById(mostra_etapa23).style = "display:none"
+}
+}
+
+for (i=0;i<osObservadores.length;i++){
+var indice4 = i+1
+var mostra_nome4 = "nomeobs"+indice4
+var valor_nome4 = "nomeobs_"+indice4
+document.getElementById(mostra_nome4).style = "display:inline-block"
+document.getElementById(valor_nome4).value = osObservadores[i].nome
+var mostra_email4 = "emailobs"+indice4
+var valor_email4 = "emailobs_"+indice4
+document.getElementById(mostra_email4).style = "display:inline-block"
+document.getElementById(valor_email4).value = osObservadores[i].email
+
+var mostra_setor4 = "setorobs"+indice4
+var valor_setor4 = "setorobs_"+indice4
+document.getElementById(mostra_setor4).style = "display:inline-block"
+document.getElementById(valor_setor4).value = osObservadores[i].setor
+document.getElementById(valor_setor4).style = "border-color: #73b181; background-color: #c4f2ce"
+var mostra_etapa14 = "etapaobs1"+indice4
+var valor_etapa14 = "etapaobs1_"+indice4
+var mostra_etapa24 = "etapaobs2"+indice4
+var valor_etapa24 = "etapaobs2_"+indice4
+if (ofluxo.etapas == "2"){
+var qual_etapa_sel = document.getElementById("tipo_aprovacao").selectedIndex = 1
+document.getElementById(mostra_etapa14).style = "display:inline-block"
+document.getElementById(mostra_etapa24).style = "display:inline-block"
+}
+if (osObservadores[i].sequencia == "primeiro"){
+document.getElementById(valor_etapa14).checked = true
+} else {
+document.getElementById(valor_etapa24).checked = true
+}
+}
+
+document.getElementById("qtosobserva").innerText = osObservadores.length
+
+
+}
+
+
+
+
+for (i=0;i<osAprovadores.length;i++){
+var indice = i+1
+var mostra_nome = "nome"+indice
+var valor_nome = "nome_"+indice
+document.getElementById(mostra_nome).style = "display:inline-block"
+document.getElementById(valor_nome).value = osAprovadores[i].nome
+document.getElementById(valor_nome).style = "border-color: #73b181; background-color: #c4f2ce"
+var mostra_email = "email"+indice
+var valor_email = "email_"+indice
+document.getElementById(mostra_email).style = "display:inline-block"
+document.getElementById(valor_email).value = osAprovadores[i].email
+document.getElementById(valor_email).style = "border-color: #73b181; background-color: #c4f2ce"
+var mostra_setor = "setor"+indice
+var valor_setor = "setor_"+indice
+document.getElementById(mostra_setor).style = "display:inline-block"
+document.getElementById(valor_setor).value = osAprovadores[i].setor
+document.getElementById(valor_setor).style = "border-color: #73b181; background-color: #c4f2ce"
+var mostra_etapa1 = "etapa1"+indice
+var valor_etapa1 = "etapa1_"+indice
+var mostra_etapa2 = "etapa2"+indice
+var valor_etapa2 = "etapa2_"+indice
+if (ofluxo.etapas == "2"){
+var qual_etapa_sel = document.getElementById("tipo_aprovacao").selectedIndex = 1
+document.getElementById(mostra_etapa1).style = "display:inline-block"
+document.getElementById(mostra_etapa2).style = "display:inline-block"
+}
+if (osAprovadores[i].sequencia == "primeiro"){
+document.getElementById(valor_etapa1).checked = true
+} else {
+document.getElementById(valor_etapa2).checked = true
+}
+}
+
+document.getElementById("qtosemails").innerText = osAprovadores.length
+
+
+  }
+  </script>
+<script>
+  function reply_click3()
+  {
+    document.getElementById("formulario").style = "display:inline-block;"
+    document.getElementById("botaoSalvar").style = "background-color: #a877b2; border-color: #a877b2;"
+    document.getElementById("botaoSalvar").innerText = "Duplicar Fluxo"
+    document.getElementById("acaoUpload").innerText = "3"
+    
+      var linha = event.srcElement.id
+    console.log("A linha "+linha.toString())
+      //console.log(linha)
+      var linha_2 = linha.split("_")
+      console.log("A Linha 2 "+linha_2[1])
+      document.getElementById("idatual").innerText = linha_2[1]
+      var ofluxo = api.custom_objects.list_with_options("BR-FINEP_Fluxos",["_id","equal to",linha_2[1]]).results[0]
+document.getElementById("nome_Fluxo").value = ofluxo.nome_fluxo
+document.getElementById("nome_User").value = ofluxo.criado_por
+document.getElementById("cod_Cliente").value = ofluxo.dados_cliente.codigo_cliente
+document.getElementById("nome_Cliente").value = ofluxo.dados_cliente.nome_cliente
+document.getElementById("cep").value = ofluxo.dados_cliente.endereco.cep
+document.getElementById("rua").value = ofluxo.dados_cliente.endereco.rua
+document.getElementById("numero").value = ofluxo.dados_cliente.endereco.numero
+document.getElementById("bairro").value = ofluxo.dados_cliente.endereco.bairro
+document.getElementById("cidade").value = ofluxo.dados_cliente.endereco.cidade
+document.getElementById("uf").value = ofluxo.dados_cliente.endereco.estado
+document.getElementById("nome_Fluxo").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("nome_User").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("cod_Cliente").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("nome_Cliente").style = "border-color: #a877b2; background-color: #d7dbd8"
+document.getElementById("cep").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("rua").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("numero").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("bairro").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("cidade").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("uf").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("tipoFluxo").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("vias").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("logo").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("tipo_aprovacao").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("apro_etapa1").style = "border-color: #a877b2; background-color: #edd3f2"
+document.getElementById("apro_etapa2").style = "border-color: #a877b2; background-color: #edd3f2"
+
+$("#apro_etapa1").val(ofluxo.regras.primeira_etapa);
+$("#apro_etapa2").val(ofluxo.regras.segunda_etapa);
+
+
+var enviar = ofluxo.enviar_aprovacao
+var textoFluxo = []
+if (enviar.PDF == "sim"){
+  textoFluxo.push("PDF")
+}
+if (enviar.GMG == "sim"){
+  textoFluxo.push("GMG")
+}
+if (enviar.GMS == "sim"){
+  textoFluxo.push("GMS")
+}
+
+var texto_ok = ""
+if (textoFluxo.length > 0){
+for (i=0;i<textoFluxo.length;i++){
+  texto_ok = texto_ok+textoFluxo[i]+"-"
+}
+}
+var otexto_final = texto_ok.substring(0,texto_ok.length-1)
+console.log("O texto Final "+otexto_final)
+
+function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+}
+
+selectElement("tipoFluxo",otexto_final)
+
+document.getElementById("vias").value = ofluxo.enviar_aprovacao.vias 
+var qualFluxo = ofluxo.logo
+
+selectElement("logo",qualFluxo)
+ 
+var osAprovadores = ofluxo.aprovadores
+
+//rotina para tirar os emails na mudanca de qtde de aprovadores
+
+var  osemails = parseInt(document.getElementById("qtosemails").innerText)
+
+if (osemails > osAprovadores.length){
+for (i=1;i<osemails;i++){
+var indice2 = i+1
+var mostra_nome2 = "nome"+indice2
+var mostra_email2 = "email"+indice2
+var mostra_setor2 = "setor"+indice2
+var mostra_etapa1 = "etapa1"+indice2
+var mostra_etapa2 = "etapa2"+indice2
+document.getElementById(mostra_nome2).style = "display:none"
+document.getElementById(mostra_email2).style = "display:none"
+document.getElementById(mostra_setor2).style = "display:none" 
+document.getElementById(mostra_etapa1).style = "display:none"
+document.getElementById(mostra_etapa2).style = "display:none"
+
+}
+}
+
+var osObservadores = ofluxo.observadores
+
+for (i=0;i<9;i++){
+ var indice4 = i+1
+var valor_nome4 = "nomeobs_"+indice4
+var valor_email4 = "emailobs_"+indice4
+var valor_setor4 = "setorobs_"+indice4
+document.getElementById(valor_nome4).style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById(valor_email4).style = "border-color: #73b181; background-color: #c4f2ce"
+document.getElementById(valor_setor4).style = "border-color: #73b181; background-color: #c4f2ce"
+}
+
+if (osObservadores.length > 0){
+document.getElementById("mostra_observadores").style = "display: inline-block;"
+var  osemails2 = parseInt(document.getElementById("qtosobserva").innerText)
+
+if (osemails2 > osObservadores.length){
+for (i=1;i<osemails2;i++){
+var indice3 = i+1
+var mostra_nome3 = "nomeobs"+indice3
+var mostra_email3 = "emailobs"+indice3
+var mostra_setor3 = "setorobs"+indice3
+var mostra_etapa13 = "etapa1obs"+indice3
+var mostra_etapa23 = "etapa2obs"+indice3
+document.getElementById(mostra_nome3).style = "display:none"
+document.getElementById(mostra_email3).style = "display:none"
+document.getElementById(mostra_setor3).style = "display:none"
+document.getElementById(mostra_etapa13).style = "display:none"
+document.getElementById(mostra_etapa23).style = "display:none"
+}
+}
+
+for (i=0;i<osObservadores.length;i++){
+var indice4 = i+1
+var mostra_nome4 = "nomeobs"+indice4
+var valor_nome4 = "nomeobs_"+indice4
+document.getElementById(mostra_nome4).style = "display:inline-block"
+document.getElementById(valor_nome4).value = osObservadores[i].nome
+var mostra_email4 = "emailobs"+indice4
+var valor_email4 = "emailobs_"+indice4
+document.getElementById(mostra_email4).style = "display:inline-block"
+document.getElementById(valor_email4).value = osObservadores[i].email
+
+var mostra_setor4 = "setorobs"+indice4
+var valor_setor4 = "setorobs_"+indice4
+document.getElementById(mostra_setor4).style = "display:inline-block"
+document.getElementById(valor_setor4).value = osObservadores[i].setor
+document.getElementById(valor_setor4).style = "border-color: #73b181; background-color: #c4f2ce"
+var mostra_etapa14 = "etapaobs1"+indice4
+var valor_etapa14 = "etapaobs1_"+indice4
+var mostra_etapa24 = "etapaobs2"+indice4
+var valor_etapa24 = "etapaobs2_"+indice4
+if (ofluxo.etapas == "2"){
+var qual_etapa_sel = document.getElementById("tipo_aprovacao").selectedIndex = 1
+document.getElementById(mostra_etapa14).style = "display:inline-block"
+document.getElementById(mostra_etapa24).style = "display:inline-block"
+}
+if (osObservadores[i].sequencia == "primeiro"){
+document.getElementById(valor_etapa14).checked = true
+} else {
+document.getElementById(valor_etapa24).checked = true
+}
+}
+
+document.getElementById("qtosobserva").innerText = osObservadores.length
+
+
+}
+
+
+for (i=0;i<osAprovadores.length;i++){
+var indice = i+1
+var mostra_nome = "nome"+indice
+var valor_nome = "nome_"+indice
+document.getElementById(mostra_nome).style = "display:inline-block"
+document.getElementById(valor_nome).value = osAprovadores[i].nome
+document.getElementById(valor_nome).style = "border-color: #a877b2; background-color: #edd3f2"
+var mostra_email = "email"+indice
+var valor_email = "email_"+indice
+document.getElementById(mostra_email).style = "display:inline-block"
+document.getElementById(valor_email).value = osAprovadores[i].email
+document.getElementById(valor_email).style = "border-color: #a877b2; background-color: #edd3f2"
+var mostra_setor = "setor"+indice
+var valor_setor = "setor_"+indice
+document.getElementById(mostra_setor).style = "display:inline-block"
+document.getElementById(valor_setor).value = osAprovadores[i].setor
+document.getElementById(valor_setor).style = "border-color: #a877b2; background-color: #edd3f2"
+var mostra_etapa1 = "etapa1"+indice
+var valor_etapa1 = "etapa1_"+indice
+var mostra_etapa2 = "etapa2"+indice
+var valor_etapa2 = "etapa2_"+indice
+if (ofluxo.etapas == "2"){
+var qual_etapa_sel = document.getElementById("tipo_aprovacao").selectedIndex = 1
+document.getElementById(mostra_etapa1).style = "display:inline-block"
+document.getElementById(mostra_etapa2).style = "display:inline-block"
+}
+if (osAprovadores[i].sequencia == "primeiro"){
+document.getElementById(valor_etapa1).checked = true
+} else {
+document.getElementById(valor_etapa2).checked = true
+}
+}
+
+document.getElementById("qtosemails").innerText = osAprovadores.length
+document.getElementById("idatual").innerText = "2"
+
+  }
+  </script>
+
+<script>
+  function filtro() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("desc");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+function filtro2() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("desc");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<script>
+  function cadastrarFluxo(){
+    document.getElementById("acaoUpload").innerText = "1"
+    document.getElementById("nome_User").value = usuario.fullname
+    $( '#formularioUser' ).each(function(){
+    this.reset();
+});
+    document.getElementById("formulario").style = "display: inline-block;"
+    document.getElementById("botaoSalvar").style = "background-color: #007bff; border-color: #007bff;"
+    document.getElementById("botaoSalvar").innerText = "Criar Fluxo"
+    document.getElementById("idatual").innerText = "1"
+    document.getElementById("nome_Fluxo").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("nome_User").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("cod_Cliente").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("nome_Cliente").style = "border-color: #007BFF; background-color: #d7dbd8"
+    document.getElementById("cep").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("rua").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("numero").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("bairro").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("cidade").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("uf").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("tipoFluxo").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("vias").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("logo").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("apro_etapa1").style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById("apro_etapa2").style = "border-color: #007BFF; background-color: #a8d2ff"
+    for (i=0;i<9;i++){
+        var numero = i+1
+    var alt1 = "nome_"+numero
+    var alt2 = "email_"+numero
+    var alt3 = "setor_"+numero
+    var alt4 = "nomeobs_"+numero
+    var alt5 = "emailobs_"+numero
+    var alt6 = "setorobs_"+numero
+    document.getElementById(alt1).style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById(alt2).style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById(alt3).style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById(alt4).style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById(alt5).style = "border-color: #007BFF; background-color: #a8d2ff"
+    document.getElementById(alt6).style = "border-color: #007BFF; background-color: #a8d2ff"
+    }
+    document.getElementById("tipo_aprovacao").style = "border-color: #007BFF; background-color: #a8d2ff"
+
+   
+  
+  }
+</script>
+<script>
+  var listaCodigo = api.custom_objects.list("BR-FINEPACK_Clientes").results;
+  var options=''; // variable to store the options
+  for(var i = 0; i < listaCodigo.length; i++){
+      
+  options += '<option value="'+listaCodigo[i].codigo+'" />';
+
+  }
+   document.getElementById('os_clientes').innerHTML = options;
+
+   
+</script>
+<script>
+function procuraNome() {
+    var ocodigo = document.getElementById("cod_Cliente").value
+    var buscacliente = api.custom_objects.list_with_options("BR-FINEPACK_Clientes",["codigo","equal to",ocodigo]).results[0]
+    document.getElementById("nome_Cliente").value = buscacliente.nome
+
+   }
+</script>
+<script>
+  function salvaFluxo(){
+    var decisao = document.getElementById("acaoUpload").innerText
+   
+    console.log("Decisao "+decisao )
+    if (decisao == "1" || decisao == "3"){
+    var data ={}
+    data["nome_fluxo"] = document.getElementById("nome_Fluxo").value
+    data["criado_por"] = document.getElementById("nome_User").value
+    var cliente = {}
+    cliente["codigo_cliente"] = document.getElementById("cod_Cliente").value
+    cliente["nome_cliente"] = document.getElementById("nome_Cliente").value
+    var adress = {}
+    adress["cep"] =document.getElementById("cep").value
+    adress["rua"] =document.getElementById("rua").value
+    adress["numero"] =document.getElementById("numero").value
+    adress["bairro"] =document.getElementById("bairro").value
+    adress["cidade"] =document.getElementById("cidade").value
+    adress["estado"] =document.getElementById("uf").value
+    cliente["endereco"] = adress
+    data["dados_cliente"] = cliente
+    data["logo"] = document.getElementById("logo").value
+    var tipoFluxo = document.getElementById("tipoFluxo").value
+    var tipoSplit = tipoFluxo.split("-")
+    console.log(tipoSplit)
+    var PDF = "nao"
+    var GMG = "nao"
+    var GMS = "nao"
+    for (i=0;i<tipoSplit.length;i++){
+      if (tipoSplit[i] == "PDF"){
+        console.log("estou no PDF")
+        PDF = "sim"
+      }
+      if (tipoSplit[i] == "GMG"){
+        console.log("estou no GMG")
+        GMG = "sim"
+      }
+      if (tipoSplit[i] == "GMS"){
+        console.log("estou no GMS")
+        GMS = "sim"
+      }
+    }
+    var deliverables = {}
+    deliverables["PDF"] = PDF
+    deliverables["GMG"] = GMG
+    deliverables["GMS"] = GMS
+    deliverables["vias"] = document.getElementById("vias").value
+    data["enviar_aprovacao"] = deliverables
+    
+    var qtas_etapas = document.getElementById("tipo_aprovacao").value
+    data["etapas"] = qtas_etapas
+    var qtos_2 = document.getElementById("qtosemails").innerText
+    var proximo_2 = parseInt(qtos_2)
+    var aprovadores = []
+    for (i=0;i<proximo_2;i++){
+      var valor = i+1
+      var campo_email = "email_"+valor
+      var campo_setor = "setor_"+valor
+      var campo_nome = "nome_"+valor
+      var etapa1 = "etapa1_"+valor
+      var etapa2 = "etapa2_"+valor
+      var dadosApprova = {}
+      dadosApprova["nome"] = document.getElementById(campo_nome).value
+      dadosApprova["email"] = document.getElementById(campo_email).value
+      dadosApprova["setor"] = document.getElementById(campo_setor).value
+      if (qtas_etapas == "1"){
+        dadosApprova["sequencia"] = "primeiro"  
+      } else {
+          if (document.getElementById(etapa1).checked == true){
+            dadosApprova["sequencia"] = "primeiro"   
+          }
+          if (document.getElementById(etapa2).checked == true){
+            dadosApprova["sequencia"] = "segundo"   
+          }
+          if (document.getElementById(etapa1).checked == true && document.getElementById(etapa2).checked == true){
+            alert("Por favor selecione somente uma das etapas de aprovacao para o aprovador "+valor)  
+          }
+           if (document.getElementById(etapa1).checked == false && document.getElementById(etapa2).checked == false){
+            alert("Por favor selecione ao menos uma das etapas de aprovacao para o aprovador "+valor)  
+          }
+          
+      }
+      
+      aprovadores.push(dadosApprova)
+    }
+    data["aprovadores"] = aprovadores
+    var qtos_3 = document.getElementById("qtosobserva").innerText
+    var proximo_3 = parseInt(qtos_3)
+    var observadores = []
+    for (i=0;i<proximo_3;i++){
+      var valor = i+1
+      var campo_email = "emailobs_"+valor
+      var campo_setor = "setorobs_"+valor
+      var campo_nome = "nomeobs_"+valor
+      var etapa1 = "etapaobs1_"+valor
+      var etapa2 = "etapaobs2_"+valor
+      var dadosObserva = {}
+      dadosObserva["nome"] = document.getElementById(campo_nome).value
+      dadosObserva["email"] = document.getElementById(campo_email).value
+      dadosObserva["setor"] = document.getElementById(campo_setor).value
+      var as_regras = {}
+        as_regras["primeira_etapa"] = document.getElementById("apro_etapa1").value
+        as_regras["segunda_etapa"] = document.getElementById("apro_etapa2").value
+    data["regras"] = as_regras
+      if (qtas_etapas == "1"){
+        dadosApprova["sequencia"] = "primeiro"  
+      } else {
+          if (document.getElementById(etapa1).checked == true){
+            dadosApprova["sequencia"] = "primeiro"   
+          }
+          if (document.getElementById(etapa2).checked == true){
+            dadosApprova["sequencia"] = "segundo"   
+          }
+          if (document.getElementById(etapa1).checked == true && document.getElementById(etapa2).checked == true){
+            alert("Por favor selecione somente uma das etapas de aprovacao para o aprovador "+valor)  
+          }
+           if (document.getElementById(etapa1).checked == false && document.getElementById(etapa2).checked == false){
+            alert("Por favor selecione ao menos uma das etapas de aprovacao para o aprovador "+valor)  
+          }
+          
+      }
+      
+      observadores.push(dadosObserva)
+    }
+    data["observadores"] = observadores
+
+
+    var criabase = api.custom_objects.create("BR-FINEP_Fluxos",data)
+    
+setTimeout(() => { document.getElementById("formulario").style="display:none;";preencheLista() }, 1000);
+
+  } else {
+    console.log("Sou Alteracao")
+    var oID = document.getElementById("idatual").innerText
+    var data ={}
+    data["nome_fluxo"] = document.getElementById("nome_Fluxo").value
+    data["criado_por"] = document.getElementById("nome_User").value
+    var cliente = {}
+    cliente["codigo_cliente"] = document.getElementById("cod_Cliente").value
+    cliente["nome_cliente"] = document.getElementById("nome_Cliente").value
+    var adress = {}
+    adress["cep"] =document.getElementById("cep").value
+    adress["rua"] =document.getElementById("rua").value
+    adress["numero"] =document.getElementById("numero").value
+    adress["bairro"] =document.getElementById("bairro").value
+    adress["cidade"] =document.getElementById("cidade").value
+    adress["estado"] =document.getElementById("uf").value
+    cliente["endereco"] = adress
+    data["dados_cliente"] = cliente
+    data["logo"] = document.getElementById("logo").value
+    console.log("o Logo "+document.getElementById("logo").value)
+    var tipoFluxo = document.getElementById("tipoFluxo").value
+    var tipoSplit = tipoFluxo.split("-")
+    console.log(tipoSplit)
+    var PDF = "nao"
+    var GMG = "nao"
+    var GMS = "nao"
+    for (i=0;i<tipoSplit.length;i++){
+      if (tipoSplit[i] == "PDF"){
+        console.log("estou no PDF")
+        PDF = "sim"
+      }
+      if (tipoSplit[i] == "GMG"){
+        console.log("estou no GMG")
+        GMG = "sim"
+      }
+      if (tipoSplit[i] == "GMS"){
+        console.log("estou no GMS")
+        GMS = "sim"
+      }
+    }
+    var deliverables = {}
+    deliverables["PDF"] = PDF
+    deliverables["GMG"] = GMG
+    deliverables["GMS"] = GMS
+    deliverables["vias"] = document.getElementById("vias").value
+    data["enviar_aprovacao"] = deliverables
+    var qtas_etapas = document.getElementById("tipo_aprovacao").value
+    data["etapas"] = qtas_etapas
+    var qtos_2 = document.getElementById("qtosemails").innerText
+    var proximo_2 = parseInt(qtos_2)
+    var aprovadores = []
+    for (i=0;i<proximo_2;i++){
+      var valor = i+1
+      var campo_email = "email_"+valor
+      var campo_setor = "setor_"+valor
+      var campo_nome = "nome_"+valor
+      var etapa1 = "etapa1_"+valor
+      var etapa2 = "etapa2_"+valor
+      var dadosApprova = {}
+      dadosApprova["nome"] = document.getElementById(campo_nome).value
+      dadosApprova["email"] = document.getElementById(campo_email).value
+      dadosApprova["setor"] = document.getElementById(campo_setor).value
+      if (qtas_etapas == "1"){
+        dadosApprova["sequencia"] = "primeiro"  
+      } else {
+          if (document.getElementById(etapa1).checked == true){
+            dadosApprova["sequencia"] = "primeiro"   
+          }
+          if (document.getElementById(etapa2).checked == true){
+            dadosApprova["sequencia"] = "segundo"   
+          }
+          if (document.getElementById(etapa1).checked == true && document.getElementById(etapa2).checked == true){
+            alert("Por favor selecione somente uma das etapas de aprovacao para o aprovador "+valor)  
+          }
+           if (document.getElementById(etapa1).checked == false && document.getElementById(etapa2).checked == false){
+            alert("Por favor selecione ao menos uma das etapas de aprovacao para o aprovador "+valor)  
+          }
+          
+      }
+      
+      aprovadores.push(dadosApprova)
+    }
+    data["aprovadores"] = aprovadores
+    
+    
+    var as_regras = {}
+        as_regras["primeira_etapa"] = document.getElementById("apro_etapa1").value
+        as_regras["segunda_etapa"] = document.getElementById("apro_etapa2").value
+    data["regras"] = as_regras
+    
+    var qtos_3 = document.getElementById("qtosobserva").innerText
+    var proximo_3 = parseInt(qtos_3)
+    var observadores = []
+    for (i=0;i<proximo_3;i++){
+      var valor = i+1
+      var campo_email = "emailobs_"+valor
+      var campo_setor = "setorobs_"+valor
+      var campo_nome = "nomeobs_"+valor
+      var etapa1 = "etapaobs1_"+valor
+      var etapa2 = "etapaobs2_"+valor
+      var dadosObserva = {}
+      dadosObserva["nome"] = document.getElementById(campo_nome).value
+      dadosObserva["email"] = document.getElementById(campo_email).value
+      dadosObserva["setor"] = document.getElementById(campo_setor).value
+      if (qtas_etapas == "1"){
+        dadosApprova["sequencia"] = "primeiro"  
+      } else {
+          if (document.getElementById(etapa1).checked == true){
+            dadosApprova["sequencia"] = "primeiro"   
+          }
+          if (document.getElementById(etapa2).checked == true){
+            dadosApprova["sequencia"] = "segundo"   
+          }
+          if (document.getElementById(etapa1).checked == true && document.getElementById(etapa2).checked == true){
+            alert("Por favor selecione somente uma das etapas de aprovacao para o aprovador "+valor)  
+          }
+           if (document.getElementById(etapa1).checked == false && document.getElementById(etapa2).checked == false){
+            alert("Por favor selecione ao menos uma das etapas de aprovacao para o aprovador "+valor)  
+          }
+          
+      }
+      
+      observadores.push(dadosObserva)
+    }
+    data["observadores"] = observadores
+
+  //  console.log("o ID "+oID)
+var criabase = api.custom_objects.set_keys("BR-FINEP_Fluxos",oID,data)
+
+    
+var vinculos_existentes = api.custom_objects.list_with_options("BR-FINEP_Vinculos",["codigo_cliente","equal to",document.getElementById("cod_Cliente").value,"and","grupo_aprovacao.nome_fluxo","equal to",document.getElementById("nome_Fluxo").value]).results
+for (i=0;i<vinculos_existentes.length;i++){
+  console.log("encontrei vinculos")
+api.custom_objects.set_keys("BR-FINEP_Vinculos",vinculos_existentes[i]._id,{"grupo_aprovacao":data})
+
+}
+
+
+  }
+  alert("Fluxo de aprovacao Salvo com sucesso")
+
+  }
+  
+
+</script>
+<script>
+    function muda_etapas(){
+        var qtde_etapas = document.getElementById("tipo_aprovacao").value
+         var qtosexistem = document.getElementById("qtosemails").innerText
+         var qtosexistem2 = document.getElementById("qtosobserva").innerText
+          var num_qtos = parseInt(qtosexistem)
+            var num_qtos2 = parseInt(qtosexistem2)
+            if (qtde_etapas == "1"){
+            document.getElementById("label_aprova1").innerText = "Aprovações Necessárias"
+            document.getElementById("mostra_segunda_etapa").style = "display: none"
+            } else {
+                document.getElementById("label_aprova1").innerText = "Aprovações 1a Etapa"
+            document.getElementById("mostra_segunda_etapa").style = "display:inline-block; padding-right: 8px;"
+            }
+           for (i=0;i<num_qtos;i++){
+            var numero = i+1
+            var div1 = "etapa1"+numero
+            var div2 = "etapa2"+numero
+            
+            if (qtde_etapas == "2"){
+
+            document.getElementById(div1).style = "display:inline-block"
+            
+            document.getElementById(div2).style = "display:inline-block"
+            
+            
+       
+        } else {
+            document.getElementById(div1).style = "display:none"
+            
+            document.getElementById(div2).style = "display:none"
+            
+            
+        }
+           }
+           for (i=0;i<num_qtos2;i++){
+            var numero = i+1
+            
+            var div3 = "etapaobs1"+numero
+            var div4 = "etapaobs2"+numero
+            if (qtde_etapas == "2"){
+
+           
+             document.getElementById(div3).style = "display:inline-block"
+              document.getElementById(div4).style = "display:inline-block"
+            
+       
+        } else {
+           
+             document.getElementById(div3).style = "display:none"
+              document.getElementById(div4).style = "display:none"
+            
+        }
+           }
+    }
+</script>
+<script>
+    function muda_observa(){
+        var existe_observa = document.getElementById("add_observa").checked
+        if (existe_observa === true){
+            document.getElementById("mostra_observadores").style = "display: inline_block"
+        } else {
+            document.getElementById("mostra_observadores").style = "display: none"
+        }
+        
+    }
+</script>
+<script>
+        function adicionaObserva(){
+            var qtas_etapas = document.getElementById("tipo_aprovacao").value
+          var qtosexistem = document.getElementById("qtosobserva").innerText
+          var num_qtos = parseInt(qtosexistem)
+
+          
+            var item = num_qtos+1
+
+            console.log("Item "+item)
+            var div1 = "nomeobs"+item
+            var div2 = "emailobs"+item
+            var div3 = "setorobs"+item
+            var div4 = "etapa1obs"+item
+            var div5 = "etapa2obs"+item
+
+        
+
+            document.getElementById(div1).style = "display:inline-block"
+            
+            document.getElementById(div2).style = "display:inline-block"
+            
+            document.getElementById(div3).style = "display:inline-block"
+            
+            
+            if (qtas_etapas == "2"){
+                document.getElementById(div4).style = "display:inline-block"
+                document.getElementById(div5).style = "display:inline-block"
+                
+            }
+
+            document.getElementById("qtosobserva").innerText = item
+          
+        }
+      
+        
+      </script>
+</body>
+
+</html>

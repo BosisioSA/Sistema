@@ -1,0 +1,2426 @@
+<!doctype html>
+<html>
+    <head>
+      <title>BD - Datos Tecnicos</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+       
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+       <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+        
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+        
+  
+        
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+            <script src="js/bootstrap4-toggle.js"></script>
+       <style>
+		#canvas-holder {
+			width: 100%;
+			margin-top: 50px;
+			text-align: center;
+		}
+		#chartjs-tooltip {
+			opacity: 1;
+			position: absolute;
+			background: rgba(0, 0, 0, .7);
+			color: white;
+			border-radius: 3px;
+			-webkit-transition: all .1s ease;
+			transition: all .1s ease;
+			pointer-events: none;
+			-webkit-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+		}
+
+		.chartjs-tooltip-key {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin-right: 10px;
+		}
+	</style>
+
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_bosisio.png" style="width: 90%; margin-bottom: 50px;">
+         	   <ul class="active components mb-5">
+           
+          <li   style="list-style-type: none; display: none;">
+               <a href="cadastros_clientes.html"><img src="./Icons/clientes.png" width="30px" style="margin-right: 10px">Clientes</a>
+              </li>
+          <li>
+        <!--<a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/fornecedores.png" width="30px" style="margin-right: 10px">Fornecedores</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+               <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_flexo.html"><img src="./Icons/flexo.png" width="20px" style="margin-right: 10px">Flexo</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_roto.html"><img src="./Icons/roto.png" width="20px" style="margin-right: 10px">Roto</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_anilox.html"><img src="./Icons/anilox.png" width="20px" style="margin-right: 10px">Anilox</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindro Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_prepress.html"><img src="./Icons/prepress.png" width="20px" style="margin-right: 10px">Prepress</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_materiaprima.html"><img src="./Icons/material.png" width="20px" style="margin-right: 10px">Matéria Prima</a>
+          </li>
+          </ul>
+          -->
+          <li class="active">
+              <a  href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/tecnicos.png" width="30px" style="margin-right: 10px">Base de Datos</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu3">
+              
+          <!--<li style="list-style-type: none">
+               <a href="cadastros_tecnicos_unidades.html"><img src="./Icons/unidades.png" width="20px" style="margin-right: 10px">Unidades</a>
+          </li>-->
+          <li  style="list-style-type: none">
+               <a href="basedatos_general_tipotrabajo.html"><img src="./Icons/tipo_trabalho.png" width="20px" style="margin-right: 10px">Tipo de Trabajo</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="basedatos_general_prioridad.html"><img src="./Icons/priority.png" width="20px" style="margin-right: 10px">Prioridad</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="basedatos_general_polimeroscon.html"><img src="./Icons/prioridade.png" width="20px" style="margin-right: 10px">Enviar Polímeros Con</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_duplaface.html"><img src="./Icons/dupla_face.png" width="20px" style="margin-right: 10px">Dupla Face</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="basedatos_general_producto.html"><img src="./Icons/estruturas.png" width="20px" style="margin-right: 10px">Producto</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_tintas.html"><img src="./Icons/tintas.png" width="20px" style="margin-right: 10px">Tintas</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_situacaoanilox.html"><img src="./Icons/situacao_anilox.png" width="20px" style="margin-right: 10px">Situação de Anilox</a>
+          </li>
+          <li   class="active" style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindros Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none; display: none;; display: none;">
+               <a href="cadastros_tecnicos_lavagemanilox.html"><img src="./Icons/lavagem_anilox.png" width="20px" style="margin-right: 10px">Anilox (tipo de lavagem)</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_segmentos.html"><img src="./Icons/segmentos.png" width="20px" style="margin-right: 10px">Segmentos</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_maquinas.html"><img src="./Icons/impressoras.png" width="20px" style="margin-right: 10px">Máquinas</a>
+          </li>
+          <li class="active" style="list-style-type: none;">
+               <a href="basedatos_tecnica_datostecnicos.html"><img src="./Icons/testform.png" width="20px" style="margin-right: 10px">Datos Técnicos</a>
+          </li>
+          </ul>
+          
+              
+            <!--    <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/sequencia.png" width="30px" style="margin-right: 10px">Sequência Padrão</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li class="active" style="list-style-type: none">
+               <a href="receita_tintas.html"><img src="./Icons/contagotas.png" width="20px" style="margin-right: 10px">Criar Sequência</a>
+              </li>
+              <li  style="list-style-type: none">
+               <a href="lista_receitas.html"><img src="./Icons/listasequencia.png" width="20px" style="margin-right: 10px">Lista Sequências</a>
+              </li>
+              <li style="list-style-type: none">
+               <a href="cadastros_tintas.html"><img src="./Icons/novasequencia.png" width="20px" style="margin-right: 10px">Lista de Cores</a>
+              </li>
+              </ul>
+          </li>-->
+              </ul>
+          
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href= "javascript:window.history.go(-1)" style="cursor:pointer;"><img src="./Icons/voltar.png" width="20px" style="margin-right: 5px;">Volver</a>
+                  </li>  
+                 <li class="nav-item">
+                      <a class="nav-link" href="cadastros_clientes.html">Base de Datos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="solicitacao_desenho.html">Ordenes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Cambiar Contraseña</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div>
+      
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+       
+            <div id="id_tipotrabajo" style="display:none"></div>
+           
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+            
+     <div  class="form-group" style="display:inline-block; width: 40%; margin-right: 1%">
+                     <label for="cliente">Cliente</label>
+                  <select class="form-control" id="cliente" onchange="llena_tabla()" name="cliente">
+                      <option value="undefined">Seleccionar cliente...</option>
+                      </select>
+                     <span class="error" id="error_cliente" style="color: red"></span> 
+                     </div>  
+                
+       
+          
+         <h5><i id="tipoTrabajoArrow" class="fas fa-plus-square" onclick="mostraTipotrabajo()" style="margin-right: 5px; cursor:pointer;"></i>Datos Técnicos</h5>
+                <p><i></i></p>
+                
+                 <div id="info_tipoTrabajo" class="form-group" style="display: none">
+                
+           <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+        <div style="display:inline-block; width: 82%"><h5 style="margin-top: -9px;"><img src="./Icons/clientes.png" width="30px" style="display: inline-block; margin-right: 5px"><strong>Informaciones del Perfil</strong></h5>
+        </div> <div  class="form-group" style="display:inline-block;">
+                 <input type="checkbox" checked data-toggle="toggle" id="activo" data-on="Activo" data-off="Inactivo" data-onstyle="success" data-offstyle="danger" data-width="130" data-height="30">
+                </div> 
+       
+                 <div  class="form-group" style="display:inline-block; width: 46%; margin-right: 1%;">
+                     <label for="testform">Nombre</label>
+                  <input type="text" class="form-control" onkeyup="this.value=this.value.toUpperCase()"  id="testform" name="testform">
+                 </div>
+                 
+                  <div   class="form-group" style="display:inline-block; margin-right: 1%;">
+                    <label>Tipo Impresión</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions20" onchange="selecionametodo()" id="gamaexpandida_no" value="cmyk">
+                        <label class="form-check-label" for="gamaexpandida_no">CMYK</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions20" onchange="selecionametodo()"  id="gamaexpandida_si" value="xgc">
+                        <label class="form-check-label" for="gamaexpandida_si">ECG</label>
+                    </div>
+                </div>
+                
+                <div   class="form-group" style="display:inline-block; width: 15%; margin-right: 1%;">
+                     <label for="tipo_impressao">Impresión</label>
+                  <select class="form-control"   id="tipo_impressao" onchange="muda_tipoImpressao()" name="tipo_impressao">
+                      <option value="undefined">Seleccionar...</option>
+                      <option>Flexografia</option>
+                      <option>Huecograbado</option>
+                      </select>
+                 </div>
+                <div  class="form-group" style="display:inline-block; width: 15%; margin-right: 1%; ">
+                     <label for="data_entrada">Fecha Impresión</label>
+                  <input type="date" class="form-control"   id="data_entrada" name="data_entrada">
+                 </div>
+                 
+              
+                
+                </div>
+                
+                  <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+                  <h5 style="margin-top: -9px;"><img src="./Icons/clientes.png" width="30px" style="display: inline-block; margin-right: 5px"><strong>Informaciones de Impressión</strong></h5>
+    
+                
+                <!-- div info cliche -->
+                
+              
+            
+                        <div  style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+                <p><strong>Condiciones Impresión</strong></p>
+    
+                <div id="div_maquina_roto" class="form-group demo-example" style="display:inline-block; width: 29%; margin-right: 1%;">
+                <label for="maquina">Máquina</label>
+                <input type="text" class="form-control" id="maquina">
+                 </div>
+                
+                <div  class="form-group" style="display:inline-block; width: 39%; margin-right: 1%;">
+                     <label for="linha_tintas">Tintas</label>
+                  <select class="form-control"   id="linha_tintas" name="linha_tintas">
+                      <option value="undefined">Seleccionar...</option>
+                      </select>
+                 </div>
+                
+                <div id="mostra_camada_impressao"  class="form-group" style="display:inline-block; width: 28%;">
+                     <label for="camada_impressao">Sentido Impresión</label>
+                  <select class="form-control"   id="camada_impressao" name="camada_impressao">
+                      <option value="undefined">Selecionar...</option>
+                      <option>Frente</option>
+                      <option>Dorso</option>
+                      </select>
+                 </div>
+                 
+                 
+           
+                
+                <div  class="form-group" style="display:inline-block; width: 35%; margin-right: 1%">
+                     <label for="substrato">Sustrato</label>
+                  <select class="form-control"   id="substrato" name="substrato">
+                      <option value="undefined">Seleccionar...</option>
+                      </select>
+                     <span class="error" id="error_sustrato"></span>
+                 </div>
+                 
+                <div id="div_maquina_roto" class="form-group demo-example" style="display:inline-block; width: 30%;">
+                <label for="desarollo">Desarollo</label>
+                <input type="text" class="form-control" id="desarollo">
+                 </div>
+                 
+                 
+                </div>
+         
+           <div style="display: inline-block; width: 74%; vertical-align: top;">
+              
+               
+               
+                 <div  style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+                <p><strong>Curvas</strong></p>
+                
+                <div   class="form-group" style="display:inline-block;">
+                    <label>Tipo de Curva</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" onchange="seleccionar_curvas()" name="inlineRadioOptions21"  id="icpro" >
+                        <label class="form-check-label" for="icpro">ICPRO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" onchange="seleccionar_curvas()"  name="inlineRadioOptions21"  id="presssync" >
+                        <label class="form-check-label" for="presssync">PRESSSYNC</label>
+                    </div>
+                </div>
+                
+                <div  class="form-group" style="display:inline-block; width: 70%; margin-right: 1%;">
+                     <label for="curva_impresion">Curva Impresión</label>
+                  <input type="text" class="form-control"   id="curva_impresion" name="curva_impresion" list="curvasimpresion">
+                      <datalist id="curvasimpresion"></datalist>
+                      
+                 </div>
+                 
+                 <div class="form-group demo-example" style="display:inline-block; width: 98%;">
+                <label for="estrategia_impresion">Estratégia de Impresión</label>
+                <input type="text" class="form-control" id="estrategia_impresion" list="estrategiaimpresion">
+                <datalist id="estrategiaimpresion"></datalist>
+                    </div>
+                    
+                    <div class="form-group demo-example" style="display:inline-block; width: 98%;">
+                <label for="estrategia_conversion">Estratégia de Conversión</label>
+                <input type="text" class="form-control" id="estrategia_conversion" list="estrategiaconversion" value="">
+                <datalist id="estrategiaconversion"></datalist>
+                 </div>
+                
+    
+                 </div>
+              </div>
+           
+          
+                <div style="display: inline-block; width: 25%;vertical-align: top;">
+                <div id="div_infoclise" style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px; margin-right: 1%;">
+                <p><strong>Informaciones del Clisé</strong></p>
+    
+                 <div class="form-group" style="display:inline-block; width: 100%;margin-right: 1%">
+                     <label for="espessor">Espessor</label>
+                  <select class="form-control"   id="espessor" name="espessor">
+                      <option value="undefined">Selecionar...</option>
+                      <option>1.14</option>
+                      <option>1.70</option>
+                      <option>2.84</option>
+                      <option>3.94</option>
+                      <option>6.35</option>
+                      </select>
+                      <span class="error" id="error_espessor"></span>
+                 </div>
+                 <div class="form-group" style="display:inline-block; width: 100%;">
+                     <label for="cinta">Cinta Doble Faz</label>
+                  <select class="form-control"   id="cinta" name="cinta">
+                      <option value="undefined">Selecionar...</option>
+                      <option value="A DEFINIR">A Definir</option>
+                      </select>
+                      <span class="error" id="error_cinta"></span>
+                 </div>
+                
+                </div>
+                </div>
+          
+         
+         <div id="div_conversion" style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: none; padding: 20px; vertical-align: top; margin-bottom: 10px; margin-right: 1%;">
+                <p><strong>Informaciones Conversión</strong></p>
+       
+       
+        <div   class="form-group" style="display:inline-block; ">
+                    <label>DeviceLink</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions32" onchange="expandir_gamut()" id="matchgamut" checked>
+                        <label class="form-check-label" for="matchgamut">Coincidir Gamut</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions32" onchange="expandir_gamut()"  id="expandirgamut">
+                        <label class="form-check-label" for="expandirgamut">Expadir Gamut</label>
+                    </div>
+                </div>
+        <div id="div_estrategiaconversion" class="form-group" style="display:none; width: 25%; margin-right: 1%;">
+                <label for="opciones_separacion">Opciones de Separación</label>
+                <select class="form-control" onchange="select_estrategia()" id="opciones_separacion">
+                    <option value="undefined">Seleccionar</option>
+                    <option>Max Gamut</option>
+                    <option>High Gamut</option>
+                    <option>Mid Gamut</option>
+                    <option>Normal</option>
+                    <option>Normal Fleshtones</option>
+                    <option>Smooth</option>
+                    <option>Smooth Fleshtones</option>
+                    <option>Subtle</option>
+                    <option disabled>----- CUSTOM -----</option>
+                    <option>Carne Kongo</option>
+                    <option>IVONE</option>
+                    <option>Piel Kongo 1</option>
+                    <option>Piel Kongo 2</option>
+                    <option disabled>----- NUEVA ---</option>
+                    <option>Otro</option>
+                    </select>
+        </div>
+        
+        <div id="div_otraestrategia" class="form-group" style="display:none; width: 25%; margin-right: 1%;">
+                <label for="otra_estrategia">Otra Estrategia</label>
+                <input type="text" class="form-control" id="otra_estrategia">
+                 </div>
+                
+        </div>
+        </div>
+         <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+        <h5 style="margin-top: -9px;"><img src="./Icons/clientes.png" width="30px" style="display: inline-block; margin-right: 5px"><strong>Tabla Colores</strong></h5>
+    
+              <div   class="form-group" style="display:inline-block; width: 100%; vertical-align: top;">   
+                 <table id="tabela_receitas_flexo" class="table custom-table" cellspacing="0" width="100%" style="display: inline-block;">
+          <thead>
+            <tr>
+            
+            
+              <th class="col" style="width:10%;">
+              </th>
+              <th class="col" style="width:15%; text-align: left;">Color
+              </th>
+              <th class="col" style="width:12%;">Lineatura
+              </th>
+              <th class="col" style="width:12%;">Trama
+              </th>
+              <th class="col" style="width:12%;">Ángulo
+              </th>
+              <th class="col" style="width:12%;">Tratamiento Sólidos
+              </th>
+              <th class="col" style="width:12%;">Polímero
+              </th>
+              <th class="col" style="width:10%;">Densidad/Opacidad
+              </th>
+              <th class="col" style="width:5%;">Borrar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div id="button_vazia" style="display:none;">
+        <div style="width: 50%; display: inline-block" class="form-group">
+         <img src="./Icons/icone_mais.png" style="width: 20px; cursor: pointer; display:inline-block;" onclick="adiciona_cor_vazia()"><span style="display:inline-block; margin-left: 1%">Agregar Color Vacia</span>
+        </div>
+        <div style="width: 49%; display: inline-block" class="form-group">
+        
+         <img src="./Icons/icone_mais.png" style="width: 20px; cursor: pointer; display:inline-block;" onclick="adiciona_verniz()"><span style="display:inline-block; margin-left: 1%">Agregar Barniz</span><br>
+        </div>
+           <div id="mostra_outra_cor" style="width: 50%; display: inline-block" class="form-group">
+            <div  class="form-group demo-example" style="display:inline-block; width: 100%%;">
+                <img src="./Icons/icone_mais.png" style="width: 20px; cursor: pointer; display:inline-block;" onclick="adiciona_cor_extra()">
+                <select class="form-control" id="cor_adicional" style="width:88%; display: inline-block">
+                    <option value="undefined">Eligir el color...</option>
+                    <option value="#00FFFF">CYAN</option>
+                    <option value="#FF00FF">MAGENTA</option>
+                    <option value="#FFFF00">YELLOW</option>
+                    <option value="#000000">BLACK</option>
+                    <option value="#00FFEE">PROCESS CYAN</option>
+                    <option value="#EE00FF">PROCESS MAGENTA</option>
+                    <option value="#FFEE00">PROCESS YELLOW</option>
+                    <option value="#000011">PROCESS BLACK</option>
+                    <option value="#FF4500">ORANGE</option>
+                    <option value="#32CD32">GREEN</option>
+                    <option value="#0000CD">VIOLET</option>
+                </select>
+        </div> 
+        </div>
+     
+        
+        
+        <div style="width: 49%; display: inline-block" class="form-group">
+        
+         <img src="./Icons/icone_mais.png" style="width: 20px; cursor: pointer; display:inline-block;" onclick="adiciona_primer()"><span style="display:inline-block; margin-left: 1%">Agregar Primer</span>
+        </div>
+        
+        </div>
+        </div>
+         </div>
+          <div style="border-radius: 20px; background-color: #FAFAFA; box-shadow: 2px 2px #246425; width: 100%;display: inline-block; padding: 20px; vertical-align: top; margin-bottom: 10px">
+        <h5 style="margin-top: -9px;"><img src="./Icons/clientes.png" width="30px" style="display: inline-block; margin-right: 5px"><strong>Observaciones</strong></h5>
+    
+            
+                <div  class="form-group " style="display:inline-block; width: 100%; vertical-align: top">
+                    <textarea id="observacoes" class="form-control" rows="4"></textarea>
+                </div>
+                
+                
+</div>
+  
+               
+                
+                 <button class="btn btn-primary"  onclick="salvar_testform()" style="cursor: pointer; display: none">Salvar Testform</button>
+                  <button class="btn btn-secondary" onclick="cancelar_testform()" style="cursor: pointer;display: none">Cancelar</button>
+                 
+                 
+               
+                 
+               
+                  
+                 
+                
+             
+             
+           
+                             
+               
+                 
+                <br>
+                 <div  class="form-group col-md-11" style="display:inline-block; margin-top: 10px;">
+                  <button class="btn btn-primary" onclick="grabar_trabajo()" style="cursor: pointer">Grabar</button>
+                 <button class="btn btn-secondary" onclick="cancelar_trabajo()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                
+                 
+             </div>
+         
+            
+           </div> 
+            
+            
+           
+           
+            
+            <table id="tabla_tipotrabajo" class="table custom-table"  style="display: inline-block; min-width: 900px;">
+          <thead>
+            <tr>
+             
+             <th class="col" style="width:5%">Colores</th>
+             <th class="col" style="width:25%">Nombre</th>
+             <th class="col" style="width:15%">Material</th>
+             <th class="col" style="width:20%">Tinta</th>
+             <th class="col" style="width:20%">Máquina</th>
+               <th class="col" style="width:5%">Duplicar</th>
+               <th class="col" style="width:5%">Editar</th>
+              <th class="col" style="width:5%">Borrar</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+     
+           
+        <hr>
+      
+       
+       
+        
+        
+  </div>
+        
+       
+            
+             
+          
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       </div>
+  	 <script src="js/popper.js"></script>
+  <script src="js/main.js"></script>
+  		
+  		
+  	
+  	<script>
+  var cores_tabela = []
+  	    // funcoes de apoio
+  	    
+  	    
+  	 function array_move(arr, old_index, new_index) {
+    if (new_index >= arr.length) {
+        var k = new_index - arr.length + 1;
+        while (k--) {
+            arr.push(undefined);
+        }
+    }
+    arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+    return arr; // for testing
+};
+  	    
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+var usuario = api.auth.get_current_user()
+
+
+
+  	</script>
+  	
+  	<script>
+  	
+  // preenche selects
+  
+ 
+  
+    
+    
+  
+    
+    </script>
+  	
+
+
+
+
+ 
+    
+    
+    <script>
+   
+    
+    </script>
+
+<script>
+
+    
+        function mostraTipotrabajo(){
+        
+        if (document.getElementById("cliente").value != "undefined"){ 
+        var div_cliente = document.getElementById("info_tipoTrabajo")
+        var icone = document.getElementById("tipoTrabajoArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            
+            } else {
+                div_cliente.style.display = "none";
+            }
+        } else {
+            document.getElementById("cliente").style.borderColor = "red"
+            document.getElementById("error_cliente").innerText = "Seleccionar un cliente para crear un nuevo dato técnico"
+        }
+     
+      }
+      
+   
+      
+  </script>
+  
+
+
+
+
+<script>
+    function grabar_trabajo(){
+       
+        var data = {}
+        if (document.getElementById("activo").checked === true){
+            data["ACTIEVSTATUS"] = 1
+            data["FLAG_N"] = "Activo"
+        } else {
+            data["ACTIEVSTATUS"] = 0
+            data["FLAG_N"] = "Inactivo"
+        }
+        
+        data["FABRICANTEPOLIMEROBAR"] = "Kodak"
+        data["FABRICANTEPOLIMEROBLA"] = "Kodak"
+        data["FABRICANTEPOLIMERO_N"] = cores_tabela[0].plancha
+        data["LINEATURA_N"] = cores_tabela[0].lineatura
+        data["TRATAMIENTOSOLIDOSBLA"] = "NINGUNO"
+        data["TRATAMIENTOSOLIDOSBAN"] = "NINGUNO"
+        data["TRATAMIENTOSOLIDOS_N"] = cores_tabela[0].trama_solido
+        data["FECHAIMPRESION"] = new Date(document.getElementById("data_entrada").value)
+        
+        var tintasdocumento = ""
+        for (i=0;i<cores_tabela.length;i++){
+            if (cores_tabela[i].nome == "BARNIZ"){
+            data["FABRICANTEPOLIMEROBAR"] = cores_tabela[i].plancha   
+            data["TRATAMIENTOSOLIDOSBAN"] = cores_tabela[i].trama_solido
+            }
+            if (cores_tabela[i].nome == "BLANCO"){
+            data["FABRICANTEPOLIMEROBLA"] = cores_tabela[i].plancha
+            data["TRATAMIENTOSOLIDOSBLA"] = cores_tabela[i].trama_solido
+            }
+            
+            if (cores_tabela[i].nome == "CYAN"){
+                data["ANGULOCYAN_N"] = cores_tabela[i].angulo
+                tintasdocumento = tintasdocumento+"C"
+            }
+            if (cores_tabela[i].nome == "MAGENTA"){
+                data["ANGULOMAGENTA_N"] = cores_tabela[i].angulo
+                tintasdocumento = tintasdocumento+"M"
+            }
+            if (cores_tabela[i].nome == "YELLOW"){
+                data["ANGULOAMARILLO_N"] = cores_tabela[i].angulo
+                tintasdocumento = tintasdocumento+"Y"
+            }
+            if (cores_tabela[i].nome == "BLACK"){
+                data["ANGULONEGRO_N"] = cores_tabela[i].angulo
+                tintasdocumento = tintasdocumento+"K"
+            }
+            if (cores_tabela[i].nome == "ORANGE"){
+                data["ANGULONARANJA_N"] = cores_tabela[i].angulo
+                tintasdocumento = tintasdocumento+"O"
+            }
+            if (cores_tabela[i].nome == "GREEN"){
+                data["ANGULOVERDE_N"] = cores_tabela[i].angulo
+                tintasdocumento = tintasdocumento+"G"
+            }
+            if (cores_tabela[i].nome == "VIOLET"){
+                data["ANGULOVIOLETA_N"] = cores_tabela[i].angulo
+                tintasdocumento = tintasdocumento+"V"
+            }
+            
+            data["ANGULOS_N"] = cores_tabela[0].angulo
+        }
+        
+        if (data.ANGULOCYAN_N === undefined){
+            data["ANGULOCYAN_N"] = "7.5"
+        }
+        if (data.ANGULOMAGENTA_N === undefined){
+            data["ANGULOMAGENTA_N"] = "7.5"
+        }
+        if (data.ANGULOAMARILLO_N === undefined){
+            data["ANGULOAMARILLO_N"] = "7.5"
+        }
+        if (data.ANGULONEGRO_N === undefined){
+            data["ANGULONEGRO_N"] = "7.5"
+        }
+        if (data.ANGULONARANJA_N === undefined){
+            data["ANGULONARANJA_N"] = "7.5"
+        }
+        if (data.ANGULOVIOLETA_N === undefined){
+            data["ANGULOVIOLETA_N"] = "7.5"
+        }
+        if (data.ANGULOVERDE_N === undefined){
+            data["ANGULOVERDE_N"] = "7.5"
+        }
+        data['CINTADOBLEFAZ_N'] = document.getElementById("cinta").value
+        data["CODIGO"] = document.getElementById("testform").value
+        data["CURVASINTELIGENTES_N"] = document.getElementById("curva_impresion").value
+        data["icpro"] = document.getElementById("icpro").checked
+        data["presssync"] = document.getElementById("presssync").checked
+        data["ESPESORPOLIMERO_N"] = document.getElementById("espessor").value
+        
+        
+        data["OPCIONESSEPARACION"] = document.getElementById("estrategia_conversion").value
+        if (data.ESTRATEGIADECONVERSIO === "Otro"){
+        data["OPCIONESSEPARACION"] = document.getElementById("otra_estrategia").value
+        }
+        data["otra_estrategia"] = document.getElementById("otra_estrategia").value
+        
+        data["ESTRATEGIADEIMPRESION"] = document.getElementById("estrategia_impresion").value
+        data["ESTRATEGIADECONVERSIO"] = document.getElementById("estrategia_conversion").value
+        
+        data["MAQUINAIMPRESORA"] = document.getElementById('maquina').value
+        data["MATERIAL_N"] = document.getElementById('substrato').value
+        data["DESAROLLO"] = document.getElementById("desarollo").value
+        data["SENTIDOIMPRESION_N"] = document.getElementById('camada_impressao').value
+        if (document.getElementById("matchgamut").checked === true){
+        data["SEPARACIONDECOLOR_N"] = "Match Gamut"
+        }
+        if (document.getElementById("expandirgamut").checked === true){
+        data["SEPARACIONDECOLOR_N"] = "Expand Gamut"
+        }
+        data["matchgamut"] = document.getElementById("matchgamut").checked
+        data["expandirgamut"] = document.getElementById("expandirgamut").checked
+        
+        
+        data["TINTASDOCUMENTO_N"] = tintasdocumento
+        data["TINTA_N"] = document.getElementById('linha_tintas').value
+        
+        data["TIPOIMPRESION"] = document.getElementById('tipo_impressao').value
+        data["TRAMA_N"] = cores_tabela[0].trama
+        data["colores"] = cores_tabela
+        data["observaciones"] = document.getElementById("observacoes").value
+      console.log(data)  
+        if (linhaperfil_editar === 999999){
+         datostecnicos.push(data)
+        } else {
+            datostecnicos[linhaperfil_editar] = data
+        }
+        
+      
+      
+    
+      api.custom_objects.set_keys("AR-BOSISIO_clientes",id_cliente,{"datos_tecnicos":datostecnicos})
+     
+        
+        
+       tipoCliente = api.custom_objects.list_with_options("AR-BOSISIO_clientes",["ACTIVESTATUS","equal to","Activo"],["DENOMINACION","ascending"],["DENOMINACION","datos_tecnicos"]).results
+
+        
+     //  document.getElementById("cliente").value = "undefined"
+       document.getElementById('tipo_impressao').value = "undefined"
+       document.getElementById("activo").checked = true
+       document.getElementById("cinta").value = "undefined"
+       document.getElementById("testform").value = ""
+       document.getElementById("curva_impresion").value = ""
+       document.getElementById("icpro").checked = false
+       document.getElementById("presssync").checked = false
+       document.getElementById("espessor").value = "undefined"
+       document.getElementById("estrategia_conversion").value = "undefined"
+       document.getElementById("otra_estrategia").value = ""
+       document.getElementById('maquina').value = ""
+       document.getElementById('substrato').value = "undefined"
+       document.getElementById('camada_impressao').value = "undefined"
+       document.getElementById("matchgamut").checked = false
+       document.getElementById("expandirgamut").checked = false
+       document.getElementById('linha_tintas').value = ""
+       document.getElementById("observacoes").value = ""
+       cores_tabela = []
+       
+      
+       var div_cliente = document.getElementById("info_tipoTrabajo")
+        var icone = document.getElementById("tipoTrabajoArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            
+            } else {
+                div_cliente.style.display = "none";
+            }
+      
+      
+       tipoCliente = api.custom_objects.list_with_options("AR-BOSISIO_clientes",["ACTIVESTATUS","equal to","Activo"],["DENOMINACION","ascending"],["DENOMINACION","datos_tecnicos"]).results
+
+       linhaperfil_editar = 999999
+        
+       
+       llena_tabla()
+      
+      
+      
+       
+                            
+        
+       
+       }
+    
+    
+  
+    // preenche select
+    
+ var selectTipo2 = document.getElementById("cliente")
+ var tipoCliente = api.custom_objects.list_with_options("AR-BOSISIO_clientes",["ACTIVESTATUS","equal to","Activo"],["DENOMINACION","ascending"],["DENOMINACION","datos_tecnicos"]).results
+
+    for (var i = 0; i<tipoCliente.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tipoCliente[i]._id;
+        opt.innerHTML = tipoCliente[i].DENOMINACION;
+        selectTipo2.appendChild(opt);
+    }
+ 
+    
+     function seleccionar_curvas(){
+         
+       
+
+       var selectCurvas = document.getElementById("curva_impresion")
+ 
+ if (document.getElementById("icpro").checked === true){
+     var valoresselec_curvas = icpro
+     
+ } else {
+      var valoresselec_curvas = pressync
+    
+     
+ }
+     var options=''; // variable to store the options
+        for(var i = 0; i < valoresselec_curvas.length; i++){
+            
+        options += '<option value="'+valoresselec_curvas[i]+'" />';
+
+        }
+      document.getElementById("curvasimpresion").innerHTML = options 
+        
+        
+    }
+    
+ 
+  
+  //lista_seq.sort(function(a,b){
+    //  return parseInt(a) -  parseInt(b); 
+  //})
+  
+  
+  
+  
+ //lista_C.sort(function(a,b){
+   //   return parseInt(a.substring(1,a.length)) -  parseInt(b.substring(1,b.length)); 
+  //}) 
+  
+  
+  
+  var ehicpro = new RegExp("ICPRO.*")
+  var ehprsync = new RegExp("PRSYNC.*")
+ 
+  
+    var curvasinteligentes = []
+  
+     var  estrategia_conversion = []
+  
+     var  estrategia_impresion = []
+
+   
+    var datostecnicos = []
+    
+    var id_cliente = ""
+    
+     function llena_tabla(){
+         
+       document.getElementById('tipo_impressao').value = "undefined"
+       document.getElementById("activo").checked = true
+       document.getElementById("cinta").value = "undefined"
+       document.getElementById("testform").value = ""
+       document.getElementById("curva_impresion").value = ""
+       document.getElementById("estrategia_impresion").value = ""
+       document.getElementById("estrategia_conversion").value = ""
+       document.getElementById("icpro").checked = false
+       document.getElementById("presssync").checked = false
+       document.getElementById("espessor").value = "undefined"
+       document.getElementById("opciones_separacion").value = "undefined"
+       document.getElementById("otra_estrategia").value = ""
+       document.getElementById('maquina').value = ""
+       document.getElementById('substrato').value = "undefined"
+       document.getElementById('camada_impressao').value = "undefined"
+       document.getElementById("matchgamut").checked = false
+       document.getElementById("expandirgamut").checked = false
+       document.getElementById('linha_tintas').value = ""
+       document.getElementById("observacoes").value = ""
+       cores_tabela = []
+         
+       curvasinteligentes = []
+  
+       estrategia_conversion = []
+  
+      estrategia_impresion = []
+         
+       document.getElementById("error_cliente").innerText = ""
+       document.getElementById("cliente").style.borderColor = "#236423"
+       for (i=0;i<tipoCliente.length;i++){
+           if (tipoCliente[i]._id == document.getElementById("cliente").value){
+               console.log("lo encontré")
+               datostecnicos = tipoCliente[i].datos_tecnicos
+               id_cliente = tipoCliente[i]._id 
+           }
+       }
+       
+       if (datostecnicos != undefined){
+        clearTable(document.getElementById("tabla_tipotrabajo"))
+          
+          
+         var table = document.getElementById("tabla_tipotrabajo")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<datostecnicos.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            
+            if (datostecnicos[i].TINTASDOCUMENTO_N.indexOf("-") > -1){
+             var tintas =  datostecnicos[i].TINTASDOCUMENTO_N.split(" - ")
+             tintas = tintas[1]
+            } else {
+                var tintas = datostecnicos[i].TINTASDOCUMENTO_N
+            }
+            
+            if (datostecnicos[i].MATERIAL_N.indexOf("-") > -1){
+             var material =  datostecnicos[i].MATERIAL_N.split(" - ")
+             material = material[1]
+            } else {
+                var material = datostecnicos[i].MATERIAL_N
+            }
+            if (datostecnicos[i].TINTA_N.indexOf("-") > -1){
+             var tinta_usada =  datostecnicos[i].TINTA_N.split(" - ")
+             tinta_usada = tinta_usada[1]
+            } else {
+                var tinta_usada = datostecnicos[i].TINTA_N
+            }
+            
+            if (datostecnicos[i].MAQUINAIMPRESORA.indexOf("-") > -1){
+             var maquina =  datostecnicos[i].MAQUINAIMPRESORA.split(" - ")
+             maquina = maquina[1]
+            } else {
+                var maquina = datostecnicos[i].MAQUINAIMPRESORA
+            }
+            
+            
+            
+              
+            cell1.innerHTML = '<div style="font-size:1em; text-align: center;">'+tintas+'</div>'
+            cell2.innerHTML = '<div style="font-size:1em; text-align: center;">'+datostecnicos[i].CODIGO+'</div>'
+            cell3.innerHTML = '<div style="font-size:1em; text-align: center;">'+material+'</div>'
+            cell4.innerHTML = '<div style="font-size:1em; text-align: center;">'+tinta_usada+'</div>'
+            cell5.innerHTML = '<div style="font-size:1em; text-align: center;">'+maquina+'</div>'
+            
+            
+            cell6.innerHTML = '<div><img id="'+i+'" src="Icons/duplicar.png" height="20px" onclick="duplicar_tipoTrabajo()" style="cursor: pointer;"></div>'
+           
+            cell7.innerHTML = '<div><img id="'+i+'" src="Icons/edit.png" height="20px" onclick="editar_tipoTrabajo()" style="cursor: pointer;"></div>'
+            
+            cell8.innerHTML = '<div><img id="'+i+'" src="Icons/delete.png" height="20px" onclick="borrar_tipoTrabajo()" style="cursor: pointer;"></div>'
+          qtasrow = qtasrow +1
+      
+     
+     curvasinteligentes.push(datostecnicos[i].CURVASINTELIGENTES_N)
+         estrategia_conversion.push(datostecnicos[i].ESTRATEGIADECONVERSIO)
+        estrategia_impresion.push(datostecnicos[i].ESTRATEGIADEIMPRESION)
+      
+    
+    }
+    
+    
+        
+       
+    
+
+       }
+       
+       llena_campos_curva()
+}
+ 
+ 
+
+ var icpro = []
+        var pressync = []
+        var noentendi = []
+       
+       var theimp = []
+var theconv = []
+var naoentendi_imp =[]
+var naoentendi_conv = []
+
+function llena_campos_curva(){
+    
+    var curvasint_unique = curvasinteligentes.filter(onlyUnique)
+    var imp_unicos = estrategia_impresion.filter(onlyUnique)
+    var conv_unicos = estrategia_conversion.filter(onlyUnique)
+    
+         for (i=0;i<curvasint_unique.length;i++){
+            var curva_split = curvasint_unique[i].split("-")
+            if (curva_split.length === 2){
+                if (ehicpro.test(curva_split[1].trim()) === true){
+                    icpro.push(curva_split[1].trim())
+                } else if (ehprsync.test(curva_split[1].trim()) === true){
+                    pressync.push(curva_split[1].trim())
+                } else {
+                    noentendi.push(curva_split)
+                }
+            } else {
+                noentendi.push([curva_split,i])
+            }
+        }
+        
+        
+ 
+            for (i=0;i<imp_unicos.length;i++){
+                var curva_split = imp_unicos[i].split("-")
+                if (curva_split.length === 2){
+                    theimp.push(curva_split[1].trim())
+                } else {
+                   naoentendi_imp.push([curva_split,i])
+                }
+            }
+            
+            for (i=0;i<conv_unicos.length;i++){
+                var curva_split = conv_unicos[i].split("-")
+                if (curva_split.length === 2){
+                    theconv.push(curva_split[1].trim())
+                } else {
+                   naoentendi_conv.push([curva_split,i])
+                }
+            }
+
+    
+    
+    var options=''; // variable to store the options
+        for(var i = 0; i < theimp.length; i++){
+            
+        options += '<option value="'+theimp[i]+'" />';
+
+        }
+      document.getElementById("estrategiaimpresion").innerHTML = options 
+      
+      
+       var options=''; // variable to store the options
+        for(var i = 0; i < theconv.length; i++){
+            
+        options += '<option value="'+theconv[i]+'" />';
+
+        }
+      document.getElementById("estrategiaconversion").innerHTML = options 
+    
+}
+
+ 
+    
+
+    
+  
+    
+    
+      
+    
+     function borrar_tipoTrabajo(){
+    if (confirm("Estás seguro que quieres borrar este perfil?") === true){     
+    var linha = parseInt(event.srcElement.id)
+    
+     var tira = datostecnicos.splice(linha,1)
+     
+    var altera = api.custom_objects.set_keys("AR-BOSISIO_clientes",id_cliente,{"datos_tecnicos":datostecnicos})
+    
+     tipoCliente = api.custom_objects.list_with_options("AR-BOSISIO_clientes",["ACTIVESTATUS","equal to","Activo"],["DENOMINACION","ascending"],["DENOMINACION","datos_tecnicos"]).results
+
+        
+       
+       llena_tabla()
+    
+   
+      
+    }
+     }
+    
+    var linhaperfil_editar = 999999
+    
+     function editar_tipoTrabajo(){
+    document.getElementById("gamaexpandida_no").checked = true
+    
+     var linha = parseInt(event.srcElement.id)
+     console.log(datostecnicos[linha]["CODIGO"])
+     console.log(datostecnicos[linha]["TIPOIMPRESION"])
+     linhaperfil_editar = linha
+     
+    var div_cliente = document.getElementById("info_tipoTrabajo")
+    var icone = document.getElementById("tipoTrabajoArrow")
+    icone.classList.toggle("fa-minus-square")
+    document.getElementById("info_tipoTrabajo").style.display = "inline-block"
+    
+    document.getElementById("testform").value = datostecnicos[linha]["CODIGO"]
+    document.getElementById("tipo_impressao").value = datostecnicos[linha]["TIPOIMPRESION"]
+    
+    
+   
+    if (datostecnicos[linha].FLAG_N === "Activo"){
+        document.getElementById("activo").checked = true
+    } else {
+        document.getElementById("activo").checked = false
+    }
+  
+    if (datostecnicos[linha].FECHAIMPRESION != undefined){
+        document.getElementById("data_entrada").value = dateFormat(new Date(datostecnicos[linha].FECHAIMPRESION),"yyyy-mm-dd")
+    }
+  
+    document.getElementById("maquina").value = datostecnicos[linha]["MAQUINAIMPRESORA"]
+    if (datostecnicos[linha]["DESAROLLO"] != undefined){
+     document.getElementById("desarollo").value = datostecnicos[linha]["DESAROLLO"]   
+    }
+ 
+    if (datostecnicos[linha]["TINTA_N"].indexOf(" - ") === -1){
+    document.getElementById("linha_tintas").value = datostecnicos[linha]["TINTA_N"]
+    } else {
+        var novatinta = datostecnicos[linha]["TINTA_N"].split(" - ")[1].trim()
+        document.getElementById("linha_tintas").value = novatinta
+    }
+ 
+    if (datostecnicos[linha]["SENTIDOIMPRESION_N"].indexOf(" - ") === -1){
+    document.getElementById("camada_impressao").value = datostecnicos[linha]["SENTIDOIMPRESION_N"]
+    } else {
+        var novosentido = datostecnicos[linha]["SENTIDOIMPRESION_N"].split(" - ")[1].trim()
+        document.getElementById("camada_impressao").value = novosentido
+    }
+ 
+    var thesubsSelect = document.getElementById("substrato")
+ 
+    var existematerial = false
+    if (datostecnicos[linha]["MATERIAL_N"].indexOf(" - ") === -1){
+        var novomaterial = datostecnicos[linha]["MATERIAL_N"]
+    } else {
+       var novomaterial = datostecnicos[linha]["MATERIAL_N"].split(" - ")[1].trim() 
+    }
+    
+    for (i=0;i<thesubsSelect.options.length;i++){
+        if (thesubsSelect.options[i].value == novomaterial){
+            existematerial = true
+        }
+    }
+   
+    if (existematerial === true){
+    document.getElementById("substrato").value = novomaterial
+    } else {
+     document.getElementById("substrato").value = "undefined"
+     document.getElementById("error_sustrato").innerHTML = "No existe el Sustrato <strong> "+novomaterial+"</strong>, por favor eligir uno de la lista."
+    }
+
+    if (datostecnicos[linha]["CURVASINTELIGENTES_N"].indexOf(" - ") === -1){
+    document.getElementById("curva_impresion").value = datostecnicos[linha]["CURVASINTELIGENTES_N"]
+    } else {
+        var novacurva = datostecnicos[linha]["CURVASINTELIGENTES_N"].split(" - ")[1].trim()
+        document.getElementById("curva_impresion").value = novacurva
+    }
+    if (datostecnicos[linha].icpro === undefined){
+    if (ehicpro.test(document.getElementById("curva_impresion").value) === true){
+        document.getElementById("icpro").checked = true
+    }
+    if (ehprsync.test(document.getElementById("curva_impresion").value) === true){
+        document.getElementById("presssync").checked = true
+    }
+    } else {
+       document.getElementById("icpro").checked = datostecnicos[linha].icpro
+       document.getElementById("presssync").checked = datostecnicos[linha].presssync
+    }
+ 
+    if (datostecnicos[linha]["ESTRATEGIADEIMPRESION"].indexOf(" - ") === -1){
+    document.getElementById("estrategia_impresion").value = datostecnicos[linha]["ESTRATEGIADEIMPRESION"]
+    } else {
+        var novaestrategia = datostecnicos[linha]["ESTRATEGIADEIMPRESION"].split(" - ")[1].trim()
+        document.getElementById("estrategia_impresion").value = novaestrategia
+    }
+    
+    if (datostecnicos[linha]["ESTRATEGIADECONVERSIO"].indexOf(" - ") === -1){
+    document.getElementById("estrategia_conversion").value = datostecnicos[linha]["ESTRATEGIADEIMPRESION"]
+    } else {
+        var novaestrategia = datostecnicos[linha]["ESTRATEGIADECONVERSIO"].split(" - ")[1].trim()
+        document.getElementById("estrategia_conversion").value = novaestrategia
+    }
+    
+    if (datostecnicos[linha]["matchgamut"] != undefined){
+        document.getElementById("matchgamut").checked = datostecnicos[linha]["matchgamut"]
+         document.getElementById("expandirgamut").checked = datostecnicos[linha]["expandirgamut"]
+         if (datostecnicos[linha]["expandirgamut"] === true){
+             document.getElementById("div_estrategiaconversion").style.display = "inline-block"
+         }
+         document.getElementById("opciones_separacion").value = datostecnicos[linha]["OPCIONESSEPARACION"]
+         if (datostecnicos[linha]["otra_estrategia"] != ""){
+         document.getElementById("div_otraestrategia").style.display = "inline-block"
+         document.getElementById("otra_estrategia").value = datostecnicos[linha]["otra_estrategia"]
+         }
+    }
+    
+       
+    
+    var existeespessor = false
+    if (datostecnicos[linha]["ESPESORPOLIMERO_N"].indexOf(" - ") === -1){
+        var novoespessor = datostecnicos[linha]["ESPESORPOLIMERO_N"]
+    } else {
+       var novoespessor = datostecnicos[linha]["ESPESORPOLIMERO_N"].split(" - ")[1].replace("mm","").trim()
+    }
+    
+    var theespessorSelect = document.getElementById("espessor")
+    for (i=0;i<theespessorSelect.options.length;i++){
+        if (theespessorSelect.options[i].value == novoespessor){
+            existeespessor = true
+        }
+    }
+   
+    if (existeespessor === true){
+    document.getElementById("espessor").value = novoespessor
+    } else {
+     document.getElementById("espessor").value = "undefined"
+     document.getElementById("error_espessor").innerHTML = "No existe el espessor <strong> "+novoespessor+"</strong>, por favor eligir uno de la lista."
+    }
+   
+    var existecinta = false
+    if (datostecnicos[linha]["CINTADOBLEFAZ_N"].indexOf(" - ") === -1){
+        var novacinta = datostecnicos[linha]["CINTADOBLEFAZ_N"]
+    } else {
+       var novacinta = datostecnicos[linha]["CINTADOBLEFAZ_N"].split(" - ")[1].trim() 
+    }
+    
+    var thecintaSelect = document.getElementById("cinta")
+    for (i=0;i<thecintaSelect.options.length;i++){
+        if (thecintaSelect.options[i].value == novacinta){
+            existecinta = true
+        }
+    }
+   
+    if (existecinta === true){
+    document.getElementById("cinta").value = novacinta
+    } else {
+     document.getElementById("cinta").value = "undefined"
+     document.getElementById("error_cinta").innerHTML = "No existe la cinta <strong> "+novoespessor+"</strong>, por favor eligir uno de la lista."
+    }
+    
+    if (datostecnicos[linha].colores != undefined){
+        
+        cores_tabela = datostecnicos[linha].colores
+        
+        if (datostecnicos[linha].TINTASDOCUMENTO_N.indexOf(" - ") === -1){
+            var novatintadoc2 = datostecnicos[linha].TINTASDOCUMENTO_N
+        } else {
+            var novatintadoc2 = datostecnicos[linha].TINTASDOCUMENTO_N.split(" - ")[1].trim()
+        }
+   
+        if (novatintadoc2 != "CMYK"){
+            document.getElementById("div_conversion").style.display = "inline-block"
+            document.getElementById("gamaexpandida_no").checked = false
+            document.getElementById("gamaexpandida_si").checked = true
+        } else {
+            document.getElementById("div_conversion").style.display = "none"
+            document.getElementById("gamaexpandida_no").checked = true
+            document.getElementById("gamaexpandida_si").checked = false
+        }
+            
+    } else {
+        cores_tabela = []
+        console.log("nao encontrei as cores")
+        var arraytintas = []
+        arraytintas.push(["CYAN","#00FFFF",datostecnicos[linha].ANGULOCYAN_N])
+        arraytintas.push(["MAGENTA","#FF00FF",datostecnicos[linha].ANGULOMAGENTA_N])
+        arraytintas.push(["YELLOW","#FFFF00",datostecnicos[linha].ANGULOAMARILLO_N])
+        arraytintas.push(["BLACK","#000000",datostecnicos[linha].ANGULONEGRO_N])
+        //arraytintas.push(["BARNIZ","#FFF0F5",datostecnicos[linha].ANGULOCYAN_N])
+        if (datostecnicos[linha].TINTASDOCUMENTO_N.indexOf(" - ") === -1){
+            var novatintadoc = datostecnicos[linha].TINTASDOCUMENTO_N
+        } else {
+            var novatintadoc = datostecnicos[linha].TINTASDOCUMENTO_N.split(" - ")[1].trim()
+        }
+        if (novatintadoc == "CMYKO" || novatintadoc == "CMYKOV" || novatintadoc == "CMYKOG" || novatintadoc == "CMYKOGV"){
+            arraytintas.push(["ORANGE","#FF4500",datostecnicos[linha].ANGULONARANJA_N])
+            document.getElementById("gamaexpandida_no").checked = false
+            document.getElementById("gamaexpandida_si").checked = true
+            document.getElementById("div_conversion").style.display = "inline-block"
+        }
+        if (novatintadoc == "CMYKG" || novatintadoc == "CMYKGV" || novatintadoc == "CMYKOG" || novatintadoc == "CMYKOGV"){
+            arraytintas.push(["GREEN","#32CD32",datostecnicos[linha].ANGULOVERDE_N])
+             document.getElementById("gamaexpandida_no").checked = false
+            document.getElementById("gamaexpandida_si").checked = true
+            document.getElementById("div_conversion").style.display = "inline-block"
+        }
+        if (novatintadoc == "CMYKV" || novatintadoc == "CMYKGV" || novatintadoc == "CMYKOV" || novatintadoc == "CMYKOGV"){
+            arraytintas.push(["VIOLET","#0000CD",datostecnicos[linha].ANGULOVIOLETA_N])
+             document.getElementById("gamaexpandida_no").checked = false
+            document.getElementById("gamaexpandida_si").checked = true
+            document.getElementById("div_conversion").style.display = "inline-block"
+        }
+        
+          arraytintas.push(["BLANCO","#a8a038",datostecnicos[linha].ANGULOCYAN_N])
+      
+        for (i=0;i<arraytintas.length;i++){
+            if (arraytintas[i][2] === undefined){
+                arraytintas[i][2] = datostecnicos[linha].ANGULOS_N.split(" - ")[0].trim()
+            }
+        }
+        
+        for (i=0;i<arraytintas.length;i++){
+       console.log("vou fazer a "+arraytintas[i][0])
+        var info_cor = {}
+       
+        info_cor["nome"] = arraytintas[i][0]
+        if (arraytintas[i][2].indexOf(" - ") === -1){
+            
+        info_cor["angulo"] = arraytintas[i][2]
+        } else {
+            var novoangulo = arraytintas[i][2].split(" - ")[1].trim()
+            info_cor["angulo"] = novoangulo
+        }
+        
+        info_cor["cor"] = arraytintas[i][1]
+      
+        if (datostecnicos[linha].LINEATURA_N.indexOf(" - ") === -1){
+        info_cor["lineatura"] = datostecnicos[linha].LINEATURA_N
+        } else {
+          var novalineatura =   datostecnicos[linha].LINEATURA_N.split(" - ")[1].trim()
+          info_cor["lineatura"] = novalineatura
+        }
+  
+        if (arraytintas[i][0] === "BLANCO"){
+            
+         if (datostecnicos[linha].FABRICANTEPOLIMEROBLA.indexOf(" - ") === -1){
+        info_cor["plancha"] = datostecnicos[linha].FABRICANTEPOLIMEROBLA
+        } else {
+            var novaplancha = datostecnicos[linha].FABRICANTEPOLIMEROBLA.split(" - ")[1].trim()
+            novaplancha = novaplancha[0]+novaplancha.substring(1,novaplancha.length).toLowerCase()
+            info_cor["plancha"] = novaplancha
+        }
+        
+        if (datostecnicos[linha].TRATAMIENTOSOLIDOSBLA.indexOf(" - ") === -1){
+        info_cor["trama_solido"] = datostecnicos[linha].TRATAMIENTOSOLIDOSBLA
+        } else {
+            var novasolido = datostecnicos[linha].TRATAMIENTOSOLIDOSBLA.split(" - ")[1].trim()
+            info_cor["trama_solido"] = novasolido
+        }
+         
+            
+       
+        } else if (arraytintas[i][0] === "BARNIZ"){
+            
+              if (datostecnicos[linha].FABRICANTEPOLIMEROBAR.indexOf(" - ") === -1){
+        info_cor["plancha"] = datostecnicos[linha].FABRICANTEPOLIMEROBAR
+        } else {
+            var novaplancha = datostecnicos[linha].FABRICANTEPOLIMEROBAR.split(" - ")[1].trim()
+            novaplancha = novaplancha[0]+novaplancha.substring(1,novaplancha.length).toLowerCase()
+            info_cor["plancha"] = novaplancha
+        }
+        
+        if (datostecnicos[linha].TRATAMIENTOSOLIDOSBAN.indexOf(" - ") === -1){
+        info_cor["trama_solido"] = datostecnicos[linha].TRATAMIENTOSOLIDOSBAN
+        } else {
+            var novasolido = datostecnicos[linha].TRATAMIENTOSOLIDOSBAN.split(" - ")[1].trim()
+            info_cor["trama_solido"] = novasolido
+        }
+       
+            
+        } else {
+       
+        if (datostecnicos[linha].FABRICANTEPOLIMERO_N.indexOf(" - ") === -1){
+        info_cor["plancha"] = datostecnicos[linha].FABRICANTEPOLIMERO_N
+        } else {
+            var novaplancha = datostecnicos[linha].FABRICANTEPOLIMERO_N.split(" - ")[1].trim()
+            novaplancha = novaplancha[0]+novaplancha.substring(1,novaplancha.length).toLowerCase()
+            info_cor["plancha"] = novaplancha
+        }
+        
+        if (datostecnicos[linha].TRATAMIENTOSOLIDOS_N.indexOf(" - ") === -1){
+        info_cor["trama_solido"] = datostecnicos[linha].TRATAMIENTOSOLIDOS_N
+        } else {
+            var novasolido = datostecnicos[linha].TRATAMIENTOSOLIDOS_N.split(" - ")[1].trim()
+            info_cor["trama_solido"] = novasolido
+        }
+         
+            
+        }
+        
+         if (datostecnicos[linha].TRAMA_N.indexOf(" - ") === -1){
+        info_cor["trama"] = datostecnicos[linha].TRAMA_N
+        } else {
+          var novatrama = datostecnicos[linha].TRAMA_N.split(" - ")[1].trim()
+          info_cor["trama"] = novatrama
+        }
+        console.log("fazendo o push")
+       cores_tabela.push(info_cor)
+       console.log(cores_tabela.length)
+        }
+        
+        
+    }
+    
+    
+    
+    console.log("final tem "+cores_tabela.length)
+    console.log(cores_tabela)
+    
+     preenche_tabela_tintas()
+    
+   
+    
+    
+    }
+    
+    
+    
+    
+    
+      function duplicar_tipoTrabajo(){
+  
+    document.getElementById("gamaexpandida_no").checked = true
+     var linha = parseInt(event.srcElement.id)
+    
+     var div_cliente = document.getElementById("info_tipoTrabajo")
+    var icone = document.getElementById("tipoTrabajoArrow")
+    icone.classList.toggle("fa-minus-square")
+    
+    document.getElementById("info_tipoTrabajo").style.display = "inline-block"
+ 
+    document.getElementById("tipo_impressao").value = datostecnicos[linha]["TIPOIMPRESION"]
+    
+    
+   
+    if (datostecnicos[linha].FLAG_N === "Activo"){
+        document.getElementById("activo").checked = true
+    } else {
+        document.getElementById("activo").checked = false
+    }
+  
+    if (datostecnicos[linha].FECHAIMPRESION != undefined){
+        document.getElementById("data_entrada").value = dateFormat(new Date(datostecnicos[linha].FECHAIMPRESION),"yyyy-mm-dd")
+    }
+  
+    document.getElementById("maquina").value = datostecnicos[linha]["MAQUINAIMPRESORA"]
+    if (datostecnicos[linha]["DESAROLLO"] != undefined){
+     document.getElementById("desarollo").value = datostecnicos[linha]["DESAROLLO"]   
+    }
+ 
+    if (datostecnicos[linha]["TINTA_N"].indexOf(" - ") === -1){
+    document.getElementById("linha_tintas").value = datostecnicos[linha]["TINTA_N"]
+    } else {
+        var novatinta = datostecnicos[linha]["TINTA_N"].split(" - ")[1].trim()
+        document.getElementById("linha_tintas").value = novatinta
+    }
+ 
+    if (datostecnicos[linha]["SENTIDOIMPRESION_N"].indexOf(" - ") === -1){
+    document.getElementById("camada_impressao").value = datostecnicos[linha]["SENTIDOIMPRESION_N"]
+    } else {
+        var novosentido = datostecnicos[linha]["SENTIDOIMPRESION_N"].split(" - ")[1].trim()
+        document.getElementById("camada_impressao").value = novosentido
+    }
+ 
+    var thesubsSelect = document.getElementById("substrato")
+ 
+    var existematerial = false
+    if (datostecnicos[linha]["MATERIAL_N"].indexOf(" - ") === -1){
+        var novomaterial = datostecnicos[linha]["MATERIAL_N"]
+    } else {
+       var novomaterial = datostecnicos[linha]["MATERIAL_N"].split(" - ")[1].trim() 
+    }
+    
+    for (i=0;i<thesubsSelect.options.length;i++){
+        if (thesubsSelect.options[i].value == novomaterial){
+            existematerial = true
+        }
+    }
+   
+    if (existematerial === true){
+    document.getElementById("substrato").value = novomaterial
+    } else {
+     document.getElementById("substrato").value = "undefined"
+     document.getElementById("error_sustrato").innerHTML = "No existe el Sustrato <strong> "+novomaterial+"</strong>, por favor eligir uno de la lista."
+    }
+
+    if (datostecnicos[linha]["CURVASINTELIGENTES_N"].indexOf(" - ") === -1){
+    document.getElementById("curva_impresion").value = datostecnicos[linha]["CURVASINTELIGENTES_N"]
+    } else {
+        var novacurva = datostecnicos[linha]["CURVASINTELIGENTES_N"].split(" - ")[1].trim()
+        document.getElementById("curva_impresion").value = novacurva
+    }
+    if (datostecnicos[linha].icpro === undefined){
+    if (ehicpro.test(document.getElementById("curva_impresion").value) === true){
+        document.getElementById("icpro").checked = true
+    }
+    if (ehprsync.test(document.getElementById("curva_impresion").value) === true){
+        document.getElementById("presssync").checked = true
+    }
+    } else {
+       document.getElementById("icpro").checked = datostecnicos[linha].icpro
+       document.getElementById("presssync").checked = datostecnicos[linha].presssync
+    }
+ 
+    if (datostecnicos[linha]["ESTRATEGIADEIMPRESION"].indexOf(" - ") === -1){
+    document.getElementById("estrategia_impresion").value = datostecnicos[linha]["ESTRATEGIADEIMPRESION"]
+    } else {
+        var novaestrategia = datostecnicos[linha]["ESTRATEGIADEIMPRESION"].split(" - ")[1].trim()
+        document.getElementById("estrategia_impresion").value = novaestrategia
+    }
+    
+    if (datostecnicos[linha]["matchgamut"] != undefined){
+        document.getElementById("matchgamut").checked = datostecnicos[linha]["matchgamut"]
+         document.getElementById("expandirgamut").checked = datostecnicos[linha]["expandirgamut"]
+         document.getElementById("opciones_separacion").value = datostecnicos[linha]["OPCIONESSEPARACION"]
+         if (datostecnicos[linha]["otra_estrategia"] != ""){
+         document.getElementById("div_otraestrategia").style.display = "inline-block"
+         document.getElementById("otra_estrategia").value = datostecnicos[linha]["otra_estrategia"]
+         }
+    }
+    
+    var existeespessor = false
+    if (datostecnicos[linha]["ESPESORPOLIMERO_N"].indexOf(" - ") === -1){
+        var novoespessor = datostecnicos[linha]["ESPESORPOLIMERO_N"]
+    } else {
+       var novoespessor = datostecnicos[linha]["ESPESORPOLIMERO_N"].split(" - ")[1].replace("mm","").trim()
+    }
+    
+    var theespessorSelect = document.getElementById("espessor")
+    for (i=0;i<theespessorSelect.options.length;i++){
+        if (theespessorSelect.options[i].value == novoespessor){
+            existeespessor = true
+        }
+    }
+   
+    if (existeespessor === true){
+    document.getElementById("espessor").value = novoespessor
+    } else {
+     document.getElementById("espessor").value = "undefined"
+     document.getElementById("error_espessor").innerHTML = "No existe el espessor <strong> "+novoespessor+"</strong>, por favor eligir uno de la lista."
+    }
+   
+    var existecinta = false
+    if (datostecnicos[linha]["CINTADOBLEFAZ_N"].indexOf(" - ") === -1){
+        var novacinta = datostecnicos[linha]["CINTADOBLEFAZ_N"]
+    } else {
+       var novacinta = datostecnicos[linha]["CINTADOBLEFAZ_N"].split(" - ")[1].trim() 
+    }
+    
+    var thecintaSelect = document.getElementById("cinta")
+    for (i=0;i<thecintaSelect.options.length;i++){
+        if (thecintaSelect.options[i].value == novacinta){
+            existecinta = true
+        }
+    }
+   
+    if (existecinta === true){
+    document.getElementById("cinta").value = novacinta
+    } else {
+     document.getElementById("cinta").value = "undefined"
+     document.getElementById("error_cinta").innerHTML = "No existe la cinta <strong> "+novoespessor+"</strong>, por favor eligir uno de la lista."
+    }
+    
+    if (datostecnicos[linha].colores != undefined){
+        
+        cores_tabela = datostecnicos[linha].colores
+        
+        if (datostecnicos[linha].TINTASDOCUMENTO_N.indexOf(" - ") === -1){
+            var novatintadoc2 = datostecnicos[linha].TINTASDOCUMENTO_N
+        } else {
+            var novatintadoc2 = datostecnicos[linha].TINTASDOCUMENTO_N.split(" - ")[1].trim()
+        }
+   
+        if (novatintadoc2 != "CMYK"){
+            document.getElementById("div_conversion").style.display = "inline-block"
+            document.getElementById("gamaexpandida_no").checked = false
+            document.getElementById("gamaexpandida_si").checked = true
+        } else {
+            document.getElementById("div_conversion").style.display = "none"
+            document.getElementById("gamaexpandida_no").checked = true
+            document.getElementById("gamaexpandida_si").checked = false
+        }
+            
+    } else {
+        console.log("nao encontrei as cores")
+        var arraytintas = []
+        arraytintas.push(["CYAN","#00FFFF",datostecnicos[linha].ANGULOCYAN_N])
+        arraytintas.push(["MAGENTA","#FF00FF",datostecnicos[linha].ANGULOMAGENTA_N])
+        arraytintas.push(["YELLOW","#FFFF00",datostecnicos[linha].ANGULOAMARILLO_N])
+        arraytintas.push(["BLACK","#000000",datostecnicos[linha].ANGULONEGRO_N])
+        arraytintas.push(["BLANCO","#a8a038",datostecnicos[linha].ANGULOCYAN_N])
+        arraytintas.push(["BARNIZ","#FFF0F5",datostecnicos[linha].ANGULOCYAN_N])
+        if (datostecnicos[linha].TINTASDOCUMENTO_N.indexOf(" - ") === -1){
+            var novatintadoc = datostecnicos[linha].TINTASDOCUMENTO_N
+        } else {
+            var novatintadoc = datostecnicos[linha].TINTASDOCUMENTO_N.split(" - ")[1].trim()
+        }
+        if (novatintadoc == "CMYKO" || novatintadoc == "CMYKOV" || novatintadoc == "CMYKOG" || novatintadoc == "CMYKOGV"){
+            arraytintas.push(["ORANGE","#FF4500",datostecnicos[linha].ANGULONARANJA_N])
+            document.getElementById("gamaexpandida_no").checked = false
+            document.getElementById("gamaexpandida_si").checked = true
+            document.getElementById("div_conversion").style.display = "inline-block"
+        }
+        if (novatintadoc == "CMYKG" || novatintadoc == "CMYKGV" || novatintadoc == "CMYKOG" || novatintadoc == "CMYKOGV"){
+            arraytintas.push(["GREEN","#32CD32",datostecnicos[linha].ANGULOVERDE_N])
+             document.getElementById("gamaexpandida_no").checked = false
+            document.getElementById("gamaexpandida_si").checked = true
+            document.getElementById("div_conversion").style.display = "inline-block"
+        }
+        if (novatintadoc == "CMYKV" || novatintadoc == "CMYKGV" || novatintadoc == "CMYKOV" || novatintadoc == "CMYKOGV"){
+            arraytintas.push(["VIOLET","#0000CD",datostecnicos[linha].ANGULOVIOLETA_N])
+             document.getElementById("gamaexpandida_no").checked = false
+            document.getElementById("gamaexpandida_si").checked = true
+            document.getElementById("div_conversion").style.display = "inline-block"
+        }
+        
+        for (i=0;i<arraytintas.length;i++){
+            if (arraytintas[i][2] === undefined){
+                arraytintas[i][2] = "7.5"
+            }
+        }
+        
+        for (i=0;i<arraytintas.length;i++){
+       console.log("vou fazer a "+arraytintas[i][0])
+        var info_cor = {}
+       
+        info_cor["nome"] = arraytintas[i][0]
+        if (arraytintas[i][2].indexOf(" - ") === -1){
+            
+        info_cor["angulo"] = arraytintas[i][2]
+        } else {
+            var novoangulo = arraytintas[i][2].split(" - ")[1].trim()
+            info_cor["angulo"] = novoangulo
+        }
+        
+        info_cor["cor"] = arraytintas[i][1]
+      
+        if (datostecnicos[linha].LINEATURA_N.indexOf(" - ") === -1){
+        info_cor["lineatura"] = datostecnicos[linha].LINEATURA_N
+        } else {
+          var novalineatura =   datostecnicos[linha].LINEATURA_N.split(" - ")[1].trim()
+          info_cor["lineatura"] = novalineatura
+        }
+  
+        if (arraytintas[i][0] === "BLANCO"){
+            
+         if (datostecnicos[linha].FABRICANTEPOLIMEROBLA.indexOf(" - ") === -1){
+        info_cor["plancha"] = datostecnicos[linha].FABRICANTEPOLIMEROBLA
+        } else {
+            var novaplancha = datostecnicos[linha].FABRICANTEPOLIMEROBLA.split(" - ")[1].trim()
+            novaplancha = novaplancha[0]+novaplancha.substring(1,novaplancha.length).toLowerCase()
+            info_cor["plancha"] = novaplancha
+        }
+        
+        if (datostecnicos[linha].TRATAMIENTOSOLIDOSBLA.indexOf(" - ") === -1){
+        info_cor["trama_solido"] = datostecnicos[linha].TRATAMIENTOSOLIDOSBLA
+        } else {
+            var novasolido = datostecnicos[linha].TRATAMIENTOSOLIDOSBLA.split(" - ")[1].trim()
+            info_cor["trama_solido"] = novasolido
+        }
+         
+            
+       
+        } else if (arraytintas[i][0] === "BARNIZ"){
+            
+              if (datostecnicos[linha].FABRICANTEPOLIMEROBAR.indexOf(" - ") === -1){
+        info_cor["plancha"] = datostecnicos[linha].FABRICANTEPOLIMEROBAR
+        } else {
+            var novaplancha = datostecnicos[linha].FABRICANTEPOLIMEROBAR.split(" - ")[1].trim()
+            novaplancha = novaplancha[0]+novaplancha.substring(1,novaplancha.length).toLowerCase()
+            info_cor["plancha"] = novaplancha
+        }
+        
+        if (datostecnicos[linha].TRATAMIENTOSOLIDOSBAN.indexOf(" - ") === -1){
+        info_cor["trama_solido"] = datostecnicos[linha].TRATAMIENTOSOLIDOSBAN
+        } else {
+            var novasolido = datostecnicos[linha].TRATAMIENTOSOLIDOSBAN.split(" - ")[1].trim()
+            info_cor["trama_solido"] = novasolido
+        }
+       
+            
+        } else {
+       
+        if (datostecnicos[linha].FABRICANTEPOLIMERO_N.indexOf(" - ") === -1){
+        info_cor["plancha"] = datostecnicos[linha].FABRICANTEPOLIMERO_N
+        } else {
+            var novaplancha = datostecnicos[linha].FABRICANTEPOLIMERO_N.split(" - ")[1].trim()
+            novaplancha = novaplancha[0]+novaplancha.substring(1,novaplancha.length).toLowerCase()
+            info_cor["plancha"] = novaplancha
+        }
+        
+        if (datostecnicos[linha].TRATAMIENTOSOLIDOS_N.indexOf(" - ") === -1){
+        info_cor["trama_solido"] = datostecnicos[linha].TRATAMIENTOSOLIDOS_N
+        } else {
+            var novasolido = datostecnicos[linha].TRATAMIENTOSOLIDOS_N.split(" - ")[1].trim()
+            info_cor["trama_solido"] = novasolido
+        }
+         
+            
+        }
+        
+         if (datostecnicos[linha].TRAMA_N.indexOf(" - ") === -1){
+        info_cor["trama"] = datostecnicos[linha].TRAMA_N
+        } else {
+          var novatrama = datostecnicos[linha].TRAMA_N.split(" - ")[1].trim()
+          info_cor["trama"] = novatrama
+        }
+        console.log("fazendo o push")
+       cores_tabela.push(info_cor)
+       console.log(cores_tabela.length)
+        }
+        
+        
+    }
+    
+    
+    
+    console.log("final tem "+cores_tabela.length)
+    console.log(cores_tabela)
+    
+     preenche_tabela_tintas()
+    
+   
+    
+    
+    }
+    
+    
+    
+    function cancelar_tipoTrabajo(){
+    
+       document.getElementById("tipo_trabajo").value = ""
+       document.getElementById("id_tipotrabajo").value = ""
+       
+    
+     setTimeout(function(){mostraTipotrabajo()},1000)
+     
+    }
+    
+     function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+    
+   
+    
+    
+    
+    
+</script>
+<script>
+
+
+</script>
+<script>
+
+
+
+
+function removeItem(array, item) {
+  for(i = 0; i<array.length; i++){
+    if(array[i] == item) {
+      array.splice(array.indexOf(item), 1);
+    }
+  }
+}
+
+</script>
+
+<script>
+//
+  function selecionametodo(){
+   cores_tabela = []
+    if (document.getElementById("gamaexpandida_no").checked === true){
+    cores_tabela.push({"nome":"CYAN","cor":"#00FFFF","densidade":"0"})
+    cores_tabela.push({"nome":"MAGENTA","cor":"#FF00FF","densidade":"0"})
+    cores_tabela.push({"nome":"YELLOW","cor":"#FFFF00","densidade":"0"})
+    cores_tabela.push({"nome":"BLACK","cor":"#000000","densidade":"0"}) 
+    cores_tabela.push({"nome":"BLANCO","cor":"#a8a038","densidade":"0"}) 
+    document.getElementById("div_conversion").style.display = "none"
+    }
+    if (document.getElementById("gamaexpandida_si").checked === true){
+    cores_tabela.push({"nome":"CYAN","cor":"#00FFFF","densidade":"0"})
+    cores_tabela.push({"nome":"MAGENTA","cor":"#FF00FF","densidade":"0"})
+    cores_tabela.push({"nome":"YELLOW","cor":"#FFFF00","densidade":"0"})
+    cores_tabela.push({"nome":"BLACK","cor":"#000000","densidade":"0"}) 
+    cores_tabela.push({"nome":"ORANGE","cor":"#FF4500","densidade":"0"}) 
+    cores_tabela.push({"nome":"GREEN","cor":"#32CD32","densidade":"0"}) 
+    cores_tabela.push({"nome":"VIOLET","cor":"#0000CD","densidade":"0"})
+    cores_tabela.push({"nome":"BLANCO","cor":"#a8a038","densidade":"0"}) 
+    document.getElementById("div_conversion").style.display = "inline-block"
+    }
+    preenche_tabela_tintas()
+}
+</script>
+
+<script>
+    function muda_tipoImpressao(){
+        
+        
+    }
+</script>
+<script>
+
+var lastramas = api.custom_objects.list_with_options("AR-BOSIS_formulario",[],[],["tramas_solidos","tramas","doble_faz","tintas","sustrato"]).results[0]
+
+
+ var selectTintas = document.getElementById("linha_tintas")
+ 
+    for (var i = 0; i<lastramas.tintas.length; i++){
+        var opt = document.createElement('option');
+        opt.value = lastramas.tintas[i];
+        opt.innerHTML = lastramas.tintas[i];
+        selectTintas.appendChild(opt);
+    }
+    
+     var selectCinta = document.getElementById("cinta")
+ 
+    for (var i = 0; i<lastramas.doble_faz.length; i++){
+        var opt = document.createElement('option');
+        opt.value = lastramas.doble_faz[i];
+        opt.innerHTML = lastramas.doble_faz[i];
+        selectCinta.appendChild(opt);
+    }
+    
+      var selectSustrato = document.getElementById("substrato")
+ 
+    for (var i = 0; i<lastramas.sustrato.length; i++){
+        var opt = document.createElement('option');
+        opt.value = lastramas.sustrato[i];
+        opt.innerHTML = lastramas.sustrato[i];
+        selectSustrato.appendChild(opt);
+    }
+    
+    
+    
+
+    function preenche_tabela_tintas(){
+      console.log(cores_tabela.length)
+    clearTable(document.getElementById("tabela_receitas_flexo"))
+      document.getElementById("tabela_receitas_flexo").style.display = "inline-block" 
+      document.getElementById("button_vazia").style.display = "inline-block" 
+          
+         var table = document.getElementById("tabela_receitas_flexo")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<cores_tabela.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+            var cell9 = row.insertCell(8);
+           
+           
+           cell2.style.textAlign = "left"
+           
+           var numero_cilindro = i+1
+           
+           
+           
+             
+           cell1.innerHTML = '<div style="font-size: 0.8em; display: inline-block;"><div style="display:inline-block; margin-left: 3px"><i onclick="move_acima()" id="'+i+'" class="fas fa-arrow-up" style="margin-right: 5px; cursor: pointer;"></i><i  onclick="move_abaixo()" id="'+i+'" class="fas fa-arrow-down" style="margin-right: 5px;cursor: pointer;"></i><span style="margin-top:5px;height:20px;width:20px;background-color:'+cores_tabela[i].cor+';border-radius:50%;display:inline-block"></span></div><span style="display: inline-block;"></span></div><strong> '+numero_cilindro+'</strong></div>'
+           cell2.innerHTML = '<div style="font-size:1em; cursor: pointer">'+cores_tabela[i].nome+'</div>'
+           
+           if (cores_tabela[i].lineatura != undefined){
+           cell3.innerHTML = '<div style="font-size:1em; text-align: center"><input class="form-control" id="lineatura_'+i+'" type="number" value="'+cores_tabela[i].lineatura+'" class="form-group" onfocusout="muda_lineatura()"></div>'
+           } else {
+           cell3.innerHTML = '<div style="font-size:1em; text-align: center"><input class="form-control" id="lineatura_'+i+'" type="number"  class="form-group" onfocusout="muda_lineatura()"></div>'
+           }
+           
+           
+           if (cores_tabela[i].nome === "CUERPO LIBRE"){
+            var inputtrama2 = '<select class="form-control" style="background-color:#e9ecef" id="tramas_'+i+'" onfocusout="muda_trama()">'
+          
+                inputtrama2 = inputtrama2+'<option selected disabled >N/A</option>'
+           } else {
+                var inputtrama2 = '<select class="form-control" id="tramas_'+i+'" onfocusout="muda_trama()">'
+          
+           inputtrama2 = inputtrama2+'<option value="undefined">Seleccionar...</option>'
+            for (m=0;m<lastramas.tramas.length;m++){
+             inputtrama2 = inputtrama2+'<option>'+lastramas.tramas[m]+'</option>'   
+            }
+           }
+           inputtrama2 = inputtrama2+'</select>'
+           cell4.innerHTML = '<div style="font-size:1em; cursor: pointer">'+inputtrama2+'</div>'
+           
+           
+           
+           if (cores_tabela[i].nome === "CUERPO LIBRE"){
+           var inputangulo = '<select class="form-control" style="background-color:#e9ecef" id="angulo_'+i+'" onfocusout="muda_angulo()">'
+          
+                inputangulo = inputangulo+'<option selected disabled >N/A</option>'
+           } else {
+                var inputangulo = '<select class="form-control"  id="angulo_'+i+'" onfocusout="muda_angulo()">'
+          
+           inputangulo = inputangulo+'<option value="undefined">Seleccionar...</option>'
+           inputangulo = inputangulo+'<option>7.5</option>'
+           inputangulo = inputangulo+'<option>22.5</option>'
+           inputangulo = inputangulo+'<option>52.5</option>'
+           inputangulo = inputangulo+'<option>82.5</option>'
+           }
+           inputangulo = inputangulo+'</select>'
+           
+           cell5.innerHTML = '<div style="font-size:1em; cursor: pointer">'+inputangulo+'</div>'
+           
+           if (cores_tabela[i].nome === "CUERPO LIBRE"){
+           var inputtrama = '<select class="form-control" style="background-color:#e9ecef" id="tramasolido_'+i+'" onfocusout="muda_trama_solido()">'
+         
+                inputtrama = inputtrama+'<option selected disabled ">N/A</option>'
+           } else {
+                 var inputtrama = '<select class="form-control"  id="tramasolido_'+i+'" onfocusout="muda_trama_solido()">'
+         
+            inputtrama = inputtrama+'<option value="undefined">Seleccionar...</option>'
+           
+            for (j=0;j<lastramas.tramas_solidos.length;j++){
+             inputtrama = inputtrama+'<option>'+lastramas.tramas_solidos[j]+'</option>'   
+            }
+           }
+           inputtrama = inputtrama+'</select>'
+           
+           cell6.innerHTML = '<div style="font-size:1em; cursor: pointer">'+inputtrama+'</div>'
+           
+           if (cores_tabela[i].nome === "CUERPO LIBRE"){
+            var inputplancha = '<select class="form-control" style="background-color:#e9ecef" id="plancha_'+i+'" onfocusout="muda_provedor()">'
+           
+                inputplancha = inputplancha+'<option selected disabled >N/A</option>'
+           } else {
+            var inputplancha = '<select class="form-control" id="plancha_'+i+'" onfocusout="muda_provedor()">'
+           
+            inputplancha = inputplancha+'<option value="undefined">Seleccionar...</option>'
+          
+           inputplancha = inputplancha+'<option>Kodak</option>'
+           inputplancha = inputplancha+'<option>McDermid</option>'
+           inputplancha = inputplancha+'<option>Xsys</option>'
+           inputplancha = inputplancha+'<option>Dupont</option>'
+           inputplancha = inputplancha+'<option>Flint</option>'
+           }
+           inputplancha = inputplancha+'</select>'
+           
+           cell7.innerHTML = '<div style="font-size:1em; cursor: pointer">'+inputplancha+'</div>'
+            
+             if (cores_tabela[i].densidade != undefined){
+            cell8.innerHTML = '<div style="font-size:1em; text-align: center"><input class="form-control" id="densidade_'+i+'" type="number" value="'+cores_tabela[i].densidade+'" class="form-group" onfocusout="muda_densidade()"></div>'
+             } else {
+            cell8.innerHTML = '<div style="font-size:1em; text-align: center"><input class="form-control" id="densidade_'+i+'" type="number" class="form-group" onfocusout="muda_densidade()"></div>'
+             }
+            cell9.innerHTML = '<div><img id="'+i+'" src="Icons/delete.png" height="20px" onclick="apagarTinta()" style="cursor: pointer;"></div>'
+            qtasrow = qtasrow +1
+            
+            var div_trama_actual = "tramas_"+i
+            var div_angulo_actual = "angulo_"+i
+            var div_tramasolido_actual = "tramasolido_"+i
+            var div_plancha_actual = "plancha_"+i
+            var div_densidad_actual = "densidade_"+i
+            var div_lineatura_actual = "lineatura_"+i
+            if (cores_tabela[i].trama != undefined){
+                document.getElementById(div_trama_actual).value = cores_tabela[i].trama
+            }
+            if (cores_tabela[i].trama_solido != undefined){
+                document.getElementById(div_tramasolido_actual).value = cores_tabela[i].trama_solido
+            }
+            if (cores_tabela[i].plancha != undefined){
+                document.getElementById(div_plancha_actual).value = cores_tabela[i].plancha
+            }
+            if (cores_tabela[i].angulo != undefined){
+                document.getElementById(div_angulo_actual).value = cores_tabela[i].angulo
+            }
+            
+            if (cores_tabela[i].nome === "CUERPO LIBRE"){
+               row.style.backgroundColor = "#ebebeb"
+               document.getElementById(div_lineatura_actual).readOnly = true
+               document.getElementById(div_densidad_actual).readOnly = true
+           }
+        
+            }
+    }
+        
+
+function adiciona_cor_vazia(){
+         var info_tinta = {}
+        info_tinta["nome"] = "CUERPO LIBRE"
+    
+        info_tinta["cor"] = "#CCC"
+        info_tinta["densidade"] = "0"
+        if (cores_tabela[0] != undefined){
+        info_tinta["lineatura"] = cores_tabela[0].lineatura
+        info_tinta["trama"] = cores_tabela[0].trama
+        info_tinta["angulo"] = cores_tabela[0].angulo
+        info_tinta["trama_solido"] = cores_tabela[0].trama_solido
+        info_tinta["plancha"] = cores_tabela[0].plancha
+        }
+        
+        cores_tabela.push(info_tinta)
+        
+        
+        
+        
+        preenche_tabela_tintas()
+    }
+    
+    
+    
+function adiciona_verniz(){
+         var info_tinta = {}
+        info_tinta["nome"] = "BARNIZ"
+    
+        info_tinta["cor"] = "#FFF0F5"
+        info_tinta["densidade"] = "0"
+        if (cores_tabela[0] != undefined){
+        info_tinta["lineatura"] = cores_tabela[0].lineatura
+        info_tinta["trama"] = cores_tabela[0].trama
+        info_tinta["angulo"] = cores_tabela[0].angulo
+        info_tinta["trama_solido"] = cores_tabela[0].trama_solido
+        info_tinta["plancha"] = cores_tabela[0].plancha
+        }
+        cores_tabela.push(info_tinta)
+        
+        
+        
+        
+        preenche_tabela_tintas()
+    }
+    
+        
+function adiciona_primer(){
+         var info_tinta = {}
+        info_tinta["nome"] = "PRIMER"
+    
+        info_tinta["cor"] = "#F5F5DC"
+        info_tinta["densidade"] = "0"
+        if (cores_tabela[0] != undefined){
+        info_tinta["lineatura"] = cores_tabela[0].lineatura
+        info_tinta["trama"] = cores_tabela[0].trama
+        info_tinta["angulo"] = cores_tabela[0].angulo
+        info_tinta["trama_solido"] = cores_tabela[0].trama_solido
+        info_tinta["plancha"] = cores_tabela[0].plancha
+        }
+        cores_tabela.splice(0,0,info_tinta)
+        
+        
+        
+        
+        preenche_tabela_tintas()
+    }
+    
+    
+    
+    function muda_lineatura(){
+       var linha = event.srcElement.id
+       var numero_tinta = parseInt(linha.split("_")[1])
+       cores_tabela[numero_tinta]["lineatura"] = document.getElementById(linha).value
+       if (numero_tinta === 0){
+           for (i=1;i<cores_tabela.length;i++){
+               if (cores_tabela[i].nome != "CUERPO LIBRE"){
+                    if (cores_tabela[i].lineatura === undefined || cores_tabela[i].lineatura === ""){
+                        cores_tabela[i]["lineatura"] = document.getElementById(linha).value
+                    }
+               }
+           }
+       }
+       preenche_tabela_tintas()
+    }
+    
+     
+    function muda_trama(){
+       var linha = event.srcElement.id
+       var numero_tinta = parseInt(linha.split("_")[1])
+       cores_tabela[numero_tinta]["trama"] = document.getElementById(linha).value
+       if (numero_tinta === 0){
+           for (i=1;i<cores_tabela.length;i++){
+                if (cores_tabela[i].nome != "CUERPO LIBRE"){
+                     if (cores_tabela[i].trama === undefined){
+                        cores_tabela[i]["trama"] = document.getElementById(linha).value
+                 }
+            }
+           }
+       }
+       preenche_tabela_tintas()
+    }
+    
+    function muda_angulo(){
+       var linha = event.srcElement.id
+       var numero_tinta = parseInt(linha.split("_")[1])
+       cores_tabela[numero_tinta]["angulo"] = document.getElementById(linha).value
+     
+    }
+    
+     function muda_trama_solido(){
+       var linha = event.srcElement.id
+       var numero_tinta = parseInt(linha.split("_")[1])
+       cores_tabela[numero_tinta]["trama_solido"] = document.getElementById(linha).value
+       if (numero_tinta === 0){
+           for (i=1;i<cores_tabela.length;i++){
+                if (cores_tabela[i].nome != "CUERPO LIBRE"){
+                     if (cores_tabela[i].trama_solido === undefined){
+                        cores_tabela[i]["trama_solido"] = document.getElementById(linha).value
+                 }
+            }
+           }
+       }
+       
+       preenche_tabela_tintas()
+    }
+    
+    function muda_provedor(){
+        
+       var linha = event.srcElement.id
+       var numero_tinta = parseInt(linha.split("_")[1])
+       cores_tabela[numero_tinta]["plancha"] = document.getElementById(linha).value
+       if (numero_tinta === 0){
+           for (i=1;i<cores_tabela.length;i++){
+                if (cores_tabela[i].nome != "CUERPO LIBRE"){
+                     if (cores_tabela[i].plancha === undefined){
+                        cores_tabela[i]["plancha"] = document.getElementById(linha).value
+                 }
+            }
+           }
+       }
+       
+       preenche_tabela_tintas()
+       
+      
+    }
+    
+     function muda_densidade(){
+       var linha = event.srcElement.id
+       var numero_tinta = parseInt(linha.split("_")[1])
+       cores_tabela[numero_tinta]["densidade"] = document.getElementById(linha).value
+       
+      
+    }
+    
+    
+    
+    
+    function apagarTinta(){
+        var linha = parseInt(event.srcElement.id)
+        var tira = cores_tabela.splice(linha,1)
+        preenche_tabela_tintas()
+    }
+    
+    function adiciona_outra_cor(){
+        document.getElementById("mostra_outra_cor").style.display = "inline-block"
+    }
+    
+    function adiciona_cor_extra(){
+        var qual_cor = document.getElementById("cor_adicional").value
+        if (qual_cor != "undefined"){
+            
+        var existe_cor = false
+        
+        for (i=0;i<cores_tabela.length;i++){
+            if (cores_tabela[i].cor == qual_cor){
+                existe_cor = true
+            }
+        }
+        if (existe_cor === false){
+        var opcoesdecor = document.getElementById("cor_adicional")
+        for (i=0;i<opcoesdecor.options.length;i++){
+            if (opcoesdecor.options[i].value == qual_cor){
+                var nome_cor = opcoesdecor.options[i].innerHTML
+            }
+        }
+        var info_tinta = {}
+        info_tinta["nome"] = nome_cor
+    
+        info_tinta["cor"] = qual_cor
+        info_tinta["densidade"] = "0"
+        if (cores_tabela[0] != undefined){
+        info_tinta["lineatura"] = cores_tabela[0].lineatura
+        info_tinta["trama"] = cores_tabela[0].trama
+        info_tinta["angulo"] = cores_tabela[0].angulo
+        info_tinta["trama_solido"] = cores_tabela[0].trama_solido
+        info_tinta["plancha"] = cores_tabela[0].plancha
+        }
+        cores_tabela.push(info_tinta)
+        
+        
+        
+        
+        preenche_tabela_tintas()  
+        } else {
+            alert("Essa cor já está na lista do testform!")
+        }
+        }
+    }
+    
+    function move_acima(){
+       var linha = parseInt(event.srcElement.id)
+     //  console.log(linha)
+       
+      
+        if (linha > 0){
+       array_move(cores_tabela,linha,linha-1)
+        }
+
+       preenche_tabela_tintas()
+ 
+        
+    }
+        
+        function move_abaixo(){
+          var linha = parseInt(event.srcElement.id)
+    //   console.log(linha)
+    
+    
+       if (linha < cores_tabela.length-1){
+           array_move(cores_tabela,linha,linha+1)
+       }
+       
+       preenche_tabela_tintas()
+ 
+       }
+    
+    
+
+</script>
+
+  <script type="text/javascript">
+    window.onload = function () { 
+
+        document.getElementsByClassName("toggle-off")[0].style.lineHeight= null; 
+        document.getElementsByClassName("toggle-on")[0].style.lineHeight = null
+    }
+</script>
+
+<script>
+    function select_estrategia(){
+        if (document.getElementById("opciones_separacion").value == "Otro"){
+            document.getElementById("div_otraestrategia").style.display = "inline-block"
+        } else {
+            document.getElementById("div_otraestrategia").style.display = "none"
+        }
+    }
+    
+    function expandir_gamut(){
+        if (document.getElementById("matchgamut").checked === true){
+            document.getElementById("div_estrategiaconversion").style.display = "none"
+        } else {
+            document.getElementById("div_estrategiaconversion").style.display = "inline-block"
+        }
+    }
+</script>
+
+
+
+    </body>
+
+</html>

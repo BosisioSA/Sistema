@@ -1,0 +1,800 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Novo Pedido de Vendas</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script>
+            var queryString = window.location.search;
+            //console.log(queryString);
+            //var ordem2 = queryString.substring(7)
+            var ordem = decodeURI(queryString.substring(7,queryString.length))
+            console.log(ordem)
+        </script>
+    
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./assets/img/rotocrom.jpg" style="width: 70%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Pedidos
+                  <ul>
+                  <li class="active" style="list-style-type: none">
+                     <a href="wizard_pedido.html?ordem="><i class="fas fa-cart-plus" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                    <li    style="list-style-type: none">
+                     <a href="lista_pedidos.html"><i class="fas fa-tags" style="margin-right: 5px"></i>Meus Pedidos</a>
+                    </li>
+                   
+                    </ul>
+                    </li>
+                    
+                  
+                    </ul>
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <!--<li class="nav-item">
+                      <a class="nav-link" href="solicitacaoArtes.html">Nova Solicitação</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="DashBoard_aprovacoes.html">Dashboard</a>
+                  </li>-->
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2 style="display:inline-block;">Novo Pedido de Vendas</h2>
+        <section class="form-group col-md-1" style="display:inline-block; vertical-align: top;">
+        </section>
+        <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="finalidade">Finalidade</label>
+                <select  class="form-control" style="background-color: lightyellow; border-color: orange;" id="finalidade"  name="finalidade">
+                    <option value="undefined">Selecionar...</option>
+                    </select>
+                    <span class="error"><p id="error_finalidade" style="color:orange"></p></span>
+            </div>
+            
+            <div class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+                <label for="data-inicio">Data Entrada</label>
+                <input type="date" class="form-control" id="data-inicio"  name="data-inicio" readonly>
+            </div>
+        <hr>
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_cliente" style="display:none"></div>
+            <br>
+           
+            <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="data-solicita">Data Solicitação</label>
+                <input type="date" class="form-control" id="data-solicita"  name="data-solicita">
+            </div>
+            <div class="form-group col-md-6" style="display:inline-block;">
+                <label for="especifica_servico">Especificação do Serviço</label>
+                <select  class="form-control" id="especifica_servico" onchange="seleciona_servico()" name="especifica_servico">
+                    <option value="undefined">Selecionar...</option>
+                    </select>
+                     <span class="error"><p id="error_servico" style="color:orange"></p></span>
+            </div>
+        
+             <br>
+            
+            
+            <hr>
+            <h5>Informações do Cliente</h5>
+                <div class="form-group col-md-5" style="display:inline-block;">
+                <label for="busca_cliente">Nome do Cliente</label>
+                  <input type="text" class="form-control" style="display: inline-block; width: 80%; margin-right: 5px" id="busca_cliente"  onchange="verifica_cliente()" name="busca_cliente" list="os_clientes">
+                  <span style="display: none;" onclick="cria_cliente()" id="imagem_adiciona_cliente">
+                 <img src="./Icons/icone_mais.png" width="30px">
+                </span>
+                  <datalist id="os_clientes"></datalist>
+                  <span class="error"><p id="error_busca_cliente" style="color:orange"></p></span>
+                  </div>
+                  <div id="mostra_referencias"  class="form-group col-md-11" style="display:none;"> 
+            <br>
+            <p>Preencha um dos campos para realizar a busca da referência </p>
+          
+            <div class="form-group col-md-3" style="display:inline-block; vertical-align: top;">
+                <label for="numero_OP">Numero OP Anterior</label>
+                <input type="text" class="form-control" id="numero_OP"  onfocusout="busca_referencia()"  name="numero_OP" list="ops_cliente">
+                 <datalist id="ops_cliente"></datalist>
+                 <span class="error"><p id="error_busca_OP" style="color:orange"></p></span>
+            </div>
+            <div class="form-group col-md-3" style="display:inline-block;  vertical-align: top;">
+                <label for="codigo_fotografia">Código Fotografia</label>
+                <input type="text" class="form-control" id="codigo_fotografia"  onfocusout="busca_referencia2()"  name="codigo_fotografia" list="fotografias_cliente">
+                 <datalist id="fotografias_cliente"></datalist>
+                 <span class="error"><p id="error_busca_fotografia" style="color:orange"></p></span>
+            </div>
+            <div class="form-group col-md-1" style="display:inline-block; margin-top: 39px;">
+             <img src="./assets/img/reload.png" width="20px" style="cursor:pointer; display:inline-block" onclick="abrecampos()">
+             </div>
+               
+            
+            </div>
+                  <div class="form-group col-md-3" style="display:inline-block;">
+               
+                  <input type="checkbox" class="form-group" id="existe_sub_cliente" onchange="tem_subcliente()"  name="existe_sub_cliente">
+                   <label for="existe_sub_cliente">Tem Sub Cliente?</label>
+                  </div>
+                
+                <div id="mostra_sub_cliente" class="form-group col-md-8" style="display:none;">
+                <label for="sub_cliente">Sub Cliente</label>
+                  <input type="text" class="form-control" id="sub_cliente"   name="sub_cliente">
+                  </div>
+                  <br>
+                 <div class="form-group col-md-11" style="display:inline-block;vertical-align: top;">
+                <label for="o_servico">Serviço</label>
+                  <input type="text" class="form-control" id="o_servico"  onfocusout="busca_referencia3()" name="o_servico" list="servicos_cliente">
+                   <datalist id="servicos_cliente"></datalist>
+                
+                  </div>
+                  <div class="form-group col-md-2" style="display:inline-block;">
+                <label for="codigo_produto">Cód. Produto</label>
+                <input type="text"  class="form-control" id="codigo_produto"   name="codigo_produto" readonly>
+                  </div>
+                 <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="especifica_produto">Produto</label>
+                <input type="text"  class="form-control" id="especifica_produto" onchange="verifica_produto()"  name="especifica_produto" list="os_produtos">
+                    <datalist id="os_produtos"></datalist>
+                     <span class="error"><p id="error_produto" style="color:orange"></p></span>
+            </div>
+            <div class="form-group col-md-5" style="display:inline-block;">
+                <label for="especifica_material">Material</label>
+                <input type="text"  class="form-control" id="especifica_material" onchange="verifica_material()" name="especifica_material" list="os_materiais">
+                 <datalist id="os_materiais"></datalist>
+                     <span class="error"><p id="error_materiais" style="color:orange"></p></span>  
+            </div>
+           
+        <hr>
+       
+                <section class="form-group col-md-9" style="display: inline-block;"></section>
+                <div  class="form-group col-md-2" style="display:inline-block; vertical-align: top;">
+                <button id="salva_cliente" class="btn btn-primary" onclick="grava_pedido()" style="cursor: pointer">Próximo >></button>
+                </div>
+                 <div id="info_update" style="color: green"></div>
+                 
+              
+            </div>
+            <script>
+            
+             function preencheCampos(referencia){
+              console.log(referencia)
+              console.log(referencia.OP_Antiga.SERVICO)
+              document.getElementById("busca_cliente").value = referencia.cliente.FANTASIA
+              document.getElementById("o_servico").value = referencia.OP_Antiga.SERVICO
+              document.getElementById("especifica_produto").value = referencia.info_produto.produto.DESCRICAO
+              document.getElementById("especifica_material").value = referencia.info_produto.material.DESCRICAO
+              document.getElementById("codigo_produto").value = referencia.info_produto.produto.CODIGO
+               document.getElementById("busca_cliente").style = "background-color: #FEF1E6; border-color: orange;"
+               document.getElementById("o_servico").style = "background-color: #FEF1E6; border-color: orange;"
+               document.getElementById("especifica_produto").style = "background-color: #FEF1E6; border-color: orange;"
+               document.getElementById("especifica_material").style = "background-color: #FEF1E6; border-color: orange;"
+          }
+         
+            
+            
+            
+            
+                 function busca_referencia(){
+          var OP = document.getElementById("numero_OP").value
+        console.log("nuemreo da OP")
+        console.log(OP == "")
+        console.log(OP == undefined)
+          
+          if (OP != ""){
+              document.getElementById("codigo_fotografia").value = "Buscando..."
+              document.getElementById("codigo_fotografia").readOnly = true
+              document.getElementById("o_servico").value = "Buscando..."
+             document.getElementById("o_servico").readOnly = true
+              var busca_OP_anterior = api.custom_objects.list_with_options("OrdemProducao",["OP","equal to",parseInt(OP),"and","OP_Antiga.FLAG_OP","equal to","M"],[],["OP_Antiga","cliente","info_produto"]).results
+              console.log("achei a OP anterior")
+              console.log(busca_OP_anterior)
+              if (busca_OP_anterior.length === 0){
+                  document.getElementById("error_busca_OP").innerText = "Não foi possível encontrar essa OP"
+                  document.getElementById("codigo_fotografia").value = ""
+              document.getElementById("codigo_fotografia").readOnly = false
+              document.getElementById("codigo_fotografia").style = "background-color: white"
+               document.getElementById("o_servico").value = ""
+              document.getElementById("o_servico").readOnly = false
+              document.getElementById("o_servico").style = "background-color: white"
+              } else {
+                 document.getElementById("codigo_fotografia").value = busca_OP_anterior[0].OP_Antiga.COD_FOTO
+                 document.getElementById("codigo_fotografia").readOnly = true
+                 document.getElementById("codigo_fotografia").style = "background-color: lightgreen"
+                  document.getElementById("o_servico").value = busca_OP_anterior[0].OP_Antiga.SERVICO
+                 document.getElementById("o_servico").readOnly = true
+                 document.getElementById("o_servico").style = "background-color: lightgreen"
+                  
+              }
+          } else {
+               document.getElementById("codigo_fotografia").value = ""
+             document.getElementById("error_busca_OP").innerText = ""
+             document.getElementById("codigo_fotografia").readOnly = false
+                 document.getElementById("codigo_fotografia").style = "background-color: white"
+                 document.getElementById("o_servico").value = ""
+                  document.getElementById("o_servico").readOnly = false
+                 document.getElementById("o_servico").style = "background-color: white"
+          }
+          if (busca_OP_anterior != undefined){
+           if (busca_OP_anterior.length > 0){
+              preencheCampos(busca_OP_anterior[0])
+          }
+          }
+      }
+            </script>
+            
+          	<script>
+  	    // preenche Selects
+  	    
+  	     selectFinalidade = document.getElementById('finalidade');
+    var tiposFinalidade = api.custom_objects.list_with_options("BR-ROTOC_especificacaoServico").results
+    
+    
+        selectServico = document.getElementById('especifica_servico');
+    var tiposServico = api.custom_objects.list_with_options("BR-ROTOC_finalidade",[],["servico","ascending"]).results
+    for (var i = 0; i<tiposServico.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposServico[i].servico;
+        opt.innerHTML = tiposServico[i].servico;
+        selectFinalidade.appendChild(opt);
+    }
+    for (var i = 0; i<tiposFinalidade.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposFinalidade[i].servico;
+        opt.innerHTML = tiposFinalidade[i].servico;
+        selectServico.appendChild(opt);
+    }
+  	</script>  
+            
+         <script>
+      //Preenche lista de Drafts
+
+        var hoje = new Date()
+        var ano = hoje.getFullYear()
+        var mes = hoje.getMonth()+1
+        var dia = hoje.getDate()
+        //document.getElementById("data-final").value = ano+"-"+mes+"-"+dia
+       // hoje.setDate(hoje.getDate()-30)
+        var ano2 = hoje.getFullYear()
+        var mes2 = hoje.getMonth()+1
+        var dia2 = hoje.getDate()
+        if (mes2 < 10){
+            mes2 = "0"+mes2
+        }
+        if (dia2 < 10){
+            dia2 = "0"+dia2
+        }
+        console.log(ano2+"-"+mes2+"-"+dia2)
+        document.getElementById("data-inicio").value = ano2+"-"+mes2+"-"+dia2
+
+    </script>
+        
+     	<script>
+  	    // preenche dados do pedido
+  	   if (ordem != ""){ 
+  	   var variaveis = api.workable.get_merged_variables(ordem)
+  	   
+  	   var data_pagina = variaveis.variables.data.value
+  	   
+  	  // var busca_OP_anterior = api.custom_objects.list_with_options("OrdemProducao",["data","equal to",parseInt(data_pagina.info_step1.op_anterior)],[],["OP_Antiga","cliente","info_produto"]).results
+        }
+  	   
+  	   if (data_pagina != undefined){
+  	      
+  	      var selectFinalidade = document.getElementById("finalidade")
+  	      
+  	      for (i=0;i<selectFinalidade.options.length;i++){
+  	       if (selectFinalidade.options[i].value == data_pagina.info_step1.finalidade){
+        selectFinalidade.selectedIndex = i
+               }
+            }
+  	      
+  	      
+  	      
+  	      
+  	       
+  	       var inicio = new Date(data_pagina.info_step1.data_entrada)
+  	      
+        var anoinicio = inicio.getFullYear()
+        var mesinicio = inicio.getMonth()+1
+        var diainicio = inicio.getDate()
+        if (mesinicio < 10){
+            mesinicio = "0"+mesinicio
+        }
+        if (diainicio < 10){
+            diainicio = "0"+diainicio
+        }
+        document.getElementById("data-inicio").value = anoinicio+"-"+mesinicio+"-"+diainicio
+        
+        var solicita = new Date(data_pagina.info_step1.data_solicitacao)
+  	      
+        var anosolicita = solicita.getFullYear()
+        var messolicita = solicita.getMonth()+1
+        var diasolicita = solicita.getDate()
+        if (messolicita < 10){
+            messolicita = "0"+messolicita
+        }
+        if (diasolicita < 10){
+            diasolicita = "0"+diasolicita
+        }
+        document.getElementById("data-solicita").value = anosolicita+"-"+messolicita+"-"+diasolicita
+        
+        
+        var selectTipo = document.getElementById("especifica_servico")
+  	      
+  	      for (i=0;i<selectTipo.options.length;i++){
+  	       if (selectTipo.options[i].value == data_pagina.info_step1.tipo_servico){
+        selectTipo.selectedIndex = i
+               }
+            }
+            if (data_pagina.info_step1.tipo_servico != "NOVO"){
+                document.getElementById("mostra_referencias").style = "display:inline-block;"
+                
+                document.getElementById("numero_OP").value = data_pagina.info_step1.op_anterior
+                 busca_referencia()
+            }
+  	       
+  	       document.getElementById("busca_cliente").value = data_pagina.info_step1.nome_cliente.FANTASIA
+  	        document.getElementById("o_servico").value = data_pagina.info_step1.servico
+  	        document.getElementById("codigo_produto").value = data_pagina.info_step1.codigo_produto
+  	         document.getElementById("especifica_produto").value = data_pagina.info_step1.produto
+  	          document.getElementById("especifica_material").value = data_pagina.info_step1.material
+  	         if (data_pagina.info_step1.sub_cliente != ""){
+  	            document.getElementById("existe_sub_cliente").checked = true
+  	             document.getElementById("mostra_sub_cliente").style = "display: inline-block;"
+  	              document.getElementById("sub_cliente").value = data_pagina.info_step1.sub_cliente
+  	         }
+  	   }
+            
+       
+  	    
+  	</script> 
+  	
+  		
+  	<script>
+  	// funcoes auxiliares
+  	
+    function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}	
+  	
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+  	    //preenche select do cliente
+  	    
+  	     var listaCodigo2 = api.custom_objects.list_with_options("BR-ROTOC_customers",[],[],["FANTASIA"]).results;
+          var options=''; // variable to store the options
+          for(var i = 0; i < listaCodigo2.length; i++){
+              
+          options += '<option value="'+listaCodigo2[i].FANTASIA+'" />';
+  
+          }
+           document.getElementById('os_clientes').innerHTML = options;
+  	   
+  	   
+  	   
+  
+    // preenche datalists
+    
+     var produtos = api.custom_objects.list_with_options("TBLPRODUTO",[],[],["DESCRICAO"]).results;
+        var options3=''; // variable to store the options
+        for(var i = 0; i < produtos.length; i++){
+            
+        options3 += '<option value="'+produtos[i].DESCRICAO+'" />';
+
+        }
+         document.getElementById('os_produtos').innerHTML = options3;
+         
+         
+     var materiais = api.custom_objects.list_with_options("TBLMATERIAIS",[],[],["DESCRICAO"]).results;
+        var options4=''; // variable to store the options
+        for(var i = 0; i < materiais.length; i++){
+            
+        options4 += '<option value="'+materiais[i].DESCRICAO+'" />';
+
+        }
+         document.getElementById('os_materiais').innerHTML = options4;
+
+  	   
+  	   
+  	   
+  	</script>
+  
+  	
+  	<script>
+  	    function selecionar_cliente(){
+  	        var sel_codigo = document.getElementById("codigo_cliente").value
+  	            
+  	            if (sel_codigo == "undefined"){
+  	                document.getElementById("mostra_cliente").style = "display: none"
+  	            }
+  	            if (sel_codigo == "new"){
+  	                document.getElementById("mostra_cliente").style = "display: inline-block"
+  	            } else {
+  	                document.getElementById("mostra_cliente").style = "display: none"
+  	            }
+  	               
+  	           
+  	        }
+  	        
+  	      </script>
+  		  
+  		  
+  
+
+      <script>
+      
+      
+      var usuario = api.auth.get_current_user()
+      var nome_user = "Bem vindo, "+usuario.fullname
+      document.getElementById("bemvindo").innerText = nome_user
+      </script>
+     
+      
+    
+      
+  <script>
+      
+      // verifica se o cliente existe e busca os cilindros desse cliente
+      
+      function verifica_cliente(){
+          
+          
+          var qual_nome = document.getElementById("busca_cliente").value
+          
+          var busca_codigo = api.custom_objects.list_with_options("BR-ROTOC_customers",["FANTASIA","equal to",qual_nome],[],["CODIGO"]).results
+          
+          if (busca_codigo.length > 0){
+             var codigo_do_cliente = busca_codigo[0].CODIGO
+             var busca_ops = api.custom_objects.list_with_options("OrdemProducao",["OP_Antiga.CLIENTE","equal to",parseInt(codigo_do_cliente),"and","OP_Antiga.FLAG_OP","equal to","M"],[],["OP_Antiga.NR_OP","OP_Antiga.COD_FOTO","OP_Antiga.SERVICO"]).results
+               var options5=''; // variable to store the options
+               var options6=''; // variable to store the options
+               var options7=''; // variable to store the options
+                   
+             for (i=0;i<busca_ops.length;i++){
+                 if (busca_ops[i].OP_Antiga.NR_OP != undefined){
+                   options5 += '<option value="'+busca_ops[i].OP_Antiga.NR_OP+'" />';
+                   
+                 }
+                 if (busca_ops[i].OP_Antiga.COD_FOTO != undefined){
+                   options6 += '<option value="'+busca_ops[i].OP_Antiga.COD_FOTO+'" />';
+                     
+                 }
+                 if (busca_ops[i].OP_Antiga.SERVICO != undefined){
+                   options7 += '<option value="'+busca_ops[i].OP_Antiga.SERVICO+'" />';
+                    
+                 }
+             }
+              document.getElementById('ops_cliente').innerHTML = options5;
+              document.getElementById('fotografias_cliente').innerHTML = options6; 
+               document.getElementById('servicos_cliente').innerHTML = options7; 
+              
+          }
+          else {
+            document.getElementById("error_busca_cliente").innerText = "Cliente não encontrado na base de dados!"
+            document.getElementById("imagem_adiciona_cliente").style = "display: inline-block;"
+          }
+         
+    }
+      
+
+
+
+  </script>
+  <script>
+      function verifica_produto(){
+          var busca_numero_produto = api.custom_objects.list_with_options("TBLPRODUTO",["DESCRICAO","equal to",document.getElementById("especifica_produto").value]).results
+          
+          if (busca_numero_produto.length === 1){
+              document.getElementById("codigo_produto").value = busca_numero_produto[0].CODIGO
+          }
+          
+      }
+  </script>
+  <script>
+      function seleciona_servico(){
+          
+         var qual_servico = document.getElementById("especifica_servico").value
+         
+         if (qual_servico == "NOVO"){
+             document.getElementById("mostra_referencias").style = "display: none"
+         } else {
+            document.getElementById("mostra_referencias").style = "display: inline-block" 
+         }
+          
+      }
+  </script>
+  <script>
+     
+          
+           function busca_referencia2(){
+            var fotografia = document.getElementById("codigo_fotografia").value
+         
+           if (fotografia != ""){
+              document.getElementById("numero_OP").value = "Buscando..."
+              document.getElementById("numero_OP").readOnly = true
+               document.getElementById("o_servico").value = "Buscando..."
+              document.getElementById("o_servico").readOnly = true
+              var busca_OP_anterior = api.custom_objects.list_with_options("OrdemProducao",["OP_Antiga.COD_FOTO","equal to",fotografia,"and","OP_Antiga.FLAG_OP","equal to","M"],[],["OP_Antiga","cliente","info_produto"]).results
+              if (busca_OP_anterior.length === 0){
+                  document.getElementById("error_busca_fotografia").innerText = "Não foi possível encontrar esse Código"
+                  document.getElementById("numero_OP").value = ""
+              document.getElementById("numero_OP").readOnly = false
+              document.getElementById("numero_OP").style = "background-color: white"
+               document.getElementById("o_servico").value = ""
+              document.getElementById("o_servico").readOnly = false
+              document.getElementById("o_servico").style = "background-color: white"
+              } else {
+                 document.getElementById("numero_OP").value = busca_OP_anterior[busca_OP_anterior.length-1].OP_Antiga.NR_OP
+                 document.getElementById("numero_OP").readOnly = true
+                 document.getElementById("numero_OP").style = "background-color: lightgreen"
+                  document.getElementById("o_servico").value = busca_OP_anterior[busca_OP_anterior.length-1].OP_Antiga.SERVICO
+                 document.getElementById("o_servico").readOnly = true
+                 document.getElementById("o_servico").style = "background-color: lightgreen"
+                  
+              }
+          } else {
+               document.getElementById("numero_OP").value = ""
+             document.getElementById("error_busca_OP").innerText = ""
+             document.getElementById("numero_OP").readOnly = false
+                 document.getElementById("codigo_fotografia").style = "background-color: white"
+                 document.getElementById("o_servico").value = ""
+                  document.getElementById("o_servico").readOnly = false
+                 document.getElementById("o_servico").style = "background-color: white"
+          }
+          if (busca_OP_anterior.length > 0){
+              preencheCampos(busca_OP_anterior[0])
+          }
+           }
+          function busca_referencia3(){
+           var servico = document.getElementById("o_servico").value
+          // if (servico != ""){
+        //      document.getElementById("codigo_fotografia").value = "Buscando..."
+         //     document.getElementById("codigo_fotografia").readOnly = true
+          //     document.getElementById("numero_OP").value = "Buscando..."
+        //      document.getElementById("numero_OP").readOnly = true
+         //     var busca_OP_anterior = api.custom_objects.list_with_options("OrdemProducao",["OP_Antiga.SERVICO","contains text like",servico],[],["OP_Antiga","cliente","info_produto"]).results
+         //     if (busca_OP_anterior.length === 0){
+         //         document.getElementById("error_busca_servico").innerText = "Não foi possível encontrar esse Serviço"
+          //        document.getElementById("codigo_fotografia").value = ""
+        //      document.getElementById("codigo_fotografia").readOnly = false
+         //     document.getElementById("codigo_fotografia").style = "background-color: white"
+          //     document.getElementById("numero_OP").value = ""
+    //          document.getElementById("numero_OP").readOnly = false
+      //        document.getElementById("numero_OP").style = "background-color: white"
+         //     } else {
+        //        document.getElementById("codigo_fotografia").value = busca_OP_anterior[busca_OP_anterior.length-1].OP_Antiga.COD_FOTO
+        //         document.getElementById("codigo_fotografia").readOnly = true
+          //       document.getElementById("codigo_fotografia").style = "background-color: lightgreen"
+            //      document.getElementById("numero_OP").value = busca_OP_anterior[busca_OP_anterior.length-1].OP_Antiga.NR_OP
+        //         document.getElementById("numero_OP").readOnly = true
+         //        document.getElementById("numero_OP").style = "background-color: lightgreen"
+          //       document.getElementById("o_servico").value = busca_OP_anterior[busca_OP_anterior.length-1].OP_Antiga.SERVICO
+        //          
+        //      }
+        //  } else {
+         //      document.getElementById("codigo_fotografia").value = ""
+          //   document.getElementById("error_busca_OP").innerText = ""
+        //     document.getElementById("codigo_fotografia").readOnly = false
+         //        document.getElementById("codigo_fotografia").style = "background-color: white"
+          //       document.getElementById("numero_OP").value = ""
+        //          document.getElementById("numero_OP").readOnly = false
+         //        document.getElementById("numero_OP").style = "background-color: white"
+         // }
+          // if (busca_OP_anterior.length > 0){
+    //          preencheCampos(busca_OP_anterior[busca_OP_anterior.length-1])
+     //     }
+          }
+          
+          function abrecampos(){
+               
+             document.getElementById("error_busca_OP").innerText = ""
+              document.getElementById("error_busca_fotografia").innerText = ""
+            //   document.getElementById("error_busca_servico").innerText = ""
+               document.getElementById("numero_OP").readOnly = false
+                document.getElementById("numero_OP").value = ""
+                 document.getElementById("numero_OP").style = "background-color: white"
+                document.getElementById("codigo_fotografia").readOnly = false
+                document.getElementById("codigo_fotografia").value = ""
+                 document.getElementById("codigo_fotografia").style = "background-color: white"
+                 document.getElementById("o_servico").value = ""
+                  document.getElementById("o_servico").readOnly = false
+                 document.getElementById("o_servico").style = "background-color: white"
+                 document.getElementById("busca_cliente").value = ""
+              document.getElementById("busca_cliente").value = ""
+              document.getElementById("o_servico").value = ""
+              document.getElementById("especifica_produto").value = ""
+              document.getElementById("especifica_material").value = ""
+              document.getElementById("o_servico").style = "background-color: white; border-color: #ced4da"
+              document.getElementById("especifica_produto").style = "background-color: white; border-color: #ced4da"
+              document.getElementById("especifica_material").style = "background-color: white; border-color: #ced4da"
+              document.getElementById("busca_cliente").style = "background-color: white; border-color: #ced4da"
+                 
+          }
+          
+         
+  </script>
+  <script>
+      function tem_subcliente(){
+          if (document.getElementById("existe_sub_cliente").checked === true){
+              document.getElementById("mostra_sub_cliente").style = "display: inline-block; vertical-align: top;"
+          } else{
+              document.getElementById("mostra_sub_cliente").style = "display: none;"  
+          }
+      }
+  </script>
+  
+  <script>
+      function grava_pedido(){
+          
+          
+          if (data_pagina != undefined){
+              var data = data_pagina
+              var info_step1 = {}
+          } else {
+              var data = {}
+              var info_step1 = {}
+          }
+          
+          if (document.getElementById("finalidade").value == "undefined"){
+              document.getElementById("error_finalidade").innerText = "Selecione a Finalidade do Pedido"
+          } else {
+             if (document.getElementById("especifica_servico").value == "undefined"){
+                document.getElementById("error_servico").innerText = "Selecione a especificação do Serviço" 
+                 
+             } else {
+             document.getElementById("error_finalidade").innerText = ""
+             document.getElementById("error_servico").innerText = ""
+             info_step1["data_entrada"] = new Date()
+             var o_inicio = new Date(document.getElementById("data-solicita").value)
+             o_inicio.setDate(o_inicio.getDate()+1)
+             o_inicio.setHours(8,0,0)
+             info_step1["data_solicitacao"] = new Date(o_inicio)
+             info_step1["tipo_servico"] = document.getElementById("especifica_servico").value
+             info_step1["op_anterior"] = document.getElementById("numero_OP").value
+             info_step1["codigo_fotografia"] = document.getElementById("codigo_fotografia").value
+             
+             var busca_cliente = api.custom_objects.list_with_options("BR-ROTOC_customers",["FANTASIA","equal to",document.getElementById("busca_cliente").value],[],["FANTASIA","IDENTIF"]).results
+             if (busca_cliente.length === 0){
+                 alert("cliente não encontrado na base de dados!")
+             } else {
+             info_step1["nome_cliente"] = busca_cliente[0]
+             info_step1["sub_cliente"] = document.getElementById("sub_cliente").value
+             info_step1["servico"] = document.getElementById("o_servico").value
+             info_step1["produto"] = document.getElementById("especifica_produto").value
+             info_step1["codigo_produto"] = document.getElementById("codigo_produto").value
+             info_step1["material"] = document.getElementById("especifica_material").value
+             
+             info_step1["finalidade"] = document.getElementById("finalidade").value
+             data["info_step1"] = info_step1
+             
+             var inicia_wizard = api_sync.hub.start_from_whitepaper_with_files_and_variables("CADOP_v2","wizard_passo_1", [] ,{"data":data,"usuario":usuario});
+       
+       
+        var workable_id = inicia_wizard.workable_id
+        var workableConsoleLog = function ()  // a cada 30s roda isso e atualiza a variavel form...
+          {
+            var variaveis = api.workable.get_merged_variables(workable_id)
+           if (variaveis.variables.state.value == "finalizado"){
+                console.log("Achei! "+workable_id)
+                
+                  myStopFunction(workable_id);
+              }
+        }
+	   var workflowTimeout = setInterval(workableConsoleLog, 500);
+        function myStopFunction(theID) {
+                    clearInterval(workflowTimeout);
+                    
+                    window.open("wizard_roto_step1.html?ordem="+theID,"_self")
+                    }
+        
+       
+        
+          
+        }
+             }  
+             
+             
+          }
+          
+          }
+          
+      
+  </script>
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

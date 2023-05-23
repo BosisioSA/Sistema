@@ -1,0 +1,612 @@
+
+@font-face {
+    font-family: 'helvetica_neuebold';
+    src: url('fonts/helvetica-neue-bold-webfont.eot');
+    src: url('fonts/helvetica-neue-bold-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helvetica-neue-bold-webfont.woff') format('woff'),
+url('fonts/helvetica-neue-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helvetica_neuelight';
+    src: url('fonts/helvetica-neue-light-webfont.eot');
+    src: url('fonts/helvetica-neue-light-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helvetica-neue-light-webfont.woff') format('woff'),
+url('fonts/helvetica-neue-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'helvetica_neuethin';
+    src: url('fonts/helvetica-neue-thin-webfont.eot');
+    src: url('fonts/helvetica-neue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+url('fonts/helvetica-neue-thin-webfont.woff') format('woff'),
+url('fonts/helvetica-neue-thin-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #000;
+}
+
+a{
+	text-decoration:none;
+	color: #007abb;
+}
+
+.bannerTitle{
+	font-family: 'helvetica_neuebold';
+	font-weight: normal;
+	color: #007abb;
+	font-size: 60px;
+	line-height: 60px;
+	margin: 0px;
+}
+
+.bannerSubtitle{
+	font-family: 'helvetica_neuelight';
+	font-weight: normal;
+	color: #ffffff;
+	font-size: 25px; /*29px;*/
+	line-height:33px;
+	margin: 0px;
+	margin-top: 14px;
+}
+
+h1{
+	font-family: 'helvetica_neuelight';
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 30px;
+	word-spacing: -3px;
+	margin: 0px 0px 15px 0px;
+	text-transform:uppercase;
+	display: inline;
+}
+
+.h1style{
+	font-family: 'helvetica_neuelight';
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 30px;
+	word-spacing: -3px;
+	margin: 0px 0px 15px 0px;
+	text-transform:uppercase;
+	display: inline;
+}
+
+h2{
+	font-family: 'helvetica_neuelight';
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 30px;
+	word-spacing: -3px;
+	margin: 0px 0px 15px 0px;
+	color: red;
+	display: inline;
+}
+
+h3{
+	font-family: 'helvetica_neuelight';
+	font-weight: normal;
+	font-size: 30px;
+	line-height: 30px;
+	word-spacing: -3px;
+	margin: 0px 0px 15px 0px;
+}
+
+h6{
+	font-family: 'helvetica_neuelight';
+	font-weight: normal;
+	font-size: 11px;
+}
+
+
+img{
+	border: 0px;
+}
+
+.bold{
+	font-family: 'helvetica_neuebold';
+	font-weight: normal;
+}
+
+.caps{
+	text-transform:uppercase;
+}
+
+.red{
+	color: #007abb;
+}
+
+article{
+	margin-bottom: 55px;
+}
+
+.no-padding{
+	padding: 0px;
+}
+
+.no-margin{
+	margin: 0px;
+}
+
+
+.container{
+	width: 80%;
+	margin: auto;
+}
+
+/****** HEADER ******/
+#header{
+	min-height: 72px;
+}
+
+
+#header .column2{
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.countdown{
+	font-size: 12px;
+	text-align: right;
+	color: #000;
+
+}
+
+.countdown-number{
+	font-size:16px;
+	color:#007abb;
+	margin-left:10px;
+}
+.countdown-text{
+	font-size: 10px;
+	text-transform:uppercase;
+}
+
+/****** END HEADER ******/
+
+/****** BANNER ******/
+#banner{
+	min-height: 300px;
+	background-color:#000;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.home{
+	background-image: url(../img/banner-home.jpg);
+}
+
+.register{
+	background-image: url(../img/banner-register.jpg);
+}
+
+.confirm{
+	background-image: url(../img/banner-confirm.jpg);
+}
+
+.done{
+	background-image: url(../img/banner-done.jpg);
+}
+
+#banner .content{
+	text-align:center;
+	padding-top:53px;
+}
+/****** END BANNER ******/
+
+/****** CONTENT ******/
+#content{
+
+}
+
+.row{
+
+}
+
+.progress{
+	text-align: center;
+	overflow: auto;
+	margin-top:25px;
+}
+
+
+.progress-items{
+	overflow: auto;
+	padding: 25px 0 30px;
+	border-bottom: 1px solid #e5e5e5;
+	font-family: 'helvetica_neuelight';
+	font-weight:normal;
+
+	width: 882px;
+	margin: 0px 31px;
+}
+
+.active{
+	color: #007abb;
+}
+
+.progress .title{
+	 font-family: 'helvetica_neuebold';
+	 font-weight: normal;
+	 font-size: 20px;
+	 margin-top:10px;
+}
+
+.progress .item{
+	float: left;
+	width: 220px;
+
+	background-image:url(../img/arrow.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+
+	font-size:24px;
+	line-height: 24px;
+}
+
+.progress .item-no-arrow{
+	float: left;
+	width: 220px;
+
+	font-size:24px;
+	line-height: 24px;
+
+	position: relative;
+}
+
+.progress .small{
+	font-size: 18px;
+}
+
+.row .column2{
+	min-height: 10px;
+
+	width: 900px;
+	margin: 50px 31px;
+
+	float: left;
+}
+
+.button{
+	font-family: 'helvetica_neuelight';
+	font-weight: normal;
+	font-size:20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	display:inline-block;
+	padding:5px 35px 2px;
+	background: #007abb;
+	border: 0px;
+
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+.button:hover{
+	background-color: #005c93;
+}
+
+.buttoncontent{
+	margin-top:5px;
+}
+
+.registerButton{
+	margin-top: 20px;
+	margin-left: 132px;
+}
+
+.startButtonDescription{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #007abb;
+}
+
+.confirmButton{
+	font-size: 14px;
+	line-height: 14px;
+
+	padding:10px 35px 8px;
+}
+
+/****** END CONTENT ******/
+
+/****** FOOTER ******/
+#footer{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.75em;
+	color: #ffffff;
+	text-align: center;
+	background-color: #333;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+
+#footer a{
+	color: #ffffff;
+	text-decoration: none;
+
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+#footer a:hover{
+	color: #CCC;
+}
+/****** END FOOTER ******/
+
+
+/****** REGISTER **********/
+#registerForm {
+	margin-top:20px;
+}
+
+.fillin {
+   border-color: #DE5050 !important;
+	color: #DE5050 !important;
+}
+
+/*
+#registerForm input[type=text]{
+	border: 1px solid #e5e5e5;
+	padding: 5px 10px;
+	width: 410px;
+	margin-bottom: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+#registerForm input[type=text]:focus{
+		border: 1px solid #007abb;
+		outline-color:#007abb;
+}
+
+#registerForm input[type=text]:active{
+		border: 1px solid #007abb;
+		outl
+
+		ine-color:#007abb;
+}
+*/
+
+/****** END REGISTER ******/
+
+
+/****** CONFIRM **********/
+.preview{
+	width: 410px;
+	height: 574px;
+	background-color: #cdcccc;
+}
+/****** END CONFIRM **********/
+
+/****** DONE **********/
+#registerPersonalDataForm {
+	margin-top:20px;
+}
+
+#registerPersonalDataForm input[type=text],textarea{
+	border: 1px solid #e5e5e5;
+	padding: 5px 10px;
+	margin-bottom: 5px;
+  margin-right: 10px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+#registerPersonalDataForm input[type=text]:focus,textarea:focus{
+	border: 1px solid #007abb;
+	outline-color:#007abb;
+}
+
+#registerPersonalDataForm input[type=text]:focus,textarea:active{
+	border: 1px solid #007abb;
+	outline-color:#007abb;
+}
+
+.fieldShort{
+	width: 190px;
+}
+
+.fieldMedium{
+	width: 290px;
+}
+
+.fieldExtraShort{
+	width: 10%;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.fieldLong{
+	width: 650px;
+}
+
+.fieldHigh{
+	height: 100px;
+}
+
+.selection{
+	color: #888888;
+	font-size:16px;
+
+	padding: 5px 0px;
+	overflow: auto;
+}
+
+
+.selection-small{
+	color: #888888;
+	font-size:11px;
+
+	padding: 5px 0px;
+	overflow: auto;
+}
+
+.selection .column{
+	font-size: 14px;
+	width: 900px;
+}
+/****** END DONE **********/
+
+.icon-sup{
+
+	position:absolute;
+	top:-15px;
+	right:43px;
+}
+
+
+/********** LABEL *************/
+
+.labelanim{
+	position:absolute;
+	height:300px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #fff;
+	overflow: hidden;
+	left: -896px; /* label-image + label-text + label-end*/
+}
+
+
+
+
+.label-image{
+	position: relative;
+	float:left;
+	background-color:#ca172f;
+	background-image: url(../img/label-image.png);
+	background-repeat: no-repeat;
+	background-position:right;
+	width: 274px;
+	height: 300px;
+	/*padding-left:322px; /*variable*/
+}
+
+.label-text{
+	position: relative;
+	float:left;
+	width:480px;/*500+20*/
+	height:300px;
+	background-color:#ca172f;
+	padding-left:20px;
+}
+
+.label-end{
+	position: relative;
+	float:left;
+	width:121px;
+	height:300px;
+	background-image:url(../img/label-end.png);
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+
+.label-title1{
+	 font-family: 'helvetica_neuethin';
+	 font-weight: normal;
+	 font-size: 60px;
+	 line-height: 50px;
+	 text-transform:uppercase;
+
+	 margin-top:55px;
+}
+.label-subline1{
+	 font-family: 'helvetica_neuethin';
+	 font-weight: normal;
+	 font-size: 20px;
+	 line-height: 20px;
+	 text-transform:uppercase;
+}
+.label-subline2{
+	font-family: 'helvetica_neuebold';
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 20px;
+	text-transform:uppercase;
+}
+
+.labelClose{
+	width:25px;
+	height:25px;
+	position:absolute;
+	top:10px;
+	right:10px;
+	cursor: pointer;
+}
+
+.variableLabel{
+	display: none;
+}
+
+
+
+/********** END LABEL *************/
+
+/*placeholder*/
+.placeholder { color: #888888; !important; }
+.placeholderFocus { color: #000; !important; }
+::-moz-selection { color: #888888; !important; }
+
+/* reset bootstratps style */
+input[type="text"]{
+	margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    line-height: normal;
+    margin: 0px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 2px;
+	zoom: 1;
+	*display: inline;
+}
+
+.bootstrap-filestyle label{
+	margin-bottom:6px;
+}
+
+.credit{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align: center;
+	color: #999;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

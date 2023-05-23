@@ -1,0 +1,672 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Cadastro Anilox - Valgroup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+    
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+       <script>
+         function logout () {
+        $.cookie('user_id', '', { expires: -1, path: '/' });
+        $.cookie('user_hash', '', { expires: -1, path: '/' });
+        $.cookie('expiration_date', '', { expires: -1, path: '/' });
+        $.cookie('customer_id', '', { expires: -1, path: '/' });
+        $.cookie('customer_name', '', { expires: -1, path: '/' });
+        $.cookie('username', '', { expires: -1, path: '/' });
+        $.cookie('scope', '', { expires: -1, path: '/' });
+        var lSession = api_sync.auth.create_session('', ''); // fecha sessao do CloudFlow
+        var l_url = '/portal.cgi/PP_FILE_STORE/Public/Login/login.html'
+        window.location.href = l_url;
+        //window.location.href = '?upload=done';
+      
+    }
+     </script>
+       
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_valgroup.png" style="width: 90%; margin-bottom: 50px;">
+              
+                <ul class="components mb-5">
+                  
+                     <li class="active" style="list-style-type: none">
+                     <a href="cadastros_anilox.html"><i class="fas fa-cog" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                     <li style="list-style-type: none">
+                     <a href="lista_anilox.html"><i class="fas fa-list" style="margin-right: 5px"></i>Lista</a>
+                    </li>
+                    
+                    <li  style="list-style-type: none">
+                     <a href="alteracao_bcm_anilox.html"><i class="fas fa-wrench" style="margin-right: 5px"></i>Alteração BCM</a>
+                    </li>
+                    <li style="list-style-type: none">
+                     <a href="lavagem_anilox.html"><i class="fas fa-biohazard" style="margin-right: 5px"></i>Registrar Lavagem</a>
+                    </li>
+                    
+                </ul>
+                    
+       
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <li class="nav-item">
+                      <a class="nav-link" href="cadastros_clientes.html">Cadastros</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="solicitacao_desenho.html">Tickets</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Alterar Senha</a>
+                  </li>
+                   <li class="nav-item">
+                      <a class="nav-link" style="cursor: pointer" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2 style="display:inline-block;">Cadastro Anilox</h2>
+       
+        
+       
+        <br>
+        <br>
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+        <hr>
+       
+            <div id="id_anilox" style="display:none"></div>
+            <div id="nome_cor" style="display:none"></div>
+            
+        <h4 id="que_estou_fazendo"></h4>
+       
+
+           
+                   
+               
+                
+               
+
+                 <div  class="form-group col-md-6" style="display:inline-block;">
+                <label for="anilox_num">N<sup>o</sup></label>
+                <label style="margin-left: 11.5%;" for="anilox_desc">Descrição</label>
+                <br>
+                  <input type="text" class="form-control" onchange="verifica_anilox()" style="width:15%; display: inline-block;" id="anilox_num" name="anilox_num" step="1" value="0">
+                  
+                  <input type="text" class="form-control" onchange="verifica_anilox()" style="width:80%; display: inline-block;text-transform: uppercase;" onkeyup="this.value=this.value.toUpperCase()"  id="anilox_desc" name="anilox_desc">
+                  <br>
+                  <span id="error_number" class="error" style="color: red"></span>
+                 </div>
+                 <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="anilox_codigo_fornecedor">Cod. Fornecedor</label>
+                   <input type="text" class="form-control"  id="anilox_codigo_fornecedor" name="anilox_codigo_fornecedor">
+                 </div>
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="anilox_data">Data</label>
+                   <input type="date" class="form-control"  id="anilox_data" name="anilox_data">
+                   <span id="error_data" class="error" style="color: red"></span>
+                 </div>
+                 <br>
+                  <div  class="form-group" style="display:inline-block; margin-left: 15px; vertical-align: top">
+                 <label class="switch">
+                  <input id="anilox_ativo" onchange="ativar_anilox()" type="checkbox" checked="true">
+                  <span class="slider round"></span>
+                </label>
+                </div>
+                <span id="texto-ativo" style="display: inline-block; margin-left: 5px; vertical-align: top " class="form-group">Ativo</span>
+                <div id="div_motivo"  class="form-group col-md-3" style="display:none;">
+                <label for="anilox_motivo">Motivo</label>
+                   <select  class="form-control" onchange="muda_motivo()" style="background-color: #e6e6e6" id="anilox_motivo" name="anilox_motivo">
+                   <option value="undefined">Selecionar</option>
+                   <option>Descarte</option>
+                   <option>Regravação</option>
+                   </select>
+                 </div>
+                 <div id="div_motivo_descarte" class="form-group col-md-7" style="display:none;">
+                <label for="anilox_motivo_descarte">Motivo Descarte</label>
+                  <input type="text" class="form-control" style="background-color: #e6e6e6" id="anilox_motivo_descarte" name="anilox_motivo_descarte">
+                 </div>
+                 <div id="div_botao_regravacao" class="form-group col-md-7" style="display:none;">
+                  <button id="envio_regravacao" class="btn btn-primary" onclick="enviar_para_regravacao()" style="cursor: pointer">Enviar para Regravação</button>
+                  </div>
+               <hr>
+               <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="anilox_lcm2">L/cm<sup>2</sup></label>
+                   <input type="text" class="form-control"  id="anilox_lcm2" name="anilox_lcm2" step="1" value="0">
+                   <span id="error_lcm2" class="error" style="color: red"></span>
+                 </div>
+                  
+                <div  class="form-group col-md-2" style="display:inline-block;">
+                <label for="anilox_bmcoriginal">BCM Original</label>
+                   <input type="number" class="form-control" id="anilox_bcmoriginal" name="anilox_bcmoriginal" step="0.01" value="0.00">
+                   <span id="error_bcmoriginal" class="error" style="color: red"></span>
+                 </div>
+                 <!--<div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="anilox_metragem">Metragem</label>
+                   <input type="number" class="form-control"  id="anilox_metragem" name="anilox_metragem" step="0.01" value="0">
+                 </div>-->
+                 <div  class="form-group col-md-2" style="display:none;">
+                <label for="anilox_usado">Usado na Preparação</label>
+                   <input type="number" class="form-control"  id="anilox_usado" name="anilox_usado" step="1" value="0">
+                 </div>
+                
+                <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="anilox_situacao">Situação</label>
+                   <select class="form-control"  id="anilox_situacao" name="anilox_situacao">
+                       <option value="undefined">Selecionar...</option>
+                    </select>
+                    <span id="error_situacao" class="error" style="color: red"></span>
+                 </div>
+                 <div  class="form-group col-md-3" style="display:inline-block;">
+                <label for="anilox_fornecedor">Fornecedor</label>
+                   <select class="form-control"  id="anilox_fornecedor" name="anilox_fornecedor">
+                       <option value="undefined">Selecionar...</option>
+                    </select>
+                    <span id="error_fornecedor" class="error" style="color: red"></span>
+                 </div>
+                 <div  class="form-group col-md-4" style="display:inline-block;">
+                <label for="anilox_nota_fiscal">Nota Fiscal de Entrada</label>
+                   <input type="text" class="form-control"  id="anilox_nota_fiscal" name="anilox_nota_fiscal">
+                 </div>
+                 <hr>
+                 <h6>Maquinas</h6>
+                 <div id="as_maquinas_anilox">
+                     
+                 </div>
+                  
+                 <hr>
+                  <div id="button_salva" class="form-group col-md-11" style="display:inline-block; vertical-align: bottom;">
+                      <div id="msg_salvar_anilox"></div>
+                      <button id="save_button" class="btn btn-primary" onclick="verifica_campos()">Salvar Anilox</button>
+                      <button id="save_button" class="btn btn-secondary" onclick="cancelar()">Cancelar</button>
+                  </div>
+                  
+                 <hr>
+                 
+            
+            
+        
+              
+                 </div>
+        <br>     
+            
+             
+            </div>
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       
+  	
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+  	    var usuario = api.auth.get_current_user()
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+// preenche Select
+
+selectTipo = document.getElementById('anilox_situacao');
+    var tiposTipo = api.custom_objects.list_with_options("BR-VALFI_situacaoAnilox").results
+    for (var i = 0; i<tiposTipo.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo[i].nome;
+        opt.innerHTML = tiposTipo[i].nome;
+        selectTipo.appendChild(opt);
+    }
+    
+    
+    selectTipo2 = document.getElementById('anilox_fornecedor');
+    var tiposTipo2 = api.custom_objects.list_with_options("BR-VALFI_Fornecedores",["tipo","equal to","anilox"]).results
+    for (var i = 0; i<tiposTipo2.length; i++){
+        var opt = document.createElement('option');
+        opt.value = tiposTipo2[i].nome;
+        opt.innerHTML = tiposTipo2[i].nome;
+        selectTipo2.appendChild(opt);
+    }
+    
+    
+// preenche Maquinas
+
+var busca_maquinas = api.custom_objects.list_with_options("BR-VALFI_maquina",["impressao","equal to","FLEXO"]).results
+console.log(busca_maquinas.length)
+var info_html = ""
+for (i=0;i<busca_maquinas.length;i++){
+    info_html = info_html+'<div class="form-group col-md-2" style="display:inline-block;"><input type="checkbox" class="form-group"  id="'+busca_maquinas[i].nome+'" onclick="adiciona_maquina()" name="maquina_usado_'+busca_maquinas[i].nome+'"><label for="maquina_usado_'+busca_maquinas[i].nome+'">'+busca_maquinas[i].nome+'</label></div>'
+    //console.log(info_html)
+   
+}
+ document.getElementById("as_maquinas_anilox").innerHTML = info_html 	
+  	
+  	</script>
+  	
+  
+  	
+  
+
+
+
+ 
+    
+    
+   
+
+
+
+
+<script>
+      
+      
+      function verifica_anilox(){
+          
+          var numero = document.getElementById("anilox_num").value
+          
+          var busca_existe = api.custom_objects.list_with_options("BR-VALFI_anilox",["numero","equal to",numero]).results
+           if (document.getElementById("id_anilox").innerText == ""){
+          if (busca_existe.length > 0){
+              document.getElementById("error_number").innerText = "Já existe anilox cadastrado com esse numero."
+              document.getElementById("save_button").disabled = true;
+          } else {
+              document.getElementById("error_number").innerText = ""
+              document.getElementById("save_button").disabled = false; 
+          }
+           }
+          
+          
+      }
+      
+      function verifica_campos(){
+          
+          var esta_ok = true
+         
+          if (document.getElementById("anilox_num").value == "0" || document.getElementById("anilox_num").value == ""){
+              document.getElementById("error_number").innerText = "Insira um numero de Anilox!"
+              esta_ok = false
+          } else {
+             document.getElementById("error_number").innerText = "" 
+          }
+          if (document.getElementById("anilox_desc").value == ""){
+              document.getElementById("error_number").innerText = "Insira uma descrição!"
+               esta_ok = false
+          }
+          else {
+             document.getElementById("error_number").innerText = "" 
+          }
+          
+          
+           if (document.getElementById("anilox_bcmoriginal").value == "0"){
+              document.getElementById("error_bcmoriginal").innerText = "Valor deve ser maior que zero!"
+               esta_ok = false
+          }
+          else {
+             document.getElementById("error_bcmoriginal").innerText = "" 
+          }
+          
+          if (document.getElementById("anilox_situacao").value == "undefined"){
+              document.getElementById("error_situacao").innerText = "Escolha uma situacao!"
+               esta_ok = false
+          }
+          else {
+             document.getElementById("error_situacao").innerText = "" 
+          }
+          
+          
+          if (esta_ok === false){
+              document.getElementById("msg_salvar_anilox").style = "color: red"
+              document.getElementById("msg_salvar_anilox").innerText = "Verifique os campos obrigatórios."
+          } else {
+            document.getElementById("msg_salvar_anilox").style = "color: green" 
+            // document.getElementById("msg_salvar_anilox").innerText = "Anilox criado com sucesso."
+             salva_anilox()
+          }
+        
+          
+      }
+      
+      function salva_anilox(){
+          document.getElementById("msg_salvar_anilox").innerText = "O Anilox foi salvo com sucesso!"
+          var data = {}
+          data["ativo"] = document.getElementById("anilox_ativo").checked
+          data["numero"] = document.getElementById("anilox_num").value
+          data["codigo_fornecedor"] = document.getElementById("anilox_codigo_fornecedor").value
+          data["nome"] = document.getElementById("anilox_desc").value
+          data["data_criacao"] = new Date(document.getElementById("anilox_data").value)
+          data["bcm_original"] = document.getElementById("anilox_bcmoriginal").value
+          data["fornecedor"] = document.getElementById("anilox_fornecedor").value
+         var info_nota = {}
+         info_nota["motivo"] = "Entrada"
+         info_nota["numero"] = document.getElementById("anilox_nota_fiscal").value
+         
+          data["nota_fiscal"] = [info_nota]
+         data["processo_lavagem"] = false
+         data["status_lavagem"] = "Não Iniciado"
+   
+          data["l_cm2"] = document.getElementById("anilox_lcm2").value
+           var bcm_atual = []
+           var lavagem_atual = []
+            var info_bcm = {}
+           info_bcm["alterado_em"] = new Date()
+           info_bcm["alterado_por"] = usuario.fullname
+           info_bcm["atual"] = document.getElementById("anilox_bcmoriginal").value
+           bcm_atual.push(info_bcm)
+           data["regravacao"] = false
+          data["metragem"] = 0
+           data["alteracoes_bcm"] = bcm_atual
+           data["situacao"] = document.getElementById("anilox_situacao").value
+           data["lavagem"] = lavagem_atual
+           data["usado_preparacao"] = ""
+          data["maquinas"] = the_machines
+          data["regravacoes"] = []
+          data["descartado"] = false
+          var info_liberacao = {}
+          info_liberacao["em_maquina"]= false
+          info_liberacao["maquina"] = "N/A"
+         info_liberacao["requisitado_por"] = "N/A"
+        info_liberacao["requisitado_em"] = ""
+        data["liberado"] = info_liberacao
+           api.custom_objects.create("BR-VALFI_anilox",data)
+         
+          
+              document.getElementById("anilox_num").value = "" 
+              document.getElementById("anilox_desc").value = ""
+              document.getElementById("anilox_data").value = ""
+              document.getElementById("anilox_bcmoriginal").value = ""
+              document.getElementById("anilox_lcm2").value = ""
+              document.getElementById("anilox_nota_fiscal").value = ""
+              document.getElementById("anilox_codigo_fornecedor").value = ""
+              document.getElementById("anilox_situacao").value = "undefined" 
+              document.getElementById("anilox_fornecedor").value = "undefined"
+              for (i=0;i<the_machines.length;i++){
+                  document.getElementById(the_machines[i]).checked = false
+              }
+              setTimeout(function(){ document.getElementById("msg_salvar_anilox").innerText = ""},3000)
+             
+             
+          
+      }
+      
+ 
+</script>
+<script>
+    function ativar_anilox(){
+        if (document.getElementById("anilox_ativo").checked == true){
+            document.getElementById("anilox_num").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_desc").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_data").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_bcmoriginal").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_lcm2").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_situacao").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_usado").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_fornecedor").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_codigo_fornecedor").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_nota_fiscal").style.backgroundColor = "#e6ffe6"
+            document.getElementById("texto-ativo").innerText = "Ativo"
+            document.getElementById("div_motivo").style = "display:none;"
+             document.getElementById("div_motivo_descarte").style = "display: none;"
+            document.getElementById("div_botao_regravacao").style = "display: none;"
+            document.getElementById("anilox_motivo").value = "undefined"
+            document.getElementById("anilox_motivo_descarte").value = ""
+            
+            
+        } else {
+           document.getElementById("anilox_num").style.backgroundColor = "#e6e6e6"
+            document.getElementById("anilox_desc").style.backgroundColor = "#e6e6e6"
+            document.getElementById("anilox_data").style.backgroundColor = "#e6e6e6"
+            document.getElementById("anilox_bcmoriginal").style.backgroundColor = "#e6e6e6"
+            document.getElementById("anilox_lcm2").style.backgroundColor = "#e6e6e6"
+            document.getElementById("anilox_situacao").style.backgroundColor = "#e6e6e6"
+            document.getElementById("anilox_usado").style.backgroundColor = "#e6e6e6" 
+            document.getElementById("anilox_fornecedor").style.backgroundColor = "#e6e6e6"
+            document.getElementById("anilox_codigo_fornecedor").style.backgroundColor = "#e6e6e6"
+            document.getElementById("anilox_nota_fiscal").style.backgroundColor = "#e6e6e6"
+            document.getElementById("texto-ativo").innerText = "Inativo"
+            document.getElementById("div_motivo").style = "display: inline-block; vertical-align: top;"
+        }
+        
+    }
+</script>
+<script>
+var the_machines = []
+    function adiciona_maquina(){
+       var linha = event.srcElement.id
+       console.log(linha)
+       if (document.getElementById(linha).checked === true){
+           the_machines.push(linha)
+       } else {
+           
+           for (i=0;i<the_machines.length;i++){
+               if (the_machines[i] == linha){
+                   var tira = the_machines.splice(i,1)
+               }
+           }
+       }
+        
+    }
+    
+</script>
+<script>
+    function cancelar(){
+        document.getElementById("anilox_num").value = "" 
+              document.getElementById("anilox_desc").value = ""
+              document.getElementById("anilox_data").value = ""
+              document.getElementById("anilox_bcmoriginal").value = ""
+              document.getElementById("anilox_lcm2").value = ""
+              document.getElementById("motivo_anilox_descarte").value = ""
+              document.getElementById("anilox_nota_fiscal").value = ""
+              document.getElementById("motivo_anilox").value = "undefined"
+              document.getElementById("anilox_situacao").value = "undefined" 
+              document.getElementById("anilox_fornecedor").value = "undefined"
+              for (i=0;i<the_machines.length;i++){
+                  document.getElementById(the_machines[i]).checked = false
+              }
+              document.getElementById("msg_salvar_anilox").innerText = ""
+              
+        
+    }
+</script>
+<script>
+     document.getElementById("anilox_num").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_desc").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_data").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_bcmoriginal").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_lcm2").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_situacao").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_usado").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_fornecedor").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_codigo_fornecedor").style.backgroundColor = "#e6ffe6"
+            document.getElementById("anilox_nota_fiscal").style.backgroundColor = "#e6ffe6"
+            
+            var hoje = new Date()
+            document.getElementById("anilox_data").value = dateFormat(hoje,"yyyy-mm-dd")
+            
+            function muda_motivo(){
+                if (document.getElementById("anilox_motivo").value != "undefined"){
+                    if (document.getElementById("anilox_motivo").value == "Descarte"){
+                        document.getElementById("div_motivo_descarte").style = "display: inline-block; vertical-align: top;"
+                         document.getElementById("div_botao_regravacao").style = "display: none;"
+                    } else {
+                      document.getElementById("div_motivo_descarte").style = "display: none;"
+                         document.getElementById("div_botao_regravacao").style = "display: inline-block;vertical-align: bottom;"
+                      
+                    }
+                } else {
+                   document.getElementById("div_motivo_descarte").style = "display: none;"
+                         document.getElementById("div_botao_regravacao").style = "display: none;"
+                     
+                }
+            }
+           
+</script>
+
+
+
+
+
+    </body>
+
+</html>

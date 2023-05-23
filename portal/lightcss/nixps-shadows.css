@@ -1,0 +1,36 @@
+/*********************************************************************/
+/*  SHADOW STYLES                                                    */
+/*********************************************************************/
+
+.soft-shadow 
+{
+	-moz-box-shadow: 2px 2px 4px #0080BF;
+	-webkit-box-shadow: 2px 2px 4px #0080BF;
+	box-shadow: 2px 2px 4px #0080BF;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#888888')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#888888');
+}
+
+.shadow 
+{
+	-moz-box-shadow: 0px 2px 6px #0080BF;
+	-webkit-box-shadow: 0px 2px 6px #0080BF;
+	box-shadow: 0px 2px 6px #0080BF;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=90, Color='#111111')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=90, Color='#111111');
+}
+
+.top-shadow 
+{
+	-moz-box-shadow: 0px 0px 20px #000;
+	-webkit-box-shadow: 0px 0px 20px #000;
+	box-shadow: 0px 0px 20px #000;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=90, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=6, Direction=90, Color='#000000');
+}

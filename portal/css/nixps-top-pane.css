@@ -1,0 +1,269 @@
+/*********************************************************************/
+/*  TOP PANE                                                         */
+/*********************************************************************/
+
+#portal-bar {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	height:27px;
+	z-index:9500;
+	overflow:hidden;
+	padding-left:3px;
+	padding-right:3px;
+	padding-top:2px;
+	padding-bottom:2px;
+	background-color:#484848;
+	border-bottom:1px solid #444;
+}
+
+.top-pane .ui-icon-home {
+	background-image:url(images/dark_bar_home.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-icon-files {
+	background-image:url(images/dark_bar_files.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-icon-users {
+	background-image:url(images/dark_bar_users.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-icon-chains {
+	background-image:url(images/dark_bar_chains.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-icon-flows {
+	background-image:url(images/dark_bar_flows.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-icon-hub {
+	background-image:url(images/dark_bar_kiosk.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-icon-printplanner {
+	background-image:url(images/dark_bar_printplanner.png);
+	background-position:0 0;
+}
+
+
+.top-pane .ui-icon-patchplanner {
+	background-image:url(images/dark_bar_patchplanner.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-icon-rip {
+	background-image:url(images/dark_bar_rip.png);
+	background-position:0 0;
+}
+
+
+.top-pane .ui-icon-config {
+	background-image:url(images/dark_bar_config.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-icon-logout {
+	background-image:url(images/dark_bar_logout.png);
+	background-position:0 0;
+}
+
+.top-pane .ui-button,
+#portal-bar .ui-button 
+{
+	background:transparent;
+	border:1px solid transparent;
+	font-size: 1.0em;
+    width: 1.8em;
+	height:26px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.top-pane .ui-button-text,
+#portal-bar .ui-button
+{
+	line-height:14px;
+	height:26px;
+}
+
+.top-pane .ui-button:hover,
+#portal-bar .ui-button:hover 
+{
+	background-color:hsla(0,0%,0%,.12);
+	background-clip:padding-box;
+	border:1px solid hsla(0,0%,0%,.35);
+	border-color:hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+	box-shadow:0 1px 0 hsla(0,0%,100%,.05) inset,0 0 1px hsla(0,0%,100%,.15) inset,0 1px 0 hsla(0,0%,100%,.05);
+}
+
+.top-pane .top-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 3px;
+    color: #ddd;
+}
+
+.top-pane .ui-state-active:hover,
+#portal-bar .ui-state-active:hover {
+	background-color:hsla(0,0%,0%,.2);
+	border-color:hsla(0,0%,0%,.35) hsla(0,0%,0%,.4) hsla(0,0%,0%,.45);
+	box-shadow:0 1px 1px hsla(0,0%,0%,.1) inset,0 0 1px hsla(0,0%,0%,.2) inset,0 1px 0 hsla(0,0%,100%,.05);
+	-webkit-transition-property:background-color,border-color,box-shadow;
+	-webkit-transition-duration:10ms;
+	-webkit-transition-timing-function:linear;
+	-moz-transition-property:background-color,border-color,box-shadow;
+	-moz-transition-duration:10ms;
+	-moz-transition-timing-function:linear;
+	-ms-transition-property:background-color,border-color,box-shadow;
+	-ms-transition-duration:10ms;
+	-ms-transition-timing-function:linear;
+	-o-transition-property:background-color,border-color,box-shadow;
+	-o-transition-duration:10ms;
+	-o-transition-timing-function:linear;
+	transition-property:background-color,border-color,box-shadow;
+	transition-duration:10ms;
+	transition-timing-function:linear;
+}
+
+.top-pane .ui-state-active,
+#portal-bar .ui-state-active {
+	background-color:#2b2b2b;
+	border-color:#181818;
+	box-shadow:0 1px 1px hsla(0,0%,0%,.1) inset,0 0 1px hsla(0,0%,0%,.2) inset,0 1px 0 hsla(0,0%,100%,.05);
+	-webkit-transition-property:background-color,border-color,box-shadow;
+	-webkit-transition-duration:10ms;
+	-webkit-transition-timing-function:linear;
+	-moz-transition-property:background-color,border-color,box-shadow;
+	-moz-transition-duration:10ms;
+	-moz-transition-timing-function:linear;
+	-ms-transition-property:background-color,border-color,box-shadow;
+	-ms-transition-duration:10ms;
+	-ms-transition-timing-function:linear;
+	-o-transition-property:background-color,border-color,box-shadow;
+	-o-transition-duration:10ms;
+	-o-transition-timing-function:linear;
+	transition-property:background-color,border-color,box-shadow;
+	transition-duration:10ms;
+	transition-timing-function:linear;
+	border-radius:2px;
+}
+
+.top-pane a:link,
+.top-pane a:visited {
+	text-decoration: none;
+}
+
+.top-pane a:hover,
+.top-pane a:active {
+	text-decoration: underline;
+}
+
+.top-pane #logoutButton
+{
+    margin-left: 5px;
+}
+
+div.top-pane #user-context {
+	float:right;
+	margin-top:1px;
+}
+
+div.top-pane #user-description {
+    color: #ccc;
+	float:right;
+	display:inline;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:0px;
+	font-size: small;
+}
+
+div.top-pane #user-scope {
+    color: #ccc;
+	float:right;
+	display:inline;
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:4px;
+	font-size: small;
+}
+
+div#fileupload-container {
+	float:left;
+	left:0;
+}
+
+div#fileupload-progress {
+	height:14px;
+	width:0;
+	background-color:#fff;
+}
+
+div#title-flap
+{
+    z-index:9900;
+    position: absolute;
+    top: 8px;
+    left: 200px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    background-image: url(images/top_back.png);
+    color: #414141;
+    height: 22px;
+    display: none;
+}
+
+span#title
+{
+    font-size: 13px;
+    vertical-align: top;
+}
+
+span#close:hover
+{
+    color: #ccc;
+    -webkit-transition-property:color;
+	-webkit-transition-duration:100ms;
+	-webkit-transition-timing-function:linear;
+}
+
+span#close
+{
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 13px;
+    vertical-align: top;
+}
+
+.global-msgs
+{
+    /*background-color: rgba(192,27,27,1);*/
+    /*background-color: rgba(0,0,0,1);*/
+    display: none;
+	/*padding: 3px 15px;*/
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+	vertical-align: middle;
+	position: absolute;
+	width: 400px;
+	text-align: right;
+	right: 0;
+	/*top: -5px;*/
+}
+
+.global-msgs img
+{
+	vertical-align: text-bottom;
+}

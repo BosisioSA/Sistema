@@ -1,0 +1,95 @@
+.nixps-asset-RunningActionList {
+    height: 250px;
+    width: 250px;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0px 8px 20px -2px #eee;
+    overflow-y: scroll;
+}
+
+.nixps-asset-RunningActionList .runninglist_item {
+	border-bottom: 1px solid #e0e0e0;
+	cursor: default;
+	overflow: hidden;
+	padding: 4px 4px;
+}
+
+.nixps-asset-RunningActionList .runninglist_action,
+.nixps-asset-RunningActionList .runninglist_source,
+.nixps-asset-RunningActionList .runninglist_target {
+	display: inline-block;
+	max-width: 100%;
+	overflow: hidden;
+	vertical-align: middle;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.nixps-asset-RunningActionList .runninglist_action {
+    margin-left: 2px;
+	margin-right: 7px;
+}
+.nixps-asset-RunningActionList .runninglist_action .runninglist_erroricon {
+	color: #C15656;
+}
+.nixps-asset-RunningActionList .runninglist_source {
+	width: calc( ( 100% - 55px ) / 2 );
+}
+.nixps-asset-RunningActionList .runninglist_target {
+	width: calc( ( 100% - 55px ) / 2 );
+}
+
+.nixps-asset-RunningActionList .runninglist_toIcon {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.nixps-asset-RunningActionList .progress.progressBar {
+    height: 12px;
+}
+
+.nixps-asset-RunningActionList .progress-bar.active, 
+.nixps-asset-RunningActionList .progress.active 
+.nixps-asset-RunningActionList .progress-bar {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    -o-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.nixps-asset-RunningActionList .progress-bar-striped, 
+.nixps-asset-RunningActionList .progress-striped 
+.nixps-asset-RunningActionList .progress-bar {
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+
+.nixps-asset-RunningActionList .progress-bar {
+    float: left;
+    border-radius: 3px;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #0080BF;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+
+.nixps-asset-RunningActionList .progress-bar.progress-bar-danger {
+    background-color: #d9534f;
+}
+
+.nixps-asset-RunningActionList .list_emptyRowsPanel {
+    position: relative;
+    top: 6px;
+    left: 15px;
+}

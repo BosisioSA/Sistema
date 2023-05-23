@@ -1,0 +1,500 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Lista Pedidos - Rotocrom</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        
+    
+     <script>
+          function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}	
+     </script>
+
+    </head>
+
+
+    <body onload="preencheLista('','','',0,20)">
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./assets/img/rotocrom.jpg" style="width: 70%; margin-bottom: 50px;">
+               <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Pedidos
+                  <ul>
+                  <li class="active" style="list-style-type: none">
+                     <a href="wizard_pedido.html?ordem="><i class="fas fa-cart-plus" style="margin-right: 5px"></i>Novo</a>
+                    </li>
+                    <li    style="list-style-type: none">
+                     <a href="lista_pedidos.html"><i class="fas fa-tags" style="margin-right: 5px"></i>Meus Pedidos</a>
+                    </li>
+                   
+                    </ul>
+                    </li>
+                    
+                  
+                    </ul>
+                    
+        <!--<li>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Paginas Administrativas</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>
+                  <a href="artes.html">Artes</a>
+              </li>
+            </ul>
+          </li>-->
+     
+        
+        <div style="background-color: #EEE; padding: 10px;">
+            <p style="color: black;">Filtros</p>
+            <div style="width: 100%; color: black;">
+              <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="filtro_codigo">Código</label>
+                  <input type="text" class="form-control" id="filtro_codigo" onchange="filtrar_pagina()" name="filtro_codigo">
+                </div> 
+                <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="filtro_identificacao">Cliente</label>
+                  <input type="text" class="form-control" id="filtro_identificacao" onchange="filtrar_pagina()" name="filtro_identificacao">
+                </div> 
+                <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="filtro_nome">Data Inicio</label>
+                  <input type="date" class="form-control" id="filtro_nome" onchange="filtrar_pagina()" name="filtro_nome">
+                </div> 
+                <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="filtro_representante">Data Final</label>
+                  <input type="date" class="form-control" id="filtro_representante" onchange="filtrar_pagina()" name="filtro_representante">
+                </div> 
+                <button class="btn btn-primary" onclick="filtrar_pagina()" style="display: none">Procurar</button>
+            </div>
+            
+        </div>
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <!--<li class="nav-item">
+                      <a class="nav-link" href="solicitacaoArtes.html">Nova Solicitação</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="DashBoard_aprovacoes.html">Dashboard</a>
+                  </li>-->
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <h2 style="display:inline-block;">Lista de Pedidos</h2><img src="./assets/img/reload.png" onClick="preencheLista();" width="20px" style="cursor: pointer; display: inline-block;margin-left: 20px;margin-bottom: 11px;">
+        <!--<div class="form-group col-md-2" style="display:inline-block;">
+          <label for="data-inicio">A partir de</label>
+          <input type="date"  onchange="preencheLista()" class="form-control" id="data-inicio" name="data-inicio">
+        </div>
+        <div class="form-group col-md-2" style="display:inline-block;">
+          <label for="data-final">Ate</label>
+          <input type="date"  onchange="preencheLista()" class="form-control" id="data-final" name="data-final">
+        </div>-->
+        
+        <br>
+        <div id="info_update" style="color: green"></div>
+        <br>
+        <br>
+        
+        
+        <hr>
+        <br>
+         Mostrar<div class="form-group col-md-1" style="display:inline-block;">
+          <input type="text" class="form-control" onchange="mudarQuantidade()" id="number_of_rows" value="20">
+          
+        </div><span class="form-group col-md-1" id="info_total"></span>
+        <section class="form-group col-md-6" style="display:inline-block;">
+            
+        </section>
+        <div id="initial_number" style="display: none">0</div>
+        <div class="form-group col-md-2" style="display:inline-block;">
+            <i id="arrowleft"  onclick="lastPage()" class="fas fa-arrow-left" style="margin-right: 5px; display: none;"></i>
+        <span id="paginas"></span>
+        <i id="arrowright" onclick="nextPage()" class="fas fa-arrow-right" style="margin-left: 5px; display: none;"></i>
+        </div>
+        <br>
+        <hr>
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:5%">Codigo
+              </th>
+              <th class="th-sm" style="width:10%">Entrada
+              </th>
+              <th class="th-sm" style="width:10%">Cliente
+              </th>
+              <th class="th-sm" style="width:30%">Serviço
+              </th>
+              <th class="th-sm" style="width:10%">Produto
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+  		<hr>
+  		  
+  		  
+  		  
+   <script>
+  //conta o numero de paginas
+  function as_paginas(numero_total){
+ // var quantas = api.custom_objects.count("ALPHA_LOGS_ZIP").count
+ console.log("Quantas "+numero_total)
+   var quantas = numero_total
+  var divide_por = parseInt(document.getElementById("number_of_rows").value)
+ var numero_inicial = parseInt(document.getElementById("initial_number").innerText)
+  if (quantas <= divide_por){
+      document.getElementById("paginas").innerText = "Pagina 1/1"
+      document.getElementById("arrowleft").style = "display: none;"
+      document.getElementById("arrowright").style = "display: none;"
+  } else {
+     document.getElementById("arrowright").style = "margin-left: 5px; display: inline-block; cursor:pointer;"
+     var inicio = (parseInt(document.getElementById("initial_number").innerText)/divide_por)+1
+     var inicio2 = (parseInt(document.getElementById("initial_number").innerText)/divide_por)+1
+     console.log("Inicio "+inicio)
+     console.log("Inicio "+inicio2)
+     
+     
+    document.getElementById("arrowright").style = "margin-left: 5px; display: inline-block; cursor:pointer;"
+  
+    if (quantas%divide_por == 0){
+        var total = parseInt(quantas/divide_por)
+        
+       
+     
+        
+        document.getElementById("paginas").innerText = "Pagina "+inicio2+"/"+total
+    } else {
+    var total = parseInt(quantas/divide_por)+1
+      document.getElementById("paginas").innerText = "Pagina "+inicio+"/"+total
+      
+    }
+     
+  }
+  if (numero_inicial > 0){
+   document.getElementById("arrowleft").style = "margin-right: 5px; display: inline-block; cursor:pointer;"   
+  } else {
+    document.getElementById("arrowleft").style = "display: none;"  
+  }
+  var sobra = quantas-numero_inicial
+  console.log("Sobra "+sobra)
+  console.log("Divide Por "+divide_por)
+  if (quantas-numero_inicial <= divide_por){
+     document.getElementById("arrowright").style = "display: none;"  
+  } 
+  
+  }
+  
+</script>
+<script>
+  function nextPage(){
+    
+      var inicio = parseInt(document.getElementById("initial_number").innerText)+parseInt(document.getElementById("number_of_rows").value)
+      var final = inicio+parseInt(document.getElementById("number_of_rows").value)
+      document.getElementById("initial_number").innerText = inicio
+      var diferenca = final-inicio
+  
+      
+     filtrar_page(inicio,final)
+      
+  }
+</script>
+<script>
+  function lastPage(){
+    
+      var inicio = parseInt(document.getElementById("initial_number").innerText)-parseInt(document.getElementById("number_of_rows").value)
+      var final = inicio+parseInt(document.getElementById("number_of_rows").value)
+    console.log("Last Page Inicio "+inicio)
+    
+      if (inicio > 0){
+      document.getElementById("initial_number").innerText = inicio
+  } else {
+     document.getElementById("initial_number").innerText = 0 
+  }
+  
+ 
+      
+      filtrar_page(inicio,final)
+    
+      
+  }
+</script>
+<script>
+  function mudarQuantidade(){
+      var quantas = parseInt(document.getElementById("number_of_rows").value)
+      var inicio = parseInt(document.getElementById("initial_number").innerText)
+      
+      var final = inicio+quantas
+    
+      filtrar_page(inicio,final)
+      
+  }
+</script>
+<script>
+  function filtrar(){
+       var codigo = document.getElementById("filtro_codigo").value
+      var identificacao = document.getElementById("filtro_identificacao").value
+      var cliente = document.getElementById("filtro_nome").value
+      var representante = document.getElementById("representante").value
+      var final = parseInt(document.getElementById("number_of_rows").value)
+      console.log("O status "+status)
+      preencheLista(codigo,identificacao,cliente,representante,inicio,final)
+      
+  }
+</script>
+
+<script>
+  function filtrar_page(inicio,final){
+    var codigo = document.getElementById("filtro_codigo").value
+      var identificacao = document.getElementById("filtro_identificacao").value
+      var cliente = document.getElementById("filtro_nome").value
+      var representante = document.getElementById("representante").value
+       
+      
+      preencheLista(codigo,identificacao,cliente,representante,inicio,final)
+      
+  }
+</script>
+
+
+    <script>
+        function limpa_tudo_contato(){
+            if (document.getElementById("departamento").value == "Representante"){
+          var busca_representante = api.custom_objects.list_with_options("BR-ROTOC_representantes",["nome","equal to",document.getElementById("contato").value]).results
+          if (busca_representante.length === 0){
+              document.getElementById("error_busca_representante").innerText = "Representante não encontrado na base de dados"
+           } else {
+              document.getElementById("error_busca_representante").innerText = ""
+              document.getElementById("telefone_contato").value = busca_representante[0].contatos[0].telefone
+              document.getElementById("email_contato").value = busca_representante[0].contatos[0].email
+           }
+        }
+        }
+    </script>
+
+      <script>
+      
+    
+      
+      var usuario = api.auth.get_current_user()
+      var nome_user = "Bem vindo, "+usuario.fullname
+      document.getElementById("bemvindo").innerText = nome_user
+      </script>
+      <script>
+      //Preenche lista de Drafts
+
+       
+
+         function preencheLista(codigo,cliente,produto,inicio,final){
+        var query = []
+        if (codigo != ""){
+            query.push("CODIGO")
+            query.push("equal to")
+            query.push(codigo)
+        }
+        
+         if (cliente != ""){
+            if (query.length > 0){
+                query.push("and")
+            }
+            query.push("FANTASIA")
+            query.push("contains text like")
+            query.push(cliente)
+        }
+         if (produto != ""){
+            if (query.length > 0){
+                query.push("and")
+            }
+            query.push("REPRESENTANTE")
+            query.push("contains text like")
+            query.push(representante)
+        }
+          
+      var tabela = document.getElementById("dtBasicExample");
+      clearTable(tabela)
+      document.getElementById("info_update").innerText = "Atualizando a lista"
+      setTimeout(() => { document.getElementById("info_update").innerText = ""}, 1000);
+      var qtasrow = tabela.rows.length;
+      var buscatudo = api.custom_objects.list_with_options("BR-ROTOC_pedidos",query,["codigo_pedido","ascending"],["codigo_pedido","info_geral","tipo_pedido"],{"first":inicio,"last":final}).results
+       var conta = api.custom_objects.count("BR-ROTOC_pedidos",query).count
+       var numero_para_mostrar = inicio+1
+        document.getElementById("info_total").innerText = "de "+conta+" - ( de "+numero_para_mostrar+" até "+final+")"
+     
+     
+       for (i=0;i<buscatudo.length;i++){
+        var row =  tabela.insertRow(qtasrow);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5)
+        var cell7 = row.insertCell(6);
+       
+       var data_entrada = new Date(buscatudo[i].info_geral.data_entrada)
+       var data_entrada_ok = dateFormat(data_entrada,"dd/mm/yyyy - hh:mm tt")
+       
+       
+    
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle;">'+buscatudo[i].codigo_pedido+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle;">'+data_entrada_ok+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle;">'+buscatudo[i].info_geral.nome_cliente.FANTASIA+'</div>'
+        cell4.innerHTML = '<div style="vertical-align: middle;">'+buscatudo[i].info_geral.servico+'</div>';
+        cell5.innerHTML = '<div style="vertical-align: middle;">'+buscatudo[i].tipo_pedido+'</div>';
+        
+        cell6.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><a href="visualiza_pedido.html?ordem='+buscatudo[i]._id+'" target="_Blank"><img  id="'+buscatudo[i]._id+'" src="Icons/Edit.png" width="50px" onclick="reply_edit()"></a></div>';
+        cell7.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+buscatudo[i]._id+'" src="Icons/delete.png" width="50px" onclick="reply_delete()"></div>';
+               
+        qtasrow = qtasrow+1
+        
+         } 
+         as_paginas(conta) 
+        }
+         
+         
+
+
+      </script>
+      
+     
+      
+    
+
+     
+
+      <script>
+      function filtro() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("OP");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("dtBasicExample");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
+ 
+<script>
+    function reply_delete(){
+    
+    
+    var linha = event.srcElement.id
+    if (confirm ("Deseja mesmo excluir o cliente, essa ação não poderá ser desfeita")){
+    document.getElementById("tipo_alteracao").innerText= "O Cliente foi apagado com sucesso"
+    api.custom_objects.delete("BR-ROTOC_customers",linha)
+
+    setTimeout(() => { document.getElementById("tipo_alteracao").innerText= "" ; document.getElementById("info_update").innerText = ""; preencheLista('','','','',0,20)}, 3000);
+    }
+    
+    }
+</script>
+
+<script>
+    function filtrar_pagina(){
+        if (document.getElementById("filtro_codigo").value != ""){
+        var codigo = parseInt(document.getElementById("filtro_codigo").value)
+        } else {
+            var codigo = ""
+        }
+        var identificacao = document.getElementById("filtro_identificacao").value
+         var cliente = document.getElementById("filtro_nome").value
+          var representante = document.getElementById("filtro_representante").value
+           preencheLista(codigo,identificacao,cliente,representante,0,20)
+    }
+</script>
+
+
+
+    </body>
+
+</html>

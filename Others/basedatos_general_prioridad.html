@@ -1,0 +1,658 @@
+<!doctype html>
+<html>
+    <head>
+      <title>BD - Prioridad</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+          <script src="js/jscolor.js"></script>
+        
+  
+        
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <script type='text/javascript' src='./Charts/Chart.min.js'></script>
+        <script type='text/javascript' src='./Charts/utils.js'></script>
+       <style>
+		#canvas-holder {
+			width: 100%;
+			margin-top: 50px;
+			text-align: center;
+		}
+		#chartjs-tooltip {
+			opacity: 1;
+			position: absolute;
+			background: rgba(0, 0, 0, .7);
+			color: white;
+			border-radius: 3px;
+			-webkit-transition: all .1s ease;
+			transition: all .1s ease;
+			pointer-events: none;
+			-webkit-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+		}
+
+		.chartjs-tooltip-key {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin-right: 10px;
+		}
+	</style>
+
+       
+    
+
+    </head>
+
+
+    <body>
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./logo/logo_bosisio.png" style="width: 90%; margin-bottom: 50px;">
+       <ul class="active components mb-5">
+           
+          <li   style="list-style-type: none; display: none;">
+               <a href="cadastros_clientes.html"><img src="./Icons/clientes.png" width="30px" style="margin-right: 10px">Clientes</a>
+              </li>
+          <li>
+        <!--<a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/fornecedores.png" width="30px" style="margin-right: 10px">Fornecedores</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu2">
+               <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_flexo.html"><img src="./Icons/flexo.png" width="20px" style="margin-right: 10px">Flexo</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_roto.html"><img src="./Icons/roto.png" width="20px" style="margin-right: 10px">Roto</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_anilox.html"><img src="./Icons/anilox.png" width="20px" style="margin-right: 10px">Anilox</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="cadastros_fornecedores_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindro Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_prepress.html"><img src="./Icons/prepress.png" width="20px" style="margin-right: 10px">Prepress</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="cadastros_fornecedores_materiaprima.html"><img src="./Icons/material.png" width="20px" style="margin-right: 10px">Matéria Prima</a>
+          </li>
+          </ul>
+          -->
+          <li class="active">
+              <a  href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/tecnicos.png" width="30px" style="margin-right: 10px">Base de Datos</a>
+           <li class="active" style="list-style-type: none">
+               <ul class="collapse list-unstyled" id="homeSubmenu3">
+              
+          <!--<li style="list-style-type: none">
+               <a href="cadastros_tecnicos_unidades.html"><img src="./Icons/unidades.png" width="20px" style="margin-right: 10px">Unidades</a>
+          </li>-->
+          <li  style="list-style-type: none">
+               <a href="basedatos_general_tipotrabajo.html"><img src="./Icons/tipo_trabalho.png" width="20px" style="margin-right: 10px">Tipo de Trabajo</a>
+          </li>
+          <li class="active" style="list-style-type: none">
+               <a href="basedatos_general_prioridad.html"><img src="./Icons/priority.png" width="20px" style="margin-right: 10px">Prioridad</a>
+          </li>
+          <li  style="list-style-type: none">
+               <a href="basedatos_general_polimeroscon.html"><img src="./Icons/prioridade.png" width="20px" style="margin-right: 10px">Enviar Polímeros Con</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_duplaface.html"><img src="./Icons/dupla_face.png" width="20px" style="margin-right: 10px">Dupla Face</a>
+          </li>
+          <li style="list-style-type: none">
+               <a href="basedatos_general_producto.html"><img src="./Icons/estruturas.png" width="20px" style="margin-right: 10px">Producto</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_tintas.html"><img src="./Icons/tintas.png" width="20px" style="margin-right: 10px">Tintas</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_situacaoanilox.html"><img src="./Icons/situacao_anilox.png" width="20px" style="margin-right: 10px">Situação de Anilox</a>
+          </li>
+          <li   class="active" style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_pc.html"><img src="./Icons/porta_cliche.png" width="20px" style="margin-right: 10px">Cilindros Porta Clichê</a>
+          </li>
+          <li style="list-style-type: none; display: none;; display: none;">
+               <a href="cadastros_tecnicos_lavagemanilox.html"><img src="./Icons/lavagem_anilox.png" width="20px" style="margin-right: 10px">Anilox (tipo de lavagem)</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_segmentos.html"><img src="./Icons/segmentos.png" width="20px" style="margin-right: 10px">Segmentos</a>
+          </li>
+          <li style="list-style-type: none; display: none;">
+               <a href="cadastros_tecnicos_maquinas.html"><img src="./Icons/impressoras.png" width="20px" style="margin-right: 10px">Máquinas</a>
+          </li>
+          <li  style="list-style-type: none;">
+               <a href="basedatos_tecnica_datostecnicos.html"><img src="./Icons/testform.png" width="20px" style="margin-right: 10px">Datos Técnicos</a>
+          </li>
+          </ul>
+          
+              
+            <!--    <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img src="./Icons/sequencia.png" width="30px" style="margin-right: 10px">Sequência Padrão</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li class="active" style="list-style-type: none">
+               <a href="receita_tintas.html"><img src="./Icons/contagotas.png" width="20px" style="margin-right: 10px">Criar Sequência</a>
+              </li>
+              <li  style="list-style-type: none">
+               <a href="lista_receitas.html"><img src="./Icons/listasequencia.png" width="20px" style="margin-right: 10px">Lista Sequências</a>
+              </li>
+              <li style="list-style-type: none">
+               <a href="cadastros_tintas.html"><img src="./Icons/novasequencia.png" width="20px" style="margin-right: 10px">Lista de Cores</a>
+              </li>
+              </ul>
+          </li>-->
+              </ul>    
+   
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	      </div>
+      	</nav>
+
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href= "javascript:window.history.go(-1)" style="cursor:pointer;"><img src="./Icons/voltar.png" width="20px" style="margin-right: 5px;">Volver</a>
+                  </li>  
+                 <li class="nav-item">
+                      <a class="nav-link" href="cadastros_clientes.html">Base de Datos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="solicitacao_desenho.html">Ordenes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="alterar_senha.html" target="_Blank">Cambiar Contraseña</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div>
+      
+        
+        <div  class="form-group col-md-11" style="display:inline-block;">
+       
+            <div id="id_tipotrabajo" style="display:none"></div>
+           
+        <h4 id="que_estou_fazendo"></h4>
+        <div id="nome_tabela" style="display: none"></div>
+            
+    
+       
+          
+         <h5 id="a_div_portacliche"><i id="tipoTrabajoArrow" class="fas fa-plus-square" onclick="mostraTipotrabajo()" style="margin-right: 5px; cursor:pointer;"></i>Prioridad</h5>
+                <p><i></i></p>
+                
+                 <div id="info_tipoTrabajo" class="form-group" style="display: none">
+                
+               
+                
+                   
+                  
+                  
+                 <div  class="form-group col-md-4" style="display:inline-block;">
+                <label for="prioridad">Prioridad</label>
+                  <input type="text" class="form-control" id="prioridad"  name="prioridad">
+                 </div>
+                 
+               
+                 
+               
+                  
+                 
+                
+             
+             
+           
+                             
+               
+                 
+                <br>
+                 <div  class="form-group col-md-11" style="display:inline-block; margin-top: 10px;">
+                  <button class="btn btn-primary" onclick="grabar_trabajo()" style="cursor: pointer">Grabar</button>
+                 <button class="btn btn-secondary" onclick="cancelar_trabajo()" style="cursor: pointer">Cancelar</button>
+                 </div>
+                
+                 
+             </div>
+         
+            
+            
+            
+            
+           
+           
+            
+            <table id="tabla_tipotrabajo" class="table custom-table"  style="display: inline-block; min-width: 900px;">
+          <thead>
+            <tr>
+             
+             <th class="col" style="width:80%">Prioridad</th>
+               <th class="col" style="width:10%">Editar</th>
+              <th class="col" style="width:10%">Borrar</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+     
+           
+        <hr>
+      
+       
+       
+        
+        
+  </div>
+        
+       
+            
+             
+          
+            
+            <!-- terminar mostra locais e começa mostra registro -->
+            
+          
+          
+           
+                <br>
+                  <div id="info_update" style="color: green"></div>
+              
+            </div>
+        
+       </div>
+  	 <script src="js/popper.js"></script>
+  <script src="js/main.js"></script>
+  		
+  		
+  	
+  	<script>
+  	    // funcoes de apoio
+  	    
+      function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+
+
+function cmyk2rgb(c, m, y, k, normalized){
+    c = (c / 100);
+    m = (m / 100);
+    y = (y / 100);
+    k = (k / 100);
+    
+    c = c * (1 - k) + k;
+    m = m * (1 - k) + k;
+    y = y * (1 - k) + k;
+    
+    var r = 1 - c;
+    var g = 1 - m;
+    var b = 1 - y;
+    
+    if(!normalized){
+        r = Math.round(255 * r);
+        g = Math.round(255 * g);
+        b = Math.round(255 * b);
+    }
+    
+    return {
+        r: r,
+        g: g,
+        b: b
+    }
+}
+
+function rgb2cmyk(r, g, b, normalized){
+    var c = 1 - (r / 255);
+    var m = 1 - (g / 255);
+    var y = 1 - (b / 255);
+    var k = Math.min(c, Math.min(m, y));
+    
+    c = (c - k) / (1 - k);
+    m = (m - k) / (1 - k);
+    y = (y - k) / (1 - k);
+    
+    if(!normalized){
+        c = Math.round(c * 10000) / 100;
+        m = Math.round(m * 10000) / 100;
+        y = Math.round(y * 10000) / 100;
+        k = Math.round(k * 10000) / 100;
+    }
+    
+    c = isNaN(c) ? 0 : c;
+    m = isNaN(m) ? 0 : m;
+    y = isNaN(y) ? 0 : y;
+    k = isNaN(k) ? 0 : k;
+    
+    return {
+        c: c,
+        m: m,
+        y: y,
+        k: k
+    }
+}
+
+var usuario = api.auth.get_current_user()
+
+
+
+  	</script>
+  	
+  	<script>
+  	
+  // preenche selects
+  
+ 
+  
+    
+    
+  
+    
+    </script>
+  	
+
+
+
+
+ 
+    
+    
+    <script>
+   
+    
+    </script>
+
+<script>
+
+    
+        function mostraTipotrabajo(){
+         
+        var div_cliente = document.getElementById("info_tipoTrabajo")
+        var icone = document.getElementById("tipoTrabajoArrow")
+        icone.classList.toggle("fa-minus-square")
+        if (div_cliente.style.display === "none") {
+            div_cliente.style.display = "inline-block";
+            div_cliente.style.width = "100%";
+            
+            } else {
+                document.getElementById("id_tipotrabajo").innerText = ""
+                document.getElementById("tipo_trabajo").value = ""
+                div_cliente.style.display = "none";
+            }
+     
+      }
+      
+   
+      
+  </script>
+  
+
+
+
+
+<script>
+    function grabar_trabajo(){
+        var existe_id = document.getElementById("id_tipotrabajo").innerText
+        if (existe_id != ""){
+        var existe_array = existe_id.split("_")
+        var numero = parseInt(existe_array[1])
+        
+        var numero_cilindro = parseInt(existe_array[1])
+        }
+        var tipos_existentes = tudo.prioridad
+        if (existe_id == ""){
+        tipos_existentes.push(document.getElementById("prioridad").value)
+        } else {
+           tipos_existentes[numero] = document.getElementById("prioridad").value 
+        }
+        
+        
+        
+        var cria = api.custom_objects.set_keys("AR-BOSIS_formulario",tudo._id,{"prioridad":tipos_existentes})
+            
+            
+            
+        
+        
+        
+        
+       
+       
+       
+       setTimeout(function(){document.getElementById("prioridad").value="";
+                            os_porta = tipos_existentes;
+                            llena_tipotrabajo();},1000)
+                            
+        
+       
+       }
+    
+    
+    let tudo
+    tudo = api.custom_objects.list_with_options("AR-BOSIS_formulario",[],[],["prioridad"]).results[0]
+    var os_porta = tudo.prioridad
+    
+    // preenche select
+    
+ 
+
+
+ 
+    
+    
+    
+    
+ 
+  
+  //lista_seq.sort(function(a,b){
+    //  return parseInt(a) -  parseInt(b); 
+  //})
+  
+  
+  
+  
+ //lista_C.sort(function(a,b){
+   //   return parseInt(a.substring(1,a.length)) -  parseInt(b.substring(1,b.length)); 
+  //}) 
+  
+  
+  
+  
+   
+    
+    
+     function llena_tipotrabajo(){
+       
+       
+        clearTable(document.getElementById("tabla_tipotrabajo"))
+          
+          
+         var table = document.getElementById("tabla_tipotrabajo")
+        var qtasrow = table.rows.length
+      
+            
+            for (i=0;i<os_porta.length;i++){
+            var row =  table.insertRow(qtasrow);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+              
+            cell1.innerHTML = '<div style="font-size:1em; text-align: center;">'+os_porta[i]+'</div>'
+              cell2.innerHTML = '<div><img id="edit_'+i+'" src="Icons/edit.png" height="20px" onclick="editar_tipoTrabajo()" style="cursor: pointer;"></div>'
+            
+            cell3.innerHTML = '<div><img id="delete_'+i+'" src="Icons/delete.png" height="20px" onclick="borrar_tipoTrabajo()" style="cursor: pointer;"></div>'
+          qtasrow = qtasrow +1
+      
+     
+     
+      
+    
+    }
+
+  
+}
+ 
+ 
+
+ 
+    
+  
+    
+    
+      
+    
+     function borrar_tipoTrabajo(){
+    if (confirm("Está seguro que quieres borrar esta prioridad?") === true){     
+    var linha = event.srcElement.id
+    var linha_array = linha.split("_")
+     var numerocilindro = parseInt(linha_array[1])
+    
+     
+      var tira = os_porta.splice(numerocilindro,1)
+     
+    var altera = api.custom_objects.set_keys("AR-BOSIS_formulario",tudo._id,{"prioridad":os_porta})
+    llena_tipotrabajo() 
+    
+    
+   
+      
+    }
+     }
+    
+     function editar_tipoTrabajo(){
+    
+     var linha = event.srcElement.id
+     var linha_array = linha.split("_")
+     var numeroporta = parseInt(linha_array[1])
+     
+    
+     
+     
+     
+    document.getElementById("id_tipotrabajo").innerText = linha
+    
+    document.getElementById("prioridad").value = os_porta[numeroporta]
+    
+    mostraTipotrabajo()
+    
+    }
+    
+    function cancelar_tipoTrabajo(){
+    
+       document.getElementById("prioridad").value = ""
+       document.getElementById("id_tipotrabajo").value = ""
+       
+    
+     setTimeout(function(){mostraTipotrabajo()},1000)
+     
+    }
+    
+     function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+    
+   
+    
+     
+     
+    
+</script>
+<script>
+
+
+</script>
+<script>
+llena_tipotrabajo()
+
+
+function removeItem(array, item) {
+  for(i = 0; i<array.length; i++){
+    if(array[i] == item) {
+      array.splice(array.indexOf(item), 1);
+    }
+  }
+}
+
+</script>
+
+
+
+
+
+    </body>
+
+</html>

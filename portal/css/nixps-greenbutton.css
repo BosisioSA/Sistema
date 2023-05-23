@@ -1,0 +1,94 @@
+/**
+ * A green button in the ui
+ */
+.colored-button, .colored-button:visited,
+a.green-button, a.green-button:visited
+{
+    /* Position */
+    background: url('images/config_label_back.png') repeat-x;
+    padding: 2px 10px;
+    border: 1px solid #66cc22;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    cursor: pointer;
+    /* Font */
+    color: #66cc22;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    -o-user-select: none;
+    user-select: none;
+    /* DropShadow */
+    -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color=rgba(0,0,0,0.5))";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color=rgba(0,0,0,0.5));
+    text-decoration: none;
+}
+
+a.green-button:hover
+{
+    color: #99ee77;
+    border-color: #99ee77;
+}
+
+a.green-button:active
+{
+    background: #444;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+a.red-button, a.red-button:visited
+{
+    /* Position */
+    background: url('images/config_label_back.png') repeat-x;
+    padding: 2px 10px;
+    border: 1px solid #cc2222;
+    border-radius: 2px;  
+    -moz-border-radius: 2px;  
+    -webkit-border-radius: 2px;  
+	cursor: pointer;
+    
+    /* Font */
+    color: #cc2222;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    -o-user-select: none;
+    user-select: none;
+    
+    /* DropShadow */
+	-moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color=rgba(0,0,0,0.5))";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=90, Color=rgba(0,0,0,0.5));
+}
+
+a.red-button:hover
+{
+    color: #ee7777;
+    border-color: #ee7777;
+}
+
+a.red-button:active
+{
+    background: #444;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+    box-shadow: none;
+}

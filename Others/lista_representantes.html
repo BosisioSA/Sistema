@@ -1,0 +1,1068 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Lista Representantes - Rotocrom</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/table.css">
+        <meta name="viewport" content="width=944">
+        <meta name="robots" content="noindex, follow">
+	<link rel="Shortcut icon" href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/favicon.ico" type="image/x-icon">
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon.png" rel="apple-touch-icon" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+        <link href="/portal.cgi/PP_FILE_STORE/Sistema/assets/img/icons/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+        <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+        <link rel="stylesheet" href="fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+        <script src="js/popper.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="/portal.cgi/PP_FILE_STORE/Sistema/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+      	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-1.8.3.min.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-ui-1.9.2.custom.js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.cookie.js'></script>
+    <!-- portal.js -->
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-linedtextarea.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/codemirror.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/javascript.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.tmpl.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery-regex.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/sitemapstyler.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/date.format.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.iframe-transport.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.fileupload.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.notify.min.js'></script>
+    <!-- portal.js --> <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.event.drag-2.2.js'></script>
+        <script type='text/javascript' src='/portal.cgi?api=js'></script>
+    	<script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/portal/js/nixps-portal-api.js'></script>
+        <script type='text/javascript' src='/portal.cgi/PP_FILE_STORE/Sistema/3rdParty/jquery.i18n.js'></script>
+        <style>
+        .esconder div #detalhe_draft { display:none;}
+        .esconder div #triangulo { cursor: pointer;}
+     </style>
+     <script>
+          function clearTable(table) {
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
+}	
+     </script>
+
+    </head>
+
+
+    <body onload="preencheLista('','','','',0,20)">
+
+  		<div class="wrapper d-flex align-items-stretch">
+  			<nav id="sidebar">
+  				<div class="p-4 pt-5">
+            <img>
+  		  		<img src="./assets/img/rotocrom.jpg" style="width: 70%; margin-bottom: 50px;">
+              <ul class="active components mb-5">
+                  <li style="color: #004b93; list-style-type: none">Cadastros
+                  <ul>
+                  <li style="list-style-type: none">
+                     <a href="cadastros.html"><i class="fas fa-receipt" style="margin-right: 5px"></i>Informações Técnicas</a>
+                    </li>
+                    <li   style="list-style-type: none">
+                     <a href="lista_clientes.html"><i class="fas fa-user-circle" style="margin-right: 5px"></i>Clientes</a>
+                    </li>
+                     <li class="active"  style="list-style-type: none">
+                     <a href="lista_representantes.html"><i class="fas fa-user-plus" style="margin-right: 5px"></i>Representantes</a>
+                    </li>
+                    <li   style="list-style-type: none">
+                     <a href="lista_transportadoras.html"><i class="fas fa-truck" style="margin-right: 5px"></i>Transportadoras</a>
+                    </li>
+                   
+            
+                    
+                    </ul>
+                    </li>
+                    
+                  
+                    </ul>
+              
+                    
+        <!--<li>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Paginas Administrativas</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>
+                  <a href="artes.html">Artes</a>
+              </li>
+            </ul>
+          </li>-->
+     
+        
+        <!--<div style="background-color: #EEE; padding: 10px;">
+            <p style="color: black;">Filtros</p>
+            <div style="width: 100%; color: black;">
+              <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="filtro_codigo">Código</label>
+                  <input type="text" class="form-control" id="filtro_codigo" onchange="filtrar_pagina()" name="filtro_codigo">
+                </div> 
+                <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="filtro_identificacao">Identificação</label>
+                  <input type="text" class="form-control" id="filtro_identificacao" onchange="filtrar_pagina()" name="filtro_identificacao">
+                </div> 
+                <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="filtro_nome">Nome Fantasia</label>
+                  <input type="text" class="form-control" id="filtro_nome" onchange="filtrar_pagina()" name="filtro_nome">
+                </div> 
+                <div class="form-group col-md-11" style="display:inline-block;">
+                <label for="filtro_representante">Representante</label>
+                  <input type="text" class="form-control" id="filtro_representante" onchange="filtrar_pagina()" name="filtro_representante">
+                </div> 
+                <button class="btn btn-primary" onclick="filtrar_pagina()" style="display: none">Procurar</button>
+            </div>-->
+            
+        </div>
+  	        <div class="footer">
+  	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+  						   Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  	        </div>
+  	     
+      	</nav>
+ 
+          <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+              <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+              </button>
+              <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <div id="bemvindo" style="margin-left: 20px;"></div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                 <!--<li class="nav-item">
+                      <a class="nav-link" href="solicitacaoArtes.html">Nova Solicitação</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="DashBoard_aprovacoes.html">Dashboard</a>
+                  </li>-->
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div>
+        <div>
+        <h2 style="display:inline-block;">Lista de Representantes</h2><img src="./assets/img/reload.png" onClick="preencheLista();" width="20px" style="cursor: pointer; display: inline-block;margin-left: 20px;margin-bottom: 11px;">
+        <!--<div class="form-group col-md-2" style="display:inline-block;">
+          <label for="data-inicio">A partir de</label>
+          <input type="date"  onchange="preencheLista()" class="form-control" id="data-inicio" name="data-inicio">
+        </div>
+        <div class="form-group col-md-2" style="display:inline-block;">
+          <label for="data-final">Ate</label>
+          <input type="date"  onchange="preencheLista()" class="form-control" id="data-final" name="data-final">
+        </div>-->
+        
+        <br>
+        <div id="info_update" style="color: green"></div>
+        <br>
+        <br>
+        <button id="cria_cliente" class="btn btn-primary" onclick="cria_cliente()" style="cursor:pointer;">Novo Representante</button>
+        
+        <div id="mostra_cliente" class="form-group col-md-11" style="display:none;">
+        <hr>
+        <h4 id="que_estou_fazendo"></h4>
+            <div id="tipo_alteracao" style="display:none"></div>
+            <div id="id_cliente" style="display:none"></div>
+                <div class="form-group col-md-5" style="display:inline-block;">
+                <label for="nome">Nome Empresa</label>
+                  <input type="text" class="form-control" onfocusout="cria_empresa()" id="nome" name="nome">
+                </div>
+                 <br>
+                <!--<div class="form-group col-md-4" style="display:inline-block;">
+                <label for="cnpj">CNPJ</label>
+                  <input type="text" pattern="/(^\d{3}\.\d{3}\.\d{3}\-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)/" class="form-control" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00 ou 000.000.000-00" autofocus required title="Entre com um CPF ou CNPJ válidos">
+                </div>
+                <div class="form-group col-md-4" style="display:inline-block;">
+                <label for="inscricao">Inscrição Estadual</label>
+                  <input type="text" class="form-control" id="inscricao" name="inscricao">
+                </div>
+                <br>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                <label for="cep">CEP</label>
+                  <input type="text" class="form-control" id="cep" name="cep" value="" size="10" maxlength="9"
+                 onblur="pesquisacep(this.value,'entrega');">
+                </div>
+                
+                <div class="form-group col-md-6" style="display:inline-block;">
+                  <label for="rua">Rua</label>
+                  <input type="text" class="form-control" id="rua" name="rua">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="numero">Numero</label>
+                  <input type="text" class="form-control" id="numero" name="numero">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="bairro">Bairro</label>
+                  <input type="text" class="form-control" id="bairro" name="bairro">
+                </div>
+                <div class="form-group col-md-5" style="display:inline-block;">
+                  <label for="cidade">Cidade</label>
+                  <input type="text" class="form-control" id="cidade" name="cidade">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="uf">Estado</label>
+                  <input type="text" class="form-control" id="uf" name="uf">
+                </div>
+                <br>
+                <div class="form-group col-md-3" style="display:none;">
+                  <label for="representante">Representante</label>
+                  <input type="text" class="form-control" id="representante" name="representante">
+                </div>
+                <div class="form-group col-md-6" style="display:none;">
+                  <label for="email-representante">e-mail Representante</label>
+                  <input type="text" class="form-control" id="email-representante" name="email-representante">
+                </div>
+                <br>-->
+                <div id="altera_contato" style="display:none">99</div>
+                <div style="display:inline-block;"><img style="cursor: pointer" onclick="adiciona_contato()" src="./Icons/icone_mais.png" width="30px"></div> 
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="contato">Contato</label>
+                  <input type="text" class="form-control" onchange="limpa_tudo_contato()" id="contato" name="contato">
+                </div>
+                <div class="form-group col-md-2" style="display:inline-block;">
+                  <label for="telefone_contato">Telefone Contato</label>
+                  <input type="text" class="form-control" id="telefone_contato" name="telefone_contato">
+                </div>
+                <div class="form-group col-md-3" style="display:inline-block;">
+                  <label for="email_contato">e-mail Contato</label>
+                  <input type="text" class="form-control" id="email_contato" name="email_contato">
+                </div>
+                
+                <table id="tabela_contatos" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" style="display: none">
+          <thead>
+            <tr>
+             
+             
+              <th class="th-sm" style="width:15%">ID
+              </th>
+              <th class="th-sm" style="width:30%">Nome
+              </th>
+              <th class="th-sm" style="width:30%">E-mail
+              </th>
+              <th class="th-sm" style="width:15%">Telefone
+              </th>
+               <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+                <!--<div class="form-group col-md-6" style="display:none;">
+                  <label for="lembrete">Lembrete</label>
+                  <textarea class="form-control" id="lembrete" name="lembrete" cols="2" rows="4">
+                      </textarea>
+                </div>
+                <div class="form-group col-md-5" style="display:none;">
+                  <label for="envelope">Envelope</label>
+                  <textarea type="text" class="form-control" id="envelope" name="envelope" cols="2" rows="4">
+                      </textarea>
+                </div>
+              
+                <br>
+                <hr>-->
+                <br>
+                <button id="salva_cliente" class="btn btn-primary" onclick="salva_cliente()" style="cursor: pointer">Salvar Representante</button>
+              
+            </div>
+        
+        <!--   FILTROS
+        <div class="form-group col-md-2" style="display:inline-block;">
+          <label for="tipo_OP">Tipo de OP</label>
+          <select onchange="filtro4()" class="form-control" id="tipo_OP" name="OP">
+            <option>Todos</option>
+            <option>NOVA</option>
+            <option>REPETICAO SEM ALTERACAO</option>
+            <option>REPETICAO COM ALTERACAO</option>
+            </select>
+        </div>
+        <div class="form-group col-md-1" style="display:inline-block;">
+          <label for="OP">OP</label>
+          <input type="text" onkeyup="filtro()" class="form-control" id="OP" name="OP">
+        </div>
+        <div class="form-group col-md-2" style="display:inline-block;">
+          <label for="Cliente">Cliente</label>
+          <input type="text"  onkeyup="filtro2()" class="form-control" id="Cliente" name="Cliente">
+        </div>
+        <div class="form-group col-md-3" style="display:inline-block;">
+          <label for="descricao">Descricao</label>
+          <input type="text" onkeyup="filtro3()" class="form-control" id="descricao" name="descricao">
+        </div>
+        <div class="form-group col-md-3" style="display:inline-block;">
+          <label for="status_OP">Status</label>
+          <select onchange="filtro5()" class="form-control" id="status_OP" name="status_OP">
+            <option>Todos</option>
+            <option>OP Aberta</option>
+            <option>OP Alocada,Sem parametros</option>
+            <option>OP Totalmente Alocada</option>
+            <option>Op em fabrica</option>
+            <option>Op Recem Alterada</option>
+            <option>Op tintas alocada</option>
+            </select>
+        </div>-->
+       
+       <!--  Mostrar<div class="form-group col-md-1" style="display:inline-block;">
+          <input type="text" class="form-control" onchange="mudarQuantidade()" id="number_of_rows" value="20">
+          
+        </div><span class="form-group col-md-1" id="info_total"></span>
+        <section class="form-group col-md-6" style="display:inline-block;">
+            
+        </section>
+        <div id="initial_number" style="display: none">0</div>
+        <div class="form-group col-md-2" style="display:inline-block;">
+            <i id="arrowleft"  onclick="lastPage()" class="fas fa-arrow-left" style="margin-right: 5px; display: none;"></i>
+        <span id="paginas"></span>
+        <i id="arrowright" onclick="nextPage()" class="fas fa-arrow-right" style="margin-left: 5px; display: none;"></i>
+        </div>
+        <br>
+        <hr>-->
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+             
+          
+             <th class="th-sm" style="width:30%">Empresa
+              </th>
+              <th class="th-sm" style="width:10%">Contato
+              </th>
+              <th class="th-sm" style="width:40%">email
+              </th>
+              <th class="th-sm" style="width:5%">Editar
+              </th>
+              <th class="th-sm" style="width:5%">Apagar
+            </th>
+           
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+  		<hr>
+  		  
+  		</div>  
+  		  
+   <script>
+  //conta o numero de paginas
+  function as_paginas(numero_total){
+ // var quantas = api.custom_objects.count("ALPHA_LOGS_ZIP").count
+ console.log("Quantas "+numero_total)
+   var quantas = numero_total
+  var divide_por = parseInt(document.getElementById("number_of_rows").value)
+ var numero_inicial = parseInt(document.getElementById("initial_number").innerText)
+  if (quantas <= divide_por){
+      document.getElementById("paginas").innerText = "Pagina 1/1"
+      document.getElementById("arrowleft").style = "display: none;"
+      document.getElementById("arrowright").style = "display: none;"
+  } else {
+     document.getElementById("arrowright").style = "margin-left: 5px; display: inline-block; cursor:pointer;"
+     var inicio = (parseInt(document.getElementById("initial_number").innerText)/divide_por)+1
+     var inicio2 = (parseInt(document.getElementById("initial_number").innerText)/divide_por)+1
+     console.log("Inicio "+inicio)
+     console.log("Inicio "+inicio2)
+     
+     
+    document.getElementById("arrowright").style = "margin-left: 5px; display: inline-block; cursor:pointer;"
+  
+    if (quantas%divide_por == 0){
+        var total = parseInt(quantas/divide_por)
+        
+       
+     
+        
+        document.getElementById("paginas").innerText = "Pagina "+inicio2+"/"+total
+    } else {
+    var total = parseInt(quantas/divide_por)+1
+      document.getElementById("paginas").innerText = "Pagina "+inicio+"/"+total
+      
+    }
+     
+  }
+  if (numero_inicial > 0){
+   document.getElementById("arrowleft").style = "margin-right: 5px; display: inline-block; cursor:pointer;"   
+  } else {
+    document.getElementById("arrowleft").style = "display: none;"  
+  }
+  var sobra = quantas-numero_inicial
+  console.log("Sobra "+sobra)
+  console.log("Divide Por "+divide_por)
+  if (quantas-numero_inicial <= divide_por){
+     document.getElementById("arrowright").style = "display: none;"  
+  } 
+  
+  }
+  
+</script>
+<script>
+  function nextPage(){
+    
+      var inicio = parseInt(document.getElementById("initial_number").innerText)+parseInt(document.getElementById("number_of_rows").value)
+      var final = inicio+parseInt(document.getElementById("number_of_rows").value)
+      document.getElementById("initial_number").innerText = inicio
+      var diferenca = final-inicio
+  
+      
+     filtrar_page(inicio,final)
+      
+  }
+</script>
+<script>
+  function lastPage(){
+    
+      var inicio = parseInt(document.getElementById("initial_number").innerText)-parseInt(document.getElementById("number_of_rows").value)
+      var final = inicio+parseInt(document.getElementById("number_of_rows").value)
+    console.log("Last Page Inicio "+inicio)
+    
+      if (inicio > 0){
+      document.getElementById("initial_number").innerText = inicio
+  } else {
+     document.getElementById("initial_number").innerText = 0 
+  }
+  
+ 
+      
+      filtrar_page(inicio,final)
+    
+      
+  }
+</script>
+<script>
+  function mudarQuantidade(){
+      var quantas = parseInt(document.getElementById("number_of_rows").value)
+      var inicio = parseInt(document.getElementById("initial_number").innerText)
+      
+      var final = inicio+quantas
+    
+      filtrar_page(inicio,final)
+      
+  }
+</script>
+<script>
+  function filtrar(){
+       var codigo = document.getElementById("filtro_codigo").value
+      var identificacao = document.getElementById("filtro_identificacao").value
+      var cliente = document.getElementById("filtro_nome").value
+      var representante = document.getElementById("representante").value
+      var final = parseInt(document.getElementById("number_of_rows").value)
+      console.log("O status "+status)
+      preencheLista(codigo,identificacao,cliente,representante,inicio,final)
+      
+  }
+</script>
+
+<script>
+  function filtrar_page(inicio,final){
+    var codigo = document.getElementById("filtro_codigo").value
+      var identificacao = document.getElementById("filtro_identificacao").value
+      var cliente = document.getElementById("filtro_nome").value
+      var representante = document.getElementById("representante").value
+       
+      
+      preencheLista(codigo,identificacao,cliente,representante,inicio,final)
+      
+  }
+</script>
+
+
+    <script>
+        function limpa_tudo_contato(){
+            
+        }
+    </script>
+
+      <script>
+      
+        
+      var usuario = api.auth.get_current_user()
+      var nome_user = "Bem vindo, "+usuario.fullname
+      document.getElementById("bemvindo").innerText = nome_user
+      </script>
+      <script>
+      //Preenche lista de Drafts
+
+        var hoje = new Date()
+        var ano = hoje.getFullYear()
+        var mes = hoje.getMonth()+1
+        var dia = hoje.getDate()
+        //document.getElementById("data-final").value = ano+"-"+mes+"-"+dia
+        hoje.setDate(hoje.getDate()-30)
+        var ano2 = hoje.getFullYear()
+        var mes2 = hoje.getMonth()+1
+        var dia2 = hoje.getDate()
+        //document.getElementById("data-inicio").value = ano2+"-"+mes2+"-"+dia2
+
+         function preencheLista(){
+        
+          
+      var tabela = document.getElementById("dtBasicExample");
+      clearTable(tabela)
+      document.getElementById("info_update").innerText = "Atualizando a lista"
+      setTimeout(() => { document.getElementById("info_update").innerText = ""}, 1000);
+      var qtasrow = tabela.rows.length;
+      var buscatudo = api.custom_objects.list_with_options("BR-ROTOC_representantes",[],["nome","ascending"],[]).results
+     
+     
+       for (i=0;i<buscatudo.length;i++){
+           var listacontatos = buscatudo[i].contatos
+           for (j=0;j<listacontatos.length;j++){
+        var row =  tabela.insertRow(qtasrow);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+       
+       
+      
+        cell1.innerHTML = '<div style="vertical-align: middle;">'+buscatudo[i].nome+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle;">'+listacontatos[j].nome+'</div>';
+        cell3.innerHTML = '<div style="vertical-align: middle;">'+listacontatos[j].email+'</div>';
+        
+        cell4.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+buscatudo[i]._id+'" src="Icons/Edit.png" width="50px" onclick="reply_edit()"></div>';
+        cell5.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+buscatudo[i]._id+'#'+listacontatos[j].email+'" src="Icons/delete.png" width="50px" onclick="reply_delete()"></div>';
+               
+        qtasrow = qtasrow+1
+        
+         } 
+        }
+         }
+         
+         
+
+
+      </script>
+      
+     
+      
+     
+<script>
+    function reply_edit_contato(){
+    var linha = event.srcElement.id
+    for (i=0;i<contatos.length;i++){
+        if (contatos[i].email == linha){
+            document.getElementById("altera_contato").innerText = i
+            document.getElementById("contato").value = contatos[i].nome
+            document.getElementById("email_contato").value = contatos[i].email
+            document.getElementById("telefone_contato").value = contatos[i].telefone
+            var busca_select = document.getElementById("departamento")
+            for (j=0;j<busca_select.options.length;j++){
+                if (busca_select.options[j].value == contatos[i].departamento){
+                    busca_select.selectedIndex = j
+                }
+            }
+        }
+    }
+ 
+     
+    
+    }
+</script>
+
+     
+
+      <script>
+      function filtro() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("OP");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("dtBasicExample");
+      tr = table.getElementsByTagName("tr");
+      for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
+ <script>
+  function filtro2() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("Cliente");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      txtValue =  td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+         
+  }
+}
+</script>
+<script>
+  function filtro3() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("descricao");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[5];
+    if (td) {
+      txtValue =  td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+         
+  }
+}
+</script>
+<script>
+  function filtro4() {
+  var input, filter, table, tr, td, i, txtValue, color_OP;
+  input = document.getElementById("tipo_OP").value;
+  if (input == "Todos"){
+    table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    tr[i].style.display = "";
+  }
+  } else {
+    if (input == "NOVA") {
+      color_OP = "rgb(255, 0, 0)"
+    }
+    if (input == "REPETICAO SEM ALTERACAO") {
+      color_OP = "rgb(0, 255, 0)"
+    }
+    if (input == "REPETICAO COM ALTERACAO") {
+      color_OP = "rgb(0, 0, 255)"
+    }
+    console.log(color_OP)
+  filter = color_OP;
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    console.log(td.style.backgroundColor)
+    if (td) {
+      txtValue =  td.children[0].style.backgroundColor;
+      if (txtValue.indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+         
+  }
+}
+  }
+</script>
+<script>
+  function filtro5() {
+  var input, filter, table, tr, td, i, txtValue, color_OP;
+  input = document.getElementById("status_OP").value;
+  filter = input.toUpperCase();
+  console.log("*"+filter+"*")
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  if (input == "Todos"){
+    table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    tr[i].style.display = "";
+  }
+
+  } else {
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[6];
+    if (td) {
+      txtValue =  td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+         
+  }
+}
+
+</script>
+<script>
+  function filtro6() {
+  var input, filter, table, tr, td, i, txtValue, color_OP;
+  input = document.getElementById("fp-cadastrada").checked;
+  if (input === false){
+    table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    tr[i].style.display = "";
+  }
+  } else {
+  var color_OP = "rgb(255, 165, 0)"
+  var color_OP2 = "rgb(0, 255, 0)"
+  filter = color_OP;
+  filter2 = color_OP2
+  table = document.getElementById("dtBasicExample");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[8];
+    //console.log(td.style.backgroundColor)
+    if (td) {
+      
+      txtValue =  td.children[0].children[0].style.backgroundColor;
+      if (txtValue.indexOf(filter) > -1 || txtValue.indexOf(filter2) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+         
+  }
+  
+}
+  }
+</script>
+
+
+<script>
+ 
+    function reply_edit(){
+    var linha = event.srcElement.id
+    document.getElementById("id_cliente").innerText = linha
+    document.getElementById("mostra_cliente").style = "display: inline-block;"
+     var busca_representante = api.custom_objects.list_with_options("BR-ROTOC_representantes",["_id","equal to",linha]).results[0]
+     document.getElementById("que_estou_fazendo").innerText = "Alteração do Cliente "+busca_representante.nome
+    document.getElementById("nome").value = busca_representante.nome
+    
+    
+    for (i=0;i<busca_representante.contatos.length;i++){
+        busca_representante.contatos[i]["id"] = busca_representante._id
+    }
+    contatos = busca_representante.contatos
+     document.getElementById("salva_cliente").innerText = "Salvar Alterações"
+     document.getElementById("tipo_alteracao").innerText = "2"
+     preenche_tabela_contatos()
+    }
+</script>
+<script>
+    function salva_cliente(){
+        var quefazer = document.getElementById("tipo_alteracao").innerText
+         if (contatos.length == 0){
+             alert("Não é possível criar um representante sem contatos")
+         }  else {    
+    
+        if (quefazer == "1"){
+            
+            var existe_representa = api.custom_objects.list_with_options("BR-ROTOC_representantes",["nome","equal to",document.getElementById("nome").value]).results
+            
+            if (existe_representa.length === 0){
+               var cria_representa = api.custom_objects.create("BR-ROTOC_representantes",info_representa)
+               console.log(cria_representa)
+               for (i=0;i<cria_representa.contatos.length;i++){
+                   var contatos_existentes = cria_representa.contatos[i]
+                   for (j=0;j<contatos_existentes.length;j++){
+                       if (contatos_existentes["departamento"] == "Representante"){
+                           contatos_existentes[j]["id"] = cria_representa._id
+                           
+                       }
+                   }
+               
+                  
+                   
+               }
+               api.custom_objects.set_keys("BR-ROTOC_representantes",cria_representa._id,{"contatos":contatos_existentes})
+            } else {
+                
+               var os_contatos = info_representa.contatos
+               
+               for (i=0;i<os_contatos.length;i++){
+                   os_contatos[i]["departamento"] = "Representante"
+                   os_contatos[i]["id"] = existe_representa[0]._id
+               }
+                     info_representa["contatos"] = os_contatos
+                     info_representa["_id"] = existe_representa[0]._id
+                
+                api.custom_objects.update("BR-ROTOC_representantes",info_representa)
+                
+            
+            
+            if (existe_representa.length === 0){
+                var oID_representa = cria_representa._id
+            } else {
+                var oID_representa = existe_representa[0]._id
+            }
+            var busca_clientes = api.custom_objects.list_with_options("BR-ROTOC_customers",["CONTATOS_NOVO.id","equal to",oID_representa],[],["CONTATOS_NOVO"]).results
+            
+            for (i=0;i<busca_clientes.length;i++){
+                var os_contatos_novos = busca_clientes[i].CONTATOS_NOVO
+                for (j=0;j<os_contatos_novos.length;j++){
+                    var nome = os_contatos_novos[j].nome
+                    var id = os_contatos_novos[j].id
+                    for (k=0;k<os_contatos.length;k++){
+                        if (os_contatos[k].nome == os_contatos_novos[j].nome && os_contatos[k].id == os_contatos_novos[j].id){
+                            os_contatos_novos[j] = os_contatos[k]
+                        }
+                    }
+                }
+                
+                
+                busca_clientes[i].CONTATOS_NOVO = os_contatos_novos
+            }
+            console.log(busca_clientes)
+
+            } 
+           
+        }   
+        
+         if (quefazer == "2"){
+             console.log("estou na alteração")
+             info_representa["nome"] = document.getElementById("nome").value
+             if (contatos.length > 0){
+                 for (i=0;i<contatos.length;i++){
+                     contatos[i]["departamento"] = "Representante"
+                 }
+             } else {
+                info_representa["telefone"] = ""
+                info_representa["email"] = ""
+             }
+                info_representa["departamento"] = "Representante" 
+                
+                
+              
+                
+                
+                
+                info_representa["contatos"] = contatos
+                
+                 
+                 console.log(info_representa)
+                // console.log(alteracoes)
+                // document.getElementById("info_update").innerText = "O cliente "+dados_cliente.FANTASIA+" foi alterado com sucesso!"
+      
+       
+             api.custom_objects.set_keys("BR-ROTOC_representantes",document.getElementById("id_cliente").innerText,info_representa)
+                   
+    
+             }
+         }
+         
+         var clientes = api.custom_objects.list_with_options("BR-ROTOC_customers",["CONTATOS_NOVO.id","equal to",contatos[0].id],[],["CONTATOS_NOVO"]).results
+         
+         for (i=0;i<clientes.length;i++){
+             var contatos_existentes = clientes[i].CONTATOS_NOVO
+             for (j=0;j<contatos_existentes.length;j++){
+                 if (contatos_existentes[j].departamento == "Representante"){
+                     contatos_existentes[j].nome =  document.getElementById("nome").value
+                     contatos_existentes[j].telefone =  contatos[0].telefone
+                     contatos_existentes[j].email =  contatos[0].email
+                     contatos_existentes[j].departamento = "Representante"
+                     contatos_existentes[j].contatos = contatos
+                 }
+             }
+             api.custom_objects.set_keys("BR-ROTOC_customers",clientes[i]._id,{"CONTATOS_NOVO":contatos_existentes})
+         }
+         
+                document.getElementById("mostra_cliente").style = "display: none"
+              setTimeout(() => { document.getElementById("tipo_alteracao").innerText= "" ; document.getElementById("info_update").innerText = ""; preencheLista()}, 3000);
+         }
+    
+</script>
+<script>
+    function cria_cliente(){
+        
+        document.getElementById("mostra_cliente").style = "display: inline-block;"
+        document.getElementById("tipo_alteracao").innerText = "1"
+    }
+</script>
+<script>
+
+var contatos = []
+          function adiciona_contato(){
+             if (document.getElementById("altera_contato").innerText == "99"){
+              console.log("Estou dentro")
+              if (contatos.length == 0){
+                  info_representa["telefone"] = document.getElementById("telefone_contato").value
+                  info_representa["email"] = document.getElementById("email_contato").value
+                  
+              }
+              var info_contato = {}
+              info_contato["nome"] =document.getElementById("contato").value
+            info_contato["telefone"] = document.getElementById("telefone_contato").value
+                        info_contato["email"] = document.getElementById("email_contato").value 
+                        info_contato["id"] = document.getElementById("id_cliente").innerText
+              
+                  contatos.push(info_contato)
+                info_representa["contatos"] = contatos
+                     preenche_tabela_contatos()
+              
+              } 
+                           else {
+                 for (i=0;i<contatos.length;i++){
+                  
+                  
+                     var numero = parseInt(document.getElementById("altera_contato").innerText)
+                    if (numero == i){
+                     var valores = contatos[i]
+                       console.log(valores)
+                         valores["nome"] = document.getElementById("contato").value
+                         valores["telefone"] = document.getElementById("telefone_contato").value
+                         valores["email"] = document.getElementById("email_contato").value
+                         valores["id"] = document.getElementById("id_cliente").innerText
+                         contatos[i] = valores
+                     }
+                 }
+                     info_representa["contatos"] = contatos
+                    preenche_tabela_contatos() 
+                 }
+             }
+          
+      </script>
+       <script>
+          function preenche_tabela_contatos(){
+        var tabela2 = document.getElementById("tabela_contatos");
+      clearTable(tabela2)
+      
+      if (contatos.length > 0){
+          tabela2.style = "display: inline-block;"
+      }
+      var qtasrow2 = tabela2.rows.length;
+       for (i=0;i<contatos.length;i++){
+        var row =  tabela2.insertRow(qtasrow2);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+         var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
+       
+       if (contatos[i].id === undefined){
+           var info_id = ""
+       } else {
+           var info_id = contatos[i].id
+       }
+      
+      
+        cell1.innerHTML = '<div style="vertical-align: middle;">'+info_id+'</div>'
+        cell2.innerHTML = '<div style="vertical-align: middle;">'+contatos[i].nome+'</div>'
+        cell3.innerHTML = '<div style="vertical-align: middle;">'+contatos[i].email+'</div>';
+        cell4.innerHTML = '<div style="vertical-align: middle;">'+contatos[i].telefone+'</div>';
+        
+        cell5.innerHTML = '<div style="vertical-align: middle;cursor: pointer"><img  id="'+contatos[i].email+'" src="Icons/Edit.png" width="50px" onclick="reply_edit_contato()"></div>';
+        cell6.innerHTML = '<div style="vertical-align: middle; cursor:pointer"><img  id="'+contatos[i].email+'" src="Icons/delete.png" width="50px" onclick="reply_delete_contato()"></div>';
+               
+        qtasrow2 = qtasrow2+1
+        
+         } 
+         cria_empresa()
+          }
+      </script>
+      
+      <script>
+    function reply_delete(){
+    
+    
+    var linha = event.srcElement.id
+    var linha_array = linha.split("#")
+    console.log(linha_array[0])
+    console.log(linha_array[1])
+    if (confirm ("Deseja mesmo excluir o representante?, essa ação não poderá ser desfeita")){
+    document.getElementById("tipo_alteracao").innerText= "O representante  foi apagado com sucesso"
+    var busca_cliente = api.custom_objects.list_with_options("BR-ROTOC_representantes",["_id","equal to",linha_array[0]]).results[0]
+    var os_contatos = busca_cliente.contatos
+    for (i=0;i<os_contatos.length;i++){
+        if (os_contatos[i].email == linha_array[1]){
+            var tira = os_contatos.splice(i,1)
+        }
+    }
+    info_representa["contatos"] = os_contatos
+   console.log(os_contatos)
+   console.log(info_representa)
+    api.custom_objects.set_keys("BR-ROTOC_representantes",linha_array[0],{"contatos": os_contatos})
+            
+    }
+    
+    }
+</script>
+<script>
+ var info_representa = {}
+    function cria_empresa(){
+       
+        info_representa["nome"] = document.getElementById("nome").value
+        info_representa["telefone"] = ""
+        info_representa["email"] = ""
+        info_representa["departamento"] = "Representante"
+        if (contatos != undefined){
+            info_representa["contatos"] = contatos
+        }
+    }
+</script>
+
+<script>
+    function reply_edit_contato(){
+    var linha = event.srcElement.id
+    
+    for (i=0;i<contatos.length;i++){
+        if (contatos[i].email == linha){
+            document.getElementById("altera_contato").innerText = i
+            document.getElementById("contato").value = contatos[i].nome
+            document.getElementById("email_contato").value = contatos[i].email
+            document.getElementById("telefone_contato").value = contatos[i].telefone
+           
+    }
+    }
+     
+    
+    }
+</script>`
+<script>
+    function reply_delete_contato(){
+    var linha = event.srcElement.id
+    console.log(linha)
+    for (i=0;i<contatos.length;i++){
+        
+        if (contatos[i].email == linha){
+            console.log("vou tirar")
+            var tira = contatos.splice(i,1)
+    }
+   
+    }
+    info_representa["contatos"] = contatos
+      preenche_tabela_contatos()
+    }
+</script>
+
+
+    </body>
+
+</html>

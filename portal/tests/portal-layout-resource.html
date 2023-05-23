@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+	<script src="/okilms/3rdParty/jquery-1.7.2.js"></script>
+	<script src="/okilms/3rdParty/underscore.js"></script>
+	<script src="/common/js/namespace.js"></script>
+	<script src="/portal/js/nixps-cloudflow_path.js"></script>
+	<script src="/portal/js/nixps-layout-resource.js"></script>
+	<script src="/portal/js/nixps-layout-file_resource_element.js"></script>
+	<script src="/portal/js/nixps-layout-document.js"></script>
+
+	<!-- Setup the unit test -->
+	<script src="/okilms/tests/3rdParty/mocha.js"></script>
+    <script src="/okilms/tests/3rdParty/should.js"></script>
+	<link type="text/css" href="/okilms/tests/css/mocha.css" rel="stylesheet" />
+    <script>mocha.setup('bdd')</script>
+
+
+	<script type="text/javascript">
+		$(function() {
+			describe("nixps.layout.resource", function() {
+				describe('construction', function() {
+					it("should throw when invalid parameters are supplied", function() {
+						(function() {
+							new nixps.layout.resource(null);
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.resource(5);
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.resource("");
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.resource(undefined);
+						}).should.throw();
+
+						(function() {
+							new nixps.layout.resource({});
+						}).should.throw();
+					});
+
+					it("should accept a resource json", function() {
+						(function() {
+							var resource = new nixps.layout.resource([{ url: 'cloudflow://PP_FILE_STORE/hello.pdf' }]);
+							resource.count().should.eql(1);
+						}).should.not.throw();
+					});
+
+					it("should accept no parameters to create an empty resource", function() {
+						(function() {
+							var resource = new nixps.layout.resource();
+							resource.count().should.eql(0);
+						}).should.not.throw();
+					});
+				});
+
+				describe('resources', function() {
+					describe('add_resource_element', function() {
+						var resource;
+
+						before(function() {
+							resource = new nixps.layout.resource();
+						});
+
+						it('should not accept invalid parameters', function() {
+							(function() {
+								resource.add_resource_element("");
+							}).should.throw();
+
+							(function() {
+								resource.add_resource_element();
+							}).should.throw();
+
+							(function() {
+								resource.add_resource_element(null);
+							}).should.throw();
+
+							(function() {
+								resource.add_resource_element({});
+							}).should.throw();
+						});
+
+						it('should add a file resource element', function() {
+							var path = new cloudflow_path("cloudflow://PP_FILE_STORE/test.pdf");
+							var file_resource = new nixps.layout.file_resource_element(path);
+							var resource = new nixps.layout.resource();
+							resource.add_resource_element(file_resource);
+							resource.count().should.eql(1);
+							resource.get_resource_element(0).to_json().should.eql(file_resource.to_json());
+						});
+					});
+
+					describe('remove_resource_element', function() {
+						var resource;
+						var file_resource1;
+						var file_resource2;
+						var file_resource3;
+
+						before(function() {
+							var path1 = new cloudflow_path("cloudflow://PP_FILE_STORE/test1.pdf");
+							file_resource1 = new nixps.layout.file_resource_element(path1);
+
+							var path2 = new cloudflow_path("cloudflow://PP_FILE_STORE/test2.pdf");
+							file_resource2 = new nixps.layout.file_resource_element(path2);
+
+							var path3 = new cloudflow_path("cloudflow://PP_FILE_STORE/test3.pdf");
+							file_resource3 = new nixps.layout.file_resource_element(path3);
+
+							resource = new nixps.layout.resource();
+							resource.add_resource_element(file_resource1);
+							resource.add_resource_element(file_resource2);
+							resource.add_resource_element(file_resource3);
+						});
+
+
+						it('should not accept invalid parameters', function() {
+							(function() {
+								resource.add_resource_element("");
+							}).should.throw();
+
+							(function() {
+								resource.add_resource_element();
+							}).should.throw();
+
+							(function() {
+								resource.add_resource_element(null);
+							}).should.throw();
+
+							(function() {
+								resource.add_resource_element({});
+							}).should.throw();
+						});
+
+
+						it('should not accept invalid parameters', function() {
+							(function() {
+								resource.remove_resource_element("");
+							}).should.throw();
+
+							(function() {
+								resource.remove_resource_element();
+							}).should.throw();
+
+							(function() {
+								resource.remove_resource_element(null);
+							}).should.throw();
+						});
+
+						it('should remove a resource', function() {
+							resource.remove_resource_element(0);
+							resource.count().should.eql(2);
+							resource.get_resource_element(0).to_json().should.eql(file_resource2.to_json());
+
+							(function() {
+								resource.get_resource_element(3);
+							}).should.throw();
+						});
+
+						it('should not throw when a resource does not exist', function() {
+							(function() {
+								resource.remove_resource_element(1000);
+							}).should.not.throw();
+						});
+					});
+
+					describe('get_resource_element', function() {
+
+						var resource;
+						var file_resource1;
+						var file_resource2;
+						var file_resource3;
+
+						before(function() {
+							var path1 = new cloudflow_path("cloudflow://PP_FILE_STORE/test1.pdf");
+							file_resource1 = new nixps.layout.file_resource_element(path1);
+
+							var path2 = new cloudflow_path("cloudflow://PP_FILE_STORE/test2.pdf");
+							file_resource2 = new nixps.layout.file_resource_element(path2);
+
+							var path3 = new cloudflow_path("cloudflow://PP_FILE_STORE/test3.pdf");
+							file_resource3 = new nixps.layout.file_resource_element(path3);
+
+							resource = new nixps.layout.resource();
+							resource.add_resource_element(file_resource1);
+							resource.add_resource_element(file_resource2);
+							resource.add_resource_element(file_resource3);
+						});
+
+						it('should not accept invalid parameters', function() {
+							(function() {
+								resource.get_resource_element("");
+							}).should.throw();
+
+							(function() {
+								resource.get_resource_element();
+							}).should.throw();
+
+							(function() {
+								resource.get_resource_element(null);
+							}).should.throw();
+
+							(function() {
+								resource.get_resource_element({});
+							}).should.throw();
+						});
+
+
+						it('should return the resource element', function() {
+							resource.get_resource_element(0).should.be.an.instanceof(nixps.layout.file_resource_element);
+						});
+
+						it('should throw if the index in not in bounds', function() {
+							(function() {
+								resource.get_resource_element(1000);
+							}).should.throw();
+						});
+					});
+
+					describe('count', function() {
+						it('should return the resource count', function() {
+							var path1 = new cloudflow_path("cloudflow://PP_FILE_STORE/test1.pdf");
+							var file_resource1 = new nixps.layout.file_resource_element(path1);
+
+							var path2 = new cloudflow_path("cloudflow://PP_FILE_STORE/test2.pdf");
+							var file_resource2 = new nixps.layout.file_resource_element(path2);
+
+							var path3 = new cloudflow_path("cloudflow://PP_FILE_STORE/test3.pdf");
+							var file_resource3 = new nixps.layout.file_resource_element(path3);
+
+							var resource = new nixps.layout.resource();
+							resource.count().should.eql(0);
+							resource.add_resource_element(file_resource1);
+							resource.count().should.eql(1);
+							resource.add_resource_element(file_resource2);
+							resource.count().should.eql(2);
+							resource.add_resource_element(file_resource3);
+							resource.count().should.eql(3);
+
+							resource.remove_resource_element(0);
+							resource.count().should.eql(2);
+						});
+					});
+
+					describe('to_json', function() {
+						it('should output a well formatted layout document', function() {
+							var path1 = new cloudflow_path("cloudflow://PP_FILE_STORE/test1.pdf");
+							var file_resource1 = new nixps.layout.file_resource_element(path1);
+
+							var path2 = new cloudflow_path("cloudflow://PP_FILE_STORE/test2.pdf");
+							var file_resource2 = new nixps.layout.file_resource_element(path2);
+
+							var path3 = new cloudflow_path("cloudflow://PP_FILE_STORE/test3.pdf");
+							var file_resource3 = new nixps.layout.file_resource_element(path3);
+
+							var resource = new nixps.layout.resource();
+							resource.add_resource_element(file_resource1);
+							resource.add_resource_element(file_resource2);
+							resource.add_resource_element(file_resource3);
+
+							var l_json = [
+									{ url : 'cloudflow://PP_FILE_STORE/test1.pdf'},
+									{ url : 'cloudflow://PP_FILE_STORE/test2.pdf'},
+									{ url : 'cloudflow://PP_FILE_STORE/test3.pdf'}
+								];
+
+							resource.to_json().should.eql(l_json);
+						});
+					});
+				});
+			});
+
+			mocha.run();
+		});
+	</script>
+</head>
+<body>
+	<div id="mocha"></div>
+</body>
+</html>

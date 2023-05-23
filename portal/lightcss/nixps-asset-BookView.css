@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-feb-2016, 10:31:16
+    Author     : guillaume
+*/
+.nixps-asset-BookView {
+    
+}
+.nixps-asset-BookView .screenOverlay {
+    background-color: rgba(0, 128, 191, 0.5);
+}
+
+.nixps-asset-BookView .tableCover {
+    background-color: #FFF;
+    border: 1px solid #9C9C9C;
+    border-radius: 3px;
+    padding-top: 40px;
+    padding-bottom: 45px;
+}
+
+.nixps-asset-BookView .closeButton {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/** action bar **/
+.nixps-asset-BookView .actionBar {
+    position: relative;
+    top: -1px;
+    height: 35px;
+}
+.nixps-asset-BookView .leftPageBar,
+.nixps-asset-BookView .rightPageBar {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+
+.nixps-asset-BookView .button {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    padding-left: 7px;
+    padding-right: 12px;
+}
+.nixps-asset-BookView .button img {
+    vertical-align: bottom;
+    padding-right: 5px;
+}
+.nixps-asset-BookView .button.rejected {
+    color: #AB4243;
+    padding-left: 12px;
+}
+
+
+/** booklet css ***/
+.nixps-asset-BookView .nixps-BookTurn .booklet {
+    box-shadow: 38px 0px 0px -5px #CCC, -38px 0px 0px -5px #CCC;
+    border: 2px solid rgb(116, 124, 131);
+    border-radius: 3px;
+    background-color: #CCC;
+}
+.nixps-asset-BookView .nixps-BookTurn .booklet .b-arrow-next div {
+    background: none;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid white;
+    width: 0px;
+    height: 0px;
+    top: 25%;
+    top: calc( 50% - 25px );
+}
+.nixps-asset-BookView .nixps-BookTurn .booklet .b-arrow-prev div {
+    background: none;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-right: 25px solid white;
+    width: 0px;
+    height: 0px;
+    top: 25%;
+    top: calc( 50% - 25px );
+    left: 49px;
+}
+.nixps-asset-BookView .nixps-BookTurn .booklet .b-page-empty {
+    width: 100%;
+    height: 100%;
+}
+
+.nixps-asset-BookView .gotopagePanel {
+    top: 10px;
+    left: 30px;
+}
